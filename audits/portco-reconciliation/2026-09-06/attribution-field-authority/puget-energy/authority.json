@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_PUGET_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "54b46da42be290050fecd7c0abacab26b2b718a124f770eb20fc44371b4c6e32",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "seedSpecSha256": "8d3334535f7f81dca230a9104c69a82fe0e299f5978d4bbf2f43a39092d2a67d",
+  "canonicalProposalSha256": "c579f09caa89779cb49d9aecada0638377ed8aab7d30989af7357ce54d604036",
+  "canonicalApprovalSha256": "cfdff69e5a30ec8011584f24c515830c64309a2b7985572714f2a9f556226f9b",
+  "canonicalReceiptSha256": "038ba0356997af25395a8b9a7158261e2cb7db4378a8bcfa184d10b9db7c3869",
+  "batchReceiptSha256": "599c607030f2aeb266e0a8643b52d70fc49ca67fe95899ae70fd36b0ed7ad91a",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "semanticCompanySha256": "f6a37879b46a38ca0b7c752f562ad6121d38ea00076dc8cfdec577e6e90becf2",
+  "candidateFieldsAdjudicated": 9,
+  "cumulativeCandidateFieldsAdjudicated": 27,
+  "remainingCandidateFields": 576,
+  "additionalFieldsOutsideOriginal603": 9,
+  "interpretation": "BCI expressly distinguishes its combined program from constituent funds and legal entities. OMERS identifies a pension investment manager. Neither supports treating the program/manager name as a disclosed specific fund. AIMCo's clients are not a named fund. MGIF's expanded name is expressly disclosed. OTPP/PGGM pension programs remain unlinked. Exactly one primary source per owner; existing stakes, dates, legal-vehicle unknowns and both historical owners remain unchanged.",
+  "qualifications": [
+    "Authority is not persistence or write authorization; all physical comparisons remain unchanged.",
+    "The equality-only diagnostic missed nine related fields where seed and production share unsupported attribution. They are tracked separately and do not reduce the original remaining count.",
+    "BCI's December 2024 reporting boundary and September 2025 insight do not newly verify September 2026 ownership. The 2018 announcements are not closing proof. Existing protected source task128 is preserved.",
+    "No Bolsena or other constituent fund is inferred. Seed display fallbacks are not canonical legal vehicles. No fund economics, fund creation or global manager alias is adjudicated."
+  ],
+  "historicalOwnerIdsPreserved": [
+    "cmt5g4mw40011xryyp7vt8jcj",
+    "cmt5g4mz30012xryyfmtirsji"
+  ],
+  "rows": [
+    {
+      "manager": "AIMCo",
+      "organization": "AIMCo",
+      "ownerId": "cmrxpjpk701d2ivhenespe9dw",
+      "recordId": "OFA-D35FDD5B1C59",
+      "fundId": "cmrxpj0r500ayivhejf0kb254",
+      "sourceId": "aimco",
+      "year": 2009,
+      "stake": "13.6% current; 7.6% before the April 2019 increase",
+      "vehicle": null,
+      "fallback": "AIMCo Direct Infrastructure Investment",
+      "fields": [
+        "attributionRationale"
+      ],
+      "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "originalAttributionCompanyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "originalAttributionRecordId": "OFA-30619CCCD06F",
+      "candidateSha256": "790e8d6bbca4c9e0c4bd75db53b4062f7b976cc71534477a4e6a02be623c974d",
+      "current": {
+        "linkedFundName": "AIMCo Direct Infrastructure Investment",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AIMCo Direct Infrastructure Investment",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "seedExpectation": {
+        "linkedFundName": "AIMCo Direct Infrastructure Investment",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AIMCo Direct Infrastructure Investment",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "The 2026 owner table confirms AIMCo's interest, while the curated evergreen direct-infrastructure program is the only manager-matched vehicle; public evidence does not identify a narrower legal fund."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "AIMCo's existing investment announcement identifies it acting on behalf of certain clients. The reviewed disclosure does not identify the exact underlying fund or holding entity; a manager-matched curated vehicle is not inferred."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+          "seed": "The 2026 owner table confirms AIMCo's interest, while the curated evergreen direct-infrastructure program is the only manager-matched vehicle; public evidence does not identify a narrower legal fund.",
+          "recommended": "AIMCo's existing investment announcement identifies it acting on behalf of certain clients. The reviewed disclosure does not identify the exact underlying fund or holding entity; a manager-matched curated vehicle is not inferred.",
+          "primarySourceUrl": "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy",
+          "primarySourceSha256": "8467fef5a91222eeb398f36b65cbb2a67c23533fd498645e8b31bf935d56755d",
+          "productionWriteRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [
+        {
+          "field": "fundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "AIMCo Direct Infrastructure Investment",
+          "seed": "AIMCo Direct Infrastructure Investment",
+          "recommended": null,
+          "primarySourceUrl": "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy",
+          "primarySourceSha256": "8467fef5a91222eeb398f36b65cbb2a67c23533fd498645e8b31bf935d56755d",
+          "productionWriteRequired": true
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "INFERRED",
+          "seed": "INFERRED",
+          "recommended": "UNRESOLVED",
+          "primarySourceUrl": "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy",
+          "primarySourceSha256": "8467fef5a91222eeb398f36b65cbb2a67c23533fd498645e8b31bf935d56755d",
+          "productionWriteRequired": true
+        },
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "AIMCo Direct Infrastructure Investment",
+          "seed": "AIMCo Direct Infrastructure Investment",
+          "recommended": null,
+          "primarySourceUrl": "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy",
+          "primarySourceSha256": "8467fef5a91222eeb398f36b65cbb2a67c23533fd498645e8b31bf935d56755d",
+          "productionWriteRequired": true
+        },
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "LOW",
+          "seed": "LOW",
+          "recommended": null,
+          "primarySourceUrl": "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy",
+          "primarySourceSha256": "8467fef5a91222eeb398f36b65cbb2a67c23533fd498645e8b31bf935d56755d",
+          "productionWriteRequired": true
+        }
+      ],
+      "preserves": {
+        "stake": "13.6% current; 7.6% before the April 2019 increase",
+        "vehicleName": null,
+        "investmentYear": 2009,
+        "organizationName": "AIMCo",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    },
+    {
+      "manager": "BCI",
+      "organization": "BCI",
+      "ownerId": "cmrxpjpks01d3ivhe9nm9wwth",
+      "recordId": "OFA-B32ACD1095C3",
+      "fundId": "cmrxpj1av00btivhe22q21yhy",
+      "sourceId": "bci-program",
+      "year": 2009,
+      "stake": "20.9% current; 16.9% before the April 2019 increase",
+      "vehicle": null,
+      "fallback": "Infrastructure & Renewable Resources",
+      "fields": [
+        "attributionRationale"
+      ],
+      "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "originalAttributionCompanyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "originalAttributionRecordId": "OFA-89EEEA108D30",
+      "candidateSha256": "4917d97f55f6118f29a2614fe834d0c7af561707f15add01bf4a018e9f9adbf4",
+      "current": {
+        "linkedFundName": "Infrastructure & Renewable Resources",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure & Renewable Resources",
+        "attributionConfidence": null,
+        "attributionRationale": "Verified fund matches an existing fund-list entry."
+      },
+      "seedExpectation": {
+        "linkedFundName": "Infrastructure & Renewable Resources",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure & Renewable Resources",
+        "attributionConfidence": null,
+        "attributionRationale": "BCI's current Puget interest is directly reported within the Infrastructure & Renewable Resources program."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BCI's 2024 combined program financial statements report Puget at 20.9% through intermediary holding corporations. Note 1 distinguishes the Infrastructure & Renewable Resources program from its constituent funds and states the combined program is not a legal entity. This supports program attribution, not a disclosed specific fund or inferred constituent fund; the exact Puget holding vehicle remains unestablished."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Verified fund matches an existing fund-list entry.",
+          "seed": "BCI's current Puget interest is directly reported within the Infrastructure & Renewable Resources program.",
+          "recommended": "BCI's 2024 combined program financial statements report Puget at 20.9% through intermediary holding corporations. Note 1 distinguishes the Infrastructure & Renewable Resources program from its constituent funds and states the combined program is not a legal entity. This supports program attribution, not a disclosed specific fund or inferred constituent fund; the exact Puget holding vehicle remains unestablished.",
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "primarySourceSha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39",
+          "productionWriteRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [
+        {
+          "field": "fundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Infrastructure & Renewable Resources",
+          "seed": "Infrastructure & Renewable Resources",
+          "recommended": null,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "primarySourceSha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39",
+          "productionWriteRequired": true
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "DISCLOSED",
+          "seed": "DISCLOSED",
+          "recommended": "DIRECT_PROGRAM",
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "primarySourceSha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39",
+          "productionWriteRequired": true
+        },
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Infrastructure & Renewable Resources",
+          "seed": "Infrastructure & Renewable Resources",
+          "recommended": null,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "primarySourceSha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39",
+          "productionWriteRequired": true
+        }
+      ],
+      "preserves": {
+        "stake": "20.9% current; 16.9% before the April 2019 increase",
+        "vehicleName": null,
+        "investmentYear": 2009,
+        "organizationName": "BCI",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    },
+    {
+      "manager": "Macquarie Asset Management",
+      "organization": "Macquarie Asset Management",
+      "ownerId": "cmrxpk6fp023pivhewnh4gzo7",
+      "recordId": "OFA-B38829EB9593",
+      "fundId": null,
+      "sourceId": "macquarie",
+      "year": 2022,
+      "stake": "15.8%",
+      "vehicle": "Macquarie Washington Clean Energy Investment, L.P. (Macquarie Global Infrastructure Fund)",
+      "fallback": "Macquarie Washington Clean Energy Investment, L.P. (Macquarie Global Infrastructure Fund)",
+      "fields": [
+        "attributedFundName",
+        "attributionRationale"
+      ],
+      "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "originalAttributionCompanyId": "cmrxpjkcr014rivhero16klvt",
+      "originalAttributionRecordId": "OFA-D39A931E35F3",
+      "candidateSha256": "35016da1a67522a96524e12e12e98b51847c333462fd30daa1cc8fbd5caef439",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MGIF",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Macquarie Asset Management | Fund: MGIF | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Global Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Macquarie's closing release identifies Macquarie Washington Clean Energy Investment, L.P. and the Macquarie Global Infrastructure Fund; no matching curated fund row exists."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Global Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Macquarie's February 22, 2022 closing announcement expressly identifies investment via Macquarie Global Infrastructure Fund. It does not name the Washington holding SPV. The existing separately sourced canonical vehicle and 15.8% stake are preserved; this review neither creates nor infers a curated fund link."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "MGIF",
+          "seed": "Macquarie Global Infrastructure Fund",
+          "recommended": "Macquarie Global Infrastructure Fund",
+          "primarySourceUrl": "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+          "primarySourceSha256": "88c8495b622b6a7e436a26ebfc22b2574c06c0f3c53af810464e6935790285ca",
+          "productionWriteRequired": true
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Matched supplemental ownership detail: Firm: Macquarie Asset Management | Fund: MGIF | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+          "seed": "Macquarie's closing release identifies Macquarie Washington Clean Energy Investment, L.P. and the Macquarie Global Infrastructure Fund; no matching curated fund row exists.",
+          "recommended": "Macquarie's February 22, 2022 closing announcement expressly identifies investment via Macquarie Global Infrastructure Fund. It does not name the Washington holding SPV. The existing separately sourced canonical vehicle and 15.8% stake are preserved; this review neither creates nor infers a curated fund link.",
+          "primarySourceUrl": "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+          "primarySourceSha256": "88c8495b622b6a7e436a26ebfc22b2574c06c0f3c53af810464e6935790285ca",
+          "productionWriteRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [],
+      "preserves": {
+        "stake": "15.8%",
+        "vehicleName": "Macquarie Washington Clean Energy Investment, L.P. (Macquarie Global Infrastructure Fund)",
+        "investmentYear": 2022,
+        "organizationName": "Macquarie Asset Management",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    },
+    {
+      "manager": "Ontario Teachers' Pension Plan",
+      "organization": "Ontario Teachers' Pension Plan",
+      "ownerId": "cmrxpk6gd023qivheeomwf03t",
+      "recordId": "OFA-0B8B1AE10C1F",
+      "fundId": null,
+      "sourceId": "otpp",
+      "year": 2022,
+      "stake": "15.8%",
+      "vehicle": null,
+      "fallback": "Ontario Teachers' Pension Plan",
+      "fields": [
+        "attributionRationale"
+      ],
+      "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "originalAttributionCompanyId": "cmrxpjkcr014rivhero16klvt",
+      "originalAttributionRecordId": "OFA-D37B39DB8B5E",
+      "candidateSha256": "51be2307d6222695780196da50fdbff9a1604dbf37cc13d5c35a5462abb59ee9",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Ontario Teachers' Pension Plan | Fund: Not publicly disclosed. | Ownership Interest: 15.8% Supplemental detail states the fund was not publicly disclosed."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ontario Teachers' directly holds the interest through its pension investment program; no specific fund or legal vehicle is publicly disclosed."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ontario Teachers' February 22, 2022 closing announcement identifies the pension plan board as co-buyer and places the investment within its infrastructure portfolio. This supports pension-program attribution; no specific managed fund or legal holding vehicle is established by the reviewed announcement."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Matched supplemental ownership detail: Firm: Ontario Teachers' Pension Plan | Fund: Not publicly disclosed. | Ownership Interest: 15.8% Supplemental detail states the fund was not publicly disclosed.",
+          "seed": "Ontario Teachers' directly holds the interest through its pension investment program; no specific fund or legal vehicle is publicly disclosed.",
+          "recommended": "Ontario Teachers' February 22, 2022 closing announcement identifies the pension plan board as co-buyer and places the investment within its infrastructure portfolio. This supports pension-program attribution; no specific managed fund or legal holding vehicle is established by the reviewed announcement.",
+          "primarySourceUrl": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/macquarie-asset-management-and-ontario-teachers--complete-acquis/",
+          "primarySourceSha256": "b82f7ba7f42940fbb9f9ab183578efa8c28fbae9b9a48a78d6219f3c9d0d1197",
+          "productionWriteRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [],
+      "preserves": {
+        "stake": "15.8%",
+        "vehicleName": null,
+        "investmentYear": 2022,
+        "organizationName": "Ontario Teachers' Pension Plan",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    },
+    {
+      "manager": "OMERS Infrastructure",
+      "organization": "OMERS",
+      "ownerId": "cmrxpk6gr023rivhel4dhkwrw",
+      "recordId": "OFA-FA0DF294D006",
+      "fundId": "cmrxpj3fm00f1ivhehhc270qc",
+      "sourceId": "omers",
+      "year": 2019,
+      "stake": "23.9%",
+      "vehicle": null,
+      "fallback": "OMERS Infrastructure",
+      "fields": [
+        "attributionConfidence",
+        "attributionRationale",
+        "fundAttribution"
+      ],
+      "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "originalAttributionCompanyId": "cmrxpjkcr014rivhero16klvt",
+      "originalAttributionRecordId": "OFA-AEEF6AFB0807",
+      "candidateSha256": "f2dff25e24d7e9b519d4b41a14a0467f7abdd4972277390d013ba1c62adb94ef",
+      "current": {
+        "linkedFundName": "OMERS Infrastructure",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "OMERS Infrastructure",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "seedExpectation": {
+        "linkedFundName": "OMERS Infrastructure",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "OMERS Infrastructure",
+        "attributionConfidence": null,
+        "attributionRationale": "OMERS' official investment announcement and Puget's current owner table support the OMERS Infrastructure attribution and 23.9% interest."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "OMERS' 2018 investment announcement identifies OMERS Infrastructure as the investment manager acting for the OMERS defined-benefit pension plan. This supports pension-program attribution, not a separately disclosed managed fund. The canonical 23.9% stake and 2019 closing year are preserved, not inferred from the announcement's approximate 24%."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "LOW",
+          "seed": null,
+          "recommended": null,
+          "primarySourceUrl": "https://www.omers.com/news/omers-infrastructure-announces-investment-in-puget-sound-energy",
+          "primarySourceSha256": "ec776c2f1f111abbd91d2db7b7a4864cbd15bae92d4127604ec3c9a49b295d9f",
+          "productionWriteRequired": true
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+          "seed": "OMERS' official investment announcement and Puget's current owner table support the OMERS Infrastructure attribution and 23.9% interest.",
+          "recommended": "OMERS' 2018 investment announcement identifies OMERS Infrastructure as the investment manager acting for the OMERS defined-benefit pension plan. This supports pension-program attribution, not a separately disclosed managed fund. The canonical 23.9% stake and 2019 closing year are preserved, not inferred from the announcement's approximate 24%.",
+          "primarySourceUrl": "https://www.omers.com/news/omers-infrastructure-announces-investment-in-puget-sound-energy",
+          "primarySourceSha256": "ec776c2f1f111abbd91d2db7b7a4864cbd15bae92d4127604ec3c9a49b295d9f",
+          "productionWriteRequired": true
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "INFERRED",
+          "seed": "DISCLOSED",
+          "recommended": "DIRECT_PROGRAM",
+          "primarySourceUrl": "https://www.omers.com/news/omers-infrastructure-announces-investment-in-puget-sound-energy",
+          "primarySourceSha256": "ec776c2f1f111abbd91d2db7b7a4864cbd15bae92d4127604ec3c9a49b295d9f",
+          "productionWriteRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [
+        {
+          "field": "fundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "OMERS Infrastructure",
+          "seed": "OMERS Infrastructure",
+          "recommended": null,
+          "primarySourceUrl": "https://www.omers.com/news/omers-infrastructure-announces-investment-in-puget-sound-energy",
+          "primarySourceSha256": "ec776c2f1f111abbd91d2db7b7a4864cbd15bae92d4127604ec3c9a49b295d9f",
+          "productionWriteRequired": true
+        },
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "OMERS Infrastructure",
+          "seed": "OMERS Infrastructure",
+          "recommended": null,
+          "primarySourceUrl": "https://www.omers.com/news/omers-infrastructure-announces-investment-in-puget-sound-energy",
+          "primarySourceSha256": "ec776c2f1f111abbd91d2db7b7a4864cbd15bae92d4127604ec3c9a49b295d9f",
+          "productionWriteRequired": true
+        }
+      ],
+      "preserves": {
+        "stake": "23.9%",
+        "vehicleName": null,
+        "investmentYear": 2019,
+        "organizationName": "OMERS",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    },
+    {
+      "manager": "PGGM",
+      "organization": "PGGM",
+      "ownerId": "cmrxpk6id023uivheusj162vx",
+      "recordId": "OFA-64641AF45D30",
+      "fundId": null,
+      "sourceId": "pggm",
+      "year": 2019,
+      "stake": "10.0%",
+      "vehicle": null,
+      "fallback": "PGGM",
+      "fields": [
+        "attributionRationale"
+      ],
+      "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "originalAttributionCompanyId": "cmrxpjkcr014rivhero16klvt",
+      "originalAttributionRecordId": "OFA-061F8A64D323",
+      "candidateSha256": "dce36d4d9b82f9dd0b6ffffc267dfc179a0e75673f61d770a19f5f7610579e19",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: PGGM | Fund: Not publicly disclosed. | Ownership Interest: 10.0% Supplemental detail states the fund was not publicly disclosed."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "PGGM directly holds the Puget interest through its investment program; no narrower fund or legal vehicle is publicly disclosed."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The Puget announcement hosted by PGGM identifies PGGM's proposed 10% interest and explicitly describes its use of long-term pension capital. This supports pension-program attribution without inferring a specific fund or holding entity. The canonical 2019 closing and 10.0% stake remain unchanged."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Matched supplemental ownership detail: Firm: PGGM | Fund: Not publicly disclosed. | Ownership Interest: 10.0% Supplemental detail states the fund was not publicly disclosed.",
+          "seed": "PGGM directly holds the Puget interest through its investment program; no narrower fund or legal vehicle is publicly disclosed.",
+          "recommended": "The Puget announcement hosted by PGGM identifies PGGM's proposed 10% interest and explicitly describes its use of long-term pension capital. This supports pension-program attribution without inferring a specific fund or holding entity. The canonical 2019 closing and 10.0% stake remain unchanged.",
+          "primarySourceUrl": "https://pggm.nl/en/press/puget-sound-energy-welcomes-new-investment",
+          "primarySourceSha256": "f69a6a92eebb4e2f91a879cd02343eb237f0f78cddc48488f57f5b31b81d8f88",
+          "productionWriteRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [],
+      "preserves": {
+        "stake": "10.0%",
+        "vehicleName": null,
+        "investmentYear": 2019,
+        "organizationName": "PGGM",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    }
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "839a6728712ab88202b5228272177119720350d3",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "c95a41f7cd4c05bec3980aedaf2b8c7940f724badea128e91591aab43114e9b2",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0128-puget-energy-v1.json",
+      "sha256": "25c62e13a004b42580a3c70da2c3a9bb9422d58c2e4b2a786caa015f272f2c0d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "88d5125f3ca1611679728a5621df6f0c44258d2cebdbbc35d5732349c7daf734"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/research-decision.json",
+      "sha256": "1732ae5af6a3db2622afb0ce8baa4305e383c29cf04bb269dd4150851edaa33e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/source-verification.json",
+      "sha256": "66ab039197cd87186631752681e04c98ac33b91ff7d77bedf82e1c88e4a9f4bd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0128-puget-energy-v1/proposal.json",
+      "sha256": "407b6779ef11e1eec82cbf1a5abd11c6b9206f2c5851e554a46de348cb92a1f3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/batch-manifest.json",
+      "sha256": "aca1a60b2cd2f1a7a546a951965522c6ab6133592ace502bf7e562e9b4cd45d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "dcd312a97336a2f1ee766690ba2201310bb5b51698eb93795f66aaebf6bafbe3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "e3c8776c1c89949a2d8b1c51a0e0b7f7e2090c004060ba70f5d3a02dfef1e4f2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/coastal-gaslink/authority.json",
+      "sha256": "0d4716decf015e74dfce8278b2df54248a918a9710f839f0becace3ded4b895d"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/funds.manifest.json",
+      "sha256": "6cce21787660a2d096e2836ddfae7f7fbc1ec60697ce5446de07c431055fd902"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "16e4d016addfaa5eb41c7fdaba4fa78f1f65b6278f338ec8f0f1785d4e9f14b3",
+  "visualReview": {
+    "oneBasedPages": [
+      11,
+      26
+    ],
+    "printedPages": [
+      9,
+      24
+    ],
+    "method": "Both complete BCI filing pages rendered and visually inspected: note 1 program/constituent-fund distinction and no-legal-entity statement; note 7 intermediary holdings and Puget 20.9% in the 2024 and 2023 tables."
+  },
+  "reportSha256": "b6d4a155a55b6618a08962937e7d38c15154352cdd2354ac46e242bafe902e73"
+}
