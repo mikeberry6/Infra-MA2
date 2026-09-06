@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_THREE_I_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "sourcePdfSha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+  "primarySourceUrl": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+  "sourceInterpretation": "Issuer FY2026 page 21 places the three companies under NAIF; page 22 Table 8 footnote 2 explicitly includes all three in the North American Infrastructure Fund. Together with the exact canonical owner and existing curated fund identities, this supports the scoped NA/North American label equivalence, not unlinking or a different fund.",
+  "scopeQualification": "This does not review Fund size, fund vintage, strategy, legal entity suffixes, post-report transaction events, or other managers. It is not a general name-matching rule. Prior source-task outcomes and all unknown stakes remain unchanged.",
+  "candidateFieldsAdjudicated": 6,
+  "remainingCandidateFields": 597,
+  "additionalRationaleCorrectionsRequired": 3,
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "rows": [
+    {
+      "sequence": 1,
+      "companyId": "cmrxpj40p00fuivhezgldc4dl",
+      "ownerId": "cmrxpjp2j01c9ivhe3f8q2cck",
+      "recordId": "OFA-674978762296",
+      "proposalSha256": "4bbdd8066970e93b6b1e0294b47454f5475aaf43630f89f0cd464d6362864ef7",
+      "companyName": "Amwaste LLC",
+      "candidateSha256": "c3ed0d95109f01ae7d892859ab7e0016da7ae4d592de047f7d0644bf53a5de67",
+      "approvalSha256": "32aeea19b20662e17145ea190d134c3311817ef47d35b34b1808fb89fb522e90",
+      "receiptSha256": "854f01024dd84875337553b14b10c30f7644cf09df2ceb2473dbf4b62787ada7",
+      "semanticCompanySha256": "ded7c5671cff0a5660f7b8c169df780e1bc7c68870e93d7178a885f1998e397d",
+      "current": {
+        "linkedFundName": "3i NA Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "3i NA Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: 3i Group | Fund: 3i North American Infrastructure Fund | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "3i North American Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: 3i Group | Fund: 3i North American Infrastructure Fund | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "fieldDecisions": [
+        {
+          "field": "fundName",
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_CANONICAL_ALIAS",
+          "productionValue": "3i NA Infrastructure Fund",
+          "seedValue": null,
+          "sourceUrl": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "sourcePdfSha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+          "oneBasedPages": [
+            21,
+            22
+          ],
+          "seedPersistenceAction": "REQUIRES_SEPARATE_SCOPED_SEED_RECONCILIATION",
+          "productionWriteRequired": false
+        },
+        {
+          "field": "attributedFundName",
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_CANONICAL_ALIAS",
+          "productionValue": "3i NA Infrastructure Fund",
+          "seedValue": "3i North American Infrastructure Fund",
+          "sourceUrl": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "sourcePdfSha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+          "oneBasedPages": [
+            21,
+            22
+          ],
+          "seedPersistenceAction": "REQUIRES_SEPARATE_SCOPED_SEED_RECONCILIATION",
+          "productionWriteRequired": false
+        }
+      ],
+      "rationaleFollowup": {
+        "field": "attributionRationale",
+        "outsideOriginal603": true,
+        "disposition": "SOURCE_SUPPORTED_METADATA_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+        "currentValue": "Matched supplemental ownership detail: Firm: 3i Group | Fund: 3i North American Infrastructure Fund | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+        "reason": "The rationale says the disclosed fund does not match the curated fund database, despite the exact existing fund link and issuer-confirmed NAIF holding. Replace only that stale metadata under separate safeguards; do not change stake."
+      },
+      "wholeCompanyAdjudicationComplete": false
+    },
+    {
+      "sequence": 2,
+      "companyId": "cmrxpj41b00fvivhe1q7x5nxw",
+      "ownerId": "cmrxpjp3601caivhek02rzmhq",
+      "recordId": "OFA-7622B7199679",
+      "proposalSha256": "0ab0d7ccb7118fcab01d0dadf5fc843e098a41ea0d02a4447e9c32e31d4ec009",
+      "companyName": "EC Waste",
+      "candidateSha256": "f3d6197f078ff38b6ababd468ca925b99a7ad75f3aabea8774261cf05416a7b2",
+      "approvalSha256": "f86ace7fa8a8a9eadad7c458852b44cfaf543af447212286f5a0cfecd177ccef",
+      "receiptSha256": "8831e835b6e791acb86a4b875665abddc86d64ffacc67b8d9072781fe9afab42",
+      "semanticCompanySha256": "76c78d681c61fe709bb9a472f91e904d8299c0b8fbd45354376ae6bbc4b6ab94",
+      "current": {
+        "linkedFundName": "3i NA Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "3i NA Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: 3i Group | Fund: 3i North American Infrastructure Fund | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "3i North American Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: 3i Group | Fund: 3i North American Infrastructure Fund | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "fieldDecisions": [
+        {
+          "field": "fundName",
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_CANONICAL_ALIAS",
+          "productionValue": "3i NA Infrastructure Fund",
+          "seedValue": null,
+          "sourceUrl": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "sourcePdfSha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+          "oneBasedPages": [
+            21,
+            22
+          ],
+          "seedPersistenceAction": "REQUIRES_SEPARATE_SCOPED_SEED_RECONCILIATION",
+          "productionWriteRequired": false
+        },
+        {
+          "field": "attributedFundName",
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_CANONICAL_ALIAS",
+          "productionValue": "3i NA Infrastructure Fund",
+          "seedValue": "3i North American Infrastructure Fund",
+          "sourceUrl": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "sourcePdfSha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+          "oneBasedPages": [
+            21,
+            22
+          ],
+          "seedPersistenceAction": "REQUIRES_SEPARATE_SCOPED_SEED_RECONCILIATION",
+          "productionWriteRequired": false
+        }
+      ],
+      "rationaleFollowup": {
+        "field": "attributionRationale",
+        "outsideOriginal603": true,
+        "disposition": "SOURCE_SUPPORTED_METADATA_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+        "currentValue": "Matched supplemental ownership detail: Firm: 3i Group | Fund: 3i North American Infrastructure Fund | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+        "reason": "The rationale says the disclosed fund does not match the curated fund database, despite the exact existing fund link and issuer-confirmed NAIF holding. Replace only that stale metadata under separate safeguards; do not change stake."
+      },
+      "wholeCompanyAdjudicationComplete": false
+    },
+    {
+      "sequence": 3,
+      "companyId": "cmrxpj41q00fwivhexqyc15b2",
+      "ownerId": "cmrxpjp3t01cbivhertzicggz",
+      "recordId": "OFA-CBBD8E860C97",
+      "proposalSha256": "105fd7716797e82a693a8be6147c0388655aecdb42722994b0e50143c1d8a0f4",
+      "companyName": "Regional Rail, LLC",
+      "candidateSha256": "70ab2b6bf0b35c7896e6256d9f1b801974d90bb3627f9a1cd4b3aed9dee37e94",
+      "approvalSha256": "d63d307a3fe565df541f292acd509a44431fd960f1aeb52e3dfc0b23cf201220",
+      "receiptSha256": "3db19136d1ff3d63e844f4f15035573865372896b61633c65219bf431376e943",
+      "semanticCompanySha256": "f1a4c761eb7ede4631574623241313d552d8ca7008a55ab264463561cabb176c",
+      "current": {
+        "linkedFundName": "3i NA Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "3i NA Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: 3i Group | Fund: 3i North American Infrastructure Fund | Ownership Interest: 100% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "3i North American Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: 3i Group | Fund: 3i North American Infrastructure Fund | Ownership Interest: 100% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "fieldDecisions": [
+        {
+          "field": "fundName",
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_CANONICAL_ALIAS",
+          "productionValue": "3i NA Infrastructure Fund",
+          "seedValue": null,
+          "sourceUrl": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "sourcePdfSha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+          "oneBasedPages": [
+            21,
+            22
+          ],
+          "seedPersistenceAction": "REQUIRES_SEPARATE_SCOPED_SEED_RECONCILIATION",
+          "productionWriteRequired": false
+        },
+        {
+          "field": "attributedFundName",
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_CANONICAL_ALIAS",
+          "productionValue": "3i NA Infrastructure Fund",
+          "seedValue": "3i North American Infrastructure Fund",
+          "sourceUrl": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+          "sourcePdfSha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+          "oneBasedPages": [
+            21,
+            22
+          ],
+          "seedPersistenceAction": "REQUIRES_SEPARATE_SCOPED_SEED_RECONCILIATION",
+          "productionWriteRequired": false
+        }
+      ],
+      "rationaleFollowup": {
+        "field": "attributionRationale",
+        "outsideOriginal603": true,
+        "disposition": "SOURCE_SUPPORTED_METADATA_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+        "currentValue": "Matched supplemental ownership detail: Firm: 3i Group | Fund: 3i North American Infrastructure Fund | Ownership Interest: 100% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+        "reason": "The old rationale asserts 100% despite the later approved canonical null stake and explicit removal of that unsupported assertion; its distinct-unmatched-fund assertion is also stale. Preserve the null stake."
+      },
+      "wholeCompanyAdjudicationComplete": false
+    }
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "bce1f58a96a231d803fee2e3aab5e6a3b00cb28a",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "b881db4995ae8155c5b8cea25c50c211fe3df95e99ec5e06680d7b6870061c55",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0001-amwaste-llc-v4.json",
+      "sha256": "4193b6d49cf895480b29519ac00517bfc9e24e9b4ef30302598026ea6dff1d2f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0002-ec-waste-v1.json",
+      "sha256": "25cb8d638a606be548ddbcdfd0db068e866b04b4f9bb379abf12218fc965b45b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0003-regional-rail-llc-v3.json",
+      "sha256": "1918be9040ac0d0025916bf6b98a896ba09d724340689f24f83aaf302ac9dd3c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/recoveries/0001-amwaste/apply-receipt.json",
+      "sha256": "6b335b36fa4d004b318313bd323be211aa2af7a3ba59e77e9e0a705728f0c249"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0002-ec-waste/production-apply/apply-receipt.json",
+      "sha256": "ab93bd6d0e6548a203dbade40bd0df162d801efe2148d840a9e481d0258c6665"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0003-regional-rail-llc/production-apply/apply-receipt.json",
+      "sha256": "554ac44c386d61802616bf67016a2b18074e9dcf98b12ffe5b20c756740c3dc0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0001-amwaste-llc-v4/proposal.json",
+      "sha256": "a482c4ee4a663c81ea05326f84c5acb339069cf40ecec22814bd5420988d5481"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0002-ec-waste-v1/proposal.json",
+      "sha256": "a4715c31032245f440292f13d59c6e5b93039225366bc05a0273535d7a4fc4e8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0003-regional-rail-llc-v3/proposal.json",
+      "sha256": "ae102c239c3c7e8b63b8066bad85bb5a13e6738a13bb9b6c1c6b5cef0e58bf01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/funds.manifest.json",
+      "sha256": "6cce21787660a2d096e2836ddfae7f7fbc1ec60697ce5446de07c431055fd902"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    }
+  ],
+  "sourceCaptureSha256": "3857a09aa2b28e76b2ac502ee200d986e3afad721dfba9ea40f89f7f29c7f017",
+  "visualReview": {
+    "oneBasedPages": [
+      21,
+      22
+    ],
+    "method": "PDF pages rendered to PNG and visually inspected by the agent; table label, footnote marker and company grouping confirmed."
+  },
+  "reportSha256": "31d13f51c2bfc1450abba8345a692feb9a30e9717b52b9700e78ade0dce6b8ee"
+}
