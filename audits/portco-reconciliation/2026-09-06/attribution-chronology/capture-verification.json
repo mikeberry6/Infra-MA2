@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-09-06T06:23:19.910Z",
+  "canonicalDeployment": {
+    "id": "dpl_Ep88nnoLvAv1mSfXrhuZEjEBMmN7",
+    "url": "infra-ma-2-2j6k8ro9a-mberry.vercel.app",
+    "gitSource": {
+      "ref": "main",
+      "repoId": 1143556044,
+      "sha": "cba48dfc4c46af5f574cb87320a95bfb7641c4fe",
+      "type": "github",
+      "prId": null
+    },
+    "aliases": [
+      "infra-ma-2.vercel.app",
+      "infra-ma-2-git-main-mberry.vercel.app"
+    ],
+    "readyState": "READY",
+    "target": "production"
+  },
+  "target": {
+    "label": "production-readonly",
+    "fingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929"
+  },
+  "reportSha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/final-reconciliation/reconciliation-diagnostic-v3.json",
+      "sha256": "2d4c36867f556c12ed8fcbfc709cfe452cffc6da13bb8ef75fe19f7e9840c60f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/owner-semantic-contract/audit.json",
+      "sha256": "13ae0d7ebf66b238336c7ec97a4cc474f547f4603350ca5a0b2b30b3e52f8173"
+    },
+    {
+      "path": "scripts/portco-reconciliation/attribution-chronology.ts",
+      "sha256": "d152b24354bfc5ef8ecb5a189d716b840586dbd7c23da7db80d73d10c28091d6"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceTransitions": 0,
+  "databaseWrites": 0
+}
