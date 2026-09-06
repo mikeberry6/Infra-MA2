@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+  "taskIndex": 453,
+  "companyName": "American Inland Marine Holdings",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-06T01:41:51.500Z",
+  "rationale": "Identity, company boundary and Wafra direct ownership remain unresolved; only ARF→AIM fund ownership and Tsai governance are proven.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/locked-453-task-snapshot.json",
+    "sha256": "19d307edb83ff598175ff45785a93516a4ace8282927a7ea0e57e15f71a4fc16"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/application-research-decision.json",
+    "sha256": "e9fdba717ee9bf25c6ed62b4e80b93b839866097e5aed17a15969d00a714a81c"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/source-verification.json",
+    "sha256": "26741d89deb802b5fbfce62ad01d9ad1c4d815eaa4d4933cda073cd28e542f53"
+  },
+  "evidence": [
+    {
+      "url": "https://reports.adviserinfo.sec.gov/reports/ADV/300186/PDF/300186.pdf",
+      "purpose": "2026-08-21 filing; dated boundary, 82% and GAV note."
+    },
+    {
+      "url": "https://reports.adviserinfo.sec.gov/reports/foia/advFilingData/2025/ADV_Filing_Data_20250301_20250331.zip",
+      "purpose": "2025-03-28 historical filing."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1959034/000195903426000002/xslFormDX01/primary_doc.xml",
+      "purpose": "Current issuer, fund, offering and governance."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1959034/000195903422000002/xslFormDX01/primary_doc.xml",
+      "purpose": "First-sale/holder history."
+    },
+    {
+      "url": "https://www.wafra.com/our-people/edward-tsai/",
+      "purpose": "Exact label and board role only."
+    },
+    {
+      "url": "https://www.floridamarine.com/mpx-222-coi-09-27-2028-2/",
+      "purpose": "Vessel owner/operator distinction; no parent."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "b88f07c537d568c8ed83c1315342a48439692a240db8c8948a41dfdb487a8356"
+}

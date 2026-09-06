@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0450-0456-v1",
+  "createdAt": "2026-09-06T01:41:52.454Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "419c8049276cbc93ebe6f8942c69524fc514553f94f0736533a3eafa7f38ad3c"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+      "taskIndex": 450,
+      "companyName": "UBS ERCOT Battery Storage Portfolio",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "a84107be54c0e2d8bfc9cd786c96b2fd94405573c60b14879638d6eb0cb7a9af"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+      "taskIndex": 452,
+      "companyName": "TeraWatt Infrastructure",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "8c0167f8144f0d1f4b5816dbbbd78c38ae599ae319a9c2e09759c5b1c2884e22"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+      "taskIndex": 453,
+      "companyName": "American Inland Marine Holdings",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "b88f07c537d568c8ed83c1315342a48439692a240db8c8948a41dfdb487a8356"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+      "taskIndex": 454,
+      "companyName": "Beyond Data Centers",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "eac9ba83a5bc76c9d1b2e6246403196b5e9d3d6d0f0bc0699086efdc7fecfc82"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+      "taskIndex": 456,
+      "companyName": "Crescent Louisiana Midstream",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "5440749b4b2a177c3f8748a1272a73a847e2c9f6b84312098f751e827cfdc344"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "5db163846676a94b2e7783cb07b748f8efa1fa0b8a41fc9227f820b4ef8ecdfc"
+}

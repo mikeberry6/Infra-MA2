@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-05T20:39:05.000Z",
+  "updatedAt": "2026-09-06T01:42:22.437Z",
   "runStatus": "COMPLETE_WITH_EXCEPTIONS",
   "activeTaskId": null,
   "source": {
@@ -45567,28 +45567,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "71e1b351d0e16223e3d16f8810acd16a7184b4ced2e5a00ddf2b4a04ac6280ad",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-03T12:42:00.000Z",
-      "updatedAt": "2026-09-03T13:20:00.000Z",
-      "completedAt": "2026-09-03T13:20:00.000Z",
-      "exceptionReason": "Research confirmed a November 2021 UBS Asset Management acquisition of a five-project ERCOT battery portfolio through its infrastructure/real-assets business, but the exact continuing manager-level legal boundary and current legal ownership of each original project could not be established from the completed evidence. Later public disclosures reference UBS-managed ERCOT portfolios of different sizes (including later 400 MW and ~730 MW portfolios), preventing a reliable one-to-one mapping of the original five assets.",
+      "attempts": 2,
+      "startedAt": "2026-09-06T01:40:41.611Z",
+      "updatedAt": "2026-09-06T01:42:22.437Z",
+      "completedAt": "2026-09-06T01:42:22.437Z",
+      "exceptionReason": "Current four-project identity and ESIF ownership are high-confidence; six/930 reconciliation is medium-confidence; original-five identity and continuity are low-confidence. Creating a list record would synthesize unresolved identity and ownership.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "edbb33803907198a36f0b8153f299b5950cc038a23c5c295964e7f6afa424d2d",
+      "taskSnapshotSha256": "48b6d6c1d79b92043fcd12617e6dd7c3e0e47a76a5cd1eecc60c4077b0da8fa7",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "edbb33803907198a36f0b8153f299b5950cc038a23c5c295964e7f6afa424d2d"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/locked-450-task-snapshot.json",
+          "sha256": "48b6d6c1d79b92043fcd12617e6dd7c3e0e47a76a5cd1eecc60c4077b0da8fa7"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/terminal-decision-v1.json",
-          "sha256": "36c3d19f6df899de00093fb5196cf59c82046ff842d0171b1824d757393101ea"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "a84107be54c0e2d8bfc9cd786c96b2fd94405573c60b14879638d6eb0cb7a9af"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-06T01:40:39.326Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "priorCompletedAt": "2026-09-03T13:20:00.000Z",
+          "priorExceptionReason": "Research confirmed a November 2021 UBS Asset Management acquisition of a five-project ERCOT battery portfolio through its infrastructure/real-assets business, but the exact continuing manager-level legal boundary and current legal ownership of each original project could not be established from the completed evidence. Later public disclosures reference UBS-managed ERCOT portfolios of different sizes (including later 400 MW and ~730 MW portfolios), preventing a reliable one-to-one mapping of the original five assets.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "edbb33803907198a36f0b8153f299b5950cc038a23c5c295964e7f6afa424d2d"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/terminal-decision-v1.json",
+              "sha256": "36c3d19f6df899de00093fb5196cf59c82046ff842d0171b1824d757393101ea"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "55e06e0bbf0264048b4a3ae6369931bc2cf0be56797d03644bf5eb8b32ebbd4a",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/research-decision.json",
+              "sha256": "a3a254e22370d9e920bec7c5aef489e51a368c9ff2aeaf424a4a84cfa1fd3295"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-attestation.json",
+              "sha256": "2acd72ee5aa3e441208d24118dbd778dae1bbc60eb59339a6001d18700c16e1c"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "2871510844fed833ef120c825b2639b8ff5c573c12c04b03248623cf6ba0d5f2"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-transcript.txt",
+              "sha256": "805406203110679d7ea2bf13a0266f54cd247ee603ec9ea3627f027b1644bd65"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-verification.json",
+              "sha256": "b368682379b320847df8415c6e43d3464cff7f83d71f126aca763d36bc07dace"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-response-validation.json",
+              "sha256": "45c8fcec5e6c4a174210d9a775bbd67ce10a06f9f13c6f312c4b0822ca77640d"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -45612,6 +45670,40 @@
             "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8",
             "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef",
             "edbb33803907198a36f0b8153f299b5950cc038a23c5c295964e7f6afa424d2d"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-06T01:40:39.326Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "2871510844fed833ef120c825b2639b8ff5c573c12c04b03248623cf6ba0d5f2",
+            "2acd72ee5aa3e441208d24118dbd778dae1bbc60eb59339a6001d18700c16e1c",
+            "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80",
+            "45c8fcec5e6c4a174210d9a775bbd67ce10a06f9f13c6f312c4b0822ca77640d",
+            "805406203110679d7ea2bf13a0266f54cd247ee603ec9ea3627f027b1644bd65",
+            "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a",
+            "a3a254e22370d9e920bec7c5aef489e51a368c9ff2aeaf424a4a84cfa1fd3295",
+            "b368682379b320847df8415c6e43d3464cff7f83d71f126aca763d36bc07dace"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-06T01:42:22.437Z",
+          "reason": "Current four-project identity and ESIF ownership are high-confidence; six/930 reconciliation is medium-confidence; original-five identity and continuity are low-confidence. Creating a list record would synthesize unresolved identity and ownership.",
+          "taskSnapshotSha256": "48b6d6c1d79b92043fcd12617e6dd7c3e0e47a76a5cd1eecc60c4077b0da8fa7",
+          "evidenceSha256": [
+            "3d680da8d49395bdb71a91f4b8e5250792fbae9defb59c32f0a669779453362e",
+            "48b6d6c1d79b92043fcd12617e6dd7c3e0e47a76a5cd1eecc60c4077b0da8fa7",
+            "5db163846676a94b2e7783cb07b748f8efa1fa0b8a41fc9227f820b4ef8ecdfc",
+            "a84107be54c0e2d8bfc9cd786c96b2fd94405573c60b14879638d6eb0cb7a9af"
           ],
           "kind": "BATCH"
         }
@@ -45703,28 +45795,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "0d92e5b1319a46925d2e8ff786e34d7a797bed3bed3345c678311de5c2548ee4",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-03T12:42:00.000Z",
-      "updatedAt": "2026-09-03T13:20:00.000Z",
-      "completedAt": "2026-09-03T13:20:00.000Z",
-      "exceptionReason": "Research supports that Vision Ridge participated through a direct company-level financing announced in September 2022 alongside Keyframe and Cyrus. The release described over US$1bn of committed capital, while the SEC Form D separately reported US$61.048601m of issuer equity sold beginning 2022-08-12. June 2026 financing was debt only. Vision Ridge appears to correspond to an existing Vision Ridge Capital Partners alias, but current ownership continuity for every historical co-investor cannot be proven from direct current disclosures without guessing.",
+      "attempts": 2,
+      "startedAt": "2026-09-06T01:40:41.611Z",
+      "updatedAt": "2026-09-06T01:42:22.437Z",
+      "completedAt": "2026-09-06T01:42:22.437Z",
+      "exceptionReason": "Existing company and Vision Ridge/SAF III row are supported, but public evidence cannot resolve current Keyframe/Cyrus company equity.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "84508fed86740af19b386884b6115c911ff36116084dc1b36656d43b693f89f6",
+      "taskSnapshotSha256": "7b9f47b92cc4a96e2701f82c50a65c647afa35fd66f4a5e709660b2c7e7f69e1",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "84508fed86740af19b386884b6115c911ff36116084dc1b36656d43b693f89f6"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/locked-452-task-snapshot.json",
+          "sha256": "7b9f47b92cc4a96e2701f82c50a65c647afa35fd66f4a5e709660b2c7e7f69e1"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/terminal-decision-v1.json",
-          "sha256": "c22c949a99758d6e7de60a7002deb53552cdb09fc9f87ccd0e47f41fbea60cac"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "8c0167f8144f0d1f4b5816dbbbd78c38ae599ae319a9c2e09759c5b1c2884e22"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-06T01:40:39.889Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "priorCompletedAt": "2026-09-03T13:20:00.000Z",
+          "priorExceptionReason": "Research supports that Vision Ridge participated through a direct company-level financing announced in September 2022 alongside Keyframe and Cyrus. The release described over US$1bn of committed capital, while the SEC Form D separately reported US$61.048601m of issuer equity sold beginning 2022-08-12. June 2026 financing was debt only. Vision Ridge appears to correspond to an existing Vision Ridge Capital Partners alias, but current ownership continuity for every historical co-investor cannot be proven from direct current disclosures without guessing.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "84508fed86740af19b386884b6115c911ff36116084dc1b36656d43b693f89f6"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/terminal-decision-v1.json",
+              "sha256": "c22c949a99758d6e7de60a7002deb53552cdb09fc9f87ccd0e47f41fbea60cac"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "c74faabd2f90845ee1865eb2af92999167180592bff7234fae854d37a5f8babb",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/research-decision.json",
+              "sha256": "1710454a0ec72d88a02357241492c01aa9c6e5d983cba00b6f49da72e0d7931a"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-attestation.json",
+              "sha256": "5c7e2f0f46af73f4aa9f405487a4b05ea145186447a6f92c3af08614719e11cc"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "ba7f93401569239349bd92cef51a8d36ba6c44446a021ba24dd264ea519615f2"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "5cffee10e3675b8ce36fe1c7e011366260a4be33f47e2b120df95e6a984768b8"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-transcript.txt",
+              "sha256": "e9b44b097487a2d944ebb9d90d1c628ac4dacf9467168908b673c4aec8e4cc62"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/source-verification.json",
+              "sha256": "4fce3eac13a026299d5f6775102803d6ecac879d3ab2053fc7ca083dd733b2a6"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-response-validation.json",
+              "sha256": "ac0f2e4ca6f728271c44b548a322e59800e77e0a5de1fbcaba2b9ac9dcd4b423"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -45750,6 +45900,40 @@
             "c22c949a99758d6e7de60a7002deb53552cdb09fc9f87ccd0e47f41fbea60cac"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-06T01:40:39.889Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "1710454a0ec72d88a02357241492c01aa9c6e5d983cba00b6f49da72e0d7931a",
+            "4fce3eac13a026299d5f6775102803d6ecac879d3ab2053fc7ca083dd733b2a6",
+            "5c7e2f0f46af73f4aa9f405487a4b05ea145186447a6f92c3af08614719e11cc",
+            "5cffee10e3675b8ce36fe1c7e011366260a4be33f47e2b120df95e6a984768b8",
+            "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a",
+            "ac0f2e4ca6f728271c44b548a322e59800e77e0a5de1fbcaba2b9ac9dcd4b423",
+            "ba7f93401569239349bd92cef51a8d36ba6c44446a021ba24dd264ea519615f2",
+            "e9b44b097487a2d944ebb9d90d1c628ac4dacf9467168908b673c4aec8e4cc62"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-06T01:42:22.437Z",
+          "reason": "Existing company and Vision Ridge/SAF III row are supported, but public evidence cannot resolve current Keyframe/Cyrus company equity.",
+          "taskSnapshotSha256": "7b9f47b92cc4a96e2701f82c50a65c647afa35fd66f4a5e709660b2c7e7f69e1",
+          "evidenceSha256": [
+            "3d680da8d49395bdb71a91f4b8e5250792fbae9defb59c32f0a669779453362e",
+            "5db163846676a94b2e7783cb07b748f8efa1fa0b8a41fc9227f820b4ef8ecdfc",
+            "7b9f47b92cc4a96e2701f82c50a65c647afa35fd66f4a5e709660b2c7e7f69e1",
+            "8c0167f8144f0d1f4b5816dbbbd78c38ae599ae319a9c2e09759c5b1c2884e22"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -45762,28 +45946,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ac2ebede4f9e7faa358ac8ebe8a8758bd3b1cdca561224f2d35601f9abbbed56",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-03T12:42:00.000Z",
-      "updatedAt": "2026-09-03T13:20:00.000Z",
-      "completedAt": "2026-09-03T13:20:00.000Z",
-      "exceptionReason": "Available research did not resolve a legally identifiable operating company with direct current Wafra ownership. Public Wafra materials referenced the platform only indirectly and did not establish the ownership vehicle, operating-company boundary or current in-scope infrastructure ownership. To avoid creating an unsupported portfolio entry, the company should remain unresolved.",
+      "attempts": 2,
+      "startedAt": "2026-09-06T01:40:41.611Z",
+      "updatedAt": "2026-09-06T01:42:22.437Z",
+      "completedAt": "2026-09-06T01:42:22.437Z",
+      "exceptionReason": "Identity, company boundary and Wafra direct ownership remain unresolved; only ARF→AIM fund ownership and Tsai governance are proven.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "2c98d3e4324520204c2363beab0667f9e7bdf6fbdcabcfa9710791dcaa358c9a",
+      "taskSnapshotSha256": "567b9acafddcc46dfbc673d584388ca5282b11b2416aefcaa887e820a8a12671",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "2c98d3e4324520204c2363beab0667f9e7bdf6fbdcabcfa9710791dcaa358c9a"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/locked-453-task-snapshot.json",
+          "sha256": "567b9acafddcc46dfbc673d584388ca5282b11b2416aefcaa887e820a8a12671"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/terminal-decision-v1.json",
-          "sha256": "b5f983159115695bfb215c30e179adb90952857138f7dcac1ab0b898c45a3285"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "b88f07c537d568c8ed83c1315342a48439692a240db8c8948a41dfdb487a8356"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-06T01:40:40.308Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "priorCompletedAt": "2026-09-03T13:20:00.000Z",
+          "priorExceptionReason": "Available research did not resolve a legally identifiable operating company with direct current Wafra ownership. Public Wafra materials referenced the platform only indirectly and did not establish the ownership vehicle, operating-company boundary or current in-scope infrastructure ownership. To avoid creating an unsupported portfolio entry, the company should remain unresolved.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "2c98d3e4324520204c2363beab0667f9e7bdf6fbdcabcfa9710791dcaa358c9a"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/terminal-decision-v1.json",
+              "sha256": "b5f983159115695bfb215c30e179adb90952857138f7dcac1ab0b898c45a3285"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "f30328d088c0c962c03fbe890a909cdc4e07e7549c089d7bb925f414071b3493",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/research-decision.json",
+              "sha256": "aadc0470b8e90fa79619d39e87c1b3055cbb93d01bccbb86b051449841e95112"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-attestation.json",
+              "sha256": "2bdf254695979483280846c1ac678bc895a6bc954fac4657d3a4ae63a684ad84"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "6eea38b18fee83649e281c02327ed3ae00787eae28f1340cf73e6f68ab44e266"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "28e8e129f9832b7b4afef2fa38514a39b80578b08b786a4c9c804dffd407631e"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-transcript.txt",
+              "sha256": "382ce50f879996b0607ffc40d63607bbfd5edf9be91d43295cc7cd4aad12f2b8"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/source-verification.json",
+              "sha256": "26741d89deb802b5fbfce62ad01d9ad1c4d815eaa4d4933cda073cd28e542f53"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-response-validation.json",
+              "sha256": "1be1b181b59eeccb6963af963cdda49eb46fd8b21d0c81a5d5ea0d96846d6f4d"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -45809,6 +46051,40 @@
             "b5f983159115695bfb215c30e179adb90952857138f7dcac1ab0b898c45a3285"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-06T01:40:40.308Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "1be1b181b59eeccb6963af963cdda49eb46fd8b21d0c81a5d5ea0d96846d6f4d",
+            "26741d89deb802b5fbfce62ad01d9ad1c4d815eaa4d4933cda073cd28e542f53",
+            "28e8e129f9832b7b4afef2fa38514a39b80578b08b786a4c9c804dffd407631e",
+            "2bdf254695979483280846c1ac678bc895a6bc954fac4657d3a4ae63a684ad84",
+            "382ce50f879996b0607ffc40d63607bbfd5edf9be91d43295cc7cd4aad12f2b8",
+            "6eea38b18fee83649e281c02327ed3ae00787eae28f1340cf73e6f68ab44e266",
+            "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a",
+            "aadc0470b8e90fa79619d39e87c1b3055cbb93d01bccbb86b051449841e95112"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-06T01:42:22.437Z",
+          "reason": "Identity, company boundary and Wafra direct ownership remain unresolved; only ARF→AIM fund ownership and Tsai governance are proven.",
+          "taskSnapshotSha256": "567b9acafddcc46dfbc673d584388ca5282b11b2416aefcaa887e820a8a12671",
+          "evidenceSha256": [
+            "3d680da8d49395bdb71a91f4b8e5250792fbae9defb59c32f0a669779453362e",
+            "567b9acafddcc46dfbc673d584388ca5282b11b2416aefcaa887e820a8a12671",
+            "5db163846676a94b2e7783cb07b748f8efa1fa0b8a41fc9227f820b4ef8ecdfc",
+            "b88f07c537d568c8ed83c1315342a48439692a240db8c8948a41dfdb487a8356"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -45821,28 +46097,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "238fae3fe5e8c13dee4bbc19eef63c29868d42679b81088eafa1dc68d58db1b9",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-03T13:31:14.000Z",
-      "updatedAt": "2026-09-03T14:18:00.000Z",
-      "completedAt": "2026-09-03T14:18:00.000Z",
-      "exceptionReason": "The available research did not establish with sufficient direct evidence the legal entity boundary, current Wafra ownership, investment vehicle, or qualifying infrastructure ownership required to add a new portfolio company. Evidence supports that Beyond Data Centers exists as a branded platform, but material ownership and transaction facts remain unresolved.",
+      "attempts": 2,
+      "startedAt": "2026-09-06T01:40:41.611Z",
+      "updatedAt": "2026-09-06T01:42:22.437Z",
+      "completedAt": "2026-09-06T01:42:22.437Z",
+      "exceptionReason": "Identity and qualifying activity are resolved; no direct source proves Wafra's legal holder, instrument, stake/control, close or current continuity.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "75d5983fa00ad538f7198c04514688743d8552192ba8f3fff659b5771fb17432",
+      "taskSnapshotSha256": "b6537d0d3f2b7d8d571bbe6a4c16593b098a10863bb8e1d8b081ef72268df584",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "75d5983fa00ad538f7198c04514688743d8552192ba8f3fff659b5771fb17432"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/locked-454-task-snapshot.json",
+          "sha256": "b6537d0d3f2b7d8d571bbe6a4c16593b098a10863bb8e1d8b081ef72268df584"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-1/terminal-decision-v1.json",
-          "sha256": "6655cfaf1c0f73a68bc28e9828908487be0ac66b75606a2373e00f3c2a87acec"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "eac9ba83a5bc76c9d1b2e6246403196b5e9d3d6d0f0bc0699086efdc7fecfc82"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-06T01:40:40.732Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "priorCompletedAt": "2026-09-03T14:18:00.000Z",
+          "priorExceptionReason": "The available research did not establish with sufficient direct evidence the legal entity boundary, current Wafra ownership, investment vehicle, or qualifying infrastructure ownership required to add a new portfolio company. Evidence supports that Beyond Data Centers exists as a branded platform, but material ownership and transaction facts remain unresolved.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "75d5983fa00ad538f7198c04514688743d8552192ba8f3fff659b5771fb17432"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-1/terminal-decision-v1.json",
+              "sha256": "6655cfaf1c0f73a68bc28e9828908487be0ac66b75606a2373e00f3c2a87acec"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "cf1224e3657775d8acaaffc51a980e8e0345edad221fff3352d4995e8cad9e1d",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/research-decision.json",
+              "sha256": "356dd5052ae338e38e2856e741c8aea9cb664badcdc99dd1b5fe0e49348c6797"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/chatgpt-attestation.json",
+              "sha256": "e727b6755f2b49178aae3fed40568121134536ba915c7cfd94dafbc274d98d9c"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "20371b02f40089acb9f995a39f3c4d2c6ff9a30d2afdf4f74d573a3d9ea69fed"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "b2d850cef03dc12ea899f574a9cb7837bf9f173b01a2addc5ba5fc6bbfad2623"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/chatgpt-transcript.txt",
+              "sha256": "fe8fc5bc48ebf665bf062bfe176b19002c7b53d34a5de1072a84222460029df9"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/source-verification.json",
+              "sha256": "493cb89bd0e8842b200e579d499321c1e4b9844f1b9f60be21e1bad080f66375"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/chatgpt-response-validation.json",
+              "sha256": "72b42f25c4db140556c1cc69a394d729b690ebd606384a6961f2c6b361fdbef1"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -45866,6 +46200,40 @@
             "75d5983fa00ad538f7198c04514688743d8552192ba8f3fff659b5771fb17432",
             "75feedd0180de6ce6d9675d9c23e47002ed8bc898b72edd7d157ba0c881b688c",
             "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-06T01:40:40.732Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "20371b02f40089acb9f995a39f3c4d2c6ff9a30d2afdf4f74d573a3d9ea69fed",
+            "356dd5052ae338e38e2856e741c8aea9cb664badcdc99dd1b5fe0e49348c6797",
+            "493cb89bd0e8842b200e579d499321c1e4b9844f1b9f60be21e1bad080f66375",
+            "72b42f25c4db140556c1cc69a394d729b690ebd606384a6961f2c6b361fdbef1",
+            "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a",
+            "b2d850cef03dc12ea899f574a9cb7837bf9f173b01a2addc5ba5fc6bbfad2623",
+            "e727b6755f2b49178aae3fed40568121134536ba915c7cfd94dafbc274d98d9c",
+            "fe8fc5bc48ebf665bf062bfe176b19002c7b53d34a5de1072a84222460029df9"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-06T01:42:22.437Z",
+          "reason": "Identity and qualifying activity are resolved; no direct source proves Wafra's legal holder, instrument, stake/control, close or current continuity.",
+          "taskSnapshotSha256": "b6537d0d3f2b7d8d571bbe6a4c16593b098a10863bb8e1d8b081ef72268df584",
+          "evidenceSha256": [
+            "3d680da8d49395bdb71a91f4b8e5250792fbae9defb59c32f0a669779453362e",
+            "5db163846676a94b2e7783cb07b748f8efa1fa0b8a41fc9227f820b4ef8ecdfc",
+            "b6537d0d3f2b7d8d571bbe6a4c16593b098a10863bb8e1d8b081ef72268df584",
+            "eac9ba83a5bc76c9d1b2e6246403196b5e9d3d6d0f0bc0699086efdc7fecfc82"
           ],
           "kind": "BATCH"
         }
@@ -45957,28 +46325,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "654ec7c34e5babae3bfe1045528abd961ee2889328aac182692ce551f153c859",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-03T13:31:14.000Z",
-      "updatedAt": "2026-09-03T14:18:00.000Z",
-      "completedAt": "2026-09-03T14:18:00.000Z",
-      "exceptionReason": "Research confirmed Crescent Louisiana Midstream (CLM) is a legal operating entity within the broader Crescent Midstream structure and confirmed a current Wafra governance connection, but did not produce direct evidence establishing Wafra's current ownership vehicle, fund, stake, entry transaction or closing date. Public evidence therefore does not support adding CLM as a resolved Wafra manager-level portfolio company.",
+      "attempts": 2,
+      "startedAt": "2026-09-06T01:40:41.611Z",
+      "updatedAt": "2026-09-06T01:42:22.437Z",
+      "completedAt": "2026-09-06T01:42:22.437Z",
+      "exceptionReason": "CLM is distinct/active; member percentages and Wafra equity are unproved. Historical CLM 70% and current Holdings 68/32 are separate tiers.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "63f0dd9e4732a6ca84155dd5ecdac1cd4af0fa9b2073e2f269893839ba550fbb",
+      "taskSnapshotSha256": "cc79a709d20579d6ca63ba191d4b5232e99aee4188c9bb915cfd7d9998850949",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "63f0dd9e4732a6ca84155dd5ecdac1cd4af0fa9b2073e2f269893839ba550fbb"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/locked-456-task-snapshot.json",
+          "sha256": "cc79a709d20579d6ca63ba191d4b5232e99aee4188c9bb915cfd7d9998850949"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-1/terminal-decision-v1.json",
-          "sha256": "7288c648eae46f274fc3f56a51924b687da01b9a125b86c70c7766c83c157e29"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "5440749b4b2a177c3f8748a1272a73a847e2c9f6b84312098f751e827cfdc344"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-06T01:40:41.146Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "priorCompletedAt": "2026-09-03T14:18:00.000Z",
+          "priorExceptionReason": "Research confirmed Crescent Louisiana Midstream (CLM) is a legal operating entity within the broader Crescent Midstream structure and confirmed a current Wafra governance connection, but did not produce direct evidence establishing Wafra's current ownership vehicle, fund, stake, entry transaction or closing date. Public evidence therefore does not support adding CLM as a resolved Wafra manager-level portfolio company.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "63f0dd9e4732a6ca84155dd5ecdac1cd4af0fa9b2073e2f269893839ba550fbb"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-1/terminal-decision-v1.json",
+              "sha256": "7288c648eae46f274fc3f56a51924b687da01b9a125b86c70c7766c83c157e29"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "51b84d38c3e023157f839b54629fc857ea2db8311d677871b057cec0fa9a510d",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/research-decision.json",
+              "sha256": "78279b4d15c91bf248f3c98b20028599ab8bee6b3854f8cc40087189295f3c94"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-attestation.json",
+              "sha256": "5e39d4b50c975c09a5c4b01f5295e632996f399e95b8771c565e42916dde3cbf"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "b526edb5441ea3f9cdaf5c79cef0e126f4b200213389274d54ce509d07d3de14"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "a45a4c7c08fb1758032c3bf9faf805ec0f0bb5387c0d7f30c8daed90f0c5696f"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-transcript.txt",
+              "sha256": "319b166184b91deab18a4a404d77528bab64cb1732c6873bfab690b22ae3f735"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-verification.json",
+              "sha256": "069342c5164e3d00b39ab818733fa4fa14208ded77175053169154e72a75d94e"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-response-validation.json",
+              "sha256": "fa88231023fc7bcca0bc960be7b4570fea923fa70e28f9fc0728d6fb3127c415"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -46002,6 +46428,40 @@
             "7288c648eae46f274fc3f56a51924b687da01b9a125b86c70c7766c83c157e29",
             "75feedd0180de6ce6d9675d9c23e47002ed8bc898b72edd7d157ba0c881b688c",
             "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-06T01:40:41.146Z",
+          "reason": "Final five original deferrals assembled; dedicated ordered reopen for protected all-terminal release. Fresh exact exception; no database or seed write.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "069342c5164e3d00b39ab818733fa4fa14208ded77175053169154e72a75d94e",
+            "319b166184b91deab18a4a404d77528bab64cb1732c6873bfab690b22ae3f735",
+            "5e39d4b50c975c09a5c4b01f5295e632996f399e95b8771c565e42916dde3cbf",
+            "78279b4d15c91bf248f3c98b20028599ab8bee6b3854f8cc40087189295f3c94",
+            "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a",
+            "a45a4c7c08fb1758032c3bf9faf805ec0f0bb5387c0d7f30c8daed90f0c5696f",
+            "b526edb5441ea3f9cdaf5c79cef0e126f4b200213389274d54ce509d07d3de14",
+            "fa88231023fc7bcca0bc960be7b4570fea923fa70e28f9fc0728d6fb3127c415"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-06T01:42:22.437Z",
+          "reason": "CLM is distinct/active; member percentages and Wafra equity are unproved. Historical CLM 70% and current Holdings 68/32 are separate tiers.",
+          "taskSnapshotSha256": "cc79a709d20579d6ca63ba191d4b5232e99aee4188c9bb915cfd7d9998850949",
+          "evidenceSha256": [
+            "3d680da8d49395bdb71a91f4b8e5250792fbae9defb59c32f0a669779453362e",
+            "5440749b4b2a177c3f8748a1272a73a847e2c9f6b84312098f751e827cfdc344",
+            "5db163846676a94b2e7783cb07b748f8efa1fa0b8a41fc9227f820b4ef8ecdfc",
+            "cc79a709d20579d6ca63ba191d4b5232e99aee4188c9bb915cfd7d9998850949"
           ],
           "kind": "BATCH"
         }
@@ -48320,5 +48780,5 @@
       ]
     }
   ],
-  "manifestSha256": "55e06e0bbf0264048b4a3ae6369931bc2cf0be56797d03644bf5eb8b32ebbd4a"
+  "manifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07"
 }

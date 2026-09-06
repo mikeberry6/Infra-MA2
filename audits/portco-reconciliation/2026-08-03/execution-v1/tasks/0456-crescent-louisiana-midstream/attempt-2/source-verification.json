@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "runId": "portco-deferred-readjudication-2026-09-06",
+  "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+  "taskIndex": 456,
+  "companyName": "Crescent Louisiana Midstream",
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "checkedAt": "2026-09-06T01:36:21Z",
+  "method": "All ten URLs returned across evidence, identity and asset-transaction fields independently reopened and current raw bytes hashed. Relevant scanned PDF pages visually rendered/read. Ordinary public browser read Wafra, ratings and settled FERC docket; no access bypass.",
+  "sources": [
+    {
+      "sourceIndex": 1,
+      "url": "https://coraweb.sos.la.gov/CommercialSearch/CommercialSearchDetails.aspx?CharterID=1206129_E07908E5EC",
+      "finalUrl": "https://coraweb.sos.la.gov/CommercialSearch/CommercialSearchDetails.aspx?CharterID=1206129_E07908E5EC",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 33722,
+      "sha256": "9603596a138db23c6510d5a5d2670d56b42d9ff01ffc674485f6df920ad2dd26",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-1.html",
+      "fetchedAt": "2026-09-06T01:28:31.902Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "WORKING",
+      "applicationPrimary": true,
+      "verifiedClaims": [
+        "Current Louisiana registry confirms active non-Louisiana LLC 42367082Q, last annual report July 21, 2026, former Crimson Louisiana Midstream changed March 22, 2021, with Crescent Midstream LLC and Freepoint Louisiana Midstream LLC listed as members. It gives no percentage or ultimate owner."
+      ]
+    },
+    {
+      "sourceIndex": 2,
+      "url": "https://www.sec.gov/Archives/edgar/data/1347652/000134765221000050/corr2021prem14a.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1347652/000134765221000050/corr2021prem14a.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 2230809,
+      "sha256": "cea3ed099e77074cae2b8bffc07d402b068b363ad4dd459a2c9ed483b4c6abde",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-2.html",
+      "fetchedAt": "2026-09-06T01:28:31.947Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "2021 SEC proxy explicitly describes Crescent Midstream as wholly owned by Holdings and CLM as 70% owned by Crescent, plus Grier's direct/indirect 35.35%. These are historical disclosures. No assignment of the remaining 30% to Freepoint or Wafra and no current carry-forward of historical percentages."
+      ]
+    },
+    {
+      "sourceIndex": 3,
+      "url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3512918",
+      "finalUrl": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3512918",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 112312,
+      "sha256": "a290dfcd11c8d1829675d71adfbff54b581964fc58cf48cd8f4de309bb09337a",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-3.html",
+      "fetchedAt": "2026-09-06T01:28:31.948Z",
+      "sourceTier": "2-CREDIT",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "S&P's February 4, 2026 public article independently renders Holdings 68% Carlyle/32% Grier, CMIH wholly owned by Holdings and Operating wholly owned by CMIH controlling Crescent. This is a parent-tier credit description, not an audited CLM cap table or current Wafra investment."
+      ]
+    },
+    {
+      "sourceIndex": 4,
+      "url": "https://www.wafra.com/our-people/michael-coleman-2/",
+      "finalUrl": "https://www.wafra.com/our-people/michael-coleman-2/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5576,
+      "sha256": "5785f0760936d3006b107d185262978aa7b39b461550d2c4c5def9e5832fcf9d",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-4.html",
+      "fetchedAt": "2026-09-06T01:28:31.948Z",
+      "sourceTier": "1-PARTY",
+      "healthStatus": "BROWSER_WORKING_RAW_HTTP_403",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Wafra raw HTTP returned 403; the ordinary public browser independently displays Michael Coleman's current CLM board role and its text is hashed. Governance is not equity, holder, fund, security, stake, control or entry/close proof."
+      ],
+      "browserEvidence": {
+        "capturedAt": "2026-09-06T01:32:42.017Z",
+        "method": "ordinary public browser body.innerText",
+        "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-4-browser-visible.txt",
+        "rawDomSha256": "1be4117b367a95534d8437aa489995cfaa6721cccd9f0c82bbb504ef9bbeaaf3",
+        "fileSha256": "e19b25fd45681e9317adc319669dd11abda42340b6df388c43bda37f4f11fc7f",
+        "repositoryTerminalLfAdded": true
+      }
+    },
+    {
+      "sourceIndex": 5,
+      "url": "https://crescentmidstream.com/operations/",
+      "finalUrl": "https://crescentmidstream.com/operations/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 114437,
+      "sha256": "b6dd88a07628404e4bb01260b0a332cc8aeec99745aa53f5c58c7abd9cc9a19b",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-5.html",
+      "fetchedAt": "2026-09-06T01:28:31.949Z",
+      "sourceTier": "1-PARTY",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Company Operations directly identifies CLM as the onshore pipelines segment. Portfolio-level mileage and volumes are not attributed to CLM alone."
+      ]
+    },
+    {
+      "sourceIndex": 6,
+      "url": "https://public-inspection.federalregister.gov/2025-17990.pdf",
+      "finalUrl": "https://public-inspection.federalregister.gov/2025-17990.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 283904,
+      "sha256": "67ff671c2ff81de61464bc9a7237058cfd796eb3c6a0454eef170483607b06ee",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-6.pdf",
+      "fetchedAt": "2026-09-06T01:28:31.949Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Filed notice pages 1-3 independently read/rendered. Seller Kinetica, buyer CLM, September 4 application, November 12 protest deadline; no legal close."
+      ]
+    },
+    {
+      "sourceIndex": 7,
+      "url": "https://sonlite.dnr.state.la.us/ords/f?p=129:301:::::P301_CUP_NUM:P20260513",
+      "finalUrl": "https://sonlite.dnr.state.la.us/ords/f?p=129:301:::::P301_CUP_NUM:P20260513",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 20263,
+      "sha256": "6c3a4b808c26fc167cbc5ef421ecc3b932859e8332ca2bc7f8f553406af279f4",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-7.html",
+      "fetchedAt": "2026-09-06T01:28:31.950Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Louisiana tracker confirms P20260513 proposed 20-inch pipeline, Received - On Hold, hold entry July 21 and later analyst review August 14. This source does not itself name the applicant or support the model's 1.85-mile/9,011-foot or Clovelly-LOOP detail; those granular claims are excluded from independently verified application facts."
+      ]
+    },
+    {
+      "sourceIndex": 8,
+      "url": "https://www.denr.louisiana.gov/assets/OC/env_div/ep_waste_sec/Cresent-Midstream-Application/App-H.pdf",
+      "finalUrl": "https://www.denr.louisiana.gov/assets/OC/env_div/ep_waste_sec/Cresent-Midstream-Application/App-H.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 3004290,
+      "sha256": "6d4f8098291009b28a1d62dde11a304185fb6fe532b272ceb31852033e61d0e3",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-8.pdf",
+      "fetchedAt": "2026-09-06T01:28:31.950Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "State App-H scanned PDF pages 2-3 show an August 2025 revised narrative describing Crescent as GIGS subsidiary and a February 4, 2021 assignment: Holdings to Operating to GIGS property chain. It does not show a complete current equity chart reaching CLM. Do not confuse property assignment with CLM equity or a successor alias."
+      ]
+    },
+    {
+      "sourceIndex": 9,
+      "url": "https://www.ferc.gov/sites/default/files/2026-01/November%20MIR%202025.pdf",
+      "finalUrl": "https://www.ferc.gov/sites/default/files/2026-01/November%20MIR%202025.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 421086,
+      "sha256": "d877fba9b4ee274146009dbb3cb772bd79b29762559ef0ce9d6bb66002770c51",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-9.pdf",
+      "fetchedAt": "2026-09-06T01:28:31.950Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "November report page 1 independently read/rendered: Kinetica authorized to sell 24.37-mile line to CLM for planned crude conversion. Authorization only."
+      ]
+    },
+    {
+      "sourceIndex": 10,
+      "url": "https://elibrary.ferc.gov/eLibrary/docketsheet?docket_number=cp25-544",
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/docketsheet?docket_number=cp25-544",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 22464,
+      "sha256": "72b25a5a2cc851969cb29247854f90a2057a7f5b1f839f5a12e629bd50461612",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-10.html",
+      "fetchedAt": "2026-09-06T01:28:31.950Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "BROWSER_WORKING_RAW_HTTP_APP_SHELL",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "FERC normal browser eventually returns three entries through September 5, 2026: application, notice and environmental assessment, with no consummation entry displayed. Initial no-results loading state was not accepted. Raw HTTP is only the application shell. The docket search cutoff is September 5, not proof covering every September 6 filing or absence of a private close."
+      ],
+      "browserEvidence": {
+        "capturedAt": "2026-09-06T01:33:45.333Z",
+        "method": "ordinary public browser body.first.innerText after result settled",
+        "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-bytes/source-10-browser-visible.txt",
+        "rawDomSha256": "68c3f2e123d2182337ae7cd1d97ebeb758a77f734ebbdc3efe0d8fb59899875c",
+        "fileSha256": "0ebf56c7b26bf5f4a87b6111219524de7a8c0e941a0ce7b00d9e0f0aa36a6fae",
+        "repositoryTerminalLfAdded": true
+      }
+    }
+  ],
+  "applicationPrimaryCount": 1,
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedEvidenceBytesCaptured": true,
+    "exactlyOneApplicationPrimary": true,
+    "applicationPrimaryWorking": true,
+    "noMissingPrimary": true,
+    "sourceCount": 10,
+    "applicationPrimaryCount": 1
+  },
+  "primaryCitation": {"label":"LA SOS","url":"https://coraweb.sos.la.gov/CommercialSearch/CommercialSearchDetails.aspx?CharterID=1206129_E07908E5EC","purpose":"Identity/status/members","sourceTier":"T1","workingStatus":"LIVE","isRecommendedPrimary":true,"contentSha256":"9603596a138db23c6510d5a5d2670d56b42d9ff01ffc674485f6df920ad2dd26"},
+  "independentEvidenceAdjustments": [
+    "Current Louisiana registry confirms active non-Louisiana LLC 42367082Q, last annual report July 21, 2026, former Crimson Louisiana Midstream changed March 22, 2021, with Crescent Midstream LLC and Freepoint Louisiana Midstream LLC listed as members. It gives no percentage or ultimate owner.",
+    "2021 SEC proxy explicitly describes Crescent Midstream as wholly owned by Holdings and CLM as 70% owned by Crescent, plus Grier's direct/indirect 35.35%. These are historical disclosures. No assignment of the remaining 30% to Freepoint or Wafra and no current carry-forward of historical percentages.",
+    "S&P's February 4, 2026 public article independently renders Holdings 68% Carlyle/32% Grier, CMIH wholly owned by Holdings and Operating wholly owned by CMIH controlling Crescent. This is a parent-tier credit description, not an audited CLM cap table or current Wafra investment.",
+    "Wafra raw HTTP returned 403; the ordinary public browser independently displays Michael Coleman's current CLM board role and its text is hashed. Governance is not equity, holder, fund, security, stake, control or entry/close proof.",
+    "Company Operations directly identifies CLM as the onshore pipelines segment. Portfolio-level mileage and volumes are not attributed to CLM alone.",
+    "FERC filed notice page 1 identifies Kinetica as seller and CLM as buyer of about 24.37 miles of Line 526A-200. November 2025 FERC report page 1 confirms authorization and planned crude conversion, not legal close. November 13 follows the notice's November 12 protest deadline/by-rule mechanism; do not describe it as a separately obtained closing order.",
+    "FERC normal browser eventually returns three entries through September 5, 2026: application, notice and environmental assessment, with no consummation entry displayed. Initial no-results loading state was not accepted. Raw HTTP is only the application shell. The docket search cutoff is September 5, not proof covering every September 6 filing or absence of a private close.",
+    "Louisiana tracker confirms P20260513 proposed 20-inch pipeline, Received - On Hold, hold entry July 21 and later analyst review August 14. This source does not itself name the applicant or support the model's 1.85-mile/9,011-foot or Clovelly-LOOP detail; those granular claims are excluded from independently verified application facts.",
+    "State App-H scanned PDF pages 2-3 show an August 2025 revised narrative describing Crescent as GIGS subsidiary and a February 4, 2021 assignment: Holdings to Operating to GIGS property chain. It does not show a complete current equity chart reaching CLM. Do not confuse property assignment with CLM equity or a successor alias.",
+    "Model January 11, 2019 Carlyle closing, February 18, 2026 debt closing, and platform-board composition were not independently bound to a returned direct supporting source in this attempt and are not application facts. Retain DEFERRED; no Wafra owner, synthetic target, supersession or Deal Database row."
+  ],
+  "result": "PASS_WITH_EXACT_OWNERSHIP_EXCEPTION"
+}

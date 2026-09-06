@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+  "taskIndex": 450,
+  "companyName": "UBS ERCOT Battery Storage Portfolio",
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "conversationUrl": "https://chatgpt.com/c/6a9c80ff-9354-83ea-be59-d59cc9b825e9",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T20:52:15.109Z",
+  "initialCompletedObservedAt": "2026-09-05T21:55:30.694Z",
+  "initialReportedGenerationDuration": "PT39M35S",
+  "repairCount": 2,
+  "repairs": [
+    {
+      "submittedAt": "2026-09-05T21:57:38.928Z",
+      "completedObservedAt": "2026-09-05T21:59:58.328Z",
+      "reportedGenerationDuration": "PT1M",
+      "promptPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-format-repair-prompt.md",
+      "promptSha256": "7b067755b1e8fefe679ea7890ed83d7397326acaeb62626bdfdd81ca7ecebf85",
+      "responsePath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-format-repair-response-1.txt",
+      "responseSha256": "cfe217fd3eddb1de4b4eb4963d1faaeefbff9469d90864475f2c438c0ec6d674",
+      "outcome": "EXCEEDS_ORIGINAL_CHARACTER_LIMIT"
+    },
+    {
+      "submittedAt": "2026-09-05T22:01:31.150Z",
+      "completedObservedAt": "2026-09-05T22:02:59.092Z",
+      "reportedGenerationDuration": "PT28S",
+      "promptPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-format-repair-prompt-2.md",
+      "promptSha256": "af9811afde3cc37d95c4a5336c890b9d0e67328f34126be4b8da77067e217071",
+      "responsePath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-accepted-response.txt",
+      "responseSha256": "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80",
+      "outcome": "PASSES_ORIGINAL_7500_CHARACTER_CONTRACT"
+    }
+  ],
+  "initialOutcome": "OWNER_FIELDS_INCOMPLETE_AND_EVIDENCE_URL_ARRAYS",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_AFTER_TWO_FORMAT_REPAIRS",
+  "contentHashes": {
+    "promptSha256": "2871510844fed833ef120c825b2639b8ff5c573c12c04b03248623cf6ba0d5f2",
+    "initialResponseSha256": "df9c64bcb1e0d7d4dba31611abddd3063e1f8c9352b0f6c48270d1ba396adca9",
+    "repairPromptSha256": "7b067755b1e8fefe679ea7890ed83d7397326acaeb62626bdfdd81ca7ecebf85",
+    "acceptedResponseSha256": "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80",
+    "transcriptSha256": "805406203110679d7ea2bf13a0266f54cd247ee603ec9ea3627f027b1644bd65"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "One fresh primary research conversation; two format-only followups in that same conversation. Full prompt, original response, both repair prompts and all responses materialized in transcript. Initial response 7492 characters, first repair 8006, accepted repair 7464 excluding repository terminal LF. Second repair's 6200-character target was missed, but original mandatory 7500-character maximum passed. No raw response was silently normalized."
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+  "taskIndex": 450,
+  "companyName": "UBS ERCOT Battery Storage Portfolio",
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "validatedAt": "2026-09-05T22:07:07.893Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9c80ff-9354-83ea-be59-d59cc9b825e9",
+  "acceptedResponseSha256": "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80",
+  "valid": true,
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 7464,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": "MEDIUM",
+    "evidenceCount": 8,
+    "currentOrFormerOwnerRows": 3,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceUrlsAreSingleStrings": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80",
+    "result": "PASS"
+  },
+  "captureNormalization": {
+    "performed": false,
+    "semanticChanges": false,
+    "repairTurnsUsed": true,
+    "repairCount": 2
+  },
+  "priorResponses": [
+    {
+      "file": "chatgpt-initial-response.txt",
+      "characterCount": 7492,
+      "result": "FAIL_OWNER_KEYS_AND_URL_TYPES"
+    },
+    {
+      "file": "chatgpt-format-repair-response-1.txt",
+      "characterCount": 8006,
+      "result": "FAIL_CHARACTER_LIMIT"
+    }
+  ],
+  "secondRepairTighterTarget": {
+    "requested": 6200,
+    "actual": 7464,
+    "met": false,
+    "acceptedBasis": "Original immutable research contract maximum is 7500; all original structural safeguards pass."
+  },
+  "independentEvidenceAdjustments": [
+    "Direct UBS July 28, 2022 announcement proves the completed BMES acquisition of five development-stage ERCOT projects totaling 700 MW. It does not give the five-SPV schedule, separate legal close, legal buyer, stakes or fifth-asset path. The prior November-2021 acquisition conclusion is superseded as a research finding, not silently rewritten in old history.",
+    "The December 10, 2021 UBS page concerns team/strategy establishment. The April 14, 2022 FERC document is a petition submitted by UBS, not a Commission finding: its public PDF page 17 says the petitioner was in late-stage investment discussions. The public petition explains fund/GP/adviser roles; confidential organizational exhibits are not present.",
+    "The October 2024 UBS insight indeed says six/930 with 2021 timing and four named locations/730. It is not an executed original-project schedule and does not resolve that chronology/capacity mismatch.",
+    "PUCT McAllen registration filed November 17, 2025 directly names ESIF Devco LLC as McAllen's corporate parent and identifies five other affiliates across pages 6 and 9. Affiliate listing alone does not establish all affiliate direct/indirect equity percentages or the original BMES acquisition membership.",
+    "PUCT Ironman March 2026 affidavit, visually checked on PDF page 19, identifies Energy Storage Investment Fund I LP as direct or indirect member and UBS Asset Management (Americas) LLC as investment adviser and attorney in fact. It is not a complete holder register or 99%/1% Devco capitalization schedule. The response's 99/1 and every-SPV wholly-owned assertions are not independently established by the returned PDFs and are not application facts.",
+    "ERCOT November-2026 MORA published September 3 lists Al Pastor, Wigeon, Holy ESS, Jarvis and Carambola resource rows and Backbone under planned resources; page 21 was visually checked. MORA is a prospective operating-capacity report, not proof of current equity or exact acquisition/operating dates. Different rating bases must not be used as an executed asset bridge.",
+    "SMT's direct February 7, 2024 release discloses an unnamed approximately 400 MW sale; its Mission photo is not a sold-asset schedule. Captona's May 1, 2024 release confirms a closed preferred-equity investment over four projects/728 MW/1.06 GWh and mentions an equity partner but does not disclose that partner, the legal preferred-equity holder/layer, stakes, control or cutoff ownership.",
+    "No complete original-five schedule, fifth-asset transfer chain or current legal holder/fund chart was obtained. Preserve the raw model hypothesis separately and retain terminal DEFERRED only; do not create a synthetic portfolio, duplicate SPVs or infer current owners."
+  ],
+  "result": "PASS_WITH_EXACT_ORIGINAL_PROJECT_BOUNDARY_AND_CURRENT_HOLDER_EXCEPTION"
+}

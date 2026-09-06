@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "deferred-readjudication-v1",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+  "taskIndex": 453,
+  "companyName": "American Inland Marine Holdings",
+  "asOfDate": "2026-09-05",
+  "generatedAt": "2026-09-05T23:37:01Z",
+  "decision": "DEFERRED",
+  "modelDecision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "linkedTaskIdsCovered": [],
+  "acceptedResponseSha256": "28e8e129f9832b7b4afef2fa38514a39b80578b08b786a4c9c804dffd407631e",
+  "summary": "Direct evidence establishes a dated ARF/AIM private-fund ownership relationship and Tsai governance, but not the exact requested-name legal entity, its operating boundary or direct Wafra equity. Retain a precise DEFERRED exception without creating a company or owner.",
+  "resolvedFormerBlockers": [
+    "Current and historical official ADV independently identify ARF's approximately 82% interest in AIM as of December 31, 2025 and December 31, 2024 respectively, with a precise GAV footnote.",
+    "Direct initial and 2026 SEC filings establish AIM's legal issuer, fund classification, unnamed offering participants and director/manager role.",
+    "The normal public Wafra page works and uses the exact requested label for a board seat; raw HTTP denial is separately preserved."
+  ],
+  "identityResolution": {
+    "canonicalKey": "american-inland-marine-holdings|united-states",
+    "productionCompanyId": null,
+    "status": "REQUESTED_NAME_TO_LEGAL_ENTITY_UNRESOLVED",
+    "verifiedCandidate": "AIM Parent Holdings LLC, CIK 1959034, Delaware 2022, pooled other investment fund.",
+    "note": "No direct record equates the requested label with AIM or maps the requested/AIM entities to vessel-owner LLCs. Do not merge on initials, shared address or executives."
+  },
+  "ownershipResolution": {
+    "status": "DIRECT_WAFRA_EQUITY_UNRESOLVED",
+    "verified": "ARF approximately 82% of AIM as of December 31, 2025; Edward Tsai governance separately evidenced. Neither establishes Wafra direct company equity.",
+    "completeCurrentAfterImage": null,
+    "prohibitedInferences": [
+      "Do not assign Wafra any residual percentage, security, vehicle, control or date from unnamed Form D investors.",
+      "Do not equate board membership, adviser authority or fund GAV with underlying company ownership.",
+      "No public exit found is not proof of uninterrupted current equity.",
+      "Do not infer EXCLUDED from missing evidence."
+    ]
+  },
+  "operatingResolution": {
+    "status": "REQUESTED_COMPANY_BOUNDARY_UNRESOLVED",
+    "note": "AIM and ARF are private funds; a separate vessel certificate and court action identify similarly named vessel owners but not the complete parent/company chain."
+  },
+  "terminalOutcomeCandidate": "DEFERRED",
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "dealDatabaseMutation": false,
+  "applicationBlocked": false,
+  "applicationRequirements": [
+    "Terminal DEFERRED only; no CREATE_COMPANY, ADD_OWNER, seed or redirect write.",
+    "Exactly one application primary: current official Maritime Partners ADV.",
+    "Preserve independent source qualifications, raw denial/browser distinction and prior deferral lineage."
+  ],
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The exact legal/alias and operating entity chain behind American Inland Marine Holdings, Wafra's actual direct company security/vehicle/stake/control and executed entry and cutoff-current continuity, distinct from fund/LP/managed-account exposure.",
+    "searchedEvidence": [
+      "One fresh signed-in maximum-effort ChatGPT conversation; all six returned direct URLs independently reopened and bytes preserved.",
+      "Current ADV, March 2025 official filing archive, initial/current SEC issuer filings and filing indexes, live Wafra biography, operator-hosted USCG certificate and a public July 2026 court order.",
+      "Focused public searches for the requested label and case 2:25-cv-01049 found a vessel limitation order, not a current Wafra ownership record. The suggested Doc. 26 was not obtained and its contents are not claimed."
+    ],
+    "requiredToResolve": [
+      "Current AIM and requested-company member/shareholder register, classes and percentages with effective dates.",
+      "Executed Wafra subscription, transfer and closing documents naming the investing entity, fund/account, vehicle and security.",
+      "Current organization chart and legal/alias/formation/assignment documents linking the requested label to AIM and any vessel/operating subsidiaries.",
+      "Current issuer-specific holdings or executed transfer/exit/retention documentation."
+    ]
+  },
+  "primaryCitation": {
+    "label": "Current Maritime Partners ADV",
+    "url": "https://reports.adviserinfo.sec.gov/reports/ADV/300186/PDF/300186.pdf",
+    "purpose": "2026-08-21 filing; dated boundary, 82% and GAV note.",
+    "sourceTier": "T1",
+    "workingStatus": "LIVE",
+    "isRecommendedPrimary": true,
+    "contentSha256": "7c1cc3192b9af98eb891eb33441fa8c517397518ac58b6de82fab961afc72133"
+  },
+  "independentEvidenceAdjustments": [
+    "Current August 21, 2026 Maritime Partners ADV is explicitly as of December 31, 2025. Schedule D page 43 directly reports ARF approximately 82% of AIM and distinguishes each fund's GAV. It is not cutoff-current Wafra company equity.",
+    "Official March 2025 ZIP: FilingID 1959484 links CRD 300186 to March 28, 2025 submission. Its miscellaneous record reports the same 82% at December 31, 2024; selected complete CSV records are preserved with ZIP hash. GAV and fund classifications do not prove Wafra's underlying security.",
+    "AIM 2022 and 2026 SEC filings identify a Delaware 2022 pooled other investment fund with Edward Tsai as director/manager. Wafra Inc. appears in Tsai's address, not as a disclosed investor. Initial $80mm/two investors and latest $729,653,539/four investors are unnamed offering data, not an ownership register.",
+    "SEC accession indexes independently confirm December 21, 2022 and August 20, 2026 filing dates, distinct from first sale and signature dates. The response's unreturned 2025 offering comparison and March 30, 2026 ADV filing were not independently reopened and are not application facts.",
+    "Wafra raw HTTP returned 403; no access control was bypassed. Its ordinary public browser rendered the exact requested-name board reference, captured separately as visible text. This supports governance only, not direct equity, a legal alias or an exact investment vehicle.",
+    "Operator-hosted USCG certificate page 1 names American Inland Marine III LLC as MPX 222 owner and Florida Marine LLC as operator. The public July 27, 2026 court order Doc. 68 names American Inland Marine LLC in a vessel limitation action. Neither establishes requested-name/AIM/Wafra identity or equity. The model's Doc. 26 lead was not obtained and is not evidence.",
+    "Preserve DEFERRED rather than invent a company or infer exclusion. Current legal/alias and operating entity chain, actual Wafra security/vehicle/stake and executed entry/continuity remain unavailable."
+  ],
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9ca094-87e0-83e9-9128-8f25a842c70b",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "6eea38b18fee83649e281c02327ed3ae00787eae28f1340cf73e6f68ab44e266"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "28e8e129f9832b7b4afef2fa38514a39b80578b08b786a4c9c804dffd407631e"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-transcript.txt",
+      "sha256": "382ce50f879996b0607ffc40d63607bbfd5edf9be91d43295cc7cd4aad12f2b8"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-attestation.json",
+      "sha256": "2bdf254695979483280846c1ac678bc895a6bc954fac4657d3a4ae63a684ad84"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-response-validation.json",
+      "sha256": "1be1b181b59eeccb6963af963cdda49eb46fd8b21d0c81a5d5ea0d96846d6f4d"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/source-verification.json",
+      "sha256": "26741d89deb802b5fbfce62ad01d9ad1c4d815eaa4d4933cda073cd28e542f53"
+    }
+  }
+}

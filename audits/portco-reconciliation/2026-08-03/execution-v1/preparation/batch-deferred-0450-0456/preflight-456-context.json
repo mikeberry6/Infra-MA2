@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+  "taskIndex": 456,
+  "companyName": "Crescent Louisiana Midstream",
+  "generatedAt": "2026-09-06T01:40:10.509Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/preflight-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 456,
+    "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+    "canonicalKey": "crescent-louisiana-midstream|united-states",
+    "companyName": "Crescent Louisiana Midstream",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 98,
+    "managers": [
+      "Wafra"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "098-wafra:holding:006:crescent-louisiana-midstream"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.crescentmidstream.com/",
+      "https://www.wafra.com/our-people/michael-coleman-2/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "crescent-louisiana-midstream|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+    "taskIndex": 456,
+    "canonicalKey": "crescent-louisiana-midstream|united-states",
+    "capturedAt": "2026-09-06T01:40:10.509Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "654ec7c34e5babae3bfe1045528abd961ee2889328aac182692ce551f153c859",
+    "productionSnapshotSha256": "2306a10044bfe84d8229428572fc1df3b24347969cfdd82f50a93a32a7fafc0e",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "a1ffef77648e046f11fa8e906218a2329fafebe97319984ba4e217af26307c80",
+    "taskSnapshotSha256": "44cc846d2faa49c3ab2d3dd5bfde68ee103f96877380ec96daf05b9e2077a02d"
+  },
+  "contextSha256": "be56709da034ee553fbbf78e352ae95c4ed7f5565716230c7f811c1cb637573c"
+}
