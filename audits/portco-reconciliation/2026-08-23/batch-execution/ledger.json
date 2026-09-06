@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-05T20:37:56Z",
+  "updatedAt": "2026-09-06T01:42:22.834Z",
   "activeBatchId": null,
   "batches": [
     {
@@ -9447,7 +9447,69 @@
           "reason": "Verified all-terminal receipt; v2 binds the canonical execution-manifest digest instead of file-byte digest; original failed preflight created no receipt or writes"
         }
       ]
+    },
+    {
+      "batchId": "batch-deferred-0450-0456-v1",
+      "state": "COMPLETED",
+      "taskIds": [
+        "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+        "ledger:0452:terawatt-infrastructure:facb72c6",
+        "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+        "ledger:0454:beyond-data-centers:aa1b4081",
+        "ledger:0456:crescent-louisiana-midstream:599b6824"
+      ],
+      "taskIndexes": [
+        450,
+        452,
+        453,
+        454,
+        456
+      ],
+      "createdAt": "2026-09-06T01:40:41.611Z",
+      "updatedAt": "2026-09-06T01:42:22.834Z",
+      "completedAt": "2026-09-06T01:42:22.834Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0450-0456-v1/batch-manifest.json",
+        "sha256": "5db163846676a94b2e7783cb07b748f8efa1fa0b8a41fc9227f820b4ef8ecdfc"
+      },
+      "releaseSha": null,
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0450-0456-v1/terminal-receipt.json",
+        "sha256": "3d680da8d49395bdb71a91f4b8e5250792fbae9defb59c32f0a669779453362e"
+      },
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-06T01:40:41.611Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-06T01:42:21.768Z",
+          "evidenceSha256": [
+            "5db163846676a94b2e7783cb07b748f8efa1fa0b8a41fc9227f820b4ef8ecdfc"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "COMPLETED",
+          "at": "2026-09-06T01:42:22.834Z",
+          "evidenceSha256": [
+            "3d680da8d49395bdb71a91f4b8e5250792fbae9defb59c32f0a669779453362e",
+            "5db163846676a94b2e7783cb07b748f8efa1fa0b8a41fc9227f820b4ef8ecdfc"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a"
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c"
 }

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "portco-deferred-research-continuation-checkpoint",
+  "createdAt": "2026-09-05T20:53:37.769Z",
+  "worktree": "/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair",
+  "branch": "codex/portco-deferred-0450",
+  "authoritativeState": {
+    "executionManifestPath": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "executionManifestSha256": "55e06e0bbf0264048b4a3ae6369931bc2cf0be56797d03644bf5eb8b32ebbd4a",
+    "batchLedgerPath": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+    "batchLedgerSha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a",
+    "activeBatchId": null,
+    "sourceTaskCount": 496,
+    "statusCounts": {
+      "COMPLETED": 343,
+      "EXCLUDED": 31,
+      "VERIFIED_NO_CHANGE": 10,
+      "SUPERSEDED": 71,
+      "DEFERRED": 41,
+      "PENDING": 0
+    }
+  },
+  "priorProtectedRelease": {
+    "batchId": "batch-deferred-0406-0410-v1",
+    "status": "COMPLETED",
+    "batchManifestPath": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0406-0410-v1/batch-manifest-v2.json",
+    "batchManifestSha256": "a56fc75d9b05453f92a80edefe9146a34e8d19641e1929f43bac91aebcf3dbf1",
+    "terminalReceiptPath": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0406-0410-v1/terminal-receipt.json",
+    "terminalReceiptSha256": "117ad173a7960b78dae2efac51d61f454c5b40d3dadd680e904818bcdc24f78d",
+    "pullRequest": "https://github.com/mikeberry6/Infra-MA2/pull/913",
+    "mergeSha": "54c7cc30477045830ad62507923cf80d52952eb4",
+    "prCiRunId": 33990811135,
+    "prCiConclusion": "success",
+    "deploymentId": "dpl_52zn6Duujh5GxdRzEuW4Q61fe5QH",
+    "deploymentState": "READY",
+    "canonicalUrl": "https://infra-ma-2.vercel.app",
+    "immutableUrl": "https://infra-ma-2-i4nw6x391-mberry.vercel.app",
+    "buildLogEvidence": "2026-09-05T20:43:39.629Z Cloning github.com/mikeberry6/Infra-MA2 (Branch: main, Commit: 54c7cc3)",
+    "deploymentCompletedAt": "2026-09-05T20:45:15.737Z",
+    "canonicalAliasResolvesToExactDeployment": true,
+    "githubExactCommitVercelStatus": "success",
+    "smokeReportPath": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/pr-913-canonical-smoke.json",
+    "smokeChecksPassed": 10,
+    "qualification": "Smoke used --skip-health and --allow-legacy-root because no health route is available. Exact merge provenance was verified with the commit's Vercel status, immutable deployment build logs and canonical alias. All-terminal release made no database or seed writes. See the batch completion.md for preserved failed-closed v1 manifest and operator timestamp-input audit qualifications."
+  },
+  "inFlightResearch": {
+    "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+    "companyName": "UBS ERCOT Battery Storage Portfolio",
+    "attempt": 2,
+    "conversationUrl": "https://chatgpt.com/c/6a9c80ff-9354-83ea-be59-d59cc9b825e9",
+    "initialConversationUrl": "https://chatgpt.com/c/WEB:d6cbdda3-6313-4b13-b6c4-794418fd6ff4",
+    "submittedAt": "2026-09-05T20:52:15.109Z",
+    "browserId": "1",
+    "tabId": "104",
+    "promptPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-research-prompt.md",
+    "promptSha256": "2871510844fed833ef120c825b2639b8ff5c573c12c04b03248623cf6ba0d5f2",
+    "visibleAttestation": {
+      "signedInProfile": "mike berry",
+      "plan": "Pro",
+      "surface": "Work",
+      "model": "GPT-5.6 Sol",
+      "mode": "Ultra",
+      "effortLevel": 6,
+      "effortMaximum": 6,
+      "modelMenuLabel": "GPT-5.6 Sol Ultra",
+      "observation": "Profile and model picker were visually checked before a single prompt submission; generation subsequently showed Stop answering and Working. This is preflight provenance, not a completed response attestation."
+    },
+    "status": "RUNNING",
+    "acceptedResponseCaptured": false,
+    "instructions": "Reuse this exact conversation; do not submit another while it exists. Capture the completed DOM response and full materialized submitted-prompt/final-response transcript; preserve actual timestamps and hashes. Independently reopen every returned direct source and preserve current bytes; validate all contract and evidence-chain safeguards before adjudicating. Do not infer a synthetic portfolio topco, project overlap, equity ownership, fund, stake, or continuity from headline capacity, financing, optimization or registrations."
+  },
+  "remainingOriginalDeferrals": [
+    {
+      "sourceOrder": 450,
+      "name": "UBS ERCOT Battery Storage Portfolio"
+    },
+    {
+      "sourceOrder": 452,
+      "name": "TeraWatt Infrastructure"
+    },
+    {
+      "sourceOrder": 453,
+      "name": "American Inland Marine Holdings"
+    },
+    {
+      "sourceOrder": 454,
+      "name": "Beyond Data Centers"
+    },
+    {
+      "sourceOrder": 456,
+      "name": "Crescent Louisiana Midstream"
+    }
+  ],
+  "nextBoundary": "Complete all five fresh adjudications in source order before reopening authoritative tasks or activating a protected bundle. Recapture fresh production, task and dependency snapshots and use exact canonical manifest/ledger hashes. Preserve all prior applied receipts; never repeat transactions.",
+  "finalCompletionCriteria": "After the last original deferral is freshly resolved or precisely evidenced as unavailable, reconcile production/seed identities, ownership and redirects; publish final active, realized, pending-transaction, excluded, superseded and deferred counts plus the exception report through the protected release. Only then mark the existing goal complete and delete the continuation heartbeat."
+}

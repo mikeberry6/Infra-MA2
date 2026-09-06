@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "portco-deferred-research-continuation-checkpoint",
+  "createdAt": "2026-09-05T22:16:59.319Z",
+  "worktree": "/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair",
+  "branch": "codex/portco-deferred-0450",
+  "authoritativeState": {
+    "executionManifestPath": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "executionManifestSha256": "55e06e0bbf0264048b4a3ae6369931bc2cf0be56797d03644bf5eb8b32ebbd4a",
+    "batchLedgerPath": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+    "batchLedgerSha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a",
+    "activeBatchId": null,
+    "statusCounts": {
+      "COMPLETED": 343,
+      "EXCLUDED": 31,
+      "VERIFIED_NO_CHANGE": 10,
+      "SUPERSEDED": 71,
+      "DEFERRED": 41,
+      "PENDING": 0
+    }
+  },
+  "priorProtectedRelease": {
+    "checkpointPath": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/checkpoint-2026-09-05T2053.json",
+    "checkpointFileSha256": "b31c4414f5283b38b001d2f50dd20f8feaca1f748681ad1efa680e3cfc8ac582",
+    "pr": 913,
+    "mainSha": "54c7cc30477045830ad62507923cf80d52952eb4"
+  },
+  "completedLocalResearch": {
+    "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+    "companyName": "UBS ERCOT Battery Storage Portfolio",
+    "attempt": 2,
+    "artifactDirectory": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2",
+    "conversationUrl": "https://chatgpt.com/c/6a9c80ff-9354-83ea-be59-d59cc9b825e9",
+    "decision": "DEFERRED",
+    "researchDecisionSha256": "a3a254e22370d9e920bec7c5aef489e51a368c9ff2aeaf424a4a84cfa1fd3295",
+    "applicationResearchDecisionEmbeddedSha256": "897ad475d86e100787e8599fe337270ac40f61cd9ac7bfc1435549f2fa3fd4da",
+    "acceptedResponseSha256": "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80",
+    "transcriptSha256": "805406203110679d7ea2bf13a0266f54cd247ee603ec9ea3627f027b1644bd65",
+    "attestationSha256": "2acd72ee5aa3e441208d24118dbd778dae1bbc60eb59339a6001d18700c16e1c",
+    "responseValidationSha256": "45c8fcec5e6c4a174210d9a775bbd67ce10a06f9f13c6f312c4b0822ca77640d",
+    "sourceVerificationSha256": "b368682379b320847df8415c6e43d3464cff7f83d71f126aca763d36bc07dace",
+    "originalResearchRuntime": "39m35s",
+    "formatOnlyRepairs": 2,
+    "acceptedResponseCharacters": 7464,
+    "qualification": "Both format-only followups and all responses preserved. Accepted response passes original 7500-character limit, not the second repair's stricter 6200-character target. Independent source qualifications exclude unsupported model ownership ratios and complete-SPV-ownership assertions.",
+    "freshException": "Missing original BMES five-project executed SPV schedule and title/assignment chain, complete mapping to later six/four/SMT portfolios, and current complete holder/fund/vehicle chart including the Captona preferred-equity layer. July 28, 2022 UBS release establishes the BMES 700 MW acquisition, not the original November 2021 claim. No synthetic company or ownership mutation authorized.",
+    "sourceCaptures": "All nine unique returned direct URLs reopened and hashed, plus the official public FERC petition PDF. Relevant PUCT, FERC and ERCOT pages independently read and visually inspected.",
+    "copiedManifestReopenPreflight": {
+      "at": "2026-09-05T22:12:23.591Z",
+      "copiedManifest": "/tmp/portco-ubs450-reopen-preflight.ovzoAh/manifest.json",
+      "result": "PASS",
+      "authoritativeManifestMutated": false
+    }
+  },
+  "inFlightResearch": {
+    "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+    "companyName": "TeraWatt Infrastructure",
+    "attempt": 2,
+    "conversationUrl": "https://chatgpt.com/c/6a9c9484-3f24-83ea-9077-9e0fdea0ebe5",
+    "initialConversationUrl": "https://chatgpt.com/c/WEB:de8bae99-44de-4c6c-b249-9d537fa329d8",
+    "submittedAt": "2026-09-05T22:15:38.220Z",
+    "browserId": "1",
+    "tabId": "106",
+    "promptPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-research-prompt.md",
+    "promptSha256": "ba7f93401569239349bd92cef51a8d36ba6c44446a021ba24dd264ea519615f2",
+    "submittedPromptHashMatchesFile": true,
+    "promptCharacters": 6816,
+    "visibleAttestation": {
+      "signedInProfile": "mike berry",
+      "plan": "Pro",
+      "surface": "Work",
+      "model": "GPT-5.6 Sol",
+      "mode": "Ultra",
+      "effortLevel": 6,
+      "effortMaximum": 6,
+      "modelMenuLabel": "GPT-5.6 Sol Ultra",
+      "observation": "Visible signed-in Pro profile, Work selected, effort menu Ultra 6 of 6 and closed model menu GPT-5.6 Sol Ultra checked before submission. This is preflight provenance, not a completed response attestation."
+    },
+    "status": "RUNNING",
+    "acceptedResponseCaptured": false,
+    "instructions": "Reuse this exact conversation without duplicate submission. Capture exact completed DOM response and full materialized prompt/response transcript. Independently reopen and hash every returned direct source. Existing Vision Ridge owner row and company must not be duplicated; current Keyframe/Cyrus continuity, legal entity mapping and financing-layer distinctions are the targeted gaps. Do not use the invalid 20220510005388 BusinessWire article."
+  },
+  "remainingOriginalDeferralsToResearch": [
+    452,
+    453,
+    454,
+    456
+  ],
+  "nextBoundary": "Do not reopen the authoritative manifest or activate a bundle until all five final fresh reviews are assembled. Then use the dedicated earliest-original-deferral path with fresh canonical hashes and production/task/dependency snapshots, preserving lineage and all applied receipts.",
+  "writes": {
+    "authoritativeManifest": false,
+    "batchLedger": false,
+    "database": false,
+    "seed": false
+  },
+  "finalCompletionCriteria": "After the final protected production-verified bundle, reconcile production/seed identities, ownership and redirects, publish final active/realized/pending-transaction/excluded/superseded/deferred counts and exception report through protected main and canonical deployment. Only then mark the existing goal complete and delete the heartbeat."
+}

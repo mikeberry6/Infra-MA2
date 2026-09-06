@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+  "taskIndex": 450,
+  "companyName": "UBS ERCOT Battery Storage Portfolio",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-06T01:41:50.706Z",
+  "rationale": "Current four-project identity and ESIF ownership are high-confidence; six/930 reconciliation is medium-confidence; original-five identity and continuity are low-confidence. Creating a list record would synthesize unresolved identity and ownership.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/locked-450-task-snapshot.json",
+    "sha256": "6b919049fa9b5462daf4e91fbb91eb3504110d0a82793248e9245bc1d54dae60"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/application-research-decision.json",
+    "sha256": "3d879029270d97ed63fb9cec4e0de4dc942edaf4ddf5ed62aab49ee95a344ed5"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-verification.json",
+    "sha256": "b368682379b320847df8415c6e43d3464cff7f83d71f126aca763d36bc07dace"
+  },
+  "evidence": [
+    {
+      "url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20220728-en-20220728-2q22-repm-energy-storage.html",
+      "purpose": "Seller, count, MW and completed status"
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20220414-5270",
+      "purpose": "Fund roles and 2022 chronology"
+    },
+    {
+      "url": "https://www.ubs.com/au/en/assetmanagement/insights/asset-class-perspectives/real-estate/articles/craft-behind-energy-storage.html",
+      "purpose": "Later six claim and four/730 subset"
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/58994_1_1558524.PDF",
+      "purpose": "Six affiliates and McAllen identity"
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/53385_4955_1603007.PDF",
+      "purpose": "Current ESIF-I and UBS roles"
+    },
+    {
+      "url": "https://www.ercot.com/files/docs/2026/09/03/MORA_November2026.pdf",
+      "purpose": "Project IDs, aliases and status"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/smt-energy-sells-400-megawatts-of-battery-energy-storage-facilities-to-ubs-asset-management-302055312.html",
+      "purpose": "Separate unnamed ~400MW transaction"
+    },
+    {
+      "url": "https://captona.com/captona-ubs-close-joint-venture-on-battery-storage-portfolio-in-texas/",
+      "purpose": "Closed preferred-equity investment"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "a84107be54c0e2d8bfc9cd786c96b2fd94405573c60b14879638d6eb0cb7a9af"
+}

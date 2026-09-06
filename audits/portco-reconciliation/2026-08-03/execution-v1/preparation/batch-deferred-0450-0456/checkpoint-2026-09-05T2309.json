@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "portco-deferred-research-continuation-checkpoint",
+  "createdAt": "2026-09-05T23:08:20Z",
+  "worktree": "/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair",
+  "branch": "codex/portco-deferred-0450",
+  "authoritativeState": {
+    "executionManifestPath": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "executionManifestSha256": "55e06e0bbf0264048b4a3ae6369931bc2cf0be56797d03644bf5eb8b32ebbd4a",
+    "batchLedgerPath": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+    "batchLedgerSha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a",
+    "activeBatchId": null,
+    "statusCounts": {
+      "COMPLETED": 343,
+      "EXCLUDED": 31,
+      "VERIFIED_NO_CHANGE": 10,
+      "SUPERSEDED": 71,
+      "DEFERRED": 41,
+      "PENDING": 0
+    }
+  },
+  "priorProtectedRelease": {
+    "checkpointPath": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/checkpoint-2026-09-05T2053.json",
+    "checkpointFileSha256": "b31c4414f5283b38b001d2f50dd20f8feaca1f748681ad1efa680e3cfc8ac582",
+    "pr": 913,
+    "mainSha": "54c7cc30477045830ad62507923cf80d52952eb4"
+  },
+  "completedLocalResearch": [
+    {
+      "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+      "companyName": "UBS ERCOT Battery Storage Portfolio",
+      "attempt": 2,
+      "artifactDirectory": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2",
+      "conversationUrl": "https://chatgpt.com/c/6a9c80ff-9354-83ea-be59-d59cc9b825e9",
+      "decision": "DEFERRED",
+      "researchDecisionSha256": "a3a254e22370d9e920bec7c5aef489e51a368c9ff2aeaf424a4a84cfa1fd3295",
+      "applicationResearchDecisionEmbeddedSha256": "897ad475d86e100787e8599fe337270ac40f61cd9ac7bfc1435549f2fa3fd4da",
+      "acceptedResponseSha256": "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80",
+      "transcriptSha256": "805406203110679d7ea2bf13a0266f54cd247ee603ec9ea3627f027b1644bd65",
+      "attestationSha256": "2acd72ee5aa3e441208d24118dbd778dae1bbc60eb59339a6001d18700c16e1c",
+      "responseValidationSha256": "45c8fcec5e6c4a174210d9a775bbd67ce10a06f9f13c6f312c4b0822ca77640d",
+      "sourceVerificationSha256": "b368682379b320847df8415c6e43d3464cff7f83d71f126aca763d36bc07dace",
+      "originalResearchRuntime": "39m35s",
+      "formatOnlyRepairs": 2,
+      "acceptedResponseCharacters": 7464,
+      "qualification": "Both format-only followups and all responses preserved. Accepted response passes original 7500-character limit, not the second repair's stricter 6200-character target. Independent source qualifications exclude unsupported model ownership ratios and complete-SPV-ownership assertions.",
+      "freshException": "Missing original BMES five-project executed SPV schedule and title/assignment chain, complete mapping to later six/four/SMT portfolios, and current complete holder/fund/vehicle chart including the Captona preferred-equity layer. July 28, 2022 UBS release establishes the BMES 700 MW acquisition, not the original November 2021 claim. No synthetic company or ownership mutation authorized.",
+      "sourceCaptures": "All nine unique returned direct URLs reopened and hashed, plus the official public FERC petition PDF. Relevant PUCT, FERC and ERCOT pages independently read and visually inspected.",
+      "copiedManifestReopenPreflight": {
+        "at": "2026-09-05T22:12:23.591Z",
+        "copiedManifest": "/tmp/portco-ubs450-reopen-preflight.ovzoAh/manifest.json",
+        "result": "PASS",
+        "authoritativeManifestMutated": false
+      }
+    },
+    {
+      "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+      "companyName": "TeraWatt Infrastructure",
+      "attempt": 2,
+      "artifactDirectory": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2",
+      "conversationUrl": "https://chatgpt.com/c/6a9c9484-3f24-83ea-9077-9e0fdea0ebe5",
+      "submittedAt": "2026-09-05T22:15:38.220Z",
+      "responseCapturedAt": "2026-09-05T22:56:07.865Z",
+      "decision": "DEFERRED",
+      "researchOnly": true,
+      "originalResearchRuntime": "12m1s",
+      "formatOnlyRepairs": 0,
+      "promptSha256": "ba7f93401569239349bd92cef51a8d36ba6c44446a021ba24dd264ea519615f2",
+      "exactDomResponseCharacters": 6288,
+      "exactDomResponseSha256": "f6a37fb2484264979a8ccbadf4820bd540a958e42df19142c5553aed91078fe5",
+      "acceptedResponseSha256": "5cffee10e3675b8ce36fe1c7e011366260a4be33f47e2b120df95e6a984768b8",
+      "responseStorageQualification": "The stored accepted-response artifact appends one repository terminal LF to the exact 6288-character DOM response; both byte hashes are preserved and distinguished.",
+      "transcriptSha256": "e9b44b097487a2d944ebb9d90d1c628ac4dacf9467168908b673c4aec8e4cc62",
+      "attestationSha256": "5c7e2f0f46af73f4aa9f405487a4b05ea145186447a6f92c3af08614719e11cc",
+      "responseValidationSha256": "ac0f2e4ca6f728271c44b548a322e59800e77e0a5de1fbcaba2b9ac9dcd4b423",
+      "sourceVerificationSha256": "4fce3eac13a026299d5f6775102803d6ecac879d3ab2053fc7ca083dd733b2a6",
+      "researchDecisionSha256": "1710454a0ec72d88a02357241492c01aa9c6e5d983cba00b6f49da72e0d7931a",
+      "applicationResearchDecisionEmbeddedSha256": "70a548f6ba2ac08d2b05c4871733cb8adbd4e43aff5517f3f4297618be9feb20",
+      "sourceCaptures": "All seven returned direct URLs independently reopened; HTTP 200 bytes and hashes preserved. SEC property issuer filing and Vision Ridge fund-to-company portfolio mapping additionally read in the normal public browser.",
+      "independentQualifications": [
+        "SEC filing CIK 1944328 identifies Terawatt Infrastructure, Inc., Delaware formed 2021, formerly Pearl Street Operating Company. It reports 12 unnamed investors and $61,048,601 offered/sold; it is not a complete current holder or parent register.",
+        "Separate Pearl Street Property Company LLC is Delaware formed 2022; three unnamed investors and $500m offered/sold do not establish the complete OpCo/PropCo equity chain.",
+        "Current Vision Ridge portfolio explicitly lists TeraWatt under Sustainable Asset Fund III without an EXITED label. The existing company and Vision Ridge owner row are not duplicated.",
+        "June 24, 2026 financing is five-year senior secured debt: $150m committed plus a $150m incremental option, not $300m of new equity.",
+        "Model claims of 2018 Pearl Street Land legal formation and 2026 PropCo co-invest filings have no returned direct URL establishing those claims and were excluded from application facts."
+      ],
+      "freshException": "Current Keyframe/Cyrus equity holding or disposal, complete holder/fund/vehicle/security/stake/control chain and legal-entity succession remain unresolved. Need current cap table/member or shareholder register, issuer-specific holdings and executed transfer/exit/subscription or organization documents. Preserve the existing Vision Ridge/Sustainable Asset Fund III record; no inferred mutation or verified-no-change.",
+      "copiedManifestReopenPreflight": {
+        "at": "2026-09-05T23:01:46.655Z",
+        "copiedManifest": "/tmp/portco-ubs450-reopen-preflight.ovzoAh/manifest.json",
+        "result": "PASS",
+        "authoritativeManifestMutated": false
+      }
+    }
+  ],
+  "inFlightResearch": {
+    "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+    "companyName": "American Inland Marine Holdings",
+    "attempt": 2,
+    "conversationUrl": "https://chatgpt.com/c/6a9ca094-87e0-83e9-9128-8f25a842c70b",
+    "title": "Research American Inland Marine Holdings",
+    "initialConversationUrl": "https://chatgpt.com/c/WEB:1e31b488-f658-4471-a13e-898328da899e",
+    "submittedAt": "2026-09-05T23:07:04.938Z",
+    "browserId": "1",
+    "tabId": "109",
+    "promptPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-2/chatgpt-research-prompt.md",
+    "promptSha256": "6eea38b18fee83649e281c02327ed3ae00787eae28f1340cf73e6f68ab44e266",
+    "submittedPromptHashMatchesFile": true,
+    "promptCharacters": 6278,
+    "visibleAttestation": {
+      "signedInProfile": "mike berry",
+      "plan": "Pro",
+      "surface": "Work",
+      "model": "GPT-5.6 Sol",
+      "mode": "Ultra",
+      "effortLevel": 6,
+      "effortMaximum": 6,
+      "modelMenuLabel": "GPT-5.6 Sol Ultra",
+      "observation": "Visible signed-in Pro profile, Work selected, effort menu Ultra 6 of 6 and closed model menu GPT-5.6 Sol Ultra checked before submission. Preflight provenance only, not a completed-response attestation."
+    },
+    "status": "RUNNING",
+    "acceptedResponseCaptured": false,
+    "instructions": "Reuse this exact conversation without duplicate submission. Capture completed exact DOM response and full materialized prompt/response transcript, validate, independently reopen every returned direct source and preserve current bytes/hashes. Resolve only American Inland Marine Holdings/AIM Parent identity, in-scope company boundary and actual Wafra direct equity versus fund/LP exposure. Board membership, adviser authority, gross assets and unnamed remaining percentages are not company equity proof."
+  },
+  "remainingOriginalDeferralsToResearch": [
+    453,
+    454,
+    456
+  ],
+  "nextBoundary": "Do not reopen the authoritative manifest or activate a bundle until all five final fresh reviews are assembled. Then use the dedicated earliest-original-deferral path with fresh canonical hashes and production/task/dependency snapshots, preserving lineage and all applied receipts.",
+  "writes": {
+    "authoritativeManifest": false,
+    "batchLedger": false,
+    "database": false,
+    "seed": false
+  },
+  "finalCompletionCriteria": "After the final protected production-verified bundle, reconcile production/seed identities, ownership and redirects, publish final active/realized/pending-transaction/excluded/superseded/deferred counts and exception report through protected main and canonical deployment. Only then mark the existing goal complete and delete the heartbeat.",
+  "previousCheckpoint": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/checkpoint-2026-09-05T2217.json",
+    "fileSha256": "d8f733196a8a4ca500c0e56864b232f641556c77bd39024974b3aff86ec7fd71"
+  }
+}

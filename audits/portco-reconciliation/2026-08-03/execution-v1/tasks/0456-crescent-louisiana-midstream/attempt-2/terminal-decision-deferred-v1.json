@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+  "taskIndex": 456,
+  "companyName": "Crescent Louisiana Midstream",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-06T01:41:52.143Z",
+  "rationale": "CLM is distinct/active; member percentages and Wafra equity are unproved. Historical CLM 70% and current Holdings 68/32 are separate tiers.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/locked-456-task-snapshot.json",
+    "sha256": "7282be0af961355f3dadf3fc5609a7fe58095f3b60d74521af2141778d15193a"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/application-research-decision-v2.json",
+    "sha256": "819a3fcd96d8816b6736eea14e4174da19549dfccca9fa41e54a7277a7fb40dd"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-verification.json",
+    "sha256": "069342c5164e3d00b39ab818733fa4fa14208ded77175053169154e72a75d94e"
+  },
+  "evidence": [
+    {
+      "url": "https://coraweb.sos.la.gov/CommercialSearch/CommercialSearchDetails.aspx?CharterID=1206129_E07908E5EC",
+      "purpose": "Identity/status/members"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1347652/000134765221000050/corr2021prem14a.htm",
+      "purpose": "Historical 70%/Grier"
+    },
+    {
+      "url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3512918",
+      "purpose": "Parent chain/68-32"
+    },
+    {
+      "url": "https://www.wafra.com/our-people/michael-coleman-2/",
+      "purpose": "Board seat only"
+    },
+    {
+      "url": "https://crescentmidstream.com/operations/",
+      "purpose": "Onshore boundary"
+    },
+    {
+      "url": "https://public-inspection.federalregister.gov/2025-17990.pdf",
+      "purpose": "Kinetica-to-CLM asset"
+    },
+    {
+      "url": "https://sonlite.dnr.state.la.us/ords/f?p=129:301:::::P301_CUP_NUM:P20260513",
+      "purpose": "P20260513 status"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "5440749b4b2a177c3f8748a1272a73a847e2c9f6b84312098f751e827cfdc344"
+}

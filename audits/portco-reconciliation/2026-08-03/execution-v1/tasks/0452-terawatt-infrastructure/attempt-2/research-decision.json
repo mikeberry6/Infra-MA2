@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "deferred-readjudication-v1",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+  "taskIndex": 452,
+  "companyName": "TeraWatt Infrastructure",
+  "asOfDate": "2026-09-05",
+  "generatedAt": "2026-09-05T23:01:16.190Z",
+  "decision": "DEFERRED",
+  "modelDecision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "linkedTaskIdsCovered": [],
+  "acceptedResponseSha256": "5cffee10e3675b8ce36fe1c7e011366260a4be33f47e2b120df95e6a984768b8",
+  "summary": "Fresh issuer and manager evidence supports the existing TeraWatt identity and Vision Ridge/SAF III link. Current Keyframe/Cyrus company-equity continuity and precise legal holder/entity chain remain unavailable. Retain the company and sole existing owner row without inferred mutation.",
+  "resolvedFormerBlockers": [
+    "Direct SEC issuer filing identifies the 2021 Delaware company and its Pearl Street Operating Company former name; the previous research issuer description is corrected without rewriting old evidence.",
+    "Live manager portfolio layout directly binds TeraWatt to Sustainable Asset Fund III; no duplicate Vision Ridge row is warranted.",
+    "Company release distinguishes the 2026 secured facility's committed amount from its incremental option. It is debt, not a new equity event."
+  ],
+  "identityResolution": {
+    "canonicalKey": "terawatt-infrastructure|united-states",
+    "productionCompanyId": "cmrxpjour01bzivheto1lu032",
+    "status": "EXISTING_COMPANY_SUPPORTED_WITH_HOLDER_CHAIN_EXCEPTION",
+    "verifiedCompany": "Terawatt Infrastructure, Inc.; formerly Pearl Street Operating Company; Delaware 2021 per issuer filing.",
+    "note": "Platform build/founding history is distinct from legal incorporation. Ultimate parent, exact property-company chain and 2018 land-company succession are not independently resolved."
+  },
+  "ownershipResolution": {
+    "status": "EXISTING_VISION_RIDGE_FUND_LINK_SUPPORTED_COINVESTOR_CONTINUITY_UNRESOLVED",
+    "verified": "Historical investment and current manager fund listing support one existing Vision Ridge/SAF III relationship with 2022 entry year.",
+    "completeCurrentAfterImage": null,
+    "prohibitedInferences": [
+      "Do not add duplicate Vision Ridge ownership or a second company.",
+      "Do not mark Keyframe or Cyrus active or realized without current issuer-specific equity/exit evidence.",
+      "Board roles, a historical investor list and absence of public exits are not a complete current cap table.",
+      "Do not assign stakes, legal vehicles, control, closing dates or security classes from unnamed issuer offering totals."
+    ]
+  },
+  "operatingResolution": {
+    "status": "COMPANY_PLATFORM_NOT_PROPERTY_ISSUER",
+    "note": "Property-company filings and bank debt are distinct layers; they cannot be added as company equity owners."
+  },
+  "terminalOutcomeCandidate": "DEFERRED",
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "dealDatabaseMutation": false,
+  "applicationBlocked": false,
+  "applicationRequirements": [
+    "Terminal DEFERRED only; preserve existing company and owner row with no production/seed/redirect write.",
+    "Exactly one application primary: direct company 2022 institutional-capital announcement.",
+    "Keep independent qualifications and previous deferral lineage."
+  ],
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "Cutoff-current Keyframe and Cyrus company-equity holdings or disposal; complete registered-holder/fund/vehicle/security/stake/control chart and executed legal chain among the company, property issuer and any 2018 predecessor.",
+    "searchedEvidence": [
+      "One fresh signed-in maximum-effort ChatGPT conversation; seven returned direct URLs independently reopened and current bytes hashed.",
+      "Company capital announcement, investor launch page, both issuer Form D filings, live manager portfolio and team pages, and 2026 company debt release.",
+      "Research reports no directly evidenced exit, transfer or new equity event. This is not proof of uninterrupted ownership and does not claim access to private records."
+    ],
+    "requiredToResolve": [
+      "A cutoff-current stock ledger/cap table or issuer-specific fund holdings schedule.",
+      "Executed transfer, repurchase, cancellation, rollover or exit documents covering Keyframe and Cyrus.",
+      "Company organizational chart and formation/name-change/merger/assignment records establishing the full legal chain.",
+      "Executed subscriptions and closing capitalization schedules naming legal investment vehicles and securities."
+    ]
+  },
+  "primaryCitation": {
+    "label": "2022 raise",
+    "url": "https://www.terawattinfrastructure.com/blog/terawatt-raises-over-1-billion-to-scale-commercial-ev-charging-centers-across-america",
+    "purpose": "Investors; $1bn commitment",
+    "sourceTier": "T1_COMPANY",
+    "workingStatus": "LIVE",
+    "isRecommendedPrimary": true,
+    "contentSha256": "025ffd89f01fe6eafff9fd33e3d2713e0442a734652d5b223120c50db30856ab"
+  },
+  "independentEvidenceAdjustments": [
+    "SEC issuer filing directly identifies Terawatt Infrastructure, Inc., Delaware 2021, previously Pearl Street Operating Company. This corrects the earlier description of the Form D issuer; it does not prove the ultimate parent or the 2018 land-vehicle succession.",
+    "Direct company and Keyframe releases establish historical backing and commitments. The returned 2022 company page says funds managed by Vision Ridge, not a complete registered-holder or security schedule.",
+    "Live Vision Ridge investments page visibly places TeraWatt beneath Sustainable Asset Fund III (2021 vintage), without an EXITED label. Its team page names Paul Luce as a current TeraWatt director. These support the existing fund/manager link, not exact stakes, holder identity or continuity of Keyframe/Cyrus.",
+    "Form D offering proceeds and the separate property-company offering cannot be equated with the institutional commitment headline or used as a current cap table. The June 2026 company release describes secured debt with an incremental option, not new equity.",
+    "The response's separate 2018 land-vehicle formation and 2026 PropCo co-invest assertions lack a returned direct filing URL and were not independently established in this packet; they are not application facts. No company/fund/vehicle merge or new ownership follows from them.",
+    "No current issuer-specific equity register, holdings schedule or executed transfer/exit document resolves Keyframe and Cyrus at the cutoff. Retain a precise DEFERRED exception and do not duplicate the company or Vision Ridge row."
+  ],
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9c9484-3f24-83ea-9077-9e0fdea0ebe5",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "ba7f93401569239349bd92cef51a8d36ba6c44446a021ba24dd264ea519615f2"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "5cffee10e3675b8ce36fe1c7e011366260a4be33f47e2b120df95e6a984768b8"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-transcript.txt",
+      "sha256": "e9b44b097487a2d944ebb9d90d1c628ac4dacf9467168908b673c4aec8e4cc62"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-attestation.json",
+      "sha256": "5c7e2f0f46af73f4aa9f405487a4b05ea145186447a6f92c3af08614719e11cc"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-response-validation.json",
+      "sha256": "ac0f2e4ca6f728271c44b548a322e59800e77e0a5de1fbcaba2b9ac9dcd4b423"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/source-verification.json",
+      "sha256": "4fce3eac13a026299d5f6775102803d6ecac879d3ab2053fc7ca083dd733b2a6"
+    }
+  }
+}

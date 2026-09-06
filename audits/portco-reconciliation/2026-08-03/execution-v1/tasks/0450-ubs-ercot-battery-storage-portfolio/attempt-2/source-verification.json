@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+  "taskIndex": 450,
+  "companyName": "UBS ERCOT Battery Storage Portfolio",
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "checkedAt": "2026-09-05T22:07:07.893Z",
+  "method": "Independent HTTP capture/hash of all nine distinct initial/accepted returned URLs; direct HTML text review; full McAllen registration extraction; relevant Ironman/ FERC/MORA page review and PDF visual checks. FERC public petition downloaded through visible official file-list UI; raw landing separately preserved.",
+  "sources": [
+    {
+      "sourceIndex": 1,
+      "url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20220728-en-20220728-2q22-repm-energy-storage.html",
+      "finalUrl": "https://www.ubs.com/global/en/media/display-page-ndp/en-20220728-en-20220728-2q22-repm-energy-storage.html",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 61906,
+      "sha256": "891758a6a31a7806b7d4f90dd8188d691d86b44015f046779a6ac3ccaf379084",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-1.html",
+      "fetchedAt": "2026-09-05T21:58:25.782Z",
+      "sourceTier": "1-PARTY",
+      "healthStatus": "WORKING",
+      "applicationPrimary": true,
+      "verifiedClaims": [
+        "Completed BMES five-project 700MW acquisition by July28,2022 release; distinct from 2021 strategy creation. No sold-SPV schedule or exact legal buyer disclosed."
+      ]
+    },
+    {
+      "sourceIndex": 2,
+      "url": "https://www.ubs.com/global/en/assetmanagement/about/news/2021-news-articles/innovative-energy-storage.html",
+      "finalUrl": "https://www.ubs.com/global/en/assetmanagement/about/news/2021-news-articles/innovative-energy-storage.html",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 105716,
+      "sha256": "d2dd5b1ccdae25163ce7d7a09b8c5e6d47f37799825ff33e7d63c17d50625dde",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-2.html",
+      "fetchedAt": "2026-09-05T21:58:25.830Z",
+      "sourceTier": "1-PARTY",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "December10,2021 direct strategy/team establishment release; not a completed five-project acquisition."
+      ]
+    },
+    {
+      "sourceIndex": 3,
+      "url": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20220414-5270",
+      "finalUrl": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20220414-5270",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 22464,
+      "sha256": "3488d301c33e516484100240ec34a84f75671fd2d728cbef35a1932fe39f2294",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-3.html",
+      "fetchedAt": "2026-09-05T21:58:25.830Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "WORKING_PUBLIC_PETITION_BROWSER_DOWNLOADED",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Official FERC metadata and public petition independently viewed/downloaded. UBS petitioner states late-stage discussions on PDF page17; not Commission finding."
+      ],
+      "publicDocument": {
+        "filename": "20220414-5270_FINAL_UBS Petition for Declaratory Order_4.14.2022.pdf",
+        "bytes": 271914,
+        "sha256": "79a8404d4af2cfefb1cde03f2357c804704c1e5d838d6cc36ab03f78e59f62d0",
+        "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-3-public-petition.pdf",
+        "browserDownloadObservedAt": "2026-09-05T22:02:08.000Z",
+        "provenance": "Clicked the public petition in the official File List for accession20220414-5270; file mtime and filename match new browser download. Only public redacted version; no restricted exhibit access attempted."
+      }
+    },
+    {
+      "sourceIndex": 4,
+      "url": "https://www.ubs.com/au/en/assetmanagement/insights/asset-class-perspectives/real-estate/articles/craft-behind-energy-storage.html",
+      "finalUrl": "https://www.ubs.com/au/en/assetmanagement/insights/asset-class-perspectives/real-estate/articles/craft-behind-energy-storage.html",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 131015,
+      "sha256": "02091bbfe3d18e0e12aa188bdb0852e102afb30c17ef4cf3518e796e3ef2c2e9",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-4.html",
+      "fetchedAt": "2026-09-05T21:58:25.831Z",
+      "sourceTier": "1-PARTY",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "October2024 six/930 and firstfour Lamesa/Nevada/Alvin/Crosby730 narrative is current but not acquisition schedule."
+      ]
+    },
+    {
+      "sourceIndex": 5,
+      "url": "https://interchange.puc.texas.gov/Documents/58994_1_1558524.PDF",
+      "finalUrl": "https://interchange.puc.texas.gov/Documents/58994_1_1558524.PDF",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 702623,
+      "sha256": "ec3c7c90cae79d39f4fca2f5bdc07aca3e6876a97eeb7cb593c2f6761caac9b0",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-5.pdf",
+      "fetchedAt": "2026-09-05T21:58:25.831Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "McAllen legal registrant, corporate parent ESIF Devco and five named affiliates, pages4/6/8/9; filing November17,2025."
+      ]
+    },
+    {
+      "sourceIndex": 6,
+      "url": "https://interchange.puc.texas.gov/Documents/53385_4955_1603007.PDF",
+      "finalUrl": "https://interchange.puc.texas.gov/Documents/53385_4955_1603007.PDF",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 2489348,
+      "sha256": "b48441652afd5cb1e7c7d051d7384173ae9e5e543a0584e146583eeafa649f6b",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-6.pdf",
+      "fetchedAt": "2026-09-05T21:58:25.832Z",
+      "sourceTier": "1-GOV",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Ironman/Alvin identity and Q2 2025 operation on page16; March2026 page19 ESIF direct-or-indirect member and UBS adviser/attorney-in-fact; no ratio proof."
+      ]
+    },
+    {
+      "sourceIndex": 7,
+      "url": "https://www.ercot.com/files/docs/2026/09/03/MORA_November2026.pdf",
+      "finalUrl": "https://www.ercot.com/files/docs/2026/09/03/MORA_November2026.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 952584,
+      "sha256": "3a435d218d168f07a077202cb90976730793317da04e8ba85f15400d082f013b",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-7.pdf",
+      "fetchedAt": "2026-09-05T21:58:25.832Z",
+      "sourceTier": "1-ISO",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Operating-resource rows and Backbone planned with executed SGIA/financial commitment/notice to proceed; not an equity ownership schedule."
+      ]
+    },
+    {
+      "sourceIndex": 8,
+      "url": "https://www.prnewswire.com/news-releases/smt-energy-sells-400-megawatts-of-battery-energy-storage-facilities-to-ubs-asset-management-302055312.html",
+      "finalUrl": "https://www.prnewswire.com/news-releases/smt-energy-sells-400-megawatts-of-battery-energy-storage-facilities-to-ubs-asset-management-302055312.html",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 206316,
+      "sha256": "f1292f1b733bd9177555426c12908b2ee63c5652caf2e7c455d88d3528fa229e",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-8.html",
+      "fetchedAt": "2026-09-05T21:58:25.832Z",
+      "sourceTier": "1-PARTY",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "February7,2024 approximately400MW sale; projects unnamed; Mission image cannot identify sold cohort."
+      ]
+    },
+    {
+      "sourceIndex": 9,
+      "url": "https://captona.com/captona-ubs-close-joint-venture-on-battery-storage-portfolio-in-texas/",
+      "finalUrl": "https://captona.com/captona-ubs-close-joint-venture-on-battery-storage-portfolio-in-texas/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 82238,
+      "sha256": "6abef7a6c20a390fb9bb2edbff52589bba1b071fbd641efc2b0d808f22d5ee9e",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-bytes/source-9.html",
+      "fetchedAt": "2026-09-05T21:58:25.832Z",
+      "sourceTier": "1-PARTY",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "May1,2024 closed preferred-equity investment in four728MW/1.06GWh projects; undisclosed holder/partner/layer/stake remains."
+      ]
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedDistinctUrlCount": 9,
+    "acceptedEvidenceCount": 8,
+    "exactlyOneApplicationPrimary": true,
+    "originalAcquisitionDateCorrectionVerified": true,
+    "originalFiveSpvScheduleVerified": false,
+    "completeCurrentDirectOwnerSetVerified": false,
+    "reported99And1DevcoRatiosIndependentlyVerified": false,
+    "ownershipMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allReturnedEvidenceSourcesWorkingOrBrowserVerified": true,
+  "directByteCaptureCount": 10,
+  "deadSourceCount": 0,
+  "recommendedApplicationPrimaryUrl": "https://www.ubs.com/global/en/media/display-page-ndp/en-20220728-en-20220728-2q22-repm-energy-storage.html",
+  "recommendedApplicationPrimarySha256": "891758a6a31a7806b7d4f90dd8188d691d86b44015f046779a6ac3ccaf379084",
+  "limitations": [
+    "Direct UBS July 28, 2022 announcement proves the completed BMES acquisition of five development-stage ERCOT projects totaling 700 MW. It does not give the five-SPV schedule, separate legal close, legal buyer, stakes or fifth-asset path. The prior November-2021 acquisition conclusion is superseded as a research finding, not silently rewritten in old history.",
+    "The December 10, 2021 UBS page concerns team/strategy establishment. The April 14, 2022 FERC document is a petition submitted by UBS, not a Commission finding: its public PDF page 17 says the petitioner was in late-stage investment discussions. The public petition explains fund/GP/adviser roles; confidential organizational exhibits are not present.",
+    "The October 2024 UBS insight indeed says six/930 with 2021 timing and four named locations/730. It is not an executed original-project schedule and does not resolve that chronology/capacity mismatch.",
+    "PUCT McAllen registration filed November 17, 2025 directly names ESIF Devco LLC as McAllen's corporate parent and identifies five other affiliates across pages 6 and 9. Affiliate listing alone does not establish all affiliate direct/indirect equity percentages or the original BMES acquisition membership.",
+    "PUCT Ironman March 2026 affidavit, visually checked on PDF page 19, identifies Energy Storage Investment Fund I LP as direct or indirect member and UBS Asset Management (Americas) LLC as investment adviser and attorney in fact. It is not a complete holder register or 99%/1% Devco capitalization schedule. The response's 99/1 and every-SPV wholly-owned assertions are not independently established by the returned PDFs and are not application facts.",
+    "ERCOT November-2026 MORA published September 3 lists Al Pastor, Wigeon, Holy ESS, Jarvis and Carambola resource rows and Backbone under planned resources; page 21 was visually checked. MORA is a prospective operating-capacity report, not proof of current equity or exact acquisition/operating dates. Different rating bases must not be used as an executed asset bridge.",
+    "SMT's direct February 7, 2024 release discloses an unnamed approximately 400 MW sale; its Mission photo is not a sold-asset schedule. Captona's May 1, 2024 release confirms a closed preferred-equity investment over four projects/728 MW/1.06 GWh and mentions an equity partner but does not disclose that partner, the legal preferred-equity holder/layer, stakes, control or cutoff ownership.",
+    "No complete original-five schedule, fifth-asset transfer chain or current legal holder/fund chart was obtained. Preserve the raw model hypothesis separately and retain terminal DEFERRED only; do not create a synthetic portfolio, duplicate SPVs or infer current owners."
+  ]
+}

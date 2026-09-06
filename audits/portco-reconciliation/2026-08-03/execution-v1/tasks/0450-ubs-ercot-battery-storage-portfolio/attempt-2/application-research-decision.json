@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+  "taskIndex": 450,
+  "companyName": "UBS ERCOT Battery Storage Portfolio",
+  "asOfDate": "2026-09-05",
+  "decision": "DEFERRED",
+  "confidence": "MEDIUM",
+  "researchOnly": true,
+  "generatedAt": "2026-09-05T22:08:02.082Z",
+  "result": {
+    "asOfDate": "2026-09-05",
+    "requestedCompany": "UBS ERCOT Battery Storage Portfolio",
+    "requestedManagers": [
+      "UBS Asset Management"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "MEDIUM",
+    "rationale": "Current four-project identity and ESIF ownership are high-confidence; six/930 reconciliation is medium-confidence; original-five identity and continuity are low-confidence. Creating a list record would synthesize unresolved identity and ownership.",
+    "identityResolution": {
+      "classification": "Descriptive aggregation under ESIF Devco/fund ownership; no legal entity with the requested name was found.",
+      "chronology": "The live 2021 UBS record is a 2021-12-10 strategy launch; FERC said ESIF was still discussing investments on 2022-04-14. The first direct acquisition record is 2022-07-28: BMES completed a sale to buyer described only as UBS AM of five development-stage ERCOT projects/700MW. Names/SPVs, MWh, legal buyer, stake, signing date and separate close date are NOT_PUBLICLY_DISCLOSED. The supplied 2021-11-09 URL is dead; archive searches found no copy.",
+      "figures": "700MW=unnamed BMES five. 728/730MW and approximately 1.05/1.06GWh=same named four under different reporting bases. Six/930 best matches those four plus nominal ~100MW Backbone and ~100MW McAllen, but no acquisition schedule proves this.",
+      "projectMapping": "Al Pastor=Lamesa=24INR0273; Wigeon Whistle=Nevada=24INR0312; Citadel=Crosby/Holy ESS=24INR0147; SMT Ironman=Alvin/Jarvis=24INR0265; Backbone Creek=Burnet=24INR0313; SMT McAllen II=Carambola=24INR0436. Generation owner is each named SPV; legal equity parent is ESIF Devco.",
+      "lineage": "Al Pastor, Wigeon, Citadel and Backbone are BMES candidates only; Ironman and McAllen are the apparent SMT pair. Neither seller's transaction schedule is public."
+    },
+    "ownershipResolution": {
+      "conclusion": "Six separate SPVs share one Devco/fund chain. UBS is manager/adviser, not proved project equity owner. Original-five continuity remains UNRESOLVED.",
+      "owners": [
+        {
+          "manager": "UBS Asset Management (Americas) LLC",
+          "organization": "Energy Storage Investment Fund I LP",
+          "fund": "Energy Storage Investment Fund I LP",
+          "vehicle": "ESIF Devco LLC;six SPVs",
+          "stake": "99% of Devco last disclosed;SPVs indirectly wholly owned by Devco",
+          "announcementDate": null,
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "Four SPVs reaffirmed ESIF-I/UBS roles in 2026; six-affiliate chain last disclosed in 2025"
+        },
+        {
+          "manager": null,
+          "organization": "ESIF Servicer LLC",
+          "fund": null,
+          "vehicle": "ESIF Devco LLC",
+          "stake": "1% last disclosed",
+          "announcementDate": null,
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "LAST_DISCLOSED_2025; cutoff status not independently restated"
+        },
+        {
+          "manager": "Captona",
+          "organization": "Captona",
+          "fund": null,
+          "vehicle": "Undisclosed preferred-equity layer over four assets",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": null,
+          "entryDate": "2024-05-01",
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "CLOSED; holder layer, control and cutoff holding NOT_PUBLICLY_DISCLOSED"
+        }
+      ]
+    },
+    "operatingResolution": "Lamesa, Nevada, Crosby and Alvin operated by June 2025; McAllen operated by June 2026; Backbone was under construction for December 2026. Registration, optimization/QSE, debt and contractor roles are not equity evidence.",
+    "acquisitionExitCheck": {
+      "original": "Completed by the 2022-07-28 announcement; separate legal close and sold-SPV schedule NOT_PUBLICLY_DISCLOSED.",
+      "SMT": "Unnamed ~400MW sale announced 2024-02-07; Ironman+McAllen (~402MW) is apparent but unproved without the seller schedule; ESIF links predate the announcement.",
+      "later": "Captona preferred equity closed 2024-05-01. No named later sale, sponsor exit, control change or pending sale was found through cutoff.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      "2021-12-10: UBS strategy launch; no purchase.",
+      "2022-07-28: completed BMES five/700 acquisition announced; schedule omitted.",
+      "2024-02-07/05-01: SMT ~400 sale announced; Captona four/728 preferred-equity investment closed.",
+      "2026-09-05: five ESIF affiliates operating; Backbone building; four SPVs' ESIF-I/UBS roles reaffirmed."
+    ],
+    "evidence": [
+      {
+        "label": "UBS 2022 acquisition",
+        "url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20220728-en-20220728-2q22-repm-energy-storage.html",
+        "purpose": "Seller, count, MW and completed status",
+        "sourceTier": "DIRECT",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "FERC EL22-53",
+        "url": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20220414-5270",
+        "purpose": "Fund roles and 2022 chronology",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "UBS six/930",
+        "url": "https://www.ubs.com/au/en/assetmanagement/insights/asset-class-perspectives/real-estate/articles/craft-behind-energy-storage.html",
+        "purpose": "Later six claim and four/730 subset",
+        "sourceTier": "DIRECT",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "PUCT McAllen",
+        "url": "https://interchange.puc.texas.gov/Documents/58994_1_1558524.PDF",
+        "purpose": "Six affiliates and McAllen identity",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "PUCT Ironman 2026",
+        "url": "https://interchange.puc.texas.gov/Documents/53385_4955_1603007.PDF",
+        "purpose": "Current ESIF-I and UBS roles",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ERCOT MORA",
+        "url": "https://www.ercot.com/files/docs/2026/09/03/MORA_November2026.pdf",
+        "purpose": "Project IDs, aliases and status",
+        "sourceTier": "ERCOT",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "SMT sale",
+        "url": "https://www.prnewswire.com/news-releases/smt-energy-sells-400-megawatts-of-battery-energy-storage-facilities-to-ubs-asset-management-302055312.html",
+        "purpose": "Separate unnamed ~400MW transaction",
+        "sourceTier": "DIRECT",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Captona investment",
+        "url": "https://captona.com/captona-ubs-close-joint-venture-on-battery-storage-portfolio-in-texas/",
+        "purpose": "Closed preferred-equity investment",
+        "sourceTier": "DIRECT",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Hypothesis: November-2021 five-project purchase and one continuing company.",
+      "after": "Verified: July-2022 unnamed BMES five/700; current six ESIF SPVs; named four mix apparent BMES and SMT lineages. Continuity is unproved."
+    },
+    "excludedOrDuplicateCandidates": [
+      "SMT Mission/99.5MW fleet: excluded; SMT controlled it in 2025.",
+      "Pintail Pass/Merchant as BMES fifth: unproved; contract records are not equity assignments.",
+      "Habitat and First Citizens/Deutsche: service provider and lenders, not equity owners."
+    ],
+    "unresolvedQuestions": [
+      "Need BMES-UBS SPV schedule/assignments, buyer vehicle, MWh, stake, signing/close and fifth-asset disposition/current owner.",
+      "Need SMT sale schedule/close and Captona holder/layer/stake/control chart.",
+      "Archive, party/adviser, FERC/PUCT/ERCOT/EIA/SEC/entity and press searches found no complete schedule or ownership after-image."
+    ],
+    "recommendedListAction": "DEFERRED — do not create, correct or supersede; reopen with original-five schedules/assignments and a current ownership chart or fund asset schedule."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/research-decision.json",
+      "sha256": "a3a254e22370d9e920bec7c5aef489e51a368c9ff2aeaf424a4a84cfa1fd3295"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-2/source-verification.json",
+      "sha256": "b368682379b320847df8415c6e43d3464cff7f83d71f126aca763d36bc07dace"
+    },
+    "acceptedResponseSha256": "3cafea697adc1eb71f6a0720808f87d13abab5ee3a39ff0a06aeb31061726c80",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

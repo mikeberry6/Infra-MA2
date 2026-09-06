@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "deferred-readjudication-v1",
+  "runId": "portco-deferred-readjudication-2026-09-06",
+  "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+  "taskIndex": 456,
+  "companyName": "Crescent Louisiana Midstream",
+  "asOfDate": "2026-09-06",
+  "generatedAt": "2026-09-06T01:37:10Z",
+  "decision": "DEFERRED",
+  "modelDecision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "linkedTaskIdsCovered": [],
+  "acceptedResponseSha256": "a45a4c7c08fb1758032c3bf9faf805ec0f0bb5387c0d7f30c8daed90f0c5696f",
+  "summary": "CLM legal identity, current Crescent/Freepoint member names and onshore segment are supported. Current member percentages, full upstream equity chain and actual Wafra holder/security/stake/entry/continuity remain unproved. Keep exact DEFERRED, no inferred Wafra owner or synthetic company.",
+  "resolvedFormerBlockers": [
+    "Current specific Louisiana registry result resolves active CLM legal entity and two named members without percentages.",
+    "Historical 70% CLM and current 68/32 Holdings disclosures are distinguished by date and tier.",
+    "Kinetica sells underlying pipeline assets to CLM, not vice versa; FERC authorization is evidenced but legal close is not."
+  ],
+  "identityResolution": {
+    "canonicalKey": "crescent-louisiana-midstream|united-states",
+    "productionCompanyId": null,
+    "status": "ENTITY_RESOLVED_CURRENT_FULL_CHAIN_UNRESOLVED",
+    "verifiedCandidate": "Crescent Louisiana Midstream, LLC; Louisiana foreign LLC charter 42367082Q, Wilmington Delaware domicile; formerly Crimson Louisiana Midstream, LLC.",
+    "note": "Do not merge with Crescent Midstream/holdings/Operating/GIGS or Freepoint member; no audited canonical counterpart."
+  },
+  "ownershipResolution": {
+    "status": "CURRENT_MEMBER_NAMES_ONLY_WAFRA_EQUITY_UNRESOLVED",
+    "verified": "Louisiana lists Crescent Midstream LLC and Freepoint Louisiana Midstream LLC as members. Wafra biography identifies Coleman board role only.",
+    "completeCurrentAfterImage": null,
+    "prohibitedInferences": [
+      "Do not assign historical unexplained 30% to Freepoint or Wafra.",
+      "Do not carry 2021 CLM percentages into current after-image.",
+      "Do not conflate 2026 parent 68/32 with CLM interests.",
+      "Board, debt or property assignment is not complete equity evidence.",
+      "No exit found does not prove retention."
+    ]
+  },
+  "operatingResolution": {
+    "status": "ONSHORE_CRUDE_PIPELINE_SEGMENT_SUPPORTED",
+    "note": "Direct operations supports infrastructure scope; company-wide mileage not attributed to CLM. Permit remains On Hold, not completion. Underlying Kinetica asset transaction is not Wafra equity."
+  },
+  "terminalOutcomeCandidate": "DEFERRED",
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "dealDatabaseMutation": false,
+  "applicationBlocked": false,
+  "applicationRequirements": [
+    "Terminal DEFERRED only; no database, seed, owner, redirect or pending equity row.",
+    "One application primary: direct current Louisiana CLM registry result.",
+    "Preserve historical/current tier, source-access, docket cutoff and unverified milestone qualifications plus prior deferral lineage."
+  ],
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "Current CLM member percentages, securities and ultimate equity chain; actual Wafra legal holder, fund/account, vehicle, security, stake/control, executed entry/close and current retention/disposal state.",
+    "searchedEvidence": [
+      "One fresh signed-in maximum-effort ChatGPT conversation; all ten returned URLs independently reopened and bytes hashed.",
+      "Current Louisiana entity registry, historical SEC proxy, current S&P parent financing description, Wafra board biography and company operations.",
+      "Filed FERC notice, November authorization report and settled docket (three entries through September 5, 2026); no displayed consummation proof.",
+      "Current Louisiana permit tracker and scanned App-H historical property-chain documents; no complete current CLM cap table."
+    ],
+    "requiredToResolve": [
+      "CLM operating agreement/member register and current cap table with security classes and percentages.",
+      "Freepoint admission/assignment and closing records plus ultimate legal ownership.",
+      "Executed Wafra investment/transfer/closing and current holdings records naming legal investor, fund/account, vehicle, security, stake/control and dates.",
+      "Audited current entity chart through Holdings/CMIH/Operating/GIGS/Crescent/CLM; underlying Line 526A-200 consummation record if that asset transaction is to be classified as closed."
+    ]
+  },
+  "primaryCitation": {
+    "label": "LA SOS",
+    "url": "https://coraweb.sos.la.gov/CommercialSearch/CommercialSearchDetails.aspx?CharterID=1206129_E07908E5EC",
+    "purpose": "Identity/status/members",
+    "sourceTier": "T1",
+    "workingStatus": "LIVE",
+    "isRecommendedPrimary": true,
+    "contentSha256": "9603596a138db23c6510d5a5d2670d56b42d9ff01ffc674485f6df920ad2dd26"
+  },
+  "independentEvidenceAdjustments": [
+    "Current Louisiana registry confirms active non-Louisiana LLC 42367082Q, last annual report July 21, 2026, former Crimson Louisiana Midstream changed March 22, 2021, with Crescent Midstream LLC and Freepoint Louisiana Midstream LLC listed as members. It gives no percentage or ultimate owner.",
+    "2021 SEC proxy explicitly describes Crescent Midstream as wholly owned by Holdings and CLM as 70% owned by Crescent, plus Grier's direct/indirect 35.35%. These are historical disclosures. No assignment of the remaining 30% to Freepoint or Wafra and no current carry-forward of historical percentages.",
+    "S&P's February 4, 2026 public article independently renders Holdings 68% Carlyle/32% Grier, CMIH wholly owned by Holdings and Operating wholly owned by CMIH controlling Crescent. This is a parent-tier credit description, not an audited CLM cap table or current Wafra investment.",
+    "Wafra raw HTTP returned 403; the ordinary public browser independently displays Michael Coleman's current CLM board role and its text is hashed. Governance is not equity, holder, fund, security, stake, control or entry/close proof.",
+    "Company Operations directly identifies CLM as the onshore pipelines segment. Portfolio-level mileage and volumes are not attributed to CLM alone.",
+    "FERC filed notice page 1 identifies Kinetica as seller and CLM as buyer of about 24.37 miles of Line 526A-200. November 2025 FERC report page 1 confirms authorization and planned crude conversion, not legal close. November 13 follows the notice's November 12 protest deadline/by-rule mechanism; do not describe it as a separately obtained closing order.",
+    "FERC normal browser eventually returns three entries through September 5, 2026: application, notice and environmental assessment, with no consummation entry displayed. Initial no-results loading state was not accepted. Raw HTTP is only the application shell. The docket search cutoff is September 5, not proof covering every September 6 filing or absence of a private close.",
+    "Louisiana tracker confirms P20260513 proposed 20-inch pipeline, Received - On Hold, hold entry July 21 and later analyst review August 14. This source does not itself name the applicant or support the model's 1.85-mile/9,011-foot or Clovelly-LOOP detail; those granular claims are excluded from independently verified application facts.",
+    "State App-H scanned PDF pages 2-3 show an August 2025 revised narrative describing Crescent as GIGS subsidiary and a February 4, 2021 assignment: Holdings to Operating to GIGS property chain. It does not show a complete current equity chart reaching CLM. Do not confuse property assignment with CLM equity or a successor alias.",
+    "Model January 11, 2019 Carlyle closing, February 18, 2026 debt closing, and platform-board composition were not independently bound to a returned direct supporting source in this attempt and are not application facts. Retain DEFERRED; no Wafra owner, synthetic target, supersession or Deal Database row."
+  ],
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9cb53b-d078-83ea-bb4d-e1d5bb09ab56",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "b526edb5441ea3f9cdaf5c79cef0e126f4b200213389274d54ce509d07d3de14"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "a45a4c7c08fb1758032c3bf9faf805ec0f0bb5387c0d7f30c8daed90f0c5696f"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-transcript.txt",
+      "sha256": "319b166184b91deab18a4a404d77528bab64cb1732c6873bfab690b22ae3f735"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-attestation.json",
+      "sha256": "5e39d4b50c975c09a5c4b01f5295e632996f399e95b8771c565e42916dde3cbf"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/chatgpt-response-validation.json",
+      "sha256": "fa88231023fc7bcca0bc960be7b4570fea923fa70e28f9fc0728d6fb3127c415"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-2/source-verification.json",
+      "sha256": "069342c5164e3d00b39ab818733fa4fa14208ded77175053169154e72a75d94e"
+    }
+  }
+}

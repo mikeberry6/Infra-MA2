@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+  "taskIndex": 452,
+  "companyName": "TeraWatt Infrastructure",
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "validatedAt": "2026-09-05T23:00:29.356Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9c9484-3f24-83ea-9077-9e0fdea0ebe5",
+  "acceptedResponseSha256": "5cffee10e3675b8ce36fe1c7e011366260a4be33f47e2b120df95e6a984768b8",
+  "valid": true,
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 6288,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "evidenceCount": 7,
+    "currentOrFormerOwnerRows": 3,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceUrlsAreSingleStrings": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "5cffee10e3675b8ce36fe1c7e011366260a4be33f47e2b120df95e6a984768b8",
+    "result": "PASS"
+  },
+  "captureNormalization": {
+    "performed": false,
+    "semanticChanges": false,
+    "repairTurnsUsed": false,
+    "repairCount": 0,
+    "repositoryTerminalLfAdded": true
+  },
+  "independentEvidenceAdjustments": [
+    "SEC issuer filing directly identifies Terawatt Infrastructure, Inc., Delaware 2021, previously Pearl Street Operating Company. This corrects the earlier description of the Form D issuer; it does not prove the ultimate parent or the 2018 land-vehicle succession.",
+    "Direct company and Keyframe releases establish historical backing and commitments. The returned 2022 company page says funds managed by Vision Ridge, not a complete registered-holder or security schedule.",
+    "Live Vision Ridge investments page visibly places TeraWatt beneath Sustainable Asset Fund III (2021 vintage), without an EXITED label. Its team page names Paul Luce as a current TeraWatt director. These support the existing fund/manager link, not exact stakes, holder identity or continuity of Keyframe/Cyrus.",
+    "Form D offering proceeds and the separate property-company offering cannot be equated with the institutional commitment headline or used as a current cap table. The June 2026 company release describes secured debt with an incremental option, not new equity.",
+    "The response's separate 2018 land-vehicle formation and 2026 PropCo co-invest assertions lack a returned direct filing URL and were not independently established in this packet; they are not application facts. No company/fund/vehicle merge or new ownership follows from them.",
+    "No current issuer-specific equity register, holdings schedule or executed transfer/exit document resolves Keyframe and Cyrus at the cutoff. Retain a precise DEFERRED exception and do not duplicate the company or Vision Ridge row."
+  ],
+  "result": "PASS_WITH_EXACT_KEYFRAME_CYRUS_CONTINUITY_AND_HOLDER_CHAIN_EXCEPTION"
+}

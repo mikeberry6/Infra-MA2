@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+  "taskIndex": 452,
+  "companyName": "TeraWatt Infrastructure",
+  "asOfDate": "2026-09-05",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-05T23:01:16.198Z",
+  "result": {
+    "asOfDate": "2026-09-05",
+    "requestedCompany": "TeraWatt Infrastructure",
+    "requestedManagers": [
+      "Vision Ridge Partners"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "rationale": "Existing company and Vision Ridge/SAF III row are supported, but public evidence cannot resolve current Keyframe/Cyrus company equity.",
+    "identityResolution": {
+      "status": "PARTIAL",
+      "company": "Terawatt Infrastructure, Inc. (Delaware, formed 2021; f/k/a Pearl Street Operating Company)",
+      "aliases": [
+        "TeraWatt Infrastructure",
+        "Terawatt Infrastructure",
+        "TeraWatt",
+        "Terawatt"
+      ],
+      "dates": "Platform founded/built 2018; public launch 2021-05-05.",
+      "boundary": "Existing company is correct; 2018 Pearl Street Land Company, LLC succession and ultimate parent are unproved."
+    },
+    "ownershipResolution": {
+      "status": "PARTIAL",
+      "owners": [
+        {
+          "manager": "Vision Ridge Partners",
+          "organization": null,
+          "fund": "Sustainable Asset Fund III",
+          "vehicle": null,
+          "stake": null,
+          "announcementDate": "2022-09-13",
+          "entryDate": null,
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "COMPLETED;CURRENT_MANAGER_LINK_ONLY"
+        },
+        {
+          "manager": "Keyframe Capital Partners, L.P.",
+          "organization": null,
+          "fund": null,
+          "vehicle": null,
+          "stake": null,
+          "announcementDate": "2021-05-05",
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": "UNRESOLVED",
+          "transactionState": "HISTORICAL;2022_FOLLOW_ON;CONTINUITY_UNRESOLVED"
+        },
+        {
+          "manager": "Cyrus Capital Partners, L.P.",
+          "organization": null,
+          "fund": null,
+          "vehicle": null,
+          "stake": null,
+          "announcementDate": "2021-05-05",
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": "UNRESOLVED",
+          "transactionState": "HISTORICAL;2022_FOLLOW_ON;CONTINUITY_UNRESOLVED"
+        }
+      ],
+      "note": "Live Vision Ridge portfolio/board pages support SAF III/current manager involvement. No formal close date or registered holder/security/stake/control is disclosed; Keyframe/Cyrus cannot be marked active or realized."
+    },
+    "operatingResolution": {
+      "status": "RESOLVED_BOUNDARY_GAP",
+      "scope": "Company platform; property/site entities are excluded from owner rows.",
+      "capital": ">$1bn+=announced institutional capital commitment with no investor/legal-layer allocation; $61.048601m=one fully sold company-issuer equity offering to 12 unnamed investors, first sale 2022-08-12; separate Pearl Street Property Company, LLC=$500m equity; 2026 headline=$150m committed secured debt+$150m option. Do not equate or sum."
+    },
+    "acquisitionExitCheck": {
+      "result": "NO_PUBLIC_EQUITY_EVENT_FOUND_NOT_CONTINUITY_PROOF",
+      "pendingTransactions": [],
+      "searched": "Direct sources found no sponsor exit, transfer, recap, preferred/new shareholder or pending deal. 2026 PropCo co-invest filings are asset-layer only."
+    },
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Platform build began; separate Pearl Street land vehicle formed."
+      },
+      {
+        "date": "2021-05-05",
+        "event": "Public launch; Keyframe/Cyrus backed >$100m."
+      },
+      {
+        "date": "2022-09-13",
+        "event": "Vision Ridge invested; Keyframe/Cyrus increased commitments; >$1bn announced."
+      },
+      {
+        "date": "2026-06-24",
+        "event": "$150m committed secured debt plus $150m option."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "2022 raise",
+        "url": "https://www.terawattinfrastructure.com/blog/terawatt-raises-over-1-billion-to-scale-commercial-ev-charging-centers-across-america",
+        "purpose": "Investors; $1bn commitment",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "2021 launch",
+        "url": "https://www.keyframecapital.com/post/news-keyframe-portfolio-company-terawatt-infrastructure-emerges-from-stealth-mode",
+        "purpose": "Founding; early backers",
+        "sourceTier": "T1_INVESTOR",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Topco Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1944328/000194432822000001/xslFormDX08/primary_doc.xml",
+        "purpose": "Identity; $61.048601m",
+        "sourceTier": "T1_REGULATORY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "PropCo Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1944313/000194432822000002/xslFormDX01/primary_doc.xml",
+        "purpose": "Separate $500m layer",
+        "sourceTier": "T1_REGULATORY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "VR investments",
+        "url": "https://vision-ridge.com/investments/",
+        "purpose": "SAF III listing",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "VR team",
+        "url": "https://vision-ridge.com/team/",
+        "purpose": "Current board link",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2026 debt",
+        "url": "https://www.prnewswire.com/news-releases/terawatt-infrastructure-secures-300m-in-secured-debt-financing-to-expand-its-full-stack-autonomous-vehicle-infrastructure-platform-302808743.html",
+        "purpose": "Debt; lender roles",
+        "sourceTier": "T1_COMPANY_RELEASE",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "company": "KEEP cmrxpjour01bzivheto1lu032.",
+      "owners": "KEEP one Vision Ridge/SAF III row with 2022 entry year; reject duplicate; do not add/realize Keyframe or Cyrus."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Queued Vision Ridge ADD_OWNER",
+        "disposition": "DUPLICATE_EXISTING_ROW"
+      },
+      {
+        "candidate": "Pearl Street Property Company, LLC",
+        "disposition": "PROPERTY_ENTITY_NOT_PLATFORM_OR_OWNER"
+      },
+      {
+        "candidate": "Pearl Street Land Company, LLC",
+        "disposition": "SEPARATE_2018_ISSUER;DO_NOT_MERGE"
+      }
+    ],
+    "unresolvedQuestions": [
+      "Current registered holders/stakes: needs a 2026-09-05 stock ledger, cap table/register or closing capitalization schedule.",
+      "Keyframe/Cyrus continuity: needs current issuer-specific fund holdings or transfer, repurchase, cancellation or exit documents.",
+      "2018-2021 succession, OpCo/PropCo chain and Vision Ridge/co-invest vehicles: needs merger/conversion/name-change records, org chart and executed subscription/stock-purchase agreements; public direct sources did not disclose them."
+    ],
+    "recommendedListAction": {
+      "action": "DEFERRED",
+      "target": "cmrxpjour01bzivheto1lu032",
+      "instruction": "Keep sole company and existing Vision Ridge/SAF III row; reject duplicate; do not add/realize Keyframe or Cyrus until cap-table continuity is sourced."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/research-decision.json",
+      "sha256": "1710454a0ec72d88a02357241492c01aa9c6e5d983cba00b6f49da72e0d7931a"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "5cffee10e3675b8ce36fe1c7e011366260a4be33f47e2b120df95e6a984768b8"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-2/source-verification.json",
+      "sha256": "4fce3eac13a026299d5f6775102803d6ecac879d3ab2053fc7ca083dd733b2a6"
+    },
+    "acceptedResponseSha256": "5cffee10e3675b8ce36fe1c7e011366260a4be33f47e2b120df95e6a984768b8",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

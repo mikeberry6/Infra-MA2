@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+  "taskIndex": 454,
+  "companyName": "Beyond Data Centers",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-06T01:41:51.822Z",
+  "rationale": "Identity and qualifying activity are resolved; no direct source proves Wafra's legal holder, instrument, stake/control, close or current continuity.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/preparation/batch-deferred-0450-0456/locked-454-task-snapshot.json",
+    "sha256": "87e3313df4191ad5d5d3d5720320b7a872c295728285bd94a60c98ca4f864d2c"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/application-research-decision.json",
+    "sha256": "99caee0141df0fbc8d2905539734ddcaad6d0efa0fdde66a8374598b31678bba"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-2/source-verification.json",
+    "sha256": "493cb89bd0e8842b200e579d499321c1e4b9844f1b9f60be21e1bad080f66375"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2132701/000213270126000001/xslFormDX01/primary_doc.xml",
+      "purpose": "offering"
+    },
+    {
+      "url": "https://www.sec.gov/resources-small-businesses/exempt-offerings/filing-form-d-notice",
+      "purpose": "first sale"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0002132701.json",
+      "purpose": "latest filing"
+    },
+    {
+      "url": "https://icis.corp.delaware.gov/ecorp/entitysearch/NameSearch.aspx",
+      "purpose": "formation"
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forl-m26000000972-a7c64ecc-2b4b-4219-953b-cf8bf403d7b0&directionType=CurrentList&inquirytype=EntityName&listNameOrder=BEYONDDAMUSICENTERTAINMENT+P050001245560&searchNameOrder=BEYONDDATACENTERS+M260000009720&searchTerm=BEYOND+CHANCE+LLC",
+      "purpose": "foreign status"
+    },
+    {
+      "url": "https://beyond-datacenters.com/about/",
+      "purpose": "identity/board"
+    },
+    {
+      "url": "https://beyond-datacenters.com/capabilities/",
+      "purpose": "operations"
+    },
+    {
+      "url": "https://www.buzzsprout.com/860047/episodes/18903652-ocolo-s-on-building-beyond-data-centers-and-scaling-data-centers-across-the-u-s-and-europe",
+      "purpose": "construction"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "eac9ba83a5bc76c9d1b2e6246403196b5e9d3d6d0f0bc0699086efdc7fecfc82"
+}
