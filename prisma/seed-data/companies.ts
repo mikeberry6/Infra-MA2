@@ -1,5 +1,6 @@
 import type { PortCo } from "./portco-types";
 import { applyApprovedPortCoAfterImages } from "./approved-portco-after-images.ts";
+import { persistChicagoDisplayedOwnerStates } from "./chicago-seed-state-persistence.ts";
 
 export const baseCompanies: PortCo[] = [
   {
@@ -33857,6 +33858,6 @@ export const baseCompanies: PortCo[] = [
   }
 ];
 
-export const companies: PortCo[] = applyApprovedPortCoAfterImages(
-  baseCompanies,
+export const companies: PortCo[] = persistChicagoDisplayedOwnerStates(
+  applyApprovedPortCoAfterImages(baseCompanies),
 );
