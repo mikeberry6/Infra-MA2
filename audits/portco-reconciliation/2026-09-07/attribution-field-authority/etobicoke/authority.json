@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_ETOBICOKE_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "df2c0dc7f5cf41b9dcce5a3b85560f8d5914b2ca5be05d1471cde9a951e5aa08",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "8cb9daeb6b6c4fae2b559364c81ff4e26f89e4f0aad731a94cb42121a7d78f4f",
+  "canonicalApprovalSha256": "3661cc5acaa806a8631169084205cf3fd96a52850b974c80d691d8598b6a8237",
+  "canonicalReceiptSha256": "3378304505089234a8f313cc70eecf7aa31016a26b91fd8efe58cf49600be450",
+  "canonicalResearchBindingSha256": "ebd4aa12ac5fff2dbe75a819c84e3577f7010c5f8ffe03d96d947a8eea0be63c",
+  "supersededProposalSha256": "0211cccf1a9be1eb25877faf09ce14ef6c5b062f6181c3d45c75c7881f435183",
+  "canonicalSeedOverlaySha256": "9ac1b32d2e912f5c06de93f26930aacce97bc30af3fc44d5f4b54f726f71ce21",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "69f135793f8bb257069d7c78ab435f83fbcf1021ae2a3ba4ead13855d97cc02d",
+  "semanticCompanySha256": "8de683ec6c904842eb4c38723fd50d7673adfe85ddcf1c47e736edf8d790e0ad",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "674268cad94b4bc77604e15dc2665dbd06ffb492d4fa56df7bc87a7c30af0c65"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "5b23f7baa7a58e14cf487d850f63a30801b656082ac4226df7bd99e362536f2d"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "2c87b51a537ac39f08bd87743a0d1e042c9b9cd99a461914fe77da4160c1bacc"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "17a096f139f53dd79c9907d1eb52cf0a6df491e1d4ef1a96e73cd5b80c3e3e31"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "c8a7151c6ccb0fd4917b6579f115cb7e7e28a7e923286bcc0f7298506aa7883e"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "7479cc785ead6c51273e475abb7fa834663fb28b0f1d08e1caf964423fab971b"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "23afba168db29b98a17ec68f159a33f31736a7af3f5977be85dde3f2413d8ad9"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "8eb078ca9ae8a889226dd57ef9c44435dc81a4b4bf6b6ebe37597375e6e8f50e"
+    },
+    {
+      "file": "attempt-2/research-binding.json",
+      "sha256": "b1caa55d3bf1bd673733e3decd80007422aa0868ae3d1d0662fd4037b4e55774"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "POINTER_ONLY_ORDERED_TWO_FILE_INDEX",
+    "attestedHashMatches": true,
+    "repairCount": 0,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmrxpjcxf00tcivhevo1ton8u",
+      "ownerId": "cmrxpjt0n01imivheii10kfbf",
+      "recordId": "OFA-EAE85C54365C",
+      "originalRecordId": "OFA-822471AC3691",
+      "candidateSha256": "120013ca211893558b8374ebf5b2ff6c06abf4fabb1b79d020399aa45ce02807",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Axium Infrastructure Canada II L.P",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Axium Infrastructure | Fund: Axium Infrastructure Canada II L.P. | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Axium Infrastructure Canada II L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's financial-close release and current portfolio evidence identify Axium Infrastructure Canada II L.P. as the investment vehicle. The disclosed vehicle remains unlinked because it is not a production-curated fund, rather than being inferred to the generic AxInfra Fund I-IV record."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Axium Infrastructure Canada II L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's May 2016 financial-close release explicitly names Axium Infrastructure Canada II L.P. as an equity sponsor of Etobicoke Healthcare Partnership and identifies Axium Infrastructure Inc. as its fund manager. Preserve the exact disclosed fund name, including the final period, without creating a curated Fund row or substituting generic AxInfra Fund I-IV. Retain the canonical legal vehicle, 2016 entry and unavailable sponsor percentage; this dated disclosure does not establish a new September 2026 ownership event."
+      },
+      "preserves": {
+        "id": "cmrxpjt0n01imivheii10kfbf",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": null,
+        "vehicleName": "Axium Infrastructure Canada II L.P.",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "missingSeedUpsertBinding": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Axium Infrastructure Canada II L.P",
+          "seed": "Axium Infrastructure Canada II L.P.",
+          "recommended": "Axium Infrastructure Canada II L.P.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2016-06-13-Press-Release-Etobicoke_May-2016_website-only_en.pdf",
+          "primarySourceSha256": "7320817f943454b01afa26fad1e916d81a17b9e89c14a50f6015da49ce102097",
+          "primaryOneBasedPages": [
+            1
+          ]
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Matched supplemental ownership detail: Firm: Axium Infrastructure | Fund: Axium Infrastructure Canada II L.P. | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+          "seed": "Axium's financial-close release and current portfolio evidence identify Axium Infrastructure Canada II L.P. as the investment vehicle. The disclosed vehicle remains unlinked because it is not a production-curated fund, rather than being inferred to the generic AxInfra Fund I-IV record.",
+          "recommended": "Axium's May 2016 financial-close release explicitly names Axium Infrastructure Canada II L.P. as an equity sponsor of Etobicoke Healthcare Partnership and identifies Axium Infrastructure Inc. as its fund manager. Preserve the exact disclosed fund name, including the final period, without creating a curated Fund row or substituting generic AxInfra Fund I-IV. Retain the canonical legal vehicle, 2016 entry and unavailable sponsor percentage; this dated disclosure does not establish a new September 2026 ownership event.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2016-06-13-Press-Release-Etobicoke_May-2016_website-only_en.pdf",
+          "primarySourceSha256": "7320817f943454b01afa26fad1e916d81a17b9e89c14a50f6015da49ce102097",
+          "primaryOneBasedPages": [
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "candidateFieldsAdjudicated": 2,
+  "cumulativeCandidateFieldsAdjudicated": 86,
+  "remainingCandidateFields": 517,
+  "additionalFieldsOutsideOriginal603": 0,
+  "productionFieldsRequiringCorrection": 2,
+  "seedFieldsRequiringCorrection": 1,
+  "missingSeedUpsertBindings": 1,
+  "qualifications": [
+    "Sole field-primary is the existing May 2016 financial-close PDF, complete page1 rendered and reviewed. It expressly identifies the full legal fund name as equity sponsor and Axium as fund manager; attribution is substantive issuer evidence, not acceptance of a seed label. Keep the final period and unlinked DISCLOSED status without creating a Fund row.",
+    "The 2024 AIC II PAI statement is supporting only. Complete pages1/4 were rendered and reviewed with headings and coverage-ratio footnote: Etobicoke is a named LEED-certified asset within AIC II's reporting universe. The 7% LEED share and100% reporting coverage are portfolio ESG metrics, never company ownership percentages. Neither PDF supplies a current sponsor stake or new September2026 ownership event.",
+    "Both frozen raw PDFs exactly match historical bytes; no PDF rewrite or recapture occurred. Other historical project, hospital, legal and manager sources were not freshly recaptured in this scoped field review and no new current-operations claim is made.",
+    "Preserve the complete canonical two-owner EHP company, Axium's legal vehicle/2016/unknown stake/null fund link and confidence, CVC DIF's existing DIF Infrastructure IV fund link/metadata and DIF Infra 4 Canada Ltd. vehicle, nine citations with the unchanged IO card primary, all milestones and the completed project-duplicate redirect. The retired company stays absent and task203 stays superseded by117.",
+    "Nine historical packet files are hash-bound. The matching attested transcript is a pointer-only two-file index, not a full DOM trace; one response and zero repairs. Historical independent completion-date, fund-link, organization and project-boundary corrections remain intact.",
+    "Canonical v2 only preserves the previously omitted June28,2016 funding milestone and adds its official Ontario citation/evidence following a non-writing v1 dry-run failure. Original OFA-822471AC3691 refers to the retired project record and shortened vehicle label; canonical OFA-EAE85C54365C is distinct. The applied owner ID and metadata lineage survive the merge; no missing seed-upsert history is fabricated.",
+    "Two production-field corrections and one overlapping seed-rationale correction remain unapplied, with one missing latest seed-upsert binding. This is not an apply manifest or write authority; never replay f18f69a7-aea9-4377-8bf6-408da6c6560a or the initial attribution transaction, reopen terminal tasks, run the full seed, repeat company/ChatGPT research or change runtime/UI/Deal Database data. Completion remains false."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "1b84fef1697a1eb9f1563f03b158364b64bbfcd4",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "0b7a796d805c8dcc2fabd445439fbf5fc761cce5bcd70198353d9d8db484e830",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0117-etobicoke-general-hospital-phase-1-patient-tower-v2.json",
+      "sha256": "674bbcc2098783247d081970f65ee567dde2218dad62fe73c4efe826e7dbb07c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/chatgpt-attestation.json",
+      "sha256": "2c87b51a537ac39f08bd87743a0d1e042c9b9cd99a461914fe77da4160c1bacc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "5b23f7baa7a58e14cf487d850f63a30801b656082ac4226df7bd99e362536f2d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/chatgpt-response-validation.json",
+      "sha256": "c8a7151c6ccb0fd4917b6579f115cb7e7e28a7e923286bcc0f7298506aa7883e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/chatgpt-transcript.txt",
+      "sha256": "17a096f139f53dd79c9907d1eb52cf0a6df491e1d4ef1a96e73cd5b80c3e3e31"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/research-decision.json",
+      "sha256": "23afba168db29b98a17ec68f159a33f31736a7af3f5977be85dde3f2413d8ad9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/research-decision.md",
+      "sha256": "8eb078ca9ae8a889226dd57ef9c44435dc81a4b4bf6b6ebe37597375e6e8f50e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/research-prompt.md",
+      "sha256": "674268cad94b4bc77604e15dc2665dbd06ffb492d4fa56df7bc87a7c30af0c65"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/source-verification.json",
+      "sha256": "7479cc785ead6c51273e475abb7fa834663fb28b0f1d08e1caf964423fab971b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/locked-production-snapshot.json",
+      "sha256": "100b0533d668d6c26e5455ec013d369219cbc187e3347f1e8861a7a16fcb8cca"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/locked-task-snapshot.json",
+      "sha256": "ee66d96f99f3cc6dd351e745a9660141cdf822e39bd53cef116f4be10b665ff9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "19f062a740dce66cf325f00bedbf7e1ad75e503d9f1d02bf061cecc57271cf39"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/research-binding.json",
+      "sha256": "b1caa55d3bf1bd673733e3decd80007422aa0868ae3d1d0662fd4037b4e55774"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0117-etobicoke-general-hospital-phase-1-patient-tower-v1/proposal.json",
+      "sha256": "c2796cc03c73840600a60468d750a825b2bc159c9408dc6337e76b1b3c1c2b42"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0117-etobicoke-general-hospital-phase-1-patient-tower-v2/proposal.json",
+      "sha256": "0246acf243c1ddd1159b00f433104701782cab65f1f7971acdccd5376a61599d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/aster-bloom/authority.json",
+      "sha256": "49a64ef4bdde3fb5e92d60f9e9a58695b9adc93c90c7418926a89da8dc919c5b"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "4658f849a64788c82ae556f0d82ee58fb0180fab6a9cf773230173c76267a24a",
+  "reportSha256": "9e388af71dbb5d1f18bbf05203f78364496c2f1e348c999bc26c493271c8f2c6"
+}
