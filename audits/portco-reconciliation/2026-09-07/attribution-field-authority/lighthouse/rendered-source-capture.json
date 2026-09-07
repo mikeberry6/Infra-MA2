@@ -1,0 +1,28 @@
+{
+  "persistedAt": "2026-09-07 16:11:01 UTC",
+  "method": "BROWSER_RENDERED_PARAGRAPH_EXCERPT",
+  "capturedDuring": "2026-09-07T15:39:01.034Z heartbeat, after the raw source capture",
+  "exactCaptureTime": null,
+  "recoveredFrom": "Persistent CUA buyerRendered and keyRendered objects; no source was reopened or recaptured for persistence.",
+  "fullDomTrace": false,
+  "rawHttpStatusAttested": false,
+  "qualifications": [
+    "Exact rendered paragraph arrays, titles, heading where captured, and URLs are preserved. These are excerpts, not full-page DOM or raw HTTP response bytes.",
+    "Original ordinary HTTP retrievals of buyer and KeyBanc timed out. The empty captured files are not source evidence. Browser rendering does not reclassify those raw responses as HTTP 200."
+  ],
+  "sources": [
+    {
+      "id": "buyer-rendered",
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/buyer-rendered.json",
+      "url": "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security",
+      "rawCaptureId": "buyer"
+    },
+    {
+      "id": "keybanc-rendered",
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/keybanc-rendered.json",
+      "url": "https://www.key.com/businesses-institutions/our-transactions/deals.excelsior-energy-capital.html",
+      "rawCaptureId": "keybanc"
+    }
+  ],
+  "databaseWrites": 0
+}

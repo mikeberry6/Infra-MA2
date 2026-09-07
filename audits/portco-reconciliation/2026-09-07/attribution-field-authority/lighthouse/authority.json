@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_LIGHTHOUSE_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "9b90b8b4cddbec196b21fb5caf4d61914f0d0eedebadb1db5f42bb325bccada0",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "68de232f7ca0c596a042ddaa0df73e94cc329c4283020638c4fbe20ba05ac8b6",
+  "canonicalApprovalSha256": "98497a5ae3d2273d87c90768780b6a9e94fc106b29a90fe0e0acca69f4dab538",
+  "canonicalReceiptSha256": "53602319c8dab72feca72d8feca2732b727c1d56192847320cf41dfded3616ff",
+  "canonicalBatchReceiptSha256": "f54635d9de735d5adb2e609b1629a84e8a23c475132678d8049618bed596131d",
+  "canonicalSeedSpecSha256": "e8b79291ae49352a47e0582208d614686771ab72f5b4dc64d71156e96b1e2670",
+  "canonicalSeedBatchSha256": "d162e873fc24b0dd3ac9ac18e0a820050caf417de7601c5317a0df2690dacd36",
+  "canonicalResearchBindingArtifact": null,
+  "canonicalSeedOverlaySha256": "df76950b41720e85f15aa49c97232a58a2feeb28dc44ffaa65a8fe11648b29c6",
+  "initialAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "7048a1e40ac4f43fd7d1460a6d24c1d5e595190ed395e43774163923a4d79e96",
+  "semanticCompanySha256": "f5bfa4a43f8138bf1add46176f656abf4e978e5dd174df37fa608a75811b3857",
+  "historicalAttributionRows": [
+    {
+      "recordId": "OFA-893789375270",
+      "ownershipPeriodId": "cmrxpju7s01kkivheqy4idfr6",
+      "companyId": "cmrxpj8x000n4ivhefbfwnig3",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Evergreen Infrastructure Fund",
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": "Evergreen Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Evergreen Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: BlackRock | Fund: Evergreen Infrastructure Fund | Ownership Interest: 100% Seed milestones or source evidence explicitly name the current fund vehicle."
+      }
+    },
+    {
+      "recordId": "OFA-D8ADEDE4A707",
+      "ownershipPeriodId": "cmrxpjuac01kpivhefe29onwu",
+      "companyId": "cmrxpj8zq00n9ivhed9tgikrv",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Evergreen Infrastructure Fund",
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": "Evergreen Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Evergreen Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle."
+      }
+    }
+  ],
+  "retiredCompanyId": "cmrxpj8zq00n9ivhed9tgikrv",
+  "canonicalRelationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjuac01kpivhefe29onwu",
+      "canonicalRelationId": "cmrxpju7s01kkivheqy4idfr6",
+      "rationale": "Both rows describe the same BlackRock Evergreen acquisition of the same Lighthouse portfolio; one corrected canonical period preserves the ownership history without double-counting."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkwkg031aivheflvs0dd9",
+      "canonicalRelationId": "cmrxpkw9x030vivheldsxdx9k",
+      "rationale": "Both milestones describe BlackRock signing the Lighthouse acquisition in November 2023 and are consolidated into one corrected signing milestone."
+    }
+  ],
+  "renderedSourceCaptureSha256": "080cfd1e733286b06decfc5c08023bb4b4db57f0ae91aa485eecdb3e550ae047",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "2264000ff0c2c5bfd1d8a9684f5883886da4b39dca734dc1dd19e154a59a5fea"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "7a4131465c5099fcefce9271ae4a4cec8e8a7a4ca1246559d5d6fe135dbf8a88"
+    },
+    {
+      "file": "attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e1fe383118083ec4f9ec72873b5a0a9b45bf7bdb6873137b1af1bdd849221c82"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "34bd970a8f8b485b213c89da04a711055459b335174e3a18103f98de31920eb4"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "da613847cc9ee79b0ccd470c2ec1ff1074f53d40e27a96dfc1abb4032a515593"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "e3c71ffff11446b12da4a7c91af297057734484577376077f53c0e051518a75c"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "fa62f3e775a38cce32fbf50c72432de1f31e6de7b44b6f9cf9eb2781db9ad9d9"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "3bff51896c51e80daef94bd7135f0d19c3b0d3dfd97e392b4e8ad191c3dcb271"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "740872a5c7334b85b4a554b4e6128e65eca9c2858c7529e5360c8f226b473f6d"
+    },
+    {
+      "file": "attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "fa4bb70379f30b34c6e3eedb75c1df24ded8ca68691f3d1492d5e95326e7fcfb"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "COMPILED_PROMPT_INITIAL_REPAIR",
+    "attestedHashMatches": true,
+    "repairCount": 1,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmrxpj8x000n4ivhefbfwnig3",
+      "ownerId": "cmrxpju7s01kkivheqy4idfr6",
+      "recordId": "OFA-CD79593C0120",
+      "attributionRecordId": "OFA-893789375270",
+      "candidateSha256": "e35123f2a9856f97f7ae21e00d3013e87b5d35ecbf181dc0ae16d7f2b6136cdd",
+      "current": {
+        "linkedFundName": "Evergreen Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Evergreen Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: BlackRock | Fund: Evergreen Infrastructure Fund | Ownership Interest: 100% Seed milestones or source evidence explicitly name the current fund vehicle."
+      },
+      "seedExpectation": {
+        "linkedFundName": "Evergreen Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Evergreen Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "BlackRock's Evergreen Infrastructure Fund announcement and the Excelsior sale evidence identify Lighthouse as the consolidated U.S. solar-and-storage portfolio acquired from Excelsior; the retired Excelsior record is therefore removed as a duplicate."
+      },
+      "recommended": {
+        "linkedFundName": "Evergreen Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Evergreen Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "BlackRock's November 16, 2023 announcement directly identifies its Evergreen Infrastructure fund as signing definitive documentation to acquire Lighthouse, subject to closing conditions. This supports the disclosed fund attribution and existing curated Evergreen Infrastructure Fund link, not a separately named legal holding entity. The signing release is not proof of closing or a 100% project-level economic stake; preserve the canonical December 2023 closing and the distinction between all of Excelsior's membership interests and undisclosed total project-level economic ownership."
+      },
+      "preserves": {
+        "id": "cmrxpju7s01kkivheqy4idfr6",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "Evergreen Infrastructure Fund",
+        "vehicleName": "Evergreen Infrastructure Fund",
+        "stake": "Acquired 100% of Excelsior's membership interests; total project-level economic percentage not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "c633e01cd30e0a62308a5506f05ec2e3d9bb40c24785285ec01af61a03f6d6a4",
+      "missingSeedUpsertBinding": false,
+      "initialAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Matched supplemental ownership detail: Firm: BlackRock | Fund: Evergreen Infrastructure Fund | Ownership Interest: 100% Seed milestones or source evidence explicitly name the current fund vehicle.",
+          "seed": "BlackRock's Evergreen Infrastructure Fund announcement and the Excelsior sale evidence identify Lighthouse as the consolidated U.S. solar-and-storage portfolio acquired from Excelsior; the retired Excelsior record is therefore removed as a duplicate.",
+          "recommended": "BlackRock's November 16, 2023 announcement directly identifies its Evergreen Infrastructure fund as signing definitive documentation to acquire Lighthouse, subject to closing conditions. This supports the disclosed fund attribution and existing curated Evergreen Infrastructure Fund link, not a separately named legal holding entity. The signing release is not proof of closing or a 100% project-level economic stake; preserve the canonical December 2023 closing and the distinction between all of Excelsior's membership interests and undisclosed total project-level economic ownership.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security",
+          "primarySourceSha256": "430119a66a8f48facc5550a6fc6490a4abac695c0746e7968559c7a961052745",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/buyer-rendered.json"
+        }
+      ]
+    }
+  ],
+  "preservedHistoricalOwners": [
+    {
+      "id": "cmt5ogans000fu7yykyfg3253",
+      "managerName": "Excelsior Energy Capital",
+      "organizationName": "Excelsior Energy Capital",
+      "fundName": null,
+      "vehicleName": "Excelsior Renewable Energy Investment Fund I LP",
+      "stake": "Sold 100% of its membership interests; total project-level economic percentage not publicly disclosed",
+      "investmentYear": null,
+      "exitYear": 2023,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    }
+  ],
+  "candidateFieldsAdjudicated": 1,
+  "cumulativeCandidateFieldsAdjudicated": 125,
+  "remainingCandidateFields": 478,
+  "additionalFieldsOutsideOriginal603": 0,
+  "productionFieldsRequiringCorrection": 1,
+  "seedFieldsRequiringCorrection": 1,
+  "missingSeedUpsertBindings": 0,
+  "additionalCanonicalIssues": [
+    {
+      "field": "Seed rationale merger direction",
+      "issue": "The current seed rationale says the retired Excelsior record was removed. The exact applied proposal instead retained the existing Excelsior company ID, renamed it Lighthouse and retired the separate duplicate Lighthouse ID. The one overlapping seed-rationale recommendation avoids perpetuating this reversed narrative. Preserve the exact redirect and both historical attribution receipt rows; never recreate the retired company or replay its former owner."
+    }
+  ],
+  "qualifications": [
+    "One original BlackRock rationale decision has exactly one primary: the separately captured rendered November16,2023 buyer announcement paragraphs. The buyer directly identifies Evergreen Infrastructure fund signing for Lighthouse subject to closing conditions. Preserve DISCLOSED/Evergreen Infrastructure Fund, existing curated link/null confidence,2023 entry and undisclosed total project-level economic stake; no separate legal holding entity is established.",
+    "The rendered KeyBanc paragraphs separately confirm December2023 closing,38 projects/six states, the sale of100% of Excelsior's membership interests and Excelsior Renewable Energy Investment Fund I LP. Signing is not closing; March12,2024 is the seller's later disclosure; the exact legal closing day and total project-level economic interests remain undisclosed.",
+    "Six ordinary HTTP responses are preserved once. KeyBanc and buyer timed out with empty non-evidentiary bodies; BlackRock returned403 non-evidentiary HTML. Seller, Natural Power and the former manager homepage returned200. The two rendered paragraph excerpts are separately hashed, not raw HTTP or full DOM traces, and do not convert failed raw retrievals to200. Exact original capture time is unavailable and explicitly null; persistence time is recorded separately.",
+    "All ten historical packet files and six attested content hashes match. One schema-only repair occurred in the same historical conversation. The compiled prompt/initial/repair/accepted transcript is not a full DOM trace. Historical KeyBanc/buyer captures had null hashes; seller was200 and BlackRock403. Preserve those limitations; no repeated company/ChatGPT research or new repair.",
+    "Final CORRECT_COMPANY/ADD_OWNER/MERGE_COMPANIES retains the original Excelsior production ID, renames it Lighthouse, consolidates one duplicate BlackRock ownership period and one signing milestone, and redirects the retired duplicate Lighthouse ID exactly once. Preserve two aliases,five citations,three milestones,no management,two ownership identities and18 physical metadata fields. BlackRock is active, Excelsior realized2023; zero pending transactions.",
+    "The full1264-row initial attribution receipt contains two historical BlackRock rows: canonical OFA-893789375270 and retired OFA-D8ADEDE4A707. Current seed record OFA-CD79593C0120 is distinct. The later Excelsior former-owner period is not an initial receipt member. Preserve both historical rows and relation merges without recreating retired identities or replaying the initial attribution or PortCo transaction69511746-ca46-499f-9d1b-8d9a8e39bfe0.",
+    "The existing exact seed upsert belongs to batch-0141-0145-v1, while the successful canonical apply is v2. Bind both protected manifests and the v1 specification without rewriting lineage or retrying v1. One production and one overlapping seed-rationale correction remain unapplied with no missing upsert. The old seed rationale reverses which duplicate ID was retired; this recommendation avoids that narrative without changing the canonical merge.",
+    "Historical Excelsior keeps DISCLOSED/Excelsior Renewable Energy Investment Fund I LP with no curated fund link, unknown entry,2023 realization and only its sold membership interests quantified. Direct seller and adviser text supports the fund name, not a separately identified exact legal holding company. BlackRock's later GIP-manager acquisition is not a new direct Lighthouse ownership event; the blocked raw manager page is not evidence.",
+    "Preserve the August23 canonical cutoff,one portfolio rather than38 individual PortCos,and unknown website/headquarters/founding/transactionprice/tax-equity economics. No exhaustive fresh ownership-event search or scorecard enrichment. The application-primary remains KeyBanc and is distinct from this one field-primary buyer excerpt.",
+    "This audit is not an apply manifest or database/seed-write authorization. All source tasks remain terminal, ledger idle and overall completion false. All physical persistence,compatible issues and full seed replay parity remain outstanding. No full seed runner,source transition,new bundle,Deal Database/runtime/UI change or enrichment."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "72beca058295653c86a28a5fe65880934b1d9f5d",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "6ad04708c7fc6d207ea5477ee7f362f471272a4747750d1ff1a8e6feba80210f",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0142-lighthouse-v1.json",
+      "sha256": "ddfe53e50cd1b532593ab10ab35e7ab406f8b6be62e7a181f29b11dd482cedc8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e1fe383118083ec4f9ec72873b5a0a9b45bf7bdb6873137b1af1bdd849221c82"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-attestation.json",
+      "sha256": "da613847cc9ee79b0ccd470c2ec1ff1074f53d40e27a96dfc1abb4032a515593"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "7a4131465c5099fcefce9271ae4a4cec8e8a7a4ca1246559d5d6fe135dbf8a88"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "fa4bb70379f30b34c6e3eedb75c1df24ded8ca68691f3d1492d5e95326e7fcfb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-response-validation.json",
+      "sha256": "e3c71ffff11446b12da4a7c91af297057734484577376077f53c0e051518a75c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-transcript.txt",
+      "sha256": "34bd970a8f8b485b213c89da04a711055459b335174e3a18103f98de31920eb4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/locked-production-snapshot.json",
+      "sha256": "9e7ead3ef2d2a9e0aa1ed3786285485ee99a0a8aecdebd4abe8b393fe213efbb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/locked-task-snapshot.json",
+      "sha256": "106e696c00c49a19fa2a4b6301fff6939d689f4342b98bf6233b83b09d15e3c0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/release-delta-check.json",
+      "sha256": "ba0efc48fbf649558da09c6f5c1c22a4afeb8cca2f11c20ee13e6c8e1c8815a6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/research-decision.json",
+      "sha256": "3bff51896c51e80daef94bd7135f0d19c3b0d3dfd97e392b4e8ad191c3dcb271"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/research-decision.md",
+      "sha256": "740872a5c7334b85b4a554b4e6128e65eca9c2858c7529e5360c8f226b473f6d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/research-prompt.md",
+      "sha256": "2264000ff0c2c5bfd1d8a9684f5883886da4b39dca734dc1dd19e154a59a5fea"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/source-verification.json",
+      "sha256": "fa62f3e775a38cce32fbf50c72432de1f31e6de7b44b6f9cf9eb2781db9ad9d9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0142-lighthouse-v1/proposal.json",
+      "sha256": "c001c860a431b047b0571cde473d98bbf75b1b28a0d2d6cabd48ca80b53e0896"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v1/batch-manifest.json",
+      "sha256": "283c79245be1c2f2961ebaa670781a7545872099c7b0a81d02e33e8bd3bee9bc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "0cdb59d928bd4a9a66a60a67c2772b182745e0bc9afd3fa946a6668635db780e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v2/batch-manifest.json",
+      "sha256": "4d531d8fb0e2ac71eab8c925158799a292f4b966843bc40c45e715fc4a584755"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v2/production-apply/batch-apply-receipt.json",
+      "sha256": "65c45be9b0bedab8912e9c844c17c2da029d33a6f1c0376296b1ec508016ab41"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/eolian/authority.json",
+      "sha256": "964e9e43c5142e26ac7ca614bb8afc9c4d4b3653e823379d35b93cecbb20f4d5"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "13ddbc93b5aa0b8d622c7f1bbd6ed609fa3d50022b6ed0e882703dc5c301220b",
+  "reportSha256": "81d4dd19cbb31b1c92c9a0722dd3fe0e54ab9368d2945260c733e26aab82bdbe"
+}
