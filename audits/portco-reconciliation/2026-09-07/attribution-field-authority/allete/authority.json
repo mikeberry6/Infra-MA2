@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_ALLETE_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "6a2026c62a71121e658bab6c9edfe4e6ad0d1af088ca8630dbaa3356ef19c8bb",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "918867107a194fd02c502314aadc1cf178e47411f6a012fcb888c407ac4bcd26",
+  "canonicalApprovalSha256": "4b8cecdffe643835b8fe08ba11bdc8da8af9f0d4ef29006fc512c51db4e97936",
+  "canonicalReceiptSha256": "a7dd44fc1e41d01043a403b60ce1c05400db8f8696295e4735172effbefa9bc7",
+  "canonicalBatchReceiptSha256": "a6b1874723f2ac1fe53ce313d1543f85d63e468dfa26aa2dd5b403134e6fc3d6",
+  "canonicalSeedSpecSha256": "bc8fdc535f471654019e1ab19a9c4569b57e700419fca71e2548f15060abd48b",
+  "canonicalResearchBindingArtifact": null,
+  "canonicalSeedOverlaySha256": "67dc144aa2233defd9c4cea62064be9859d1b2c0601bf3d8f67d5f2d06fd1b94",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "73a2e5a87da1149e59576a6ba37b9ef6e9fa491e0bf59dfc03b6681e94e02f3a",
+  "semanticCompanySha256": "aa451ba37c5be8474b4ee09c2b06e8c1e85b380b4a698074699e1a1959273865",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "fe5fbfd8d7e0ef7e15c3ded16cdb966b17fab333a1d7abdf4d206eb5dda65d9f"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "470b08fa3b561c0ac8d339cbdab276c6d0ac97d89ac0c3578dc114b1cf476e45"
+    },
+    {
+      "file": "attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "dc50c6a11a6d6076943190dc8e2300c5222f55688067b168cb529726734ffb5a"
+    },
+    {
+      "file": "attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "0e2112a47105562af203f77f1b91cf954f415441567452a09248ab826812f3b0"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "7ba0327cbfebb5e064fb0708611a9aab350858ca826eae9cb46feb686fb8087c"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "5c55ce7048d33a9dff0b95c9894c8a7d568ce651eb9f7b3a8a60f3958e42be6f"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "81a0bfe1dc5fc7c1800fdb7740b9b1ab82a62a949bce92f7e5ab1bc1a28e267f"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "0ef37487dc4d6d1bea42bd7b324cf5bfd8070c15a8cae8f7e4cfab76819377a4"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "08e1fd3988e713dbf3cc151fdc1eb863049f09d2e2e8b6fc42a51f42f959c9b0"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "a43aaf29d9d0b11eb31d6ddd88f8a4fdcd281e0bcdeb4484401a83d6228c66fc"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "COMPILED_PROMPT_INITIAL_REPAIR_ACCEPTED",
+    "attestedHashMatches": true,
+    "repairCount": 1,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmrxpjgi100ypivhehaw4at9a",
+      "ownerId": "cmrxpk27n01x8ivhevmhimy9d",
+      "recordId": "OFA-29A3F2378B92",
+      "originalRecordId": "OFA-2DC0FA7658AB",
+      "candidateSha256": "738067bb0408d2ad042150683bd75efa8ce5f0874be388e74a2f3b3262a645f2",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Real Assets (Infrastructure)",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: CPP Investments | Fund: Real Assets (Infrastructure) | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CPP Investment Board Private Holdings (6) Inc.",
+        "attributionConfidence": null,
+        "attributionRationale": "The merger proxy and state regulatory evidence disclose the CPP acquisition vehicle and its 40% indirect interest; no separate curated fund row is required."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CPP Investment Board Private Holdings (6) Inc.",
+        "attributionConfidence": null,
+        "attributionRationale": "The July 10, 2024 ALLETE definitive merger proxy expressly names CPP Investment Board Private Holdings (6) Inc. as the CPP-affiliated sponsor investment vehicle. Use DISCLOSED for this named legal vehicle, not the generic Real Assets (Infrastructure) strategy or an invented distinct pension fund allocation. Preserve the already-applied 40% indirect interest, 2025 entry and null curated-fund link. Current browser-rendered proxy text is bound separately from the raw HTTP 403 denial."
+      },
+      "preserves": {
+        "id": "cmrxpk27n01x8ivhevmhimy9d",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "CPP Investment Board Private Holdings (6) Inc.",
+        "stake": "40% indirect",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "c9836dcda8cbb1644f8386ea8ffcd1a3aa1b42072c4be725b3ef3caeae2b9a51",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Real Assets (Infrastructure)",
+          "seed": "CPP Investment Board Private Holdings (6) Inc.",
+          "recommended": "CPP Investment Board Private Holdings (6) Inc.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+          "primarySourceSha256": "c623dd4df857a66bc93166c51108c953f9475d791e53537e0bcfc4da89ded8d6",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/proxy-dom-excerpt.json"
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Matched supplemental ownership detail: Firm: CPP Investments | Fund: Real Assets (Infrastructure) | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+          "seed": "The merger proxy and state regulatory evidence disclose the CPP acquisition vehicle and its 40% indirect interest; no separate curated fund row is required.",
+          "recommended": "The July 10, 2024 ALLETE definitive merger proxy expressly names CPP Investment Board Private Holdings (6) Inc. as the CPP-affiliated sponsor investment vehicle. Use DISCLOSED for this named legal vehicle, not the generic Real Assets (Infrastructure) strategy or an invented distinct pension fund allocation. Preserve the already-applied 40% indirect interest, 2025 entry and null curated-fund link. Current browser-rendered proxy text is bound separately from the raw HTTP 403 denial.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+          "primarySourceSha256": "c623dd4df857a66bc93166c51108c953f9475d791e53537e0bcfc4da89ded8d6",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/proxy-dom-excerpt.json"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpjgi100ypivhehaw4at9a",
+      "ownerId": "cmrxpk2ap01x9ivhe4xgl52eu",
+      "recordId": "OFA-2DC2AF15FD6F",
+      "originalRecordId": "OFA-E8E5399AFF15",
+      "candidateSha256": "a9bf804961bf4c2076ba1ddcf813e367bc91717ff394bdf2963bd60fbeef71d9",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "BlackRock GIF IV",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2024 is 1 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GIP Fund V vehicles and Tower Bridge Infrastructure Partners, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "State regulatory evidence directly supports a combined 60% indirect interest held through GIP Fund V and the GIP-managed Tower Bridge vehicle; BlackRock is only the manager's parent."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GIP Fund V vehicles and Tower Bridge Infrastructure Partners, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The July 10, 2024 ALLETE definitive merger proxy expressly names the GIP V vehicles and Tower Bridge Infrastructure Partners, L.P., the latter managed by GIP for CalPERS. Use DISCLOSED for those vehicles rather than inferred BlackRock GIF IV. Preserve the canonical combined 60% indirect interest and existing 40%/20% vehicle wording, 2025 entry and null fund link. The public-redacted testimony corroborates the proposed structure; BlackRock is GIP's parent and CalPERS is Tower Bridge's LP, not separate direct ALLETE owners."
+      },
+      "preserves": {
+        "id": "cmrxpk2ap01x9ivhe4xgl52eu",
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "GIP Fund V vehicles (40%) and Tower Bridge Infrastructure Partners, L.P. (20%)",
+        "stake": "60% indirect",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "f17ffe8d86c7757bbe6d87290d7e0432a1a73a734e2db39aa757e5a45595dc68",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "BlackRock GIF IV",
+          "seed": "GIP Fund V vehicles and Tower Bridge Infrastructure Partners, L.P.",
+          "recommended": "GIP Fund V vehicles and Tower Bridge Infrastructure Partners, L.P.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+          "primarySourceSha256": "c623dd4df857a66bc93166c51108c953f9475d791e53537e0bcfc4da89ded8d6",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/proxy-dom-excerpt.json"
+        },
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "LOW",
+          "seed": null,
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+          "primarySourceSha256": "c623dd4df857a66bc93166c51108c953f9475d791e53537e0bcfc4da89ded8d6",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/proxy-dom-excerpt.json"
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Estimated from manager match 1.00, vintage 2024 is 1 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund.",
+          "seed": "State regulatory evidence directly supports a combined 60% indirect interest held through GIP Fund V and the GIP-managed Tower Bridge vehicle; BlackRock is only the manager's parent.",
+          "recommended": "The July 10, 2024 ALLETE definitive merger proxy expressly names the GIP V vehicles and Tower Bridge Infrastructure Partners, L.P., the latter managed by GIP for CalPERS. Use DISCLOSED for those vehicles rather than inferred BlackRock GIF IV. Preserve the canonical combined 60% indirect interest and existing 40%/20% vehicle wording, 2025 entry and null fund link. The public-redacted testimony corroborates the proposed structure; BlackRock is GIP's parent and CalPERS is Tower Bridge's LP, not separate direct ALLETE owners.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+          "primarySourceSha256": "c623dd4df857a66bc93166c51108c953f9475d791e53537e0bcfc4da89ded8d6",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/proxy-dom-excerpt.json"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "INFERRED",
+          "seed": "DISCLOSED",
+          "recommended": "DISCLOSED",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+          "primarySourceSha256": "c623dd4df857a66bc93166c51108c953f9475d791e53537e0bcfc4da89ded8d6",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/proxy-dom-excerpt.json"
+        }
+      ]
+    }
+  ],
+  "preservedHistoricalOwners": [],
+  "candidateFieldsAdjudicated": 6,
+  "cumulativeCandidateFieldsAdjudicated": 111,
+  "remainingCandidateFields": 492,
+  "additionalFieldsOutsideOriginal603": 0,
+  "productionFieldsRequiringCorrection": 6,
+  "seedFieldsRequiringCorrection": 2,
+  "missingSeedUpsertBindings": 0,
+  "additionalCanonicalIssues": [
+    {
+      "field": "Source evidence and unchanged lifecycle",
+      "issue": "The SEC proxy's sponsor paragraph was captured through rendered browser text; raw SEC proxy and closing requests returned403 and are not evidence bodies. The 2025 testimony is Sierra Club expert testimony quoting the petition, not a regulatory approval or closing order. Preserve the existing December2025 closing and pending internal reorganization; no fresh reorganization or ownership-exit conclusion."
+    },
+    {
+      "field": "Indirect ownership boundaries",
+      "issue": "Preserve CPP40% and combined GIP60%, with the existing FundV40%/TowerBridge20% vehicle wording. Do not allocate individual GIPV subvehicles, link to BlackRock GIF IV, create a standalone combined fund, or add CalPERS/BlackRock as direct owners."
+    }
+  ],
+  "qualifications": [
+    "Six original attribution fields are reviewed against one direct field-primary: the July10,2024 ALLETE definitive proxy's sponsor paragraph, captured as rendered browser innerText. It expressly identifies three GIPV vehicles, GIP-managed Tower Bridge for CalPERS, and CPP Investment Board Private Holdings(6)Inc. A named acquisition vehicle qualifies as DISCLOSED under the existing attribution schema; no separate curated fund allocation is inferred.",
+    "The raw SEC proxy and closing8K requests returned403. Both denial bodies are frozen and are NOT filing evidence. The successful browser proxy excerpt is separate rendered text, not raw HTTP200 or the complete filing. The indexed closing8K was readable through web retrieval and corroborates the already-applied December15,2025 close; no raw closing-body verification or new closing mutation is claimed.",
+    "The testimony's cover and complete relevant physical pages11-13 (printed8-10) were rendered and visually read, including Figure1 and footnotes. This is Courtney Lane's February4,2025 public-redacted testimony for Sierra Club, hosted by Synapse, quoting the applicants' petition, not a Commission approval. The figure shows proposed GIPFundV40%, TowerBridge20%, CPP40%; TowerBridge is GIP-affiliate managed with CalPERS as sole LP. No individual GIPV-vehicle percentage is inferred.",
+    "The BlackRock October1,2024 acquisition release confirms GIP as its infrastructure platform. Manager acquisition does not allocate ALLETE to BlackRock GIFIV. The public testimony PDF matches historical bytes; BlackRock HTML differs. These four raw requests and one separate browser excerpt are not a refresh of all eleven company citations.",
+    "Ten historical packet files and all six non-null attested hashes are bound. The compiled transcript includes prompt, initial response, repair prompt and accepted response, not full DOM. One repair changed HIGH_WITH_DATE_CAVEAT to HIGH and added an explicit date-coverage question; other JSON fields are identical. The accepted August19 as-of explicitly covers only August18. The later August23 release-delta and locked inputs are preserved, not rerun.",
+    "Both owners have initial attribution membership under older record IDs. CPP's original metadata matches current; GIP retains the initial inferred metadata but its BlackRockGIFIV link was removed by the canonical PortCo correction. Exact initial and current states plus the before/after canonical link are bound; this difference is not a history waiver.",
+    "Preserve the complete ALLETE platform, one alias, eleven citations and unchanged closing primary, five milestones, no management, both owner/organization identities, vehicles, 2025 entries,40%/60% indirect stakes and active lifecycle. No redirects, retired identity or pending transaction rows exist. The historical narrative's pending reorganization is not newly resolved. No current operating-scale, legal-name or ownership-event review is claimed.",
+    "Both seed records match exact existing upserts. All six production corrections and two overlapping seed-rationale corrections remain unapplied. Matching seed labels and canonical receipts do not replace direct-source authority. This report is not an apply manifest or write authorization. Never replay df566e24-e7cf-4c34-8b8f-b0420bae475b or any attribution transaction, run full seed, reopen terminal tasks or change Deal Database/UI."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "a35c778a40949ebcb429dc50f0734c4d8764e8be",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "d2588a7d964399ac1d6c102e60271630bceff5d7832299ed855e7cb61be67b81",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0133-allete-inc-v1.json",
+      "sha256": "3bff36f0954caab585b35a3da359deb340c433dc2bf51abf67f10a05cf44573a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "0e2112a47105562af203f77f1b91cf954f415441567452a09248ab826812f3b0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-attestation.json",
+      "sha256": "5c55ce7048d33a9dff0b95c9894c8a7d568ce651eb9f7b3a8a60f3958e42be6f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "470b08fa3b561c0ac8d339cbdab276c6d0ac97d89ac0c3578dc114b1cf476e45"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "dc50c6a11a6d6076943190dc8e2300c5222f55688067b168cb529726734ffb5a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "81a0bfe1dc5fc7c1800fdb7740b9b1ab82a62a949bce92f7e5ab1bc1a28e267f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-transcript.txt",
+      "sha256": "7ba0327cbfebb5e064fb0708611a9aab350858ca826eae9cb46feb686fb8087c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/locked-production-snapshot.json",
+      "sha256": "9655c2cf1cfcd2753de3e4dce1a801475be574d98217e9c325d1519316db47ac"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/locked-task-snapshot.json",
+      "sha256": "b1548bc8d2ff71a6ab88f9f2500813f5625c42e6ac01f53b6308bdc1150cd7e6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/release-delta-check.json",
+      "sha256": "775a7f91c7c23d888b0b03139cdfe0118c9bc3feb8f83e12af1993375374d5fe"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/research-decision.json",
+      "sha256": "08e1fd3988e713dbf3cc151fdc1eb863049f09d2e2e8b6fc42a51f42f959c9b0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/research-decision.md",
+      "sha256": "a43aaf29d9d0b11eb31d6ddd88f8a4fdcd281e0bcdeb4484401a83d6228c66fc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/research-prompt.md",
+      "sha256": "fe5fbfd8d7e0ef7e15c3ded16cdb966b17fab333a1d7abdf4d206eb5dda65d9f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/source-verification.json",
+      "sha256": "0ef37487dc4d6d1bea42bd7b324cf5bfd8070c15a8cae8f7e4cfab76819377a4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0133-allete-inc-v1/proposal.json",
+      "sha256": "3392dd67cfd1f4f0f6af75fd15e949354f5b1389a38e69cafbe46a4ce5b670ba"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/batch-manifest.json",
+      "sha256": "dd1b015cf06175325314fab888eeb25c12a6b094c242f82d0d21808a164011fd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "191b3380e892d46a0e75fc38440fe943445908a2652f9d16f7a7b41518bd2785"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "651156fa39a1420745d639b43ece4369197557b20ea28a9b8a2fb0dcf46f19d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/aligned/authority.json",
+      "sha256": "9019194c08579017325fb5ef6386c249114bd8aeac5b597507f02b52e24afd23"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "392bfb80df26f2da803da1e0aa8f7d21bea41ec06f83a20839531f1155f9447b",
+  "reportSha256": "b7ee20d6b71f06e9e5bfbe2231b3aac482362bbe4fe4820cfb762ee22258c323"
+}
