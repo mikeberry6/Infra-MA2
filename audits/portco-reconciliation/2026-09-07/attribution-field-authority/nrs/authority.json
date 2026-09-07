@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_NRS_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "ca5c92f2e3db17de6f1bd9caaa63ea4e68a15bb524f93d97f3fdf4892210b535",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "c3968ae4d28af2a4b8be3b56cbdfa37bc9c333aa22e313ad05500755c8d65480",
+  "canonicalApprovalSha256": "0b7939472a4fb41e6e57f82cfe916fa323d65028f9e222eb9b842ee0478a199c",
+  "canonicalReceiptSha256": "6c92d26b9c33d9193f618a29adfc186dbc08c456eaa89576b46c6ffa416665d0",
+  "canonicalBatchReceiptSha256": "eaf3a53ca94d46dc24af97a262fd080c95ea3ce43050a50d6ba7123f137653d1",
+  "canonicalSeedSpecSha256": "418335c6c61a6ea47de9c18507eab6b4513e6d273071faf1d970d33c175db42d",
+  "canonicalSeedBatchSha256": "5e52499d1a5ceef9a15a29f4ca0bf229f085f321f0c68903c6298970b90f4940",
+  "canonicalResearchBindingArtifact": null,
+  "canonicalSeedOverlaySha256": "d7d7e6c3fd6385ebf960f34f9ea5f56ab6b3161610294e3ee8cf349fbba99bac",
+  "initialAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "b5579bf7f3e8dfb08438e6c2314d2afa895d51aabe951db3c37dd48a3321ae8d",
+  "semanticCompanySha256": "37b2aeab1e3d34e970c73c440be27bca0fd04b35f2a408663c98577d1331f2a5",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "7a6925bc146385a917e8ae40518760bb16bdadfbe1a2c1593eb1758d7f22ef9c"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "79206e1e49aba0ea87bff849092981e5f9b5c2d5e167d07e46a02f81ad102f5f"
+    },
+    {
+      "file": "attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "79206e1e49aba0ea87bff849092981e5f9b5c2d5e167d07e46a02f81ad102f5f"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "07a7e4bbf7db287abe1407853f24d4061f2fae3829db6182c964b986641e76e3"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "c88d8e1e936b8b17b7c3652c182440dc948413eb95286923bf07333968002b87"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "7ce242f8d4491cc47d7b125e576c1c9137eaa886ce2bf93059dc6f640e19c180"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "98129ccd9494db2855f952e2d8f603b7bfd9d20a3fc021865f257909652f3cf1"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "f9c28d710d4dd09f47443be01436292f01a49fdba35b194ba68698333c13b9a3"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "46ce21e7311d832bc55bd6c20969f314dfa03d164385383b3680f85723fe6b6d"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "COMPILED_PROMPT_RESPONSE",
+    "attestedHashMatches": true,
+    "repairCount": 0,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmrxpj90b00naivhedtmfwflb",
+      "ownerId": "cmrxpjuas01kqivhe76y9ulx8",
+      "recordId": "OFA-24FDA731AE8E",
+      "attributionRecordId": "OFA-F4FE72DEC397",
+      "candidateSha256": "0210720bcb3401544f0bc4136550586954e5fda0434012f086ba278ad7dd482c",
+      "current": {
+        "linkedFundName": "BlackRock Global Renewable Power Fund III",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2020 is 1 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "seedExpectation": {
+        "linkedFundName": "BlackRock Global Renewable Power Fund III",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "BlackRock Global Renewable Power Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated by preserving the existing curated link to BlackRock Global Renewable Power Fund III; public disclosure does not identify a distinct fund. Ranked evidence considered manager match 1.00, vehicle-name overlap 1.00, vintage 2021 is 0 years before investment, North America-relevant mandate."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GRP III Norse Holdings LP (entry vehicle)",
+        "attributionConfidence": null,
+        "attributionRationale": "Transaction counsel directly identifies GRP III Norse Holdings LP, a BlackRock subsidiary, as the buyer of 100% of National Renewable Solutions. This supports the named entry vehicle, not an expanded flagship fund name or the current legal holding chain. Preserve the 2021 entry and undisclosed current percentage. Do not expand GRP III into a full fund name or restore Global Energy & Power Infrastructure Fund III; the curated Global Renewable Power Fund III link requires a separately compatible removal alongside this metadata decision."
+      },
+      "preserves": {
+        "id": "cmrxpjuas01kqivhe76y9ulx8",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Renewable Power Fund III",
+        "vehicleName": "GRP III Norse Holdings LP (entry vehicle)",
+        "stake": "100% at 2021 entry; current exact stake not publicly disclosed",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "362d5ad6a627453cc2e1923fcbad50dd4c01483ec3e69310cf07924bbf99787f",
+      "missingSeedUpsertBinding": false,
+      "initialAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "BlackRock Global Energy & Power Infrastructure Fund III",
+          "seed": "BlackRock Global Renewable Power Fund III",
+          "recommended": "GRP III Norse Holdings LP (entry vehicle)",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.mayerbrown.com/en/people/c/castro-federica-m",
+          "primarySourceSha256": "ba388e70673ea7dc18f2d963a32c14928e8d4f4358070f216d5a807a1c82616d",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/counsel.html"
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Estimated from manager match 1.00, vintage 2020 is 1 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund.",
+          "seed": "Estimated by preserving the existing curated link to BlackRock Global Renewable Power Fund III; public disclosure does not identify a distinct fund. Ranked evidence considered manager match 1.00, vehicle-name overlap 1.00, vintage 2021 is 0 years before investment, North America-relevant mandate.",
+          "recommended": "Transaction counsel directly identifies GRP III Norse Holdings LP, a BlackRock subsidiary, as the buyer of 100% of National Renewable Solutions. This supports the named entry vehicle, not an expanded flagship fund name or the current legal holding chain. Preserve the 2021 entry and undisclosed current percentage. Do not expand GRP III into a full fund name or restore Global Energy & Power Infrastructure Fund III; the curated Global Renewable Power Fund III link requires a separately compatible removal alongside this metadata decision.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.mayerbrown.com/en/people/c/castro-federica-m",
+          "primarySourceSha256": "ba388e70673ea7dc18f2d963a32c14928e8d4f4358070f216d5a807a1c82616d",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/counsel.html"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "INFERRED",
+          "seed": "INFERRED",
+          "recommended": "DISCLOSED",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.mayerbrown.com/en/people/c/castro-federica-m",
+          "primarySourceSha256": "ba388e70673ea7dc18f2d963a32c14928e8d4f4358070f216d5a807a1c82616d",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/counsel.html"
+        },
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "LOW",
+          "seed": "LOW",
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.mayerbrown.com/en/people/c/castro-federica-m",
+          "primarySourceSha256": "ba388e70673ea7dc18f2d963a32c14928e8d4f4358070f216d5a807a1c82616d",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/counsel.html"
+        },
+        {
+          "field": "linkedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "BlackRock Global Renewable Power Fund III",
+          "seed": "BlackRock Global Renewable Power Fund III",
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.mayerbrown.com/en/people/c/castro-federica-m",
+          "primarySourceSha256": "ba388e70673ea7dc18f2d963a32c14928e8d4f4358070f216d5a807a1c82616d",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/counsel.html"
+        }
+      ]
+    }
+  ],
+  "preservedHistoricalOwners": [],
+  "candidateFieldsAdjudicated": 2,
+  "cumulativeCandidateFieldsAdjudicated": 128,
+  "remainingCandidateFields": 475,
+  "additionalFieldsOutsideOriginal603": 3,
+  "productionFieldsRequiringCorrection": 5,
+  "seedFieldsRequiringCorrection": 5,
+  "missingSeedUpsertBindings": 0,
+  "filingReviewSha256": "35f5a83de0716ac41bcf0bcce77a1411d1ebc73833354d6aeb83f5dfef6337c5",
+  "filingTextSha256": "78e4eba4c6fa18a6e4e30d6ba1dd82e2052c922b44bde4f50b890b8d732b479e",
+  "additionalCanonicalIssues": [
+    {
+      "field": "Compatible curated-fund link and citation label",
+      "issue": "The canonical link and acquisition citation label expand GRP III to Global Renewable Power Fund III. The company-hosted PDF describes Global Renewable Power and GRP III but does not expand the full fund name; counsel directly names only the legal entry buyer. Recommend removing the curated link in a separately compatible canonical proposal together with attribution persistence, preserving the vehicle and all ownership facts. Do not directly dispatch a metadata-only write that would leave the canonical link inconsistent."
+    },
+    {
+      "field": "Current ownership precision",
+      "issue": "August2025 company disclosure confirms a BlackRock-managed fund, without current percentage, holding vehicle or expanded fund name. Preserve unknown current facts and the exact2021 closing-date exception. GIP manager branding and the Nautilus project sale do not establish an NRS equity transfer."
+    }
+  ],
+  "qualifications": [
+    "Two original fields are reviewed with three additional equality-blind fields outside603: classification,confidence and curated link. Five production and five overlapping seed corrections are recommended but remain unapplied. No missing seed-upsert binding; no authority to apply is created.",
+    "The sole field-primary is transaction counsel's direct experience description naming GRP III Norse Holdings LP, a BlackRock subsidiary, as buyer of100%. DISCLOSED applies to the named entry vehicle, not an inferred expansion into the full flagship fund name or current holding chain. Preserve2021 entry and undisclosed current percentage.",
+    "The entire two-page August18,2021 company-hosted acquisition PDF was visually inspected. Recently acquired100% establishes an entry acquisition, not an exact legal closing date or current percentage. The GRP III strategy paragraph neither expands the full fund name nor names Norse. Both footer-coded pages and derived text are bound.",
+    "All eight existing URLs returned raw200 without redirects or errors. Acquisition,counsel and Nautilus bytes match historical captures; Shallow Basket,projects and GIP disclosures differ; home/about have no historical raw-byte binding. Changed pages are not evidence of an equity exit. No new company research or exhaustive event search.",
+    "All nine historical packet files and four non-null attested hashes match. Initial and accepted responses are identical, zero repairs. The transcript includes the full prompt and accepted response but is a compiled record, not a full DOM trace. The approved historical research expanded the fund name; this is not independent direct-source authority.",
+    "Final action CORRECT_COMPANY supersedes the earlier PROPOSED_MERGE research. Preserve one company/owner, two aliases,eight citations,two milestones,no management,zero pending transactions and redirects, and all nine physical owner metadata fields. Do not fabricate a retirement or GIP owner period.",
+    "The complete1264-row initial attribution receipt contains one NRS row under OFA-F4FE72DEC397. Its four metadata fields remain physically unchanged, while the later canonical PortCo correction changed the curated fund link from Global Energy & Power Infrastructure Fund III to Global Renewable Power Fund III. Bind that deliberate link difference to the proposal before/after images; never claim whole after-image equality or restore the older link.",
+    "Current seed record OFA-24FDA731AE8E is distinct from the initial attribution record. Successful batch-0146-0151-v3 member1 and its exact seed-attribution-reconciliation-spec-v2.json are bound. Never replay PortCo transaction f57956cf-e86c-4875-b697-a276165c7448 or initial attribution pipeline cmsxywrmw0000fn6hw9gllg6y.",
+    "The canonical application-primary remains the acquisition PDF; counsel is the sole primary only for this field-authority decision. GIP disclosures concern a manager acquisition; Nautilus concerns a7.6MW project portfolio sale. Preserve the August23 canonical cutoff and existing operating facts without scorecard enrichment.",
+    "This audit is not an apply manifest or database/seed-write authorization. All source tasks remain terminal, ledger idle and overall completion false. Physical persistence, compatible canonical issues and full-seed replay parity remain outstanding. Never run the lossy full seed, even dry-run. No Deal Database/runtime/UI changes."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "9d2f72a99d6e01ae0581ffed63c8dfcd7de45046",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "b8d2d1d9216da4d55b6e6a13813e1feb3ccd12f334625ac088ee6f55d2deee10",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0148-national-renewable-solutions-v3.json",
+      "sha256": "96203e0ddaf1eceaebada1ebb64cf899a14043695ae4ec57cacb943978bf70ac"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "79206e1e49aba0ea87bff849092981e5f9b5c2d5e167d07e46a02f81ad102f5f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-attestation.json",
+      "sha256": "c88d8e1e936b8b17b7c3652c182440dc948413eb95286923bf07333968002b87"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "79206e1e49aba0ea87bff849092981e5f9b5c2d5e167d07e46a02f81ad102f5f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-response-validation.json",
+      "sha256": "7ce242f8d4491cc47d7b125e576c1c9137eaa886ce2bf93059dc6f640e19c180"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-transcript.txt",
+      "sha256": "07a7e4bbf7db287abe1407853f24d4061f2fae3829db6182c964b986641e76e3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/locked-v2-context.json",
+      "sha256": "da32aa471f47210050d0251d1fb215c82ec6581bc7a101957ae89208377b542a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/locked-v2-production-snapshot.json",
+      "sha256": "a16ccfa1eec2398cf63e5cf904497effbed4667e23e404709d34bdfe47a3eb4a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "7003142e04264f29b960e232894ee581902a1b2b39039be535174b506aba7da0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/research-decision.json",
+      "sha256": "f9c28d710d4dd09f47443be01436292f01a49fdba35b194ba68698333c13b9a3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/research-decision.md",
+      "sha256": "46ce21e7311d832bc55bd6c20969f314dfa03d164385383b3680f85723fe6b6d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/research-prompt.md",
+      "sha256": "7a6925bc146385a917e8ae40518760bb16bdadfbe1a2c1593eb1758d7f22ef9c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/source-verification.json",
+      "sha256": "98129ccd9494db2855f952e2d8f603b7bfd9d20a3fc021865f257909652f3cf1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0148-national-renewable-solutions-v3/proposal.json",
+      "sha256": "071f6d3443b690434f381c7af091adc23d3736133e057aff747ff305d7721b9a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/batch-manifest.json",
+      "sha256": "9b2ef216d8e05dc9a8bdaccb5c8f25176be0038f7c8b8e9b55247569f78722af"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/production-apply/batch-apply-receipt.json",
+      "sha256": "611fcfc943a43057ed19645c7e8b21a9144beeddf049358e8e64af79bc640842"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/seed-attribution-reconciliation-spec-v2.json",
+      "sha256": "0e84ef88724a3321f9a1fa4820c7c24438481ecc6b01e3a72d8a1ee4078709fc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/gigapower/authority.json",
+      "sha256": "64aec10464e94d7d0dc2c688c05537d0aef5347b0662ddee518b823f80708463"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "1031aff2a49c560e961cfe5fd7945e4003e56217576476364f15e3220882efb0",
+  "reportSha256": "17891fa2c392cb24f61f6c345ddebc342e0bb29ebe39996d8aaaafd83e9da1cb"
+}
