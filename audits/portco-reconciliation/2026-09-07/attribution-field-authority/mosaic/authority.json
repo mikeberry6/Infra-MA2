@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_MOSAIC_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "dba615df0b6711db92872f8fd1a4ab41229d6cd3ec985ce62af96997a80ead40",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "bd719a7f8cd58e9a3d135e3b0b977e392c7add138502994a41395890717ade92",
+  "canonicalApprovalSha256": "f1e356b066269ee9e58377b3e64a74736f0ecc6024759c778bed9317e6db6fca",
+  "canonicalReceiptSha256": "ec5279bbc3dafcfa52868ee38870e42ef36f90f37a99569284ea4f9a894d0e43",
+  "canonicalBatchReceiptSha256": "599c607030f2aeb266e0a8643b52d70fc49ca67fe95899ae70fd36b0ed7ad91a",
+  "canonicalSeedSpecSha256": "8d3334535f7f81dca230a9104c69a82fe0e299f5978d4bbf2f43a39092d2a67d",
+  "canonicalResearchBindingArtifact": null,
+  "canonicalSeedOverlaySha256": "701c7b373d034675598aa11e00c26e1789ca8e92e9431f7521436c1bdd63dc7a",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "983a614802601ad79ae5f67736aa6529d89ee76a00ffc44b0bc818b0ede5f6ba",
+  "semanticCompanySha256": "a8a0ba54e13acb59d8c57a2dfafcfcfaae90e6cdb792f79fadca7d2f90762c2c",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "1376d8cb29445cc7f988fb8e6e8883598d65d631b62e9f911cc9762380224ec2"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "b92f184cdadb9d6cdd78c72f1c175bbd2a3ab6baf85990c1372413a6d8ce2dcf"
+    },
+    {
+      "file": "attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b92f184cdadb9d6cdd78c72f1c175bbd2a3ab6baf85990c1372413a6d8ce2dcf"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "5568ba2e0f000f1bd6beb106718192085258843ede13eccef48de3bcd72be638"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "d65984c845218d3bac96781c520afed80a35e7d50fe70938bc8dd2d830266550"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "63867eade44f6f2dd5af1368b1e118e8645714e80419b828f4d809dd73084031"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "e2f4e5f494464f0d5f4be7a18ac2b0411fd4610c01bfa15f2c8eda8b759e92a3"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "0cad5b6d1230ae5e821cca28737a78681056f14a108292bc918daf467964533a"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "141a1df5c1f342f4c425aa7e2ed2a694c292326eceabc6ecc34215b9fa69970a"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "COMPILED_PROMPT_INITIAL_RESPONSE",
+    "attestedHashMatches": true,
+    "repairCount": 0,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmrxpj8mm00mpivhecizreyp5",
+      "ownerId": "cmrxpjtuf01jzivhepih49uhp",
+      "recordId": "OFA-436579DE7AF5",
+      "originalRecordId": "OFA-698442CDD390",
+      "candidateSha256": "7b2004476d6fcd8ef76d43f94e9ea68bfbf7fa1f8c02039602359ecc65086aba",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: PSP Investments | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Supplemental detail states the fund was not publicly disclosed."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "PSP's official announcement classifies the investment under Natural Resources, not PSP Infrastructure; no specific legal fund or vehicle is publicly disclosed."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "PSP's August 9, 2018 affiliation announcement classifies the investment under Natural Resources and describes PSP's long-term TimberWest investment. It supports mandate-level attribution, not a named legal fund. The reviewed statutory report separately identifies BCI and PSP as ultimate owners. Preserve the existing PSP owner and mandate vehicle with exact legal fund and published percentage unavailable; neither the 2018 conditional announcement nor a residual calculation proves a new ownership event or disclosed stake."
+      },
+      "preserves": {
+        "id": "cmrxpjtuf01jzivhepih49uhp",
+        "managerName": "PSP Investments",
+        "organizationName": "PSP Investments",
+        "fundName": null,
+        "vehicleName": "PSP Natural Resources mandate; legal vehicle not publicly disclosed",
+        "stake": "43.9% inferred residual from BCI's 56.1% and the two-owner disclosure; exact published stake not publicly disclosed",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "71ae421a3942556dd32cba1670c22245dd6098e91d70d24fc73df96c3ff903f8",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Matched supplemental ownership detail: Firm: PSP Investments | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Supplemental detail states the fund was not publicly disclosed.",
+          "seed": "PSP's official announcement classifies the investment under Natural Resources, not PSP Infrastructure; no specific legal fund or vehicle is publicly disclosed.",
+          "recommended": "PSP's August 9, 2018 affiliation announcement classifies the investment under Natural Resources and describes PSP's long-term TimberWest investment. It supports mandate-level attribution, not a named legal fund. The reviewed statutory report separately identifies BCI and PSP as ultimate owners. Preserve the existing PSP owner and mandate vehicle with exact legal fund and published percentage unavailable; neither the 2018 conditional announcement nor a residual calculation proves a new ownership event or disclosed stake.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.investpsp.com/en/news/canadian-institutional-investment-managers-enter-an-agreement-to-affiliate-timberwest-forest-corporation-and-island-timberlands-limited-partnership/",
+          "primarySourceSha256": "ebbfc685d7890e9511f8d65b90f4c1bdc18bd2bacc4df5571e3a9a3ee27fde9e",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/mosaic/psp.html"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpj8mm00mpivhecizreyp5",
+      "ownerId": "cmrxpjtv101k0ivhec6b6y0bg",
+      "recordId": "OFA-66D69D686558",
+      "originalRecordId": "OFA-CFB0A6C61B84",
+      "candidateSha256": "c2bd7d616007d45c59d3c0f3956c80fa673f03f3fce4d4455b9b7cbe00e9350f",
+      "current": {
+        "linkedFundName": "Infrastructure & Renewable Resources",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure & Renewable Resources",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: British Columbia Investment Management Corporation (BCI) | Fund: Infrastructure & Renewable Resources | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry."
+      },
+      "seedExpectation": {
+        "linkedFundName": "Infrastructure & Renewable Resources",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure & Renewable Resources",
+        "attributionConfidence": null,
+        "attributionRationale": "BCI's audited 2025 I&RR financial statements directly report the 56.1% Mosaic LP interest within the Infrastructure & Renewable Resources program."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BCI's combined Infrastructure and Renewable Resources statements identify a program comprising several constituent funds and structured entities, not a legal entity. Note 7 reports Mosaic LP held through intermediary corporations and 56.1% in the 2025 and 2024 columns; it does not allocate Mosaic to a named constituent fund. Preserve the BCI organization and existing holding-vehicle limitation, using program attribution without a linked legal fund. The report covers December 31, 2025; do not infer September 2026 ownership."
+      },
+      "preserves": {
+        "id": "cmrxpjtv101k0ivhec6b6y0bg",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "Mosaic LP through intermediary corporations; exact legal vehicle not publicly disclosed",
+        "stake": "56.1%",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "5e30ceddfc007ef83f1f9d7db354dc21e0d1e2783289f74f2621f7c294eee2b3",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "linkedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Infrastructure & Renewable Resources",
+          "seed": "Infrastructure & Renewable Resources",
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+          "primarySourceSha256": "45ec0e7391b2d4c7d7bdca8e6a1ded0f71563b4c125242154aeca49e04089889",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/mosaic/bci-program-2025.pdf"
+        },
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Infrastructure & Renewable Resources",
+          "seed": "Infrastructure & Renewable Resources",
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+          "primarySourceSha256": "45ec0e7391b2d4c7d7bdca8e6a1ded0f71563b4c125242154aeca49e04089889",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/mosaic/bci-program-2025.pdf"
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Matched supplemental ownership detail: Firm: British Columbia Investment Management Corporation (BCI) | Fund: Infrastructure & Renewable Resources | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry.",
+          "seed": "BCI's audited 2025 I&RR financial statements directly report the 56.1% Mosaic LP interest within the Infrastructure & Renewable Resources program.",
+          "recommended": "BCI's combined Infrastructure and Renewable Resources statements identify a program comprising several constituent funds and structured entities, not a legal entity. Note 7 reports Mosaic LP held through intermediary corporations and 56.1% in the 2025 and 2024 columns; it does not allocate Mosaic to a named constituent fund. Preserve the BCI organization and existing holding-vehicle limitation, using program attribution without a linked legal fund. The report covers December 31, 2025; do not infer September 2026 ownership.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+          "primarySourceSha256": "45ec0e7391b2d4c7d7bdca8e6a1ded0f71563b4c125242154aeca49e04089889",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/mosaic/bci-program-2025.pdf"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "DISCLOSED",
+          "seed": "DISCLOSED",
+          "recommended": "DIRECT_PROGRAM",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+          "primarySourceSha256": "45ec0e7391b2d4c7d7bdca8e6a1ded0f71563b4c125242154aeca49e04089889",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/mosaic/bci-program-2025.pdf"
+        }
+      ]
+    }
+  ],
+  "candidateFieldsAdjudicated": 2,
+  "cumulativeCandidateFieldsAdjudicated": 97,
+  "remainingCandidateFields": 506,
+  "additionalFieldsOutsideOriginal603": 3,
+  "productionFieldsRequiringCorrection": 5,
+  "seedFieldsRequiringCorrection": 5,
+  "missingSeedUpsertBindings": 0,
+  "additionalCanonicalIssues": [
+    {
+      "field": "BCI fundId",
+      "issue": "Unlink the combined-program label only with compatible canonical and seed persistence. Preserve the existing BCI organization ID, Mosaic LP/intermediary holding-vehicle limitation and dated 56.1% statement; no constituent-fund allocation is identified."
+    },
+    {
+      "field": "BCI citation label",
+      "issue": "The existing 2024 BCI citation label names Puget Sound Energy although its evidence label concerns Mosaic. Flag a separately compatible label correction; do not change the URL or infer current2026 ownership."
+    },
+    {
+      "field": "PSP stake/AIMCo historical scope",
+      "issue": "PSP's existing 43.9% is explicitly an inferred residual, not a directly published percentage; preserve that limitation without promoting it to disclosed ownership. AIMCo is a historical predecessor participant with unknown direct Mosaic LP stake and exit date. Existing canonical status is preserved, not re-adjudicated from absence in a later report."
+    }
+  ],
+  "qualifications": [
+    "PSP's sole field-primary is the exact current raw August9,2018 official affiliation announcement, categorized Natural Resources. It supports mandate-level classification, not a specific legal fund. Both the August announcement and November1 launch article retain customary-closing conditions; no new closing date or control transfer is asserted.",
+    "BCI's sole field-primary is the exact2025 combined-program PDF. Complete physical pages1-4,11,26-27 were rendered and read, including program definition, auditor opinion, table headings and continuation. Note1 states the program is not a legal entity and lists multiple constituent funds/structured entities. Note7 reports Mosaic LP through intermediary corporations,56.1% in2025 and2024, not a named constituent allocation.",
+    "The BCI management-responsibility page, independent auditor opinion, cover and note headings consistently specify December31,2025; management signs June24,2026. Direct visual review corrected an inaccurate preliminary context note about March31 before any preparation output was created. The document is image-based; visual review is not fabricated extracted text. These statements do not establish September2026 ownership.",
+    "The statutory file labelled2026 is a report for the year ended December31,2025. Complete relevant physical pages1-2 and6 were rendered and read. It identifies ultimate BCI/PSP ownership, distinct general partners and management entities, but no exact PSP equity percentage or legal fund. Signatures are shown without a separate visible execution date on page6.",
+    "Four raw HTTP captures returned200. Both PDFs exactly match the historical recorded hashes; PSP and Mosaic launch HTML bytes differ, with current direct articles separately reopened and read. All six historic source records remain in the bound packet; only four attribution-relevant URLs were recaptured. No new company or ChatGPT research was performed.",
+    "Nine historical packet files and all four non-null attested hashes are bound. The transcript compiles prompt and initial response, not a full DOM trace; accepted bytes equal initial with zero repairs. The original explicit verified-through-August18 versus asOf-August19 one-day limitation remains. No research-binding artifact or missing history is invented.",
+    "Both active owners exactly match initial attribution after-images. Original OFA IDs differ from current canonical seed IDs. Existing seed upserts bind both target records. The third AIMCo owner, created by the canonical correction, has exact preserved UNRESOLVED metadata and is not an initial attribution member. Receipts and labels establish provenance, not substantive legal-fund authority.",
+    "Preserve the entire Mosaic company, four aliases,nine citations and BCI2025 primary,two milestones,no management roles,Canada geography,three owner identities/organizations,vehicles,2018 entries and existing lifecycle states. There are no pending transactions or redirects and no retired ID in scope. PSP's labelled inferred residual and AIMCo's unknown stake/exit date remain exact limitations, not new facts.",
+    "Five field decisions comprise two original rationales and three additional equality-blind BCI fields. Production and overlapping seed correction counts are computed from exact values. All remain unapplied, with compatible canonical issues separate. This is not write authority. Never replay069363c9-c37c-4d26-8322-ed6688b3971a or any attribution transaction, run the full seed, reopen terminal tasks, modify Deal Database/UI or begin enrichment."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "06c6822bb54cf9e206321ebb3d6e6b567db55ba1",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "fb7825e6713883a008514f8747c8a58a5e7a14e19b5f4159f4b4ac6d90b67251",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0126-mosaic-forest-management-v1.json",
+      "sha256": "23c910c5a088a65e3b456f1ac57ef2ce5ac036c8a534f8eeaf2a9898d710e390"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b92f184cdadb9d6cdd78c72f1c175bbd2a3ab6baf85990c1372413a6d8ce2dcf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-attestation.json",
+      "sha256": "d65984c845218d3bac96781c520afed80a35e7d50fe70938bc8dd2d830266550"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "b92f184cdadb9d6cdd78c72f1c175bbd2a3ab6baf85990c1372413a6d8ce2dcf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-response-validation.json",
+      "sha256": "63867eade44f6f2dd5af1368b1e118e8645714e80419b828f4d809dd73084031"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-transcript.txt",
+      "sha256": "5568ba2e0f000f1bd6beb106718192085258843ede13eccef48de3bcd72be638"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/locked-production-snapshot.json",
+      "sha256": "df9d8f778f828fb4f3aafe3830f0d84dda3d5dc881731f1efc73bca2672337ed"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/locked-task-snapshot.json",
+      "sha256": "d50575d4690ebb50563999bfb780167c7acf641066e37623434e36d842660f7e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/research-decision.json",
+      "sha256": "0cad5b6d1230ae5e821cca28737a78681056f14a108292bc918daf467964533a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/research-decision.md",
+      "sha256": "141a1df5c1f342f4c425aa7e2ed2a694c292326eceabc6ecc34215b9fa69970a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/research-prompt.md",
+      "sha256": "1376d8cb29445cc7f988fb8e6e8883598d65d631b62e9f911cc9762380224ec2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/source-verification.json",
+      "sha256": "e2f4e5f494464f0d5f4be7a18ac2b0411fd4610c01bfa15f2c8eda8b759e92a3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0126-mosaic-forest-management-v1/proposal.json",
+      "sha256": "f31655886d9353eee9af20a68e866bcc63ee1938168bfe64fa62e2ef93a6a8b7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/batch-manifest.json",
+      "sha256": "aca1a60b2cd2f1a7a546a951965522c6ab6133592ace502bf7e562e9b4cd45d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "dcd312a97336a2f1ee766690ba2201310bb5b51698eb93795f66aaebf6bafbe3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "e3c8776c1c89949a2d8b1c51a0e0b7f7e2090c004060ba70f5d3a02dfef1e4f2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/authority.json",
+      "sha256": "dc8099d29852478eeb2de43082cb01ba99c7128a252d4f1df8d226d408f93348"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "01d53389455acc63edd204f04ab30fc81aa4d961c1e34d59f341246c8f53da59",
+  "reportSha256": "9924e0aa571bfbb00b49767249e2ee4ba6a86beb371cea291d36c60a9de0b610"
+}
