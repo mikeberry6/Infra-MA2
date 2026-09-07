@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CLECO_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "315c0636876cbe0312ad17faf868956bb43ccb271eb995576e8f78056083ea7a",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "0cf9cab89dfb8ad09276950ccff124e710c55ee7385551fe8f8d15c406cbb21f",
+  "canonicalApprovalSha256": "ac2f02532fb8414e8e7afc3b823602268c925d74d37e48f587273c45c8b11e32",
+  "canonicalReceiptSha256": "4574fd1dabf48ab369f15a14a3c91ac96e4ac89da0aa9d992e1b1b2a9847bf7c",
+  "canonicalBatchReceiptSha256": "482937a50b045ce83b20a53f5e5d3e371fc17a8dd728cac7be6d3948bf819497",
+  "canonicalSeedSpecSha256": "6f581d1c5bcb63b6b7b3dcd29db61a9c9929fd6f20041f1d430e18a9156c160f",
+  "canonicalResearchBindingArtifact": null,
+  "canonicalSeedOverlaySha256": "4db55d91ef206107dfe2bcec0bcc794663bb9992e8be2fd859801405e4838cb4",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "307472e3b1d67f41d14d19ab3e6a4f7aa8609096496d4c8d4ac80204a2774ca3",
+  "semanticCompanySha256": "12d7c3bf7a6680c5eed09c297d000f255133a2134d87fc6ab6938e7ec4c6afb3",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "93eb4c68a1e002e8e6ec33aecbae8a86989be388a44c47f4878271bbe3f97a58"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "89d862ae03ebc7bf259c91cd3cd98937cd52ca5f4fdb10d518d55e7b28a1544d"
+    },
+    {
+      "file": "attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "89d862ae03ebc7bf259c91cd3cd98937cd52ca5f4fdb10d518d55e7b28a1544d"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "daf7c295222b0bd695f30c60fdef14868b1e5c3b10bd8d6ea09c7347e321aa7f"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "d4a8118d4630e3f1c350d6cf549ca1c481fb5ea4cbc60ef87589059f80803997"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "e9184887b794e4caf980c7995a220b34f96916f2a5812e734a3764c777ab2319"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "b3eb001072664d46a570814df972480c590f8a54483ee7d40e00ada904ad7159"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "3e16aa1201cb13ca5486d1740a2c37c527e4c6e1b66dd19366126f9f4104c284"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "a176452591dd11b5bcc6987584acaa439fb041c986fe93d9803fd9d02960d7dc"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "COMPILED_PROMPT_INITIAL_RESPONSE",
+    "attestedHashMatches": true,
+    "repairCount": 0,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+      "ownerId": "cmrxpk6nt0244ivhetvms2jd6",
+      "recordId": "OFA-C2BCBE65BD0B",
+      "originalRecordId": "OFA-4A00A9128ED5",
+      "candidateSha256": "6fa09150f3c787f9ecab97ed6c9c2526920eb333b4a391bf766812c5ed2726de",
+      "current": {
+        "linkedFundName": "Macquarie Infrastructure Partners III",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Macquarie Infrastructure Partners III",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2014 is 2 years before investment, North America-relevant mandate; next candidate trails by 15.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "seedExpectation": {
+        "linkedFundName": "Macquarie Infrastructure Partners III",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Infrastructure Partners III",
+        "attributionConfidence": null,
+        "attributionRationale": "Official ownership filings identify MIP Cleco Partners L.P. as the Macquarie consortium vehicle; the approved after-image links that vehicle to the existing Macquarie Infrastructure Partners III fund record."
+      },
+      "recommended": {
+        "linkedFundName": "Macquarie Infrastructure Partners III",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Infrastructure Partners III",
+        "attributionConfidence": null,
+        "attributionRationale": "Cleco's April 13, 2016 closing disclosure expressly identifies Macquarie Infrastructure Partners III, L.P. as providing transaction funding alongside the other consortium investors. The March 29, 2017 prospectus identifies MIP Cleco Partners L.P. as the consortium member affiliated with MIP III, and defines MIP III collectively to include its PV partnership. Preserve the existing MIP III fund link and MIP Cleco Partners L.P. legal vehicle; no split or allocation between parallel partnerships or new September 2026 ownership event is inferred."
+      },
+      "preserves": {
+        "id": "cmrxpk6nt0244ivhetvms2jd6",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners III",
+        "vehicleName": "MIP Cleco Partners L.P.",
+        "stake": "53.9% last confirmed in 2020; exact current percentage not publicly disclosed",
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "SIGNED_PENDING_EXIT"
+      },
+      "seedRecordSha256": "a6e2b38160e341031787fda4d33ca074f6c5e08908c1449fa667d7ac66b078ed",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "MEDIUM",
+          "seed": null,
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco",
+          "primarySourceSha256": "1db2756e711f0e4e15e139b88f609af9c915001db9e4e4ece8c96679622f2351",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/closing-2016-dom-excerpt.json"
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Estimated from manager match 1.00, vintage 2014 is 2 years before investment, North America-relevant mandate; next candidate trails by 15.0 points. Public disclosure does not identify a distinct fund.",
+          "seed": "Official ownership filings identify MIP Cleco Partners L.P. as the Macquarie consortium vehicle; the approved after-image links that vehicle to the existing Macquarie Infrastructure Partners III fund record.",
+          "recommended": "Cleco's April 13, 2016 closing disclosure expressly identifies Macquarie Infrastructure Partners III, L.P. as providing transaction funding alongside the other consortium investors. The March 29, 2017 prospectus identifies MIP Cleco Partners L.P. as the consortium member affiliated with MIP III, and defines MIP III collectively to include its PV partnership. Preserve the existing MIP III fund link and MIP Cleco Partners L.P. legal vehicle; no split or allocation between parallel partnerships or new September 2026 ownership event is inferred.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco",
+          "primarySourceSha256": "1db2756e711f0e4e15e139b88f609af9c915001db9e4e4ece8c96679622f2351",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/closing-2016-dom-excerpt.json"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "INFERRED",
+          "seed": "DISCLOSED",
+          "recommended": "DISCLOSED",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco",
+          "primarySourceSha256": "1db2756e711f0e4e15e139b88f609af9c915001db9e4e4ece8c96679622f2351",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/closing-2016-dom-excerpt.json"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+      "ownerId": "cmrxpk6od0245ivhe8mp691um",
+      "recordId": "OFA-71C920291F6F",
+      "originalRecordId": "OFA-EECC367C2A0F",
+      "candidateSha256": null,
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Manulife Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Manulife Investment Management | Fund: Manulife Infrastructure Fund I | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Manulife Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Manulife Investment Management | Fund: Manulife Infrastructure Fund I | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The March 29, 2017 Cleco prospectus identifies John Hancock Life Insurance Company (U.S.A.) in its Investors definition and describes John Hancock Financial as part of Manulife. It does not identify Manulife Infrastructure Fund I as the underlying investor. Preserve the disclosed insurer vehicle and current unlinked fund state, but remove the unsupported specific-fund assertion. The reviewed evidence does not resolve allocation between insurer capital and any underlying client fund; do not infer a direct-program classification, fund, stake or new ownership event."
+      },
+      "preserves": {
+        "id": "cmrxpk6od0245ivhe8mp691um",
+        "managerName": "Manulife Investment Management",
+        "organizationName": "Manulife Investment Management",
+        "fundName": null,
+        "vehicleName": "John Hancock Life Insurance Company (U.S.A.)",
+        "stake": "9.2% last confirmed in 2020; exact current percentage not publicly disclosed",
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "SIGNED_PENDING_EXIT"
+      },
+      "seedRecordSha256": "dbfdefce9e93a5e0f4eea5dfadfec47a3040b6fedf9400e6c724e7357cfe678c",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Manulife Infrastructure Fund I",
+          "seed": "Manulife Infrastructure Fund I",
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.sec.gov/Archives/edgar/data/1089819/000119312517101185/d317836d424b3.htm",
+          "primarySourceSha256": "3a8b997667ff35a28ec3ce1fefc23115fcb4a8f60a24521101884f0451acdaa5",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/sec-2017-dom-excerpts.json"
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Matched supplemental ownership detail: Firm: Manulife Investment Management | Fund: Manulife Infrastructure Fund I | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry.",
+          "seed": "Matched supplemental ownership detail: Firm: Manulife Investment Management | Fund: Manulife Infrastructure Fund I | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry.",
+          "recommended": "The March 29, 2017 Cleco prospectus identifies John Hancock Life Insurance Company (U.S.A.) in its Investors definition and describes John Hancock Financial as part of Manulife. It does not identify Manulife Infrastructure Fund I as the underlying investor. Preserve the disclosed insurer vehicle and current unlinked fund state, but remove the unsupported specific-fund assertion. The reviewed evidence does not resolve allocation between insurer capital and any underlying client fund; do not infer a direct-program classification, fund, stake or new ownership event.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.sec.gov/Archives/edgar/data/1089819/000119312517101185/d317836d424b3.htm",
+          "primarySourceSha256": "3a8b997667ff35a28ec3ce1fefc23115fcb4a8f60a24521101884f0451acdaa5",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/sec-2017-dom-excerpts.json"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "DISCLOSED",
+          "seed": "DISCLOSED",
+          "recommended": "UNRESOLVED",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.sec.gov/Archives/edgar/data/1089819/000119312517101185/d317836d424b3.htm",
+          "primarySourceSha256": "3a8b997667ff35a28ec3ce1fefc23115fcb4a8f60a24521101884f0451acdaa5",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/sec-2017-dom-excerpts.json"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+      "ownerId": "cmrxpk6re0246ivhen4ze6pdf",
+      "recordId": "OFA-DD94B87AFDC9",
+      "originalRecordId": "OFA-408AC99E8290",
+      "candidateSha256": null,
+      "current": {
+        "linkedFundName": "Infrastructure & Renewable Resources",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure & Renewable Resources",
+        "attributionConfidence": null,
+        "attributionRationale": "Verified fund matches an existing fund-list entry."
+      },
+      "seedExpectation": {
+        "linkedFundName": "Infrastructure & Renewable Resources",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure & Renewable Resources",
+        "attributionConfidence": null,
+        "attributionRationale": "Verified fund matches an existing fund-list entry."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BCI's combined Infrastructure and Renewable Resources financial statements for the year ended December 31, 2024 describe a program comprising several funds and structured entities, not one legal investment entity. Note 7 reports Cleco Corporation as an investment held through intermediary corporations. This supports program attribution, not a particular constituent fund or allocation to a named Bolsena vehicle. Preserve bcIMC Como Investment LP and the existing owner identity; no current percentage or September 2026 ownership event is inferred."
+      },
+      "preserves": {
+        "id": "cmrxpk6re0246ivhen4ze6pdf",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "bcIMC Como Investment LP",
+        "stake": "36.9% last confirmed in 2020; exact current percentage not publicly disclosed",
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "SIGNED_PENDING_EXIT"
+      },
+      "seedRecordSha256": "aaa3268f405b2d2862795a4efff8ef42c7bde7716de12709af03f0681f987c34",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "linkedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Infrastructure & Renewable Resources",
+          "seed": "Infrastructure & Renewable Resources",
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "primarySourceSha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/bci-program.pdf"
+        },
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Infrastructure & Renewable Resources",
+          "seed": "Infrastructure & Renewable Resources",
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "primarySourceSha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/bci-program.pdf"
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Verified fund matches an existing fund-list entry.",
+          "seed": "Verified fund matches an existing fund-list entry.",
+          "recommended": "BCI's combined Infrastructure and Renewable Resources financial statements for the year ended December 31, 2024 describe a program comprising several funds and structured entities, not one legal investment entity. Note 7 reports Cleco Corporation as an investment held through intermediary corporations. This supports program attribution, not a particular constituent fund or allocation to a named Bolsena vehicle. Preserve bcIMC Como Investment LP and the existing owner identity; no current percentage or September 2026 ownership event is inferred.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "primarySourceSha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/bci-program.pdf"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "DISCLOSED",
+          "seed": "DISCLOSED",
+          "recommended": "DIRECT_PROGRAM",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "primarySourceSha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/bci-program.pdf"
+        }
+      ]
+    }
+  ],
+  "candidateFieldsAdjudicated": 3,
+  "cumulativeCandidateFieldsAdjudicated": 95,
+  "remainingCandidateFields": 508,
+  "additionalFieldsOutsideOriginal603": 7,
+  "productionFieldsRequiringCorrection": 10,
+  "seedFieldsRequiringCorrection": 8,
+  "missingSeedUpsertBindings": 0,
+  "additionalCanonicalIssues": [
+    {
+      "field": "BCI fundId",
+      "issue": "Unlink the combined-program fund label only with compatible canonical and seed persistence. Preserve the existing BCI organization ID and legal holding vehicle."
+    },
+    {
+      "field": "BCI stake/description/citation label",
+      "issue": "The already-cited December 2024 BCI report confirms 36.9% in both 2024 and 2023. Canonical wording says last confirmed in 2020 and one citation label names Puget. Flag for a separately compatible dated correction; do not infer September 2026 ownership."
+    },
+    {
+      "field": "historical founding milestones",
+      "issue": "Legacy 1933 milestones differ from the canonical 1935 founding field. Preserved outside attribution scope; no history/management enrichment or new research is performed."
+    }
+  ],
+  "qualifications": [
+    "The sole MIP III field-primary is the preserved ordinary-browser closing-disclosure excerpt, not a raw HTTP response. The complete article and forward-looking qualifications were read; the SEC prospectus's complete relevant parent/investor sections corroborate fund/vehicle identity. No allocation between parallel funds or later ownership event is inferred.",
+    "Manulife's sole field-primary is the exact ordinary-browser SEC prospectus excerpt, not a whole filing capture. The insurer identity does not identify Manulife Infrastructure Fund I or resolve insurer capital versus client-fund allocation; keep exact fund UNRESOLVED and do not assert DIRECT_PROGRAM merely from an insurer name.",
+    "BCI's sole field-primary is the already-frozen Puget program PDF. Complete physical pages11/26 (printed9/24), headings and both year tables were visually reviewed. The combined program comprises multiple constituent entities and is not one legal entity. No named Bolsena allocation is inferred. All five LPSC2020 pages were rendered and read; its exact bytes match the historical packet and preserve the 2020 ownership chain.",
+    "Four raw HTTP captures are403 denial bodies, not source content or historic byte equivalents. The LPSC PDF is the only new raw capture matching historical bytes. The two DOM captures are scoped excerpts with their true method, bounds and timestamps; no whole-document or raw-filing equivalence is claimed. The existing BCI capture was reused, never overwritten or recaptured.",
+    "Nine historical packet files and all four non-null attested hashes are bound. The transcript compiles prompt and initial response, not a full DOM trace; accepted bytes equal initial with no repair. Research facts and their August19 cutoff are preserved, not independently promoted to September current-ownership authority.",
+    "All three current owners exactly match their initial attribution after-images; original OFA identifiers differ from current canonical seed IDs and remain explicit. The existing seed upsert binds all three current records. Receipts and label equality prove provenance, not substantive attribution authority.",
+    "Preserve the complete company, aliases,12citations and SEC2026Q1 primary,7milestones,6management roles,all three owner IDs,stakes,vehicles,2016entries and signed pending exit,existing July29redirect and absent retired company. Do not create buyer owners or assert a closing. No source task/bundle or company/ChatGPT research is repeated.",
+    "Ten field decisions comprise three original and seven additional equality-blind fields. Ten production and eight overlapping seed corrections remain unapplied, with compatible canonical issues separate. This is not write authority. Never replay655cbe74-5435-4b4a-8e4c-04b5d091f9b8 or any attribution transaction, run the full seed, modify Deal Database or UI, or begin enrichment."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "319bc792b967938972572080ec300f1953736271",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "b47f708c7999e9a27ea6a01c347992d77c59be409951adafd9976316e58edf6d",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0122-cleco-corporate-holdings-llc-v1.json",
+      "sha256": "77816845f43fe493977bbf8ca1098b22da5747f5ca61333374d9d7b488461c20"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "89d862ae03ebc7bf259c91cd3cd98937cd52ca5f4fdb10d518d55e7b28a1544d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-attestation.json",
+      "sha256": "d4a8118d4630e3f1c350d6cf549ca1c481fb5ea4cbc60ef87589059f80803997"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "89d862ae03ebc7bf259c91cd3cd98937cd52ca5f4fdb10d518d55e7b28a1544d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "e9184887b794e4caf980c7995a220b34f96916f2a5812e734a3764c777ab2319"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-transcript.txt",
+      "sha256": "daf7c295222b0bd695f30c60fdef14868b1e5c3b10bd8d6ea09c7347e321aa7f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/locked-production-snapshot.json",
+      "sha256": "634d605b22102acc62bdbcec90de9f859eb71eddffe342e37b26f5a59533d067"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/locked-task-snapshot.json",
+      "sha256": "08c387e2b4bbdc6b5ddb6c9ec347b4b222599e8208fff0f8fa485a513f80b24a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/research-decision.json",
+      "sha256": "3e16aa1201cb13ca5486d1740a2c37c527e4c6e1b66dd19366126f9f4104c284"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/research-decision.md",
+      "sha256": "a176452591dd11b5bcc6987584acaa439fb041c986fe93d9803fd9d02960d7dc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/research-prompt.md",
+      "sha256": "93eb4c68a1e002e8e6ec33aecbae8a86989be388a44c47f4878271bbe3f97a58"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/source-verification.json",
+      "sha256": "b3eb001072664d46a570814df972480c590f8a54483ee7d40e00ada904ad7159"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0122-cleco-corporate-holdings-llc-v1/proposal.json",
+      "sha256": "8c497e8331600a13c379ec7d6ec2fcbaa9f1e8d7560013363476338bc6c6d990"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/batch-manifest.json",
+      "sha256": "a785bc4a2020227da06acb0c77996829ab5cebe2e217082db374b6d9d398d408"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "27f6514a6a027cd6f96309e0f2c5aad2f346dff46ac4682bc274933e5970ce4c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "d44a93b15e679bdec3e956ec5c70c50c6536e5630cc79a8a2c51923e09c8624e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/bci-program.pdf",
+      "sha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/relam/authority.json",
+      "sha256": "7bd138d6e5701c3bf48aac0a9052dd04addf0dd7a766f472d9941157570d93fc"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "8298b5e82c16babfe4eec13138290b1ca44c50411e9db00ae838368e4edc049a",
+  "reportSha256": "dba615df0b6711db92872f8fd1a4ab41229d6cd3ec985ce62af96997a80ead40"
+}
