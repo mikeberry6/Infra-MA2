@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_MONTREAL_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "9e388af71dbb5d1f18bbf05203f78364496c2f1e348c999bc26c493271c8f2c6",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "6ef574ec19376948604617b46d84e157a2f523b81fbd9a1121c023d86faf0c17",
+  "canonicalApprovalSha256": "c293eefcb923d6c744531aa911e41011ed1448689f8097352ae97d27b319f2be",
+  "canonicalReceiptSha256": "a43b99d3cb4682bc3dfe593fad2085557f23d84b8a2710fbcdeb46b621ab4e37",
+  "canonicalResearchBindingArtifact": null,
+  "supersededProposalSha256": "fe24c3b1899becaaf700971077fce067817874a03c3bdd46485d5445190b0f74",
+  "canonicalSeedOverlaySha256": "e807491f08c1abbda947ac148db8df4e2f975825655178d05e11bfe193f8cd2b",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "bf95c4836adbd1089af96c4eb2227bee5c0250a2f4ec68199748c92a20942543",
+  "semanticCompanySha256": "2397825b4063723c40c21aa35a3c281118267018414b7a5923aee9823b2b9bca",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "168a55841bb60abc0d67124eaf0df6392e309de4232e8e6641b50551f05c87a0"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "4ea3c05edd0e331bb9859f4f9ff565cc8af20254db0981be50d74d291a5ea1f8"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "3c4e3c9dd17cc0dacc948975c852183acbb9908a4425e78347380ea84a77ec0d"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "78ffb599d1613aa541af0292985c4c11b590fdeb027e18b47f1527072d76fadf"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "43bd0a23bb76688a5419f124ff95c5ecaae709ba4bf847450c3ddfb0b5fed350"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "6cc8ded68170115ec58d4457e2275e448f02e24e8a3dccfa21d329ec6271cee7"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "12cbd9295a04371258595a6299ddebbba9950085c3fa20a4663cc34effafbeb1"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "7c3b8542c35021b75e5c919edba299de338b16ec607d4162f043efbcded2fabf"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "POINTER_ONLY_ORDERED_TWO_FILE_INDEX",
+    "attestedHashMatches": true,
+    "repairCount": 0,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmsz53i1l0000dt6h9gk6sej6",
+      "ownerId": "cmsz53jmp000gdt6h4220bl99",
+      "recordId": "OFA-4AC0C8501926",
+      "candidateSha256": "901c12619696ef6140adb73a1778a6196760fa2623687d518aca7dd1b6d74e1e",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Fiera Axium Infrastructure Canada II L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's acquisition release identifies Fiera Axium Infrastructure Canada II L.P. as the disclosed acquisition vehicle. The vehicle remains unlinked because it is not a production-curated fund, rather than being inferred to the generic AxInfra Fund I-IV record."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Fiera Axium Infrastructure Canada II L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's March 6, 2015 acquisition release explicitly names Fiera Axium Infrastructure Canada II L.P. as a member of the consortium acquiring Montreal Gateway Terminals Partnership and identifies its infrastructure fund manager. Preserve that exact dated disclosed fund name without creating a curated Fund row or substituting generic AxInfra Fund I-IV. The consortium acquired 100%, not Axium individually; retain the unavailable Axium-specific percentage, canonical legal vehicle and 2015 entry. This disclosure does not establish a new September 2026 ownership event or the current stakes of other consortium members."
+      },
+      "preserves": {
+        "id": "cmsz53jmp000gdt6h4220bl99",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": null,
+        "vehicleName": "Fiera Axium Infrastructure Canada II L.P.",
+        "stake": "Axium-led consortium acquired 100%; Axium-specific percentage not publicly disclosed",
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "missingSeedUpsertBinding": true,
+      "originalAttributionMembership": false,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": null,
+          "seed": "Fiera Axium Infrastructure Canada II L.P.",
+          "recommended": "Fiera Axium Infrastructure Canada II L.P.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2015-03-06_fiera-axium-infrastructure_-_press-release-MGT.pdf",
+          "primarySourceSha256": "9df085c357251848d9ba943e6bc555d35d4f5291c3c479757d0d34dbc78bf1e2",
+          "primaryOneBasedPages": [
+            1
+          ]
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": null,
+          "seed": "Axium's acquisition release identifies Fiera Axium Infrastructure Canada II L.P. as the disclosed acquisition vehicle. The vehicle remains unlinked because it is not a production-curated fund, rather than being inferred to the generic AxInfra Fund I-IV record.",
+          "recommended": "Axium's March 6, 2015 acquisition release explicitly names Fiera Axium Infrastructure Canada II L.P. as a member of the consortium acquiring Montreal Gateway Terminals Partnership and identifies its infrastructure fund manager. Preserve that exact dated disclosed fund name without creating a curated Fund row or substituting generic AxInfra Fund I-IV. The consortium acquired 100%, not Axium individually; retain the unavailable Axium-specific percentage, canonical legal vehicle and 2015 entry. This disclosure does not establish a new September 2026 ownership event or the current stakes of other consortium members.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2015-03-06_fiera-axium-infrastructure_-_press-release-MGT.pdf",
+          "primarySourceSha256": "9df085c357251848d9ba943e6bc555d35d4f5291c3c479757d0d34dbc78bf1e2",
+          "primaryOneBasedPages": [
+            1
+          ]
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "UNRESOLVED",
+          "seed": "DISCLOSED",
+          "recommended": "DISCLOSED",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_2015-03-06_fiera-axium-infrastructure_-_press-release-MGT.pdf",
+          "primarySourceSha256": "9df085c357251848d9ba943e6bc555d35d4f5291c3c479757d0d34dbc78bf1e2",
+          "primaryOneBasedPages": [
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "candidateFieldsAdjudicated": 3,
+  "cumulativeCandidateFieldsAdjudicated": 89,
+  "remainingCandidateFields": 514,
+  "additionalFieldsOutsideOriginal603": 0,
+  "productionFieldsRequiringCorrection": 3,
+  "seedFieldsRequiringCorrection": 1,
+  "missingSeedUpsertBindings": 1,
+  "qualifications": [
+    "Sole field-primary is the full March 6, 2015 issuer acquisition PDF, complete page1, reached through the exact existing landing-page link. Both complete pages were rendered and visually reviewed. The named consortium member and dedicated infrastructure-fund manager support DISCLOSED; no inferred generic fund, legal-name modernization or curated Fund row is justified.",
+    "The acquisition HTML is a short landing summary, not the full release. The current portfolio panel supports the MGT operating-asset boundary but supplies no exact fund name. Manulife's dated issuer release supports the March5 closing and 2015 consortium only, not current co-owner continuity. The three fresh HTML byte hashes differ from historical hashes; the linked PDF has no separate historical byte hash. No raw equivalence or new current equity event is claimed.",
+    "Preserve the entire single Cast-and-Racine company, seven aliases, eight citations and unchanged portfolio card primary, four milestones and no pending transactions or redirects. Preserve Axium's legal vehicle/2015/unknown individual percentage and Morgan Stanley's exact realized2007-2015 period and metadata. Do not create Termont/Port authority/terminal/FA MGT companies or infer other consortium members' current stakes.",
+    "All eight historical packet files and four attested hashes are bound. One response, zero repairs; the transcript is a pointer-only two-file index, not a full DOM trace. Historical independent fund-link, current roster, FA MGT parent, website, capacity and former-owner source corrections remain intact. No standalone attempt2 research-binding artifact exists or is invented.",
+    "Canonical v2 changed only the shared portfolio Source label after a non-writing v1 refusal, retaining the company-specific evidence label and all identity/ownership/evidence. CREATE_COMPANY uses null proposed IDs and applied IDs are independently pinned. Both owner rows were created after the initial attribution run and are absent from its exact receipt; missing latest seed-upsert history remains explicit.",
+    "Three production corrections and one overlapping seed-rationale correction remain unapplied. This is not an apply manifest or write authority. Never replay 7dfa9913-0df3-47eb-a1af-04a9fffa7317 or an attribution transaction, reopen terminal tasks, repeat company/ChatGPT research or run the full seed. Overall completion remains false."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "9645d495b5fd579499fa8963d657dbaf877bfc9d",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "207bf1dd83f5daf6034526bf4b9ad35e2656c072f77b7e8f5128dcd6b0bc60e3",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0118-montreal-gateway-terminals-v2.json",
+      "sha256": "d6f1156d86225e7f4a46a7300e267f6bcecd26493bd880e861ba9607626a0c13"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/chatgpt-attestation.json",
+      "sha256": "78ffb599d1613aa541af0292985c4c11b590fdeb027e18b47f1527072d76fadf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "4ea3c05edd0e331bb9859f4f9ff565cc8af20254db0981be50d74d291a5ea1f8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/chatgpt-response-validation.json",
+      "sha256": "43bd0a23bb76688a5419f124ff95c5ecaae709ba4bf847450c3ddfb0b5fed350"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/chatgpt-transcript.txt",
+      "sha256": "3c4e3c9dd17cc0dacc948975c852183acbb9908a4425e78347380ea84a77ec0d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "6fc810709365dc9e6379bdd6ea4138f84878a2bd39eccdcca5ea1594a6772ac4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/research-decision.json",
+      "sha256": "12cbd9295a04371258595a6299ddebbba9950085c3fa20a4663cc34effafbeb1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/research-decision.md",
+      "sha256": "7c3b8542c35021b75e5c919edba299de338b16ec607d4162f043efbcded2fabf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/research-prompt.md",
+      "sha256": "168a55841bb60abc0d67124eaf0df6392e309de4232e8e6641b50551f05c87a0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/source-verification.json",
+      "sha256": "6cc8ded68170115ec58d4457e2275e448f02e24e8a3dccfa21d329ec6271cee7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-2/locked-production-snapshot.json",
+      "sha256": "2177a3bb78afbaea717b2042e64e286ba405b84a04c3dbf5a35d2f80733d43e4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "effb3bdd5f3dbc7a08979e2f8e31c20ed5ceca21fa43241809062d33eb59bebe"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0118-montreal-gateway-terminals-v1/proposal.json",
+      "sha256": "21fb87d9e30803cb9bdb9c1bd09d735443096784dc0b213dbb97455fe3b398f5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0118-montreal-gateway-terminals-v2/proposal.json",
+      "sha256": "9cd51d17d63e6b0de3d23e70f32ff8e9d5eca577bb9dd059134f10efc5414447"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/etobicoke/authority.json",
+      "sha256": "715d8e23b10c11a58dcae3c7d314eafb76ddeb6fd18cdabb9af0e85655f44e89"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "c2287c3b701e90dbc228b1ad9eed55fa03293e3fcb9397962e80b5d962566b3a",
+  "reportSha256": "891ad4a7397b947ba9abf7d55775e378ddc1e94d86a241c8d2eec6e588372bd9"
+}
