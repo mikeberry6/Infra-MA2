@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_ALIGNED_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "703859ec193f83afd6968d0934451ef65619bcfadeafedd5b9aecf674bf00b08",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "8b17f5a15b3837ea9404f169d8522c5e3373fbc34ba93a66f0383278607a990e",
+  "canonicalApprovalSha256": "ca01c17b0f9ff8fbcf8d99bc7795cb1b639f173748c3f13af1585f6bae4b7e0f",
+  "canonicalReceiptSha256": "4ed8fd577ffdadf35ff8007918cd688d31c26d7ee9dd3b9d6ee99002df911f86",
+  "canonicalBatchReceiptSha256": "a6b1874723f2ac1fe53ce313d1543f85d63e468dfa26aa2dd5b403134e6fc3d6",
+  "canonicalSeedSpecSha256": "bc8fdc535f471654019e1ab19a9c4569b57e700419fca71e2548f15060abd48b",
+  "canonicalResearchBindingArtifact": null,
+  "canonicalSeedOverlaySha256": "e77654fe7c3f31bf92df5f31e64f7a00c1c1bb0cb4325e833c906bd2c71012ab",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "b3bd22abded2769ee79e864ccb94fabc1f6b9f5a1172ff2cbdfff0d527ca1eed",
+  "semanticCompanySha256": "393750d42c8c7897c214362d94b270572dca5cc95dfeebd82b0fdfe54f4e2dee",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "77368eacc8f42e4441fbc368ff4a98411023e9a8a2485a6bbe33dd5900eb31fb"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "d79a9eecaa5c5c7c9768e38a12c716ec362a5c8aa5d3d2f3db7df48331611d4a"
+    },
+    {
+      "file": "attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "d79a9eecaa5c5c7c9768e38a12c716ec362a5c8aa5d3d2f3db7df48331611d4a"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "5cb3ec3093c47ab4751bc9400fc1c6665f1b4ef45946e8a40a85a9b16b937231"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "60317e19401c205cf85ecd6412b902c4f758984d7c2e3104a9ab299263e4acf5"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "2187fed9797ee7ade2214f6788c596af016302ddd30975f8890affc7905462db"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "b5ad6620c823609fa328cb63424a35a15f5e9634afb0e5d27b8c0e6c151a254c"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "6211e66e3492d93c60933c440496c0347e0c6ccc4edc28d4fadb3cc6e94c9dd4"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "07e853432e4fe86f7d50c91c92514085f83ae806783bfead359593f108262876"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "COMPILED_PROMPT_INITIAL_RESPONSE",
+    "attestedHashMatches": true,
+    "repairCount": 0,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmrxpjghb00yoivhejmdrclkw",
+      "ownerId": "cmt5i70pj0006siyy9ds7c8k1",
+      "recordId": "OFA-C392CD493554",
+      "originalRecordId": null,
+      "candidateSha256": "a1a908cd09f5d249188ab74a63329bd2bb832a6b9bdd8c225fecb23fc6628f6f",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The closing release and EU merger decision attribute joint control to GIP/GIM through the AIP consortium, but no specific fund allocation is publicly disclosed."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The European Commission's January 19, 2026 decision identifies GIM, ultimately controlled by BlackRock, as a joint controller of the Aligned perimeter. The company's July 21 closing release places GIP within the AIP consortium but identifies no constituent fund allocation. Use program-level attribution with null fund name and confidence, preserving the existing Mariana/AIP vehicle and undisclosed percentage; AIP is not an additional owner and Mariana is not a disclosed underlying investment fund."
+      },
+      "preserves": {
+        "id": "cmt5i70pj0006siyy9ds7c8k1",
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "Mariana US Aggregator, L.P. through the AI Infrastructure Partnership",
+        "stake": "Joint control with MGX; exact percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "9f4f24929f3452bfdf2362f7125ecfe9513d4ece2ae359ed6f5f5edc01614c19",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": false,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": null,
+          "seed": "The closing release and EU merger decision attribute joint control to GIP/GIM through the AIP consortium, but no specific fund allocation is publicly disclosed.",
+          "recommended": "The European Commission's January 19, 2026 decision identifies GIM, ultimately controlled by BlackRock, as a joint controller of the Aligned perimeter. The company's July 21 closing release places GIP within the AIP consortium but identifies no constituent fund allocation. Use program-level attribution with null fund name and confidence, preserving the existing Mariana/AIP vehicle and undisclosed percentage; AIP is not an additional owner and Mariana is not a disclosed underlying investment fund.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12259_10869557_118_3.pdf",
+          "primarySourceSha256": "21df192ac1515bc3b48de8e23f0b65b328565834c34b5389e7ab029e7fca7fd9",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/aligned/eu-decision.pdf"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "UNRESOLVED",
+          "seed": "DIRECT_PROGRAM",
+          "recommended": "DIRECT_PROGRAM",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12259_10869557_118_3.pdf",
+          "primarySourceSha256": "21df192ac1515bc3b48de8e23f0b65b328565834c34b5389e7ab029e7fca7fd9",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/aligned/eu-decision.pdf"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpjghb00yoivhejmdrclkw",
+      "ownerId": "cmt5i70ue0008siyyetmbg5gl",
+      "recordId": "OFA-7FA7936A8551",
+      "originalRecordId": null,
+      "candidateSha256": "b2f98134baca1a416257df61b7220b5a1551e9f1726a2edaecd434fb9ee562e4",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The closing release and EU merger decision identify MGX as a joint controller, but no specific managed fund or percentage is publicly disclosed."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The European Commission's January 19, 2026 decision identifies MGX Fund Management Limited as a technology investor and joint controller, ultimately controlled by Mubadala and G42. It does not identify a particular MGX fund allocation or percentage. Use DIRECT_PROGRAM for the identified investment platform with null fund name and confidence, preserving the existing acquisition vehicle and joint-control limitation; do not infer separate direct ownership for MGX's parents."
+      },
+      "preserves": {
+        "id": "cmt5i70ue0008siyyetmbg5gl",
+        "managerName": "MGX",
+        "organizationName": "MGX",
+        "fundName": null,
+        "vehicleName": "Mariana US Aggregator, L.P.",
+        "stake": "Joint control with GIP/GIM; exact percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "f5e2d942035945d0661104e2aa54f6bb684e2390a13860b92d613be93c0dc376",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": false,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": null,
+          "seed": "The closing release and EU merger decision identify MGX as a joint controller, but no specific managed fund or percentage is publicly disclosed.",
+          "recommended": "The European Commission's January 19, 2026 decision identifies MGX Fund Management Limited as a technology investor and joint controller, ultimately controlled by Mubadala and G42. It does not identify a particular MGX fund allocation or percentage. Use DIRECT_PROGRAM for the identified investment platform with null fund name and confidence, preserving the existing acquisition vehicle and joint-control limitation; do not infer separate direct ownership for MGX's parents.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12259_10869557_118_3.pdf",
+          "primarySourceSha256": "21df192ac1515bc3b48de8e23f0b65b328565834c34b5389e7ab029e7fca7fd9",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/aligned/eu-decision.pdf"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "UNRESOLVED",
+          "seed": "DIRECT_PROGRAM",
+          "recommended": "DIRECT_PROGRAM",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12259_10869557_118_3.pdf",
+          "primarySourceSha256": "21df192ac1515bc3b48de8e23f0b65b328565834c34b5389e7ab029e7fca7fd9",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/aligned/eu-decision.pdf"
+        }
+      ]
+    }
+  ],
+  "preservedHistoricalOwners": [
+    {
+      "id": "cmrxpk26i01x6ivhertl2pn50",
+      "managerName": "Macquarie Asset Management",
+      "organizationName": "Macquarie Asset Management",
+      "fundName": null,
+      "vehicleName": "MIP IV / MIP V and related vehicles",
+      "stake": "Control group; exact percentage not publicly disclosed",
+      "investmentYear": 2018,
+      "exitYear": 2026,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    },
+    {
+      "id": "cmrxpk27301x7ivhepfk5vqti",
+      "managerName": "Mubadala",
+      "organizationName": "Mubadala",
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "Minority interest; exact percentage not publicly disclosed",
+      "investmentYear": 2023,
+      "exitYear": 2026,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    }
+  ],
+  "candidateFieldsAdjudicated": 4,
+  "cumulativeCandidateFieldsAdjudicated": 105,
+  "remainingCandidateFields": 498,
+  "additionalFieldsOutsideOriginal603": 0,
+  "productionFieldsRequiringCorrection": 4,
+  "seedFieldsRequiringCorrection": 2,
+  "missingSeedUpsertBindings": 0,
+  "additionalCanonicalIssues": [
+    {
+      "field": "Historical owner attribution",
+      "issue": "Preserve former Macquarie and Mubadala metadata exactly. The inactive Mubadala row retains INFERRED Mubadala Infrastructure/LOW metadata; it is outside the original active-owner603 and remains a separate unadjudicated issue, not source-approved by this report."
+    },
+    {
+      "field": "Vehicle and joint-control boundaries",
+      "issue": "Keep Mariana/AIP wording and unknown individual percentages from the canonical receipt. FTC raw403 is not evidence; the EU PDF names joint controllers but no Mariana vehicle, specific allocated fund or equity split. Add no AIP, separate BlackRock or direct Mubadala/G42 period."
+    }
+  ],
+  "qualifications": [
+    "All three pages of the direct January19,2026 European Commission non-opposition decision were rendered and visually read, including the legal perimeter, ultimate-parent chains, business activities and decision. Joint control is not an exact equity split. The PDF does not name any allocated GIP/MGX constituent fund, Mariana vehicle or AIP as a separate controller.",
+    "The entire July21,2026 company closing release and FAQ were reopened and read. They corroborate the already-applied consortium structure and AIP program boundary, not a new acquisition or September2026 ownership review. Consortium100% and US$5bn growth capital are not individual owner percentages or fund allocations.",
+    "Raw EU PDF and closing HTML returned200; the PDF exactly matches historical bytes while closing HTML differs. The FTC request returned403 and its frozen479-byte HTML denial is NOT filing evidence. The indexed FTC page could be read through web retrieval, but no claim of current raw200 or independent source-body verification is made. Existing Mariana vehicle wording is preserved from the canonical receipt; this report does not newly establish it from the denial.",
+    "The FTC page's20260312 identifier is a transaction number, not a March12 closing date. Its indexed entry states December17,2025 early termination. Neither HSR early termination nor the EU non-opposition establishes transaction closing by itself; the canonical closing source does.",
+    "Nine historical packet files and all four non-null attested hashes are bound. The transcript compiles prompt and initial response, not full DOM; accepted equals initial with zero repairs and the as-of is August19. The later August23 release-delta artifact and locked-v2 task/production inputs are preserved, not rerun or described as fresh acquisition/exit research.",
+    "Both target owners were created by the canonical correction and have no initial attribution receipt. Both current seed records have exact existing upserts. Matching seed DIRECT_PROGRAM and canonical receipts alone are not substantive authority. GIP's original organization persists; MGX's originally omitted organizationName normalized to the created MGX organization under the established semantic contract, not a new identity waiver.",
+    "Preserve the whole Aligned company,three aliases,nine citations and unchanged closing primary,five milestones,no management roles,all four physical owner/organization IDs,vehicles,entry/exit years,lifecycle and exact unavailable percentages. No redirects,pending transactions or retired identity exist. Keep GIP/BlackRock counted once, AIP as program only, and Mubadala's direct former ownership separate from its indirect MGX parent relationship.",
+    "Former Macquarie and Mubadala periods and all their exact attribution metadata are preserved outside this active-owner scope. Mubadala's historical INFERRED/LOW metadata is separately flagged, not silently corrected or approved. The historical MIP IV/V allocation is not newly reviewed. No whole-company attribution reconciliation is claimed.",
+    "Four original fields are adjudicated, with no additional original-denominator reduction. All four production and two overlapping seed-rationale corrections remain unapplied. This is not write authority. Never replay df566e24-e7cf-4c34-8b8f-b0420bae475b or any attribution transaction, run full seed, reopen terminal tasks or change Deal Database/UI."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "df2297fde734942072e134e3a032597a2c0e236b",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "e24a7ee3c54aba872f486f1f232b97786889768abb4024f9fceb694177ce65b7",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0132-aligned-data-centers-v1.json",
+      "sha256": "b99c9f8406974a2fac4f8497dd49dcc9f5a9fc0c625a4fa3e36953f102441f48"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "d79a9eecaa5c5c7c9768e38a12c716ec362a5c8aa5d3d2f3db7df48331611d4a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-attestation.json",
+      "sha256": "60317e19401c205cf85ecd6412b902c4f758984d7c2e3104a9ab299263e4acf5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "d79a9eecaa5c5c7c9768e38a12c716ec362a5c8aa5d3d2f3db7df48331611d4a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-response-validation.json",
+      "sha256": "2187fed9797ee7ade2214f6788c596af016302ddd30975f8890affc7905462db"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-transcript.txt",
+      "sha256": "5cb3ec3093c47ab4751bc9400fc1c6665f1b4ef45946e8a40a85a9b16b937231"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/locked-v2-production-snapshot.json",
+      "sha256": "cd6890a9a20b460cffde9cc4a3d0028432ce9359455137ee1287d2254315ec2d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "23fa040363874b9dd05acc4625fd8a4e8bf0f9b4117f6a5e1a574b7f1dade8f8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/release-delta-check.json",
+      "sha256": "deace9893d1ce1cb8fa00c3df24fe1cf256141cd51a1da53fc350fe3fa69f432"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/research-decision.json",
+      "sha256": "6211e66e3492d93c60933c440496c0347e0c6ccc4edc28d4fadb3cc6e94c9dd4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/research-decision.md",
+      "sha256": "07e853432e4fe86f7d50c91c92514085f83ae806783bfead359593f108262876"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/research-prompt.md",
+      "sha256": "77368eacc8f42e4441fbc368ff4a98411023e9a8a2485a6bbe33dd5900eb31fb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/source-verification.json",
+      "sha256": "b5ad6620c823609fa328cb63424a35a15f5e9634afb0e5d27b8c0e6c151a254c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0132-aligned-data-centers-v1/proposal.json",
+      "sha256": "5945dba8326d12d52cd06a423e12d7439b7acd9aa9307c7ac3629c2043146e68"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/batch-manifest.json",
+      "sha256": "dd1b015cf06175325314fab888eeb25c12a6b094c242f82d0d21808a164011fd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "191b3380e892d46a0e75fc38440fe943445908a2652f9d16f7a7b41518bd2785"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "651156fa39a1420745d639b43ece4369197557b20ea28a9b8a2fb0dcf46f19d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nexus/authority.json",
+      "sha256": "60e3d160c0a96e4a78048d9398b5a7fd40aeb7207b4089b6df18930aae0c8547"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "e6f97d7e09bd91584db66980a48e8e600876a8e4d6b119cfd49f32860c2aeeea",
+  "reportSha256": "6a2026c62a71121e658bab6c9edfe4e6ad0d1af088ca8630dbaa3356ef19c8bb"
+}
