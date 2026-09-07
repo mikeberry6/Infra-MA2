@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_PNGTS_DIRECT_SOURCE_VISUAL_REVIEW",
+  "method": "Complete visual review of thirteen archived browser-rendered NH PUC pages and three raw NGA PDF pages",
+  "regulator": {
+    "url": "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff",
+    "capture": "nh-puc-rendered-capture.json",
+    "order": "27,023",
+    "orderDate": "2024-06-21",
+    "coverDocket": "DG 24-050",
+    "runningPageHeader": "DE 24-050",
+    "totalPages": 13,
+    "allPagesVisuallyReviewed": true,
+    "rawPdfAvailable": false,
+    "isDomTranscript": false,
+    "textMethod": "Reviewer-authored paraphrases and selected manual transcription checked against archived page images; not automated extraction",
+    "pages": [
+      {"page": 1, "finding": "The approval order names North Haven Infrastructure Partners III (AIV-B) SCSp, an affiliate of Morgan Stanley Infrastructure Inc., and BlackRock Global Infrastructure Fund IV, SCSp, an affiliate of BlackRock Financial Management, Inc., as buyers. Sellers are TC Pipelines, LP, a Delaware limited partnership, and Northern New England Investment Company, Inc., a Vermont corporation. Approval and confidential treatment are granted."},
+      {"page": 2, "finding": "The FERC-regulated pipeline extends 295 miles from the Canadian border to Dracut through New Hampshire and Maine. The southern segment is jointly owned with Maritimes & Northeast Pipeline. The petition was filed March 26, 2024; a June 13 hearing and a separate Site Evaluation Committee proceeding are described."},
+      {"page": 3, "finding": "The purchase and sales agreement was executed March 2, 2024. The buyers formed Beehive Loop Acquisition Co LLC, an equal partnership between BGIF IV and NHIP III, each indirectly owning 50% of PNGTS. Footnote 1 says four separate Beehive LLCs are being created and points to the ownership diagram in Hearing Exhibit 3 at page 3. That diagram is not included in this order; do not invent the complete lower-tier chain."},
+      {"page": 4, "finding": "The proposed closing gives each buyer a 50% interest. The order discusses transition services, management experience, diligence and the managers' other infrastructure holdings. Those other holdings are not PNGTS owners."},
+      {"page": 5, "finding": "Staffing, transition arrangements, fixed transportation contracts and stakeholder consultation support approval. These operational arrangements do not create an additional equity owner."},
+      {"page": 6, "finding": "DOE withdrew its initial qualifications after June 13 testimony; OCA supported approval. Confidential treatment was sought for the purchase agreement, testimony, buyer asset/liability statements, TSA and discovery."},
+      {"page": 7, "finding": "The parties explain commercially sensitive financial information and negotiations; DOE and OCA did not object to confidential treatment. Confidential information is not inferred or reconstructed."},
+      {"page": 8, "finding": "The Commission states the transfer review standards: no adverse effect and consistency with public good."},
+      {"page": 9, "finding": "The separate SEC approval and the buyers' managerial, financial and technical resources support the Commission's approval findings."},
+      {"page": 10, "finding": "The order continues the public-good findings and describes the confidential-treatment standard."},
+      {"page": 11, "finding": "The Commission balances disclosure against commercial harm and grants confidential treatment."},
+      {"page": 12, "finding": "The order grants transfer from NNEIC and TCP to NHIP III and BGIF IV. It requires written confirmation and final signed PSA/TSA within ten days of closing. Approval is not evidence that closing had already occurred. Three commissioners sign the June 21 order."},
+      {"page": 13, "finding": "Public service list for docket 24-050, printed June 21, 2024. It is not ownership evidence. Contact addresses are not transcribed into these findings."}
+    ],
+    "manualPrimaryTranscription": [
+      "North Haven Infrastructure Partners III (AIV-B) SCSp, an affiliate of Morgan Stanley Infrastructure Inc. and BlackRock Global Infrastructure Fund IV, SCSp, an affiliate of BlackRock Financial Management, Inc.",
+      "Beehive Loop Acquisition Co LLC (Beehive).",
+      "Beehive has been formed to effectuate an equal partnership between BGIF IV and NHIP III who will in turn each indirectly own a 50% interest in PNGTS.",
+      "There are 4 separate Beehive LLCs being created."
+    ]
+  },
+  "nga": {
+    "path": "nga.pdf",
+    "sha256": "78096ed246e272dc430668220544e713cdbbbdd5a0c6c5885fc4ff0e6eaaf406",
+    "totalPages": 3,
+    "allPagesVisuallyReviewed": true,
+    "rawPdfUnmodified": true,
+    "pages": [
+      {"page": 1, "finding": "PNGTS presentation to the NGA pre-winter briefing on November 13, 2025, by its Chief Commercial Officer. This is a company presentation, not a fund holdings schedule."},
+      {"page": 2, "finding": "BlackRock and MSIP acquired PNGTS in August 2024. TC operated under a TSA through winter 2024/25; PNGTS took over operations fully in May 2025. The TSA handover is operational, not an equity transfer. No precise acquiring fund name or percentage is disclosed here."},
+      {"page": 3, "finding": "188 miles of 24/30-inch pipe at 1440 psi MAOP; PNGTS operates the northern section and M&NE the joint facilities to Dracut. The presentation reports 458,285 Dth/day long-term firm transportation and fifteen shippers. The 188-mile northern pipe scope is not the 295-mile whole-system scope; do not treat those measures as a contradiction or enrich the scorecard."}
+    ]
+  },
+  "qualifications": [
+    "Ordinary NH PUC HTTP retrieval returned 403 HTML; the frozen response is not a PDF and is never the field-primary evidence. The direct regulator document independently rendered in the browser. Thirteen complete viewport JPEGs and their hashes are archived; there is no raw PDF hash or DOM-transcript claim.",
+    "The June 21 order names both precise fund vehicles and the equal indirect interests; the separate raw 200 TC Energy August 15 release establishes closing. March 2 PSA execution, March 4 public announcement and August 15 closing are distinct events.",
+    "Existing generic North Haven Infrastructure Partners III and BlackRock GIF IV curated links can be retained as fund labels; the recommended attribution names should preserve the order's exact AIV-B and SCSp legal forms. Do not invent or relink a lower-tier Beehive entity.",
+    "The canonical prior-owner vehicle TC Pipelines, Inc. differs from the order's seller TC Pipelines, LP. Preserve the historical record during this read-only audit and flag a separately compatible legal-entity correction; do not silently change the owner identity, entry date, stake or realized state.",
+    "The order's footnote contradicts any unqualified assertion that there is only one disclosed Beehive LLC or that no lower-chain diagram exists. The referenced diagram was not captured, so its full chain remains outside this proof.",
+    "Both Morgan Stanley raw URLs are 403, the Federal Register response redirects to an unblock page, and the Fitch raw 200 is a loader. None of those bodies establishes ownership, fund names or current regulatory operations. Preserve the existing August 23 canonical cutoff; this is not a new exhaustive exit search.",
+    "The filed order is the sole primary for attribution fields. The canonical application-primary remains the TC Energy closing release. No database/seed writes, source transitions, source bundle or write authority is created by this review."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "applyAuthorized": false
+}
