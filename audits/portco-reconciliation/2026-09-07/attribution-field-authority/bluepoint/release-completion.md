@@ -1,0 +1,38 @@
+# Bluepoint attribution authority: PR947 complete
+
+PR947 merged through protected main at **2026-09-07T11:46:24Z** as `c42b0667d19fc9fd4abc3d874bb2d0b6950282d6`. Scoped branch `codex/portco-bluepoint-attribution-authority` retains head `11aa1166e7078af9f5787aedee895570d3791f13`; head and squash merge share tree `de7ebf4d67e239b59d005d3707d55bc79e68e383`. Required PR CI `34117861452` passed at **2026-09-07T11:46:03Z**. Main CI `34118341989` passed at **2026-09-07T11:50:26Z**, last updated **2026-09-07T11:50:27Z**. No review conversations require action. Only the ordinary protected PR / Git-integrated Vercel route was used.
+
+Canonical https://infra-ma-2.vercel.app serves READY production deployment `dpl_9w7v8WJEJC8nMw8S68XwFc8SDZRT`, immutable URL `infra-ma-2-b5i1be9s9-mberry.vercel.app`, GitHub main at the exact full merge SHA. Exclusive READ ONLY postproof passed first attempt at **2026-09-07T11:49:22.313Z**, reproducing the complete company, both owners' nine physical metadata fields, zero redirects/pending transactions, all seven frozen raw sources and all29 protected dependencies. All ten guarded canonical smoke checks passed at **2026-09-07T11:49:44.951Z**. Health was deliberately skipped; full SHA was independently proven using canonical deployment metadata. No new rendered-card claim is made for this audit-only release. Never repeat these successful phases.
+
+Authority `0a6a5d9625af55bf6b9bca3d8431b8fbab80a4966d3d0dbdbc52a5a2be47220e`; scoped production `3892c58454572938564bdb4262f7971d9f2c011e089f9e877ec40362f2bc22d4`; original scoped state `6e10c55d23e6e05f5b6ab54a571c8163ffc25ea132e6f37419f3cfbd6af82072`. Raw source capture at **2026-09-07T11:08:21.788Z** and READ ONLY preparation at **2026-09-07T11:12:07.200Z** remain frozen. No successful source capture, preparation, postproof, smoke, company research or transaction was repeated.
+
+All **192 local test files / 2,683 tests** passed with two workers, including **83 scoped fail-closed tests**. Ordinary and strict targeted typechecks, scoped ESLint, offline seed validation (zero errors,54 existing warnings), authored-file diff check and all19 committed/merge file-byte comparisons passed. All29 protected dependencies match exact base bytes. Original source whitespace is preserved. The only initial test failure was an expected wording literal, corrected to the exact already-frozen qualification without changing the proof or weakening the assertion requirement. README's extra EOF blank line was removed before commit. Existing PG SSL/query and Actions Node deprecation warnings remain unchanged.
+
+## Seven decisions remain unapplied
+
+Completed task135 Bluepoint Wind `cmrxpjgj600yrivhex07hc3al` has seven original attribution fields adjudicated, not applied:
+
+- GIP owner `cmrxpk2bs01xbivhem5vf9xzv` / seed `OFA-E45A0EBBF804`: DISCLOSED / Seaway Energy Holdings, L.P. / null confidence / source-backed rationale. Four production corrections and one overlapping seed-rationale correction.
+- Ocean Winds owner `cmt5i7a48000usiyyrpv39kds` / seed `OFA-B08C683A1FB8`: DISCLOSED / OW North America LLC / null confidence / source-backed rationale. Three production corrections and one overlapping seed-rationale correction.
+
+All **7 production / 2 overlapping seed-rationale corrections remain unapplied** and need separate compatible protected persistence. Zero missing seed-upsert bindings. Preserve both exact owner/organization IDs, null curated-fund links,2022 entry,active lifecycle and **50% of Bluepoint Winds Holdings, LLC** parent-level stakes.
+
+Each field has exactly one primary: the complete ten-page April27,2026 United States-Bluepoint settlement, freshly captured as HTTP200 PDF and visually read in full. Page1 names the two legal vehicles. DISCLOSED permits a named vehicle, not only a curated fund. Preserve LP punctuation and the unknown underlying GIP fund/co-investment split.
+
+All seven original direct sources were independently reopened and hashed; only the settlement PDF matches historical bytes, while all six HTML captures differ. The exact versioned BOEM redirect is bound. Settlement paragraphs3-7,21 and26 distinguish investment verification, defined Effective Date, cancellation/payment, signing enforceability and fulfillment. All signatures are April27,2026; none proves completed cancellation, payment or an equity exit. Current BOEM text remains conditional, but no fresh exhaustive September ownership-event search is claimed. Preserve canonical August23 lifecycle and zero pending-ownership transactions.
+
+Mubadala's undisclosed2022 participation is within GIP's50% block, not an additional direct owner. No underlying stake/fund allocation is inferred; Skyborn stays separate. BlackRock's manager acquisition does not establish Global Energy & Power Infrastructure Fund III allocation. GIP/project development labels and historic2.4GW concept are not operating proof; dated Mubadala1.6GW text is not current capacity. Never import project placeholder management copy or undertake enrichment.
+
+## Immutable history and remaining boundary
+
+GIP initial attribution record `OFA-84CD63ADDA8B` linked the BlackRock fund; the canonical correction removed that link while stale INFERRED/LOW metadata survived. Exact initial after-image, canonical before/after and current null link are bound without a history waiver. Ocean Winds was added by the canonical correction and has no initial attribution membership; never invent one.
+
+All nine historical packet files and four non-null attested hashes match. Accepted equals initial with zero repairs. The transcript compiles prompt and initial response, not a full DOM trace. Preserve August19 research, August23 release-delta, original locked inputs and null research-binding artifact; no source task is reopened. Canonical proposal/member-four receipt/whole-batch receipt/seed spec remain bound. Never replay `df566e24-e7cf-4c34-8b8f-b0420bae475b` or any attribution transaction.
+
+The complete company, four aliases, seven citations with unchanged settlement primary, two milestones, no management and18 physical owner-metadata fields remain preserved. No redirects, retired identity or pending-ownership transactions exist. Preserve null founding/headquarters and the conditional non-operating project narrative.
+
+Independent union across25 authority reports: **118/603 original fields reviewed;485 remain across225 ownership records**, zero duplicate or unknown original decisions. All physical corrections, compatible issues and full-seed replay parity remain outstanding. All496 source outcomes remain terminal with41 exact exceptions and an idle ledger. Overall completion is false. No database/seed writes, task transitions, source bundle, new company/ChatGPT research, Deal Database/runtime/UI changes or enrichment occurred. The lossy full seed runner is prohibited, even dry-run.
+
+PR947 publishes all three verified ALLETE PR946 postfiles. Only Bluepoint's `production-release-verification.json`, `canonical-smoke.json` and this note are newly intended postfiles for the next scoped release. Preserve obsolete untracked artifacts.
+
+Next in completed-task order is task137 **Clearway Energy Group** `cmrxpjgjr00ysivhenmpy1x6i`: GIP owner `cmt5klrvp000cy8yy6vilhswq` / `OFA-88E861CB71F4` and TotalEnergies owner `cmt5kls1m000ey8yygpdp3jzh` / `OFA-2CB9F72E7330` each have one original attributionRationale field. Canonical v2 proposal SHA `8b7a631f280e29fbb3a62b8b5cd728d276e544a3e9456f54b0d4128bfb1c19dc`. Its substantive attribution/source review has not started. Begin a new scoped branch from fresh origin/main only after preserving tracked state and the three Bluepoint postfiles. No new source task/bundle, terminal transition or company research is authorized.
