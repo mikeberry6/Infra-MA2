@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_SAAVI_RAW_FILING_REVIEW",
+  "sourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/saavi/cofece-recovered.pdf",
+  "sourceUrl": "https://www.cofece.mx/wp-content/uploads/2021/09/VEP_20210805_31.pdf",
+  "sourceSha256": "184f5b369b7cac4402cbba28ba6b075913b664b3878ad7d7a51cd95e9883c51d",
+  "method": "ORDINARY_CURL_RAW_PDF_WITH_LOCAL_TEXT_AND_VISUAL_REVIEW",
+  "pageCount": 25,
+  "textReviewedOneBasedPages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "visuallyReviewedOneBasedPages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "reviewedAt": "2026-09-07 22:46:36 UTC",
+  "document": "Public stenographic transcript of COFECE's August 5, 2021 plenary session; public-version cover approved September 2, 2021. Not the complete standalone reasoned concentration order.",
+  "findings": [
+    {
+      "pages": [
+        1,
+        2
+      ],
+      "finding": "Public-version/redaction cover and session introduction establish the document identity. Preserve the distinction between August 5 session and September 2 public-version approval."
+    },
+    {
+      "pages": [
+        3
+      ],
+      "finding": "Printed page 2 names Global Infrastructure Partners Emerging Markets Fund I L.P. among the parties to CNT-052-2021. GIP EM Bronco Luxco S.a r.l. is the proposed purchaser of shares in El Águila Coöperatief B.A. and Electricidad Firme de México Holdings, S.A. de C.V., from El Águila Investments S.á r.l. and El Águila Limited. Percentages and substantial relationship details are redacted."
+    },
+    {
+      "pages": [
+        4,
+        5
+      ],
+      "finding": "Printed pages 3-4 contain extensive redactions in the transaction and competition analysis. Do not reconstruct the omitted chain, percentages or annex from blacked-out material."
+    },
+    {
+      "pages": [
+        6
+      ],
+      "finding": "Printed page 5 records unanimous authorization of the concentration. The spoken CNT-056-2021 reference is immediately corrected to CNT-052-2021. Authorization is not evidence of consummation or its date."
+    }
+  ],
+  "limitations": [
+    "The relevant visible excerpt does not expressly name Saavi Energía. The mapping from these legal targets to Saavi is inherited from the canonical research packet; this PDF alone does not freshly establish that mapping or the full current fund-to-platform holding chain.",
+    "The exact current intermediate holding company remains unconfirmed. A concentration party is not automatically the current direct legal shareholder. Do not equate the named Fund I with the separate Bronco purchaser or infer a curated Fund link.",
+    "Only complete relevant physical pages 1-6 were visually reviewed. All 25 raw pages are preserved; no claim that all 25 were visually reviewed.",
+    "Initial Node fetch failed and its empty cofece.pdf is retained as non-evidence. Ordinary curl using normal TLS verification recovered the same historical 390079 PDF bytes. No access-control or TLS bypass.",
+    "The dated GIP acquisition release corroborates a completed 100% sale from Actis but does not name Emerging Markets Fund I. Its web header is August 20 and body dateline August 19; neither proves a precise August 20 legal closing."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "applyAuthorized": false
+}
+
