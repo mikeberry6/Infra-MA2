@@ -1,0 +1,427 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_E360_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "664e72a5b121e168760bd6342ea55f7b0b7066af0185272fe31d0e85f5b54cfd",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "a834ec3c62ff18b3044df5b68f0d94d697e565d9554f2fefb88a7e98bc77f9f6",
+  "canonicalApprovalSha256": "ae1211faf200e4c7f731e309e017dafad2948cadd176cc0bc0718c853e2ef452",
+  "canonicalReceiptSha256": "7f96e1e4ce7b0968e30c1f62dd32f584c3077d19601fc5bd3f2da4b8c86533c0",
+  "canonicalBatchReceiptSha256": "c6d349f4781ddf5ef54af97c667af9d010b1cda7dfa0e51d1df2b5431ba724cf",
+  "canonicalSeedSpecSha256": "245ae038901de94aa4b392e0df009fb52a8e4172f9906e73e31f38901c51c87e",
+  "canonicalResearchBindingArtifact": null,
+  "canonicalSeedOverlaySha256": "d3b2148362fa19e269f1017d71fc8e934162393ec2cb08b161a40aeb54be2fa1",
+  "latestAttributionRepairReceiptSha256": "f4f6dbc8efa819f40faeee1fc9984d54d9c0a1c1e68b9c47d0ef519591315953",
+  "originalScopedStateSha256": "2942c4f41892b22e6a27306b45b0885c0461e0b680b81325fa3d43eec06ad46d",
+  "semanticCompanySha256": "2f3a24c9b0ed4b3e7375b9dd0227b70c18f8fc646829d012fc2c32398206853c",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "86cf8873781bf7ca9bd6a552dd01fecc9b683ee8f2a03b9a4a14c1b50051cea6"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "7ef30495259e13181662746bd424b3a3f67f5e0974d168819e7411c94bedac0c"
+    },
+    {
+      "file": "attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "7ef30495259e13181662746bd424b3a3f67f5e0974d168819e7411c94bedac0c"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "48059f47135740e5a21c1a8f58347845bc8a802469e5d4c2adfe0999aa4173cc"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "cd65cffb63e9e674e857db8da457f89eac4630c6125e6755d18d29c29428b775"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "19de1158524273817bff1cce80e9ba6658a1c2215f9aa509a6d4148b5f7b2670"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "11935c43e04bcf1606eaaec87ef0321da3b3387ecb0aa0291f354ace9687915d"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "5214fbabd55278026f53d1980b957085f751cc492be9aa74e5688e639f087e5d"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "d6a22f67a3d2f4ac653f4b04fe736f2c4cecfa90b4ec55358a0f92a7e2cf3259"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "COMPILED_PROMPT_INITIAL",
+    "attestedHashMatches": true,
+    "repairCount": 0,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmrxpj8wj00n3ivheefc305n4",
+      "ownerId": "cmrxpju7d01kjivhel2xkl0z1",
+      "recordId": "OFA-41CCFE0BB33B",
+      "repairRecordId": "OFA-REPAIR-0140-E360-BLACKROCK",
+      "candidateSha256": "7c76960b9d82a5c55295e91eb970906515f81b7cbd8eb0fad353cca2caf2673d",
+      "current": {
+        "linkedFundName": "BlackRock GIF IV",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Infrastructure Fund IV, SCSp",
+        "attributionConfidence": null,
+        "attributionRationale": "E360S's closing announcement and the Canadian Competition Bureau directly identify BlackRock Global Infrastructure Fund IV, SCSp as the majority acquisition vehicle; the prior Fund III estimate was incorrect."
+      },
+      "seedExpectation": {
+        "linkedFundName": "BlackRock GIF IV",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Infrastructure Fund IV, SCSp",
+        "attributionConfidence": null,
+        "attributionRationale": "The 2023 closing and Canadian merger-review evidence identify BlackRock's majority acquisition through BlackRock Global Infrastructure Fund IV, SCSp, which maps to the curated BlackRock GIF IV fund record."
+      },
+      "recommended": {
+        "linkedFundName": "BlackRock GIF IV",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Infrastructure Fund IV, SCSp",
+        "attributionConfidence": null,
+        "attributionRationale": "The Competition Bureau's archived February 2023 merger-review row identifies BlackRock Global Infrastructure Fund IV, SCSp opposite Environmental 360 Solutions Inc. This directly supports the named acquisition vehicle and existing BlackRock GIF IV mapping, rather than Fund III. The ARC review result is not a closing date or a quantified stake: preserve the separately established February 16, 2023 majority closing and undisclosed percentage."
+      },
+      "preserves": {
+        "id": "cmrxpju7d01kjivhel2xkl0z1",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock GIF IV",
+        "vehicleName": "BlackRock Global Infrastructure Fund IV, SCSp",
+        "stake": "Majority; exact percentage not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "eff982946926616ea89033f7b49ff6f91f5818fff801d7ab9540603fe25b4189",
+      "missingSeedUpsertBinding": false,
+      "latestAttributionRepairMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "E360S's closing announcement and the Canadian Competition Bureau directly identify BlackRock Global Infrastructure Fund IV, SCSp as the majority acquisition vehicle; the prior Fund III estimate was incorrect.",
+          "seed": "The 2023 closing and Canadian merger-review evidence identify BlackRock's majority acquisition through BlackRock Global Infrastructure Fund IV, SCSp, which maps to the curated BlackRock GIF IV fund record.",
+          "recommended": "The Competition Bureau's archived February 2023 merger-review row identifies BlackRock Global Infrastructure Fund IV, SCSp opposite Environmental 360 Solutions Inc. This directly supports the named acquisition vehicle and existing BlackRock GIF IV mapping, rather than Fund III. The ARC review result is not a closing date or a quantified stake: preserve the separately established February 16, 2023 majority closing and undisclosed percentage.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://competition-bureau.canada.ca/mergers-and-acquisitions/archived-report-merger-reviews?wbdisable=true",
+          "primarySourceSha256": "647677469b2479205298bf5ebd588faf24cee51744fe45d5153e22197e2a4798",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/e360/bureau.html"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpj8wj00n3ivheefc305n4",
+      "ownerId": "cmt5km2dm000xy8yyazng49cl",
+      "recordId": "OFA-6705CCF4FC8C",
+      "repairRecordId": "OFA-REPAIR-0140-E360-FOUNDER",
+      "candidateSha256": "a8c94cd4b3d93d0266d9d7a1eaf1eac1f86fdddcdddcfba96b289fb4f1ff1c05",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "E360S's current shareholder disclosure identifies founder Donato Ardellini as a significant direct shareholder rather than as a managed fund vehicle."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "E360S identifies founder Donato Ardellini as a continuing significant shareholder; this is direct founder ownership and has no managed-fund attribution."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "E360S's shareholder page identifies founder Donato Ardellini as one of its largest individual shareholders. Preserve direct founder attribution without assigning a managed fund, separate legal holding vehicle or numeric stake that the page does not disclose. The canonical 2018 entry remains unchanged; this page is shareholder corroboration, not proof of a newly dated investment."
+      },
+      "preserves": {
+        "id": "cmt5km2dm000xy8yyazng49cl",
+        "managerName": "Donato Ardellini",
+        "organizationName": "Donato Ardellini",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Significant founder stake; exact percentage not publicly disclosed",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "a1fefb96e2b8f144f3adac8b02f58ec6b58a63e6d35eea17be91e871b70b3ace",
+      "missingSeedUpsertBinding": false,
+      "latestAttributionRepairMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "E360S's current shareholder disclosure identifies founder Donato Ardellini as a significant direct shareholder rather than as a managed fund vehicle.",
+          "seed": "E360S identifies founder Donato Ardellini as a continuing significant shareholder; this is direct founder ownership and has no managed-fund attribution.",
+          "recommended": "E360S's shareholder page identifies founder Donato Ardellini as one of its largest individual shareholders. Preserve direct founder attribution without assigning a managed fund, separate legal holding vehicle or numeric stake that the page does not disclose. The canonical 2018 entry remains unchanged; this page is shareholder corroboration, not proof of a newly dated investment.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://e360s.ca/about-us/shareholders/",
+          "primarySourceSha256": "a7d25fce7f125a456c72512e5d2efbf4665b0f5cc2bece896889cf296cc471e9",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/e360/shareholders.html"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpj8wj00n3ivheefc305n4",
+      "ownerId": "cmt5km2j9000zy8yy8pv6w1xt",
+      "recordId": "OFA-BB467B6D12FC",
+      "repairRecordId": "OFA-REPAIR-0140-E360-CBGF",
+      "candidateSha256": "7ecde6b27e9b374127b70e817c5764143235cb192ea21b6ee75927e760825279",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "E360S's current shareholder disclosure identifies Canadian Business Growth Fund as a direct minority shareholder without naming a separate managed fund vehicle."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "E360S identifies Canadian Business Growth Fund as a continuing shareholder and states that it increased its investment at the 2023 BlackRock closing; no distinct managed-fund vehicle is publicly disclosed."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "E360S's shareholder page states that CBGF has maintained a minority interest. Preserve Canadian Business Growth Fund as the named shareholder, with direct-program attribution and no separately disclosed vehicle or numeric percentage. The canonical 2020 entry remains unchanged; the dated 2023 closing release separately corroborates an increase in its existing equity position."
+      },
+      "preserves": {
+        "id": "cmt5km2j9000zy8yy8pv6w1xt",
+        "managerName": "Canadian Business Growth Fund",
+        "organizationName": "Canadian Business Growth Fund",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Minority; exact percentage not publicly disclosed",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "762a323e0a867acef4a33ebd98c2d16a86c5a372699b5c40f1e4cd5355cfd7b4",
+      "missingSeedUpsertBinding": false,
+      "latestAttributionRepairMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "E360S's current shareholder disclosure identifies Canadian Business Growth Fund as a direct minority shareholder without naming a separate managed fund vehicle.",
+          "seed": "E360S identifies Canadian Business Growth Fund as a continuing shareholder and states that it increased its investment at the 2023 BlackRock closing; no distinct managed-fund vehicle is publicly disclosed.",
+          "recommended": "E360S's shareholder page states that CBGF has maintained a minority interest. Preserve Canadian Business Growth Fund as the named shareholder, with direct-program attribution and no separately disclosed vehicle or numeric percentage. The canonical 2020 entry remains unchanged; the dated 2023 closing release separately corroborates an increase in its existing equity position.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://e360s.ca/about-us/shareholders/",
+          "primarySourceSha256": "a7d25fce7f125a456c72512e5d2efbf4665b0f5cc2bece896889cf296cc471e9",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/e360/shareholders.html"
+        }
+      ]
+    }
+  ],
+  "preservedHistoricalOwners": [
+    {
+      "id": "cmt5km2oy0011y8yydgkdvdzu",
+      "managerName": "OPTrust",
+      "organizationName": "OPTrust",
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "Former strategic interest; exact percentage not publicly disclosed",
+      "investmentYear": 2020,
+      "exitYear": 2023,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    },
+    {
+      "id": "cmt5km2sq0012y8yybzf7vca7",
+      "managerName": "Oaktree Capital",
+      "organizationName": "Oaktree Capital",
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "Former significant strategic interest; exact percentage not publicly disclosed",
+      "investmentYear": 2021,
+      "exitYear": 2023,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    }
+  ],
+  "candidateFieldsAdjudicated": 3,
+  "cumulativeCandidateFieldsAdjudicated": 123,
+  "remainingCandidateFields": 480,
+  "additionalFieldsOutsideOriginal603": 0,
+  "productionFieldsRequiringCorrection": 3,
+  "seedFieldsRequiringCorrection": 3,
+  "missingSeedUpsertBindings": 0,
+  "additionalCanonicalIssues": [
+    {
+      "field": "Historical Almada ownership",
+      "issue": "The February 2023 closing release names Almada as a founding investor and majority shareholder whose interest BlackRock acquired. The existing five-period canonical history contains BlackRock, the founder, CBGF, OPTrust and Oaktree but no Almada period. Preserve the canonical after-image and flag a separate compatible history correction; do not invent dates, percentages or a vehicle."
+    },
+    {
+      "field": "Historical-owner metadata",
+      "issue": "OPTrust and Oaktree remain realized in 2023 with UNRESOLVED attribution and null rationale/vehicle/confidence. They are outside the original active-owner603 denominator and outside the three-row E360 attribution repair. Equality preservation is not substantive adjudication or authority to replay the repair."
+    },
+    {
+      "field": "Evidence scope and dated facts",
+      "issue": "The February 2023 ARC row identifies the legal acquisition vehicle, not completion or stake; the separate February16 closing release does not name Fund IV. The July13,2026 Marcotte/Michigan operating acquisition is not a platform equity sale. Preserve the August23 canonical cutoff, unknown exact stakes and distinct founder/CBGF display labels versus null legal vehicles; no enrichment or fresh exhaustive ownership-event search."
+    }
+  ],
+  "qualifications": [
+    "Three original rationale decisions each bind exactly one raw200 primary: the archived Canadian merger-review page for BlackRock's named vehicle, and the current shareholder page for the founder and CBGF. The closing release is corroboration and the unchanged application primary. It names a Diversified Infrastructure-managed fund, not Fund IV; the regulator row supplies the exact legal name. ARC is a review outcome, not a closing date or numeric interest.",
+    "Seven ordinary raw responses were captured once: all six historical research sources and the existing application home page. All returned200; none of the six historical hashes matches. The Bureau redirects to its /en/ URL. The web extraction service timed out on that URL, but the independently captured raw200 body contains the exact E360S row and table labels. No denial or loader is being treated as primary evidence.",
+    "Shareholder text supports an individual founder and a continuing CBGF minority. Null vehicle/fund attribution fields mean no distinct disclosed vehicle here, not proof that no legal holding entity exists. Seed currentVehicleName labels for the founder and CBGF are manager-name fallbacks, not additional legal vehicles. Preserve undisclosed percentages and canonical2018/2020 entry dates without claiming this current page dates the investments.",
+    "The2023 closing release identifies BlackRock's majority acquisition, founder retention, CBGF increased equity and acquired interests from Almada, OPTrust and Oaktree. The absent Almada historical period is a separate compatible canonical issue. The October1,2024 BlackRock/GIP manager acquisition is not direct E360S ownership-transfer authority.",
+    "The July13,2026 company-issued PRNewswire release states E360S acquired Marcotte Disposal with Port Huron, Michigan operations and reports over800,000 North American customers. The current about page states2018 founding and the home page says over2200 team members. Dated workforce/customer denominators are not interchangeable and are not being enriched or rewritten.",
+    "All nine historical packet hashes and four non-null attested hashes match. Accepted equals initial, repairCount zero, and the transcript compiles prompt and initial response, not a full DOM trace. Preserve August19 research and August23 release-delta/locked-v2 bindings. Final actions CORRECT_COMPANY/ADD_OWNER with zero retirements/redirects supersede the earlier proposed-merge research.",
+    "The complete eight-row later attribution receipt is bound, including three E360S repaired active owners. BlackRock's prior INFERRED/LOW Fund III metadata was corrected; founder and CBGF were UNRESOLVED. OPTrust and Oaktree are not members of this repair. Never replay it or PortCo transaction7308e371-4af7-4112-8cb6-13148181f0ee, and never invent initial attribution membership.",
+    "Preserve the complete company, three aliases, six citations with unchanged closing application primary, two milestones, no management, five ownership/organization identities and45 physical metadata fields. Three active owners and two historical realized owners remain. Zero redirects, retired companies or pending transactions. This is not a blanket whole-company reconciliation claim.",
+    "Three production and three overlapping seed-rationale corrections remain unapplied; all three seed records match exact existing upserts. No missing binding is invented. This audit is not an apply manifest or write authorization. No task transition, source bundle, database/seed write, full seed runner, Deal Database/runtime/UI change or enrichment occurs."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "c48cb1abb0d11a0f2d9bd21a5df751781d831703",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "46bb27ab7f9308a2fe41c8082fff083dafa818e86a4f6a54a57823d38ae86cee",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0140-environmental-360-solutions-v1.json",
+      "sha256": "31bf39d941a461ce860f3af81508ea2651115fc77b60b17be527bfdf0af1c029"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "7ef30495259e13181662746bd424b3a3f67f5e0974d168819e7411c94bedac0c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-attestation.json",
+      "sha256": "cd65cffb63e9e674e857db8da457f89eac4630c6125e6755d18d29c29428b775"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "7ef30495259e13181662746bd424b3a3f67f5e0974d168819e7411c94bedac0c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-response-validation.json",
+      "sha256": "19de1158524273817bff1cce80e9ba6658a1c2215f9aa509a6d4148b5f7b2670"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-transcript.txt",
+      "sha256": "48059f47135740e5a21c1a8f58347845bc8a802469e5d4c2adfe0999aa4173cc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/locked-v2-production-snapshot.json",
+      "sha256": "882e07d6e1f8a984bd97c50e429f5ac901ff91f2934e6a90102bc5105dc14e76"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "61e4a8d7b893f4f84fb276b5d48431de0509c3e7c1df0b617a3bce5ef0cb730f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/release-delta-check.json",
+      "sha256": "a2772f707329995d8c37049fa193ce57032a0678c888c21667aa0a8ecd8afff4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/research-decision.json",
+      "sha256": "5214fbabd55278026f53d1980b957085f751cc492be9aa74e5688e639f087e5d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/research-decision.md",
+      "sha256": "d6a22f67a3d2f4ac653f4b04fe736f2c4cecfa90b4ec55358a0f92a7e2cf3259"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/research-prompt.md",
+      "sha256": "86cf8873781bf7ca9bd6a552dd01fecc9b683ee8f2a03b9a4a14c1b50051cea6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/source-verification.json",
+      "sha256": "11935c43e04bcf1606eaaec87ef0321da3b3387ecb0aa0291f354ace9687915d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0140-environmental-360-solutions-v1/proposal.json",
+      "sha256": "93f122637350f553c9e225dbd375b1fc12f72a4910c593e6e30556ecbd16f3f9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/batch-manifest.json",
+      "sha256": "9cb39c99753c37313371ea2136d64f0de5b763c5c8b62cced595254feab03ae2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "6f7afe4b7b39808b0d75156a0224cebbd64e5518d1a891116cad44850cf2d1e4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "355e002c8660e000cfa869a4187b8a0b1decabc93ee38e11128782cca836a4c5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/clearway/authority.json",
+      "sha256": "13221d7b26948118670a8fb407bf2513b27a9a3b6936580147c61425896de141"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0136-attribution-repair/apply-manifest.json",
+      "sha256": "1bb47063d154f6a12dbb28edcf3cba3fafb84cc45c993cabcf40404dc09fd0e0"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0136-attribution-repair/approval.json",
+      "sha256": "9c35d2872a8cb6230aa19acecb693d097606c13bdfe9ff375082af49bc785ebd"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0136-attribution-repair/production-apply/apply-receipt.json",
+      "sha256": "b8d6bfd1fafbdc6c05485abae9bc0ebffee897c4dec2f76c85addebf47a7172a"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "7f9994e0697eb93485dc07906ba4af583ccc530bb4b417c8112e6f7cfc1e98e2",
+  "reportSha256": "fdc63a8850ca522f0d3a88e785260ebc128b024e29388f1331dda2c567f15fbe"
+}
