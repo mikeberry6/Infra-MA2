@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BLUEPOINT_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "b7ee20d6b71f06e9e5bfbe2231b3aac482362bbe4fe4820cfb762ee22258c323",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "adb4eb034eb42e7a82786ca95d8f47fb1fb1bebfded07a17428d5314ceb34d83",
+  "canonicalApprovalSha256": "b87cbd7aef2424a814cef001be1f6ff2f3d3d5ff69c961b854d636ed1cd8df8e",
+  "canonicalReceiptSha256": "50f28fa999010e1e69413504d5bbd546b6a4eba8c0dd4aaaaaeed91b3607c3ac",
+  "canonicalBatchReceiptSha256": "a6b1874723f2ac1fe53ce313d1543f85d63e468dfa26aa2dd5b403134e6fc3d6",
+  "canonicalSeedSpecSha256": "bc8fdc535f471654019e1ab19a9c4569b57e700419fca71e2548f15060abd48b",
+  "canonicalResearchBindingArtifact": null,
+  "canonicalSeedOverlaySha256": "3cec1a48ee35673a45c5c1eb7e51b84ebb50a7f0893f953a368d2fe2b896a15f",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "6e10c55d23e6e05f5b6ab54a571c8163ffc25ea132e6f37419f3cfbd6af82072",
+  "semanticCompanySha256": "d8dafa8c803576e3b200a2456724b3fdb25da125046048f11d4febe44d3668cc",
+  "historicalPacket": [
+    {
+      "file": "attempt-1/research-prompt.md",
+      "sha256": "e6551747dcffc3bac248bb8c7976a23a0859f4e2ea1192575c48eea40bc8df82"
+    },
+    {
+      "file": "attempt-1/chatgpt-initial-response.txt",
+      "sha256": "e16f929d21809215a27e89cfb3a9ba48a8c1a90c3c2cb5641e6419b5c5122bf4"
+    },
+    {
+      "file": "attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e16f929d21809215a27e89cfb3a9ba48a8c1a90c3c2cb5641e6419b5c5122bf4"
+    },
+    {
+      "file": "attempt-1/chatgpt-transcript.txt",
+      "sha256": "bbddd38a5b2ab4ecf109cca8dc606312870092b176e8c8047f90a1b1fde70abb"
+    },
+    {
+      "file": "attempt-1/chatgpt-attestation.json",
+      "sha256": "c0d731060480f4ceb400cfa73a8d5fa6c803e9fb0505ee8e5dc9b9445be4660a"
+    },
+    {
+      "file": "attempt-1/chatgpt-response-validation.json",
+      "sha256": "61cbe80bf0830586ea5316c9127ba2a61085769cec00d02f600f5853563156e9"
+    },
+    {
+      "file": "attempt-1/source-verification.json",
+      "sha256": "63ccf764201ad3b5688bbafcd7cf031bb9bae24b93aecd617d0529221b79a93f"
+    },
+    {
+      "file": "attempt-1/research-decision.json",
+      "sha256": "b2e1041d195baf4131a803efc6c4ce4d757d2b8f1e6dbd83649426646401c84d"
+    },
+    {
+      "file": "attempt-1/research-decision.md",
+      "sha256": "5e83b0b85ba9e5e474cbcb172133d82833e3decd50cf140c00738122842acf60"
+    }
+  ],
+  "historicalTranscript": {
+    "kind": "COMPILED_PROMPT_INITIAL",
+    "attestedHashMatches": true,
+    "repairCount": 0,
+    "fullDomTrace": false
+  },
+  "rows": [
+    {
+      "companyId": "cmrxpjgj600yrivhex07hc3al",
+      "ownerId": "cmrxpk2bs01xbivhem5vf9xzv",
+      "recordId": "OFA-E45A0EBBF804",
+      "originalRecordId": "OFA-84CD63ADDA8B",
+      "candidateSha256": "27bcf8a3cb0a9d67a8b4759a2747b8973108fccdbaa4c8643c5a2e2bbf431138",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2020 is 2 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Seaway Energy Holdings, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The federal settlement and Interior release disclose Seaway as the GIP vehicle holding 50% of Bluepoint's parent; the exact underlying GIP fund split is not publicly disclosed."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Seaway Energy Holdings, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The April 27, 2026 United States-Bluepoint settlement expressly names Seaway Energy Holdings, LP as a 50% owner of Bluepoint Winds Holdings, LLC, the parent of the leaseholder. Use DISCLOSED for the canonical Seaway Energy Holdings, L.P. vehicle rather than inferred BlackRock Global Energy & Power Infrastructure Fund III. The underlying GIP fund/co-investment split is not disclosed by this agreement; preserve GIP's 2022 entry, null curated-fund link and parent-level 50% stake without adding BlackRock or allocating Mubadala's undisclosed participation."
+      },
+      "preserves": {
+        "id": "cmrxpk2bs01xbivhem5vf9xzv",
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "Seaway Energy Holdings, L.P.",
+        "stake": "50% of Bluepoint Winds Holdings, LLC",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "642ac22f95bdbef863ff0059189b1ee8f0678105533d7b31d992254ee1c27924",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "BlackRock Global Energy & Power Infrastructure Fund III",
+          "seed": "Seaway Energy Holdings, L.P.",
+          "recommended": "Seaway Energy Holdings, L.P.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "primarySourceSha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf"
+        },
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "LOW",
+          "seed": null,
+          "recommended": null,
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "primarySourceSha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf"
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "Estimated from manager match 1.00, vintage 2020 is 2 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund.",
+          "seed": "The federal settlement and Interior release disclose Seaway as the GIP vehicle holding 50% of Bluepoint's parent; the exact underlying GIP fund split is not publicly disclosed.",
+          "recommended": "The April 27, 2026 United States-Bluepoint settlement expressly names Seaway Energy Holdings, LP as a 50% owner of Bluepoint Winds Holdings, LLC, the parent of the leaseholder. Use DISCLOSED for the canonical Seaway Energy Holdings, L.P. vehicle rather than inferred BlackRock Global Energy & Power Infrastructure Fund III. The underlying GIP fund/co-investment split is not disclosed by this agreement; preserve GIP's 2022 entry, null curated-fund link and parent-level 50% stake without adding BlackRock or allocating Mubadala's undisclosed participation.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "primarySourceSha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "INFERRED",
+          "seed": "DISCLOSED",
+          "recommended": "DISCLOSED",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "primarySourceSha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpjgj600yrivhex07hc3al",
+      "ownerId": "cmt5i7a48000usiyyrpv39kds",
+      "recordId": "OFA-B08C683A1FB8",
+      "originalRecordId": null,
+      "candidateSha256": "1981236e03d672cd3e678429d8129b7228ad194c57f0d17445633f1037e2a5dd",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "OW North America LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "The federal settlement and Interior release disclose OW North America as the Ocean Winds vehicle holding 50% of Bluepoint's parent."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "OW North America LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "The April 27, 2026 United States-Bluepoint settlement expressly names OW North America LLC as a 50% owner of Bluepoint Winds Holdings, LLC, the parent of the leaseholder. Use DISCLOSED for that legal vehicle, not an invented Ocean Winds, EDPR or ENGIE fund. Preserve the canonical 2022 entry, null curated-fund link and parent-level 50% stake. Settlement signing alone does not establish completed lease cancellation, payment or an ownership exit."
+      },
+      "preserves": {
+        "id": "cmt5i7a48000usiyyrpv39kds",
+        "managerName": "Ocean Winds",
+        "organizationName": "Ocean Winds",
+        "fundName": null,
+        "vehicleName": "OW North America LLC",
+        "stake": "50% of Bluepoint Winds Holdings, LLC",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedRecordSha256": "ec235365825d31b56825b65e59312dc25d9c6a6b92b265d1ff677a5d7722d6b6",
+      "missingSeedUpsertBinding": false,
+      "originalAttributionMembership": false,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": null,
+          "seed": "OW North America LLC",
+          "recommended": "OW North America LLC",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "primarySourceSha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf"
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": null,
+          "seed": "The federal settlement and Interior release disclose OW North America as the Ocean Winds vehicle holding 50% of Bluepoint's parent.",
+          "recommended": "The April 27, 2026 United States-Bluepoint settlement expressly names OW North America LLC as a 50% owner of Bluepoint Winds Holdings, LLC, the parent of the leaseholder. Use DISCLOSED for that legal vehicle, not an invented Ocean Winds, EDPR or ENGIE fund. Preserve the canonical 2022 entry, null curated-fund link and parent-level 50% stake. Settlement signing alone does not establish completed lease cancellation, payment or an ownership exit.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "primarySourceSha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf"
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_DECISION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "UNRESOLVED",
+          "seed": "DISCLOSED",
+          "recommended": "DISCLOSED",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false,
+          "primarySourceUrl": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "primarySourceSha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958",
+          "primarySourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf"
+        }
+      ]
+    }
+  ],
+  "preservedHistoricalOwners": [],
+  "candidateFieldsAdjudicated": 7,
+  "cumulativeCandidateFieldsAdjudicated": 118,
+  "remainingCandidateFields": 485,
+  "additionalFieldsOutsideOriginal603": 0,
+  "productionFieldsRequiringCorrection": 7,
+  "seedFieldsRequiringCorrection": 2,
+  "missingSeedUpsertBindings": 0,
+  "additionalCanonicalIssues": [
+    {
+      "field": "Conditional settlement and lifecycle",
+      "issue": "The agreement's cancellation/payment conditions, defined Effective Date and signature enforceability clause are distinct. Current BOEM text remains conditional, but no fresh exhaustive cancellation/payment/ownership-exit adjudication is made. Preserve the canonical August23 narrative, both active legal owners and zero pending-ownership transaction rows; do not turn lease settlement into an owner exit."
+    },
+    {
+      "field": "Parent ownership and underlying investors",
+      "issue": "Both disclosed 50% interests are in Bluepoint Winds Holdings, LLC. Seaway and OW North America are legal vehicles, not distinct curated funds. Do not add BlackRock, EDPR, ENGIE or Mubadala as separate direct owners; Mubadala's 2022 participation within the GIP block has no disclosed percentage or fund split. Skyborn remains a separate company."
+    },
+    {
+      "field": "Dated development source limitations",
+      "issue": "The GIP and project pages retain development/promotional language while BOEM describes conditional cancellation. Their Unrealized label and historic 2.4GW concept are not proof of operation or new construction. Mubadala's 2022 1.6GW description is historical, not a current operating-capacity claim. No enrichment or geography refresh is authorized."
+    }
+  ],
+  "qualifications": [
+    "Seven original attribution fields use exactly one primary each: the complete ten-page April27,2026 United States-Bluepoint settlement, freshly retrieved as raw HTTP200 PDF and visually read in full. Page1 names OW North America LLC and Seaway Energy Holdings, LP as 50% owners of Bluepoint Winds Holdings, LLC. Preserve canonical LP punctuation; the existing schema allows a named legal vehicle to be DISCLOSED without a curated-fund link.",
+    "All seven existing research sources were independently reopened with current raw bytes and hashes. Settlement PDF bytes match the historical verification exactly; all six HTML captures differ. The redirect to the exact versioned BOEM PDF is bound. No source denial is used as evidence, no source capture is repeated, and no new ChatGPT/company research occurs.",
+    "The settlement's paragraphs3-7 condition cancellation and reimbursement on investment verification and written confirmation, and permit requested reinstatement if payment is not disbursed as specified. Paragraph21 concerns enforceability on signing; paragraph26 concerns fulfillment after cancellation and payment. All signatures are April27,2026. Preserve those distinctions; this authority review does not invent a cancellation, reimbursement, transfer, dissolution or exit date.",
+    "The current BOEM project page still states that cancellation will follow demonstration of investment, and the April27 DOI release corroborates the two sponsor blocks. Preserve the canonical August23 cutoff rather than claiming a fresh exhaustive September ownership-event search. Both legal owner periods stay active and pending-ownership transaction rows remain empty; project lease termination is not itself an equity sale.",
+    "Mubadala's 2022 disclosure states an undisclosed participation within GIP's50% interest. Do not infer a percentage, legal vehicle or fund behind that block, double-count Mubadala, or treat Skyborn Renewables as Bluepoint's parent. BlackRock's October2024 manager acquisition is a parent-platform event, not evidence of allocation to its Global Energy & Power Infrastructure FundIII.",
+    "GIP's portfolio page and Bluepoint's project page retain historic development/promotional language. Neither Unrealized nor the pre-construction2.4GW concept proves operating assets; the project page contains placeholder management copy. Do not import that copy, add executives, update capacity or overwrite the canonical non-operating/conditional-termination narrative.",
+    "Nine historical packet files and all four non-null attested hashes are bound. The transcript compiles prompt and initial response, not a full DOM trace; accepted equals initial and repairCount is zero. Preserve the August19 research and later August23 release-delta/locked inputs, the exact unknown underlying-fund/Mubadala-percentage exceptions, and null research-binding artifact.",
+    "GIP has initial attribution membership under older recordOFA-84CD63ADDA8B. Its original BlackRock fund link was removed by the canonical PortCo correction but INFERRED/LOW metadata stayed stale. Ocean Winds was added by that correction and has no initial attribution membership. Bind exact initial/canonical/current states and created Ocean Winds identity; never fabricate an older owner or receipt.",
+    "Preserve the complete company, four aliases, seven citations with settlement primary, two milestones, no management, both organization/owner identities and18 physical metadata fields. Both legal vehicles retain2022 entry, null fund links, parent-level50% stakes, active lifecycle and no exit. No retired company, redirect or pending-ownership transaction exists.",
+    "Both seed records match their exact existing upserts. Seven production and two overlapping seed-rationale corrections remain unapplied, with zero missing upserts. This is an audit decision, not an apply manifest or write authorization. Never replay df566e24-e7cf-4c34-8b8f-b0420bae475b or any attribution transaction, run full seed, reopen terminal tasks or change Deal Database/runtime/UI."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "3736b92979d25b33af26b0a2c54aa99012f7db36",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "3892c58454572938564bdb4262f7971d9f2c011e089f9e877ec40362f2bc22d4",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0135-bluepoint-wind-v1.json",
+      "sha256": "4c87f70459f84f888c5e215b50edc81f9e3aefeeee74493b6448b237dc1823ed"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e16f929d21809215a27e89cfb3a9ba48a8c1a90c3c2cb5641e6419b5c5122bf4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-attestation.json",
+      "sha256": "c0d731060480f4ceb400cfa73a8d5fa6c803e9fb0505ee8e5dc9b9445be4660a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "e16f929d21809215a27e89cfb3a9ba48a8c1a90c3c2cb5641e6419b5c5122bf4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-response-validation.json",
+      "sha256": "61cbe80bf0830586ea5316c9127ba2a61085769cec00d02f600f5853563156e9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-transcript.txt",
+      "sha256": "bbddd38a5b2ab4ecf109cca8dc606312870092b176e8c8047f90a1b1fde70abb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/locked-production-snapshot.json",
+      "sha256": "fc3515cbb4ed45a8ca1cfdb47bdf9ec6f5494a9b3853217fea5e68410922205d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/locked-task-snapshot.json",
+      "sha256": "c7010e72db5768b02b0a2cefe12dfaa42667ea8b0cf64de4d58d8fff8e0ed417"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/release-delta-check.json",
+      "sha256": "91606cb2a66f4dd7f192bc2207ae3cf7e611be6fb841cd8a07336245ccc27ac7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/research-decision.json",
+      "sha256": "b2e1041d195baf4131a803efc6c4ce4d757d2b8f1e6dbd83649426646401c84d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/research-decision.md",
+      "sha256": "5e83b0b85ba9e5e474cbcb172133d82833e3decd50cf140c00738122842acf60"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/research-prompt.md",
+      "sha256": "e6551747dcffc3bac248bb8c7976a23a0859f4e2ea1192575c48eea40bc8df82"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/source-verification.json",
+      "sha256": "63ccf764201ad3b5688bbafcd7cf031bb9bae24b93aecd617d0529221b79a93f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0135-bluepoint-wind-v1/proposal.json",
+      "sha256": "52dac98c48c86636b587687710578bf8c5c8687a6081d57dc41419f1917bf6d9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/batch-manifest.json",
+      "sha256": "dd1b015cf06175325314fab888eeb25c12a6b094c242f82d0d21808a164011fd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "191b3380e892d46a0e75fc38440fe943445908a2652f9d16f7a7b41518bd2785"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "651156fa39a1420745d639b43ece4369197557b20ea28a9b8a2fb0dcf46f19d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/authority.json",
+      "sha256": "0fb7ed52fff93fce972afe0204d2480307bd47d36f07dba5506f189761b64002"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "4a238dfdfecac576d2fe372c7cd4476201b16d48c1e1993318d3f77db2bcbbcb",
+  "reportSha256": "0a6a5d9625af55bf6b9bca3d8431b8fbab80a4966d3d0dbdbc52a5a2be47220e"
+}
