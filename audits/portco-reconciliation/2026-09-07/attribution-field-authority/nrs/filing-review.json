@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_NRS_ACQUISITION_SOURCE_REVIEW",
+  "sourcePath": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/acquisition.pdf",
+  "sourceSha256": "37b1af4eeaf8865789036ef6ec8911eac66dc75a5cbe80ad728c3fe1e898afa5",
+  "method": "Poppler pdftoppm rendering; complete two-page visual inspection",
+  "pages": [
+    {
+      "page": 1,
+      "sha256": "3c8543a7b7d4b9f1eab4b5c2f921c15539f64db51d60c57155b1ac203dcde215"
+    },
+    {
+      "page": 2,
+      "sha256": "1add4b326fad4c0caf2cf533bbc85b203a16c975323579c96df0be8d28ad836f"
+    }
+  ],
+  "totalPages": 2,
+  "allPagesVisuallyReviewed": true,
+  "rawPdfUnmodified": true,
+  "derivedText": "acquisition-text.txt",
+  "derivedTextTransformation": "Poppler pdftotext -layout; form feed replaced by newline; trailing whitespace-only lines removed; final newline retained",
+  "findings": [
+    "August 18, 2021 release announces a recently completed 100% acquisition; exact legal closing date is not stated.",
+    "Investment is described as through BlackRock Global Renewable Power. A later paragraph describes GRP III's strategy but does not expand the full fund name or name GRP III Norse Holdings LP.",
+    "Page 2 continues BlackRock Real Assets description and supplies NRS background and contacts. No legal vehicle or expanded fund name appears.",
+    "The footer codes are ALTH0821U/S-1757953-1/2 and ALTH0821U/S-1757953-2/2; both complete pages are legible.",
+    "This is a company-hosted acquisition press release, not a regulator order or current cap table. Historical 100% entry does not establish today's percentage."
+  ],
+  "databaseWrites": 0
+}
