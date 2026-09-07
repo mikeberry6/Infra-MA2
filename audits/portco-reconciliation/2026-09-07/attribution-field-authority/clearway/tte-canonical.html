@@ -1,0 +1,983 @@
+    <!DOCTYPE html>
+<html lang='en-US' class="no-js">
+    <!--SCHEMA.ORG WEBSITE-->
+    <head itemscope itemtype="">
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JYRFYSY9C" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8"></script>
+<script type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8">
+    (function() {
+        'use strict';
+
+        const CONFIG = {
+            GTAG_ID: 'G-4JYRFYSY9C',
+            EXCLUDED_HOSTS: ['epresspack.us'],
+            COOKIE_EXPIRY_DAYS: 365
+        };
+
+        /**
+         * Helper to set a cookie
+         */
+        function setCookie(name, value, days = CONFIG.COOKIE_EXPIRY_DAYS) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/;SameSite=Lax`;
+        }
+
+        /**
+         * Helper to get a cookie value
+         */
+        function getCookie(name) {
+            const matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : "";
+        }
+
+        /**
+         * Maps CONSENTMGR flags to functional/performance cookies
+         */
+        function processConsentCookies() {
+            const consentMgr = getCookie('CONSENTMGR');
+            if (!consentMgr) return;
+
+            // Global consent check
+            if (consentMgr.includes('consent:true|ts:')) {
+                setCookie('cookie_performance', 'true');
+                setCookie('cookie_functional', 'true');
+                return;
+            }
+
+            if (consentMgr.includes('consent:false|ts:')) {s
+                setCookie('cookie_performance', 'false');
+                setCookie('cookie_functional', 'false');
+                return;
+            }
+
+            // Specific flags check
+            const isFunctional = consentMgr.includes('c7:1') || consentMgr.includes('c3:1');
+            const isPerformance = consentMgr.includes('c1:1') || consentMgr.includes('c2:1');
+
+            setCookie('cookie_functional', isFunctional ? 'true' : 'false');
+            setCookie('cookie_performance', isPerformance ? 'true' : 'false');
+        }
+
+        /**
+         * Initializes Analytics if consent is given
+         */
+        function initAnalytics() {
+
+            processConsentCookies();
+            const isExcludedHost = CONFIG.EXCLUDED_HOSTS.some(host => window.location.hostname.includes(host));
+            const hasConsent = isExcludedHost ? false : getCookie('cookie_performance') === 'true';
+
+            if (hasConsent) {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', CONFIG.GTAG_ID);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initAnalytics);
+    })();
+</script>                <meta http-equiv="content-type"
+              content="text/html; charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta epp-url-theme="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025">
+        <meta epp-url-domain="https://totalenergies.com/newsroom">
+        <!-- JSON - SEO TEST YOUR WEBSITE ON https://search.google.com/structured-data/testing-tool-->
+<script type='application/ld+json' nonce='ap6pjgnJx-O5CVQxgyNdvgAAAE8'>{
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "United States: TotalEnergies acquires 50% of Clearway, the 5th largest U.S. renewable energy player",
+    "image": [
+        {
+            "@type": "ImageObject",
+            "url": "https://totalenergies.com/newsroom/wp-content/uploads/2026/04/cd5b0054c3a73e3a0a08ba6f1123d86a-l.jpg"
+        }
+    ],
+    "datePublished": "2022-05-25T02:10:51+00:00",
+    "dateModified": "2025-12-02T15:33:17+00:00",
+    "author": {
+        "@type": "Organization",
+        "name": "TotalEnergies",
+        "url": "https://totalenergies.com/newsroom"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "TotalEnergies",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img/logo/logo-totalenergies.svg"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/"
+    }
+}</script>
+                <link rel="pingback" href="https://totalenergies.com/newsroom/xmlrpc.php"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+              integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+              crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img/favicon.png"/>
+        <meta name='robots' content='index, follow, max-image-preview:large' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.3 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>United States: TotalEnergies acquires 50% of Clearway, the 5</title>
+	<meta name="description" content="Welcome to the Newsroom TotalEnergies brand newsroom for journalists. Discover our news and releases, photos and videos as well as contacts of Newsroom TotalEnergies press office." />
+	<link rel="canonical" href="https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/?lang=eng" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="United States: TotalEnergies acquires 50% of Clearway, the 5th largest U.S. renewable energy player | Newsroom TotalEnergies" />
+	<meta property="og:description" content="Paris, May 25, 2022 – TotalEnergies announces the signature of agreements with Global Infrastructure Partners (GIP) to acquire 50% of Clearway Energy Group (CEG), the 5th US renewable energy player. This constitutes its largest acquisition in the renewable energy in the United States, one of the top 3 renewable markets in the world. With such [&hellip;]" />
+	<meta property="og:url" content="https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/" />
+	<meta property="og:site_name" content="Newsroom TotalEnergies" />
+	<meta property="article:published_time" content="2022-05-25T02:10:51+00:00" />
+	<meta property="og:image" content="https://totalenergies.com/newsroom/wp-content/uploads/2026/04/cd5b0054c3a73e3a0a08ba6f1123d86a.jpg" />
+	<meta property="og:image:width" content="1137" />
+	<meta property="og:image:height" content="752" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="epp" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="epp" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="4 minutes" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<meta property="article:modified_time" content="2025-12-02T15:33:17+00:00">
+<link rel='dns-prefetch' href='//static.epresspack.eu' />
+<link rel="alternate" type="application/rss+xml" title="Newsroom TotalEnergies &raquo; Feed" href="https://totalenergies.com/newsroom/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://totalenergies.com/newsroom/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftotalenergies.com%2Fnewsroom%2Funited-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://totalenergies.com/newsroom/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftotalenergies.com%2Fnewsroom%2Funited-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='sbsw_styles-css' href='https://totalenergies.com/newsroom/wp-content/plugins/social-wall/css/social-wall.min.css?ver=2.0.1' media='all' />
+
+
+<link rel='stylesheet' id='swiper-css-css' href='https://static.epresspack.eu/main/external-frontend-services/SwiperJs/current/swiper-bundle.min.css?ver=7.0.4' media='all' />
+<link rel='stylesheet' id='mCustomScrollbar-css-css' href='https://static.epresspack.eu/main/external-frontend-services/mCustomScrollbar/current/mCustomScrollbar.min.css?ver=7.0.4' media='all' />
+<link rel='stylesheet' id='stylesheet_child_1-css' href='https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/css/tan.css?ver=1.0.9' media='all' />
+<link rel='stylesheet' id='stylesheet_child_2-css' href='https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/css/style.min.css?ver=1.0.9' media='all' />
+<script id="jquery-js" src="https://static.epresspack.eu/main/external-frontend-services/jQuery/current/jquery.min.js"></script>
+<script id="keeex_app-js" src="https://totalenergies.com/newsroom/wp-content/plugins/plugin-verif/js/app.js?ver=1.0"></script>
+<script id="keeex_sdk-js" src="https://totalenergies.com/newsroom/wp-content/plugins/plugin-verif/js/keeex-sdk.min.js?ver=1.0"></script>
+<script id="woleet_crypto-js" src="https://totalenergies.com/newsroom/wp-content/plugins/plugin-verif/js/woleet-crypto.min.js?ver=1.0"></script>
+<script id="woleet_worker-js" src="https://totalenergies.com/newsroom/wp-content/plugins/plugin-verif/js/woleet-hashfile-worker.min.js?ver=1.0"></script>
+<script id="keeex_script-js-extra">
+var ProtectAjax = {"ajaxUrl":"https://totalenergies.com/newsroom/wp-admin/admin-ajax.php"};
+//# sourceURL=keeex_script-js-extra
+</script>
+<script id="keeex_script-js" src="https://totalenergies.com/newsroom/wp-content/plugins/plugin-verif/js/script.js?v=1.2&#038;ver=1.0"></script>
+<script id="keeex_script-js-after">
+// Keeex translation vars definition:
+var authorTrans = "Author";
+var certifiedOnTrans = "Document certified on";
+var fileValidTrans = "This file has not been modified and is Blockchain certified";
+var fileInvalidTrans = "The submitted file hasn’t been protected or has been modified";
+var fileNoKeeexTrans = "The submitted file hasn’t been protected or has been modified";
+var cantAuthTrans = "The submitted file hasn’t been protected or has been modified";
+var detailsTrans = "See the Blockchain certificate";
+var retryTrans = "Retry";
+var soonAvailableTrans = "Certificat document in progress";
+var lang = "lang-en";
+
+//# sourceURL=keeex_script-js-after
+</script>
+<script id="flux_img-js-extra">
+var ajaxurlIMGNonce = {"url":"https://totalenergies.com/newsroom/wp-admin/admin-ajax.php","nonce":"9f2560eb0b"};
+//# sourceURL=flux_img-js-extra
+</script>
+<script src="https://totalenergies.com/newsroom/wp-content/themes/epp-root/lib/modules/flux_data/assets/js/fluxImg.js?ver=1.0" defer="defer" type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8"></script>
+<script id="flux_post-js-extra">
+var ajaxurlPostNonce = {"url":"https://totalenergies.com/newsroom/wp-admin/admin-ajax.php","nonce":"9f2560eb0b"};
+//# sourceURL=flux_post-js-extra
+</script>
+<script src="https://totalenergies.com/newsroom/wp-content/themes/epp-root/lib/modules/flux_data/assets/js/fluxPost.js?ver=1.0" defer="defer" type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8"></script>
+<script id="flux_video-js-extra">
+var ajaxurlVidNonce = {"url":"https://totalenergies.com/newsroom/wp-admin/admin-ajax.php","nonce":"9f2560eb0b"};
+//# sourceURL=flux_video-js-extra
+</script>
+<script src="https://totalenergies.com/newsroom/wp-content/themes/epp-root/lib/modules/flux_data/assets/js/fluxVid.js?ver=1.0" defer="defer" type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8"></script>
+<script id="flux_attachment-js-extra">
+var ajaxurlAttNonce = {"url":"https://totalenergies.com/newsroom/wp-admin/admin-ajax.php","nonce":"9f2560eb0b"};
+//# sourceURL=flux_attachment-js-extra
+</script>
+<script src="https://totalenergies.com/newsroom/wp-content/themes/epp-root/lib/modules/flux_data/assets/js/fluxAtt.js?ver=1.0" defer="defer" type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8"></script>
+<script src="https://totalenergies.com/newsroom/wp-content/themes/epp-root/lib/modules/flux_data/assets/js/enqueue_functions.js?ver=1.0" defer="defer" type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://totalenergies.com/newsroom/xmlrpc.php?rsd" />
+
+<link rel='shortlink' href='https://totalenergies.com/newsroom/?p=34757' />
+<meta name="ajaxurl" content="https://totalenergies.com/newsroom/wp-admin/admin-ajax.php" /><meta name="nextnonce" content="ap6pjgnJx-O5CVQxgyNdvgAAAE8" /><script type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8">var ajaxurl = document.querySelector('meta[name="ajaxurl"]').getAttribute('content');var ajaxurlIMG = ajaxurl;var ajaxurlPost = ajaxurl;var ajaxurlVid = ajaxurl;var ajaxurlAtt = ajaxurl;var ajaxurlCart = ajaxurl;var ajaxurlCartExpire = ajaxurl;var nextNonce = document.querySelector('meta[name="nextnonce"]').getAttribute('content');var PT_Ajax = { ajaxurl: ajaxurl, nextNonce: nextNonce };</script><meta property="og:image" content="https://totalenergies.com/newsroom/wp-content/uploads/2026/04/cd5b0054c3a73e3a0a08ba6f1123d86a-m.jpg" />
+<meta property="og:image:width" content="t">
+<meta property="og:image:height" content="t">
+<meta property="og:url" content="https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/"/>
+<meta property="og:title" content="United States: TotalEnergies acquires 50% of Clearway, the 5th largest U.S. renewable energy player"/>
+<meta property="og:description" content="Paris, May 25, 2022 – TotalEnergies announces the signature of agreements with Global Infrastructure Partners (GIP) to acquire 50% of Clearway Energy Group (CEG), the 5th US renewable energy player. This constitutes its largest acquisition in the renewable energy in the United States, one of the top 3 renewable&#8230;
+"/>
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:type" content="">
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="United States: TotalEnergies acquires 50% of Clearway, the 5th largest U.S. renewable energy player"/>
+
+	
+        <meta name="twitter:description" content="Paris, May 25, 2022 – TotalEnergies announces the signature of agreements with Global Infrastructure Partners (GIP) to acquire 50% of Clearway Energy Group (CEG), the 5th US renewable energy player. This constitutes its largest acquisition in the renewable energy in the United States, one of the top 3 renewable&#8230;
+" />
+
+	
+    <meta name="twitter:image" content="https://totalenergies.com/newsroom/wp-content/uploads/2026/04/cd5b0054c3a73e3a0a08ba6f1123d86a-m.jpg" />
+
+    <meta name="twitter:url" content="https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/"/>
+<link rel="alternate" hreflang="en" href="https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/?lang=eng">
+<link rel="alternate" hreflang="fr" href="https://totalenergies.com/newsroom/etats-unis-totalenergies-acquiert-50-de-clearway-le-5eme-acteur/?lang=fra">
+<link rel="alternate" hreflang="x-default" href="https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/?lang=eng">
+<link rel="icon" href="https://totalenergies.com/newsroom/wp-content/uploads/2026/04/cropped-Logo_TotalEnergies.svg_-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://totalenergies.com/newsroom/wp-content/uploads/2026/04/cropped-Logo_TotalEnergies.svg_-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://totalenergies.com/newsroom/wp-content/uploads/2026/04/cropped-Logo_TotalEnergies.svg_-180x180.png" />
+<meta name="msapplication-TileImage" content="https://totalenergies.com/newsroom/wp-content/uploads/2026/04/cropped-Logo_TotalEnergies.svg_-270x270.png" />
+    <link rel='stylesheet' id='gform_basic-css' href='https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=2.8.17' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.8.17' media='all' />
+<link rel='stylesheet' id='gform_theme_ie11-css' href='https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/assets/css/dist/theme-ie11.min.css?ver=2.8.17' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.8.17' media='all' />
+
+</head>
+    <!--SCHEMA.ORG WEBPAGE-->
+<body class="wp-singular post-template-default single single-post postid-34757 single-format-standard wp-theme-epp-root wp-child-theme-totalenergies_2025 is_unknown epp-parentcontainer template- epp-notsticky-menu  epp-body" itemscope="" itemtype="http://schema.org/WebPage" data-start>
+<!--ENJOY-->
+<header id="header-totalenergies">
+    <div id="header-totalenergies__container">
+        <div id="header-totalenergies__container--logo">
+            <a href="https://totalenergies.com/newsroom/en/?lang=eng"
+               aria-labelledby="home_01"
+               data-tealium-element="logo"
+               data-tealium-event="action"
+               data-tealium-location="header">
+                <svg width="97" height="71" viewBox="0 0 97 71" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="TotalEnergies">
+    <path d="M52.8168 6.7918C49.8399 9.16176 46.9863 12.291 45.3247 15.7194C41.917 22.7678 43.8095 29.2411 45.2631 33.444C47.2478 39.1656 51.2785 42.0573 56.0783 44.1664C62.9242 47.1728 71.5242 47.38 79.3315 45.363C82.0854 44.6573 86.3623 43.177 87.2928 41.804C88.3007 40.3162 88.4622 37.4323 86.293 36.1745C84.1775 34.9396 83.9698 35.8831 77.6701 37.2789C73.2855 38.253 68.4932 38.4217 62.7396 35.9443C59.1089 34.3797 56.6552 31.9869 55.8168 28.7119C53.409 19.3166 58.6089 15.8266 59.6243 15.1902L52.8168 6.7918Z" fill="url(#paint0_linear_1328_1186)"/>
+    <path d="M59.9858 17.8592C57.2784 17.4986 49.3325 16.6626 41.0173 15.1902C28.1482 12.9122 13.0256 9.75997 8.19493 9.4225C-1.09714 8.77058 -2.65095 20.8121 4.77191 22.8675C8.97182 24.0334 20.533 22.8063 23.3484 28.3438C24.2021 30.0312 26.4713 36.3817 29.0328 44.2508C30.0407 47.334 38.2172 46.8507 36.6942 40.2778C35.8249 36.5273 33.8481 26.3878 33.8481 26.3878C33.8481 26.3878 57.3091 28.8653 59.2168 29.034L59.9858 17.8592Z" fill="url(#paint1_linear_1328_1186)"/>
+    <path d="M72.3393 11.6697C75.3163 11.7464 80.5005 12.5134 82.839 14.0704L95.854 16.632C95.9771 9.43018 92.0156 5.54929 87.5773 3.31742C84.2083 1.62241 79.4776 0.241846 72.3856 0.540983C65.6009 0.832406 58.4626 2.31269 52.7783 6.83016L59.578 15.2362C62.778 13.219 66.8087 11.5164 72.3393 11.6697Z" fill="url(#paint2_linear_1328_1186)"/>
+    <path d="M82.6315 13.9323C82.6315 13.9323 83.3162 14.3695 83.616 14.6379C85.0315 15.9266 85.5007 17.4758 81.2007 18.1813L84.6008 28.6734C92.3391 26.6027 95.7542 22.0546 95.8542 16.4864L82.6315 13.9323Z" fill="url(#paint3_linear_1328_1186)"/>
+    <path d="M81.3238 18.166C77.5085 18.7949 70.1164 19.2013 59.9243 17.8517L59.155 29.0265C75.7085 30.453 81.5315 29.4788 84.7236 28.6275L81.3238 18.166Z" fill="url(#paint4_linear_1328_1186)"/>
+    <path d="M0 58.5366C0 58.7336 0.155649 58.8852 0.342411 58.8852H3.46291V67.2021L5.51729 67.2096V58.8852H8.63779C8.82455 58.8852 8.9802 58.7336 8.9802 58.5366V57.2554C8.9802 57.0584 8.82455 56.9067 8.63779 56.9067H0.342411C0.155649 56.9067 0 57.0584 0 57.2554V58.5366Z" fill="#FC0103"/>
+    <path d="M7.32251 63.4039C7.32251 65.5948 9.16679 67.3006 11.4468 67.3006C13.7425 67.3006 15.5869 65.5948 15.5869 63.4039C15.5869 61.1977 13.7425 59.4616 11.4468 59.4616C9.15902 59.4616 7.32251 61.1977 7.32251 63.4039ZM9.60256 63.3886C9.60256 62.3576 10.3963 61.5008 11.4468 61.5008C12.5052 61.5008 13.3067 62.3501 13.3067 63.3886C13.3067 64.4274 12.513 65.2611 11.4468 65.2611C10.3963 65.2611 9.60256 64.4196 9.60256 63.3886Z" fill="#FC0103"/>
+    <path d="M16.9253 64.9959C16.9253 66.6865 18.225 67.3688 19.5321 67.3688C20.4193 67.3688 21.3299 67.2475 21.9134 66.8003C22.8629 66.0801 22.0691 64.6169 20.7775 65.3371C20.3962 65.5494 19.7658 65.4431 19.6491 65.3978C19.3923 65.2915 18.933 65.2005 18.9642 64.4728V61.2809H20.8708C22.3337 61.2809 22.3181 59.4387 20.8708 59.4387H18.9642V56.9217L16.9331 56.9142V59.4387H15.937V61.2809H16.9331V64.9959H16.9253Z" fill="#FC0103"/>
+    <path d="M22.6841 63.3736C22.6841 65.7615 24.5127 67.3007 26.4736 67.3007C27.4853 67.3007 28.5438 66.876 28.9095 66.3V67.3157L30.7927 67.3082V60.4394C30.7927 59.0976 28.9482 59.1582 28.9482 60.3637C28.5903 59.7874 27.5087 59.4766 26.497 59.4766C24.5283 59.4616 22.6841 60.9701 22.6841 63.3736ZM24.9639 63.3886C24.9639 62.3576 25.7578 61.5008 26.8238 61.5008C27.8822 61.5008 28.6839 62.3501 28.6839 63.3886C28.6839 64.4196 27.89 65.2765 26.8238 65.2765C25.7578 65.2765 24.9639 64.4196 24.9639 63.3886Z" fill="#FC0103"/>
+    <path d="M34.6989 67.2021V57.8089C34.6989 56.6184 32.5667 56.6565 32.5667 57.8089V67.2021H34.6989Z" fill="#FC0103"/>
+    <path d="M36.5511 56.7854C36.3488 56.7854 36.2087 56.937 36.2087 57.119V66.8535C36.2087 67.0505 36.3488 67.2021 36.5511 67.2021H43.4536L43.4614 65.102H38.551V63.1081H42.4029C42.6054 63.1081 42.7455 62.9414 42.7455 62.7594V61.4251C42.7455 61.2281 42.6054 61.0764 42.4029 61.0764H38.551V58.8852H42.9868C43.189 58.8852 43.3447 58.7336 43.3447 58.5366V57.134C43.3447 56.937 43.189 56.7854 42.9868 56.7854H36.5511Z" fill="#FC0103"/>
+    <path d="M50.4102 66.8988C50.4102 67.0808 50.5815 67.2021 50.7528 67.2021H52.099C52.2701 67.2021 52.4414 67.0808 52.4414 66.8988V62.7898C52.4414 60.9779 51.391 59.3477 49.3833 59.3477C48.2003 59.3477 47.0485 59.6964 46.5973 60.2274C46.5973 59.1354 44.8074 59.0901 44.8074 60.1286V67.2096L46.8229 67.2172V63.0399C46.8229 60.4622 50.4024 60.8716 50.4024 63.0399V66.8988H50.4102Z" fill="#FC0103"/>
+    <path d="M66.8999 59.2796C65.7872 59.2796 64.8769 59.9391 64.4566 60.5911V60.0982C64.4566 59.181 62.7603 59.0825 62.7603 60.1286V67.1793L64.7524 67.2021V63.6084C64.7524 62.5243 65.4838 61.3341 66.2621 61.2052L67.0712 61.0764C68.3553 61.0764 68.1453 59.2796 66.8999 59.2796Z" fill="#FC0103"/>
+    <path d="M72.2228 68.6425C71.1955 68.6425 70.2073 68.5818 69.678 68.2938C68.4096 67.5962 67.6625 69.1353 68.4564 69.5825C69.5223 70.1967 70.0515 70.5 72.0515 70.5C74.6118 70.5 75.997 69.0897 75.997 67.0201V60.1286C75.997 59.2189 74.2227 59.1129 74.2227 60.015V60.4851C73.8492 59.9087 72.7751 59.5829 71.7404 59.5829C69.7713 59.5829 67.9973 61.0764 67.9973 63.4342C67.9973 65.7918 69.7638 67.255 71.8337 67.255C72.8297 67.255 73.6467 66.8306 73.9893 66.315V66.952C73.9971 67.9298 73.4211 68.6425 72.2228 68.6425ZM70.2772 63.4264C70.2772 62.3954 71.071 61.5843 72.1217 61.5843C73.1799 61.5843 73.9815 62.3879 73.9815 63.4264C73.9815 64.4728 73.1877 65.2689 72.1217 65.2689C71.0788 65.2689 70.2772 64.4803 70.2772 63.4264Z" fill="#FC0103"/>
+    <path d="M78.6972 58.5441C79.3585 58.5441 79.9111 57.9756 79.9111 57.316C79.9111 56.6337 79.3585 56.0727 78.6972 56.0727C78.0201 56.0727 77.4678 56.6412 77.4678 57.316C77.4678 57.9756 78.0201 58.5441 78.6972 58.5441ZM79.4053 67.2021C79.5766 67.2021 79.7011 67.058 79.7011 66.8913V60.5079C79.7011 59.1582 77.6622 59.1582 77.6622 60.5079V66.8913C77.6622 67.058 77.8023 67.2021 77.9733 67.2021H79.4053Z" fill="#FC0103"/>
+    <path d="M85.0008 59.3327C82.6118 59.3327 80.8921 61.1596 80.8921 63.4265C80.8921 65.6933 82.5806 67.4448 85.0318 67.4448C86.7362 67.4448 87.74 66.9442 88.3782 66.1255C88.7673 65.4585 87.8567 64.632 87.0395 65.102C86.3158 65.5873 85.8256 65.5191 85.0786 65.5191C84.168 65.5191 83.3744 64.905 83.2655 63.9421H88.3548C88.6737 63.9421 88.7517 63.7676 88.7517 63.5781V63.1538C88.7517 61.1899 87.452 59.3327 85.0008 59.3327ZM86.7206 62.5321H83.312C83.5377 61.6828 84.2382 61.1596 85.0165 61.1596C85.7635 61.1596 86.5105 61.5996 86.7206 62.5321Z" fill="#FC0103"/>
+    <path d="M92.899 59.272C90.8055 59.272 89.5139 60.3788 89.5139 61.7813C89.5139 63.0324 90.3698 63.8058 91.6539 64.0559L92.9533 64.3211C93.7003 64.4653 94.0895 64.6244 94.0895 65.0035C94.0895 65.3371 93.7315 65.648 93.0001 65.648C92.2218 65.648 91.4127 65.5038 90.9147 65.0794C89.8019 64.5031 88.8133 65.7236 89.9264 66.5501C90.572 66.9898 91.5915 67.4067 92.9224 67.4067C95.0777 67.4067 96.4863 66.2846 96.4863 64.7986C96.4863 63.3583 95.3813 62.7291 94.043 62.4789L92.7979 62.2438C92.1363 62.1149 91.8873 61.9104 91.8873 61.6146C91.8873 61.2962 92.292 61.0461 92.9068 61.0461C93.568 61.0461 94.1285 61.1143 94.6187 61.4326C95.5914 61.9936 96.5952 60.7959 95.6847 60.0376C95.1866 59.6132 94.4708 59.272 92.899 59.272Z" fill="#FC0103"/>
+    <path d="M57.7721 59.3327C55.383 59.3327 53.6633 61.1596 53.6633 63.4265C53.6633 65.6933 55.3521 67.4448 57.8033 67.4448C59.5074 67.4448 60.5113 66.9442 61.1494 66.1255C61.5385 65.4585 60.628 64.632 59.811 65.102C59.0874 65.5873 58.5971 65.5191 57.8501 65.5191C56.9395 65.5191 56.1457 64.905 56.0368 63.9421H61.126C61.4452 63.9421 61.5229 63.7676 61.5229 63.5781V63.1538C61.5151 61.1899 60.2235 59.3327 57.7721 59.3327ZM59.4921 62.5321H56.0836C56.3092 61.6828 57.0094 61.1596 57.7877 61.1596C58.5347 61.1596 59.2818 61.5996 59.4921 62.5321Z" fill="#FC0103"/>
+    <defs>
+        <linearGradient id="paint0_linear_1328_1186" x1="49.8081" y1="18.4465" x2="74.6317" y2="45.4858" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0186F5"/>
+            <stop offset="0.1319" stop-color="#0186F5"/>
+            <stop offset="0.3146" stop-color="#35C2B0"/>
+            <stop offset="0.667" stop-color="#AAD825"/>
+            <stop offset="1" stop-color="#FED700"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_1328_1186" x1="29.7197" y1="43.2703" x2="29.9231" y2="26.3465" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF7F00"/>
+            <stop offset="1" stop-color="#FE0201"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_1328_1186" x1="54.799" y1="7.98043" x2="82.2907" y2="8.5096" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0186F5"/>
+            <stop offset="0.1983" stop-color="#0186F5"/>
+            <stop offset="1" stop-color="#3156FD"/>
+        </linearGradient>
+        <linearGradient id="paint3_linear_1328_1186" x1="86.495" y1="21.9931" x2="89.0172" y2="17.0018" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8434D5"/>
+            <stop offset="0.8542" stop-color="#3156FD"/>
+            <stop offset="1" stop-color="#3156FD"/>
+        </linearGradient>
+        <linearGradient id="paint4_linear_1328_1186" x1="80.9205" y1="23.1905" x2="59.8131" y2="24.1932" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8434D5"/>
+            <stop offset="1" stop-color="#FE0201"/>
+        </linearGradient>
+    </defs>
+</svg>                <span class="sr-only" id="home_01">Home</span>
+            </a>
+        </div>
+        <div id="header-totalenergies__container--info">
+            <div id="header-totalenergies__container--info-tools">
+                <a href="https://totalenergies.com/newsroom/en/selection/?lang=eng"
+                   >
+                    <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M3.75 16.25V4.25C3.75 3.85218 3.90804 3.47064 4.18934 3.18934C4.47064 2.90804 4.85218 2.75 5.25 2.75H12.75C13.1478 2.75 13.5294 2.90804 13.8107 3.18934C14.092 3.47064 14.25 3.85218 14.25 4.25V16.25L9.8115 13.3962C9.56947 13.2406 9.28777 13.1578 9 13.1578C8.71223 13.1578 8.43053 13.2406 8.1885 13.3962L3.75 16.25Z" stroke="#E70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>                    <span class="sr-only">My selection</span>
+                    <span id="countImg" class="badge"></span>
+                </a>
+                <button class="toggle-search">
+                    <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M8.25 2C11.9779 2 15 5.02208 15 8.75C15 10.3437 14.4461 11.8072 13.5225 12.9619L16.2803 15.7197C16.5732 16.0126 16.5732 16.4874 16.2803 16.7803C15.9874 17.073 15.5126 17.0731 15.2197 16.7803L12.4619 14.0225C11.3072 14.9461 9.84371 15.5 8.25 15.5C4.52208 15.5 1.5 12.4779 1.5 8.75C1.5 5.02208 4.52208 2 8.25 2ZM8.25 3.5C5.3505 3.5 3 5.8505 3 8.75C3 11.6495 5.3505 14 8.25 14C9.67018 14 10.9573 13.4347 11.9023 12.5186C11.9193 12.4974 11.9374 12.4767 11.957 12.457C11.9768 12.4373 11.9973 12.4184 12.0186 12.4014C12.9344 11.4563 13.5 10.1699 13.5 8.75C13.5 5.8505 11.1495 3.5 8.25 3.5Z" fill="#E70000"/>
+</svg>                    <span class="sr-only">Open/Close search</span>
+                </button>
+                <div class="lang-container desktop-only">
+                    
+<button class="toggle-lang mobile-only">
+    <span class="desktop-only">en</span>
+    <span class="mobile-only">English</span>
+    <svg width="16" height="7" viewBox="0 0 16 7" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="chevron-down">
+    <path d="M13 1L8 6L3 1" stroke="#E70000" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="chevron-right">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7803 8.46967C12.0732 8.76256 12.0732 9.23744 11.7803 9.53033L7.28033 14.0303C6.98744 14.3232 6.51256 14.3232 6.21967 14.0303C5.92678 13.7374 5.92678 13.2626 6.21967 12.9697L10.1893 9L6.21967 5.03033C5.92678 4.73744 5.92678 4.26256 6.21967 3.96967C6.51256 3.67678 6.98744 3.67678 7.28033 3.96967L11.7803 8.46967Z" fill="#ED0000"/>
+</svg></button>
+<div class="lang-container__items items-flags">
+    <button class="back-lang mobile-only">
+        <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="chevron-left">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 6.53033C-0.0732231 6.23744 -0.0732231 5.76256 0.21967 5.46967L4.71967 0.96967C5.01256 0.676777 5.48744 0.676777 5.78033 0.96967C6.07322 1.26256 6.07322 1.73744 5.78033 2.03033L1.81066 6L5.78033 9.96967C6.07322 10.2626 6.07322 10.7374 5.78033 11.0303C5.48744 11.3232 5.01256 11.3232 4.71967 11.0303L0.21967 6.53033Z" fill="#ED0000"/>
+</svg>        <span>Back</span>
+    </button>
+                        <a class="lang-eng current-lang"
+                        title="ENG"
+                        href="https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/?lang=eng"
+                        data-tealium-element="language_switch_to_eng"
+                        data-tealium-event="action"
+                        data-tealium-location="header">
+                        <img class="mobile-only" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img//icon/flag-en.svg" alt="" />                        <img class="desktop-only" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img//icon/flag-en.svg" alt="" />                        <span class="desktop-only">en</span>
+                        <span class="mobile-only">English</span>
+                                            </a>
+                    <span class='separator desktop-only'>/</span>                    <a class="lang-fra "
+                        title="FRA"
+                        href="https://totalenergies.com/newsroom/etats-unis-totalenergies-acquiert-50-de-clearway-le-5eme-acteur/?lang=fra"
+                        data-tealium-element="language_switch_to_fra"
+                        data-tealium-event="action"
+                        data-tealium-location="header">
+                        <img class="mobile-only" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img//icon/flag-fr.svg" alt=""/>                                                <span class="desktop-only">fr</span>
+                        <span class="mobile-only">Français</span>
+                        <img class="desktop-only" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img//icon/flag-fr.svg" alt="" />                    </a>
+                    </div>
+                </div>
+                <a href="https://totalenergies.com/" target="_blank" rel="noopener" class="external desktop-only">
+                    <span>totalenergies.com</span>
+                    <svg width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect width="11" height="16" transform="translate(0 0.5)" fill="white"/>
+    <path d="M0.5 8.5H10.5M10.5 8.5L5.5 3.5M10.5 8.5L5.5 13.5" stroke="#E70000" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>                </a>
+                <button class="toggle-nav mobile-only">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-open">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6.5C2 5.94772 2.44772 5.5 3 5.5H21C21.5523 5.5 22 5.94772 22 6.5C22 7.05228 21.5523 7.5 21 7.5H3C2.44772 7.5 2 7.05228 2 6.5ZM2 12.5C2 11.9477 2.44772 11.5 3 11.5H21C21.5523 11.5 22 11.9477 22 12.5C22 13.0523 21.5523 13.5 21 13.5H3C2.44772 13.5 2 13.0523 2 12.5ZM2 18.5C2 17.9477 2.44772 17.5 3 17.5H21C21.5523 17.5 22 17.9477 22 18.5C22 19.0523 21.5523 19.5 21 19.5H3C2.44772 19.5 2 19.0523 2 18.5Z" fill="#E70000"/>
+</svg>                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-close">
+    <path d="M18 6L6 18M6 6L18 18" stroke="#E70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>                    <span class="sr-only">Open/Close menu</span>
+                </button>
+            </div>
+            <div id="header-totalenergies__container--info-nav">
+                <div id="header-totalenergies__container--info-nav-inner" class="nav-inner">
+                    <nav aria-label="principale">
+                                                        <div class="item item-communiques-de-presse                                            active">
+                                    <a href="https://totalenergies.com/newsroom/section/communiques-de-presse/?lang=eng&#038;topic=all-themes">
+                                        <span>Press Releases</span>
+                                    </a>
+                                </div>
+                                                                <div class="item item-statements                                            ">
+                                    <a href="https://totalenergies.com/newsroom/section/statements/?lang=eng">
+                                        <span>Statements</span>
+                                    </a>
+                                </div>
+                                                                <div class="item item-dossiers-de-presse                                            ">
+                                    <a href="https://totalenergies.com/newsroom/section/dossiers-de-presse/?lang=eng">
+                                        <span>Press Kits</span>
+                                    </a>
+                                </div>
+                                                                    <div class="item item-vu-dans-la-presse ">
+                                        <a href="https://totalenergies.com/newsroom/section/revues-de-presse/?lang=eng&#038;cat=vu-dans-la-presse">
+                                            <span>Media Clippings</span>
+                                        </a>
+                                    </div>
+                                                                        <div class="item item-vu-sur-les-reseaux-sociaux ">
+                                        <a href="https://totalenergies.com/newsroom/section/revues-de-presse/?lang=eng&#038;cat=vu-sur-les-reseaux-sociaux">
+                                            <span>Social Media</span>
+                                        </a>
+                                    </div>
+                                                                    <div class="item item-contacts                                            ">
+                                    <a href="https://totalenergies.com/newsroom/section/contacts/?lang=eng">
+                                        <span>Contacts</span>
+                                    </a>
+                                </div>
+                                                    </nav>
+                    <div class="secondary-information mobile-only">
+                        <a href="https://totalenergies.com/" target="_blank" rel="noopener" class="external">
+                            <span>totalenergies.com</span>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M1.16675 6.49996H12.8334M12.8334 6.49996L7.00008 0.666626M12.8334 6.49996L7.00008 12.3333" stroke="#E70000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>                        </a>
+                        <div class="lang-container">
+                            
+<button class="toggle-lang mobile-only">
+    <span class="desktop-only">en</span>
+    <span class="mobile-only">English</span>
+    <svg width="16" height="7" viewBox="0 0 16 7" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="chevron-down">
+    <path d="M13 1L8 6L3 1" stroke="#E70000" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="chevron-right">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7803 8.46967C12.0732 8.76256 12.0732 9.23744 11.7803 9.53033L7.28033 14.0303C6.98744 14.3232 6.51256 14.3232 6.21967 14.0303C5.92678 13.7374 5.92678 13.2626 6.21967 12.9697L10.1893 9L6.21967 5.03033C5.92678 4.73744 5.92678 4.26256 6.21967 3.96967C6.51256 3.67678 6.98744 3.67678 7.28033 3.96967L11.7803 8.46967Z" fill="#ED0000"/>
+</svg></button>
+<div class="lang-container__items items-flags">
+    <button class="back-lang mobile-only">
+        <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="chevron-left">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 6.53033C-0.0732231 6.23744 -0.0732231 5.76256 0.21967 5.46967L4.71967 0.96967C5.01256 0.676777 5.48744 0.676777 5.78033 0.96967C6.07322 1.26256 6.07322 1.73744 5.78033 2.03033L1.81066 6L5.78033 9.96967C6.07322 10.2626 6.07322 10.7374 5.78033 11.0303C5.48744 11.3232 5.01256 11.3232 4.71967 11.0303L0.21967 6.53033Z" fill="#ED0000"/>
+</svg>        <span>Back</span>
+    </button>
+                        <a class="lang-eng current-lang"
+                        title="ENG"
+                        href="https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/?lang=eng"
+                        data-tealium-element="language_switch_to_eng"
+                        data-tealium-event="action"
+                        data-tealium-location="header">
+                        <img class="mobile-only" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img//icon/flag-en.svg" alt="" />                        <img class="desktop-only" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img//icon/flag-en.svg" alt="" />                        <span class="desktop-only">en</span>
+                        <span class="mobile-only">English</span>
+                                            </a>
+                    <span class='separator desktop-only'>/</span>                    <a class="lang-fra "
+                        title="FRA"
+                        href="https://totalenergies.com/newsroom/etats-unis-totalenergies-acquiert-50-de-clearway-le-5eme-acteur/?lang=fra"
+                        data-tealium-element="language_switch_to_fra"
+                        data-tealium-event="action"
+                        data-tealium-location="header">
+                        <img class="mobile-only" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img//icon/flag-fr.svg" alt=""/>                                                <span class="desktop-only">fr</span>
+                        <span class="mobile-only">Français</span>
+                        <img class="desktop-only" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img//icon/flag-fr.svg" alt="" />                    </a>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="searchbar-totalenergies">
+    <div id="searchbar-totalenergies__container">
+        <form id="searchbar-totalenergies__containerForm" role="search" method="get" action="https://totalenergies.com/newsroom/">
+            <label for="s" class="sr-only">Search</label>
+            <input type="text" id="s" name="s" placeholder="What are you looking for?"/>
+            <input type="hidden" id="lang" name="lang" value="eng"/>
+            <button class="launch-search" type="submit" disabled aria-label="Launch search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect width="32" height="32" rx="16" fill="#E70000"/>
+    <path d="M22.2695 22.0264L19.3695 19.1264M20.9362 15.3597C20.9362 18.3052 18.5484 20.693 15.6029 20.693C12.6573 20.693 10.2695 18.3052 10.2695 15.3597C10.2695 12.4142 12.6573 10.0264 15.6029 10.0264C18.5484 10.0264 20.9362 12.4142 20.9362 15.3597Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>            </button>
+        </form>
+        <button class="toggle-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect width="32" height="32" rx="16" fill="white"/>
+    <path d="M20 12L12 20M12 12L20 20" stroke="#374649" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>            <span class="sr-only">Close search</span>
+        </button>
+    </div>
+</div></header>
+<div class="overlay-header"></div>
+<main id="main-totalenergies"><!--END HEADER-->
+
+<div id="single-totalenergies" class="single-totalenergies" data-tealium-type="press_release">
+    <div class="breadcrumb desktop-only">
+        <a href="https://totalenergies.com/newsroom/en/?lang=eng" class="breadcrumb--home">
+            Home        </a>
+        <span class="breadcrumb--separator">
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M6 12.5L10 8.5L6 4.5" stroke="#374649" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>        </span>
+                    <a href="https://totalenergies.com/newsroom/section/communiques-de-presse/?lang=eng" class="breadcrumb--cat desktop-only">
+                Press Releases            </a>
+            <span class="breadcrumb--separator desktop-only">
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M6 12.5L10 8.5L6 4.5" stroke="#374649" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>            </span>
+                <span class="breadcrumb--current">
+            United States: TotalEnergies acquires 50% of Clearway, the 5th largest U.S. renewable energy player        </span>
+    </div>
+    <div id="single-totalenergies__content">
+        <div id="single-totalenergies__content--container">
+            <div id="single-totalenergies__content--container-head">
+                <div class="entry-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftotalenergies.com%2Fnewsroom%2Funited-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable%2F%3Flang%3Deng" target="_blank" rel="noopener"
+                        class="cta cta-primary"
+                        data-tealium-element="share_article_facebook"
+                        data-tealium-event="exit"
+                        data-tealium-location="body">
+                        <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M7.07143 3.85714H10.2857V0H7.07143C4.59 0 2.57143 2.01857 2.57143 4.5V6.42857H0V10.2857H2.57143V20.5714H6.42857V10.2857H9.64286L10.2857 6.42857H6.42857V4.5C6.42857 4.15157 6.723 3.85714 7.07143 3.85714Z" fill="#D43900"></path>
+</svg>                    </a>
+                    <a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ftotalenergies.com%2Fnewsroom&#038;url=https%3A%2F%2Ftotalenergies.com%2Fnewsroom%2Funited-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable%2F%3Flang%3Deng" target="_blank" rel="noopener"
+                        class="cta cta-primary"
+                        data-tealium-element="share_article_x"
+                        data-tealium-event="exit"
+                        data-tealium-location="body">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M13.7124 11.2893L20.4133 3.5H18.8254L13.0071 10.2633L8.35992 3.5H3L10.0274 13.7273L3 21.8955H4.58799L10.7324 14.7533L15.6401 21.8955H21L13.7121 11.2893H13.7124ZM11.5375 13.8174L10.8255 12.799L5.16017 4.69542H7.59922L12.1712 11.2353L12.8832 12.2537L18.8262 20.7545H16.3871L11.5375 13.8178V13.8174Z" fill="black"/>
+</svg>                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Ftotalenergies.com%2Fnewsroom%2Funited-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable%2F%3Flang%3Deng" target="_blank" rel="noopener"
+                        class="cta cta-primary"
+                        data-tealium-element="share_article_linkedin"
+                        data-tealium-event="exit"
+                        data-tealium-location="body">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M2.19612 4.39223C3.41618 4.39223 4.39223 3.40093 4.39223 2.19612C4.39223 0.991302 3.40093 0 2.19612 0C0.991302 0 0 0.991302 0 2.19612C0 3.40093 0.991302 4.39223 2.19612 4.39223ZM6.48159 6.05457V18.2857H10.2638V12.2464C10.2638 10.6451 10.5688 9.10473 12.5362 9.10473C14.5035 9.10473 14.5035 10.9348 14.5035 12.3379V18.2857H18.301V11.5754C18.301 8.28119 17.5994 5.74955 13.7562 5.74955C11.9109 5.74955 10.6756 6.75611 10.1723 7.71691H10.1265V6.03932H6.49684L6.48159 6.05457ZM0.305016 6.05457H4.10247V18.2857H0.305016V6.05457Z" fill="#D43900"></path>
+</svg>                    </a>
+                    <a href="/cdn-cgi/l/email-protection#5b64282e39313e382f660e35322f3e3f70082f3a2f3e287e681a700f342f3a371e353e293c323e28703a382a2e32293e28706e6b7e696e70343d7018373e3a292c3a227e6918702f333e706e2f3370373a293c3e282f700e75087570293e353e2c3a39373e703e353e293c22702b373a223e297d39343f2266332f2f2b287e681a7e691d7e691d2f342f3a373e353e293c323e28753834367e691d353e2c28293434367e691d2e35322f3e3f76282f3a2f3e28762f342f3a373e353e293c323e28763a382a2e32293e28766e6b7638373e3a292c3a22766e2f3376373a293c3e282f762e2876293e353e2c3a39373e7e691d7e681d373a353c7e681f3e353c" data-tealium-element="share_article_mail" data-tealium-event="exit" data-tealium-location="body" class="cta cta-primary">
+                        <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20.9556 14.2796H0.955566V2.03986C0.955566 1.3143 1.54592 0.728455 2.26697 0.728455H19.6397C20.3652 0.728455 20.9511 1.31881 20.9511 2.03986V14.2796H20.9556ZM2.20388 13.0313H19.7073V1.97226H2.20388V13.0313V13.0313Z" fill="#D43900"/>
+    <path d="M10.9557 9.86305L1.18555 1.8324L1.9787 0.868004L10.9557 8.2452L19.9327 0.868004L20.7259 1.8324L10.9557 9.86305Z" fill="#D43900"/>
+</svg>                    </a>
+                    <button data-href="mailto:?subject=United+States%3A+TotalEnergies+acquires+50%25+of+Clearway%2C+the+5th+largest+U.S.+renewable+energy+player&body=https%3A%2F%2Ftotalenergies.com%2Fnewsroom%2Funited-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable%2F%3Flang%3Deng"
+                        data-tealium-element="copy_article_url"
+                        data-tealium-event="exit"
+                        data-tealium-location="body"
+                        class="cta cta-primary copy-url">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path class="stroke" d="M9 9V6.2C9 5.08 9 4.52 9.218 4.092C9.41 3.715 9.715 3.41 10.092 3.218C10.52 3 11.08 3 12.2 3H17.8C18.92 3 19.48 3 19.908 3.218C20.2843 3.40974 20.5903 3.71569 20.782 4.092C21 4.52 21 5.08 21 6.2V11.8C21 12.92 21 13.48 20.782 13.908C20.5903 14.2843 20.2843 14.5903 19.908 14.782C19.48 15 18.92 15 17.803 15H15M9 9H6.2C5.08 9 4.52 9 4.092 9.218C3.71569 9.40974 3.40974 9.71569 3.218 10.092C3 10.52 3 11.08 3 12.2V17.8C3 18.92 3 19.48 3.218 19.908C3.40974 20.2843 3.71569 20.5903 4.092 20.782C4.519 21 5.079 21 6.197 21H11.804C12.921 21 13.48 21 13.908 20.782C14.2843 20.5903 14.5903 20.2843 14.782 19.908C15 19.48 15 18.921 15 17.803V15M9 9H11.8C12.92 9 13.48 9 13.908 9.218C14.2843 9.40974 14.5903 9.71569 14.782 10.092C15 10.519 15 11.079 15 12.197V15" stroke="#E70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                        <span class="icon-copied">
+                            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M2.46786 4.84886L0.812128 3.19313C0.722911 3.10392 0.601906 3.05379 0.475734 3.05379C0.349561 3.05379 0.228557 3.10392 0.139339 3.19313C0.0501218 3.28235 0 3.40336 0 3.52953C0 3.592 0.0123053 3.65386 0.0362132 3.71158C0.060121 3.7693 0.0951632 3.82175 0.139339 3.86592L2.13385 5.86043C2.31994 6.04652 2.62055 6.04652 2.80664 5.86043L7.85494 0.812128C7.94416 0.722911 7.99428 0.601906 7.99428 0.475734C7.99428 0.349561 7.94416 0.228557 7.85494 0.139339C7.76572 0.0501219 7.64472 0 7.51855 0C7.39237 0 7.27137 0.0501219 7.18215 0.139339L2.46786 4.84886Z" fill="white"/>
+</svg>                        </span>
+                    </button>
+                </div>
+                <h1 class="entry-title">United States: TotalEnergies acquires 50% of Clearway, the 5th largest U.S. renewable energy player</h1>
+                                                <div class="entry-date-cat">
+                    <time>
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M15.5556 4.5V7.7M8.44444 4.5V7.7M4 10.9H20M5.77778 6.1H18.2222C19.2041 6.1 20 6.81634 20 7.7V18.9C20 19.7837 19.2041 20.5 18.2222 20.5H5.77778C4.79594 20.5 4 19.7837 4 18.9V7.7C4 6.81634 4.79594 6.1 5.77778 6.1Z" stroke="#E70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>                        05/25/2022                    </time>
+                                            <div class="entry-cats">
+                            <a class="entry-cat cat-electricite" href="https://totalenergies.com/newsroom/section/communiques-de-presse/?lang=eng&topic=electricite"
+                                    data-tealium-element="Electricity"
+                                    data-tealium-event="action"
+                                    data-tealium-location="search_results_theme_tags"
+                                >Electricity</a><a class="entry-cat cat-renouvelables" href="https://totalenergies.com/newsroom/section/communiques-de-presse/?lang=eng&topic=renouvelables"
+                                    data-tealium-element="Renewables"
+                                    data-tealium-event="action"
+                                    data-tealium-location="search_results_theme_tags"
+                                >Renewables</a>
+                        </div>
+                                    </div>
+                            </div>
+            <div id="single-totalenergies__content--container-content">
+                <div class="entry-content"><p><strong>Paris, May 25, 2022</strong> – TotalEnergies announces the signature of agreements with Global Infrastructure Partners (GIP) to acquire 50% of Clearway Energy Group (CEG), the 5<sup>th</sup> US renewable energy player. This constitutes its largest acquisition in the renewable energy in the United States, one of the top 3 renewable markets in the world. With such transaction, TotalEnergies is further accelerating its growth in the renewable energy sector by partnering with GIP, a leading global infrastructure fund.</p>
+
+<p>CEG is a developer of renewables projects and controls and owns 42 % of economic interest of its listed subsidiary, Clearway Energy Inc. (CWEN), into which projects are dropped when they reach commercial operation. </p>
+
+<p>With this acquisition, TotalEnergies is establishing a major position in the U.S. renewable energy and storage market. Clearway has 7.7 GW<sup>1</sup> of wind and solar assets in operation through its listed subsidiary CWEN and has a 25 GW pipeline of renewable and storage projects, of which 15 GW are in an advanced stage of development. Headquartered in San Francisco, Clearway has approximately 760 employees.</p>
+
+<p>In the frame of this transaction, GIP will receive $1.6 billion in cash and an interest of 50% minus one share in the TotalEnergies subsidiary that holds its 50.6% ownership in SunPower Corporation (NASDAQ: SPWR), leader in residential solar in the U.S. The transaction takes into account valuations of $35.1 per share for CWEN and $18 per share for SunPower.</p>
+
+<p>As part of this partnership, TotalEnergies will contribute to enhance Clearway’s growth prospects by providing CWEN in the U.S. with access to its power trading capabilities and will give it priority on the farm down of its own developed projects.</p>
+
+<p>The acquisition brings TotalEnergies' renewable portfolio in the U.S. to more than 25 GW and contributes to the objective that the United States account for at least 25% of the Company's global target of 100 GW by 2030.</p>
+
+<p>This transaction complements the portfolio that TotalEnergies has built up in the U.S. since the beginning of 2021:</p>
+
+<ul>
+	<li>In large-scale solar, TotalEnergies is already developing 8 GW of projects following the acquisition of a projects portfolio from SunChase, its partnership with Hanwha Energy and the recent acquisition of Core Solar. </li>
+	<li>In offshore wind, TotalEnergies will develop 4 GW of projects off the coast of New York and North Carolina, after having been successful in tenders.</li>
+</ul>
+
+<p>Finally, TotalEnergies welcomes GIP as an equity partner in SunPower. SunPower is the second largest residential solar company in the U.S., providing customers with fully integrated solar, storage, home energy and financing solutions. TotalEnergies and GIP are well-positioned to support together SunPower management’s growth strategy. </p>
+
+<p>“We are delighted with this partnership with Global Infrastructure Partners, which is a major player in renewables, particularly in the United States. It allows TotalEnergies to scale up in the U.S. market, one of the most dynamic in the world, benefiting from operating assets and a 25 GW high quality pipeline, in wind, solar and storage, with a wide geographic coverage with a presence in 34 states. This transaction perfectly fits with our strategy to make renewable electricity one of our main growth drivers along with liquefied natural gas that we have recently reinforced with the launch of Cameron extension. It illustrates our priority to accelerate the transformation of the company to become a sustainable and profitable multi-energy company,” <strong>said Patrick Pouyanné, Chairman and CEO of TotalEnergies.</strong></p>
+
+<p>“We are extremely pleased to partner with TotalEnergies to continue leading the energy transition in the U.S. We are proud of the growth and accomplishments of the Clearway team since our initial investment in 2018, and we are confident that with TotalEnergies as a partner, Clearway will be able to accelerate the deployment of cost competitive renewable power in the U.S. At the same time, GIP’s investment in SunPower is our initial commitment in the distributed generation space, which we believe will provide critical solutions to facilitate the nation’s clean energy future. The scale, capabilities and ambition that both GIP and TotalEnergies bring to this partnership will support our shared vision to build industry-leading utility scale and distributed renewables platforms in the U.S.,” <strong>said Adebayo Ogunlesi, Chairman and CEO of Global Infrastructure Partners.</strong></p>
+
+<p>Both transactions are subject to customary conditions, including receipt of requisite regulatory approvals. </p>
+
+
+<div class="align-center embedded-entity resize-image" style="00">
+      <div class="media-image">
+      
+      <div class="image">
+        <img src="https://totalenergies.com/sites/g/files/nytnzq121/files/styles/w_1110/public/images/2022-05/clearway-assets.png?itok=fUrF7hhF" width="658" height="371" alt="Clearway assets">
+
+
+
+    </div>
+  
+
+
+  </div>
+
+  </div>
+  
+
+<p><sup>1 </sup><em>Powers are expressed in dc and correspond respectively in ac to 7 GWac in operation and 22,3 GWac in development</em></p>
+
+<p>*** </p></div>                
+                    <div class="text-warning"><p><strong>TotalEnergies and renewable electricity</strong></p>
+
+<p>As part of its ambition to get to net zero by 2050, TotalEnergies is building a portfolio of activities in renewables and electricity. At the end of 2021, TotalEnergies' gross renewable electricity generation capacity is more than 10 GW. TotalEnergies will continue to expand this business to reach 35 GW of gross production capacity from renewable sources and storage by 2025, and then 100 GW by 2030 with the objective of being among the world's top 5 producers of electricity from wind and solar energy.<br />
+&nbsp;</p>
+
+<p><strong>About TotalEnergies</strong></p>
+
+<p>TotalEnergies is a global multi-energy company that produces and markets energies: oil and biofuels, natural gas and green gases, renewables and electricity. Our more than 100,000 employees are committed to energy that is ever more affordable, cleaner, more reliable and accessible to as many people as possible. Active in more than 130 countries, TotalEnergies puts sustainable development in all its dimensions at the heart of its projects and operations to contribute to the well-being of people.</p>
+
+<p><strong>TotalEnergies&nbsp;Contacts</strong></p>
+
+<ul>
+	<li>Media&nbsp;Relations: +33 (0)1 47 44 46 99 l&nbsp;<a href="/cdn-cgi/l/email-protection#87f7f5e2f4f4e2c7f3e8f3e6ebe2e9e2f5e0eee2f4a9e4e8ea"><span class="__cf_email__" data-cfemail="a5d5d7c0d6d6c0e5d1cad1c4c9c0cbc0d7c2ccc0d68bc6cac8">[email&#160;protected]</span></a>&nbsp;l&nbsp;<a href="https://twitter.com/TotalEnergiesPR" target="_blank">@TotalEnergiesPR</a></li>
+	<li>Investor&nbsp;Relations: +33 (0)1 47 44 46 46 l&nbsp;<a href="/cdn-cgi/l/email-protection#08617a487c677c69646d666d7a6f616d7b266b6765"><span class="__cf_email__" data-cfemail="761f0436021902171a13181304111f13055815191b">[email&#160;protected]</span></a></li>
+</ul>
+
+<p><strong>TotalEnergies on social media</strong></p>
+
+<ul>
+	<li>Twitter :&nbsp;<a href="https://twitter.com/TotalEnergies" target="_blank">@TotalEnergies</a></li>
+	<li>LinkedIn :&nbsp;<a href="https://www.linkedin.com/company/totalenergies/" target="_blank">TotalEnergies</a></li>
+	<li>Facebook :&nbsp;<a href="https://www.facebook.com/TotalEnergiesFrance/" target="_blank">TotalEnergies</a></li>
+	<li>Instagram :&nbsp;<a href="https://www.instagram.com/totalenergies/" target="_blank">TotalEnergies</a></li>
+</ul></div>                    <div class="text-warning" style="margin-top:0;">
+                        <p style="margin:30px 0">
+                            <strong>About TotalEnergies</strong><br>
+                                       TotalEnergies is a global integrated energy company that produces and markets energies: oil and biofuels, natural gas, biogas and low-carbon hydrogen, renewables and electricity. Our more than 100,000 employees are committed to provide as many people as possible with energy that is more reliable, more affordable and more sustainable. Active in about 120 countries, TotalEnergies places sustainability at the heart of its strategy, its projects and its operations.                        </p>
+                        <p>
+                            <strong>Cautionary Note</strong><br>
+                                       The terms "TotalEnergies", "TotalEnergies company" or "Company" in this document 
+                                       are used to designate TotalEnergies SE and the consolidated entities that are 
+                                       directly or indirectly controlled by TotalEnergies SE. Likewise, the words "we", 
+                                       "us" and "our" may also be used to refer to these entities or to their employees. 
+                                       The entities in which TotalEnergies SE directly or indirectly owns a shareholding 
+                                       are separate legal entities. This document may contain forward-looking information 
+                                       and statements that are based on a number of economic data and assumptions made 
+                                       in a given economic, competitive and regulatory environment. They may prove to 
+                                       be inaccurate in the future and are subject to a number of risk factors. Neither 
+                                       TotalEnergies SE nor any of its subsidiaries assumes any obligation to update 
+                                       publicly any forward-looking information or statement, objectives or trends 
+                                       contained in this document whether as a result of new information, future events 
+                                       or otherwise. Information concerning risk factors, that may affect TotalEnergies’ 
+                                       financial results or activities is provided in the most recent Registration 
+                                       Document, the French-language version of which is filed by TotalEnergies SE with 
+                                       the French securities regulator Autorité des Marchés Financiers (AMF), and in the 
+                                       Form 20-F filed with the United States Securities and Exchange Commission (SEC).                        </p>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="single-totalenergies__media">
+            </div>
+    <div id="newsletter-totalenergies">
+    <div id="newsletter-totalenergies__bg">
+        <img src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/img/bg/bg-newsletter.png.webp" nosrcset             alt="Receive our press releases" class="bg-newsletter">
+    </div>
+    <div id="newsletter-totalenergies__container">
+        <h2>Receive our press releases</h2>
+        <h3>If you would like to be notified by e-mail of our publications, please tick the relevant boxes and leave us your contact details in the form.</h3>
+        <button class="open-newsletter cta cta-primary">
+            Subscribe        </button>
+    </div>
+    <div id="newsletter-totalenergies__modal" class="modal-newsletter">
+        <div id="newsletter-totalenergies__modal--container" class="modal-newsletter__container">
+            <div id="newsletter-totalenergies__modal--container-inner">
+                <button class="close-newsletter" aria-label="Close">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.06678 3.75639C4.2259 3.59235 4.44168 3.5002 4.66666 3.5002C4.89165 3.5002 5.10743 3.59235 5.26654 3.75639L14 12.7628L22.7334 3.75639C22.8117 3.67281 22.9053 3.60615 23.0089 3.5603C23.1124 3.51444 23.2237 3.4903 23.3364 3.48929C23.449 3.48828 23.5608 3.51042 23.665 3.55442C23.7693 3.59841 23.8641 3.66338 23.9437 3.74554C24.0234 3.8277 24.0864 3.92539 24.1291 4.03293C24.1717 4.14046 24.1932 4.25568 24.1922 4.37186C24.1912 4.48804 24.1678 4.60286 24.1234 4.70961C24.0789 4.81637 24.0142 4.91292 23.9332 4.99363L15.1998 14L23.9332 23.0064C24.0878 23.1714 24.1733 23.3924 24.1714 23.6219C24.1694 23.8513 24.0802 24.0707 23.9229 24.233C23.7656 24.3952 23.5527 24.4872 23.3303 24.4892C23.1078 24.4912 22.8935 24.403 22.7334 24.2436L14 15.2373L5.26654 24.2436C5.10652 24.403 4.89219 24.4912 4.66972 24.4892C4.44725 24.4872 4.23444 24.3952 4.07712 24.233C3.9198 24.0707 3.83057 23.8513 3.82864 23.6219C3.8267 23.3924 3.91223 23.1714 4.06678 23.0064L12.8002 14L4.06678 4.99363C3.90772 4.82955 3.81836 4.60703 3.81836 4.37501C3.81836 4.14299 3.90772 3.92047 4.06678 3.75639Z" fill="black"/>
+</svg>                </button>
+                <h2>E-mail alert</h2>
+                <h3>If you would like to be notified by e-mail of our publications, please tick the relevant boxes and leave us your contact details in the form.</h3>
+                <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript"></script>
+                <div class='gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_5' >
+                        <div class='gform_heading'>
+							<p class='gform_required_legend'>&quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot; indicates required fields</p>
+                        </div><form method='post' enctype='multipart/form-data'  id='gform_5'  action='/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/?lang=eng' data-formid='5' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_5' class='gform_fields top_label form_sublabel_below description_below validation_below'><fieldset id="field_5_11" class="gfield gfield--type-checkbox gfield--type-choice gfield--width-full custom-checkbox gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  data-js-reload="field_5_11" ><legend class='gfield_label gform-field-label gfield_label_before_complex' >I would like to follow:<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class='ginput_container ginput_container_checkbox'><div class='gfield_checkbox' id='input_5_11'><div class='gchoice gchoice_5_11_1'>
+								<input class='gfield-choice-input' name='input_11.1' type='checkbox'  value='Abonnés presse'  id='choice_5_11_1'   />
+								<label for='choice_5_11_1' id='label_5_11_1' class='gform-field-label gform-field-label--type-inline'>Press releases</label>
+							</div><div class='gchoice gchoice_5_11_2'>
+								<input class='gfield-choice-input' name='input_11.2' type='checkbox'  value='Abonnés Com Fi'  id='choice_5_11_2'   />
+								<label for='choice_5_11_2' id='label_5_11_2' class='gform-field-label gform-field-label--type-inline'>Financial communications</label>
+							</div></div></div></fieldset><div id="field_5_3" class="gfield gfield--type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  data-js-reload="field_5_3" ><label class='gfield_label gform-field-label' for='input_5_3'>Last name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_3' id='input_5_3' type='text' value='' class='large'    placeholder='Enter your last name' aria-required="true" aria-invalid="false"   /> </div></div><div id="field_5_4" class="gfield gfield--type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  data-js-reload="field_5_4" ><label class='gfield_label gform-field-label' for='input_5_4'>First name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_4' id='input_5_4' type='text' value='' class='large'    placeholder='Enter your first name' aria-required="true" aria-invalid="false"   /> </div></div><div id="field_5_5" class="gfield gfield--type-email gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  data-js-reload="field_5_5" ><label class='gfield_label gform-field-label' for='input_5_5'>Email address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_5' id='input_5_5' type='email' value='' class='large'   placeholder='Enter your email address' aria-required="true" aria-invalid="false"  />
+                        </div></div><div id="field_5_6" class="gfield gfield--type-select gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  data-js-reload="field_5_6" ><label class='gfield_label gform-field-label' for='input_5_6'>You are<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_select'><select name='input_6' id='input_5_6' class='large gfield_select'    aria-required="true" aria-invalid="false" ><option value='' selected='selected' class='gf_placeholder'>- None -</option><option value='Actionnaire' >Shareholder</option><option value='Analyste/Investisseur' >Analyst/Investor</option><option value='Journaliste' >Journalist</option><option value='Autre' >Other</option></select></div></div><div id="field_5_7" class="gfield gfield--type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  data-js-reload="field_5_7" ><label class='gfield_label gform-field-label' for='input_5_7'>Company<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_7' id='input_5_7' type='text' value='' class='large'    placeholder='Enter your company name' aria-required="true" aria-invalid="false"   /> </div></div><div id="field_5_8" class="gfield gfield--type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  data-js-reload="field_5_8" ><label class='gfield_label gform-field-label' for='input_5_8'>Country<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_8' id='input_5_8' type='text' value='' class='large'    placeholder='Enter your address' aria-required="true" aria-invalid="false"   /> </div></div><div id="field_5_9" class="gfield gfield--type-html gfield--width-half gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  data-js-reload="field_5_9" >In accordance with the provisions of the regulations on the protection of personal data, TotalEnergies SE, as data controller, processes your data in order to send you the selected publications. Any mandatory fields to be completed are marked with an asterisk.</div><div id="field_5_10" class="gfield gfield--type-captcha gfield--width-half field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  data-js-reload="field_5_10" ><label class='gfield_label gform-field-label' for='input_5_10'>CAPTCHA</label><div id='input_5_10' class='ginput_container ginput_recaptcha' data-sitekey='6LeIS90rAAAAABewt29vjFAnE8hVrhbZ4f2q9bXB'  data-theme='light' data-tabindex='0'  data-badge=''></div></div></div></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_5' class='gform_button button' value='Subscribe'  onclick='if(window["gf_submitting_5"]){return false;}  if( !jQuery("#gform_5")[0].checkValidity || jQuery("#gform_5")[0].checkValidity()){window["gf_submitting_5"]=true;}  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_5"]){return false;} if( !jQuery("#gform_5")[0].checkValidity || jQuery("#gform_5")[0].checkValidity()){window["gf_submitting_5"]=true;}  jQuery("#gform_5").trigger("submit",[true]); }' /> 
+            <input type='hidden' class='gform_hidden' name='is_submit_5' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='5' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_5' value='WyJ7XCIxMS4xXCI6XCI5ZTdhODJjNzcwNWJhYTNhOWJmNmFjMmM1Zjc2ZDlhOVwiLFwiMTEuMlwiOlwiZjYyZWYyMmVhYTg5MTE3NTZmYzhmM2I4ZTRiODc1YjRcIixcIjZcIjpbXCJiNTA1YmFmMjhlYTg1MmNmYWNiNDY1NjAwZTkyZDk2N1wiLFwiZThiYjQzYzYyZTY0Njk1NDdhYmIwNDQwMTFjOTUzMjFcIixcImFkZWQ1NmExODU1NzlhODc0Y2ZjNzFkMjE1NWIzZDRmXCIsXCJhZTYzMTUwYmI4ZGExYjA4ZDVjYmJhMjE4OGUzM2QxM1wiXX0iLCI5NWU4YjllZDNkZGVjMjVkZjdiY2FlNGQyNDgxNDIxMCJd' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_5' id='gform_target_page_number_5' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_5' id='gform_source_page_number_5' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        <p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="163"/><script>
+document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );
+</script>
+</p></form>
+                        </div><script>
+gform.initializeOnLoaded( function() {gformInitSpinner( 5, 'https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_5').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_5');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_5').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_5').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_5').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_5').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */  }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_5').val();gformInitSpinner( 5, 'https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [5, current_page]);window['gf_submitting_5'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_5').replaceWith(confirmation_content);jQuery(document).trigger('gform_confirmation_loaded', [5]);window['gf_submitting_5'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_5').text());}else{jQuery('#gform_5').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "5", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_5" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_5";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_5" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            jQuery( document ).trigger( 'gform_post_render', [5, current_page] );            gform.utils.trigger( { event: 'gform/postRender', native: false, data: { formId: 5, currentPage: current_page } } );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+                </div>
+        </div>
+    </div>
+</div>            <div id="single-totalenergies__see-also">
+            <div id="single-totalenergies__see-also--container">
+                <h2>See also</h2>
+                <div class="panel-body">
+                    <div class="row_post nb-3">
+                        <div class="post-info post-global post-related post-count post-74856 item-row">
+            <div class="img-wrapper ">
+            <img src="https://totalenergies.com/newsroom/wp-content/uploads/2026/09/c5789eb7884945742959158500e3536f-m.jpg.webp?t=1788782990"
+                 alt="During Offshore Northern Seas, Patrick Pouyanné shares what courage means for TotalEnergies"
+                srcset="https://totalenergies.com/newsroom/wp-content/uploads/2026/09/c5789eb7884945742959158500e3536f-t.jpg.webp 500w,https://totalenergies.com/newsroom/wp-content/uploads/2026/09/c5789eb7884945742959158500e3536f-m.jpg.webp 1000w" size="(max-width: 440px) 450px, (max-width: 992px) 1000px, 1500px"                 class="headline "/>
+        </div>
+        <div class="text-wrapper">
+        <time class="entry-date">August 27th, 2026</time>
+        <h3 class="entry-title" id="title_74856">
+            During Offshore Northern Seas, Patrick Pouyanné shares what courage means for TotalEnergies        </h3>
+        <div class="text-wrapper--cta">
+            <div class="entry-cta">
+                <span>
+                    Find out more                </span>
+                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M1.16675 6.49996H12.8334M12.8334 6.49996L7.00008 0.666626M12.8334 6.49996L7.00008 12.3333" stroke="#E70000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>            </div>
+        </div>
+    </div>
+    <a href="https://totalenergies.com/newsroom/during-offshore-northern-seas-patrick-pouyanne-shares-what-courage-means-for-totalenergies/?lang=eng"
+       aria-describedby="title_74856"
+       class="cta-overlay">
+        <span class="sr-only">Find out more</span>
+    </a>
+</div><div class="post-info post-global post-related post-count post-74229 item-row">
+            <div class="img-wrapper ">
+            <img src="https://totalenergies.com/newsroom/wp-content/uploads/2026/08/23ed0b7a6a752f035647fe629d225278-m.jpg.webp?t=1788782990"
+                 alt="TotalEnergies acquires Shell&#039;s renewables business and sells a 50% stake in a portfolio of developed assets to KKR"
+                srcset="https://totalenergies.com/newsroom/wp-content/uploads/2026/08/23ed0b7a6a752f035647fe629d225278-t.jpg.webp 500w,https://totalenergies.com/newsroom/wp-content/uploads/2026/08/23ed0b7a6a752f035647fe629d225278-m.jpg.webp 1000w" size="(max-width: 440px) 450px, (max-width: 992px) 1000px, 1500px"                 class="headline "/>
+        </div>
+        <div class="text-wrapper">
+        <time class="entry-date">August 03rd, 2026</time>
+        <h3 class="entry-title" id="title_74229">
+            TotalEnergies acquires Shell's renewables business and sells a 50% stake in a portfolio of developed assets to KKR        </h3>
+        <div class="text-wrapper--cta">
+            <div class="entry-cta">
+                <span>
+                    Find out more                </span>
+                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M1.16675 6.49996H12.8334M12.8334 6.49996L7.00008 0.666626M12.8334 6.49996L7.00008 12.3333" stroke="#E70000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>            </div>
+        </div>
+    </div>
+    <a href="https://totalenergies.com/newsroom/totalenergies-acquires-shells-renewables-business-and-sells-a-50-stake-in-a-portfolio-of-developed-assets-to-kkr/?lang=eng"
+       aria-describedby="title_74229"
+       class="cta-overlay">
+        <span class="sr-only">Find out more</span>
+    </a>
+</div><div class="post-info post-global post-related post-count post-74010 item-row">
+            <div class="img-wrapper ">
+            <img src="https://totalenergies.com/newsroom/wp-content/uploads/2026/08/bc60a1a8ebaa39ea7f6d564e66160dff-m.jpg.webp?t=1788782990"
+                 alt="Renewables in Europe: TotalEnergies Acquires Shell&#039;s Renewables Business and Sells a 50% Stake in a Portfolio of Developed Assets to ..."
+                srcset="https://totalenergies.com/newsroom/wp-content/uploads/2026/08/bc60a1a8ebaa39ea7f6d564e66160dff-t.jpg.webp 500w,https://totalenergies.com/newsroom/wp-content/uploads/2026/08/bc60a1a8ebaa39ea7f6d564e66160dff-m.jpg.webp 1000w" size="(max-width: 440px) 450px, (max-width: 992px) 1000px, 1500px"                 class="headline "/>
+        </div>
+        <div class="text-wrapper">
+        <time class="entry-date">August 03rd, 2026</time>
+        <h3 class="entry-title" id="title_74010">
+            Renewables in Europe: TotalEnergies Acquires Shell's Renewables Business and Sells a 50% Stake in a Portfolio of Developed Assets to KKR        </h3>
+        <div class="text-wrapper--cta">
+            <div class="entry-cta">
+                <span>
+                    Find out more                </span>
+                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M1.16675 6.49996H12.8334M12.8334 6.49996L7.00008 0.666626M12.8334 6.49996L7.00008 12.3333" stroke="#E70000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>            </div>
+        </div>
+    </div>
+    <a href="https://totalenergies.com/newsroom/renewables-in-europe-totalenergies-acquires-shells-renewables-business-and-sells-a-50-stake-in-a-portfolio-of-developed-assets-to-kkr/?lang=eng"
+       aria-describedby="title_74010"
+       class="cta-overlay">
+        <span class="sr-only">Find out more</span>
+    </a>
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+<footer id="footer-totalenergies">
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2929 8.79289C11.6834 8.40237 12.3166 8.40237 12.7071 8.79289L18.7071 14.7929C19.0976 15.1834 19.0976 15.8166 18.7071 16.2071C18.3166 16.5976 17.6834 16.5976 17.2929 16.2071L12 10.9142L6.70711 16.2071C6.31658 16.5976 5.68342 16.5976 5.29289 16.2071C4.90237 15.8166 4.90237 15.1834 5.29289 14.7929L11.2929 8.79289Z" fill="white"/>
+</svg>    </button>
+    <div id="footer-totalenergies__container">
+        <div id="footer-totalenergies__container--links">
+                            <a href="https://totalenergies.com/newsroom/section/contacts/?lang=eng"
+                                           data-tealium-element="Contact"
+                       data-tealium-event="action"
+                       data-tealium-location="footer">
+                    Contact                </a>
+                            <a href="https://totalenergies.com/newsroom/terms-and-conditions-of-use/?lang=eng"
+                                           data-tealium-element="Terms of Use (ToU)"
+                       data-tealium-event="action"
+                       data-tealium-location="footer">
+                    Terms of Use (ToU)                </a>
+                            <a href="https://totalenergies.com/newsroom/personal-data/?lang=eng"
+                                           data-tealium-element="Personal Data and Cookies Charter"
+                       data-tealium-event="action"
+                       data-tealium-location="footer">
+                    Personal Data and Cookies Charter                </a>
+                            <a href="https://totalenergies.com/accessibility"
+                    target="_blank" rel="noopener"                       data-tealium-element="Accessibility"
+                       data-tealium-event="action"
+                       data-tealium-location="footer">
+                    Accessibility                </a>
+                            <a href="https://totalenergies.com/site-map"
+                    target="_blank" rel="noopener"                       data-tealium-element="Sitemap"
+                       data-tealium-event="action"
+                       data-tealium-location="footer">
+                    Sitemap                </a>
+                        <span>© 2026 TotalEnergies</span>
+        </div>
+        <div id="footer-totalenergies__container--socials">
+            <h2>Follow us</h2>
+            <a href="https://www.facebook.com/TotalEnergies/" target="_blank" rel="noopener" aria-label="Facebook"
+               data-tealium-element="follow_us_facebook"
+               data-tealium-event="exit"
+               data-tealium-location="footer"
+            >
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M22 12.5607C22 7.004 17.5233 2.5 12 2.5C6.47667 2.5 2 7.004 2 12.5607C2 17.5833 5.656 21.7453 10.4373 22.5V15.4693H7.89867V12.56H10.4373V10.344C10.4373 7.82267 11.93 6.42933 14.2147 6.42933C15.308 6.42933 16.4533 6.626 16.4533 6.626V9.102H15.1913C13.9493 9.102 13.5627 9.878 13.5627 10.674V12.5607H16.336L15.8927 15.4687H13.5627V22.5C18.344 21.7453 22 17.5833 22 12.5607Z" fill="#1877F2"/>
+</svg>            </a>
+            <a href="https://x.com/TotalEnergies" target="_blank" rel="noopener" aria-label="X"
+               data-tealium-element="follow_us_x"
+               data-tealium-event="exit"
+               data-tealium-location="footer"
+            >
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M13.7124 11.2893L20.4133 3.5H18.8254L13.0071 10.2633L8.35992 3.5H3L10.0274 13.7273L3 21.8955H4.58799L10.7324 14.7533L15.6401 21.8955H21L13.7121 11.2893H13.7124ZM11.5375 13.8174L10.8255 12.799L5.16017 4.69542H7.59922L12.1712 11.2353L12.8832 12.2537L18.8262 20.7545H16.3871L11.5375 13.8178V13.8174Z" fill="black"/>
+</svg>            </a>
+            <a href="https://www.linkedin.com/company/totalenergies/" target="_blank" rel="noopener" aria-label="LinkedIn"
+               data-tealium-element="follow_us_linkedin"
+               data-tealium-event="exit"
+               data-tealium-location="footer"
+            >
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M21 4.82353V20.1765C21 20.5275 20.8606 20.8641 20.6123 21.1123C20.3641 21.3606 20.0275 21.5 19.6765 21.5H4.32353C3.97251 21.5 3.63586 21.3606 3.38765 21.1123C3.13944 20.8641 3 20.5275 3 20.1765V4.82353C3 4.47251 3.13944 4.13586 3.38765 3.88765C3.63586 3.63944 3.97251 3.5 4.32353 3.5H19.6765C20.0275 3.5 20.3641 3.63944 20.6123 3.88765C20.8606 4.13586 21 4.47251 21 4.82353ZM8.29412 10.3824H5.64706V18.8529H8.29412V10.3824ZM8.53235 7.47059C8.53375 7.27036 8.49569 7.07182 8.42035 6.8863C8.34502 6.70078 8.23387 6.53191 8.09328 6.38935C7.95268 6.24678 7.78537 6.1333 7.60091 6.0554C7.41646 5.97749 7.21846 5.93668 7.01824 5.93529H6.97059C6.5634 5.93529 6.17289 6.09705 5.88497 6.38497C5.59705 6.67289 5.43529 7.0634 5.43529 7.47059C5.43529 7.87777 5.59705 8.26828 5.88497 8.55621C6.17289 8.84413 6.5634 9.00588 6.97059 9.00588C7.17083 9.01081 7.37008 8.97623 7.55696 8.90413C7.74383 8.83202 7.91467 8.7238 8.0597 8.58565C8.20474 8.44749 8.32113 8.28212 8.40223 8.09897C8.48333 7.91582 8.52755 7.71848 8.53235 7.51824V7.47059ZM18.3529 13.7071C18.3529 11.1606 16.7329 10.1706 15.1235 10.1706C14.5966 10.1442 14.0719 10.2564 13.6019 10.4961C13.1318 10.7358 12.7328 11.0945 12.4447 11.5365H12.3706V10.3824H9.88235V18.8529H12.5294V14.3476C12.4911 13.8862 12.6365 13.4283 12.9339 13.0735C13.2313 12.7186 13.6567 12.4954 14.1176 12.4524H14.2182C15.06 12.4524 15.6847 12.9818 15.6847 14.3159V18.8529H18.3318L18.3529 13.7071Z" fill="#0073B1"/>
+</svg>            </a>
+            <a href="https://www.youtube.com/TotalEnergies" target="_blank" rel="noopener" aria-label="Youtube"
+               data-tealium-element="follow_us_youtube"
+               data-tealium-event="exit"
+               data-tealium-location="footer"
+            >
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.792 5.91483C20.6521 6.14589 21.3325 6.82626 21.5635 7.68633C21.9872 9.25244 22 12.5002 22 12.5002C22 12.5002 22 15.7608 21.5764 17.3141C21.3453 18.1741 20.665 18.8545 19.8049 19.0856C18.2516 19.5092 12 19.5092 12 19.5092C12 19.5092 5.74839 19.5092 4.19512 19.0856C3.33504 18.8545 2.65469 18.1741 2.42362 17.3141C2 15.748 2 12.5002 2 12.5002C2 12.5002 2 9.25244 2.41078 7.69917C2.64185 6.83909 3.32221 6.15873 4.18229 5.92767C5.73556 5.50404 11.9872 5.49121 11.9872 5.49121C11.9872 5.49121 18.2388 5.49121 19.792 5.91483ZM15.1836 12.5002L9.99743 15.504V9.49635L15.1836 12.5002Z" fill="#FF0000"/>
+</svg>            </a>
+            <a href="https://www.instagram.com/totalenergies" target="_blank" rel="noopener" aria-label="Instagram"
+               data-tealium-element="follow_us_instagram"
+               data-tealium-event="exit"
+               data-tealium-location="footer"
+            >
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.5C9.5556 3.5 9.2496 3.5102 8.2896 3.554C7.3314 3.5978 6.6768 3.7502 6.1044 3.9728C5.5044 4.1984 4.9602 4.5524 4.5102 5.0108C4.05253 5.46028 3.69831 6.0041 3.4722 6.6044C3.2508 7.1768 3.0978 7.832 3.054 8.7902C3.0108 9.7496 3 10.055 3 12.5C3 14.945 3.0102 15.2504 3.054 16.2104C3.0978 17.1686 3.2502 17.8232 3.4728 18.3956C3.6984 18.9956 4.0524 19.5398 4.5108 19.9898C4.96029 20.4475 5.50411 20.8017 6.1044 21.0278C6.6768 21.2498 7.3314 21.4022 8.2896 21.446C9.2496 21.4898 9.5556 21.5 12 21.5C14.4444 21.5 14.7504 21.4898 15.7104 21.446C16.6686 21.4022 17.3232 21.2498 17.8956 21.0272C18.4956 20.8016 19.0398 20.4476 19.4898 19.9892C19.9475 19.5397 20.3017 18.9959 20.5278 18.3956C20.7498 17.8232 20.9022 17.1686 20.946 16.2104C20.9898 15.2504 21 14.9444 21 12.5C21 10.0556 20.9898 9.7496 20.946 8.7896C20.9022 7.8314 20.7498 7.1768 20.5272 6.6044C20.3012 6.00384 19.947 5.45979 19.4892 5.0102C19.0397 4.55253 18.4959 4.19831 17.8956 3.9722C17.3232 3.7508 16.668 3.5978 15.7098 3.554C14.7504 3.5108 14.445 3.5 12 3.5ZM12 5.1218C14.403 5.1218 14.688 5.1308 15.6372 5.174C16.5144 5.2142 16.9908 5.36 17.3082 5.4842C17.7282 5.6468 18.0282 5.8424 18.3432 6.1568C18.6582 6.4718 18.8532 6.7718 19.0158 7.1918C19.1394 7.5092 19.2858 7.9856 19.326 8.8628C19.3692 9.812 19.3782 10.097 19.3782 12.5C19.3782 14.903 19.3692 15.188 19.326 16.1372C19.2858 17.0144 19.14 17.4908 19.0158 17.8082C18.8718 18.1991 18.6419 18.5528 18.3432 18.8432C18.0528 19.142 17.6992 19.3718 17.3082 19.5158C16.9908 19.6394 16.5144 19.7858 15.6372 19.826C14.688 19.8692 14.4036 19.8782 12 19.8782C9.5964 19.8782 9.312 19.8692 8.3628 19.826C7.4856 19.7858 7.0092 19.64 6.6918 19.5158C6.30087 19.3718 5.9472 19.1419 5.6568 18.8432C5.35811 18.5528 5.12828 18.1991 4.9842 17.8082C4.8606 17.4908 4.7142 17.0144 4.674 16.1372C4.6308 15.188 4.6218 14.903 4.6218 12.5C4.6218 10.097 4.6308 9.812 4.674 8.8628C4.7142 7.9856 4.86 7.5092 4.9842 7.1918C5.1468 6.7718 5.3424 6.4718 5.6568 6.1568C5.94716 5.85803 6.30085 5.62819 6.6918 5.4842C7.0092 5.3606 7.4856 5.2142 8.3628 5.174C9.312 5.1308 9.597 5.1218 12 5.1218Z" fill="url(#paint0_linear_899_3047)"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.503C11.6056 15.503 11.2151 15.4253 10.8508 15.2744C10.4865 15.1235 10.1554 14.9023 9.87656 14.6234C9.5977 14.3446 9.3765 14.0135 9.22559 13.6492C9.07467 13.2849 8.997 12.8944 8.997 12.5C8.997 12.1056 9.07467 11.7151 9.22559 11.3508C9.3765 10.9865 9.5977 10.6554 9.87656 10.3766C10.1554 10.0977 10.4865 9.8765 10.8508 9.72559C11.2151 9.57467 11.6056 9.497 12 9.497C12.7964 9.497 13.5603 9.81339 14.1234 10.3766C14.6866 10.9397 15.003 11.7036 15.003 12.5C15.003 13.2964 14.6866 14.0603 14.1234 14.6234C13.5603 15.1866 12.7964 15.503 12 15.503ZM12 7.874C10.7731 7.874 9.59647 8.36138 8.72892 9.22892C7.86138 10.0965 7.374 11.2731 7.374 12.5C7.374 13.7269 7.86138 14.9035 8.72892 15.7711C9.59647 16.6386 10.7731 17.126 12 17.126C13.2269 17.126 14.4035 16.6386 15.2711 15.7711C16.1386 14.9035 16.626 13.7269 16.626 12.5C16.626 11.2731 16.1386 10.0965 15.2711 9.22892C14.4035 8.36138 13.2269 7.874 12 7.874ZM17.9718 7.79C17.9718 8.08001 17.8566 8.35815 17.6515 8.56322C17.4464 8.76829 17.1683 8.8835 16.8783 8.8835C16.5883 8.8835 16.3101 8.76829 16.1051 8.56322C15.9 8.35815 15.7848 8.08001 15.7848 7.79C15.7848 7.49999 15.9 7.22185 16.1051 7.01678C16.3101 6.81171 16.5883 6.6965 16.8783 6.6965C17.1683 6.6965 17.4464 6.81171 17.6515 7.01678C17.8566 7.22185 17.9718 7.49999 17.9718 7.79Z" fill="url(#paint1_linear_899_3047)"/>
+    <defs>
+        <linearGradient id="paint0_linear_899_3047" x1="19" y1="5" x2="4.5" y2="20" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C823AC"/>
+            <stop offset="0.485577" stop-color="#F72715"/>
+            <stop offset="1" stop-color="#FDB91E"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_899_3047" x1="19" y1="5" x2="4.5" y2="20" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C823AC"/>
+            <stop offset="0.485577" stop-color="#F72715"/>
+            <stop offset="1" stop-color="#FDB91E"/>
+        </linearGradient>
+    </defs>
+</svg>            </a>
+        </div>
+    </div>
+</footer>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/newsroom/*"},{"not":{"href_matches":["/newsroom/wp-*.php","/newsroom/wp-admin/*","/newsroom/wp-content/uploads/*","/newsroom/wp-content/*","/newsroom/wp-content/plugins/*","/newsroom/wp-content/themes/totalenergies_2025/*","/newsroom/wp-content/themes/epp-root/*","/newsroom/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- Social Wall JS -->
+<script type="text/javascript">
+
+</script>
+        <script type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8">
+            jQuery(document).ready(function($) {
+                var form = $('form[id*="gform"]');
+                var nonce = 'd51663c629';
+                form.append('<input type="hidden" name="_wpnonce" value="' + nonce + '" />');
+                form.submit(function(e) {
+                    var nonce_input = form.find('input[name="_wpnonce"]');
+                    if (nonce_input.length && nonce_input.val() !== nonce) {
+                        e.preventDefault();
+                        form.find('.gfield_error').removeClass('gfield_error');
+                        form.find('.gfield_error_message').remove();
+                        form.find('input[name="_wpnonce"]').parent().addClass('gfield_error');
+                        form.find('input[name="_wpnonce"]').after('<div class="gfield_error_message" style="color: red;text-align: center;margin: 20px auto;">Invalid form submission. Please try again.</div>');
+                    }
+                });
+            });
+        </script>
+        <script id="sbsw_scripts-js-extra">
+var sbswOptions = {"adminAjaxUrl":"https://totalenergies.com/newsroom/wp-admin/admin-ajax.php","lightboxPlaceholder":"https://totalenergies.com/newsroom/wp-content/plugins/social-wall/img/lightbox-placeholder.png","placeholder":"https://totalenergies.com/newsroom/wp-content/plugins/social-wall/img/placeholder.png"};
+var sbswOptions = {"adminAjaxUrl":"https://totalenergies.com/newsroom/wp-admin/admin-ajax.php","lightboxPlaceholder":"https://totalenergies.com/newsroom/wp-content/plugins/social-wall/img/lightbox-placeholder.png","placeholder":"https://totalenergies.com/newsroom/wp-content/plugins/social-wall/img/placeholder.png"};
+//# sourceURL=sbsw_scripts-js-extra
+</script>
+<script id="sbsw_scripts-js" src="https://totalenergies.com/newsroom/wp-content/plugins/social-wall/js/social-wall.min.js?ver=2.0.1"></script>
+<script id="swiper-js-js" src="https://static.epresspack.eu/main/external-frontend-services/SwiperJs/current/swiper-bundle.min.js"></script>
+<script id="mCustomScrollbar-js-js" src="https://static.epresspack.eu/main/external-frontend-services/mCustomScrollbar/current/mCustomScrollbar.min.js"></script>
+<script id="tags-js-js" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/js/dataLayer.js?ver=1.0.9"></script>
+<script id="main-js-js-extra">
+var PT_Ajax = {"ajaxurl":"https://totalenergies.com/newsroom/wp-admin/admin-ajax.php","ajax_nonce":"9f2560eb0b"};
+//# sourceURL=main-js-js-extra
+</script>
+<script id="main-js-js" src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/assets/js/main.min.js?ver=1.0.9"></script>
+<script src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/lib/modules/attachment_cart/assets/js/fluxCart.js?ver=1.0.9" defer="defer" type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8"></script>
+<script src="https://totalenergies.com/newsroom/wp-content/themes/totalenergies_2025/lib/modules/attachment_cart/assets/js/expireCart.js?ver=1.0.9" defer="defer" type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8"></script>
+<script src="https://static.epresspack.eu/main/external-frontend-services/MomentJs/current/moment.min.js" defer="defer" type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8"></script>
+<script id="wp-dom-ready-js" src="https://totalenergies.com/newsroom/wp-includes/js/dist/dom-ready.min.js?ver=a06281ae5cf5500e9317"></script>
+<script id="wp-hooks-js" src="https://totalenergies.com/newsroom/wp-includes/js/dist/hooks.min.js?ver=7496969728ca0f95732d"></script>
+<script id="wp-i18n-js" src="https://totalenergies.com/newsroom/wp-includes/js/dist/i18n.min.js?ver=781d11515ad3d91786ec"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js" src="https://totalenergies.com/newsroom/wp-includes/js/dist/a11y.min.js?ver=af934e5259bc51b8718e"></script>
+<script id="gform_json-js" defer='defer' src="https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.8.17"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https://totalenergies.com/newsroom/wp-content/plugins/gravityforms","number_formats":[],"spinnerUrl":"https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/images/spinner.svg","version_hash":"4d30128ca8b468e6752c0608f4315680","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.8.17"></script>
+<script id="gform_recaptcha-js" defer='defer' src="https://www.google.com/recaptcha/api.js?hl=en&#038;&#038;ver=7.0.4#038;render=explicit"></script>
+<script id="gform_placeholder-js" defer='defer' src="https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.8.17"></script>
+<script id="gform_gravityforms_utils-js" defer='defer' src="https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=50c7bea9c2320e16728e44ae9fde5f26"></script>
+<script id="gform_gravityforms_theme_vendors-js" defer='defer' src="https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=54e7080aa7a02c83aa61fae430b9d869"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"4d30128ca8b468e6752c0608f4315680"}}},"hmr_dev":"","public_path":"https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/assets/js/dist/"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+</script>
+<script id="gform_gravityforms_theme-js" defer='defer' src="https://totalenergies.com/newsroom/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=bab19fd84843dabc070e73326d787910"></script>
+<script defer id="akismet-frontend-js" src="https://totalenergies.com/newsroom/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1787931338"></script>
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 5) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "5", currentPage: "1", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_5" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_5";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_5" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            jQuery( document ).trigger( 'gform_post_render', [5, 1] );            gform.utils.trigger( { event: 'gform/postRender', native: false, data: { formId: 5, currentPage: 1 } } );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+<script type="text/javascript" nonce="ap6pjgnJx-O5CVQxgyNdvgAAAE8">
+    const is_prod = window.location.href.includes('epresspack.us') ? 'qa' : 'prod';
+    (function (a, b, c, d) {
+        a = `//tags.tiqcdn.com/utag/totalms/totalcom/${is_prod}/utag.js`;
+        b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+        a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>
+</body>
+</html>
