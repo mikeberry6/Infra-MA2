@@ -1,0 +1,145 @@
+{
+  "companyId": "cmrxpjjyj0145ivhej5vka83l",
+  "name": "TotalEnergies North American Solar Portfolio (KKR co-investment)",
+  "sequence": 326,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0326-totalenergies-u-s-solar-portfolio-jv/attempt-1/research-decision.json",
+      "sha256": "158954fe662bcb8f4e84b916c048e191789825a30d7681d64926b002f8a9dfc7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0326-totalenergies-u-s-solar-portfolio-jv/attempt-1/source-verification.json",
+      "sha256": "07215298b06e12f68299d62930dfd6118f4ecfc0113b423bcef79f30d836424a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0326-totalenergies-u-s-solar-portfolio-jv/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b46d9bd1592ff7626542e2ca3f34a927af2d6b83c2126cf338bb048d7b12b61f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0326-totalenergies-u-s-solar-portfolio-jv/attempt-1/chatgpt-response-validation.json",
+      "sha256": "a80bd8b6cee4b6518da2a2f576947ad62cd8be400d0583a0e72125a85e283b82"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0326-totalenergies-u-s-solar-portfolio-jv/attempt-1/chatgpt-attestation.json",
+      "sha256": "83d53fc62862e18bbff59328a98d51e15895d1c2357eb48b076a4dd326f34e3c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/review.json",
+      "sha256": "86c525a7b579e125c7964e79eb588cd5de014d605714b7168bf49968d884afcf"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk5zs022zivhelp1me6sy",
+      "seedRecordId": "OFA-0AF3F4BFA474",
+      "expectedSeedSha256": "e9f26f748c3e71affef09528bf6c75d3b7a2d67258dc3e0203cfafc08606e442",
+      "expectedOwnerSha256": "eb3cae5aad44ccb0882fb68fc3b850395d58c618b59c139b32872e3d0d55dc4e",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "KKR Multi-Strategy Alternatives Fund LP",
+        "attributionConfidence": null,
+        "attributionRationale": "The Maverick regulatory filing names KKR Multi-Strategy Alternatives Fund LP in the buyer chain; the Canadian Big Sky buyer remains undisclosed and no matching published fund record is linked.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace unsupported inferred KKR Global Infrastructure Investors V with the expressly disclosed Maverick buyer fund. Limit the disclosure to Maverick; do not extend it to Big Sky or create a fund/link.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/total-maverick.pdf",
+          "sha256": "ef565805ae2a9aafb91604e45c9c9f5c0b79b95d1f5587c7fddd439fc18cf33b",
+          "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225248/106514",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/total-closing.html",
+          "sha256": "174562bc13f0d3d7f791bbfe54a6c4091977681866dc2074160047da651203cf",
+          "url": "https://www.sec.gov/Archives/edgar/data/879764/000110465926035876/R9.htm",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtimiumq000v2i2bzbwprcgz",
+      "seedRecordId": "OFA-6E78611678D1",
+      "expectedSeedSha256": "ca2a290becf1eeac7afd6932ee840aa834dda8554dca1b4f16bddaf1f012e481",
+      "expectedOwnerSha256": "2203195266cf3689094ececff9ac1f03f006d9b4b109a0adadc742e845bfc644",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TotalEnergies directly retained 50%, joint control and the operator role; this is corporate ownership rather than a fund attribution.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct UNRESOLVED to the documented retained corporate owner, preserving 50% retention, legal chain, operator role and the completed December 2025 sale. No changes to ownership structure or text.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/total-maverick.pdf",
+          "sha256": "ef565805ae2a9aafb91604e45c9c9f5c0b79b95d1f5587c7fddd439fc18cf33b",
+          "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225248/106514",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/total-sale.html",
+          "sha256": "3c31da08594e7b8a212f6544b12e05be1fd75bcd3d2d0a5a64ccb82e71c96d65",
+          "url": "https://totalenergies.com/newsroom/renewables-totalenergies-divests-50-14-gw-solar-portfolio-north-america/?lang=eng",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/total-closing.html",
+          "sha256": "174562bc13f0d3d7f791bbfe54a6c4091977681866dc2074160047da651203cf",
+          "url": "https://www.sec.gov/Archives/edgar/data/879764/000110465926035876/R9.htm",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "a3e6f5add5fa061655b56fe6340ac0201eada09f77a8c58f2c9d38303dcfbd3f",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk5zs022zivhelp1me6sy",
+      "sha256": "eb3cae5aad44ccb0882fb68fc3b850395d58c618b59c139b32872e3d0d55dc4e"
+    },
+    {
+      "ownerId": "cmtimiumq000v2i2bzbwprcgz",
+      "sha256": "2203195266cf3689094ececff9ac1f03f006d9b4b109a0adadc742e845bfc644"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0326-totalenergies-u-s-solar-portfolio-jv-v1/proposal.json",
+      "sha256": "79798558dc7f43b8310ef7286fe4236881abd812cf9e76be78fd67ba9bf6122a"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0326-totalenergies-u-s-solar-portfolio-jv-v1.json",
+      "sha256": "85ccf38b66b9c7b73714186cf0616bd50a4a5ac79aa10e0dee7cb00265830efe"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0324-0328-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "42a869575ed386db40dd5eed8f0e975749f6ef2112cc50cef24890114c4dbd40",
+      "memberIndex": 2
+    },
+    "receiptSha256": "fe3f40de792360e9fdbec2811394416067a555970ea25e91a0d65a32092f3a2a"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/total-maverick.pdf.capture.json",
+      "sha256": "09bf5a0e316b382c9b3ba99ba9245a8f17b0ec1ee79feb4dbf240e475fe95295"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/total-closing.html.capture.json",
+      "sha256": "c4464eeaabd6c70ed2698d4cecc993cc75ee2a1c4f5f895422aa740eefda24d5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/total-sale.html.capture.json",
+      "sha256": "ff79d19cf8cedb2540d3a2166cee902fbd2c57eb218c58ae30beb7394770ae4b"
+    }
+  ]
+}
