@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T08:34:54.623Z",
+  "manifestSha256": "1336c17cc1e1265c54d454e2d20c120e202362d18c632ba95978314e7205914e",
+  "approvalSha256": "8444011e59b8217a3621ff7f6e4c118a6ce9502771e1ea944062d3a66601c0c7",
+  "receiptSha256": "f93e830158b0dd90882a5f8b60e4f5da1b05f3a9200855922e535b403456a347",
+  "mutationCount": 7,
+  "changed": 7,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-BBD7466A51A3",
+      "companyId": "cmrxpjd8g00tsivhe75mpfqhf",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjd8g00tsivhe75mpfqhf?verification=1336c17cc1e1265c54d454e2d20c120e202362d18c632ba95978314e7205914e",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Digital Colony Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Beanfield's 2019 acquisition announcement explicitly names Digital Colony Partners as acquirer; the 2023 OMERS announcement confirms DigitalBridge retains majority ownership. The generic DigitalBridge Equity label does not identify that disclosed fund. Retain Digital Colony Partners without inventing a matching fund link or exact ownership percentage."
+      }
+    },
+    {
+      "recordId": "OFA-AAA626D5F54F",
+      "companyId": "cmrxpjjko013jivhegryhtkk9",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjjko013jivhegryhtkk9?verification=1336c17cc1e1265c54d454e2d20c120e202362d18c632ba95978314e7205914e",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DOE's filed September 5, 2025 notice identifies Mubadala Energy, a subsidiary of Mubadala Investment Company, as the corporate investor whose 24.1% acquisition closed on August 7, 2025. This is a direct corporate investment program, not an undisclosed infrastructure fund; no separate fund or legal vehicle is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-04277D895FFB",
+      "companyId": "cmrxpjjko013jivhegryhtkk9",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjjko013jivhegryhtkk9?verification=1336c17cc1e1265c54d454e2d20c120e202362d18c632ba95978314e7205914e",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DOE filings distinguish CPP Investments' 22.8% direct governance interest via Kimmeridge SoTex Aggregator from its additional 10.3% economic look-through through Kimmeridge-managed funds. The exact fund allocation is not publicly disclosed; Sustainable Energies is a strategy label, not a disclosed fund, and no allocation is inferred."
+      }
+    }
+  ],
+  "passed": true
+}
