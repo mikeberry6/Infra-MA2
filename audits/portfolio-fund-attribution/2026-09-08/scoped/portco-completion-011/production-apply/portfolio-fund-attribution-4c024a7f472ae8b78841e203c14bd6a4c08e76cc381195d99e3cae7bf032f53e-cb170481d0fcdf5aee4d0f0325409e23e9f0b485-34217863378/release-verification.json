@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T10:56:05.637Z",
+  "manifestSha256": "4c024a7f472ae8b78841e203c14bd6a4c08e76cc381195d99e3cae7bf032f53e",
+  "approvalSha256": "c0b4a91eac17ae1f0d96dcfa569a16d766e3c5e33ac483c33dd3c110ff26457d",
+  "receiptSha256": "a8533ff1a6f954b1ea7b8fbf17a99350ceefe891fcec141e299546ebfb14996f",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-0CD4FB3B97B9",
+      "companyId": "cmtio97ao000cwa2bs0ga903e",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtio97ao000cwa2bs0ga903e?verification=4c024a7f472ae8b78841e203c14bd6a4c08e76cc381195d99e3cae7bf032f53e",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": "Macquarie Infrastructure Partners V",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Infrastructure Partners V",
+        "attributionConfidence": null,
+        "attributionRationale": "The STB's September 2025 control notice expressly identifies Pinsly as wholly owned through Pinsly Holdco and MIP V Rail by Macquarie Infrastructure Partners V. This corrects unresolved metadata while retaining the existing fund link and legal ownership chain."
+      }
+    },
+    {
+      "recordId": "OFA-FA10FF5FB6A6",
+      "companyId": "cmtiqlilt000ero2bboaqr577",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtiqlilt000ero2bboaqr577?verification=4c024a7f472ae8b78841e203c14bd6a4c08e76cc381195d99e3cae7bf032f53e",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDF identifies MEAG as Munich Re's asset manager and a Munich Re subsidiary as the investor. Munich Re's 2025 company report discloses MR Falcon and the Maverick 67 holdings. This is direct insurance-account ownership, not an inferred third-party fund; retain the existing project stakes and distinct holdco percentages."
+      }
+    }
+  ],
+  "passed": true
+}

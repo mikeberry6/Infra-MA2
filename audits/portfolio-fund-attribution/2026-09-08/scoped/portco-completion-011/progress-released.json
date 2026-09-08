@@ -1247,8 +1247,8 @@
       "name": "LBCT LLC",
       "sequence": 328,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Former OOIL corporate sellers OOCL LLC and LBCT Inc remain UNRESOLVED and lack compatible active seed bindings. Queue historical attribution binding repair. Preserve all six periods; do not declare a partial current-consortium correction fully verified or infer individual seller allocations.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1256,20 +1256,17 @@
       "name": "Pinsly Railroad Company",
       "sequence": 330,
       "reviewedEvidence": [],
-      "status": "VERIFIED",
+      "status": "REMAINING",
       "issue": null,
-      "completion": {
-        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-011/completion-evidence.json",
-        "sha256": "22ab848c011dc8507d3626d3390e86b76b663516d511d189b45b825b55339ceb"
-      }
+      "completion": null
     },
     {
       "companyId": "cmrxpjkc9014qivheyfmy3lle",
       "name": "Potters Industries, LLC",
       "sequence": 331,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Former TJC Resolute Fund IV and former PQ corporate ownership remain UNRESOLVED without compatible active seed bindings. Partners Capital also has a genuinely undisclosed vehicle and a null-production/non-null-seed rationale gap. Queue historical bindings and exact unresolved representation; no partial MSOF or UniSuper cleanup.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1277,8 +1274,8 @@
       "name": "TraPac, LLC",
       "sequence": 332,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Former Brookfield BIF II TP Aggregator and former MOL corporate ownership remain UNRESOLVED without compatible active seed bindings. Queue historical attribution repair while retaining current MIP VI 49% and ONE 51%; do not conflate this platform with the separate Jacksonville terminal.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1286,20 +1283,17 @@
       "name": "Treaty Oak Clean Energy, LLC",
       "sequence": 333,
       "reviewedEvidence": [],
-      "status": "VERIFIED",
+      "status": "REMAINING",
       "issue": null,
-      "completion": {
-        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-011/completion-evidence.json",
-        "sha256": "22ab848c011dc8507d3626d3390e86b76b663516d511d189b45b825b55339ceb"
-      }
+      "completion": null
     },
     {
       "companyId": "cmrxpjkid014xivhe2cjdm9ff",
       "name": "Yusen Terminals LLC",
       "sequence": 335,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Former NYK corporate ownership remains UNRESOLVED without a compatible active seed binding. Preserve the correctly linked former MIP III period and its undisclosed exact exit date. Queue historical NYK attribution repair; no partial ONE update or inferred Macquarie exit date.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1307,32 +1301,26 @@
       "name": "Maverick 6 & 7",
       "sequence": 337,
       "reviewedEvidence": [],
-      "status": "VERIFIED",
+      "status": "REMAINING",
       "issue": null,
-      "completion": {
-        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-011/completion-evidence.json",
-        "sha256": "22ab848c011dc8507d3626d3390e86b76b663516d511d189b45b825b55339ceb"
-      }
+      "completion": null
     },
     {
       "companyId": "cmtitg5el0000482b1lrael9x",
       "name": "Race Communications",
       "sequence": 339,
       "reviewedEvidence": [],
-      "status": "VERIFIED",
+      "status": "REMAINING",
       "issue": null,
-      "completion": {
-        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-011/completion-evidence.json",
-        "sha256": "22ab848c011dc8507d3626d3390e86b76b663516d511d189b45b825b55339ceb"
-      }
+      "completion": null
     },
     {
       "companyId": "cmrxpjops01bpivhejgre011g",
       "name": "TowerPoint Infrastructure Partners",
       "sequence": 340,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Meritage invests through affiliated funds whose exact vehicle remains undisclosed; the seed DIRECT_PROGRAM label is unsupported by the evidence and cannot be justified by missing fund information. Production UNRESOLVED with null rationale and required non-null seed rationale cannot be aligned by an equivalent-wording database rewrite. Queue exact unresolved representation and fund evidence; preserve all three owners with no partial MEAG/UIF update.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1340,8 +1328,8 @@
       "name": "Centre de recherche du CHUM (CRCHUM)",
       "sequence": 341,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Current fund allocations after the 2012 QIC entry and September 2023 QIC disposal are not disclosed. The 2010 ProjectCo annex distinguishes Fiera Axium Recherche equity from Fiera Axium Infrastructure Canada LP lending; it does not support treating a legal holding vehicle as a fund or asserting a direct corporate Meridiam program. Queue qualified historical/current fund attribution adjudication and removal of the unsupported North America I inference without inventing current stakes or replacing the fund with an SPV. Preserve all three periods.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1777,7 +1765,13 @@
       "completion": null
     }
   ],
-  "active": null,
+  "active": {
+    "batchId": "portco-completion-011",
+    "batchSha256": "179ac3bc5f84104c57ab0da4a3fcfa886ead9cfcac33f040173c1daafe5a5514",
+    "state": "RELEASED",
+    "releaseSha": "cb170481d0fcdf5aee4d0f0325409e23e9f0b485",
+    "failure": null
+  },
   "completedBatchIds": [
     "portco-completion-001",
     "portco-completion-002",
@@ -1788,8 +1782,7 @@
     "portco-completion-007",
     "portco-completion-008",
     "portco-completion-009",
-    "portco-completion-010",
-    "portco-completion-011"
+    "portco-completion-010"
   ],
   "consumedReceiptHashes": [
     "50061d92ba9f240bb192ca0e4b049c226824bff8702eee6b7d7872e272853c3f",
@@ -1801,8 +1794,7 @@
     "f93e830158b0dd90882a5f8b60e4f5da1b05f3a9200855922e535b403456a347",
     "a7ac0360313f9fa1bf664e5bf75b6a92f7197f7e80fa8b009247f61d0f54f4e2",
     "d868ffc5ad67ec93ab9cb4abc8aa26972856765f2fb35b408fce0caa277a89cf",
-    "e71c3debc5d4a4fd50010a0f71bbdb3f234ec17199cf1f7ce3d625ea0c744246",
-    "a8533ff1a6f954b1ea7b8fbf17a99350ceefe891fcec141e299546ebfb14996f"
+    "e71c3debc5d4a4fd50010a0f71bbdb3f234ec17199cf1f7ce3d625ea0c744246"
   ],
-  "progressSha256": "4e337b14ab13390c36640ebd82d72da832505c41e08fa7a11f28de03656c3283"
+  "progressSha256": "14a7b93c57e0962e4472576d577f1a89402dc949f62164b67e0c49a3a7974793"
 }
