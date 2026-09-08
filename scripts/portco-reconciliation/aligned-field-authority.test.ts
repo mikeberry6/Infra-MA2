@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {ALIGNED as M,ALIGNED_SOURCE_ROOT as S,ALIGNED_TASK_ROOT as T,ALIGNED_PACKET as P,ALIGNED_SOURCES as U,ALIGNED_OWNERS as O,ALIGNED_BATCH_ROOT as B,proveAlignedFieldAuthority,type AlignedInput} from "./aligned-field-authority";

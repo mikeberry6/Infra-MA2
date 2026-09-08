@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {EOLIAN as M,EOLIAN_SOURCE_ROOT as S,EOLIAN_TASK_ROOT as T,EOLIAN_PACKET as P,EOLIAN_SOURCES as U,EOLIAN_OWNERS as O,EOLIAN_BATCH_ROOT as B,proveEolianFieldAuthority,type EolianInput} from "./eolian-field-authority";

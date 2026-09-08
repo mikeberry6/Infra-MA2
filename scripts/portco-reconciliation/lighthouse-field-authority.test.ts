@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {LIGHTHOUSE as M,LIGHTHOUSE_SOURCE_ROOT as S,LIGHTHOUSE_TASK_ROOT as T,LIGHTHOUSE_PACKET as P,LIGHTHOUSE_SOURCES as U,LIGHTHOUSE_OWNERS as O,LIGHTHOUSE_BATCH_ROOT as B,LIGHTHOUSE_RENDERED_SOURCES as R,proveLighthouseFieldAuthority,type LighthouseInput} from "./lighthouse-field-authority";

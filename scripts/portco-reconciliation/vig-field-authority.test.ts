@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { VIG, VIG_OWNERS, VIG_SOURCES, VIG_SOURCE_ROOT, VIG_PACKET, VIG_TASK_ROOT, proveVigFieldAuthority, type VigInput } from "./vig-field-authority";

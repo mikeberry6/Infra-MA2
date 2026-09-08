@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {NEXUS as M,NEXUS_SOURCE_ROOT as S,NEXUS_TASK_ROOT as T,NEXUS_PACKET as P,NEXUS_SOURCES as U,NEXUS_OWNERS as O,NEXUS_BATCH_ROOT as B,proveNexusFieldAuthority,type NexusInput} from "./nexus-field-authority";

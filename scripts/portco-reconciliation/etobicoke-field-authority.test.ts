@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {ETOBICOKE as E,ETOBICOKE_SOURCE_ROOT as S,ETOBICOKE_TASK_ROOT as T,ETOBICOKE_PACKET as P,ETOBICOKE_SOURCES as U,proveEtobicokeFieldAuthority,type EtobicokeInput} from "./etobicoke-field-authority";

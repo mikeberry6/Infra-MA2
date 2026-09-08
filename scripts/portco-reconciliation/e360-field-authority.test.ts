@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {E360 as M,E360_SOURCE_ROOT as S,E360_TASK_ROOT as T,E360_PACKET as P,E360_SOURCES as U,E360_OWNERS as O,E360_BATCH_ROOT as B,proveE360FieldAuthority,type E360Input} from "./e360-field-authority";

@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {CLEARWAY as M,CLEARWAY_SOURCE_ROOT as S,CLEARWAY_TASK_ROOT as T,CLEARWAY_PACKET as P,CLEARWAY_SOURCES as U,CLEARWAY_OWNERS as O,CLEARWAY_BATCH_ROOT as B,proveClearwayFieldAuthority,type ClearwayInput} from "./clearway-field-authority";

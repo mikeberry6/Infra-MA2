@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { describe, expect, it } from "vitest";
 import { DATABANK_SOURCES, proveDatabankFieldAuthority, type DatabankInput } from "./databank-field-authority";
 import { hashWithoutField, sha256Canonical, sha256Text } from "./hash";

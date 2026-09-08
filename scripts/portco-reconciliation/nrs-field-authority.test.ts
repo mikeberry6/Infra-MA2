@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {NRS as M,NRS_SOURCE_ROOT as S,NRS_TASK_ROOT as T,NRS_PACKET as P,NRS_SOURCES as U,NRS_OWNERS as O,NRS_BATCH_ROOT as B,proveNrsFieldAuthority,type NrsInput} from "./nrs-field-authority";

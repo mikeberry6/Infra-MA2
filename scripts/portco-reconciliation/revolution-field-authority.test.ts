@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {REVOLUTION as M,REVOLUTION_SOURCE_ROOT as S,REVOLUTION_TASK_ROOT as T,REVOLUTION_PACKET as P,REVOLUTION_SOURCES as U,REVOLUTION_OWNERS as O,REVOLUTION_BATCH_ROOT as B,REVOLUTION_PRIMARY as PRIMARY,proveRevolutionFieldAuthority,type RevolutionInput} from "./revolution-field-authority";

@@ -1,0 +1,57 @@
+{
+  "recordedAt": "2026-09-08T03:44:46.735Z",
+  "batchId": "portco-completion-001",
+  "stage": "PRE_APPLY_VERIFIED",
+  "databaseWrites": false,
+  "regression": {
+    "passed": true,
+    "tests": 3753,
+    "passedTests": 3753,
+    "failedTests": 0,
+    "files": 204,
+    "startedAt": "2026-09-08T03:43:21.555Z",
+    "finishedAt": "2026-09-08T03:44:15.289Z",
+    "fullLocalReportSha256": "86e7047fcbbc35a4b70a8f2d25cc149592dab254c8af1f01c678cadae3def0c2"
+  },
+  "otherChecks": {
+    "appTypecheck": "PASS",
+    "strictToolTypecheck": "PASS",
+    "targetedEslint": "PASS",
+    "diffCheck": "PASS",
+    "offlineSeedValidation": {
+      "errors": 0,
+      "warnings": 54
+    },
+    "offlinePackets": {
+      "files": 144,
+      "databaseReads": 0,
+      "databaseWrites": 0
+    }
+  },
+  "dryRun": {
+    "mode": "DRY_RUN",
+    "databaseWrites": false,
+    "mutationCount": 10,
+    "pending": 10,
+    "alreadyApplied": 0,
+    "observedFingerprint": "9525948ce1af5d6267e45afcbb7badafd9238c397f04511e3cdae423ccbe3765",
+    "manifestSha256": "1db23d51f70b5f6a726ef8bd003e1518feb4595f51d84264047140b88dcfb028",
+    "note": "Recorded from successful CLI output during this preparation turn; execution timestamp was not emitted."
+  },
+  "counts": {
+    "fullyVerified": 0,
+    "parked": 0,
+    "remaining": 155,
+    "preparedNames": 10,
+    "preparedCorrections": 8,
+    "preparedSeedOnly": 1,
+    "preparedParked": 1
+  },
+  "preApplyRecovery": "Initial complete snapshot preserved. Durham's exact seed firm matches its existing organization rather than core fund manager label; shared identity binding accepts either exact observed name without an alias rewrite. Recompiled offline against the same immutable snapshot.",
+  "publication": {
+    "newRedactions": 0,
+    "rawOriginals": "Preserved locally; not staged",
+    "historicalEvidence": "Reused only where identical to pinned base; no recapture or republication",
+    "scan": "New publication copies passed local credential-format scan; GitHub protections retained"
+  }
+}

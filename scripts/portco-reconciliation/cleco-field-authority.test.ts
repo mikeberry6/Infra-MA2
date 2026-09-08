@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {CLECO as M,CLECO_SOURCE_ROOT as S,CLECO_TASK_ROOT as T,CLECO_PACKET as P,CLECO_SOURCES as U,CLECO_OWNERS as O,CLECO_BATCH_ROOT as B,proveClecoFieldAuthority,type ClecoInput} from "./cleco-field-authority";

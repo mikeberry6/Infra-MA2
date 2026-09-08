@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {AES as M,AES_SOURCE_ROOT as S,AES_TASK_ROOT as T,AES_PACKET as P,AES_SOURCES as U,AES_BATCH_ROOT as B,AES_RENDERED as R,proveAesFieldAuthority,type AesInput} from "./aes-field-authority";

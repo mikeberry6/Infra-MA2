@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { ROVER, ROVER_SOURCES, ROVER_SOURCE_ROOT, ROVER_PACKET, ROVER_TASK_ROOT, proveRoverFieldAuthority, type RoverInput } from "./rover-field-authority";

@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {MONTREAL as M,MONTREAL_SOURCE_ROOT as S,MONTREAL_TASK_ROOT as T,MONTREAL_PACKET as P,MONTREAL_SOURCES as U,proveMontrealFieldAuthority,type MontrealInput} from "./montreal-field-authority";

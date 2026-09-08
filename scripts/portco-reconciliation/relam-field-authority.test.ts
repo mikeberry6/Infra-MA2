@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {RELAM as M,RELAM_SOURCE_ROOT as S,RELAM_TASK_ROOT as T,RELAM_PACKET as P,RELAM_SOURCES as U,RELAM_BATCH_ROOT as B,proveRelamFieldAuthority,type RelamInput} from "./relam-field-authority";
