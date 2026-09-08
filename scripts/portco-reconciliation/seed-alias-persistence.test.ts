@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync } from "../portco-completion/historical-fixtures";
 import { describe, expect, it } from "vitest";
 import { baseCompanies, companies } from "../../prisma/seed-data/companies";
 import { sha256Canonical, sha256Text, hashWithoutField } from "./hash";
@@ -53,6 +54,9 @@ describe("already-superseded PortCo seed identity persistence", () => {
     const spec = verifySeedAttributionReconciliationSpec(json(`${directory}/seed-attribution-spec.json`));
     const manifest = verifySeedManifest(json(`${directory}/resulting-attribution-manifest.json`));
     const current = verifySeedManifest(json("prisma/seed-data/ownership-attributions.manifest.json"));
+    // Historical alias repair did not change attribution. Later protected completion
+    // batches may correct canonical metadata; retain the original exact comparison.
+    const historical = verifySeedManifest(JSON.parse(readHistoricalAuditFileSync("prisma/seed-data/ownership-attributions.manifest.json", "utf8")));
     const artifact = json(`${directory}/seed-attribution-reconciliation.json`);
     expect(spec.batchSha256).toBe(plan.repairSha256);
     expect(spec.upsertRecords).toEqual([]);
@@ -63,7 +67,7 @@ describe("already-superseded PortCo seed identity persistence", () => {
     expect(artifact.resultingManifestSha256).toBe(manifest.manifestSha256);
     for (const member of plan.members) {
       const belongsToCanonical = (record: { companyName: string; country: string }) => record.companyName === member.canonicalName && record.country === member.country;
-      expect(current.records.filter(belongsToCanonical)).toEqual(manifest.records.filter(belongsToCanonical));
+      expect(historical.records.filter(belongsToCanonical)).toEqual(manifest.records.filter(belongsToCanonical));
       expect(current.records.some((record) => record.companyName === member.retiredSeed.name && record.country === member.country)).toBe(false);
     }
     for (const record of artifact.removedRecords) {

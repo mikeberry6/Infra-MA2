@@ -20,6 +20,8 @@ The progress register is keyed by canonical company ID, not by fields or duplica
 
 The rationale for a substantive production correction must identify the factual defect, not stylistic preference. For equivalent wording retain the source-supported production text and align seed only. The shared checker cannot itself adjudicate source truth: the reviewed decision records remain part of the protected PR.
 
+`prepare-reviewed.ts` accepts a `completedReleases` list of immutable completion directories and receipt paths. `completedSeedLineage()` replays every preceding batch through the existing compiler, receipt-chain and completion validators, requiring consecutive progress and seed hashes and the exact current idle register. Only then may an older seed dependency be rebound to its frozen before-copy, and only when every selected company's seed record is byte-semantically unchanged. A changed selected record, missing receipt, omitted release or unexplained seed change fails closed. Original authority reports and hashes are never rewritten. Both historical single-image and multi-image snapshot envelopes are supported; their entire original payload hash and selected complete image remain mandatory.
+
 ## Release and verification
 
 One scoped PR combines checker changes when needed, decisions, compatible seed overlay, reviewed apply manifest and previous release bookkeeping. Run targeted checks during preparation, the full regression suite once on final contents, offline seed validation, and required GitHub build checks. Do not create a separate preliminary audit deployment.
