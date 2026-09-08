@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T19:22:20.797Z",
+  "manifestSha256": "fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+  "approvalSha256": "9d4ae6a2bf509fb1989f4c8cc2d9829630f6031988a2490263e245ac21b962f0",
+  "receiptSha256": "49a2446abfdb85d9bff9cc294a634f97573f624c91356a6a4cfc5edb296d5290",
+  "mutationCount": 7,
+  "changed": 7,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-CE08871CC054",
+      "companyId": "cmtizemhs0015282bzfefnqby",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtizemhs0015282bzfefnqby?verification=fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "NOVA's Fund II closing release explicitly identifies DartPoints as one of the fund's first two investments. Resolve missing fund metadata without changing control, vehicle, entry year or adding a fund link."
+      }
+    },
+    {
+      "recordId": "OFA-4E07DAA3E43E",
+      "companyId": "cmtj3t1o8000w062bydcb0tjr",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj3t1o8000w062bydcb0tjr?verification=fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's direct closing release identifies Google's completed Intersect acquisition and the separate IPX spinout. Resolve corporate-program attribution for the unchanged Alphabet owner; preserve the minority-to-control period and canonical carve-out. No IPX transaction is repeated."
+      }
+    }
+  ],
+  "passed": true
+}
