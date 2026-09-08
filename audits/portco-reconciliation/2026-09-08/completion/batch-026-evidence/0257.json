@@ -1,0 +1,61 @@
+{
+  "companyId": "cmrxpjg4f00y5ivhep8jj6phn",
+  "name": "Pine Gate Renewables",
+  "sequence": 257,
+  "classification": "PARKED",
+  "expectedImageSemanticSha256": "2fb1125088c6ac4da785689f0cd13a3ca5289d9bf17ddcc2a25395ec6285407a",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk1oz01wgivhehzt20uwm",
+      "sha256": "e642ad1f56f24f0f8256c3394bb0c76513639eaebf29ac19c21cc0f37a94f3b3"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/research-decision.json",
+      "sha256": "083eed52a07e777c37fa3eebb42bf00d215ef02d014cb85d40bc2dd41fa3f2c4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/application-research-decision.json",
+      "sha256": "67b12bc7e4c350772795154ba48a249b1cab48a5546deab9b2695c3d5dd9a07c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/source-verification.json",
+      "sha256": "bb116666e8c69b142a10bddd7027c51f68d0ee510d284441b1fe02009b3c80fb"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpk1oz01wgivhehzt20uwm"
+  ],
+  "issue": "The accepted attempt-2 research identifies historical HOOPP preferred equity and a separate exact HESTA exception, while the current applied company image contains only Generate's former owner. Resolving the missing owner/vehicle representation requires supported structural work, not an attribution-only patch. Preserve all prior transactions, the Realized platform, cancelled equity and separate successor boundaries; do not infer HESTA ownership.",
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/proposal-deferred-v2.json",
+      "sha256": "61e0b4643c06fe4ef4bc851fb47137880517378080a6d5fe29d735fc40138e96"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/approval-deferred-v2.json",
+      "sha256": "763fd17668871f2deda0b03f4bb4265db316326bf127c7e07b34234adb217f85"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0248-0263-v1/production-apply-run-33921498147/batch-apply-receipt.json",
+      "sha256": "1b9c99dea4b2336ea2fdb69d9a9272337e193157f01e75e71f26a9a7865b32b5",
+      "memberIndex": 3
+    },
+    "receiptSha256": "ef94b81271aaea347c394f3f6ce04611b2327a88af896f37e0a9594f949ade3e"
+  },
+  "sourceCaptures": []
+}

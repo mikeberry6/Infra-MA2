@@ -4,10 +4,14 @@ import { decisionSchema, fileSchema, nextNames, verifyProgress, verifySnapshot, 
 import { sha256Canonical } from "../portco-reconciliation/hash";
 import { semanticCompanyImageSha256 } from "../portco-reconciliation/apply-plan";
 import { verifyProposal, verifyApproval, verifyApplyReceipt } from "../portco-reconciliation/artifacts";
+import { companyImageSchema } from "../portco-reconciliation/schema";
 
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
 export const decisionRecordSchema = decisionSchema.omit({ expectedCompanySha256: true }).extend({
   expectedImageSemanticSha256: digest,
+  // A parked drift retains both the original applied image and an exact observed image.
+  // Never accepted for a no-op, seed alignment or production mutation.
+  parkedObservedImage: fileSchema.optional(),
   // Includes preserved/former owners, not just the rows being corrected.
   expectedOwners: z.array(z.strictObject({ ownerId: z.string().min(1), sha256: digest })).min(1),
   originalApply: z.strictObject({ proposal: fileSchema, approval: fileSchema,
@@ -33,8 +37,13 @@ export function validateDecisionRecords(input: { progress: unknown; records: unk
     const receipt = verifyApplyReceipt(r.originalApply.receipt.memberIndex === null ? envelope : envelope.members?.[r.originalApply.receipt.memberIndex]?.receipt, proposal, approval);
     if (!proposal.afterImage || receipt.companyId !== r.companyId || receipt.taskIndex !== r.sequence
       // The receipt retains the source task's label; the approved after-image is canonical.
-      || proposal.afterImage.name !== r.name || receipt.receiptSha256 !== r.originalApply.receiptSha256
-      || semanticCompanyImageSha256(proposal.afterImage) !== r.expectedImageSemanticSha256) throw Error("Original applied identity/semantic image binding differs");
+      || proposal.afterImage.name !== r.name || receipt.receiptSha256 !== r.originalApply.receiptSha256) throw Error("Original applied identity/semantic image binding differs");
+    if (r.parkedObservedImage) {
+      if (r.classification !== "PARKED" || r.owners.length || !r.issue) throw Error("Observed drift is allowed only for a zero-mutation parked issue");
+      const observed = companyImageSchema.parse(input.read(r.parkedObservedImage));
+      if (observed.id !== r.companyId || observed.name !== r.name || semanticCompanyImageSha256(observed) !== r.expectedImageSemanticSha256
+        || !same(observed.ownershipPeriods.map(o => o.id).sort(), r.expectedOwners.map(o => o.ownerId).sort())) throw Error("Parked observed identity/owner binding differs");
+    } else if (semanticCompanyImageSha256(proposal.afterImage) !== r.expectedImageSemanticSha256) throw Error("Original applied identity/semantic image binding differs");
     for (const ref of r.evidence) input.read(ref);
     const captures = r.sourceCaptures.map(ref => input.read(ref) as { url: string; path: string; sha256: string; httpStatus: number; byteLength: number });
     if ((r.classification === "PARKED") !== (r.issue !== null) || (r.issue !== null && r.owners.length)) throw Error("Parked company must state exact work and have zero patches");
@@ -65,9 +74,10 @@ export function bindDecisionRecords(records: DecisionRecord[], snapshotInput: un
     if (company.image.name !== r.name || semanticCompanyImageSha256(company.image) !== r.expectedImageSemanticSha256) throw Error(`Changed canonical dependency: ${r.name}; preserve snapshot and review`);
     const observed = company.owners.map(o => ({ ownerId: o.id, sha256: sha256Canonical(o) })).sort((a,b) => a.ownerId.localeCompare(b.ownerId));
     if (!same(observed, [...r.expectedOwners].sort((a,b) => a.ownerId.localeCompare(b.ownerId)))) throw Error(`Changed complete owner dependency: ${r.name}`);
-    const { expectedImageSemanticSha256: _image, expectedOwners: _owners, originalApply, sourceCaptures, ...decision } = r;
+    const { expectedImageSemanticSha256: _image, expectedOwners: _owners, originalApply, sourceCaptures, parkedObservedImage, ...decision } = r;
     return decisionSchema.parse({ ...decision, expectedCompanySha256: sha256Canonical(company),
       evidence: [...decision.evidence, originalApply.proposal, originalApply.approval,
-        { path: originalApply.receipt.path, sha256: originalApply.receipt.sha256 }, ...sourceCaptures] });
+        { path: originalApply.receipt.path, sha256: originalApply.receipt.sha256 }, ...sourceCaptures,
+        ...(parkedObservedImage ? [parkedObservedImage] : [])] });
   });
 }

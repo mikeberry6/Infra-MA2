@@ -11,8 +11,13 @@ User-authorized token reduction for this task:
 - Keep ten-name releases, one active release, serial writes and precise parks. Reviewed-but-unapplied is not verified.
 - Wait on specific live jobs; back off unchanged polling. Never restart a transaction after an observation timeout. Keep heartbeat instructions as stable pointers, not historical recaps.
 - Brief updates: verified/parked/remaining names, material change, blocker. Avoid repeating hashes and passing logs.
+- Default tool output: filter to counts, at most ten relevant rows, failures and artifact paths before returning it. Parse structured tool results rather than dumping their raw bodies. Expand only the exact failing record; never mistake truncated output for a complete check.
+- Keep CURRENT.md a compact locator, not a growing narrative. Preserve displaced detail in a named checkpoint and read it only when its unresolved issue becomes active. Do not restart discovery or an already-passed release merely because context was compacted.
 - Preserve every before/after-image, source, secret scan, exact production SHA, protected approval, atomic apply, immutable receipt, seed/API/redirect/ownership and affected rendered-card gate.
 - No automatic model downgrade, effort reduction, extra agents or new conversations. No scope changes. Archive detailed checkpoints; keep CURRENT.md short. Exact staging only.
+- Resume once per turn: read this policy and CURRENT.md, run compact status, then inspect only the next gate's inputs. Do not reload completed history or rediscover available tools already known in the current context.
+- Persist long-running command handles and log paths in the checkpoint. If a handle expires, inspect its saved artifacts and completion evidence before deciding whether a read-only check needs repeating. Never treat an expired handle as proof of failure or permission to repeat a write.
+- For downloads, return only HTTP status, final URL, byte count and artifact path; never dump curl's full JSON/certificate metadata. For checks, save full output and return exit code plus a short failure excerpt. Passing summaries are not substitutes for executing complete checks.
 
 Compact read-only status from the permitted worktree:
 `./node_modules/.bin/tsx scripts/portco-completion/cli.ts status --progress=audits/portco-reconciliation/2026-09-08/completion/progress.json`

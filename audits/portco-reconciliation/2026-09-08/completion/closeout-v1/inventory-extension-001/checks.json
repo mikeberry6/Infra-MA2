@@ -1,0 +1,72 @@
+{
+  "files": [
+    {
+      "path": "scripts/portco-completion/batch.ts",
+      "sha256": "9d647876db69bd8c5e9d73ccfc7e1dec2b79b3caacf40ac99cbfa038731cea30"
+    },
+    {
+      "path": "scripts/portco-completion/cli.ts",
+      "sha256": "57f69c9156722e3f02403ed60b244d419c2811dd2cf06596e1a9244a911250fd"
+    },
+    {
+      "path": "scripts/portco-completion/seed-lineage.ts",
+      "sha256": "a6f7e9a95d63ac719876aac2abb6b22251753d304a540e77cb080e677bbfc342"
+    },
+    {
+      "path": "scripts/portco-completion/inventory-extension.ts",
+      "sha256": "e3c00667c3d9fd7143ea14dc4cc77d1bd46751c62c3a14e3ab84e2db7ad843fa"
+    },
+    {
+      "path": "scripts/portco-completion/inventory-extension.test.ts",
+      "sha256": "bdb1e51618dc02c656b8b05df4b62aa346e7dfa54b7d5cd5cb357608cb742286"
+    },
+    {
+      "path": "scripts/portco-completion/README.md",
+      "sha256": "e4d7f3190e53e8e203c1f7ee5d56c9a9a1dd36a9834ef7803fd9c2f8d6a03e60"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/CURRENT.md",
+      "sha256": "b50af684977c39f69774d9d371bff426b5f671c9d8eb0163c83e9d27277d8be7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/inventory-extension-001-request.json",
+      "sha256": "da1e90f355b41904f792436e3ecc503a0fa6c06788f266e794c5c7c6e61b35f0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/inventory-extension-001/extension-request.json",
+      "sha256": "da1e90f355b41904f792436e3ecc503a0fa6c06788f266e794c5c7c6e61b35f0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/inventory-extension-001/progress-before.json",
+      "sha256": "5664d73b2905b7821a6330c6e46c73de4756ef1765c4cfb82ca6f6312c8585bd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/inventory-extension-001/progress-extended.json",
+      "sha256": "acaab62e9807b212b7540e1ba001469b163f2a6749e76327b70d1e0fc1f9d18d"
+    }
+  ],
+  "publicationScanPassed": true,
+  "databaseReads": 0,
+  "databaseWrites": 0,
+  "authoritativeRegisterChanged": false,
+  "tests": {
+    "shared": {
+      "files": 15,
+      "tests": 150,
+      "passed": true
+    },
+    "finalExtensionAndRecheck": {
+      "files": 2,
+      "tests": 12,
+      "passed": true
+    }
+  },
+  "completedReleaseReplay": {
+    "releases": 25,
+    "extensionReplayed": true,
+    "progressSha256": "317d715290cec77f88973d6566d056a24235a37e0b7b284c2e442299a6aebf3c"
+  },
+  "limitations": [
+    "Preparation only. Decision packets, final full regression, protected release and production verification remain required."
+  ]
+}

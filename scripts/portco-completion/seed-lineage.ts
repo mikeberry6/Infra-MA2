@@ -6,6 +6,7 @@ import { bytesHash } from "./files";
 import { verifySeedManifest } from "../portfolio-fund-attribution/schema";
 import { sha256Canonical } from "../portco-reconciliation/hash";
 import { checkActualSeedIdentity } from "./seed-identity-files";
+import { extendInventory } from "./inventory-extension";
 
 export const completedReleaseSchema = z.strictObject({ directory: z.string().min(1), receiptPath: z.string().min(1).nullable() });
 type Seed = ReturnType<typeof verifySeedManifest>;
@@ -16,6 +17,12 @@ export function replayProgressRechecks(start: Progress, target: Progress, seedMa
   const end = verifyProgress(target);
   while (current.progressSha256 !== end.progressSha256) {
     const requests = (end.recheckHistory ?? []).filter(r => r.beforeProgressSha256 === current.progressSha256);
+    const extensions = (end.inventoryExtensionHistory ?? []).filter(r => r.beforeProgressSha256 === current.progressSha256);
+    if (extensions.length) {
+      if (extensions.length !== 1 || requests.length) throw Error("Ambiguous inventory extension lineage");
+      current = extendInventory(current, extensions[0], seedManifestSha256, readBytes);
+      continue;
+    }
     if (requests.length !== 1) throw Error("Incomplete or reordered completion recheck lineage");
     const files = new Map<string, string>();
     for (const correction of requests[0].corrections) {

@@ -251,9 +251,15 @@ export const progressRecheckSchema = z.strictObject({ schemaVersion: z.literal(1
   artifactType: z.literal("PORTCO_COMPLETION_RECHECK"), beforeProgressSha256: hash, seedManifestSha256: hash,
   corrections: z.array(z.strictObject({ prior: progressNameSchema, diagnostic: fileSchema, reason: text })).min(1).max(10),
   recheckSha256: hash });
+export const inventoryExtensionSchema = z.strictObject({ schemaVersion: z.literal(1),
+  artifactType: z.literal("PORTCO_COMPLETION_INVENTORY_EXTENSION"), beforeProgressSha256: hash,
+  seedManifestSha256: hash, sourceManifest: fileSchema, sourceLedger: fileSchema, scope: fileSchema,
+  additions: z.array(z.strictObject({ companyId: text, name: text, sequence: z.number().int().positive() })).min(1).max(10),
+  extensionSha256: hash });
 export const progressSchema = z.strictObject({ schemaVersion: z.literal(1), artifactType: z.literal("PORTCO_COMPLETION_PROGRESS"),
   universe: fileSchema, names: z.array(progressNameSchema).min(1),
   recheckHistory: z.array(progressRecheckSchema).optional(),
+  inventoryExtensionHistory: z.array(inventoryExtensionSchema).optional(),
   active: z.strictObject({ batchId: text, batchSha256: hash,
     state: z.enum(["PREPARING", "RELEASED", "APPLYING", "VERIFYING", "VERIFYING_FAILED"]),
     releaseSha: commit.nullable(), failure: text.nullable() }).nullable(),
@@ -264,6 +270,15 @@ export function verifyProgress(value: unknown) {
   unique(p.names.map(n => n.companyId), "progress name");
   unique(p.completedBatchIds, "completed batch"); unique(p.consumedReceiptHashes, "receipt");
   unique((p.recheckHistory ?? []).map(r => r.recheckSha256), "completion recheck");
+  unique((p.inventoryExtensionHistory ?? []).map(r => r.extensionSha256), "inventory extension");
+  unique((p.inventoryExtensionHistory ?? []).flatMap(r => r.additions.map(n => n.companyId)), "extended company");
+  for (const extension of p.inventoryExtensionHistory ?? []) {
+    verifyHash(extension, "extensionSha256");
+    for (const added of extension.additions) {
+      const current = p.names.find(n => n.companyId === added.companyId);
+      if (!current || current.name !== added.name || current.sequence !== added.sequence) throw Error("Invalid inventory extension identity");
+    }
+  }
   for (const r of p.recheckHistory ?? []) {
     verifyHash(r, "recheckSha256");
     unique(r.corrections.map(c => c.prior.companyId), "rechecked company");

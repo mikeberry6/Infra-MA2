@@ -1,0 +1,105 @@
+{
+  "companyId": "cmrxpj8y400n6ivhelufjsj1z",
+  "name": "Harquahala Generation Company",
+  "sequence": 144,
+  "classification": "SEED_ONLY",
+  "expectedImageSemanticSha256": "602c68f470ffda2bb03a91f59e4e63fc37cce3d86eced10befdcd20ca134b370",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpju8p01kmivhernfcvtau",
+      "sha256": "7134a0617d268c32d00fc215044bfe4dcb8206e77bb6236b768651c19f5ccd71"
+    },
+    {
+      "ownerId": "cmt5ogmaf0016u7yy9gfmnt7i",
+      "sha256": "1b46771501fbf402436b79e5ede34318d5d2bb6eea074d9700d2852885a01802"
+    },
+    {
+      "ownerId": "cmt5ogmg60018u7yycxhjngfs",
+      "sha256": "ba9b5370234b3b5943f38f14f9848a435216e0231e1e55086ac8c1f4106a973a"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0144-harquahala-generation-company/attempt-1/research-decision.json",
+      "sha256": "842e5e725f64b0f02601d6f49d5ceaefd14d069f4fb8b9deba9efeb7d8dd04c6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0144-harquahala-generation-company/attempt-1/source-verification.json",
+      "sha256": "2c97d375c305daee8865943569a3920b7aa615f0c18e9e30b2b25ab506570fde"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmt5ogmg60018u7yycxhjngfs",
+      "seedRecordId": "OFA-HIST-D9935063947B39C8752B03FA",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "ba9b5370234b3b5943f38f14f9848a435216e0231e1e55086ac8c1f4106a973a",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Capital Power's closing evidence identifies CSG Investments, a Beal Financial Corporation affiliate, as Harquahala's direct corporate seller; no managed-fund vehicle is disclosed.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "The original source packet and applied image retain the two current 50% owners and exact BlackRock GEPIF III holding vehicles. Capital Power's announcement directly identifies CSG Investments as Beal Financial's subsidiary seller; its closing notice confirms completion. Insert the missing former-CSG metadata overlay only, retaining exact DIRECT_PROGRAM production state and all three owner identities.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/harquahala-announcement.html",
+          "sha256": "567f58290ebe6a772f4d816dabcfd0bb0303c916ecdb21683a5eb341ed551573",
+          "url": "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/harquahala-closing.html",
+          "sha256": "5ef148491fb93ddc967547c1e7f17fdc6b0060d00bdf130cfc10380856420397",
+          "url": "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmrxpju8p01kmivhernfcvtau",
+    "cmt5ogmaf0016u7yy9gfmnt7i"
+  ],
+  "issue": null,
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0144-harquahala-generation-company-v1/proposal.json",
+      "sha256": "41bbb98f46f5f92acdf39d2c17b48613b67da8c87aefffcd7549149221103606"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0144-harquahala-generation-company-v1.json",
+      "sha256": "0a79b43c773965ae53e76b78d0286c9311775e376f48257066c7cc44b4854ecd"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v2/production-apply/batch-apply-receipt.json",
+      "sha256": "65c45be9b0bedab8912e9c844c17c2da029d33a6f1c0376296b1ec508016ab41",
+      "memberIndex": 3
+    },
+    "receiptSha256": "fe264db64ef263ac6fce22d92efe1abea2569a1facf9bdddb5094e6a59049971"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/harquahala-announcement.capture.json",
+      "sha256": "cd11557147a254a62995d583e78c730598fc6b911691023916dff668369e2466"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/harquahala-closing.capture.json",
+      "sha256": "7eb63f250ea724a1061decb6612a0e677aa2b94e04685212717354194a58bfa1"
+    }
+  ]
+}

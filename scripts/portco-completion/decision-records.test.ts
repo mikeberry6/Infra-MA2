@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { bindDecisionRecords, validateDecisionRecords, type DecisionRecord } from "./decision-records";
 import { seal, verifyProgress, verifySnapshot } from "./batch";
 import { bytesHash } from "./files";
+import { semanticCompanyImageSha256 } from "../portco-reconciliation/apply-plan";
 
 // Real immutable completed packets exercise existing proposal/approval/receipt validators.
 // Company facts live in decision records, not in company-specific test logic.
@@ -42,6 +43,27 @@ function fixture() {
   return { progress, records, read, snapshot };
 }
 describe("shared small decision records", () => {
+  it("retains original and observed images for a zero-mutation parked drift only", () => {
+    const f = fixture(), observed = structuredClone(f.snapshot.companies[0].image);
+    observed.description += " Observed drift requiring separate correction.";
+    const bytes = Buffer.from(JSON.stringify(observed));
+    const reference = {path:"parked-observed.json",sha256:bytesHash(bytes)};
+    f.records[0] = {...f.records[0],classification:"PARKED",issue:"Canonical description changed; unsupported correction parked.",
+      owners:[],preservedOwnerIds:f.records[0].expectedOwners.map(o=>o.ownerId),parkedObservedImage:reference,
+      expectedImageSemanticSha256:semanticCompanyImageSha256(observed)};
+    const reader = (ref: {path:string;sha256:string}) => ref.path === reference.path ? observed : read(ref);
+    const records = validateDecisionRecords({...f,read:reader});
+    expect(records[0].owners).toEqual([]);
+    expect(()=>bindDecisionRecords(records,f.snapshot)).toThrow(/canonical dependency/);
+    const {snapshotSha256:_old,...content}=f.snapshot;
+    const snapshot=verifySnapshot(seal({...content,companies:f.snapshot.companies.map((c,i)=>i===0?{...c,image:observed}:c)},"snapshotSha256"));
+    expect(bindDecisionRecords(records,snapshot)[0].evidence).toContainEqual(reference);
+    for(const classification of ["NO_CHANGE","SEED_ONLY","ATTRIBUTION_CORRECTION"] as const){
+      expect(()=>validateDecisionRecords({...f,records:[{...f.records[0],classification},f.records[1]],read:reader})).toThrow(/zero-mutation parked/);
+    }
+    expect(()=>validateDecisionRecords({...f,read:ref=>ref.path===reference.path?{...observed,id:"wrong"}:read(ref)})).toThrow(/Parked observed/);
+    expect(()=>validateDecisionRecords({...f,read:ref=>ref.path===reference.path?{...observed,ownershipPeriods:[]}:read(ref)})).toThrow();
+  });
   it("validates a complete mixed ten-name group offline without dropping parked names", () => {
     const records = [155,156,162,163,164,167,168,171,172,174].map(n => json(`${directory}/${String(n).padStart(4,"0")}.json`));
     const original = json("audits/portco-reconciliation/2026-09-08/completion/progress.json");

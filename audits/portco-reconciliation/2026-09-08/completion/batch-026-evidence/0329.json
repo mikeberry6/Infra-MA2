@@ -1,0 +1,90 @@
+{
+  "companyId": "cmrxpjkab014mivhe72i1zmv9",
+  "name": "Silver Holdco JV, LLC",
+  "sequence": 329,
+  "classification": "SEED_ONLY",
+  "expectedImageSemanticSha256": "08af042b8ea87f775916e936ead4a7658eb693e568c08f9d12baf440d4872799",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk6d1023kivhebk1u7wdq",
+      "sha256": "faaced0821a92f2418dafa51ca22aa6bddc49fece906a5ab4d75f74238e0b982"
+    },
+    {
+      "ownerId": "cmtio95j60009wa2bqeawpykc",
+      "sha256": "487a3f50be17bb76e0aff08c76d630466e3bd0a42fcc3eaca0fda892895e5b50"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/research-decision.json",
+      "sha256": "900f3b9559b6235d85ded116e47a191d39c7b6e57fb9cb0c793f780d23d63135"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/source-verification.json",
+      "sha256": "d5fde439c1628d074cc86032880bab424021ef6cec46a5dfed5fb49f1f32189f"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk6d1023kivhebk1u7wdq",
+      "seedRecordId": "OFA-HIST-41DD17D017DD7E4B5CD0FEE0",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "faaced0821a92f2418dafa51ca22aa6bddc49fece906a5ab4d75f74238e0b982",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Infrastructure Partners V",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Macquarie Asset Management | Fund: Macquarie Infrastructure Partners V | Ownership Interest: 50% Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": "Macquarie Infrastructure Partners V"
+      },
+      "productionChange": "NONE",
+      "reason": "Both historical owner identities exactly match evaluated seed. Macquarie's direct announcement names MIP V and the 50/50 MPT partnership; reuse accepted closing/realization research for unchanged 2022–2024 dates. Insert only the missing MIP V overlay with the exact existing fund link and attribution. Preserve MPT's null fund, unresolved attribution and literal holding vehicles; no new fund, stake or chronology assertion.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/silver-macquarie.html",
+          "sha256": "24439b445e59b461db2a906fe2925592e4d9af4d59d4ea68793335a283a6f230",
+          "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmtio95j60009wa2bqeawpykc"
+  ],
+  "issue": null,
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0329-medical-properties-partnership-v1/proposal.json",
+      "sha256": "5d25abc5c05dd914f58b7683270a9965ba1a27790a1b920baa7cb1b970b80950"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0329-medical-properties-partnership-v1.json",
+      "sha256": "c20960a3d7d776f70d934dea3473be3cfecafee718b943cea7037e6cb68d3834"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0329-0333-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "f6cd587ea352de81e6ccf558815f684aafd4c7d0aa6b8093f9f9e611dbf46ea7",
+      "memberIndex": 0
+    },
+    "receiptSha256": "529fddf37b7d214ee56b89c72c5d570f0fb892d2975996dde2a637e4ae850529"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/silver-macquarie.capture.json",
+      "sha256": "500be03ef684445396d7d7a7736909a53271b11b50b8f19d5113a65feb241c64"
+    }
+  ]
+}
