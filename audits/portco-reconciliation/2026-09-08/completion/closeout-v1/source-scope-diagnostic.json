@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_GLOBAL_SOURCE_SCOPE_DIAGNOSTIC",
+  "databaseWrites": 0,
+  "sourceTasksReopened": 0,
+  "progressChanged": false,
+  "inputs": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/lineage-checks-v4.json",
+      "sha256": "1e71b5c010c252b49b00e74fb2934c9df02992b800d2798642d49edb99204553"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/ownership-diagnostic.json",
+      "sha256": "0e89d5ee202c0c5fd73ca38f142cc84fbbcab0a98504ce4394fa8e2dfba735b4"
+    }
+  ],
+  "counts": {
+    "validatedCompletedSourceChains": 343,
+    "companies": 75,
+    "withCompletedSourceReceiptBinding": 12,
+    "withoutCompletedSourceReceiptBinding": 63
+  },
+  "limitations": [
+    "Frozen pre025 diagnostic; not a fresh production snapshot or mutation authority.",
+    "Missing completed-source binding does not prove exclusion from original scope; terminal and reciprocal-task evidence still require assessment.",
+    "Receipt provenance is not source truth. Every owner and qualification needs review before completion.",
+    "No inventory extension, source reopening or transaction replay is authorized by this diagnostic."
+  ],
+  "companies": [
+    {
+      "companyId": "cmrxpj67x00izivheqinytkio",
+      "name": "Catalyst Old River Hydroelectric Limited Partnership",
+      "completedSourceBindings": [
+        {
+          "sequence": 65,
+          "sourceChainIndex": 51
+        }
+      ],
+      "diagnosticIssueIndices": [
+        405
+      ]
+    },
+    {
+      "companyId": "cmrxpj8vz00n2ivhe9ik74yeq",
+      "name": "Electrada",
+      "completedSourceBindings": [
+        {
+          "sequence": 139,
+          "sourceChainIndex": 107
+        }
+      ],
+      "diagnosticIssueIndices": [
+        56,
+        57
+      ]
+    },
+    {
+      "companyId": "cmrxpj8y400n6ivhelufjsj1z",
+      "name": "Harquahala Generation Company",
+      "completedSourceBindings": [
+        {
+          "sequence": 144,
+          "sourceChainIndex": 112
+        }
+      ],
+      "diagnosticIssueIndices": [
+        64,
+        65
+      ]
+    },
+    {
+      "companyId": "cmrxpj9mq00o7ivheg939dp9z",
+      "name": "TXNM Energy",
+      "completedSourceBindings": [
+        {
+          "sequence": 161,
+          "sourceChainIndex": 128
+        }
+      ],
+      "diagnosticIssueIndices": [
+        83
+      ]
+    },
+    {
+      "companyId": "cmrxpjevf00wbivheu50etwdq",
+      "name": "American Roads",
+      "completedSourceBindings": [
+        {
+          "sequence": 198,
+          "sourceChainIndex": 160
+        }
+      ],
+      "diagnosticIssueIndices": [
+        217,
+        218,
+        219
+      ]
+    },
+    {
+      "companyId": "cmrxpjezu00wjivhep4zsd3j9",
+      "name": "Kelowna and Vernon Hospitals Project",
+      "completedSourceBindings": [
+        {
+          "sequence": 240,
+          "sourceChainIndex": 189
+        }
+      ],
+      "diagnosticIssueIndices": [
+        221,
+        222,
+        223
+      ]
+    },
+    {
+      "companyId": "cmrxpjfj100xeivhebd0fzcqi",
+      "name": "Prince George's County Blueprint Schools Program (Phase One)",
+      "completedSourceBindings": [
+        {
+          "sequence": 252,
+          "sourceChainIndex": 198
+        }
+      ],
+      "diagnosticIssueIndices": [
+        249,
+        250,
+        251
+      ]
+    },
+    {
+      "companyId": "cmrxpjfxp00xxivhe1mkhiraq",
+      "name": "Cambrian Innovation",
+      "completedSourceBindings": [
+        {
+          "sequence": 254,
+          "sourceChainIndex": 199
+        }
+      ],
+      "diagnosticIssueIndices": [
+        436,
+        437,
+        438
+      ]
+    },
+    {
+      "companyId": "cmrxpjg4f00y5ivhep8jj6phn",
+      "name": "Pine Gate Renewables",
+      "completedSourceBindings": [
+        {
+          "sequence": 257,
+          "sourceChainIndex": 201
+        }
+      ],
+      "diagnosticIssueIndices": [
+        266,
+        267,
+        268
+      ]
+    },
+    {
+      "companyId": "cmrxpjkab014mivhe72i1zmv9",
+      "name": "Silver Holdco JV, LLC",
+      "completedSourceBindings": [
+        {
+          "sequence": 329,
+          "sourceChainIndex": 250
+        }
+      ],
+      "diagnosticIssueIndices": [
+        470,
+        471,
+        472
+      ]
+    },
+    {
+      "companyId": "cmrxpjlhd016hivheffuojgmg",
+      "name": "Bayonne Energy Center",
+      "completedSourceBindings": [
+        {
+          "sequence": 344,
+          "sourceChainIndex": 261
+        }
+      ],
+      "diagnosticIssueIndices": [
+        348,
+        349,
+        350,
+        351
+      ]
+    },
+    {
+      "companyId": "cmrxpjnk0019uivhefy3ycv3y",
+      "name": "KAPS",
+      "completedSourceBindings": [
+        {
+          "sequence": 425,
+          "sourceChainIndex": 315
+        }
+      ],
+      "diagnosticIssueIndices": [
+        391
+      ]
+    },
+    {
+      "companyId": "cmrxpjbeg00r0ivhexajc8rv7",
+      "name": "A25 Concession",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        92,
+        93,
+        94,
+        95
+      ]
+    },
+    {
+      "companyId": "cmrxpjbf200r1ivhenqhkgvg1",
+      "name": "AES Indiana",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        96,
+        97,
+        98,
+        99
+      ]
+    },
+    {
+      "companyId": "cmrxpjbfm00r2ivhedejq6vo0",
+      "name": "AES Ohio",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        100,
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "companyId": "cmrxpj4to00gtivhe5o1os28c",
+      "name": "Alberta Schools Alternative Procurement I",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        19,
+        20
+      ]
+    },
+    {
+      "companyId": "cmrxpjiko011xivhebv11f7bv",
+      "name": "Aleatica, S.A.B. de C.V.",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        306,
+        307
+      ]
+    },
+    {
+      "companyId": "cmrxpj47700g6ivheh80125ia",
+      "name": "Arevon Energy, Inc.",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "companyId": "cmrxpjc1900rxivhex2yldcu1",
+      "name": "Buffalo Plains Wind Farm",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        158,
+        159
+      ]
+    },
+    {
+      "companyId": "cmrxpjdra00umivhedgzd66w4",
+      "name": "Captis Energy",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        204,
+        205
+      ]
+    },
+    {
+      "companyId": "cmrxpjf5c00wtivhebt9v2dff",
+      "name": "Central Utility Block (Heartland Petrochemical Complex)",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        224,
+        225,
+        226
+      ]
+    },
+    {
+      "companyId": "cmrxpj47q00g7ivhe2d22x3iq",
+      "name": "Chicago Parking Meters, LLC",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "companyId": "cmrxpjd9j00tuivhettvdurgk",
+      "name": "ConGlobal",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        183
+      ]
+    },
+    {
+      "companyId": "cmrxpjdrr00univhe6utkjs4n",
+      "name": "Conterra Networks",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        206
+      ]
+    },
+    {
+      "companyId": "cmrxpjdsd00uoivhe5wiqp848",
+      "name": "Desert Sky Energy",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        207
+      ]
+    },
+    {
+      "companyId": "cmrxpjbgo00r4ivhexcz53r7l",
+      "name": "DP World Canada",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        104,
+        105,
+        106,
+        107
+      ]
+    },
+    {
+      "companyId": "cmrxpjf8l00wvivhe9di0ym1s",
+      "name": "Edmonton Valley Line LRT Southeast",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        227,
+        228,
+        229
+      ]
+    },
+    {
+      "companyId": "cmrxpjbh700r5ivhetsvem8vl",
+      "name": "Enel Green Power Mexico",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        108,
+        109,
+        110,
+        111,
+        112
+      ]
+    },
+    {
+      "companyId": "cmrxpjda000tvivhek380dt35",
+      "name": "Expedient",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        184
+      ]
+    },
+    {
+      "companyId": "cmrxpjdak00twivheazjbfqum",
+      "name": "Extenet (formerly ExteNet Systems)",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        185,
+        186
+      ]
+    },
+    {
+      "companyId": "cmrxpjc3c00s1ivheh0230va5",
+      "name": "Fighting Jays Solar",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        160,
+        161
+      ]
+    },
+    {
+      "companyId": "cmrxpj48b00g8ivhectbglmuo",
+      "name": "FirstEnergy Transmission, LLC",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "companyId": "cmrxpjhon010jivheqq1c1oke",
+      "name": "Fort Detrick Energy Production Facility",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        299,
+        300
+      ]
+    },
+    {
+      "companyId": "cmrxpjf9n00wxivhedu5fmw6t",
+      "name": "Fort St. James Green Energy Project",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        230,
+        231,
+        232
+      ]
+    },
+    {
+      "companyId": "cmrxpjfa900wyivheqr821jt0",
+      "name": "Freeport Energy Center",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        233
+      ]
+    },
+    {
+      "companyId": "cmrxpjfar00wzivheujr4fq1n",
+      "name": "Freeport Power Limited",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        234
+      ]
+    },
+    {
+      "companyId": "cmrxpjosv01bvivhe6x3dbw22",
+      "name": "Guzman Energy",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        402
+      ]
+    },
+    {
+      "companyId": "cmrxpjkmo0155ivhejm9uec3n",
+      "name": "Hunt Energy Network, LLC",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        334
+      ]
+    },
+    {
+      "companyId": "cmrxpjbib00r7ivhewg54x0oj",
+      "name": "ICA Operadora de Vías Terrestres, S.A.P.I. de C.V.",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        113,
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "companyId": "cmrxpjbiv00r8ivhe7ydq2fty",
+      "name": "Indiana Toll Road",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        117,
+        118,
+        119,
+        120,
+        121,
+        122
+      ]
+    },
+    {
+      "companyId": "cmrxpjblv00r9ivhepi9anjoz",
+      "name": "Innergex Renewable Energy",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        123,
+        124,
+        125,
+        126
+      ]
+    },
+    {
+      "companyId": "cmrxpj8lj00mnivhecvfdxmtv",
+      "name": "InTransit BC",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "companyId": "cmrxpjbmd00raivhe0z1866id",
+      "name": "Invenergy Renewables LLC",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        127,
+        128,
+        129,
+        130
+      ]
+    },
+    {
+      "companyId": "cmrxpj5rl00i9ivhelzcaiyyj",
+      "name": "IonicBlue",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        23,
+        24
+      ]
+    },
+    {
+      "companyId": "cmrxpjkn70156ivhejtldxot6",
+      "name": "J-POWER USA Generation, L.P.",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        335,
+        336
+      ]
+    },
+    {
+      "companyId": "cmrxpjfdj00x4ivheestkwqla",
+      "name": "Jim Pattison Outpatient Care and Surgery Centre",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        235,
+        236,
+        237
+      ]
+    },
+    {
+      "companyId": "cmrxpjfe300x5ivhe0dn9ajx6",
+      "name": "Lambton College Residence",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        238
+      ]
+    },
+    {
+      "companyId": "cmrxpj65s00ivivhekk7buvw1",
+      "name": "Lincoln Terminal Holdings",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        28
+      ]
+    },
+    {
+      "companyId": "cmrxpjeo200w1ivhe76qz7i0k",
+      "name": "Lumos Fiber",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        215,
+        216
+      ]
+    },
+    {
+      "companyId": "cmrxpjff600x7ivheocc0bl0u",
+      "name": "Merritt Biomass Plant",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        239,
+        240,
+        241
+      ]
+    },
+    {
+      "companyId": "cmrxpjisp012civhep58w70qr",
+      "name": "Millennium Garages",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        310,
+        311,
+        312,
+        313
+      ]
+    },
+    {
+      "companyId": "cmrxpjffr00x8ivhe354l7jdk",
+      "name": "Morris Cogeneration Facility",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        242
+      ]
+    },
+    {
+      "companyId": "cmrxpj6t100jtivhegccczk0y",
+      "name": "MXT Holdings",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        35,
+        36
+      ]
+    },
+    {
+      "companyId": "cmrxpjfhb00xbivhe8zn3sgld",
+      "name": "Oakville Trafalgar Memorial Hospital",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        243,
+        244,
+        245
+      ]
+    },
+    {
+      "companyId": "cmrxpjbmy00rbivhehh6cicf4",
+      "name": "Plenary Americas",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        131,
+        132,
+        133,
+        134
+      ]
+    },
+    {
+      "companyId": "cmrxpjfhv00xcivhenpa3gni7",
+      "name": "PowerFin Partners Texas Solar Portfolio",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        246,
+        247,
+        248
+      ]
+    },
+    {
+      "companyId": "cmrxpjmyb018uivheyba3ewkn",
+      "name": "Prospect Lake Clean Water Center",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        385
+      ]
+    },
+    {
+      "companyId": "cmrxpjfjj00xfivhe0e0iuklw",
+      "name": "Providence Care Hospital",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        253,
+        254,
+        255
+      ]
+    },
+    {
+      "companyId": "cmrxpjdsv00upivhenx60t7fz",
+      "name": "Public Infrastructure Partnership",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        208
+      ]
+    },
+    {
+      "companyId": "cmrxpjdte00uqivhe6a6jxd0v",
+      "name": "PureSky Energy",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        209
+      ]
+    },
+    {
+      "companyId": "cmrxpjiim011tivhemt7m9kp4",
+      "name": "QSL International Ltd.",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ]
+    },
+    {
+      "companyId": "cmrxpjbo200rdivhepvecb6f4",
+      "name": "Réseau express métropolitain",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        135,
+        136,
+        137
+      ]
+    },
+    {
+      "companyId": "cmrxpjfk300xgivhe01tzwcet",
+      "name": "Saskatoon Civic Operations Centre",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        256,
+        257,
+        258
+      ]
+    },
+    {
+      "companyId": "cmrxpjclz00svivhen9hcoprt",
+      "name": "Sempra Infrastructure Partners, LP",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        173,
+        174,
+        175,
+        176,
+        177
+      ]
+    },
+    {
+      "companyId": "cmrxpjbok00reivhetjuixnom",
+      "name": "Southern Star Central Gas Pipeline",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        138,
+        139,
+        140,
+        141
+      ]
+    },
+    {
+      "companyId": "cmrxpjbp500rfivhebgr2avam",
+      "name": "Student Transportation of America and Canada",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        142,
+        143,
+        144,
+        145
+      ]
+    },
+    {
+      "companyId": "cmrxpjfn400xhivhe2vjqgu7a",
+      "name": "Sunningdale Solar Project",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        259,
+        260,
+        261
+      ]
+    },
+    {
+      "companyId": "cmrxpje6900v9ivhemqf7i4b2",
+      "name": "SunShare, LLC",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        212
+      ]
+    },
+    {
+      "companyId": "cmrxpjbpq00rgivhedjou7u6e",
+      "name": "SunZia Wind and Transmission",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        146,
+        147,
+        148,
+        149
+      ]
+    },
+    {
+      "companyId": "cmrxpjfqc00xiivhe70ut2i58",
+      "name": "Surrey Memorial Hospital Critical Care Tower",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        262,
+        263,
+        264
+      ]
+    },
+    {
+      "companyId": "cmrxpjfr700xkivhepyrxxkvd",
+      "name": "The Peter Gilgan Mississauga Hospital and Shah Family Hospital for Women and Children",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        265
+      ]
+    },
+    {
+      "companyId": "cmrxpj63100iqivheckl3915o",
+      "name": "US Wind",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        26,
+        27
+      ]
+    },
+    {
+      "companyId": "cmrxpjdty00urivheqf6ca4v0",
+      "name": "West Coast Hydro",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        210
+      ]
+    },
+    {
+      "companyId": "cmrxpjafz00phivhe43iiqdy2",
+      "name": "Westinghouse Electric Company",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        85,
+        86
+      ]
+    },
+    {
+      "companyId": "cmrxpjdui00usivhespx7r91z",
+      "name": "Woodford Social Infrastructure",
+      "completedSourceBindings": [],
+      "diagnosticIssueIndices": [
+        211
+      ]
+    }
+  ]
+}

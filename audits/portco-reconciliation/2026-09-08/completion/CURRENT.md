@@ -14,7 +14,9 @@ Batch025: Lighthouse142/Permanent Power181 seed-only rechecks fully verified; no
 
 ## Next bounded action
 
-Map outside-register ownership differences to original source tasks using exact validated receipt companyIds, including nested bundle receipts; INSERT proposal IDs alone are insufficient. Determine scope before any inventory extension or correction. No new bundle is authorized by a diagnostic alone.
+Receipt mapping is complete: closeout-v1/source-scope-diagnostic.json revalidates all343 completed proposal/approval/receipt chains and binds75 outside-register metadata-difference names to the frozen diagnostic.12 have completed-source bindings;63 require terminal/reciprocal scope assessment (absence of a completed receipt does not prove out of scope). No register or source task changed.
+
+Next: assess existing evidence for the earliest ten of those12 source-bound names (65,139,144,161,198,240,252,254,257,329; then344,425), accounting for every owner, not only differing fields. Use an explicit hash-bound idle-register inventory extension with preserved replay lineage before any new release; never manually append progress names or reinitialize. Do not infer facts or treat receipt provenance as source truth. No new bundle is authorized by this diagnostic alone.
 
 Use the immutable pre025 closeout-v1/ownership-diagnostic.json, lineage-checks-v4.json and metadata-lineage.json. Read only selected exceptions. Full population has outstanding metadata/representation questions and one unavailable historical Pocahontas proposal; global closeout is not complete. Receipt provenance is not source truth or seed parity.
 
