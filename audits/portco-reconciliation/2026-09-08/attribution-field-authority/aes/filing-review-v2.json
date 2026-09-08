@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_AES_EXISTING_SOURCE_REVIEW",
+  "recordedAt": "2026-09-08T01:16:57.851Z",
+  "scope": "Task154 sole original attributionRationale field, preserving canonical August23 ownership and separately signed incoming transaction; not a current lifecycle re-research or write approval.",
+  "rawCapturePath": "audits/portco-reconciliation/2026-09-08/attribution-field-authority/aes/source-capture.json",
+  "rawCaptureSummary": {
+    "requests": 9,
+    "readable200": 4,
+    "accessDenied403": 5,
+    "repeatRequests": 0
+  },
+  "browserRecovery": {
+    "browser": "in-app",
+    "tabId": "3",
+    "observedDateUtc": "2026-09-08",
+    "method": "READ_ONLY_RENDERED_DOM_AND_ACCESSIBILITY_TEXT",
+    "fullHtmlExport": false,
+    "raw403IsEvidence": false,
+    "excerpts": [
+      {
+        "file": "agreement-rendered-excerpt.txt",
+        "sha256": "496b4eab1d46103366dba15ac91e2bc080ca66dbff5fb77871234bebe8a042e1",
+        "sourceId": "agreement",
+        "scope": "Exact Section4.10 ownership representation, as of March1 agreement date; trailing whitespace normalized to a single LF."
+      },
+      {
+        "file": "annual-rendered-excerpt.txt",
+        "sha256": "b9073de4ad31b09c94e76fd85a0007cea167e08953320d68ad72ceaec81f4205",
+        "sourceId": "annual",
+        "scope": "Exact Part I parent-versus-consolidated-group definition, not the full annual report."
+      },
+      {
+        "file": "certificate-ax-excerpt.txt",
+        "sha256": "c0f2b36a6b01a5c89ced0be8fb3aaabc36dd01c7949be925ba9a08a97f269ed9",
+        "sourceId": "certificate",
+        "scope": "Exact accessibility text substring for corporate name/origin/date, not the entire certificate."
+      },
+      {
+        "file": "q2-rendered-excerpts.txt",
+        "sha256": "addd16b673982d5c4ea3a37ceb0d56ad341e49255da02c599e2c07f4054998b8",
+        "sourceId": "q2-note",
+        "scope": "Two complete paragraphs from the rendered Proposed Merger table row, separated with one blank line; not a full filing."
+      },
+      {
+        "file": "vote-rendered-excerpt.txt",
+        "sha256": "f0907c6bfc12a7324592283a3aceedace111f43626617b25eb25304d44af9fd6",
+        "sourceId": "vote",
+        "scope": "Exact selected span, missing its separately rendered initial T; not silently repaired."
+      }
+    ],
+    "historicalReleaseReopenProven": false
+  },
+  "findings": [
+    {
+      "sourceId": "q2-note",
+      "finding": "Quarter ended June30,2026 Proposed Merger note identifies Horizon Parent as controlled by vehicles affiliated with GIM-managed/advised entities and EQT Infrastructure VI. Merger is conditional; shareholder approval June26 and HSR expiry June22 do not fulfill all closing conditions."
+    },
+    {
+      "sourceId": "annual",
+      "finding": "2025 Form10-K explicitly distinguishes AES parent, publicly held holding company, from the consolidated subsidiaries/affiliates. No subsidiary investor can be treated as a parent owner from that association alone."
+    },
+    {
+      "sourceId": "agreement",
+      "finding": "Section4.10 represents Parent and its affiliates did not beneficially own AES common stock or other equity securities as of the March1 agreement. It is not a later holdings statement or proof of actual consummation."
+    },
+    {
+      "sourceId": "vote",
+      "finding": "June26 Form8-K reports voting approval; selected Item8.01 expressly preserves additional regulatory closing conditions after June22 HSR expiry."
+    },
+    {
+      "sourceId": "certificate",
+      "finding": "Sixth restated certificate records AES current name, original Applied Energy Services Inc. and original incorporation January28,1981. No current ownership inference."
+    },
+    {
+      "sourceId": "ny-review",
+      "finding": "July29,2026 NYDPS event for case26-E-0348 opens comment period through September29 on a proposed upstream ownership transfer. This is a review notice, not a closing order."
+    },
+    {
+      "sourceId": "announcement",
+      "finding": "March2,2026 AES issuer release names GIP, EQT Infrastructure VI and CalPERS/QIA co-underwriters as the consortium under a definitive agreement. It states AES becomes private and ceases NYSE trading upon completion, expected late2026/early2027 subject to conditions. Primary for the rationale; expected timing is guidance, not actual closing."
+    },
+    {
+      "sourceId": "syndicated-announcement",
+      "finding": "Issuer-provided PRNewswire version corroborates the conditional transaction and upon-completion delisting. It is syndicated issuer material, not independent corroboration."
+    },
+    {
+      "sourceId": "company",
+      "finding": "Live company homepage identifies AES as an energy company and operator/developer. Marketing/site navigation is not a holdings schedule or closing evidence."
+    }
+  ],
+  "provisionalDisposition": {
+    "field": "attributionRationale",
+    "recommendation": "Retain the existing production rationale; align the semantically consistent seed wording only in a separately authorized compatible persistence release after proof.",
+    "applicationPrimarySourceId": "announcement",
+    "productionWriteRequired": false,
+    "seedPersistenceRequired": true,
+    "authorityFinalized": false
+  },
+  "qualifications": [
+    "All browser excerpts are separately hashed selected rendered text, never substituted for SEC raw403 bodies. Browser readability does not supply an unobserved HTTP status.",
+    "Fresh recovery now does not establish that historical mandatory release-reopen of the Q2 note and annual report occurred before the applied August23 transaction.",
+    "Preserve canonical pending transaction and all existing receipt-backed facts as of August23. This bounded review does not assert an exhaustive September8 lifecycle update.",
+    "Public Market is an ownership classification/seed manager fallback, not a named legal fund or vehicle. No fund mapping or shareholder percentage is inferred.",
+    "One issuer-release primary supports the conditional public-ownership rationale. Q2 filing, annual definition, agreement, vote and regulator notice corroborate bounded points; exact consortium percentages and actual legal closing remain unavailable.",
+    "The historical application-primary remains the merger agreement. Source evidence/citation persistence needs separate compatible treatment; this review does not silently replace historical canonical citations.",
+    "Two publisher-embedded mapbox_token values were removed from separate publishable HTML copies after GitHub push protection rejected the unpublished commit. Original raw files and hashes remain local; published sanitized hashes differ. This is not a security bypass or a claim of byte-identical raw publication."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "artifactRevision": 2,
+  "publicationRedactions": {
+    "schemaVersion": 1,
+    "createdAt": "2026-09-08T01:16:57.851Z",
+    "method": "EXACT_LITERAL_TOKEN_REDACTION_ONLY",
+    "reason": "GitHub push protection flagged publisher-embedded Mapbox secret access tokens. No bypass. Originals remain local and excluded from the release.",
+    "sources": [
+      {
+        "id": "announcement",
+        "originalPath": "audits/portco-reconciliation/2026-09-08/attribution-field-authority/aes/announcement.html",
+        "originalSha256": "d941121e0ba1d88d4400a4d3e3f9d4b95592e148d2ab0ab8c54fc288042b6aaf",
+        "originalBytes": 211135,
+        "path": "audits/portco-reconciliation/2026-09-08/attribution-field-authority/aes/announcement.sanitized.html",
+        "sha256": "306074c08b5c9891d08f3f8d6a9c223f9e70c8c32044114ba873412f1b2fbe0d",
+        "bytes": 211078,
+        "replacements": 1
+      },
+      {
+        "id": "company",
+        "originalPath": "audits/portco-reconciliation/2026-09-08/attribution-field-authority/aes/company.html",
+        "originalSha256": "512cf95078e1ca8e0c6e20c670799a67c19d2cee58d40290fd1f2a9ae81e701a",
+        "originalBytes": 222418,
+        "path": "audits/portco-reconciliation/2026-09-08/attribution-field-authority/aes/company.sanitized.html",
+        "sha256": "b40f795affa7ff2a9b3dc4215ff6d7fa4b865fe70a1a824b1abdce1aa19205c6",
+        "bytes": 222361,
+        "replacements": 1
+      }
+    ],
+    "fullRawPublication": false,
+    "substantiveSourceTextChanged": false
+  }
+}
