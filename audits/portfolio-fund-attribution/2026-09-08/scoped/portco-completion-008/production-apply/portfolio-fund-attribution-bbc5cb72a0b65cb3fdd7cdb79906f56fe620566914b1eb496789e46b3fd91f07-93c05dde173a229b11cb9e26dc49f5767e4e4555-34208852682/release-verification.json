@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T09:16:06.325Z",
+  "manifestSha256": "bbc5cb72a0b65cb3fdd7cdb79906f56fe620566914b1eb496789e46b3fd91f07",
+  "approvalSha256": "7ee9df02a64b68d2e47dda489e7b4b25471765226d7f3bf485624ac3ef137733",
+  "receiptSha256": "a7ac0360313f9fa1bf664e5bf75b6a92f7197f7e80fa8b009247f61d0f54f4e2",
+  "mutationCount": 4,
+  "changed": 4,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-69B14010FAB9",
+      "companyId": "cmrxpjdbm00tyivher2rzd195",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdbm00tyivher2rzd195?verification=bbc5cb72a0b65cb3fdd7cdb79906f56fe620566914b1eb496789e46b3fd91f07",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MTP Mexico Holding B.V.",
+        "attributionConfidence": null,
+        "attributionRationale": "Current issuer filings identify MTP Mexico Holding B.V. as DigitalBridge's 50.00% shareholder. No separate commingled fund is disclosed, so the exact holding vehicle is retained without an inferred fund link."
+      }
+    },
+    {
+      "recordId": "OFA-91160E7050EC",
+      "companyId": "cmrxpjdcs00u0ivhec2k6lhpt",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdcs00u0ivhec2k6lhpt?verification=bbc5cb72a0b65cb3fdd7cdb79906f56fe620566914b1eb496789e46b3fd91f07",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Aware Super and DigitalBridge announced Aware's Switch co-investment, and Aware's current infrastructure portfolio continues to list Switch. No separate fund or additive ownership percentage is publicly disclosed."
+      }
+    }
+  ],
+  "passed": true
+}

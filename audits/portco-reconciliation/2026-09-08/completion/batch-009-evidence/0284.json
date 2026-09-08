@@ -1,0 +1,92 @@
+{
+  "companyId": "cmrxpjhwq010yivhe6klfgqf5",
+  "name": "CZ Solar Warren, LLC",
+  "sequence": 284,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/research-decision.json",
+      "sha256": "0b6a08727cf07210cfa59c34db1f2f5c2450ed0e4dac4d30ea90d8979d0d16bb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/source-verification.json",
+      "sha256": "9d37869ae2732c487d44ef3cb89715cfc760764fef966cb9d7fdd805238eb3e0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "c5189bd2443f56c065c9179eb44defc7823fd6100a99fbaa58010fda501a5d50"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/chatgpt-response-validation.json",
+      "sha256": "a4919036c1c69de84439067a5d435c785ea70074518d593bb5c12d8c66ebdb06"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/chatgpt-attestation.json",
+      "sha256": "f288eb0750d525efcba7a814329df7425f88ccf83b5c43072fa5ce36d2c8789a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/review.json",
+      "sha256": "41beff6725553727e9ad5f4b73e5c9d621ec0696304830ca82146b727f54d12a"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk3tb01zpivhel7rowy9i",
+      "seedRecordId": "OFA-AEA81C9BFA30",
+      "expectedSeedSha256": "fb60dea6ebd3f47596ae00928d1326785eab4e6242420ee90ebc00b78360ccbf",
+      "expectedOwnerSha256": "a2dc215ee8cc6c41b3f12a72f116b77efe27dd72a6964cf7c868e87c9711d794",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Harrison Street acquired Cincinnati Zoo Solar through its Social Infrastructure Strategy, but the reviewed public sources do not identify a specific fund, managed account, upstream vehicle or ownership percentage.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Read the direct Harrison Street PDF and visually inspected page 1. Its subtitle expressly says Social Infrastructure Strategy, not a named Social Infrastructure Fund; the text identifies the 28 MW Warren County project, Soltage and Nelnet tax equity. Remove unsupported named-fund attribution, retain unknown fund/vehicle/stake and existing company identity. PDF bytes equal the prior verified source hash.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/warren-harrison.pdf",
+          "sha256": "70d07fb8fde231cd5e086b225379ff4a220541acd683e1168a37314ff283ae4d",
+          "url": "https://harrisonst.com/wp-content/uploads/2025/06/Harrison-Street-Acquires-28-MW-Cincinnati-Solar-Project-Press-Release.pdf",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "fe892501602c1187fda5989dfe1d9eb7378617c6030bd9c7809f1ec1d999dbbc",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk3tb01zpivhel7rowy9i",
+      "sha256": "a2dc215ee8cc6c41b3f12a72f116b77efe27dd72a6964cf7c868e87c9711d794"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0284-warren-county-solar-project-v1/proposal.json",
+      "sha256": "b22f4bf9647b7a8bff953233320b2b3d489a2e81ce4f20dec08a1ebb5bc2ca6b"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0284-warren-county-solar-project-v1.json",
+      "sha256": "1874f4bed20c3c0c0ca5099c3a92e80cf21176f5081967701e750846f4c9dd53"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/production-apply/batch-apply-receipt.json",
+      "sha256": "16ae5e615a6543b9663f51682447107361dad06ac15fe40db885cb3d7597a3fb",
+      "memberIndex": 3
+    },
+    "receiptSha256": "5021740c6c327d48c774b2ae0e9bc4f1feb9f2eaa664d5477afebf396105a69e"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/warren-harrison.pdf.capture.json",
+      "sha256": "9feaf207a377cfed2fa59b41bccae71f593d157ee7c8c0482df0030e027ffea9"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "companyId": "cmti5fikq0002wa2bf07a5mgt",
+  "name": "Bear River Midstream",
+  "sequence": 288,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0288-bear-river-midstream/attempt-1/research-decision.json",
+      "sha256": "fd66b6046c1b31ed16dfc7d7cce10b8ef66bc4473f5521f7284f0ee1482ad874"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0288-bear-river-midstream/attempt-1/source-verification.json",
+      "sha256": "686c1d4ad4942844064817186840dce0e4fbc8fcbbebfe566a769e559a414665"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0288-bear-river-midstream/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "a9a007dba1dcaeadcfc595c3b0f32ea0f3d4c0dae3b81b06c20a782e987c135b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0288-bear-river-midstream/attempt-1/chatgpt-response-validation.json",
+      "sha256": "e4e1d24a1de278d515c5f1a0baf4a560f1fd9961faff1f95b36144bedf78dbac"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0288-bear-river-midstream/attempt-1/chatgpt-attestation.json",
+      "sha256": "3dee34aad86249f61f25f025791419906d28a21a7bd32e57222d3669f2fb93af"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/review.json",
+      "sha256": "41beff6725553727e9ad5f4b73e5c9d621ec0696304830ca82146b727f54d12a"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmti5finb000fwa2b2yfvpsyp",
+      "seedRecordId": "OFA-F6C24C7B3F60",
+      "expectedSeedSha256": "5311d601fc34fcc2b1fdf8b0afa2e2995f8dc2f92c6dc2d1792505c4b41d3bc5",
+      "expectedOwnerSha256": "2091254723bb6403135b7f25568c8272c9066b5b909cfbdca28f6f8520f8bf75",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ISQ Global Infrastructure Fund III, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Spire's purchase agreement identifies ISQ Global Infrastructure Fund III, L.P. as the buyer fund and equity provider for the Subterra acquisition chain, and the closing filing plus I Squared announcement establish the completed acquisition and Bear River platform launch. The named fund is not yet a curated Fund Database record, so no fund link is created; the disclosed 100% interest applies to Belle Butte LLC and is not promoted to an unsupported Bear River-level percentage.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Read the filed purchase agreement's Buyer Fund definition naming ISQ Global Infrastructure Fund III, L.P., equity commitment provisions and Subterra buyer. Read the June 30 closing 8-K: Subterra Energy Borrower succeeds its parent Holdings and acquired all Belle Butte membership interests. Read I Squared's Bear River platform announcement. Disclose Fund III without creating a fund link or converting the Belle Butte percentage into an unsupported platform percentage.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/bear-river-agreement.html",
+          "sha256": "dd2e34b39f66d878c3aad6a5bd2c2d28d5c707eeb076bc0c8cc4137adbef7225",
+          "url": "https://www.sec.gov/Archives/edgar/data/1126956/000119312526155936/sr-ex10_1.htm",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/bear-river-closing.html",
+          "sha256": "4b800ed8a516d954929f1caefaa2f28a201e5f4fcc6ac6d18435a6e95450f88e",
+          "url": "https://www.sec.gov/Archives/edgar/data/1126956/000119312526290674/sr-20260630.htm",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/bear-river-launch.html",
+          "sha256": "fe69f11ef8a3624666046635ed388efb467375570448fd0eabfd1e893d4b2605",
+          "url": "https://isquaredcapital.com/news/acquisition-spire-storage-assets-bear-river-midstream/",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "9c30f54a221d53a60efa54768a62c1cfbe9a204dd367783683bda93a154c3a83",
+  "expectedOwners": [
+    {
+      "ownerId": "cmti5finb000fwa2b2yfvpsyp",
+      "sha256": "2091254723bb6403135b7f25568c8272c9066b5b909cfbdca28f6f8520f8bf75"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0288-bear-river-midstream-v1/proposal.json",
+      "sha256": "c04a694d2f7ff279ab22cbd585b239ffe203e43fc2d64f84103208194eb60753"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0288-bear-river-midstream-v1.json",
+      "sha256": "ec10c60469368b02240f39ae4501d2b22edbc754983585f04858567552325626"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0287-0291-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "784238e6e95ab011fe9a9f8383bea7aa8f7ecb5ba24b2215a3a65c98b2760877",
+      "memberIndex": 1
+    },
+    "receiptSha256": "178b1868972163c96679770a4c6d03c19edc7528e7f036ab8071e4b53dc16f13"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/bear-river-agreement.html.capture.json",
+      "sha256": "58ee8fc2159b7e34191bf804fc59dc7e86799c276432836f1c0bed47c87b5d59"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/bear-river-closing.html.capture.json",
+      "sha256": "afa3c4e8a994c9f8d522da20cc63745dea7f525b79901e211e75115fa690aca1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/bear-river-launch.html.capture.json",
+      "sha256": "d7f7f884dccceb5ea32e676264712ef400ef0bfb697335fd9a4c1b979be5b718"
+    }
+  ]
+}
