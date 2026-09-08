@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "158432e12b2910a31ff6138dfeae77921746e232487371664bab9d421df92a1e",
+  "sourceSnapshotSha256": "b8e199e08f03e2d4bf33aae7db6b15d0b6f33accb4ff00a26e1f6742748465b7",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-724AB61420A0",
+      "ownershipPeriodId": "cmrxpjvws01ncivhet9l9o37h",
+      "companyName": "CAG Holdings",
+      "country": "United States",
+      "investmentFirm": "Carlyle Group",
+      "currentVehicleName": "CAG Holdings, LLC / CGI Phoenix Aggregator, L.P.",
+      "databaseVehicleName": "CAG Holdings, LLC / CGI Phoenix Aggregator, L.P.",
+      "investmentYear": null,
+      "stake": "CAG platform stake not publicly disclosed; approximately 2% indirect interest in The New Terminal One after the June 2022 partial sale",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": "Carlyle Global Infrastructure Opportunity Fund"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "The 2025 NYTDC New Terminal One official statement's sponsor table expressly identifies Carlyle Global Infrastructure Opportunity Fund (CGI) and states that CGI established CAG Holdings as its airport investment vehicle. Separately, the statement identifies CGI Phoenix Aggregator, L.P. as a Carlyle affiliate holding 4% of Mars, which owns 51% of project Topco. The fund attribution to CAG is disclosed; the exact intermediate Phoenix-to-fund chain and CAG platform-level percentage are not established by these disclosures. Preserve the existing qualified approximately 2% indirect project interest, also corroborated by Ferrovial's 2026 filed factbook; do not equate Mars-level percentages with platform equity."
+      },
+      "evidenceUrls": [
+        "https://fmsbonds-wpoffload.s3.amazonaws.com/PROD/wp-content/uploads/2025/07/23091336/650116JJ6.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm"
+      ]
+    }
+  ],
+  "manifestSha256": "061ab81ad7a3b98767ca71014d5dce908ee570f6faa0deeab5f9d1659f576faf"
+}
