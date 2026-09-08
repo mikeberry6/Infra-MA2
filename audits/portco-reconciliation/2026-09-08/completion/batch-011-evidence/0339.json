@@ -1,0 +1,139 @@
+{
+  "companyId": "cmtitg5el0000482b1lrael9x",
+  "name": "Race Communications",
+  "sequence": 339,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0339-race-communications/attempt-2/research-decision.json",
+      "sha256": "3927f68215755dbbde2133f8c5c9bf43ad027203d653e9ea12c04c85731d0ebe"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0339-race-communications/attempt-2/source-verification.json",
+      "sha256": "b02ce5843f2cc86d5dd2b802fa2768e00741f90a8d3482bec85ec5aa777d85ac"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0339-race-communications/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "6477485f85c751561fe1cb2503ac207baa69e2e291063cacce443e5f93d351b1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0339-race-communications/attempt-2/chatgpt-response-validation.json",
+      "sha256": "061012fb8e500cef50531ce5cd53aaddd743a7768cc120a8acb5c1793f9742be"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0339-race-communications/attempt-2/chatgpt-attestation.json",
+      "sha256": "5f096ea59879387b2e29d0226e223368f2485dd8da7e3ed00c2313698ca1d0f5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/review.json",
+      "sha256": "fe72017090bf4cba8bf16cf6a2608282885ecc4d85f921237cf21a89ff76cbc6"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtitg6ia0009482boh2r1077",
+      "seedRecordId": "OFA-FDEF75CA65DE",
+      "expectedSeedSha256": "1f34c5d08eaef5e56d820193bba85c58d669c6222dfe8a136790ca2134ccf8d4",
+      "expectedOwnerSha256": "7a528760aba57793e38707065d83e2ad58b05a0740c5d7a5fe633a0d1a507536",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Oak Hill Capital Partners V (2020 investment; current fund allocation undisclosed)",
+        "attributionConfidence": null,
+        "attributionRationale": "FCC DA 20-1363 identifies five Oak Hill Capital Partners V LPs behind Hometown in the 2020 acquisition. MEAG's 2024 announcement confirms Oak Hill's continuing investment relationship but does not disclose current fund-level allocations. Preserve this historical qualification; no current allocation, new fund link or ownership percentage is inferred.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace unresolved metadata and unsupported seed direct-program classification with explicitly qualified Fund V disclosure; preserve the Hometown chain and current stake uncertainty.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/race-fcc.pdf",
+          "sha256": "f215252f868daa01e57850adca36a91df0ee75265fdf9106587a7641be95c45a",
+          "url": "https://docs.fcc.gov/public/attachments/DA-20-1363A1.pdf",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/race-meag.html",
+          "sha256": "c7c090635b7194760c84c29c674a867b182fd54b4a2409d5d9aaa65310a9652f",
+          "url": "https://www.meag.com/de/informieren/33990.html",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtitg6n4000a482bpkpgbi9x",
+      "seedRecordId": "OFA-B2C3AD15DE74",
+      "expectedSeedSha256": "6ebb788be56d4afd474e488027ba29a909a48be770d1d961be7330d9ead49012",
+      "expectedOwnerSha256": "053049544de3561e05ba2d0e53f52b917a44c470ef27688a7bdaa4e0fe357f8a",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "MEAG's September 2024 disclosure states that its Munich Re Group clients invest alongside Oak Hill in Race. Munich Re's 2025 company report includes MR Redwood. This is a direct insurance-account investment managed by MEAG, not an inferred third-party fund; retain the approved legal chain and stake.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct unresolved Munich Re insurance-account attribution without changing MR Redwood, Hometown, the 2024 entry year or the approved stake.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/race-meag.html",
+          "sha256": "c7c090635b7194760c84c29c674a867b182fd54b4a2409d5d9aaa65310a9652f",
+          "url": "https://www.meag.com/de/informieren/33990.html",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/munich-company-2025.pdf",
+          "sha256": "4771e909c7c582a08095f0bde7a2760d4b180ccd387efe8d58d02ec8b1a68d35",
+          "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "61e82914ee44abc8051853d4b3ae95ccbf38319c98b5dbd8a744d475c2f63470",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtitg6ia0009482boh2r1077",
+      "sha256": "7a528760aba57793e38707065d83e2ad58b05a0740c5d7a5fe633a0d1a507536"
+    },
+    {
+      "ownerId": "cmtitg6n4000a482bpkpgbi9x",
+      "sha256": "053049544de3561e05ba2d0e53f52b917a44c470ef27688a7bdaa4e0fe357f8a"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0339-race-communications-v3/proposal.json",
+      "sha256": "f2c77f1ef0090ada73599f6c4a08e401bd4be7dbe6d102aefca9a960663159af"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0339-race-communications-v3.json",
+      "sha256": "84dc6457632aa34e2f84a104b1a5d2ce071dcafbcd7783c14bd7a57245a7df1d"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0339-0343-v2/production-apply/batch-apply-receipt.json",
+      "sha256": "62717c0e7e8e4ef79594f5e5ddef90ec60d6a9837992f49f41b93671f0ec059a",
+      "memberIndex": 0
+    },
+    "receiptSha256": "379fc82e5ffe084c881c5107794cbefcbc671f6bc290841c7dc2d2304b7df882"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/race-fcc.pdf.capture.json",
+      "sha256": "aa2f41db1cf7d3f4ebe60a64fba9880071c7df6ff3221db8ac9a3b46ad57fd8b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/race-meag.html.capture.json",
+      "sha256": "504cfd455968766f28475b734c2cae0fc658bc6bc4f74f8d3bab21abd55068f0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/munich-company-2025.pdf.capture.json",
+      "sha256": "7098fb7c518a7e514e080878bc0706974fa48d6a89619162d2633d88636fba41"
+    }
+  ]
+}

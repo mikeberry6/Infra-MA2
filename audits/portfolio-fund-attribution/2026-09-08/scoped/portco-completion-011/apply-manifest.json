@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "179ac3bc5f84104c57ab0da4a3fcfa886ead9cfcac33f040173c1daafe5a5514",
+  "sourceSnapshotSha256": "7ddb21ad98672482ca1e913fd3186c53e57e0a66f1c62faf512d3dde0feae1bd",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 3,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 3,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 6,
+  "mutations": [
+    {
+      "recordId": "OFA-0CD4FB3B97B9",
+      "ownershipPeriodId": "cmtio97r5000lwa2b3nd7doko",
+      "companyName": "Pinsly Railroad Company",
+      "country": "United States",
+      "investmentFirm": "Macquarie Asset Management",
+      "currentVehicleName": "MIP V Rail, LLC / Pinsly Holdco, LLC",
+      "databaseVehicleName": "MIP V Rail, LLC / Pinsly Holdco, LLC",
+      "investmentYear": 2022,
+      "stake": "100%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Macquarie Infrastructure Partners V",
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": "Macquarie Infrastructure Partners V"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Infrastructure Partners V",
+        "attributionConfidence": null,
+        "attributionRationale": "The STB's September 2025 control notice expressly identifies Pinsly as wholly owned through Pinsly Holdco and MIP V Rail by Macquarie Infrastructure Partners V. This corrects unresolved metadata while retaining the existing fund link and legal ownership chain."
+      },
+      "evidenceUrls": [
+        "https://www.govinfo.gov/content/pkg/FR-2025-09-19/html/2025-18114.htm",
+        "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/pinsly-railroad-company.html"
+      ]
+    },
+    {
+      "recordId": "OFA-355EF571A9F3",
+      "ownershipPeriodId": "cmtio9fdz001wwa2bt0yubhlv",
+      "companyName": "Treaty Oak Clean Energy, LLC",
+      "country": "United States",
+      "investmentFirm": "Macquarie Asset Management",
+      "currentVehicleName": "Macquarie Green Energy and Climate Opportunities Fund; immediate legal holding vehicle not publicly disclosed",
+      "databaseVehicleName": "Macquarie Green Energy and Climate Opportunities Fund; immediate legal holding vehicle not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "100% collectively",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Green Energy and Climate Opportunities Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Macquarie's 2024 disclosure names MGECOF for the portfolio acquisition including Treaty Oak; its February 2025 announcement identifies Treaty Oak as owned by MAM-managed funds. The immediate holding vehicle and exact transfer closing date remain undisclosed; no fund record or date is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.macquarie.com/au/en/about/news/2024/macquarie-green-energy-and-climate-opportunities-fund-acquires-portfolio-of-six-investments.html",
+        "https://www.macquarie.com/us/en/about/news/2025/macquarie-asset-management-announces-acquisition-of-galehead-development-and-strategic-integration-with-treaty-oak-clean-energy.html",
+        "https://www.treatyoakcleanenergy.com/investor"
+      ]
+    },
+    {
+      "recordId": "OFA-FA10FF5FB6A6",
+      "ownershipPeriodId": "cmtiqljoa000tro2bixi38oq9",
+      "companyName": "Maverick 6 & 7",
+      "country": "United States",
+      "investmentFirm": "MEAG",
+      "currentVehicleName": "MR Falcon LP / Maverick 67 HoldCo LLC / Maverick 67 Class B HoldCo LLC",
+      "databaseVehicleName": "MR Falcon LP / Maverick 67 HoldCo LLC / Maverick 67 Class B HoldCo LLC",
+      "investmentYear": 2022,
+      "stake": "50% of each Maverick 6 and Maverick 7 project company",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDF identifies MEAG as Munich Re's asset manager and a Munich Re subsidiary as the investor. Munich Re's 2025 company report discloses MR Falcon and the Maverick 67 holdings. This is direct insurance-account ownership, not an inferred third-party fund; retain the existing project stakes and distinct holdco percentages."
+      },
+      "evidenceUrls": [
+        "https://www.edf-re.com/press-release/edf-renewables-north-america-and-meag-munich-re-agree-to-partner-in-two-us-renewable-energy-projects-in-the-united-states/",
+        "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-BF90150E861D",
+      "ownershipPeriodId": "cmtiqljso000vro2b0i0a34gp",
+      "companyName": "Maverick 6 & 7",
+      "country": "United States",
+      "investmentFirm": "EDF Renewables North America",
+      "currentVehicleName": "Retained Maverick 67 interests; internal vehicle not publicly disclosed",
+      "databaseVehicleName": "Retained Maverick 67 interests; internal vehicle not publicly disclosed",
+      "investmentYear": null,
+      "stake": "50% of each Maverick 6 and Maverick 7 project company",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDF Renewables is the corporate developer and retained operating sponsor alongside Munich Re's investment account. This is direct corporate ownership; the internal retained-interest vehicle is not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://www.edf-re.com/press-release/edf-renewables-north-america-and-meag-munich-re-agree-to-partner-in-two-us-renewable-energy-projects-in-the-united-states/",
+        "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-FDEF75CA65DE",
+      "ownershipPeriodId": "cmtitg6ia0009482boh2r1077",
+      "companyName": "Race Communications",
+      "country": "United States",
+      "investmentFirm": "Oak Hill Capital",
+      "currentVehicleName": "Hometown Parent, L.P. / Hometown Purchaser, LLC",
+      "databaseVehicleName": "Hometown Parent, L.P. / Hometown Purchaser, LLC",
+      "investmentYear": 2020,
+      "stake": "Majority; at least 75% at the 2020 close, current exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Oak Hill Capital Partners V (2020 investment; current fund allocation undisclosed)",
+        "attributionConfidence": null,
+        "attributionRationale": "FCC DA 20-1363 identifies five Oak Hill Capital Partners V LPs behind Hometown in the 2020 acquisition. MEAG's 2024 announcement confirms Oak Hill's continuing investment relationship but does not disclose current fund-level allocations. Preserve this historical qualification; no current allocation, new fund link or ownership percentage is inferred."
+      },
+      "evidenceUrls": [
+        "https://docs.fcc.gov/public/attachments/DA-20-1363A1.pdf",
+        "https://www.meag.com/de/informieren/33990.html"
+      ]
+    },
+    {
+      "recordId": "OFA-B2C3AD15DE74",
+      "ownershipPeriodId": "cmtitg6n4000a482bpkpgbi9x",
+      "companyName": "Race Communications",
+      "country": "United States",
+      "investmentFirm": "MEAG",
+      "currentVehicleName": "MR Redwood LP / Hometown Purchaser, LLC",
+      "databaseVehicleName": "MR Redwood LP / Hometown Purchaser, LLC",
+      "investmentYear": 2024,
+      "stake": "7.1264%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "MEAG's September 2024 disclosure states that its Munich Re Group clients invest alongside Oak Hill in Race. Munich Re's 2025 company report includes MR Redwood. This is a direct insurance-account investment managed by MEAG, not an inferred third-party fund; retain the approved legal chain and stake."
+      },
+      "evidenceUrls": [
+        "https://www.meag.com/de/informieren/33990.html",
+        "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf"
+      ]
+    }
+  ],
+  "manifestSha256": "4c024a7f472ae8b78841e203c14bd6a4c08e76cc381195d99e3cae7bf032f53e"
+}
