@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_EVIDENCE",
+  "batchId": "portco-completion-025",
+  "batchSha256": "21b16c3b5f6c4fbf55c7cb89ff28165a5a5c2096e3321674f9d50a186d6690a4",
+  "verifiedAt": "2026-09-08T22:30:09.978Z",
+  "release": {
+    "mergeSha": "3b0ecc64d2157e570d4bf6315f6b6fc725ed61b3",
+    "canonicalSha": "3b0ecc64d2157e570d4bf6315f6b6fc725ed61b3",
+    "headSha": "3b0ecc64d2157e570d4bf6315f6b6fc725ed61b3",
+    "gitRef": "main",
+    "gitProvider": "github",
+    "canonicalUrl": "https://infra-ma-2.vercel.app",
+    "ready": true,
+    "requiredChecksPassed": true,
+    "evidence": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-025/canonical-release.json",
+      "sha256": "b0e85ff2331cf0a3b88f99be6fe7a7b771d2a12f0889efa749c60735d65c3d7a"
+    }
+  },
+  "receipt": null,
+  "databaseApplyRequired": false,
+  "publishedSeedProof": {
+    "releaseSha": "3b0ecc64d2157e570d4bf6315f6b6fc725ed61b3",
+    "path": "prisma/seed-data/ownership-attributions.manifest.json",
+    "byteSha256": "744b69efdd703b33817a6e78e3a23001f343ec32e612b2a3ae44a6c83841ada6",
+    "manifestSha256": "bf18691c3490ab485c3f7d391ba1f2f7a70ba9de3836dbe1164737bb094d7f4e",
+    "exact": true
+  },
+  "snapshotSha256": "88a7e8ce0b03a12857f6dab9784a4ff4c1fa86cece00342de51704b1d0f170f4",
+  "seedManifestSha256": "bf18691c3490ab485c3f7d391ba1f2f7a70ba9de3836dbe1164737bb094d7f4e",
+  "proof": [
+    {
+      "companyId": "cmrxpj8x000n4ivhefbfwnig3",
+      "checks": {
+        "api": true,
+        "redirects": true,
+        "ownership": true,
+        "citations": true,
+        "renderedCard": true,
+        "afterImages": true,
+        "seedAlignment": true
+      },
+      "evidence": [
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-025/completion-after.json",
+          "sha256": "fd9157fd86187ef515e9c3866c17276dbbbd6e728915692053662109d803cd64"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-025/live-verification.json",
+          "sha256": "50c9994d78e239405e033b08b6082ff9b20cc879e4058e5668980d6a0f98e0a3"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-025/rendered-0142.png",
+          "sha256": "5b915390b7392b23822cad1a4f19bcaa8ae160bc12f549fc1466a699d1de39d3"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpjbw800rsivhe6s7g89eh",
+      "checks": {
+        "api": true,
+        "redirects": true,
+        "ownership": true,
+        "citations": true,
+        "renderedCard": true,
+        "afterImages": true,
+        "seedAlignment": true
+      },
+      "evidence": [
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-025/completion-after.json",
+          "sha256": "fd9157fd86187ef515e9c3866c17276dbbbd6e728915692053662109d803cd64"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-025/live-verification.json",
+          "sha256": "50c9994d78e239405e033b08b6082ff9b20cc879e4058e5668980d6a0f98e0a3"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-025/rendered-0181.png",
+          "sha256": "3ea89dc6b8e6234083bad1f457e044195bc1251ca0d0542c4f41822693018997"
+        }
+      ]
+    }
+  ],
+  "renderedReview": "Individually inspected both expanded canonical ownership cards. Lighthouse shows BlackRock / Evergreen Infrastructure Fund and the former Excelsior Renewable Energy Investment Fund I LP, with the membership-interest versus total-project-economic-stake qualifications retained and no estimated attribution. Permanent Power shows the disclosed CIM Opportunity Zone fund, its qualified 66.7% interest, the other-CIM 33.3% block as attribution pending, and the 2014–2025 historical CIM / unnamed joint-venture period as attribution pending. All five owners are visible, source sections render, and no fund, partner, stake, identity or layout was inferred or altered.",
+  "renderedReviewFile": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-025/rendered-review.json",
+    "sha256": "0e931a22ab631c095ef883ca875eb1b79a79a965ea5d73885075915ed1db9aaa"
+  },
+  "parked": []
+}
