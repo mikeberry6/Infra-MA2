@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T12:02:08.159Z",
+  "manifestSha256": "23a1dd5c9753fa31ee0dcb8a974c283a903c0a5e3c701a0e963b6a6d0286ca8c",
+  "approvalSha256": "9c61b512f840167e590feade3f63dfb74afa2925e9824f4cc686504a08ba8992",
+  "receiptSha256": "1c71a961bd85e703be4df4ab7b1a46d9af3c1f327e5fcacf8471e73b5105614f",
+  "mutationCount": 3,
+  "changed": 3,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-0C1E2564B57E",
+      "companyId": "cmtj0jmj1000hxx2bly6aduiw",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj0jmj1000hxx2bly6aduiw?verification=23a1dd5c9753fa31ee0dcb8a974c283a903c0a5e3c701a0e963b6a6d0286ca8c",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "UGE's August 2024 closing release explicitly names NOVA Infrastructure Fund II, LP as the purchaser's affiliated fund. Replace unresolved fund attribution with the disclosed Fund II and keep NOVA-Swift Holdco as the separate legal vehicle. Preserve 2024 entry and the qualified sole-direct-shareholder stake; no standalone 100% NOVA fund economics or curated fund link is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-F0A043893E8E",
+      "companyId": "cmtj20h9o00002h2bvrmv121y",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj20h9o00002h2bvrmv121y?verification=23a1dd5c9753fa31ee0dcb8a974c283a903c0a5e3c701a0e963b6a6d0286ca8c",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TIAA's filed June 2025 Schedule Y identifies its wholly owned TIAA Infrastructure Investments LLC and I 595 Toll Road LLC insurance holding chain. This is TIAA's direct general-account investment, not an unresolved managed-fund allocation. Preserve the audited 87.5% stake, 2011 entry and legal vehicle without a fund link."
+      }
+    }
+  ],
+  "passed": true
+}

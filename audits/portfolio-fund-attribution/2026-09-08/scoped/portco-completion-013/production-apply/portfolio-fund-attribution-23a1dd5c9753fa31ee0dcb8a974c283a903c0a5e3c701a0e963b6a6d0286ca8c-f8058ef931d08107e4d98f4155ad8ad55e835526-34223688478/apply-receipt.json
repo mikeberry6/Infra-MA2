@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "23a1dd5c9753fa31ee0dcb8a974c283a903c0a5e3c701a0e963b6a6d0286ca8c",
+  "approvalSha256": "9c61b512f840167e590feade3f63dfb74afa2925e9824f4cc686504a08ba8992",
+  "environment": "production",
+  "pipelineRunId": "cmtsmdcqz0000g64xkg3qm03y",
+  "mutationCount": 3,
+  "changed": 3,
+  "idempotent": false,
+  "beforeFingerprint": "565d9543598788446dcc7cd1d4b6758eb83cca585bacf9126f27056ce47be874",
+  "afterFingerprint": "4aea6976f78d3813d2c66f6bf1e471f5ab407b315777fc1e1e0b4150b31ef6ee",
+  "rows": [
+    {
+      "recordId": "OFA-0C1E2564B57E",
+      "ownershipPeriodId": "cmtj0jmlb000txx2bohzhsec1",
+      "companyId": "cmtj0jmj1000hxx2bly6aduiw",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "UGE's August 2024 closing release explicitly names NOVA Infrastructure Fund II, LP as the purchaser's affiliated fund. Replace unresolved fund attribution with the disclosed Fund II and keep NOVA-Swift Holdco as the separate legal vehicle. Preserve 2024 entry and the qualified sole-direct-shareholder stake; no standalone 100% NOVA fund economics or curated fund link is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-F0A043893E8E",
+      "ownershipPeriodId": "cmtj20ifd000b2h2btswmpm6p",
+      "companyId": "cmtj20h9o00002h2bvrmv121y",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TIAA's filed June 2025 Schedule Y identifies its wholly owned TIAA Infrastructure Investments LLC and I 595 Toll Road LLC insurance holding chain. This is TIAA's direct general-account investment, not an unresolved managed-fund allocation. Preserve the audited 87.5% stake, 2011 entry and legal vehicle without a fund link."
+      }
+    },
+    {
+      "recordId": "OFA-1B79030F99AD",
+      "ownershipPeriodId": "cmtj20imd000d2h2bwdmah1g6",
+      "companyId": "cmtj20h9o00002h2bvrmv121y",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The concessionaire directly identifies ACS Infrastructure Development Inc. as a corporate joint owner, not an investment fund. Replace unresolved fund attribution with direct corporate investment and preserve the audited 12.5% retained stake, 2009 entry and legal vehicle without a fund link."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T12:02:05.856Z",
+  "receiptSha256": "1c71a961bd85e703be4df4ab7b1a46d9af3c1f327e5fcacf8471e73b5105614f"
+}
