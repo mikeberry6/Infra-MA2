@@ -1,0 +1,127 @@
+{
+  "artifactType": "PORTCO_COMPLETION_BATCH_REVIEW",
+  "batchId": "portco-completion-020",
+  "phase": "PARKED_REVISIT",
+  "asOfDate": "2026-09-08",
+  "reviewedBy": "main-agent",
+  "baseCommit": "b095933068c0df49da36f40eab59268ba274f26a",
+  "selectedSequences": [
+    310,
+    311,
+    316,
+    317,
+    319,
+    321,
+    324,
+    325,
+    327,
+    328
+  ],
+  "method": "Reuse completed original proposals, approvals, immutable receipts and full prior after-images. No repeated ChatGPT research or terminal task reopening. Reopened only direct evidence needed for the unresolved metadata and seed representation. Offline validation and one fresh target-pinned snapshot remain mandatory; prior snapshots are not described as fresh.",
+  "decisions": [
+    {
+      "sequence": 310,
+      "classification": "SEED_ONLY",
+      "review": "Preserve correct UNRESOLVED production and null rationale; use the already-sourced seed qualifier without treating a strategy as a named fund."
+    },
+    {
+      "sequence": 311,
+      "classification": "PARKED",
+      "review": "Historical metadata overlays are now supported, but the complete evaluated-seed proof fails two literal identities: ArcLight period cmtif7nnc001nx12beqdj0y37 has database vehicleName null versus resolved seed ArcLight Capital Partners; GIP period cmtif7nnu001px12bn9dqjvs7 has database organization Global Infrastructure Partners versus resolved seed GIP. Required work: supported canonical/seed vehicle and organization reconciliation preserving all six periods and the pending Pantheon boundary, before whole-company historical attribution repair. No partial ECP correction."
+    },
+    {
+      "sequence": 316,
+      "classification": "PARKED",
+      "review": "The 2024 attachment discloses Fund A 3.48% and Fund B 96.52% through HoldCo, but the 2026 filed corporate-parent list also names InfraRed Energy Transition Fund E LP without its position or stake. Resolve Fund E and any required ownership/canonical-text correction before whole-company verification. No inferred allocation or partial A/B metadata apply."
+    },
+    {
+      "sequence": 317,
+      "classification": "PARKED",
+      "review": "Approved evidence names NZ Super and management as beneficial owners, but actual ownership rows contain only Infratil and MEAG. Missing owner rows, Munich Re beneficiary versus MEAG manager organization, and Infratil 42% versus 42.5% require ownership/organization/stake work outside this protected workflow. Preserve both existing periods; no partial attribution cleanup."
+    },
+    {
+      "sequence": 319,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "review": "Remove unsupported distinct-fund assertion: the completed issuer release identifies Kimmeridge as equity investor, not an exact fund. Preserve the literal display vehicle and all ownership identity. Retain correct unresolved exact-fund state and null production rationale; annotate the seed-only explanation. Retain correct unresolved exact-fund state and null production rationale; no wording-only database mutation."
+    },
+    {
+      "sequence": 321,
+      "classification": "PARKED",
+      "review": "Canonical closing vehicle: Existing accepted research already contains this filing-supported closing vehicle; its later canonical proposal retained n.a. Do not silently change owner identity, organization or vehicle through an attribution-only apply. No current legal-entity continuity beyond the existing research cutoff is claimed. Current vehicle: n.a.; source-disclosed closing vehicle: KKR-Keats Pipeline Investors II (Canada) Ltd. Preserve every owner and complete before-image. This requires separately supported compatible canonical work, not a partial attribution-only company completion. Do not infer missing facts, reopen terminal tasks, or repeat original transactions."
+    },
+    {
+      "sequence": 324,
+      "classification": "PARKED",
+      "review": "Historical metadata overlays and seed-only rationale handling are now supported, but all three ownership periods have literal database vehicleName null while the actual seed resolver produces the respective KKR, Pembina and Apollo firm labels. Required work: supported complete canonical/seed vehicle-identity reconciliation before metadata repair. Preserve former KKR 40%, current Pembina 60% and Apollo 40%, chronology, and unavailable Apollo exact fund. No partial corporate-owner correction."
+    },
+    {
+      "sequence": 325,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "review": "Remove inferred K-INFRA/LOW attribution unsupported by the direct completed Phase 1 sale; preserve the existing 42% indirect interest and literal legal chain. The direct completed Phase 1 sale establishes Sempra's retained corporate 28% indirect interest, not an unidentified fund. The issuer directly identifies ConocoPhillips' corporate 30% Phase 1 ownership; replace unresolved fund metadata only. DOE's filed Phase 2 control determination directly identifies Sempra's 50.1% strategic-member holding chain; classify corporate ownership without changing it. Preserve correct unresolved consortium exact-fund state and null production rationale; no individual sponsor allocation is inferred from aggregate indirect control. DOE directly states BX Frontier Member II is wholly owned by Blackstone Private Credit Fund. Disclose that fund without creating or linking a nonexistent published record."
+    },
+    {
+      "sequence": 327,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "review": "The direct fund announcement resolves the existing former MIP III period. The evaluated seed proof uniquely identifies that historical owner; insert only its missing metadata overlay. Correct the proven former corporate owner only. Preserve the original unknown entry year, 2022 exit, stake and legal vehicle; no owner is inserted. The port's direct annual report records acquisition of Dames Point assets in November 2023; public-port direct ownership, not an undisclosed investment fund."
+    },
+    {
+      "sequence": 328,
+      "classification": "PARKED",
+      "review": "The evaluated seed identities match all six current/former owners and historical overlay support is available. Source-byte verification remains incomplete: the direct terminal investor-report fetch returned a 212-byte HTML JavaScript shell despite HTTP 200; the OOIL seller circular returned HTTP 403. The browser visibly loaded the 28-page terminal PDF, but its supported export was unavailable and no downloaded byte artifact was obtained. Required work: capture and validate the substantive investor and seller PDFs (or reuse exact independently verified original bytes) before the atomic six-owner attribution alignment. Preserve every owner, unknown individual seller allocations and existing MIP IV attribution. No partial writes; not a permanent identity/tooling exception."
+    }
+  ],
+  "sourceFindings": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/pathway-igneo.html",
+      "finding": "June 4 2026 completed preferred-equity investment, North American strategy; no exact fund or percentage disclosed. Preserve existing joint-governance qualification from completed evidence."
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/degrees-growth.html",
+      "finding": "Issuer July 17 2025 release directly states closed CAI/Kimmeridge growth-equity investment, and S2G late-2023 closing. No named exact funds. Preserve all three legal vehicles and percentages as originally qualified."
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/degrees-s2g.html",
+      "finding": "Issuer January 24 2024 release directly confirms closed S2G growth equity. No distinct named fund. Do not confuse announcement date with the already-evidenced late-2023 investment year."
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-issuer.pdf",
+      "finding": "Both physical pages rendered and individually inspected. Direct issuer PDF of September 12 2023 completed Phase 1 sale identifies KKR 42% indirect, Sempra 28% indirect and ConocoPhillips 30%. No exact KKR fund identified; replaces blocked same-release website bytes only as supporting attribution evidence, without changing canonical Citation."
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-phase-two.pdf",
+      "finding": "All four physical pages rendered and individually inspected. Pages 2–3 identify September 22 2025 completed transaction, Sempra strategic member 50.1%, Member I 40%, Member II 9.9%, and Blackstone Private Credit Fund wholly owning Member II. Aggregate indirect control in Member I is not an individual sponsor allocation. Separate Phase 1/2 ownership boundaries remain unchanged."
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/dames-macquarie.html",
+      "finding": "October 12 2023 direct completed Ceres sale announcement explicitly retains Dames Point Jacksonville in MIP III. Preserve later November 2023 exit from the port's annual report."
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/dames-board.pdf",
+      "finding": "Physical page 47 rendered and inspected. MOL assigned lease rights to TraPac Jacksonville while retaining exclusive ownership, and agreed sale to Ceres. This proves former corporate attribution; preserve the original receipt's closing chronology rather than treating this pre-closing board request as a new closing."
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/dames-annual.pdf",
+      "finding": "Physical page 4 rendered and inspected; page 9 extracted as corroboration. Direct audited-report package records November 2023 Dames Point assets purchase and outright management. The port's acquisition is not a commingled investment-fund attribution; SSA operating contract remains distinct."
+    }
+  ],
+  "publication": {
+    "rawSourceScans": 8,
+    "rawSourceSecretFindings": 0,
+    "pdfDocumentsTextScanned": 4,
+    "extractedPdfTextSecretFindings": 0,
+    "redactions": [],
+    "originalBytesPreserved": true,
+    "unusedDownloads": "Blocked Sempra website, LBCT investor HTML shell, OOIL 403 response and unneeded Munich annual report remain local, excluded from substantive publication evidence. No browser challenge completion or security bypass."
+  },
+  "sharedHistoricalProof": {
+    "proofPath": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/seed-identity.json",
+    "companies": [
+      "Dames Point Jacksonville LLC"
+    ],
+    "completeEvaluatedOwners": true,
+    "missingHistoricalOverlayInsertions": 2,
+    "identityChanges": 0,
+    "diagnostics": "Separate Terra-Gen/Pembina diagnostic proofs bind the precise literal mismatches; neither is an opted-in safe proof company."
+  },
+  "completionAllowedBeforeReleaseAndVerification": false
+}

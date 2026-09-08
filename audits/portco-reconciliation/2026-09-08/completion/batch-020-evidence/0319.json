@@ -1,0 +1,176 @@
+{
+  "companyId": "cmrxpjjk4013iivhews9hbpmo",
+  "name": "38 Degrees North",
+  "sequence": 319,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0319-38-degrees-north/attempt-1/research-decision.json",
+      "sha256": "6d0f6486475af36899298eb16d2dbffa0b3f7bbce79dec06a6de591e1c6f9211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0319-38-degrees-north/attempt-1/source-verification.json",
+      "sha256": "f4db0572b67e5c24963ee233fd2ddabaef40b6f5b96159e90a4405fce686ca20"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0319-38-degrees-north/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "1d690dd3f3d906734524151627bfa2c11a131e71d308db8057b6d715080752be"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0319-38-degrees-north/attempt-1/chatgpt-response-validation.json",
+      "sha256": "1bc1a80a72d0f56468489db4ad40fd228caf7df727b8c1d245bb02b25e4ac693"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0319-38-degrees-north/attempt-1/chatgpt-attestation.json",
+      "sha256": "516c38e03ba620dae0a6213f5f61c3480841366c73d039d22c3953aa56a1a405"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/review.json",
+      "sha256": "86c525a7b579e125c7964e79eb588cd5de014d605714b7168bf49968d884afcf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0319-38-degrees-north-v2/proposal.json",
+      "sha256": "d81167b1ba48422939d76803783ae9df1d1d94b8b98d6f6665ed46539af74eb9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0319-38-degrees-north-v2.json",
+      "sha256": "e9e908e6e8348bdafab45830dd16c4ee2e2fa6d50d703ff7a5062bedef3967b3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0319-0323-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "65a06450557c1c6bc38bdaf8006948f4fa009e4b384441471c538ad66890c2af"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-010/completion-evidence.json",
+      "sha256": "fcbd00726d6359ddba860766300bdb5b245486224984d47c8392881bb4e6221b"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-010/completion-after.json",
+      "sha256": "a53f85b0f1e91e10146ae4beac2fbca942282c5f9e50ab3c2ab12a6d47c71fdf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/review.json",
+      "sha256": "6b7a9425645fd980badb9a4651cb3d171524747a87a7a3052a8ee2449129586b"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk5l8022civhep7fmqbfj",
+      "seedRecordId": "OFA-23C6732B9C87",
+      "expectedSeedSha256": "ab6cb4c409c08d98fc819dec402ae1dbd6bd80f57db2f83feb3cc8beed1eb105",
+      "expectedOwnerSha256": "0629f56e4a580e7dcb70b6b0429b43244f1657aa19637017b145437c5bf24b1f",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Kimmeridge is directly evidenced as a current equity investor, but no reviewed source identifies the exact Kimmeridge fund or legal investment vehicle for 38 Degrees North; Kimmeridge Carbon Solutions is therefore retained only as the display label and not treated as a verified fund attribution.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove unsupported distinct-fund assertion: the completed issuer release identifies Kimmeridge as equity investor, not an exact fund. Preserve the literal display vehicle and all ownership identity.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/degrees-growth.html",
+          "sha256": "94cd1b1c44be35507136fe9b37251fca0d9fee9f5239e72cee0a1a471783f563",
+          "url": "https://www.prnewswire.com/news-releases/38-degrees-north-announces-over-230-million-of-corporate-growth-capital-raised-and-welcomes-new-equity-investors-climate-adaptive-infrastructure-and-kimmeridge-302507588.html",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtikb12r00062u2b6t6dk2uj",
+      "seedRecordId": "OFA-D0BEBE13EA2E",
+      "expectedSeedSha256": "97c9b78aa7548dbf6cd30ca5be9d8355f6a0367e3867504af4f2c825531619bd",
+      "expectedOwnerSha256": "2d252685bf52d81551f2118f06033c97c350dbc586a4befcf9cff0778a21349e",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "Climate Adaptive Infrastructure is directly evidenced as a current equity investor, but the reviewed sources do not identify a distinct fund or legal investment vehicle.",
+      "productionChange": "NONE",
+      "reason": "Retain correct unresolved exact-fund state and null production rationale; annotate the seed-only explanation.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/degrees-growth.html",
+          "sha256": "94cd1b1c44be35507136fe9b37251fca0d9fee9f5239e72cee0a1a471783f563",
+          "url": "https://www.prnewswire.com/news-releases/38-degrees-north-announces-over-230-million-of-corporate-growth-capital-raised-and-welcomes-new-equity-investors-climate-adaptive-infrastructure-and-kimmeridge-302507588.html",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtikb19600082u2bwd1yzmsa",
+      "seedRecordId": "OFA-ECDD57E5E78C",
+      "expectedSeedSha256": "6e1338c7dfac1a6d012c1d587d97ec6447ae501a3f43a20f6f1b668af25eea0f",
+      "expectedOwnerSha256": "4ab2957f3c80e00eb7b793bde3983faf9ef72d0b8b228e0bb45068346eb35457",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "S2G's closed growth-equity investment is directly evidenced, but the reviewed sources do not identify a distinct S2G fund or legal investment vehicle.",
+      "productionChange": "NONE",
+      "reason": "Retain correct unresolved exact-fund state and null production rationale; no wording-only database mutation.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/degrees-s2g.html",
+          "sha256": "a85cca2cee3c9de1839bb0d83f294f1734202535c3a24e5427afa7d18e72de55",
+          "url": "https://www.prnewswire.com/news-releases/38-degrees-north-announces-growth-equity-investment-from-s2g-ventures-and-62-mws-of-community-solar-project-acquisitions-302042659.html",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "927527c58139c1c67cec5a990b85f4a037681a784feb07600f49f3e3d4025575",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk5l8022civhep7fmqbfj",
+      "sha256": "0629f56e4a580e7dcb70b6b0429b43244f1657aa19637017b145437c5bf24b1f"
+    },
+    {
+      "ownerId": "cmtikb12r00062u2b6t6dk2uj",
+      "sha256": "2d252685bf52d81551f2118f06033c97c350dbc586a4befcf9cff0778a21349e"
+    },
+    {
+      "ownerId": "cmtikb19600082u2bwd1yzmsa",
+      "sha256": "4ab2957f3c80e00eb7b793bde3983faf9ef72d0b8b228e0bb45068346eb35457"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0319-38-degrees-north-v2/proposal.json",
+      "sha256": "d81167b1ba48422939d76803783ae9df1d1d94b8b98d6f6665ed46539af74eb9"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0319-38-degrees-north-v2.json",
+      "sha256": "e9e908e6e8348bdafab45830dd16c4ee2e2fa6d50d703ff7a5062bedef3967b3"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0319-0323-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "65a06450557c1c6bc38bdaf8006948f4fa009e4b384441471c538ad66890c2af",
+      "memberIndex": 0
+    },
+    "receiptSha256": "37cd570f52f164749c2309d46211d8d76c71fd738468cefa4804a80025cd8023"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/degrees-growth.html.capture.json",
+      "sha256": "982d5ad2a5367ce61640f94d5103834734c96ad3b04f0689d32c65fe70afc743"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/degrees-s2g.html.capture.json",
+      "sha256": "020b5fe0a6da307659552132b5d826143e6ffe8d7ab720dbc110335fedbcdc48"
+    }
+  ]
+}

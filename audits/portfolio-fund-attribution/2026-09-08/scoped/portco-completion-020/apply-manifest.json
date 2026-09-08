@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "ccdc173239aec3ae69763222ba0241d8d684e3c92ebc6b43bc5acd51f5af595b",
+  "sourceSnapshotSha256": "a7a1a14d9a519899974effdab9b4484a0e748831600021b96d0aaecc7cca4389",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 2,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 5,
+      "UNRESOLVED": 2
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 9,
+  "mutations": [
+    {
+      "recordId": "OFA-23C6732B9C87",
+      "ownershipPeriodId": "cmrxpk5l8022civhep7fmqbfj",
+      "companyName": "38 Degrees North",
+      "country": "United States",
+      "investmentFirm": "Kimmeridge",
+      "currentVehicleName": "Kimmeridge Carbon Solutions",
+      "databaseVehicleName": "Kimmeridge Carbon Solutions",
+      "investmentYear": 2025,
+      "stake": "Equity investor; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Kimmeridge is directly evidenced as a current equity investor, but no reviewed source identifies the exact Kimmeridge fund or legal investment vehicle for 38 Degrees North; Kimmeridge Carbon Solutions is therefore retained only as the display label and not treated as a verified fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/38-degrees-north-announces-over-230-million-of-corporate-growth-capital-raised-and-welcomes-new-equity-investors-climate-adaptive-infrastructure-and-kimmeridge-302507588.html"
+      ]
+    },
+    {
+      "recordId": "OFA-E10FA0D9B9EA",
+      "ownershipPeriodId": "cmrxpk5y7022wivhe4xw352ck",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "KKR",
+      "currentVehicleName": "KKR Denali Holdco LLC; 60% of Sempra PALNG Holdings LLC",
+      "databaseVehicleName": "KKR Denali Holdco LLC; 60% of Sempra PALNG Holdings LLC",
+      "investmentYear": 2023,
+      "stake": "42% indirect interest in Phase 1",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "KKR's 42% indirect Phase 1 ownership is directly evidenced, but no reviewed production source supports the former generic K-INFRA link or a target-linked fund record."
+      },
+      "evidenceUrls": [
+        "https://investor.sempra.com/node/43366/pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-AF2615F482CD",
+      "ownershipPeriodId": "cmtimipjv000i2i2bm4uly3a5",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "Sempra Infrastructure",
+      "currentVehicleName": "Sempra PALNG Holdings LLC",
+      "databaseVehicleName": "Sempra PALNG Holdings LLC",
+      "investmentYear": 2023,
+      "stake": "28% indirect interest in Phase 1",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Sempra Infrastructure directly retains its Phase 1 interest through the project holding chain; this is corporate ownership rather than a fund attribution."
+      },
+      "evidenceUrls": [
+        "https://investor.sempra.com/node/43366/pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-C43DA9E1FF5C",
+      "ownershipPeriodId": "cmtimippr000k2i2bi2w6vz1r",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "ConocoPhillips",
+      "currentVehicleName": "ConocoPhillips Port Arthur LNG LLC",
+      "databaseVehicleName": "ConocoPhillips Port Arthur LNG LLC",
+      "investmentYear": 2023,
+      "stake": "30% direct interest in the Phase 1 parent",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ConocoPhillips directly owns its Phase 1 project interest; this is corporate ownership rather than a fund attribution."
+      },
+      "evidenceUrls": [
+        "https://investor.sempra.com/node/43366/pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-C509098CFF3C",
+      "ownershipPeriodId": "cmtimiptn000l2i2b62lgrc1w",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "Sempra Infrastructure",
+      "currentVehicleName": "Port Arthur Liquefaction Holdings Phase II LLC",
+      "databaseVehicleName": "Port Arthur Liquefaction Holdings Phase II LLC",
+      "investmentYear": 2025,
+      "stake": "50.1% direct interest in the Phase 2 JVCo",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Sempra Infrastructure directly owns the 50.1% Phase 2 member interest; this is corporate ownership rather than a fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-E2F9B7DECB2C",
+      "ownershipPeriodId": "cmtimiq3g000o2i2b2rmhzxo9",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "Blackstone",
+      "currentVehicleName": "BX Frontier Member II LLC; Blackstone Private Credit Fund",
+      "databaseVehicleName": "BX Frontier Member II LLC; Blackstone Private Credit Fund",
+      "investmentYear": 2025,
+      "stake": "9.9% direct interest in the Phase 2 JVCo",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Private Credit Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "The Phase 2 control filing directly names Blackstone Private Credit Fund in the 9.9% ownership chain; no matching published fund record is linked."
+      },
+      "evidenceUrls": [
+        "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-FCCF705AF94860523C8279B6",
+      "ownershipPeriodId": "cmrxpk62g0234ivhecms51wwu",
+      "companyName": "Dames Point Jacksonville LLC",
+      "country": "United States",
+      "investmentFirm": "Macquarie Asset Management",
+      "currentVehicleName": "Ceres Terminals Holdings LLC; later MIP III Bluefin B Holdco LP",
+      "databaseVehicleName": "Ceres Terminals Holdings LLC; later MIP III Bluefin B Holdco LP",
+      "investmentYear": 2022,
+      "stake": "100%",
+      "expectedIsActive": false,
+      "targetLinkedFundName": "Macquarie Infrastructure Partners III",
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": "Macquarie Infrastructure Partners III"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Infrastructure Partners III",
+        "attributionConfidence": null,
+        "attributionRationale": "Macquarie's direct October 2023 sale announcement expressly states Dames Point Jacksonville was retained by Macquarie Infrastructure Partners III; preserve its later evidenced November 2023 exit and existing fund link."
+      },
+      "evidenceUrls": [
+        "https://www.macquarie.com/us/en/about/news/2023/macquarie-infrastructure-partners-iii-completes-sales-of-ceres-terminals.html"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-4EB9237A8D5FFDD5D70B2B88",
+      "ownershipPeriodId": "cmtimj01v00142i2bbpp9fp3u",
+      "companyName": "Dames Point Jacksonville LLC",
+      "country": "United States",
+      "investmentFirm": "Mitsui O.S.K. Lines",
+      "currentVehicleName": "TraPac Jacksonville LLC",
+      "databaseVehicleName": "TraPac Jacksonville LLC",
+      "investmentYear": null,
+      "stake": "100%",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "JAXPORT's February 2022 board packet directly states MOL retained exclusive ownership of TraPac Jacksonville LLC before the Ceres acquisition; this was corporate ownership rather than an investment-fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.jaxport.com/index.php?field-id=7&form-id=4&gf-download=2022%2F02%2F2022.02.14.Sp_.BOD_.Packet.pdf&gv-iframe=true&hash=08ff72b71b93193507da9b38dea7d3468f31a3425e7672e392ac560e300eb74d"
+      ]
+    },
+    {
+      "recordId": "OFA-60B240E8256B",
+      "ownershipPeriodId": "cmtimj07p00162i2bhk91st5r",
+      "companyName": "Dames Point Jacksonville LLC",
+      "country": "United States",
+      "investmentFirm": "Jacksonville Port Authority",
+      "currentVehicleName": "Dames Point Jacksonville LLC business and assets",
+      "databaseVehicleName": "Dames Point Jacksonville LLC business and assets",
+      "investmentYear": 2023,
+      "stake": "Full ownership; legal allocation not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "JAXPORT directly acquired and continues to own the Dames Point business and assets; this is public-port ownership rather than a fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.jaxport.com/wp-content/uploads/2025/03/20232024-Annual-report.pdf"
+      ]
+    }
+  ],
+  "manifestSha256": "e629381a10555261bc53781e26df6d290462389b80a538d136542ad53d65ea3b"
+}
