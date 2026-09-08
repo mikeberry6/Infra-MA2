@@ -11,9 +11,12 @@ import { CHRONOLOGY_PATH, EXECUTION_PATH, LEDGER_PATH, PROGRESS_PATH, SEED_PATH 
 import { verifyExecutionManifest } from "../portco-reconciliation/execution-control";
 import { verifyBatchExecutionLedger } from "../portco-reconciliation/batch-control";
 import { verifySeedManifest } from "../portfolio-fund-attribution/schema";
+import { seedIdentitySchema } from "./seed-identity";
+import { checkActualSeedIdentity } from "./seed-identity-files";
 
 const configSchema = z.strictObject({ batchId: z.string().regex(/^portco-completion-\d{3}$/),
   phase: z.literal("PARKED_REVISIT").optional(),
+  seedIdentity: fileSchema.optional(),
   asOfDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), progressSha256: fileSchema.shape.sha256,
   records: z.array(fileSchema).min(1).max(10), completedReleases: z.array(completedReleaseSchema) });
 async function main() {
@@ -44,6 +47,12 @@ async function main() {
   else if (config.completedReleases.length) throw Error("Unexpected completion lineage");
   const records = validateDecisionRecords({ progress, phase: config.phase, records: config.records.map(r => json(r.path, r.sha256)),
     read: ref => ref.path.endsWith(".json") ? json(ref.path, ref.sha256) : bytes(ref.path, ref.sha256) });
+  const seedIdentity = config.seedIdentity ? seedIdentitySchema.parse(json(config.seedIdentity.path, config.seedIdentity.sha256)) : undefined;
+  if (seedIdentity) {
+    for (const dependency of seedIdentity.dependencies) bytes(dependency.path, dependency.sha256);
+    checkActualSeedIdentity(root, seedIdentity, refs);
+  }
+  if (records.some(r => r.owners.some(o => o.expectedSeedSha256 === null)) && !seedIdentity) throw Error("Absent overlay requires evaluated seed proof before capture");
   for (const record of records) {
     const task = execution.tasks.find(t => t.sequence === record.sequence);
     const receipt = task?.artifacts.applyReceipt;
@@ -63,6 +72,7 @@ async function main() {
   const decisions = bindDecisionRecords(records, snapshot);
   const batch = verifyBatch(seal({ schemaVersion: 1, artifactType: "PORTCO_COMPLETION_BATCH", batchId: config.batchId,
     ...(config.phase ? { phase: config.phase } : {}),
+    ...(seedIdentity ? { seedIdentity } : {}),
     baseCommit: base, asOfDate: config.asOfDate, executionManifestSha256: execution.manifestSha256, sourceLedgerSha256: ledger.ledgerSha256,
     progressSha256: progress.progressSha256, seedManifestSha256: seed.manifestSha256, snapshotSha256: snapshot.snapshotSha256,
     targetFingerprint: snapshot.targetFingerprint, dependencies: [...refs].map(([path, sha256]) => ({ path, sha256 })).sort((a,b) => a.path.localeCompare(b.path)), decisions }, "batchSha256"));

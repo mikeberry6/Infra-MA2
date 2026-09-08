@@ -5,6 +5,8 @@ import { bytesHash, scanPublication, verifyRedaction } from "./files";
 import { canonicalSha256, verifyProductionSnapshot, verifySeedManifest } from "../portfolio-fund-attribution/schema";
 import { sha256Canonical } from "../portco-reconciliation/hash";
 import { assertCompleteState } from "./apply-guard";
+import { buildSeedIdentity, insertedOverlayId, SEED_IDENTITY_INPUTS, seedOwnerKey } from "./seed-identity";
+import type { PortCo, PortCoOwner } from "../../prisma/seed-data/portco-types";
 
 const H = "a".repeat(64), SHA = "b".repeat(40), file = { path: "evidence.json", sha256: H };
 const reseal = <T extends object>(v: T, key: keyof T) => { const { [key]: _old, ...content } = v; return seal(content, String(key)); };
@@ -39,6 +41,120 @@ function fixture(kinds = ["ATTRIBUTION_CORRECTION", "SEED_ONLY", "NO_CHANGE", "P
   return { batch, snapshot, seed, progress, files: new Map([[file.path, H]]) };
 }
 const release = { mergeSha: SHA, canonicalSha: SHA, headSha: SHA, gitRef: "main", gitProvider: "github", canonicalUrl: "https://infra-ma-2.vercel.app", ready: true, requiredChecksPassed: true, evidence: file };
+describe("evaluated historical seed owner proof", () => {
+  function historicalFixture(options: { insert?: boolean; raw?: Partial<PortCoOwner>; inline?: string; kind?: string } = {}) {
+    const f = fixture([options.kind ?? "ATTRIBUTION_CORRECTION"]), s = structuredClone(f.snapshot);
+    Object.assign(s.companies[0].image.ownershipPeriods[0], { isActive: false, transactionState: "REALIZED", exitYear: 2023 });
+    const snapshot = verifySnapshot(reseal(s, "snapshotSha256"));
+    const raw: PortCoOwner = { investmentFirm: "Manager", ownershipVehicle: "Vehicle", investmentYear: 2020,
+      exitYear: 2023, status: "Realized", ...options.raw, ...(options.inline ? { attributionRationale: options.inline } : {}) };
+    const company: PortCo = { name: "Name 0", country: "United States", countryTags: ["United States"],
+      sector: "Power & ET", subsector: "Power", region: "North America", description: "Company", status: "Active",
+      investmentFirm: "Manager", ownershipVehicle: "Vehicle", owners: [raw] };
+    const seedIdentity = buildSeedIdentity({ companies: [company], selected: [company],
+      dependencies: SEED_IDENTITY_INPUTS.map(path => ({ path, sha256: H })), resolveOrganization: name => name,
+      resolveOwnership: owner => ({ vehicleName: owner.vehicleName || owner.ownershipVehicle || owner.investmentFirm,
+        fundLookupName: owner.fundName || owner.ownershipVehicle,
+        transactionState: owner.transactionState || (owner.status === "Active" ? "CLOSED_ACTIVE" : "REALIZED") }) });
+    const { manifestSha256: _old, ...seedContent } = f.seed;
+    const insertedContent = { ...seedContent, records: f.seed.records.slice(1), recordCount: 1 };
+    const seed = options.insert ? verifySeedManifest({ ...insertedContent, manifestSha256: canonicalSha256(insertedContent) }) : f.seed;
+    const b = { ...f.batch, seedIdentity, dependencies: [file, ...seedIdentity.dependencies], snapshotSha256: snapshot.snapshotSha256, seedManifestSha256: seed.manifestSha256 };
+    b.decisions[0].expectedCompanySha256 = sha256Canonical(snapshot.companies[0]);
+    if (options.insert) Object.assign(b.decisions[0].owners[0], { expectedSeedSha256: null,
+      seedRecordId: insertedOverlayId(seedOwnerKey(seedIdentity.companies[0], seedIdentity.companies[0].owners[0])) });
+    return { ...f, snapshot, seed, batch: verifyBatch(reseal(b, "batchSha256")), files: new Map([...f.files, ...seedIdentity.dependencies.map(d => [d.path, d.sha256] as const)]) };
+  }
+  it.each([false, true])("supports a proven former owner with overlay insertion=%s and preserves all core identities", insert => {
+    const f = historicalFixture({ insert }), c = compileBatch(f);
+    expect(c.manifest?.expectedMutationCount).toBe(1);
+    expect(c.manifest?.mutations[0].expectedIsActive).toBe(false);
+    expect(c.projected[0].image).toEqual(f.snapshot.companies[0].image);
+    expect(c.projected[0].owners[0].organizationId).toBe("org");
+    expect(c.seed.recordCount).toBe(f.seed.recordCount + (insert ? 1 : 0));
+    expect(c.seed.records.find(r => r.recordId === "unrelated")).toEqual(f.seed.records.find(r => r.recordId === "unrelated"));
+  });
+  it("leaves the legacy inactive-owner guard in place without the opt-in proof", () => {
+    const f = historicalFixture(), b = structuredClone(f.batch); delete b.seedIdentity;
+    expect(() => compileBatch({ ...f, batch: verifyBatch(reseal(b, "batchSha256")) })).toThrow(/Unsupported seed identity/);
+  });
+  it("does not create a missing owner or accept an invented overlay ID", () => {
+    const f = historicalFixture({ insert: true }), b = structuredClone(f.batch);
+    b.decisions[0].owners[0].seedRecordId = "invented";
+    expect(() => compileBatch({ ...f, batch: verifyBatch(reseal(b, "batchSha256")) })).toThrow(/absence\/identity/);
+    b.decisions[0].owners[0].ownerId = "missing";
+    expect(() => compileBatch({ ...f, batch: verifyBatch(reseal(b, "batchSha256")) })).toThrow();
+  });
+  it("requires exact ID and full-key absence rather than replacing an existing row", () => {
+    const f = historicalFixture(), b = structuredClone(f.batch);
+    b.decisions[0].owners[0].expectedSeedSha256 = null;
+    b.decisions[0].owners[0].seedRecordId = insertedOverlayId(seedOwnerKey(b.seedIdentity!.companies[0], b.seedIdentity!.companies[0].owners[0]));
+    expect(() => compileBatch({ ...f, batch: verifyBatch(reseal(b, "batchSha256")) })).toThrow(/absence\/identity/);
+  });
+  it.each([{ investmentFirm: "Other" }, { vehicleName: "Other" }, { investmentYear: 2021 }, { stake: "100%" },
+    { status: "Active" as const }, { exitYear: 2024 }, { transactionState: "SIGNED_PENDING_EXIT" as const }])("rejects changed seed owner identity/state %j", raw => {
+    expect(() => compileBatch(historicalFixture({ raw }))).toThrow(/existing seed owner/);
+  });
+  it("rejects stale evaluated input and missing complete batch dependency", () => {
+    const f = historicalFixture(); f.files.set(SEED_IDENTITY_INPUTS[0], "f".repeat(64));
+    expect(() => compileBatch(f)).toThrow(/stale evidence/);
+    const g = historicalFixture(), b = structuredClone(g.batch); b.dependencies = [file];
+    expect(() => compileBatch({ ...g, batch: verifyBatch(reseal(b, "batchSha256")) })).toThrow(/not batch-bound/);
+  });
+  it("rejects effective inline overrides but accepts an identical effective value", () => {
+    expect(() => compileBatch(historicalFixture({ inline: "Conflicting inline text" }))).toThrow(/Inline seed override/);
+    expect(compileBatch(historicalFixture({ inline: "Correct disclosed fund; old rationale omitted source." })).manifest).not.toBeNull();
+  });
+  it("allows sourced seed-only null-rationale representation on a proven former owner without applying", () => {
+    const f = historicalFixture({ kind: "SEED_ONLY" }), s = structuredClone(f.snapshot);
+    s.companies[0].owners[0].state.attributionRationale = null;
+    const snapshot = verifySnapshot(reseal(s, "snapshotSha256")), b = structuredClone(f.batch);
+    b.snapshotSha256 = snapshot.snapshotSha256; b.decisions[0].expectedCompanySha256 = sha256Canonical(snapshot.companies[0]);
+    Object.assign(b.decisions[0].owners[0], { expectedOwnerSha256: sha256Canonical(snapshot.companies[0].owners[0]),
+      desired: snapshot.companies[0].owners[0].state, seedOnlyRationale: "Disclosed fund." });
+    const c = compileBatch({ ...f, snapshot, batch: verifyBatch(reseal(b, "batchSha256")) });
+    expect(c.manifest).toBeNull(); expect(c.projected).toEqual(snapshot.companies);
+  });
+  it("retains the complete after-image guard for former owner chronology", () => {
+    const f = historicalFixture({ insert: true }), c = compileBatch(f), wrong = structuredClone(c.projected);
+    wrong[0].image.ownershipPeriods[0].exitYear = 2024;
+    expect(() => assertCompleteState(wrong, c.projected, "after")).toThrow(/freeze/);
+  });
+  it("mixes proven historical metadata with legacy active, seed-only, no-op and parked names", () => {
+    const f = fixture(), h = historicalFixture(), s = structuredClone(f.snapshot);
+    s.companies[0] = h.snapshot.companies[0];
+    const snapshot = verifySnapshot(reseal(s, "snapshotSha256")), b = structuredClone(f.batch);
+    b.decisions[0] = h.batch.decisions[0]; b.seedIdentity = h.batch.seedIdentity;
+    b.dependencies = h.batch.dependencies; b.snapshotSha256 = snapshot.snapshotSha256;
+    const batch = verifyBatch(reseal(b, "batchSha256"));
+    const result = compileBatch({ ...f, snapshot, batch, files: h.files });
+    expect(result.batch.decisions).toHaveLength(10);
+    expect(result.manifest?.mutations[0].expectedIsActive).toBe(false);
+    expect(result.projected.slice(1)).toEqual(f.snapshot.companies.slice(1));
+    // Omitting a company's proof cannot opt its historical owner into the legacy path.
+    s.companies[1].image.ownershipPeriods[0].isActive = false;
+    s.companies[1].image.ownershipPeriods[0].transactionState = "REALIZED";
+    const wrong = verifySnapshot(reseal(s, "snapshotSha256"));
+    b.snapshotSha256 = wrong.snapshotSha256; b.decisions[1].expectedCompanySha256 = sha256Canonical(wrong.companies[1]);
+    expect(() => compileBatch({ ...f, snapshot: wrong, batch: verifyBatch(reseal(b, "batchSha256")), files: h.files })).toThrow(/Unsupported seed identity/);
+  });
+  it("requires a proven counterpart for every preserved production owner", () => {
+    const f = historicalFixture(), s = structuredClone(f.snapshot), b = structuredClone(f.batch);
+    s.companies[0].owners.push({ ...s.companies[0].owners[0], id: "preserved" });
+    s.companies[0].image.ownershipPeriods.push({ ...s.companies[0].image.ownershipPeriods[0], id: "preserved", vehicleName: "Other vehicle" });
+    const snapshot = verifySnapshot(reseal(s, "snapshotSha256"));
+    b.snapshotSha256 = snapshot.snapshotSha256; b.decisions[0].expectedCompanySha256 = sha256Canonical(snapshot.companies[0]);
+    b.decisions[0].preservedOwnerIds.push("preserved");
+    expect(() => compileBatch({ ...f, snapshot, batch: verifyBatch(reseal(b, "batchSha256")) })).toThrow(/Complete evaluated seed owner coverage/);
+  });
+  it("rejects unused proof companies instead of treating them as additional authorized scope", () => {
+    const f = historicalFixture(), b = structuredClone(f.batch), proof = b.seedIdentity!;
+    proof.companies.push({ ...proof.companies[0], name: "Unselected" });
+    const { proofSha256: _old, ...content } = proof;
+    b.seedIdentity = { ...content, proofSha256: sha256Canonical(content) };
+    expect(() => compileBatch({ ...f, batch: verifyBatch(reseal(b, "batchSha256")) })).toThrow(/proof scope differs/);
+  });
+});
 describe("shared ten-name compiler", () => {
   it("compiles a mixed ten-name batch without changing parked/unrelated records", () => {
     const f = fixture(), result = compileBatch(f);

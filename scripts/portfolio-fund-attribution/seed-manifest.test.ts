@@ -22,7 +22,7 @@ function ownerKey(input: {
   ].join("\u0000");
 }
 
-function activeOwners() {
+function evaluatedOwners(activeOnly = true) {
   return companies.flatMap((company) => {
     const owners: PortCoOwner[] = company.owners?.length
       ? company.owners
@@ -33,7 +33,7 @@ function activeOwners() {
           status: company.status,
         }];
     return owners
-      .filter((owner) => owner.status === "Active")
+      .filter((owner) => !activeOnly || owner.status === "Active")
       .map((owner) => ({
         companyName: company.name,
         country: company.country,
@@ -48,16 +48,22 @@ function activeOwners() {
 describe("portfolio fund attribution seed manifest", () => {
   it("matches every active evaluated seed owner exactly once", () => {
     const manifest = verifySeedManifest(rawManifest);
-    const owners = activeOwners();
+    const owners = evaluatedOwners();
     const ownerKeys = owners.map(ownerKey);
     const manifestKeys = manifest.records.map(ownerKey);
 
-    // PR916 retired eight duplicates; the Extenet identity repair retires one more.
-    expect(manifest.records).toHaveLength(1_393);
+    // All 1,393 active owners remain covered. Batch 019 adds two proven former-owner
+    // metadata overlays, not owners; every added key must exist in evaluated seed.
+    expect(manifest.records).toHaveLength(1_395);
     expect(owners).toHaveLength(1_393);
     expect(new Set(ownerKeys)).toHaveProperty("size", ownerKeys.length);
     expect(new Set(manifestKeys)).toHaveProperty("size", manifestKeys.length);
-    expect([...manifestKeys].sort()).toEqual([...ownerKeys].sort());
+    const activeKeys = new Set(ownerKeys), allKeys = new Set(evaluatedOwners(false).map(ownerKey));
+    expect(manifestKeys.filter(key => activeKeys.has(key)).sort()).toEqual([...ownerKeys].sort());
+    expect(manifestKeys.every(key => allKeys.has(key))).toBe(true);
+    const historical = manifest.records.filter(record => !activeKeys.has(ownerKey(record)));
+    expect(historical).toHaveLength(2);
+    expect(historical.every(record => record.recordId.startsWith("OFA-HIST-") && record.fundAttribution !== "INFERRED")).toBe(true);
   });
 
   it("does not create funds and labels every estimate", () => {

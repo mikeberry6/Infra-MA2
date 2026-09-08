@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "061ab81ad7a3b98767ca71014d5dce908ee570f6faa0deeab5f9d1659f576faf",
+  "approvalSha256": "bfd3084ec5867b43a791b941328b0724c3b3d0a23c4470b194eca5446abd7fef",
+  "environment": "production",
+  "pipelineRunId": "cmtstmbqe0000gn4xfw1b2jg5",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "cd79c04e5ec9366eada7c26cc4b8bee5a2bfe1e4ebed0c7e8121293191a09202",
+  "afterFingerprint": "4ff56a816f68c1dad4f2b7f714485f8f42dd9c5e0f582f2942dc6251f5221b64",
+  "rows": [
+    {
+      "recordId": "OFA-724AB61420A0",
+      "ownershipPeriodId": "cmrxpjvws01ncivhet9l9o37h",
+      "companyId": "cmrxpjajc00pnivhebltqp86n",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Carlyle and Ferrovial materials directly identify CAG Holdings and CGI Phoenix Aggregator as Carlyle Global Infrastructure Opportunity Fund investment vehicles and document Carlyle's retained indirect interest in The New Terminal One after the 2022 partial sale."
+      },
+      "after": {
+        "linkedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "The 2025 NYTDC New Terminal One official statement's sponsor table expressly identifies Carlyle Global Infrastructure Opportunity Fund (CGI) and states that CGI established CAG Holdings as its airport investment vehicle. Separately, the statement identifies CGI Phoenix Aggregator, L.P. as a Carlyle affiliate holding 4% of Mars, which owns 51% of project Topco. The fund attribution to CAG is disclosed; the exact intermediate Phoenix-to-fund chain and CAG platform-level percentage are not established by these disclosures. Preserve the existing qualified approximately 2% indirect project interest, also corroborated by Ferrovial's 2026 filed factbook; do not equate Mars-level percentages with platform equity."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T15:25:05.309Z",
+  "receiptSha256": "4185715fb2f3b7287443c07147110305a256636360eeadc910f8d9bbe657b2b9"
+}

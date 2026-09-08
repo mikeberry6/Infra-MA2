@@ -3,6 +3,7 @@ import { z } from "zod";
 import { sha256Canonical } from "../portco-reconciliation/hash";
 import { companyImageSchema } from "../portco-reconciliation/schema";
 import { verifyAttributionChain } from "../portco-reconciliation/attribution-chronology";
+import { seedIdentitySchema, verifySeedIdentity, proveSeedOwner, seedOverlayKey, insertedOverlayId, assertEffectiveSeedState } from "./seed-identity";
 import {
   attributionMutationSchema, attributionSeedRecordSchema, canonicalSha256,
   verifyManifest, verifyProductionSnapshot, verifySeedManifest, type AttributionApplyManifest,
@@ -35,7 +36,8 @@ export const snapshotSchema = z.strictObject({
 });
 const patchSchema = z.strictObject({
   ownerId: text, seedRecordId: text,
-  expectedSeedSha256: hash, expectedOwnerSha256: hash,
+  // Null means an explicitly proven absent historical metadata overlay, never an absent owner.
+  expectedSeedSha256: hash.nullable(), expectedOwnerSha256: hash,
   desired: desiredSchema,
   // Seed schema requires a source-supported explanation, even when production has none.
   // This annotation can never authorize or accompany a production mutation.
@@ -58,6 +60,7 @@ export const batchSchema = z.strictObject({
   batchId: text, baseCommit: commit, asOfDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   // Omitted for immutable main-pass releases; explicit and hash-bound for the revisit.
   phase: z.literal("PARKED_REVISIT").optional(),
+  seedIdentity: seedIdentitySchema.optional(),
   executionManifestSha256: hash, sourceLedgerSha256: hash, progressSha256: hash,
   seedManifestSha256: hash, snapshotSha256: hash, targetFingerprint: hash,
   dependencies: z.array(fileSchema).min(1), decisions: z.array(decisionSchema).min(1).max(10),
@@ -93,6 +96,7 @@ export function verifyBatch(value: unknown) {
     unique([...d.preservedOwnerIds, ...d.owners.map(o => o.ownerId)], "owner decision");
     for (const o of d.owners) {
       owners.push(o.ownerId); seeds.push(o.seedRecordId);
+      if (o.expectedSeedSha256 === null && !batch.seedIdentity) throw Error("Absent overlay requires evaluated seed identity proof");
       if (o.sources.filter(s => s.primary).length !== 1) throw Error("Exactly one primary citation per owner decision required");
       unique(o.sources.map(s => s.url), "source URL");
       if (o.desired.fundAttribution === "INFERRED") throw Error("New inferred assignments are forbidden");
@@ -129,21 +133,42 @@ export function compileBatch(input: { batch: unknown; snapshot: unknown; seed: u
   for (const f of files) if (input.files.get(f.path) !== f.sha256) throw Error(`Missing or stale evidence: ${f.path}`);
   if (!equal(batch.decisions.map(d => d.companyId).sort(), snapshot.companies.map(c => c.image.id).sort())) throw Error("Snapshot must cover selected ten-name scope exactly");
   const records = structuredClone(seed.records), mutations: AttributionApplyManifest["mutations"] = [];
+  const identity = batch.seedIdentity ? verifySeedIdentity(batch.seedIdentity, input.files) : null;
+  if (identity) {
+    for (const dependency of identity.dependencies) if (!batch.dependencies.some(d => equal(d, dependency))) throw Error("Seed identity input is not batch-bound");
+    for (const proven of identity.companies) {
+      if (!batch.decisions.some(d => d.owners.length && d.name === proven.name
+        && snapshot.companies.find(c => c.image.id === d.companyId)!.image.country === proven.country)) throw Error("Seed identity proof scope differs");
+    }
+    unique(records.map(seedOverlayKey), "seed overlay key");
+  }
   const projected = structuredClone(snapshot.companies);
   for (const d of batch.decisions) {
     const company = snapshot.companies.find(c => c.image.id === d.companyId)!;
     if (company.image.name !== d.name || sha256Canonical(company) !== d.expectedCompanySha256) throw Error(`Stale complete before-image: ${d.name}`);
     if (d.classification === "PARKED") continue;
     if (!equal([...d.owners.map(o => o.ownerId), ...d.preservedOwnerIds].sort(), company.owners.map(o => o.id).sort())) throw Error(`Incomplete company review: ${d.name}`);
+    const provenCompany = identity?.companies.find(c => c.name === d.name && c.country === company.image.country);
+    if (identity && provenCompany) {
+      if (provenCompany.owners.length !== company.owners.length) throw Error("Complete evaluated seed owner coverage differs");
+      for (const owner of company.owners) proveSeedOwner(identity, company, owner.id);
+    }
     let changes = 0, seedChanges = 0;
     for (const patch of d.owners) {
       const owner = company.owners.find(o => o.id === patch.ownerId);
       const core = company.image.ownershipPeriods.find(o => o.id === patch.ownerId);
       const record = records.find(r => r.recordId === patch.seedRecordId);
-      if (!owner || !core || !record || sha256Canonical(owner) !== patch.expectedOwnerSha256 || sha256Canonical(record) !== patch.expectedSeedSha256) throw Error(`Stale owner/seed: ${patch.ownerId}`);
+      if (!owner || !core || sha256Canonical(owner) !== patch.expectedOwnerSha256) throw Error(`Stale owner/seed: ${patch.ownerId}`);
+      const proven = identity && provenCompany ? proveSeedOwner(identity, company, patch.ownerId) : null;
+      if (patch.expectedSeedSha256 === null) {
+        if (!proven || core.isActive || record || records.some(r => seedOverlayKey(r) === seedOverlayKey(proven.key))
+          || patch.seedRecordId !== insertedOverlayId(proven.key)) throw Error("Historical overlay absence/identity proof required");
+      } else if (!record || sha256Canonical(record) !== patch.expectedSeedSha256) throw Error(`Stale owner/seed: ${patch.ownerId}`);
       // Do not repair missing/ambiguous identity bindings by inference.
       const display = core.vehicleName || core.fundName || core.organizationName || "n.a.";
-      if (!core.isActive || record.companyName !== d.name || record.country !== company.image.country
+      if (proven) {
+        if (record && seedOverlayKey(record) !== seedOverlayKey(proven.key)) throw Error("Proven seed overlay identity differs");
+      } else if (!record || !core.isActive || record.companyName !== d.name || record.country !== company.image.country
         || (record.investmentFirm !== core.managerName && record.investmentFirm !== core.organizationName) || record.currentVehicleName !== display
         || record.stake !== core.stake || record.investmentYear !== core.investmentYear) throw Error(`Unsupported seed identity binding: ${d.name}/${patch.ownerId}; park for scoped repair`);
       const desired = patch.desired;
@@ -155,14 +180,16 @@ export function compileBatch(input: { batch: unknown; snapshot: unknown; seed: u
       if (differs !== (patch.productionChange === "SUBSTANTIVE_ATTRIBUTION")) throw Error("No-op/wording-only production write forbidden");
       if (differs && desired.attributionRationale === null) throw Error("Production correction requires a substantive rationale");
       const { linkedFundName, ...metadata } = desired;
-      const nextRecord = attributionSeedRecordSchema.parse({ ...record, ...metadata,
+      const nextRecord = attributionSeedRecordSchema.parse({ ...(record ?? { recordId: patch.seedRecordId, ...proven!.key }), ...metadata,
         attributionRationale: patch.seedOnlyRationale ?? metadata.attributionRationale, targetLinkedFundName: linkedFundName,
         evidenceUrls: patch.sources.map(s => s.url) });
-      if (!equal(nextRecord, record)) { seedChanges++; records[records.indexOf(record)] = nextRecord; }
+      if (proven) assertEffectiveSeedState(proven.raw, nextRecord, desired, patch.seedOnlyRationale);
+      if (!record) { seedChanges++; records.push(nextRecord); }
+      else if (!equal(nextRecord, record)) { seedChanges++; records[records.indexOf(record)] = nextRecord; }
       if (differs) {
         const mutation = attributionMutationSchema.parse({
-          recordId: record.recordId, ownershipPeriodId: owner.id, companyName: d.name,
-          country: company.image.country, investmentFirm: core.managerName, currentVehicleName: record.currentVehicleName,
+          recordId: nextRecord.recordId, ownershipPeriodId: owner.id, companyName: d.name,
+          country: company.image.country, investmentFirm: core.managerName, currentVehicleName: nextRecord.currentVehicleName,
           databaseVehicleName: core.vehicleName, investmentYear: core.investmentYear, stake: core.stake, expectedIsActive: core.isActive,
           targetLinkedFundName: linkedFundName,
           expected: { fundAttribution: owner.state.fundAttribution, currentLinkedFundName: owner.state.linkedFundName },
@@ -179,7 +206,7 @@ export function compileBatch(input: { batch: unknown; snapshot: unknown; seed: u
     if (d.classification !== classification) throw Error(`Incorrect classification: ${d.name} is ${classification}`);
   }
   const { manifestSha256: _old, ...seedContent } = seed;
-  const nextSeedContent = { ...seedContent, records, policy: { ...seed.policy, inferredAssignments: records.filter(r => r.fundAttribution === "INFERRED").length } };
+  const nextSeedContent = { ...seedContent, records, recordCount: records.length, policy: { ...seed.policy, inferredAssignments: records.filter(r => r.fundAttribution === "INFERRED").length } };
   const nextSeed = verifySeedManifest({ ...nextSeedContent, manifestSha256: canonicalSha256(nextSeedContent) });
   let manifest: AttributionApplyManifest | null = null;
   if (mutations.length) {

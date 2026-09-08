@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "bb470b2cae6673e4acce6be8958b7bd30ec1275cc248cf71da3bf7bfceb26ce4",
+  "sourceSnapshotSha256": "d6aeef2f95bc41dbb2b589afda7753fe995109124181d89101c50c913d7de8dd",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 2,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 2,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 4,
+  "mutations": [
+    {
+      "recordId": "OFA-5FA546465986",
+      "ownershipPeriodId": "cmterm2h2000lts2bg2lz4zho",
+      "companyName": "ACES Delta, LLC",
+      "country": "United States",
+      "investmentFirm": "Chevron New Energies",
+      "currentVehicleName": "Magnum Development, LLC",
+      "databaseVehicleName": "Magnum Development, LLC",
+      "investmentYear": 2023,
+      "stake": "Majority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ACES and Chevron directly identify Chevron New Energies as the majority owner following its September 2023 acquisition of Magnum Development. This is a strategic corporate investment, and the exact percentage is not inferred."
+      },
+      "evidenceUrls": [
+        "https://aces-delta.com/about-us/"
+      ]
+    },
+    {
+      "recordId": "OFA-95BA23085516",
+      "ownershipPeriodId": "cmterm2h9000mts2b7srirqu5",
+      "companyName": "ACES Delta, LLC",
+      "country": "United States",
+      "investmentFirm": "Mitsubishi Power Americas",
+      "currentVehicleName": "Direct ACES Delta, LLC membership",
+      "databaseVehicleName": "Direct ACES Delta, LLC membership",
+      "investmentYear": 2019,
+      "stake": "Minority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ACES directly identifies Mitsubishi Power Americas as a current owner and project co-founder. This is a strategic corporate membership interest; no separate fund, vehicle percentage or later exit is publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://aces-delta.com/about-us/"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-16D72709FCD1A377D3475284",
+      "ownershipPeriodId": "cmterm2hm000ots2bxr5u0108",
+      "companyName": "ACES Delta, LLC",
+      "country": "United States",
+      "investmentFirm": "Haddington Ventures",
+      "currentVehicleName": "Haddington Energy Partners III, L.P. via Magnum Development, LLC",
+      "databaseVehicleName": "Haddington Energy Partners III, L.P. via Magnum Development, LLC",
+      "investmentYear": 2019,
+      "stake": "Former indirect majority; exact percentage not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Haddington Energy Partners III, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The joint 2019 Magnum/MHPS announcement identifies Haddington Energy Partners III, LP as Magnum's original funding source. The previously applied ownership chain records the former indirect ACES Delta interest through Magnum and its 2023 exit. This is historical disclosed fund attribution, not Haddington ESP I construction equity in ACES I or direct ownership by that fund's institutional LPs. No exact percentage or new curated fund link is inferred."
+      },
+      "evidenceUrls": [
+        "https://magnumdev.com/wp-content/uploads/2019/05/NEWS-RELEASE-MHPS-Magnum-Partnership-05-30-19-FINAL.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-A4C9FD2BCCB2CA6D9C7D8FF2",
+      "ownershipPeriodId": "cmti76gbh000tw62b6cf8i4z3",
+      "companyName": "Milestone Environmental Services",
+      "country": "United States",
+      "investmentFirm": "Amberjack Capital Partners",
+      "currentVehicleName": "Amberjack Capital Fund I",
+      "databaseVehicleName": "Amberjack Capital Fund I",
+      "investmentYear": 2014,
+      "stake": "Majority interest; exact percentage not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Amberjack Capital Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Amberjack's completed-sale announcement explicitly identifies Milestone as a portfolio company of Amberjack Capital Fund I, sold to SK Capital in 2023. Preserve the former 2014–2023 ownership period and qualified majority stake. No new fund record or exact curated fund link is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.amberjackcapital.com/news/amberjack-capital-partners-completes-the-sale-of-milestone-environmental-services-to-sk-capital-partners"
+      ]
+    }
+  ],
+  "manifestSha256": "7aaa90d9e506c486c536ae3d912fbc46af7d52abcf4c463eb828b817f34bbd47"
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_EVIDENCE",
+  "batchId": "portco-completion-018",
+  "batchSha256": "158432e12b2910a31ff6138dfeae77921746e232487371664bab9d421df92a1e",
+  "verifiedAt": "2026-09-08T15:30:28.352Z",
+  "release": {
+    "mergeSha": "90f03e96fe5e91fc6c21b312aaf3ecf79417d490",
+    "canonicalSha": "90f03e96fe5e91fc6c21b312aaf3ecf79417d490",
+    "headSha": "90f03e96fe5e91fc6c21b312aaf3ecf79417d490",
+    "gitRef": "main",
+    "gitProvider": "github",
+    "canonicalUrl": "https://infra-ma-2.vercel.app",
+    "ready": true,
+    "requiredChecksPassed": true,
+    "evidence": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-018/canonical-release.json",
+      "sha256": "29996fdc388688b665852841cb2288411d4ee0e4bdffec9c7384e1f2d591023f"
+    }
+  },
+  "receipt": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-018/receipt-verification.json",
+    "sha256": "9b4467e645d52b02dcca9db2a21da967bc1616ebd800724e049fa4bf7f05b2f5"
+  },
+  "snapshotSha256": "fdefef99dbb297b50c5d28ec4436db5ddd456506554866c23e8fcca8f4db0f6e",
+  "seedManifestSha256": "2b0e11c939315a1a8001c4187f1957c5e3cc194a25c279ac4fc501a8754d78e9",
+  "proof": [
+    {
+      "companyId": "cmrxpjajc00pnivhebltqp86n",
+      "checks": {
+        "api": true,
+        "redirects": true,
+        "ownership": true,
+        "citations": true,
+        "renderedCard": true,
+        "afterImages": true,
+        "seedAlignment": true
+      },
+      "evidence": [
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-018/completion-after.json",
+          "sha256": "7139db98facff8c58bbca3f50832d15ccca3c5760fba126147e7b53122eb9e71"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-018/live-verification.json",
+          "sha256": "195e0258fc372355aeba6c979b939f77a12de852358a90e90f6d6e68e86b4cb3"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-018/rendered-0163.png",
+          "sha256": "a787945aca7050d86d66853d1f83d9780e8820902e44cee8441550e92e14981e"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpjdgl00u7ivhe3uwhdzke",
+      "checks": {
+        "api": true,
+        "redirects": true,
+        "ownership": true,
+        "citations": true,
+        "renderedCard": true,
+        "afterImages": true,
+        "seedAlignment": true
+      },
+      "evidence": [
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-018/completion-after.json",
+          "sha256": "7139db98facff8c58bbca3f50832d15ccca3c5760fba126147e7b53122eb9e71"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-018/live-verification.json",
+          "sha256": "195e0258fc372355aeba6c979b939f77a12de852358a90e90f6d6e68e86b4cb3"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-018/rendered-0224.png",
+          "sha256": "7fedf388ff77f7911ec679dccbe780066073b5b47f6d581dde7d8485d02942c1"
+        }
+      ]
+    }
+  ],
+  "renderedReview": "Individually displayed and inspected rendered-0163.png and rendered-0224.png after the successful protected apply. CAG is Active in the US with Carlyle Group, disclosed Carlyle Global Infrastructure Opportunity Fund, the unchanged CAG Holdings LLC / CGI Phoenix Aggregator LP vehicle and qualified approximately 2% indirect project interest; four milestones and eight citations render without estimated or low-confidence attribution. Braya is Active since 2014 with all three ECP, Cresta and Silverpeak ownership periods and their qualified stakes preserved; intentional Fund attribution pending labels, three milestones and eight citations render correctly. Neither image is blank or clipped. Exact attribution rationales, including the preserved null Braya rationales, complete ownership identities and citation sets are separately verified in the bound API and after-image artifacts.",
+  "renderedReviewFile": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-018/rendered-review.json",
+    "sha256": "03a359f773c36bff7e42c41b303d1261ba359003057d208d267bb0ef74135293"
+  },
+  "parked": [
+    {
+      "companyId": "cmrxpjgly00ywivhe8rs5yjnm",
+      "issue": "Fund-to-platform mapping and current intermediate holder: The public COFECE excerpt names legal parties and targets, not Saavi. Canonical research associates that concentration with Saavi, but the mapping is not independently established by the PDF alone. Retained DISCLOSED/Fund I metadata is preserved, not freshly certified as a complete current holding chain. Do not infer a shareholder or expand to a different fund. Source persistence and filing label: Seed evidence lacks the direct COFECE URL. The canonical citation calls this a resolution; it is a public stenographic session transcript recording authorization. Separately persist the precise document label/source and qualifications without changing the existing application primary. Entry-date precision: The GIP web header is August 20, 2021; its body is datelined August 19 and says Actis has sold 100%. Preserve canonical August 20 without claiming that source proves the precise legal closing date. The 2020 term loan is debt, not equity entry. Conditional transaction and scale: The April 2026 issuer release anticipates second-half 2026 closing; canonical expectedClosing remains null. Its 70%/30% and combined 4510 MW/5000 MW pipeline are conditional combined-platform facts, not present Saavi equity or capacity. Different current GIP/company capacity measures must not be silently reconciled as ownership evidence. Historical Actis: Preserve 2018-2021 realized Actis, null vehicle/fund/confidence and UNRESOLVED metadata; it belongs to neither attribution receipt. No missing managed fund is inferred and historical metadata is not adjudicated outside the active-owner603 here. Preserve every owner and complete before-image. This requires separately supported compatible canonical work, not a partial attribution-only company completion. Do not infer missing facts, reopen terminal tasks, or repeat original transactions."
+    },
+    {
+      "companyId": "cmrxpj91y00ndivhejiuocayx",
+      "issue": "Fund label semantics: Diversified Infrastructure is a managing-business description, not the legal fund name. Preserve the existing descriptive DISCLOSED label without certifying a specifically named legal fund; no GIP mapping or inferred percentage. Source persistence and prior reopen limitation: The current issuer filing and counsel identity page require compatible canonical/seed citation persistence or an exact exception. The old filing raw403 is not evidence. Current fresh reopening does not prove undocumented historical release-stage reopening. Groundbreaking and exact entry date: The legacy groundbreaking URL remains a news-index redirect; the current project page does not establish April28,2023. Preserve that receipt-backed milestone with an exact source limitation pending compatible resolution. The November7,2023 JV release reports signing, not exact legal closing. Control and operational semantics: VIE consolidation/HLBV do not establish numerical economic or voting percentages. Preferential distributions preclude inferring pro-rata ownership from invested capital. Funding, construction and permits do not establish commercial operations. Preserve canonical ownership and lifecycle at its August23 cutoff. Preserve every owner and complete before-image. This requires separately supported compatible canonical work, not a partial attribution-only company completion. Do not infer missing facts, reopen terminal tasks, or repeat original transactions."
+    },
+    {
+      "companyId": "cmrxpjamu00puivhe9q2wp35l",
+      "issue": "Recover a durable readable primary capture for Mubadala's May 2026 Accelerate equity participation and classify its specific fund/program without inference. The exact CBRE issuer release currently returns HTTP 403 to the byte capture; the formerly used Mubadala /en/thebrief page now serves a later issue with no Accelerate reference. The original completed research and receipt remain valid historical lineage, but the current content hash cannot be substituted for the absent item. The adviser page independently supports the CBRE AIO/Musselshell vehicles only. Keep both owners unchanged and the exact Mubadala fund/holder exception; do not turn undisclosed fund details into DIRECT_PROGRAM solely because Mubadala is sovereign. Revisit after the safe main pass, without repeating ChatGPT research or reopening terminal source tasks."
+    },
+    {
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "issue": "Resolve the GCM legal-vehicle/strategy boundary and Silver Lake exact-fund attribution before calling the whole name verified. GCM's 2020 report page 16 expressly identifies Labor Impact Fund, L.P. and its $70 million Vantage growth-platform commitment; it does not identify Infrastructure Advantage Strategy as a second legal vehicle, whereas the canonical vehicle currently combines both. Separating canonical legal-vehicle text is outside this metadata-only workflow. Silver Lake's SLP VII fundraise release mentions Vantage among firm-level transactions but does not expressly allocate that investment to Fund VII, so its present DISCLOSED Silver Lake Partners VII attribution cannot be treated as proven by proximity. The direct 2024 Vantage closing release names managed investment vehicles without the exact funds. Obtain explicit fund allocation evidence or a separately authorized scoped canonical-vehicle correction; preserve all nine owner periods, SDC/platform boundaries, original dates and residual PSP qualification meanwhile. No patches or fund links are applied in this parked batch member."
+    },
+    {
+      "companyId": "cmrxpjbtk00rnivhe9ciub2bp",
+      "issue": "Both current Novva and former CIM/1547 ownership retain inferred CIM Infrastructure Fund II attribution without a direct fund allocation. The former ownership period cmrxpjx5d01pcivhejo8qz5ky has no matching active seed attribution record and requires a proven historical seed overlay binding in the shared compiler. Required work: a separately scoped historical-period seed binding and supported unknown-fund correction covering both periods; preserve company identity, chronology and all ownership stakes. No partial current-only repair is counted as done. This is pending compatible shared-tooling work, not a permanent unavailable-fact exception. Do not weaken identity, inline-override or collision checks."
+    },
+    {
+      "companyId": "cmrxpjc5l00s5ivheovw4f1er",
+      "issue": "Production links CI V but still carries an inferred CI IV attribution; the seed asserts CI V. Alberta's registry proves a CI V-named devco exists, not its ultimate fund allocation. CIP's launch says Flagship Funds (plural), and Horizon's backing page names the manager without a specific fund. Required work: direct ownership/fund bridge covering the Canadian platform before selecting a single fund or changing the existing link. Preserve all current data and do not infer a sole CI V assignment from the legal entity name."
+    },
+    {
+      "companyId": "cmrxpjcex00siivhegwj7n0ow",
+      "issue": "The former Vineyard Wind/OCS-A 0522 period retains an inferred CI III attribution with no matching active seed record. The SEC restructuring agreement distinguishes CI II/CI III legal ownership and subsequent CI III beneficial interests and CI IV economic rights. Required work: separately scoped historical-period seed binding and exact legal/economic ownership adjudication before correcting that period. Preserve the currently disclosed CI IV period; no partial repair or inferred single historical fund allocation. This is pending compatible shared-tooling work, not a permanent unavailable-fact exception. Do not weaken identity, inline-override or collision checks."
+    },
+    {
+      "companyId": "cmrxpjdf000u4ivhe82f2fkli",
+      "issue": "Historical Borrego Energy ownership period cmte4sn1v00130x2b9rdqjpz3 remains UNRESOLVED with no active seed binding although the completed research identifies the former corporate parent. Current ECP ETOF attribution is already disclosed; Angeleno exact fund remains genuinely unavailable. A fully verified company requires a separately supported historical attribution/seed-binding repair path; the existing protected workflow supports former-period metadata, but the shared compiler's missing-overlay proof remains outstanding. Preserve all owners and make zero mutations. This is pending compatible shared-tooling work, not a permanent unavailable-fact exception. Do not weaken identity, inline-override or collision checks."
+    }
+  ]
+}

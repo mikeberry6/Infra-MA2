@@ -3,6 +3,7 @@ import { isAbsolute, relative, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { type Batch, verifyBatch } from "./batch";
+import { checkActualSeedIdentity } from "./seed-identity-files";
 
 export const bytesHash = (bytes: Buffer | string) => createHash("sha256").update(bytes).digest("hex");
 export function localFile(root: string, path: string) {
@@ -52,5 +53,6 @@ export function checkPacketFiles(root: string, value: unknown): { batch: Batch; 
     if (findings.length && !isUnchangedPublishedFile(root, batch.baseCommit, reference.path, bytes)) throw Error(`Unsafe new publication copy: ${reference.path} (${findings.join(", ")})`);
     files.set(reference.path, reference.sha256);
   }
+  if (batch.seedIdentity) checkActualSeedIdentity(root, batch.seedIdentity, files);
   return { batch, files };
 }
