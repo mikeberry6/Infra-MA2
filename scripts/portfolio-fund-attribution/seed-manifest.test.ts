@@ -68,7 +68,8 @@ describe("portfolio fund attribution seed manifest", () => {
     // Batch 006 preserves 448 estimates and records IENTC's partially disclosed multi-fund boundary.
     expect(manifest.policy.inferredAssignments).toBe(448);
     expect(inferred).toHaveLength(448);
-    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(71);
+    // Batch 010 resolves Helix's directly evidenced KKR corporate-subsidiary attribution.
+    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(70);
     expect(manifest.records.every((record) => (
       record.fundAttribution !== "INFERRED"
       || (

@@ -1,0 +1,106 @@
+{
+  "companyId": "cmtikbf7p000n2u2bu4giwsse",
+  "name": "EDF Power Solutions North America",
+  "sequence": 322,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0322-edf-power-solutions-north-america/attempt-1/research-decision.json",
+      "sha256": "19d6997e9461943023e512e43b7221c989d367bd1fcbf06bf6d4ae14f24d3158"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0322-edf-power-solutions-north-america/attempt-1/source-verification.json",
+      "sha256": "6b9e00923d24d9f1dc3cd5685dde9903b70b2b0afcdd40c5bb67ebb24ccd26eb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0322-edf-power-solutions-north-america/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "04c0f4f40ab2e030c9be9834942178320d5f9d530f2a9d6cffab8fd2dd52a458"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0322-edf-power-solutions-north-america/attempt-1/chatgpt-response-validation.json",
+      "sha256": "8f758465f3ff2cd80286921135d36c5345130707ff754e627e8141c785eefc6c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0322-edf-power-solutions-north-america/attempt-1/chatgpt-attestation.json",
+      "sha256": "97b111514ff8e2b3062c6fde59b740733536601befd7f958496528d2243bcd0f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/review.json",
+      "sha256": "86c525a7b579e125c7964e79eb588cd5de014d605714b7168bf49968d884afcf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/edf-sale-publication.html.redaction.json",
+      "sha256": "207808c0222ff08cb9607319e5012bc5a5cd3b49bab0e15cbb97cbb3613ee317"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtikbgru000z2u2b3rpa2twt",
+      "seedRecordId": "OFA-3639E67EE09E",
+      "expectedSeedSha256": "7e5931d2cef8f368d2ee08df14c20cb1c69a4f6fbba497b36839189abad9d449",
+      "expectedOwnerSha256": "863bf495f09631de5f2cd6a519c6a7cce4fcd9f828a27e9ac04af5b13a0f005b",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDF group remains the current corporate owner of the U.S. and Canadian operating targets until the signed KKR sale legally closes; this is corporate ownership rather than a fund attribution.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace unresolved fund attribution with directly supported current EDF corporate ownership. Preserve the signed but conditional KKR sale and all ownership identity fields; do not treat the buyer as closed/current.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/edf-sale-publication.html",
+          "sha256": "2538ff7416e3da6dec9ee71ff39fa763506d5fc07c5bbccad72a55680e4d88fa",
+          "url": "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-announces-the-signature-of-an-agreement-to-sell-to-kkr-edf-power-solutions-in-the-united-states-and-canada",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/edf-kkr-agreement.pdf",
+          "sha256": "62b3320adf4c1a18e6981495b980a32264977a8da1b7b1f979bc0379891b4e8a",
+          "url": "https://www.kkr.com/content/dam/kkr/country-sites/fr/press-release/20260630-kkr-to-acquire-edf-power-solutions-north-american-operations.pdf",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "af61f3d9b4a600d06a8f1c976f886f3c0993daae31064e7890af6175939359d5",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtikbgru000z2u2b3rpa2twt",
+      "sha256": "863bf495f09631de5f2cd6a519c6a7cce4fcd9f828a27e9ac04af5b13a0f005b"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0322-edf-power-solutions-north-america-v3/proposal.json",
+      "sha256": "20ee5cc28542dd3f11c660ce488000f448d4a573886a1423b4eddb67000a4afb"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0322-edf-power-solutions-north-america-v3.json",
+      "sha256": "fa8da0a1351b0235500319671d8d7d17a14240b7dc5e59cfda7b6a1c9441897e"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0319-0323-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "65a06450557c1c6bc38bdaf8006948f4fa009e4b384441471c538ad66890c2af",
+      "memberIndex": 3
+    },
+    "receiptSha256": "ed24180b9df1dd96552053bd6272261ba6832756ccbe24ef61e79f09ff7e41ca"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/edf-sale-publication.html.capture.json",
+      "sha256": "1fb0e8edeb717caeae361940abe420c595aa45eb616b1f92a337d963f5d27eb0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/edf-kkr-agreement.pdf.capture.json",
+      "sha256": "5fd86ec886ece2834475eed7e6faa7466a3a844ad3e310a06d20e3eed1223041"
+    }
+  ]
+}

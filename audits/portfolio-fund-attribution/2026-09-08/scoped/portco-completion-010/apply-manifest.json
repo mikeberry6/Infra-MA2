@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "2b688f3fe15b3d0171d2b8e7416bf61a7c4112cac65b4c7ae52909b47dddc638",
+  "sourceSnapshotSha256": "d79d4f2fac6065af7ccb40fca7ca52e4e2dbf0901c7a15c07e4b69494da6eae3",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 3,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 4,
+  "mutations": [
+    {
+      "recordId": "OFA-3639E67EE09E",
+      "ownershipPeriodId": "cmtikbgru000z2u2b3rpa2twt",
+      "companyName": "EDF Power Solutions North America",
+      "country": "United States / Canada",
+      "investmentFirm": "EDF group",
+      "currentVehicleName": "EDF Power Solutions, Inc. / EDF power solutions Canada Inc.",
+      "databaseVehicleName": "EDF Power Solutions, Inc. / EDF power solutions Canada Inc.",
+      "investmentYear": 2011,
+      "stake": "Current controlling ownership; exact intermediate parent percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDF group remains the current corporate owner of the U.S. and Canadian operating targets until the signed KKR sale legally closes; this is corporate ownership rather than a fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-announces-the-signature-of-an-agreement-to-sell-to-kkr-edf-power-solutions-in-the-united-states-and-canada",
+        "https://www.kkr.com/content/dam/kkr/country-sites/fr/press-release/20260630-kkr-to-acquire-edf-power-solutions-north-american-operations.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-DCAF841C32FC",
+      "ownershipPeriodId": "cmtikblem001d2u2bcbrc5vtf",
+      "companyName": "Helix Digital Infrastructure",
+      "country": "United States",
+      "investmentFirm": "KKR",
+      "currentVehicleName": "Helix Digital Infrastructure LLC",
+      "databaseVehicleName": "Helix Digital Infrastructure LLC",
+      "investmentYear": null,
+      "stake": "100% of the LLC",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The Helix privacy notice identifies Helix Digital Infrastructure LLC as a wholly owned subsidiary of KKR & Co. Inc.; this is direct corporate ownership, not an attribution to an undisclosed external KKR fund."
+      },
+      "evidenceUrls": [
+        "https://www.helixdi.com/helix-privacy-notice/"
+      ]
+    },
+    {
+      "recordId": "OFA-0AF3F4BFA474",
+      "ownershipPeriodId": "cmrxpk5zs022zivhelp1me6sy",
+      "companyName": "TotalEnergies North American Solar Portfolio (KKR co-investment)",
+      "country": "United States",
+      "investmentFirm": "KKR",
+      "currentVehicleName": "JVPTR LLC; KKR Multi-Strategy Alternatives Fund LP for Maverick; Big Sky buyer not publicly disclosed",
+      "databaseVehicleName": "JVPTR LLC; KKR Multi-Strategy Alternatives Fund LP for Maverick; Big Sky buyer not publicly disclosed",
+      "investmentYear": 2025,
+      "stake": "50% of each target",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "KKR Multi-Strategy Alternatives Fund LP",
+        "attributionConfidence": null,
+        "attributionRationale": "The Maverick regulatory filing names KKR Multi-Strategy Alternatives Fund LP in the buyer chain; the Canadian Big Sky buyer remains undisclosed and no matching published fund record is linked."
+      },
+      "evidenceUrls": [
+        "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225248/106514",
+        "https://www.sec.gov/Archives/edgar/data/879764/000110465926035876/R9.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-6E78611678D1",
+      "ownershipPeriodId": "cmtimiumq000v2i2bzbwprcgz",
+      "companyName": "TotalEnergies North American Solar Portfolio (KKR co-investment)",
+      "country": "United States",
+      "investmentFirm": "TotalEnergies",
+      "currentVehicleName": "Maverick Sponsor Member LLC and TotalEnergies Renewables USA LLC; Canadian chain not publicly disclosed",
+      "databaseVehicleName": "Maverick Sponsor Member LLC and TotalEnergies Renewables USA LLC; Canadian chain not publicly disclosed",
+      "investmentYear": 2025,
+      "stake": "50% retained in each target; joint control and operator",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TotalEnergies directly retained 50%, joint control and the operator role; this is corporate ownership rather than a fund attribution."
+      },
+      "evidenceUrls": [
+        "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225248/106514",
+        "https://totalenergies.com/newsroom/renewables-totalenergies-divests-50-14-gw-solar-portfolio-north-america/?lang=eng",
+        "https://www.sec.gov/Archives/edgar/data/879764/000110465926035876/R9.htm"
+      ]
+    }
+  ],
+  "manifestSha256": "2d499db2fcaeb7b69d81763b79830747193a3f63e78f7a0f032858ccb16edc64"
+}

@@ -1,0 +1,92 @@
+{
+  "companyId": "cmtikbkm100162u2bbqku8nks",
+  "name": "Helix Digital Infrastructure",
+  "sequence": 323,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0323-helix-digital-infrastructure/attempt-1/research-decision.json",
+      "sha256": "1bb06eab3c13693bff9c1d5c7ec65f779f3b5c3a44175dfd18abeacce0b6df49"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0323-helix-digital-infrastructure/attempt-1/source-verification.json",
+      "sha256": "d0ea5ee0702af0e9fe89c21aa00597544abf462bd410b1715ce4cb0247e076d8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0323-helix-digital-infrastructure/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "5a37981b3b495365fb536b917adfae54112d42f7c07eb5b5edf826a9fc8d3054"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0323-helix-digital-infrastructure/attempt-1/chatgpt-response-validation.json",
+      "sha256": "050e9778323b6f0c0c971a29074bb4bff786fa6e78ec4fefc433a8451ad085ea"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0323-helix-digital-infrastructure/attempt-1/chatgpt-attestation.json",
+      "sha256": "fa48f7b09d3383e28adc956c1cf304bb595724111bbd7a0fd3a763ca99c3d80e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/review.json",
+      "sha256": "86c525a7b579e125c7964e79eb588cd5de014d605714b7168bf49968d884afcf"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtikblem001d2u2bcbrc5vtf",
+      "seedRecordId": "OFA-DCAF841C32FC",
+      "expectedSeedSha256": "ce707e2c43a26326dd08921c02e30c8bf0102c0c014a55217f65deba4210efba",
+      "expectedOwnerSha256": "f804ace4c36dd6d98c4be6cce6350906434c927e90c6fdc697bb5d4a2eafbb7e",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The Helix privacy notice identifies Helix Digital Infrastructure LLC as a wholly owned subsidiary of KKR & Co. Inc.; this is direct corporate ownership, not an attribution to an undisclosed external KKR fund.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct the unresolved attribution kind using the explicit KKR & Co. corporate-subsidiary disclosure. Preserve the 100% LLC stake, null year, legal vehicle and distinction between LLC owner and strategy-level partners. Replace obsolete attribution evidence URLs, not canonical company citations.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/helix-privacy-notice.html",
+          "sha256": "cff30deb9002248573f5b904c5ab50384cb995e840222f73eec2e99ba36d990b",
+          "url": "https://www.helixdi.com/helix-privacy-notice/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "95d66d396aabb1b3f10fdcce970f7d1b567730ad655903484d10df10e45a3e14",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtikblem001d2u2bcbrc5vtf",
+      "sha256": "f804ace4c36dd6d98c4be6cce6350906434c927e90c6fdc697bb5d4a2eafbb7e"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0323-helix-digital-infrastructure-v2/proposal.json",
+      "sha256": "b69caeb1f9a0af3900c724e4227ece433217c49b1d60567896eb6a189bd74454"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0323-helix-digital-infrastructure-v2.json",
+      "sha256": "760f21520c1ad8a38c5d03befa8f5c4216da31a4576c6d7179e76ae7af99047e"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0319-0323-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "65a06450557c1c6bc38bdaf8006948f4fa009e4b384441471c538ad66890c2af",
+      "memberIndex": 4
+    },
+    "receiptSha256": "5f3e7d8a4f640540710c866023b2be619bc2f2d1459419c7274af06277258d15"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/helix-privacy-notice.html.capture.json",
+      "sha256": "04a316ff1de2ab631e0a0a6dd1c85cd05c2e571ed61676304d55969c856c1013"
+    }
+  ]
+}
