@@ -5,6 +5,7 @@ import { activate, compileBatch, complete, markReleased, verifyProgress, type Pr
 import { bytesHash } from "./files";
 import { verifySeedManifest } from "../portfolio-fund-attribution/schema";
 import { sha256Canonical } from "../portco-reconciliation/hash";
+import { checkActualSeedIdentity } from "./seed-identity-files";
 
 export const completedReleaseSchema = z.strictObject({ directory: z.string().min(1), receiptPath: z.string().min(1).nullable() });
 type Seed = ReturnType<typeof verifySeedManifest>;
@@ -35,6 +36,7 @@ export function completedSeedLineage(input: { releases: z.infer<typeof completed
     const files = new Map<string, string>();
     const bind = (ref: { path: string; sha256: string }) => { input.readBytes(ref.path, ref.sha256); files.set(ref.path, ref.sha256); };
     for (const ref of [...batch.dependencies, ...batch.decisions.flatMap((d: { evidence: { path: string; sha256: string }[]; owners: { sources: { path: string; sha256: string }[] }[] }) => [...d.evidence, ...d.owners.flatMap(o => o.sources)])]) bind(ref);
+    if (batch.seedIdentity) checkActualSeedIdentity(process.cwd(), batch.seedIdentity, files);
     const compiled = compileBatch({ batch, snapshot, seed, files });
     const evidenceBytes = input.readBytes(p("completion-evidence.json")), evidence = JSON.parse(evidenceBytes.toString());
     if (evidence.batchId !== compiled.batch.batchId || evidence.batchSha256 !== compiled.batch.batchSha256
