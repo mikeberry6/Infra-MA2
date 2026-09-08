@@ -1134,8 +1134,8 @@
       "name": "Terra-Gen",
       "sequence": 311,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Former ECP III and ECP Terra-Gen Growth Fund/Fund B ownership remains UNRESOLVED without compatible inactive-owner seed bindings. The protected compiler cannot repair these historical periods. Preserve all six owners, current GDIF/Masdar facts and the separate pending Pantheon qualification; do not call partial current-owner cleanup fully verified.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1143,8 +1143,8 @@
       "name": "Mesteño Wind Project",
       "sequence": 316,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "The 2024 attachment discloses Fund A 3.48% and Fund B 96.52% through HoldCo, but the 2026 filed corporate-parent list also names InfraRed Energy Transition Fund E LP without its position or stake. Resolve Fund E and any required ownership/canonical-text correction before whole-company verification. No inferred allocation or partial A/B metadata apply.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1152,8 +1152,8 @@
       "name": "Longroad Energy",
       "sequence": 317,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Approved evidence names NZ Super and management as beneficial owners, but actual ownership rows contain only Infratil and MEAG. Missing owner rows, Munich Re beneficiary versus MEAG manager organization, and Infratil 42% versus 42.5% require ownership/organization/stake work outside this protected workflow. Preserve both existing periods; no partial attribution cleanup.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1161,8 +1161,8 @@
       "name": "38 Degrees North",
       "sequence": 319,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Kimmeridge Carbon Solutions is not an exact disclosed fund. CAI and S2G have correctly UNRESOLVED exact-fund states with null production rationales but non-null seed qualifiers. Preserve all three rows and queue the seed representation gap with the unsupported Kimmeridge attribution; do not rewrite equivalent production wording or partially declare the name verified.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1184,32 +1184,26 @@
       "name": "EDF Power Solutions North America",
       "sequence": 322,
       "reviewedEvidence": [],
-      "status": "VERIFIED",
+      "status": "REMAINING",
       "issue": null,
-      "completion": {
-        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-010/completion-evidence.json",
-        "sha256": "fcbd00726d6359ddba860766300bdb5b245486224984d47c8392881bb4e6221b"
-      }
+      "completion": null
     },
     {
       "companyId": "cmtikbkm100162u2bbqku8nks",
       "name": "Helix Digital Infrastructure",
       "sequence": 323,
       "reviewedEvidence": [],
-      "status": "VERIFIED",
+      "status": "REMAINING",
       "issue": null,
-      "completion": {
-        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-010/completion-evidence.json",
-        "sha256": "fcbd00726d6359ddba860766300bdb5b245486224984d47c8392881bb4e6221b"
-      }
+      "completion": null
     },
     {
       "companyId": "cmrxpjjwg0141ivhecv1bf8dw",
       "name": "Pembina Gas Infrastructure Inc.",
       "sequence": 324,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Apollo's exact fund remains genuinely undisclosed; its correct UNRESOLVED state has null production rationale but seed requires a non-null qualifier. Former KKR also retains generic fund metadata outside active seed-bound scope. Resolve complete seed representation/historical attribution without production wording-only rewriting; preserve all three periods and do not apply only Pembina's corporate correction.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1217,8 +1211,8 @@
       "name": "Port Arthur LNG",
       "sequence": 325,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "The Phase 2 consortium's correctly unresolved exact-fund state has a null production rationale incompatible with its non-null seed qualifier without prohibited wording-only rewriting. Queue complete six-period alignment, including unsupported K-INFRA attribution, supported corporate owners and disclosed Blackstone Private Credit Fund. Preserve separate phases and undisclosed individual consortium stakes; no partial cleanup or inferred allocation.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1226,20 +1220,17 @@
       "name": "TotalEnergies North American Solar Portfolio (KKR co-investment)",
       "sequence": 326,
       "reviewedEvidence": [],
-      "status": "VERIFIED",
+      "status": "REMAINING",
       "issue": null,
-      "completion": {
-        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-010/completion-evidence.json",
-        "sha256": "fcbd00726d6359ddba860766300bdb5b245486224984d47c8392881bb4e6221b"
-      }
+      "completion": null
     },
     {
       "companyId": "cmrxpjk3t014aivhevebx57qf",
       "name": "Dames Point Jacksonville LLC",
       "sequence": 327,
       "reviewedEvidence": [],
-      "status": "PARKED",
-      "issue": "Former Macquarie has a linked MIP III fund but unresolved attribution, and former Mitsui corporate ownership remains unresolved. Both historical periods lack compatible active seed bindings. Preserve JAXPORT current ownership and SSA operator-only distinction; queue historical attribution repair rather than declaring partial JAXPORT metadata cleanup fully verified.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     },
     {
@@ -1765,7 +1756,13 @@
       "completion": null
     }
   ],
-  "active": null,
+  "active": {
+    "batchId": "portco-completion-010",
+    "batchSha256": "2b688f3fe15b3d0171d2b8e7416bf61a7c4112cac65b4c7ae52909b47dddc638",
+    "state": "RELEASED",
+    "releaseSha": "cf9cfc27972bc01a1599ddd9a2c6666f485b9ae6",
+    "failure": null
+  },
   "completedBatchIds": [
     "portco-completion-001",
     "portco-completion-002",
@@ -1775,8 +1772,7 @@
     "portco-completion-006",
     "portco-completion-007",
     "portco-completion-008",
-    "portco-completion-009",
-    "portco-completion-010"
+    "portco-completion-009"
   ],
   "consumedReceiptHashes": [
     "50061d92ba9f240bb192ca0e4b049c226824bff8702eee6b7d7872e272853c3f",
@@ -1787,8 +1783,7 @@
     "13d0dfe045c39745637269a6d00169afa75ef7385460a162b37a8cc8aae20a96",
     "f93e830158b0dd90882a5f8b60e4f5da1b05f3a9200855922e535b403456a347",
     "a7ac0360313f9fa1bf664e5bf75b6a92f7197f7e80fa8b009247f61d0f54f4e2",
-    "d868ffc5ad67ec93ab9cb4abc8aa26972856765f2fb35b408fce0caa277a89cf",
-    "e71c3debc5d4a4fd50010a0f71bbdb3f234ec17199cf1f7ce3d625ea0c744246"
+    "d868ffc5ad67ec93ab9cb4abc8aa26972856765f2fb35b408fce0caa277a89cf"
   ],
-  "progressSha256": "35c6c59482e7e9607357bf42a50af92058448622efc2d4cca61b7b823b0088b6"
+  "progressSha256": "2bbcb6783ab17969460512708dd15c6cff00a1194f93b607e5c557ab09201eec"
 }
