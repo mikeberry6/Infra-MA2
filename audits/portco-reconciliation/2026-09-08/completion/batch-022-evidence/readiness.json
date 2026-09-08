@@ -1,0 +1,2166 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_REVISIT_OFFLINE_READINESS",
+  "createdAt": "2026-09-08T18:36:47.556Z",
+  "progressSha256": "2b5a310e2304f542915496a264e4bd06326cc8f53abe5c077f995dc70d1483f8",
+  "scope": "Read-only existing evidence and evaluated seed comparison. Not research, approval, production capture, batch activation or completion.",
+  "rows": [
+    {
+      "sequence": 359,
+      "name": "DartPoints Holding Company, LLC",
+      "companyId": "cmtizemhs0015282bzfefnqby",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-012",
+      "priorIssue": "DartPoints' Astra fund remains genuinely undisclosed; retained minority ownership is not proof of a direct corporate program. Its null production rationale cannot be mirrored exactly by the required seed rationale. Park the entire name; preserve NOVA Fund II and OIC Credit Opportunities Fund IV findings for a supported complete correction, with OIC debt and equity kept distinct.",
+      "evidenceChecked": 13,
+      "owners": [
+        {
+          "ownerId": "cmtizen2o001g282b6qk46p7u",
+          "organization": "NOVA Infrastructure",
+          "active": true,
+          "vehicle": "NOVA Infrastructure Fund II",
+          "stake": "Controlling majority; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-CE08871CC054",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "NOVA Infrastructure",
+            "ownershipVehicle": "NOVA Infrastructure Fund II",
+            "vehicleName": "NOVA Infrastructure Fund II",
+            "investmentYear": 2025,
+            "stake": "Controlling majority; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtizen5n001i282btgdtxh7n",
+          "organization": "Astra Capital Management",
+          "active": true,
+          "vehicle": "Astra investment vehicle; exact vehicle not publicly disclosed",
+          "stake": "Meaningful minority retained after 2025 control sale; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-01D43C7D07CA",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Astra Capital Management",
+            "ownershipVehicle": "Astra investment vehicle; exact vehicle not publicly disclosed",
+            "vehicleName": "Astra investment vehicle; exact vehicle not publicly disclosed",
+            "investmentYear": 2020,
+            "stake": "Meaningful minority retained after 2025 control sale; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtizen8m001k282bt7218x0k",
+          "organization": "Orion Infrastructure Capital",
+          "active": true,
+          "vehicle": "OIC Credit Opportunities Fund IV",
+          "stake": "Minority equity; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-92E02F840B2E",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Orion Infrastructure Capital",
+            "ownershipVehicle": "OIC Credit Opportunities Fund IV",
+            "vehicleName": "OIC Credit Opportunities Fund IV",
+            "investmentYear": 2025,
+            "stake": "Minority equity; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "DartPoints Holding Company, LLC",
+            "country": "United States",
+            "companySha256": "553a27fca936c6333ce8f8be5240d1c44e227956318fd5e26529bf62d70cdd25",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "NOVA Infrastructure",
+                  "ownershipVehicle": "NOVA Infrastructure Fund II",
+                  "vehicleName": "NOVA Infrastructure Fund II",
+                  "investmentYear": 2025,
+                  "stake": "Controlling majority; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "NOVA Infrastructure",
+                "vehicleName": "NOVA Infrastructure Fund II",
+                "fundLookupName": "NOVA Infrastructure Fund II",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Astra Capital Management",
+                  "ownershipVehicle": "Astra investment vehicle; exact vehicle not publicly disclosed",
+                  "vehicleName": "Astra investment vehicle; exact vehicle not publicly disclosed",
+                  "investmentYear": 2020,
+                  "stake": "Meaningful minority retained after 2025 control sale; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Astra Capital Management",
+                "vehicleName": "Astra investment vehicle; exact vehicle not publicly disclosed",
+                "fundLookupName": "Astra investment vehicle; exact vehicle not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Orion Infrastructure Capital",
+                  "ownershipVehicle": "OIC Credit Opportunities Fund IV",
+                  "vehicleName": "OIC Credit Opportunities Fund IV",
+                  "investmentYear": 2025,
+                  "stake": "Minority equity; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Orion Infrastructure Capital",
+                "vehicleName": "OIC Credit Opportunities Fund IV",
+                "fundLookupName": "OIC Credit Opportunities Fund IV",
+                "transactionState": "CLOSED_ACTIVE"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "54f91899ed6588693ade98c726438b18a1c0bc383c417e13462581a17c3b52ac"
+      }
+    },
+    {
+      "sequence": 368,
+      "name": "Bruce Power",
+      "companyId": "cmrxpjm8e017oivhe1inhdhjr",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013",
+      "priorIssue": "Bruce Power's former British Energy and Cameco corporate ownership periods remain UNRESOLVED and lack compatible active seed bindings. Current union/employee/GP interests also require preservation of their aggregate qualifications. Queue supported historical attribution representation before a complete correction; no partial OMERS/current-owner cleanup or organization/stake changes.",
+      "evidenceChecked": 12,
+      "owners": [
+        {
+          "ownerId": "cmrxpk8lw0274ivhekizsvd72",
+          "organization": "OMERS",
+          "active": true,
+          "vehicle": "BPC Generation Infrastructure Trust",
+          "stake": "48.26%",
+          "state": {
+            "fundAttribution": "INFERRED",
+            "attributedFundName": "OMERS Infrastructure",
+            "attributionConfidence": "LOW",
+            "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+            "linkedFundName": "OMERS Infrastructure"
+          },
+          "seedRecordId": "OFA-E5D7901A799D",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "OMERS",
+            "ownershipVehicle": "OMERS Infrastructure",
+            "fundName": "OMERS Infrastructure",
+            "vehicleName": "BPC Generation Infrastructure Trust",
+            "investmentYear": 2003,
+            "stake": "48.26%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj20olr000s2h2b2xoo2fvq",
+          "organization": "TC Energy Corporation",
+          "active": true,
+          "vehicle": "TransCanada Energy Investments Ltd. lineage",
+          "stake": "48.26%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-C84C7DF7BEFF",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "TC Energy Corporation",
+            "ownershipVehicle": "TransCanada Energy Investments Ltd. lineage",
+            "vehicleName": "TransCanada Energy Investments Ltd. lineage",
+            "investmentYear": 2003,
+            "stake": "48.26%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj20orc000u2h2bamaxpdgk",
+          "organization": "Power Workers' Union",
+          "active": true,
+          "vehicle": "PWU Trust No. 1 lineage",
+          "stake": "2.22%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-3487E9B27A00",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Power Workers' Union",
+            "ownershipVehicle": "PWU Trust No. 1 lineage",
+            "vehicleName": "PWU Trust No. 1 lineage",
+            "investmentYear": 2001,
+            "stake": "2.22%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj20oww000w2h2bkayqq8gf",
+          "organization": "Society/Employees/BPI",
+          "active": true,
+          "vehicle": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+          "stake": "1.26% aggregate; component splits are not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-2446BC4EA633",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Society/Employees/BPI",
+            "ownershipVehicle": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+            "vehicleName": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+            "investmentYear": 2001,
+            "stake": "1.26% aggregate; component splits are not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj20p2g000y2h2blrb7dwo9",
+          "organization": "British Energy",
+          "active": false,
+          "vehicle": "British Energy (Canada) Ltd.",
+          "stake": "82.4%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-C29F5C2758C53A7ECC5C6BE1",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "British Energy",
+            "ownershipVehicle": "British Energy (Canada) Ltd.",
+            "vehicleName": "British Energy (Canada) Ltd.",
+            "investmentYear": 2001,
+            "exitYear": 2003,
+            "stake": "82.4%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj20p8000102h2bnnbr7249",
+          "organization": "Cameco",
+          "active": false,
+          "vehicle": "Cameco Bruce Holdings I/II",
+          "stake": "15% at entry; 31.6% from 2003 until exit",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-12F4FA891D85F68CF20A9A8E",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Cameco",
+            "ownershipVehicle": "Cameco Bruce Holdings I/II",
+            "vehicleName": "Cameco Bruce Holdings I/II",
+            "investmentYear": 2001,
+            "exitYear": 2014,
+            "stake": "15% at entry; 31.6% from 2003 until exit",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Bruce Power",
+            "country": "Canada",
+            "companySha256": "754fd87407da976929c40ef0b68d6095520a854f5fd479261f93d08a0148c8df",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "OMERS",
+                  "ownershipVehicle": "OMERS Infrastructure",
+                  "fundName": "OMERS Infrastructure",
+                  "vehicleName": "BPC Generation Infrastructure Trust",
+                  "investmentYear": 2003,
+                  "stake": "48.26%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "OMERS",
+                "vehicleName": "BPC Generation Infrastructure Trust",
+                "fundLookupName": "OMERS Infrastructure",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "TC Energy Corporation",
+                  "ownershipVehicle": "TransCanada Energy Investments Ltd. lineage",
+                  "vehicleName": "TransCanada Energy Investments Ltd. lineage",
+                  "investmentYear": 2003,
+                  "stake": "48.26%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "TC Energy Corporation",
+                "vehicleName": "TransCanada Energy Investments Ltd. lineage",
+                "fundLookupName": "TransCanada Energy Investments Ltd. lineage",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Power Workers' Union",
+                  "ownershipVehicle": "PWU Trust No. 1 lineage",
+                  "vehicleName": "PWU Trust No. 1 lineage",
+                  "investmentYear": 2001,
+                  "stake": "2.22%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Power Workers' Union",
+                "vehicleName": "PWU Trust No. 1 lineage",
+                "fundLookupName": "PWU Trust No. 1 lineage",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Society/Employees/BPI",
+                  "ownershipVehicle": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+                  "vehicleName": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+                  "investmentYear": 2001,
+                  "stake": "1.26% aggregate; component splits are not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Society/Employees/BPI",
+                "vehicleName": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+                "fundLookupName": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "British Energy",
+                  "ownershipVehicle": "British Energy (Canada) Ltd.",
+                  "vehicleName": "British Energy (Canada) Ltd.",
+                  "investmentYear": 2001,
+                  "exitYear": 2003,
+                  "stake": "82.4%",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "British Energy",
+                "vehicleName": "British Energy (Canada) Ltd.",
+                "fundLookupName": "British Energy (Canada) Ltd.",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Cameco",
+                  "ownershipVehicle": "Cameco Bruce Holdings I/II",
+                  "vehicleName": "Cameco Bruce Holdings I/II",
+                  "investmentYear": 2001,
+                  "exitYear": 2014,
+                  "stake": "15% at entry; 31.6% from 2003 until exit",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Cameco",
+                "vehicleName": "Cameco Bruce Holdings I/II",
+                "fundLookupName": "Cameco Bruce Holdings I/II",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "b910a0a25c662532872e05cbd09247a3e674dcd741b133e06e9901f57a2ca197"
+      }
+    },
+    {
+      "sequence": 370,
+      "name": "Leeward Renewable Energy",
+      "companyId": "cmrxpjm8v017pivhepl8l8kkk",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013",
+      "priorIssue": "Leeward's former ArcLight owner is already linked to ArcLight Energy Partners Fund VI but retains UNRESOLVED attribution metadata and has no active seed binding. Queue historical metadata support rather than partially correcting current OMERS; preserve the existing fund link, former period and unconfirmed 2024 sale-process qualification.",
+      "evidenceChecked": 12,
+      "owners": [
+        {
+          "ownerId": "cmrxpk8me0275ivhe9of0b23y",
+          "organization": "OMERS",
+          "active": true,
+          "vehicle": "Hamilton Infrastructure Trust / Commodore US Holding Corporation",
+          "stake": "100% through Commodore US Holding Corporation",
+          "state": {
+            "fundAttribution": "INFERRED",
+            "attributedFundName": "OMERS Infrastructure",
+            "attributionConfidence": "LOW",
+            "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+            "linkedFundName": "OMERS Infrastructure"
+          },
+          "seedRecordId": "OFA-A1A39FB4B384",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "OMERS",
+            "ownershipVehicle": "OMERS Infrastructure",
+            "fundName": "OMERS Infrastructure",
+            "vehicleName": "Hamilton Infrastructure Trust / Commodore US Holding Corporation",
+            "investmentYear": 2018,
+            "stake": "100% through Commodore US Holding Corporation",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj20ur6001d2h2bg2jgb50f",
+          "organization": "ArcLight Capital Partners",
+          "identity": "FAILED",
+          "error": "Exact existing seed owner identity/state required"
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Leeward Renewable Energy",
+            "country": "United States",
+            "companySha256": "55a8ddef50c7025b1ab339825d1b48721b36cd7621569c046d002b822ad5bcd4",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "OMERS",
+                  "ownershipVehicle": "OMERS Infrastructure",
+                  "fundName": "OMERS Infrastructure",
+                  "vehicleName": "Hamilton Infrastructure Trust / Commodore US Holding Corporation",
+                  "investmentYear": 2018,
+                  "stake": "100% through Commodore US Holding Corporation",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "OMERS",
+                "vehicleName": "Hamilton Infrastructure Trust / Commodore US Holding Corporation",
+                "fundLookupName": "OMERS Infrastructure",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "ArcLight Capital Partners",
+                  "ownershipVehicle": "ArcLight Energy Partners Fund VI, L.P.",
+                  "fundName": "ArcLight Energy Partners Fund VI, L.P.",
+                  "investmentYear": 2015,
+                  "exitYear": 2018,
+                  "stake": "Control investment; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "ArcLight Capital Partners",
+                "vehicleName": "ArcLight Energy Partners Fund VI, L.P.",
+                "fundLookupName": "ArcLight Energy Partners Fund VI, L.P.",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "1333a801633027b682ab757d8d7cc380231e747e1a124502f061af9a7300a62d"
+      }
+    },
+    {
+      "sequence": 371,
+      "name": "Navisun LLC",
+      "companyId": "cmrxpjm9a017qivheb5o60hza",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013",
+      "priorIssue": "Navisun's former owner is represented under Ares Management although the resolved securities holder is Ares Capital Corporation, with 100% preferred and 55% Class A and unknown remaining pre-close holders. It retains UNRESOLVED metadata without an active seed binding. Queue supported historical organization/attribution review; do not silently rewrite identity, infer unknown 45%, or partially correct OMERS.",
+      "evidenceChecked": 12,
+      "owners": [
+        {
+          "ownerId": "cmrxpk8mv0276ivheokfkrftv",
+          "organization": "OMERS",
+          "active": true,
+          "vehicle": "Magnet Acquisition Holdings Corporation / Magnet US Acquisition Corporation",
+          "stake": "100%",
+          "state": {
+            "fundAttribution": "INFERRED",
+            "attributedFundName": "OMERS Infrastructure",
+            "attributionConfidence": "LOW",
+            "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+            "linkedFundName": "OMERS Infrastructure"
+          },
+          "seedRecordId": "OFA-B1F8C14A2ED5",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "OMERS",
+            "ownershipVehicle": "OMERS Infrastructure",
+            "fundName": "OMERS Infrastructure",
+            "vehicleName": "Magnet Acquisition Holdings Corporation / Magnet US Acquisition Corporation",
+            "investmentYear": 2022,
+            "stake": "100%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj20zxq001o2h2bsgjvdoxp",
+          "organization": "Ares Management",
+          "active": false,
+          "vehicle": "Ares Capital Corporation / direct Navisun LLC and Navisun Holdings LLC securities",
+          "stake": "100% Series A preferred and 55% Class A; other pre-close Class A holders are not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-6A29071688D4F05A45B03F57",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Ares Management",
+            "ownershipVehicle": "Ares Capital Corporation / direct Navisun LLC and Navisun Holdings LLC securities",
+            "vehicleName": "Ares Capital Corporation / direct Navisun LLC and Navisun Holdings LLC securities",
+            "investmentYear": 2017,
+            "exitYear": 2022,
+            "stake": "100% Series A preferred and 55% Class A; other pre-close Class A holders are not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Navisun LLC",
+            "country": "United States",
+            "companySha256": "368a9f540f3ece35ea0fc26e5e33638ae87d4279447587f1df60bb4dceddc9fd",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "OMERS",
+                  "ownershipVehicle": "OMERS Infrastructure",
+                  "fundName": "OMERS Infrastructure",
+                  "vehicleName": "Magnet Acquisition Holdings Corporation / Magnet US Acquisition Corporation",
+                  "investmentYear": 2022,
+                  "stake": "100%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "OMERS",
+                "vehicleName": "Magnet Acquisition Holdings Corporation / Magnet US Acquisition Corporation",
+                "fundLookupName": "OMERS Infrastructure",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Ares Management",
+                  "ownershipVehicle": "Ares Capital Corporation / direct Navisun LLC and Navisun Holdings LLC securities",
+                  "vehicleName": "Ares Capital Corporation / direct Navisun LLC and Navisun Holdings LLC securities",
+                  "investmentYear": 2017,
+                  "exitYear": 2022,
+                  "stake": "100% Series A preferred and 55% Class A; other pre-close Class A holders are not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Ares Management",
+                "vehicleName": "Ares Capital Corporation / direct Navisun LLC and Navisun Holdings LLC securities",
+                "fundLookupName": "Ares Capital Corporation / direct Navisun LLC and Navisun Holdings LLC securities",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "e56d00abf6ae0f88bb0e93cd8463269be4429928e163b6560861456d0d0609df"
+      }
+    },
+    {
+      "sequence": 372,
+      "name": "Northstar New Jersey Lottery Group, LLC",
+      "companyId": "cmrxpjm9w017rivhehloswadj",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013",
+      "priorIssue": "Northstar's former Scientific Games/Light & Wonder corporate period remains UNRESOLVED without an active seed binding. Brookfield's precise fund allocation beyond the disclosed BBUC look-through remains unavailable; holding companies are not fund names. Preserve the explicitly inferred OMERS residual and exact legal stake qualifications. Queue complete historical/current attribution work, not a partial current-owner update.",
+      "evidenceChecked": 12,
+      "owners": [
+        {
+          "ownerId": "cmrxpk8nf0277ivhe04k7umoj",
+          "organization": "OMERS",
+          "active": true,
+          "vehicle": "OSI LTT NJ Grantor Trust / Northstar New Jersey Holding Company",
+          "stake": "Residual HoldCo interest; 6.696% is implied by audited 2025 ownership data",
+          "state": {
+            "fundAttribution": "INFERRED",
+            "attributedFundName": "OMERS Infrastructure",
+            "attributionConfidence": "LOW",
+            "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+            "linkedFundName": "OMERS Infrastructure"
+          },
+          "seedRecordId": "OFA-33F884FC5EB0",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "OMERS",
+            "ownershipVehicle": "OMERS Infrastructure",
+            "fundName": "OMERS Infrastructure",
+            "vehicleName": "OSI LTT NJ Grantor Trust / Northstar New Jersey Holding Company",
+            "investmentYear": 2013,
+            "stake": "Residual HoldCo interest; 6.696% is implied by audited 2025 ownership data",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj2159b00222h2bjowzw2e0",
+          "organization": "Brightstar Global Solutions Corp.",
+          "active": true,
+          "vehicle": "Northstar New Jersey Holding Company, LLC",
+          "stake": "65.304% effective at December 31, 2025",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-4432E7E387BA",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Brightstar Global Solutions Corp.",
+            "ownershipVehicle": "Northstar New Jersey Holding Company, LLC",
+            "vehicleName": "Northstar New Jersey Holding Company, LLC",
+            "investmentYear": 2013,
+            "stake": "65.304% effective at December 31, 2025",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj215d200232h2bn28rqn4c",
+          "organization": "Brookfield",
+          "active": true,
+          "vehicle": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+          "stake": "28% held by Scientific Games New Jersey; Brookfield Business Partners' disclosed look-through is 9.24%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-1DEC2B2A9B8B",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Brookfield",
+            "ownershipVehicle": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+            "vehicleName": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+            "investmentYear": 2022,
+            "stake": "28% held by Scientific Games New Jersey; Brookfield Business Partners' disclosed look-through is 9.24%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj215il00252h2b947cmaor",
+          "organization": "Light & Wonder",
+          "active": false,
+          "vehicle": "Scientific Games New Jersey, LLC",
+          "stake": "Approximately 18% at entry; 17.69% at 2021 year-end",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-38E2CC34ECD36F7684EFDDB1",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Light & Wonder",
+            "ownershipVehicle": "Scientific Games New Jersey, LLC",
+            "vehicleName": "Scientific Games New Jersey, LLC",
+            "investmentYear": 2013,
+            "exitYear": 2022,
+            "stake": "Approximately 18% at entry; 17.69% at 2021 year-end",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Northstar New Jersey Lottery Group, LLC",
+            "country": "United States",
+            "companySha256": "d6669d72d7371e068fca6ceeb653e64d6fcb7e4ccc9deb65968861cfec524c6d",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "OMERS",
+                  "ownershipVehicle": "OMERS Infrastructure",
+                  "fundName": "OMERS Infrastructure",
+                  "vehicleName": "OSI LTT NJ Grantor Trust / Northstar New Jersey Holding Company",
+                  "investmentYear": 2013,
+                  "stake": "Residual HoldCo interest; 6.696% is implied by audited 2025 ownership data",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "OMERS",
+                "vehicleName": "OSI LTT NJ Grantor Trust / Northstar New Jersey Holding Company",
+                "fundLookupName": "OMERS Infrastructure",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Brightstar Global Solutions Corp.",
+                  "ownershipVehicle": "Northstar New Jersey Holding Company, LLC",
+                  "vehicleName": "Northstar New Jersey Holding Company, LLC",
+                  "investmentYear": 2013,
+                  "stake": "65.304% effective at December 31, 2025",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Brightstar Global Solutions Corp.",
+                "vehicleName": "Northstar New Jersey Holding Company, LLC",
+                "fundLookupName": "Northstar New Jersey Holding Company, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Brookfield",
+                  "ownershipVehicle": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+                  "vehicleName": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+                  "investmentYear": 2022,
+                  "stake": "28% held by Scientific Games New Jersey; Brookfield Business Partners' disclosed look-through is 9.24%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Brookfield",
+                "vehicleName": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+                "fundLookupName": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Light & Wonder",
+                  "ownershipVehicle": "Scientific Games New Jersey, LLC",
+                  "vehicleName": "Scientific Games New Jersey, LLC",
+                  "investmentYear": 2013,
+                  "exitYear": 2022,
+                  "stake": "Approximately 18% at entry; 17.69% at 2021 year-end",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Light & Wonder",
+                "vehicleName": "Scientific Games New Jersey, LLC",
+                "fundLookupName": "Scientific Games New Jersey, LLC",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "ae39c690d910942684d0b689f6d0bca11eefb4ec64412800b7aa26e277914c80"
+      }
+    },
+    {
+      "sequence": 373,
+      "name": "Teranet Inc.",
+      "companyId": "cmrxpjmak017sivhejvwtnhn2",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013",
+      "priorIssue": "Teranet's former Government of Ontario, Teramira consortium and Teranet Income Fund periods retain UNRESOLVED metadata without compatible active seed bindings. Queue historical corporate/program/fund representation together with current OMERS correction; do not change statutory rights, identity, or infer the undisclosed Teramira cap table.",
+      "evidenceChecked": 12,
+      "owners": [
+        {
+          "ownerId": "cmrxpk8o00278ivhe38d04pxw",
+          "organization": "OMERS",
+          "active": true,
+          "vehicle": "Borealis acquisition vehicle; Teranet Holdings LP",
+          "stake": "100%",
+          "state": {
+            "fundAttribution": "INFERRED",
+            "attributedFundName": "OMERS Infrastructure",
+            "attributionConfidence": "LOW",
+            "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+            "linkedFundName": "OMERS Infrastructure"
+          },
+          "seedRecordId": "OFA-48BB11EC1624",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "OMERS",
+            "ownershipVehicle": "OMERS Infrastructure",
+            "fundName": "OMERS Infrastructure",
+            "vehicleName": "Borealis acquisition vehicle; Teranet Holdings LP",
+            "investmentYear": 2008,
+            "stake": "100%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj3t0e60007062bxpji4h61",
+          "organization": "Government of Ontario",
+          "active": false,
+          "vehicle": "Ontario SuperBuild Corporation / Province-held securities",
+          "stake": "50%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-D0EFB4BE7F402DEC263BDD43",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Government of Ontario",
+            "ownershipVehicle": "Ontario SuperBuild Corporation / Province-held securities",
+            "vehicleName": "Ontario SuperBuild Corporation / Province-held securities",
+            "investmentYear": 1991,
+            "exitYear": 2003,
+            "stake": "50%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t0f30009062brpy2zal8",
+          "organization": "Teramira Holdings Inc.",
+          "active": false,
+          "vehicle": "Teramira consortium holding companies",
+          "stake": "50% from 1991; 100% from 2003",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-C49B67A4D5E9B66920BEC433",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Teramira Holdings Inc.",
+            "ownershipVehicle": "Teramira consortium holding companies",
+            "vehicleName": "Teramira consortium holding companies",
+            "investmentYear": 1991,
+            "exitYear": 2006,
+            "stake": "50% from 1991; 100% from 2003",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t0fq000b062b8qqiobja",
+          "organization": "Teranet Income Fund",
+          "active": false,
+          "vehicle": "Teranet Operating Trust / Teranet Holdings Limited Partnership",
+          "stake": "100% direct through THLP; ultimate public interests",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-503BDE32AAC46765A55F2561",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Teranet Income Fund",
+            "ownershipVehicle": "Teranet Operating Trust / Teranet Holdings Limited Partnership",
+            "vehicleName": "Teranet Operating Trust / Teranet Holdings Limited Partnership",
+            "investmentYear": 2006,
+            "exitYear": 2008,
+            "stake": "100% direct through THLP; ultimate public interests",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Teranet Inc.",
+            "country": "Canada",
+            "companySha256": "f6cb5f045e74fbcc408b10f4e840500ce914e602cb86a98b8eecfc3d0ed656c4",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "OMERS",
+                  "ownershipVehicle": "OMERS Infrastructure",
+                  "fundName": "OMERS Infrastructure",
+                  "vehicleName": "Borealis acquisition vehicle; Teranet Holdings LP",
+                  "investmentYear": 2008,
+                  "stake": "100%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "OMERS",
+                "vehicleName": "Borealis acquisition vehicle; Teranet Holdings LP",
+                "fundLookupName": "OMERS Infrastructure",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Government of Ontario",
+                  "ownershipVehicle": "Ontario SuperBuild Corporation / Province-held securities",
+                  "vehicleName": "Ontario SuperBuild Corporation / Province-held securities",
+                  "investmentYear": 1991,
+                  "exitYear": 2003,
+                  "stake": "50%",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Government of Ontario",
+                "vehicleName": "Ontario SuperBuild Corporation / Province-held securities",
+                "fundLookupName": "Ontario SuperBuild Corporation / Province-held securities",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Teramira Holdings Inc.",
+                  "ownershipVehicle": "Teramira consortium holding companies",
+                  "vehicleName": "Teramira consortium holding companies",
+                  "investmentYear": 1991,
+                  "exitYear": 2006,
+                  "stake": "50% from 1991; 100% from 2003",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Teramira Holdings Inc.",
+                "vehicleName": "Teramira consortium holding companies",
+                "fundLookupName": "Teramira consortium holding companies",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Teranet Income Fund",
+                  "ownershipVehicle": "Teranet Operating Trust / Teranet Holdings Limited Partnership",
+                  "vehicleName": "Teranet Operating Trust / Teranet Holdings Limited Partnership",
+                  "investmentYear": 2006,
+                  "exitYear": 2008,
+                  "stake": "100% direct through THLP; ultimate public interests",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Teranet Income Fund",
+                "vehicleName": "Teranet Operating Trust / Teranet Holdings Limited Partnership",
+                "fundLookupName": "Teranet Operating Trust / Teranet Holdings Limited Partnership",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "b33d79cd48d6e183bea9b1641bcc48cf6b4f85140c6a9afdf8565f456a7c432c"
+      }
+    },
+    {
+      "sequence": 376,
+      "name": "Skyway Concession Company LLC",
+      "companyId": "cmrxpjmfz0183ivhe4rnk8kic",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013",
+      "priorIssue": "Skyway's former CPP, OMERS, Cintra, Macquarie Group and MIP periods have known program/corporate/fund distinctions but retain UNRESOLVED metadata without active seed bindings. Current CCPI holding entities must not be treated as funds. Queue historical and current metadata together; preserve OTPP continuity, separate Atlas re-entry and all exact stakes.",
+      "evidenceChecked": 12,
+      "owners": [
+        {
+          "ownerId": "cmrxpk8y4027nivhef1shg15y",
+          "organization": "OTPP",
+          "active": true,
+          "vehicle": "Calumet Concession Partners / CCPI ownership chain",
+          "stake": "33.33%",
+          "state": {
+            "fundAttribution": "DIRECT_PROGRAM",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": "Matched supplemental ownership detail: Firm: Ontario Teachers' Pension Plan | Fund: Ontario Teachers' Pension Plan | Ownership Interest: Not publicly disclosed. Supplemental detail discloses only the owner/manager name, not a distinct fund.",
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-80AA65908E21",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "OTPP",
+            "ownershipVehicle": "Calumet Concession Partners / CCPI ownership chain",
+            "vehicleName": "Calumet Concession Partners / CCPI ownership chain",
+            "investmentYear": 2016,
+            "stake": "33.33%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj3t14o000l062b8049572v",
+          "organization": "Atlas Arteria",
+          "active": true,
+          "vehicle": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+          "stake": "66.67%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-1B65BE3F7238",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Atlas Arteria",
+            "ownershipVehicle": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+            "vehicleName": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+            "investmentYear": 2022,
+            "stake": "66.67%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj3t154000m062bivtfnico",
+          "organization": "CPP Investments",
+          "active": false,
+          "vehicle": "Calumet Concession Partners / CCPI",
+          "stake": "33.33%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-116E71490F0476FE8720D4B0",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "CPP Investments",
+            "ownershipVehicle": "Calumet Concession Partners / CCPI",
+            "vehicleName": "Calumet Concession Partners / CCPI",
+            "investmentYear": 2016,
+            "exitYear": 2022,
+            "stake": "33.33%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t15k000n062b686noneg",
+          "organization": "OMERS",
+          "active": false,
+          "vehicle": "Calumet Concession Partners / CCPI",
+          "stake": "33.33%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-83012F4FE700BF2E67CB66A5",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "OMERS",
+            "ownershipVehicle": "Calumet Concession Partners / CCPI",
+            "vehicleName": "Calumet Concession Partners / CCPI",
+            "investmentYear": 2016,
+            "exitYear": 2022,
+            "stake": "33.33%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t166000p062b7l0ivr2f",
+          "organization": "Cintra",
+          "active": false,
+          "vehicle": "Cintra Skyway LLC / Skyway Concession Company Holdings",
+          "stake": "55%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-A031D25B681254E41FADFE4C",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Cintra",
+            "ownershipVehicle": "Cintra Skyway LLC / Skyway Concession Company Holdings",
+            "vehicleName": "Cintra Skyway LLC / Skyway Concession Company Holdings",
+            "investmentYear": 2005,
+            "exitYear": 2016,
+            "stake": "55%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t16t000r062bzqdrytf4",
+          "organization": "Macquarie Group",
+          "active": false,
+          "vehicle": "Macquarie Infrastructure Group / Macquarie Atlas Roads",
+          "stake": "45% initially; 22.5% after 2006",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-E248288E38275D858E288BD7",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Macquarie Group",
+            "ownershipVehicle": "Macquarie Infrastructure Group / Macquarie Atlas Roads",
+            "vehicleName": "Macquarie Infrastructure Group / Macquarie Atlas Roads",
+            "investmentYear": 2005,
+            "exitYear": 2016,
+            "stake": "45% initially; 22.5% after 2006",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t17f000t062bho13ij5o",
+          "organization": "Macquarie Infrastructure Partners",
+          "identity": "FAILED",
+          "error": "Exact existing seed owner identity/state required"
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Skyway Concession Company LLC",
+            "country": "United States",
+            "companySha256": "3c0db4e5bf845e023e3f11896a60fa63c0170bdfa9ac212bb6d4b2fab539951c",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "OTPP",
+                  "ownershipVehicle": "Calumet Concession Partners / CCPI ownership chain",
+                  "vehicleName": "Calumet Concession Partners / CCPI ownership chain",
+                  "investmentYear": 2016,
+                  "stake": "33.33%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "OTPP",
+                "vehicleName": "Calumet Concession Partners / CCPI ownership chain",
+                "fundLookupName": "Calumet Concession Partners / CCPI ownership chain",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Atlas Arteria",
+                  "ownershipVehicle": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+                  "vehicleName": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+                  "investmentYear": 2022,
+                  "stake": "66.67%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Atlas Arteria",
+                "vehicleName": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+                "fundLookupName": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "CPP Investments",
+                  "ownershipVehicle": "Calumet Concession Partners / CCPI",
+                  "vehicleName": "Calumet Concession Partners / CCPI",
+                  "investmentYear": 2016,
+                  "exitYear": 2022,
+                  "stake": "33.33%",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "CPP Investments",
+                "vehicleName": "Calumet Concession Partners / CCPI",
+                "fundLookupName": "Calumet Concession Partners / CCPI",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "OMERS",
+                  "ownershipVehicle": "Calumet Concession Partners / CCPI",
+                  "vehicleName": "Calumet Concession Partners / CCPI",
+                  "investmentYear": 2016,
+                  "exitYear": 2022,
+                  "stake": "33.33%",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "OMERS",
+                "vehicleName": "Calumet Concession Partners / CCPI",
+                "fundLookupName": "Calumet Concession Partners / CCPI",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Cintra",
+                  "ownershipVehicle": "Cintra Skyway LLC / Skyway Concession Company Holdings",
+                  "vehicleName": "Cintra Skyway LLC / Skyway Concession Company Holdings",
+                  "investmentYear": 2005,
+                  "exitYear": 2016,
+                  "stake": "55%",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Cintra",
+                "vehicleName": "Cintra Skyway LLC / Skyway Concession Company Holdings",
+                "fundLookupName": "Cintra Skyway LLC / Skyway Concession Company Holdings",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Macquarie Group",
+                  "ownershipVehicle": "Macquarie Infrastructure Group / Macquarie Atlas Roads",
+                  "vehicleName": "Macquarie Infrastructure Group / Macquarie Atlas Roads",
+                  "investmentYear": 2005,
+                  "exitYear": 2016,
+                  "stake": "45% initially; 22.5% after 2006",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Macquarie Group",
+                "vehicleName": "Macquarie Infrastructure Group / Macquarie Atlas Roads",
+                "fundLookupName": "Macquarie Infrastructure Group / Macquarie Atlas Roads",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Macquarie Infrastructure Partners",
+                  "ownershipVehicle": "MIP A, Canada and parallel vehicles",
+                  "vehicleName": "MIP A, Canada and parallel vehicles",
+                  "investmentYear": 2006,
+                  "exitYear": 2016,
+                  "stake": "22.5%",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Macquarie Asset Management",
+                "vehicleName": "MIP A, Canada and parallel vehicles",
+                "fundLookupName": "MIP A, Canada and parallel vehicles",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "bd87a5cfa49506f6cf0bcdddcfb88943ab5df5ec47a729225d20f36c72c63bdd"
+      }
+    },
+    {
+      "sequence": 377,
+      "name": "Intersect Power",
+      "companyId": "cmtj3t1o8000w062bydcb0tjr",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013",
+      "priorIssue": "Intersect's former CAI Fund I, TPG Rise Climate and Pantheon co-investment periods remain UNRESOLVED without compatible active seed bindings; Greenbelt's exact legacy fund remains unavailable. The IPX carve-out and Alphabet current identity must remain unchanged. Queue supported complete historical attribution representation, not a partial Alphabet correction or repeated IPX transaction.",
+      "evidenceChecked": 12,
+      "owners": [
+        {
+          "ownerId": "cmtj3t1t80019062ba36l7k9c",
+          "organization": "Alphabet Inc.",
+          "active": true,
+          "vehicle": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+          "stake": "Minority from 2024; 100% control after the 2026 carve-out and acquisition",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-4E07DAA3E43E",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Alphabet Inc.",
+            "ownershipVehicle": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+            "vehicleName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+            "investmentYear": 2024,
+            "stake": "Minority from 2024; 100% control after the 2026 carve-out and acquisition",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj3t1ts001a062baywbhcvg",
+          "organization": "Climate Adaptive Infrastructure",
+          "active": false,
+          "vehicle": "CAI Fund I",
+          "stake": "Not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-74878B7EDD3AE70484F80332",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Climate Adaptive Infrastructure",
+            "ownershipVehicle": "CAI Fund I",
+            "vehicleName": "CAI Fund I",
+            "investmentYear": 2020,
+            "exitYear": 2026,
+            "stake": "Not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t1ue001c062b9k1co09y",
+          "organization": "Greenbelt Capital Partners",
+          "active": false,
+          "vehicle": "Trilantic / Greenbelt investment vehicle",
+          "stake": "Not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-2DE9D9D71E0934AF9A63081B",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Greenbelt Capital Partners",
+            "ownershipVehicle": "Trilantic / Greenbelt investment vehicle",
+            "vehicleName": "Trilantic / Greenbelt investment vehicle",
+            "investmentYear": 2020,
+            "exitYear": 2026,
+            "stake": "Not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t1us001d062bxomyfh66",
+          "organization": "TPG",
+          "active": false,
+          "vehicle": "TPG Rise Climate",
+          "stake": "Lead investor; percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-9C2AE66F19500928ECB8EFF5",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "TPG",
+            "ownershipVehicle": "TPG Rise Climate",
+            "vehicleName": "TPG Rise Climate",
+            "investmentYear": 2022,
+            "exitYear": 2026,
+            "stake": "Lead investor; percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t1vf001f062bqji4lxkl",
+          "organization": "Pantheon Infrastructure Plc",
+          "active": false,
+          "vehicle": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+          "stake": "Approximately US$40 million invested; percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-50A5D61E561F3CAF62CACAA2",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Pantheon Infrastructure Plc",
+            "ownershipVehicle": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+            "vehicleName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+            "investmentYear": 2025,
+            "exitYear": 2026,
+            "stake": "Approximately US$40 million invested; percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Intersect Power",
+            "country": "United States",
+            "companySha256": "e3825c5a4b8bd6e668f9e2cbcba440b4f7a17a7cab6871e00355595234d9ba82",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Alphabet Inc.",
+                  "ownershipVehicle": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+                  "vehicleName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+                  "investmentYear": 2024,
+                  "stake": "Minority from 2024; 100% control after the 2026 carve-out and acquisition",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Alphabet Inc.",
+                "vehicleName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+                "fundLookupName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Climate Adaptive Infrastructure",
+                  "ownershipVehicle": "CAI Fund I",
+                  "vehicleName": "CAI Fund I",
+                  "investmentYear": 2020,
+                  "exitYear": 2026,
+                  "stake": "Not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Climate Adaptive Infrastructure",
+                "vehicleName": "CAI Fund I",
+                "fundLookupName": "CAI Fund I",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Greenbelt Capital Partners",
+                  "ownershipVehicle": "Trilantic / Greenbelt investment vehicle",
+                  "vehicleName": "Trilantic / Greenbelt investment vehicle",
+                  "investmentYear": 2020,
+                  "exitYear": 2026,
+                  "stake": "Not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Greenbelt Capital Partners",
+                "vehicleName": "Trilantic / Greenbelt investment vehicle",
+                "fundLookupName": "Trilantic / Greenbelt investment vehicle",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "TPG",
+                  "ownershipVehicle": "TPG Rise Climate",
+                  "vehicleName": "TPG Rise Climate",
+                  "investmentYear": 2022,
+                  "exitYear": 2026,
+                  "stake": "Lead investor; percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "TPG",
+                "vehicleName": "TPG Rise Climate",
+                "fundLookupName": "TPG Rise Climate",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Pantheon Infrastructure Plc",
+                  "ownershipVehicle": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+                  "vehicleName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+                  "investmentYear": 2025,
+                  "exitYear": 2026,
+                  "stake": "Approximately US$40 million invested; percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Pantheon Infrastructure Plc",
+                "vehicleName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+                "fundLookupName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "a0a4e7b34bdc934ceb6ada56b65964440d7d1557d2b6b9a87ea4ed0665dabd0a"
+      }
+    },
+    {
+      "sequence": 378,
+      "name": "Budderfly",
+      "companyId": "cmtj3t2bz001m062bncaiz9tv",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013",
+      "priorIssue": "Budderfly has unresolved exact Partners Group fund allocation and current Connecticut Innovations instrument/ownership evidence, plus former Balance Point fund metadata without active seed bindings and unconfirmed rollover. Encore is a holding vehicle, not a disclosed fund. Queue precise ownership and historical-attribution review; do not infer CI equity, exact stakes, or rewrite production solely to align the seed's null-rationale mismatch.",
+      "evidenceChecked": 12,
+      "owners": [
+        {
+          "ownerId": "cmtj3t2hp0021062bcl18sdyy",
+          "organization": "Partners Group",
+          "active": true,
+          "vehicle": "Encore Holdings LP; Partners Group direct-infrastructure strategy",
+          "stake": "Majority; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-49D522DA139D",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Partners Group",
+            "ownershipVehicle": "Encore Holdings LP; Partners Group direct-infrastructure strategy",
+            "vehicleName": "Encore Holdings LP; Partners Group direct-infrastructure strategy",
+            "investmentYear": 2022,
+            "stake": "Majority; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj3t2id0023062bct12bwyr",
+          "organization": "Budderfly management",
+          "active": true,
+          "vehicle": "Management rollover equity",
+          "stake": "Minority; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-D9A1E15566B4",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Budderfly management",
+            "ownershipVehicle": "Management rollover equity",
+            "vehicleName": "Management rollover equity",
+            "investmentYear": 2007,
+            "stake": "Minority; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj3t2iz0025062befi2gn5a",
+          "organization": "Edison Partners",
+          "active": false,
+          "vehicle": "Growth-equity investment vehicle not publicly disclosed",
+          "stake": "Minority growth equity",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-65452D108BD8B062965FA784",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Edison Partners",
+            "ownershipVehicle": "Growth-equity investment vehicle not publicly disclosed",
+            "vehicleName": "Growth-equity investment vehicle not publicly disclosed",
+            "investmentYear": 2017,
+            "exitYear": 2022,
+            "stake": "Minority growth equity",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj3t2jl0027062bk68s1hk1",
+          "organization": "Balance Point Capital",
+          "active": false,
+          "vehicle": "BPCP II, BPCP III and Connecticut Growth Capital",
+          "stake": "Minority preferred equity",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-9A513A0CF3C5D9B776EC76C8",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Balance Point Capital",
+            "ownershipVehicle": "BPCP II, BPCP III and Connecticut Growth Capital",
+            "vehicleName": "BPCP II, BPCP III and Connecticut Growth Capital",
+            "investmentYear": 2019,
+            "exitYear": 2022,
+            "stake": "Minority preferred equity",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Budderfly",
+            "country": "United States",
+            "companySha256": "b460f4f3fa3b462b6040156f540704382f00e8f129ce97e13270c3bd874af136",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Partners Group",
+                  "ownershipVehicle": "Encore Holdings LP; Partners Group direct-infrastructure strategy",
+                  "vehicleName": "Encore Holdings LP; Partners Group direct-infrastructure strategy",
+                  "investmentYear": 2022,
+                  "stake": "Majority; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Partners Group",
+                "vehicleName": "Encore Holdings LP; Partners Group direct-infrastructure strategy",
+                "fundLookupName": "Encore Holdings LP; Partners Group direct-infrastructure strategy",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Budderfly management",
+                  "ownershipVehicle": "Management rollover equity",
+                  "vehicleName": "Management rollover equity",
+                  "investmentYear": 2007,
+                  "stake": "Minority; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Budderfly management",
+                "vehicleName": "Management rollover equity",
+                "fundLookupName": "Management rollover equity",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Edison Partners",
+                  "ownershipVehicle": "Growth-equity investment vehicle not publicly disclosed",
+                  "vehicleName": "Growth-equity investment vehicle not publicly disclosed",
+                  "investmentYear": 2017,
+                  "exitYear": 2022,
+                  "stake": "Minority growth equity",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Edison Partners",
+                "vehicleName": "Growth-equity investment vehicle not publicly disclosed",
+                "fundLookupName": "Growth-equity investment vehicle not publicly disclosed",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Balance Point Capital",
+                  "ownershipVehicle": "BPCP II, BPCP III and Connecticut Growth Capital",
+                  "vehicleName": "BPCP II, BPCP III and Connecticut Growth Capital",
+                  "investmentYear": 2019,
+                  "exitYear": 2022,
+                  "stake": "Minority preferred equity",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Balance Point Capital",
+                "vehicleName": "BPCP II, BPCP III and Connecticut Growth Capital",
+                "fundLookupName": "BPCP II, BPCP III and Connecticut Growth Capital",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "abf7c921da2ac307be9f825fc572379dacb5a5c45eff6fedef742009c2bdaa8e"
+      }
+    },
+    {
+      "sequence": 379,
+      "name": "Dimension Energy",
+      "companyId": "cmtj597ba00002a2bspz4drmq",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001",
+      "priorIssue": "Former FTC Solar corporate ownership is UNRESOLVED without active seed binding; current PG fund allocation/minority members remain unavailable, with a vehicle-as-fund seed record. Preserve qualified manager control and exact historical 23% stake. No partial current patch or invented minority owners.",
+      "evidenceChecked": 14,
+      "owners": [
+        {
+          "ownerId": "cmtj597ne000b2a2biuc4l9fg",
+          "organization": "Partners Group",
+          "active": true,
+          "vehicle": "PG Delta Holdco LLC; client infrastructure accounts",
+          "stake": "Controlling; exact manager-level percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-379000000001",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Partners Group",
+            "ownershipVehicle": "PG Delta Holdco LLC; client infrastructure accounts",
+            "vehicleName": "PG Delta Holdco LLC; client infrastructure accounts",
+            "investmentYear": 2021,
+            "stake": "Controlling; exact manager-level percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj597pm000d2a2beqkf9j9e",
+          "organization": "FTC Solar, Inc.",
+          "active": false,
+          "vehicle": "Direct Class A units of Dimension Energy LLC",
+          "stake": "Approximately 23%; entire interest sold",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-BFE04E5597D96451C138BAC2",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "FTC Solar, Inc.",
+            "ownershipVehicle": "Direct Class A units of Dimension Energy LLC",
+            "vehicleName": "Direct Class A units of Dimension Energy LLC",
+            "investmentYear": 2018,
+            "exitYear": 2021,
+            "stake": "Approximately 23%; entire interest sold",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Dimension Energy",
+            "country": "United States",
+            "companySha256": "7b00239de6469c763a61d6f6eba88891fc0f0aff0920572225caf8851b4183a8",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Partners Group",
+                  "ownershipVehicle": "PG Delta Holdco LLC; client infrastructure accounts",
+                  "vehicleName": "PG Delta Holdco LLC; client infrastructure accounts",
+                  "investmentYear": 2021,
+                  "stake": "Controlling; exact manager-level percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Partners Group",
+                "vehicleName": "PG Delta Holdco LLC; client infrastructure accounts",
+                "fundLookupName": "PG Delta Holdco LLC; client infrastructure accounts",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "FTC Solar, Inc.",
+                  "ownershipVehicle": "Direct Class A units of Dimension Energy LLC",
+                  "vehicleName": "Direct Class A units of Dimension Energy LLC",
+                  "investmentYear": 2018,
+                  "exitYear": 2021,
+                  "stake": "Approximately 23%; entire interest sold",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "FTC Solar, Inc.",
+                "vehicleName": "Direct Class A units of Dimension Energy LLC",
+                "fundLookupName": "Direct Class A units of Dimension Energy LLC",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "e96955ab05ed9806e73ec40af52bccfe3377da20fb345e1df78649ce4f25a0ce"
+      }
+    }
+  ]
+}
