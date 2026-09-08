@@ -1,0 +1,112 @@
+{
+  "companyId": "cmtio9ezj001nwa2byncsig3o",
+  "name": "Treaty Oak Clean Energy, LLC",
+  "sequence": 333,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/research-decision.json",
+      "sha256": "5a0f67d84e0b63c3597c723aae4d894285e3c094cc40718bce7b7526f54a982c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/source-verification.json",
+      "sha256": "c9f726d4db85b5e66d2d48ec2cd53d49b4c4c467cfa2dd15a3a60dd91dba5c69"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "983c3cfb3f2267b929e46c9316b975c5fcdf6e7316f7b7fcb8440d290f1dc5b7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/chatgpt-response-validation.json",
+      "sha256": "769a3e7be4056f850ad52a91b3230f4b8e691e7e7d0af5be872de255333f198b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/chatgpt-attestation.json",
+      "sha256": "869e1d38f077e5cebdf622deac96649e779e1a30bb87ac3bc37f59469d79d8c3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/review.json",
+      "sha256": "fe72017090bf4cba8bf16cf6a2608282885ecc4d85f921237cf21a89ff76cbc6"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtio9fdz001wwa2bt0yubhlv",
+      "seedRecordId": "OFA-355EF571A9F3",
+      "expectedSeedSha256": "70e17a84a95838bfa6065ca9257c924a95ed47c85d32b454b9a941af49e45a8b",
+      "expectedOwnerSha256": "cf62e4ac60f82ab49a12fc825ce0b5c72281661a7c8fe8b272cc33665b1fe264",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Green Energy and Climate Opportunities Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Macquarie's 2024 disclosure names MGECOF for the portfolio acquisition including Treaty Oak; its February 2025 announcement identifies Treaty Oak as owned by MAM-managed funds. The immediate holding vehicle and exact transfer closing date remain undisclosed; no fund record or date is inferred.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace unresolved attribution with the named MGECOF disclosure while preserving the approved legal-vehicle qualifier, 2022 initial investment year and collective stake.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/treaty-oak-fund.html",
+          "sha256": "22227051132e311580de7f250ccba85da1e584cdeb8f4068cca870cef8d053e7",
+          "url": "https://www.macquarie.com/au/en/about/news/2024/macquarie-green-energy-and-climate-opportunities-fund-acquires-portfolio-of-six-investments.html",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/treaty-oak-integration.html",
+          "sha256": "b6ce9e7ccaea8e183b6017741a1969768015fc5a3e81be8184ac1bdbf3606ce3",
+          "url": "https://www.macquarie.com/us/en/about/news/2025/macquarie-asset-management-announces-acquisition-of-galehead-development-and-strategic-integration-with-treaty-oak-clean-energy.html",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/treaty-oak-investor.html",
+          "sha256": "409ab1794d9422f17100ed61b065a665bb38b00752dd8ec97605eb4637b52573",
+          "url": "https://www.treatyoakcleanenergy.com/investor",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "e54f5277bc9812ef210b5b4219f4a49e62b047935a97835d3e518ad6ecca7840",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtio9fdz001wwa2bt0yubhlv",
+      "sha256": "cf62e4ac60f82ab49a12fc825ce0b5c72281661a7c8fe8b272cc33665b1fe264"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0333-treaty-oak-clean-energy-v2/proposal.json",
+      "sha256": "712a97de53f517cf500854f008d2b695bb2db959da441c418f79c19da062a715"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0333-treaty-oak-clean-energy-v2.json",
+      "sha256": "5d7243d4916b3306a2a8d06959444882d928cab8595f018eed96e97559e6421e"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0329-0333-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "f6cd587ea352de81e6ccf558815f684aafd4c7d0aa6b8093f9f9e611dbf46ea7",
+      "memberIndex": 4
+    },
+    "receiptSha256": "05e03537e0f5809f2b9cb8ef793d9c58a8bab3dcba5f01d180f3edc21a3d0123"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/treaty-oak-fund.html.capture.json",
+      "sha256": "639f28ee4336d400f475a0756a2755bf3ac23db91eba5c467cfb43b8860a0398"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/treaty-oak-integration.html.capture.json",
+      "sha256": "ef593761ce317370a084e11dbe5280c6ecdcfa95ac9142c8a0d5d3b331a3a64a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/treaty-oak-investor.html.capture.json",
+      "sha256": "7884e2088e9012baa9d002eb33857085ea83e1cb44d331ddbc44b8ab88e6d643"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "companyId": "cmtio97ao000cwa2bs0ga903e",
+  "name": "Pinsly Railroad Company",
+  "sequence": 330,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/research-decision.json",
+      "sha256": "b6f60e998a65de39c1636e3593c2d06cb0b37a6725b7139e92056aff64a84192"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/source-verification.json",
+      "sha256": "c0f6ff452671fc67a3792f24b0a3eb998e7cf2409274eec4f3eb7c96d07a9438"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b5e0bb059404529f3640186bfc296fca9fcb03d1b12c0493422293de2680a79a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/chatgpt-response-validation.json",
+      "sha256": "b16a1497cf5ae4cc4e998248692779ee154dd85490d166514def3be56959f95a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/chatgpt-attestation.json",
+      "sha256": "12772e4706bc739a1c2c41cd2b96083cb0d9912af2359ec24f0f287a5157f16a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/review.json",
+      "sha256": "fe72017090bf4cba8bf16cf6a2608282885ecc4d85f921237cf21a89ff76cbc6"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtio97r5000lwa2b3nd7doko",
+      "seedRecordId": "OFA-0CD4FB3B97B9",
+      "expectedSeedSha256": "95cf016cfae527d25fbf0a04754e3d39b3ff2277b45d7e8d4b1685e0917a5238",
+      "expectedOwnerSha256": "73ad2b07ee25bafce6aeabb1c7774b1a4b784758dd455dc0f4dcb516a5848a7d",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Infrastructure Partners V",
+        "attributionConfidence": null,
+        "attributionRationale": "The STB's September 2025 control notice expressly identifies Pinsly as wholly owned through Pinsly Holdco and MIP V Rail by Macquarie Infrastructure Partners V. This corrects unresolved metadata while retaining the existing fund link and legal ownership chain.",
+        "linkedFundName": "Macquarie Infrastructure Partners V"
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace unresolved metadata with the specifically disclosed controlling fund; preserve former American Rail Partners' genuinely undisclosed fund attribution and all ownership fields.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/pinsly-stb.html",
+          "sha256": "7af9e0569288c7f45dcb67424db3f836041d01838188d4916e63d97ec25530fd",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-09-19/html/2025-18114.htm",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/pinsly-manager.html",
+          "sha256": "bb12968cedd5bca047d4d28cbff1dc957743bd53c530ac2b7b4178e34424323f",
+          "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/pinsly-railroad-company.html",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmtio97w5000nwa2b49y7q1lo"
+  ],
+  "issue": null,
+  "expectedImageSemanticSha256": "7601ebb8d2fbb7fadb96ae0e4476ea7cf35dec904afb3df5184dfffe52455322",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtio97r5000lwa2b3nd7doko",
+      "sha256": "73ad2b07ee25bafce6aeabb1c7774b1a4b784758dd455dc0f4dcb516a5848a7d"
+    },
+    {
+      "ownerId": "cmtio97w5000nwa2b49y7q1lo",
+      "sha256": "99bf9854846562aa7f78613ce674452a337b1bf3cea27350c371cc664ff3df84"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0330-pinsly-railroad-company-v2/proposal.json",
+      "sha256": "3dba6a66dca411083bc8f20297801be385a1834c7cc5c760df7cfdc76bc02838"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0330-pinsly-railroad-company-v2.json",
+      "sha256": "c556c8c2ef7e6d09211d910576c846e8be8d4a03c2485864fc3fe0bf746e3b7e"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0329-0333-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "f6cd587ea352de81e6ccf558815f684aafd4c7d0aa6b8093f9f9e611dbf46ea7",
+      "memberIndex": 1
+    },
+    "receiptSha256": "7e7d0062b28a1b16ce98d49ef9ec67a4da53aa7fc4eab56cb591539efefd1e7b"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/pinsly-stb.html.capture.json",
+      "sha256": "03f21d8f3cb71031c4e293357a77ace9a78f039f30ece80f3c03021dfcc345b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/pinsly-manager.html.capture.json",
+      "sha256": "ce965648fcf73abc8d47c1d8794646d107a12424c9cef8108c8957e34b8211e6"
+    }
+  ]
+}

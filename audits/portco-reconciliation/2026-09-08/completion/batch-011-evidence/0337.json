@@ -1,0 +1,135 @@
+{
+  "companyId": "cmtiqlilt000ero2bboaqr577",
+  "name": "Maverick 6 & 7",
+  "sequence": 337,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/research-decision.json",
+      "sha256": "310ca8360bd84de7dbaac1186174100663c2d92619fc0c54dd07c6fad7ac883f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/source-verification.json",
+      "sha256": "f28c53593ba0b408eb59c2b9eb2c6a8346935ba0f149e29c7e07429556d70fe7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "336ce56f36167e13145c2f0fe0df8068fbaf073f3f2ba97408458cd97aeef1d1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/chatgpt-response-validation.json",
+      "sha256": "88a5d8b4ee09c446156d64c2585f0928daa7e110a0c646b99a3d7418f581130f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/chatgpt-attestation.json",
+      "sha256": "aeeae3cb27744504906e87e8a741643e6fd06a81e3d737d549689e0fd553fd65"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/review.json",
+      "sha256": "fe72017090bf4cba8bf16cf6a2608282885ecc4d85f921237cf21a89ff76cbc6"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtiqljoa000tro2bixi38oq9",
+      "seedRecordId": "OFA-FA10FF5FB6A6",
+      "expectedSeedSha256": "0705dca38e495d2e2a226917110a3efde9f3bc81dc6037677b8663a4ff00ad68",
+      "expectedOwnerSha256": "b801a45aa9b0fe3094e55ffd4a33b37513eff57b108efed7fe04b7ba50a2adc7",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDF identifies MEAG as Munich Re's asset manager and a Munich Re subsidiary as the investor. Munich Re's 2025 company report discloses MR Falcon and the Maverick 67 holdings. This is direct insurance-account ownership, not an inferred third-party fund; retain the existing project stakes and distinct holdco percentages.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct unresolved insurance-account attribution without changing legal vehicles, project stakes or holdco allocations.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/maverick-edf.html",
+          "sha256": "d8b4b6a5492840863367a2e89d9a1769f434e60ade568705163e4bdb220aa97c",
+          "url": "https://www.edf-re.com/press-release/edf-renewables-north-america-and-meag-munich-re-agree-to-partner-in-two-us-renewable-energy-projects-in-the-united-states/",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/munich-company-2025.pdf",
+          "sha256": "4771e909c7c582a08095f0bde7a2760d4b180ccd387efe8d58d02ec8b1a68d35",
+          "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtiqljso000vro2b0i0a34gp",
+      "seedRecordId": "OFA-BF90150E861D",
+      "expectedSeedSha256": "825dd201804a48586827013933b8db49d6992f59aa23a648a6c25678d893b401",
+      "expectedOwnerSha256": "1462f3ea05a7a51d1d78157cfa59f56b20d89a6f5f46378e94e24da8e069ecbb",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDF Renewables is the corporate developer and retained operating sponsor alongside Munich Re's investment account. This is direct corporate ownership; the internal retained-interest vehicle is not publicly disclosed.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct unresolved corporate attribution; retain the complete approved EDF ownership period and its unavailable internal vehicle.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/maverick-edf.html",
+          "sha256": "d8b4b6a5492840863367a2e89d9a1769f434e60ade568705163e4bdb220aa97c",
+          "url": "https://www.edf-re.com/press-release/edf-renewables-north-america-and-meag-munich-re-agree-to-partner-in-two-us-renewable-energy-projects-in-the-united-states/",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/munich-company-2025.pdf",
+          "sha256": "4771e909c7c582a08095f0bde7a2760d4b180ccd387efe8d58d02ec8b1a68d35",
+          "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "0826826a45df18088bc1256a5b876dc75a64e21459f368185dbc0ad23f24d718",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtiqljoa000tro2bixi38oq9",
+      "sha256": "b801a45aa9b0fe3094e55ffd4a33b37513eff57b108efed7fe04b7ba50a2adc7"
+    },
+    {
+      "ownerId": "cmtiqljso000vro2b0i0a34gp",
+      "sha256": "1462f3ea05a7a51d1d78157cfa59f56b20d89a6f5f46378e94e24da8e069ecbb"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0337-maverick-6-v1/proposal.json",
+      "sha256": "e8d05fa42331eea1f9ecc4e979d8bf84b5d04ac926ca9866164574d037028566"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0337-maverick-6-v1.json",
+      "sha256": "2ef4bbe21d79190190979899a67b781fa8fa8523ed5b545696e73f40503a0c48"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0334-0338-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "5eee257b161c326345b7ef7eafe6952f6709c3cd88c18345f5832accde175aad",
+      "memberIndex": 3
+    },
+    "receiptSha256": "c69f3e689666ebd284db6e34124e0e8f0d5c38e11ad4dcc232eddd827787361e"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/maverick-edf.html.capture.json",
+      "sha256": "73aa068c963672813e236151dba147d8202e62129eb62311d544a569db151e0a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/munich-company-2025.pdf.capture.json",
+      "sha256": "7098fb7c518a7e514e080878bc0706974fa48d6a89619162d2633d88636fba41"
+    }
+  ]
+}

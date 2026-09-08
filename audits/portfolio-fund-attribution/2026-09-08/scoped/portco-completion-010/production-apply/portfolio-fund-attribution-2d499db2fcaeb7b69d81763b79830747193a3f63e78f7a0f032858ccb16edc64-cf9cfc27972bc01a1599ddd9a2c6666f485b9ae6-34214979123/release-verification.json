@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T10:22:53.652Z",
+  "manifestSha256": "2d499db2fcaeb7b69d81763b79830747193a3f63e78f7a0f032858ccb16edc64",
+  "approvalSha256": "b3a093420273b3db29ac9470ee54337b465f1da99eb1fe3f4c09f5e7f5c60f9a",
+  "receiptSha256": "e71c3debc5d4a4fd50010a0f71bbdb3f234ec17199cf1f7ce3d625ea0c744246",
+  "mutationCount": 4,
+  "changed": 4,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-0AF3F4BFA474",
+      "companyId": "cmrxpjjyj0145ivhej5vka83l",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjjyj0145ivhej5vka83l?verification=2d499db2fcaeb7b69d81763b79830747193a3f63e78f7a0f032858ccb16edc64",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "KKR Multi-Strategy Alternatives Fund LP",
+        "attributionConfidence": null,
+        "attributionRationale": "The Maverick regulatory filing names KKR Multi-Strategy Alternatives Fund LP in the buyer chain; the Canadian Big Sky buyer remains undisclosed and no matching published fund record is linked."
+      }
+    },
+    {
+      "recordId": "OFA-3639E67EE09E",
+      "companyId": "cmtikbf7p000n2u2bu4giwsse",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtikbf7p000n2u2bu4giwsse?verification=2d499db2fcaeb7b69d81763b79830747193a3f63e78f7a0f032858ccb16edc64",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDF group remains the current corporate owner of the U.S. and Canadian operating targets until the signed KKR sale legally closes; this is corporate ownership rather than a fund attribution."
+      }
+    }
+  ],
+  "passed": true
+}
