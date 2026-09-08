@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "STRATOS_EXISTING_SOURCE_REVIEW",
+  "scope": "Two original attribution-rationale fields only; no new company research or write authority",
+  "rawCaptureCompletedAt": "2026-09-07T23:46:12.534Z",
+  "reviewMethod": "Text inspection of independently captured raw HTML; no new browser-rendered evidence or visual filing review claimed",
+  "fieldPrimaries": [
+    {
+      "ownerId": "cmrxpjucr01kuivhepouw6j00",
+      "field": "attributionRationale",
+      "sourceId": "jv",
+      "sha256": "529c4fec1b5fa3ece93021279161cfffb570eb3512b2197a5603937ac2db5b05",
+      "location": "November 7, 2023 announcement, first substantive paragraph",
+      "finding": "BlackRock signed through an unnamed fund managed by its Diversified Infrastructure business. This describes the managing business, not a disclosed legal fund name. The Occidental side participates through subsidiary 1PointFive.",
+      "limitation": "The announcement concerns a definitive agreement and prospective investment, not an exact legal closing date. Preserve the existing descriptive attribution label and null curated link, without certifying Diversified Infrastructure as the fund's legal name or assigning a GIP vehicle."
+    },
+    {
+      "ownerId": "cmt5w98ik000kwyyy4uhfhtk8",
+      "field": "attributionRationale",
+      "sourceId": "current-filing",
+      "sha256": "56e47d35dffd511e23ac7b1080fa564de40dbf3b454a5827d5a07f0dcfac7b49",
+      "location": "Occidental 2026 second-quarter Form 10-Q, Note 1, Noncontrolling Interest, printed pages 8-9",
+      "finding": "Occidental is the VIE's consolidating primary beneficiary; BlackRock is the noncontrolling investor. The full $550mm commitment was funded by June 30, 2026. The disclosure separately explains preferential distributions, call rights and HLBV income allocation.",
+      "limitation": "Consolidation and NCI accounting do not quantify voting or economic percentages. Construction-in-progress and funding do not prove commercial operations. The separate issuer announcement identifies 1PointFive; the filing does not disclose the BlackRock fund name."
+    }
+  ],
+  "otherSources": [
+    {"id": "formation-filing", "disposition": "NON_EVIDENTIARY_RAW_403", "note": "The stored SEC response is an access-denial body. Earlier assertions of browser verification are not a durable raw filing. Browser access was unavailable during continuation because the Mac was locked; no bypass or new rendered capture was performed. The independently obtained current issuer filing supplies consolidation evidence without relying on this body."},
+    {"id": "counsel", "disposition": "RAW_200_SUPPORTING_IDENTITY", "note": "Counsel names 1PointFive Stratos Holdings, LLC and BlackRock's $550mm equity investment; it does not name a managed fund or disclose a percentage."},
+    {"id": "upstream", "disposition": "RAW_200_MANAGER_CONTEXT_ONLY", "note": "The October 2024 GIP acquisition is an upstream manager combination, not evidence of a second STRATOS owner or a project transfer."},
+    {"id": "project", "disposition": "RAW_200_DESIGN_CONTEXT_ONLY", "note": "The project page describes a Texas DAC facility and intended 500,000-tonne annual design capacity once fully operational. It does not establish the exact commercial-operation date or ownership percentages."},
+    {"id": "epa", "disposition": "RAW_200_PERMIT_CONTEXT_ONLY", "note": "The April 7, 2025 notice identifies three Ector County Class VI wells. Permitted injection scale is distinct from the DAC plant's design-capture scale; permits are not evidence of operations or ownership change."},
+    {"id": "groundbreaking", "disposition": "REDIRECTED_NEWS_INDEX_NOT_EVENT_EVIDENCE", "note": "The old URL still redirects to the news index. It does not independently support the canonical April 28, 2023 milestone. That date/source issue remains a separately compatible exact exception; no replacement URL is guessed."},
+    {"id": "legacy-project", "disposition": "REDIRECTS_TO_REVIEWED_PROJECT", "note": "The old Ector County project URL returns the same bytes as the current STRATOS project page."},
+    {"id": "legacy-jv", "disposition": "RAW_200_DUPLICATE_ISSUER_ANNOUNCEMENT", "note": "This 1PointFive-hosted version repeats the signed-agreement and unnamed managed-fund wording, not a separate ownership event."},
+    {"id": "legacy-permits", "disposition": "RAW_200_ISSUER_PERMIT_CONTEXT", "note": "This April 7, 2025 release links the approved sequestration permits to STRATOS. Its forecast of 2025 operations remains a forecast, not proof of completion."}
+  ],
+  "historicalLimitations": [
+    "The historical packet required reopening the blocked current filing and replacing or archiving the redirected groundbreaking source before mutation. This audit freshly obtains the former but does not reconstruct or certify an undocumented historical release-stage reopen.",
+    "The complete existing prompt/response/attestation/validation/source/decision chain is preserved, including its research PROPOSED_MERGE versus the actually applied CORRECT_COMPANY and ADD_OWNER without retirement or redirect.",
+    "The application-primary stays the Oxy joint-venture announcement. The current issuer filing and counsel identity source are not presently in the canonical citation/seed source list and need separately compatible persistence or an exact exception."
+  ],
+  "preserve": {
+    "canonicalCutoff": "2026-08-23",
+    "blackRockAttribution": "DISCLOSED / Diversified Infrastructure, descriptive business label only; actual legal fund name remains unavailable",
+    "occidentalAttribution": "DIRECT_PROGRAM / null attributed fund / 1PointFive corporate platform",
+    "curatedFundLinks": [null, null],
+    "confidence": [null, null],
+    "investmentYear": 2023,
+    "exactEconomicPercentages": "Not publicly disclosed",
+    "pendingTransactions": [],
+    "redirects": []
+  },
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false
+}
