@@ -70,7 +70,8 @@ describe("portfolio fund attribution seed manifest", () => {
     expect(inferred).toHaveLength(448);
     // Batch 010 resolves Helix's directly evidenced KKR corporate-subsidiary attribution.
     // Batch 012 removes unsupported Northleaf estimates for CSV and Odfjell without inventing funds.
-    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(72);
+    // Batch 015 removes Crosstimbers' holding-vehicle-as-fund seed attribution without changing production.
+    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(73);
     expect(manifest.records.every((record) => (
       record.fundAttribution !== "INFERRED"
       || (
