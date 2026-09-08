@@ -1,0 +1,96 @@
+{
+  "companyId": "cmtj0jmj1000hxx2bly6aduiw",
+  "name": "UGE International Inc.",
+  "sequence": 364,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/research-decision.json",
+      "sha256": "5dddf5d929e8ba803efa68b1c8ecd8dc5e3318abd50694a497f083c02aef7f06"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/source-verification.json",
+      "sha256": "0970b9bdb2a676ba1afc7f4bd38d7c81a1cfdf5642f46c77e4bb1670ed9920c8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "67023e5bcef2696c8ec5b96e86a6e9084ae3a9d4fc8d27389e9118e8dea81342"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/chatgpt-response-validation.json",
+      "sha256": "953a6b947b6eb04109f9627d61cfcd537291de3e77a4c0faa67d36763618d754"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/chatgpt-attestation.json",
+      "sha256": "b6deb92d53e02341036fcb8c036aff53d3b2f9a9b94664697dfd6dad5c8de61b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/review.json",
+      "sha256": "dcbcdb329960a4baf2d595618d633a1c85bc93b3559277a4d969ea59559b0189"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/source-config.json",
+      "sha256": "9b1e220deced2c9f7009eaf0a430472bfa30f7659ddd243bf41a41cc692280c7"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtj0jmlb000txx2bohzhsec1",
+      "seedRecordId": "OFA-0C1E2564B57E",
+      "expectedSeedSha256": "09a21d70e41a1808762b715ac50d032dd635b147486a07618d5066976c3fa908",
+      "expectedOwnerSha256": "ce9d15cebea2cbecc470cb622b03e5c785874d6f5e6fe0bc26e2536bdacc1fd4",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "UGE's August 2024 closing release explicitly names NOVA Infrastructure Fund II, LP as the purchaser's affiliated fund. Replace unresolved fund attribution with the disclosed Fund II and keep NOVA-Swift Holdco as the separate legal vehicle. Preserve 2024 entry and the qualified sole-direct-shareholder stake; no standalone 100% NOVA fund economics or curated fund link is inferred.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "UGE's August 2024 closing release explicitly names NOVA Infrastructure Fund II, LP as the purchaser's affiliated fund. Replace unresolved fund attribution with the disclosed Fund II and keep NOVA-Swift Holdco as the separate legal vehicle. Preserve 2024 entry and the qualified sole-direct-shareholder stake; no standalone 100% NOVA fund economics or curated fund link is inferred.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/sources/uge-close.html",
+          "sha256": "6b9ac63422aef0df65a897c4fea7e224131efa3b0b77a36a3e36c8325dec1200",
+          "url": "https://ugei.com/nova-completes-purchase-of-uge-international/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "6841dffedec21b28245c4f86421b44c1496f4e4e16ea272a9db9c0c25fc83f0e",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtj0jmlb000txx2bohzhsec1",
+      "sha256": "ce9d15cebea2cbecc470cb622b03e5c785874d6f5e6fe0bc26e2536bdacc1fd4"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0364-uge-international-ltd-v1/proposal.json",
+      "sha256": "2132f02c6a3bafca4479af66bb8d12580150ed52b6a1065b3c1610604f46b7f8"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0364-uge-international-ltd-v1.json",
+      "sha256": "6d359deec9c721a387d3928b0f90557f5ec1c1203c7906d49cf68642c6d521f4"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "fdeeadac4ed5ec2fcb579629c2fb49f6ea0b3a31c252a1d2f6d43f74a3fd26dd",
+      "memberIndex": 3
+    },
+    "receiptSha256": "aaf84516ce26a5b580ca32f9a1825a825e4bd094785c7ed1dd7ea5536fac1fb4"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/sources/uge-close.html.capture.json",
+      "sha256": "6b15193963bfc2b85c339884ddcfb2e8fb581d50b4aa75eddf4aba16e0030be0"
+    }
+  ]
+}
