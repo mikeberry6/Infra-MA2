@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T19:23:35.324Z",
+  "manifestSha256": "fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+  "approvalSha256": "9d4ae6a2bf509fb1989f4c8cc2d9829630f6031988a2490263e245ac21b962f0",
+  "receiptSha256": "49a2446abfdb85d9bff9cc294a634f97573f624c91356a6a4cfc5edb296d5290",
+  "mutationCount": 7,
+  "changed": 7,
+  "verificationScope": "ALL_RECEIPT_ROWS",
+  "sampledRows": [
+    {
+      "recordId": "OFA-CE08871CC054",
+      "companyId": "cmtizemhs0015282bzfefnqby",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtizemhs0015282bzfefnqby?verification=fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "NOVA's Fund II closing release explicitly identifies DartPoints as one of the fund's first two investments. Resolve missing fund metadata without changing control, vehicle, entry year or adding a fund link."
+      }
+    },
+    {
+      "recordId": "OFA-92E02F840B2E",
+      "companyId": "cmtizemhs0015282bzfefnqby",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtizemhs0015282bzfefnqby?verification=fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "OIC Credit Opportunities Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "OIC's own Fund IV release identifies DartPoints among its announced capital partnerships, and NOVA's transaction release separately confirms OIC as both lender and minority-equity investor. Resolve the existing OIC Fund IV attribution; preserve the minority equity period and do not convert the senior credit facility into equity."
+      }
+    },
+    {
+      "recordId": "OFA-4E07DAA3E43E",
+      "companyId": "cmtj3t1o8000w062bydcb0tjr",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj3t1o8000w062bydcb0tjr?verification=fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's direct closing release identifies Google's completed Intersect acquisition and the separate IPX spinout. Resolve corporate-program attribution for the unchanged Alphabet owner; preserve the minority-to-control period and canonical carve-out. No IPX transaction is repeated."
+      }
+    },
+    {
+      "recordId": "OFA-HIST-74878B7EDD3AE70484F80332",
+      "companyId": "cmtj3t1o8000w062bydcb0tjr",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj3t1o8000w062bydcb0tjr?verification=fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CAI Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "CAI directly states that its inaugural Fund I led Intersect's 2020 repurchase from SoftBank. Resolve the missing historical fund metadata, preserving the existing vehicle and realized period. The publication copy removes only a reviewed third-party widget token."
+      }
+    },
+    {
+      "recordId": "OFA-HIST-9C2AE66F19500928ECB8EFF5",
+      "companyId": "cmtj3t1o8000w062bydcb0tjr",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj3t1o8000w062bydcb0tjr?verification=fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG explicitly identifies TPG Rise Climate as the investing climate platform and seller of the Intersect stake. Resolve the existing platform attribution without guessing which dedicated pool invested, naming a different TPG fund, or altering the realized ownership period. Preserve TPG Rise Climate as the literal vehicle, with no separately attributed fund."
+      }
+    },
+    {
+      "recordId": "OFA-HIST-50A5D61E561F3CAF62CACAA2",
+      "companyId": "cmtj3t1o8000w062bydcb0tjr",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj3t1o8000w062bydcb0tjr?verification=fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Pantheon Infrastructure Plc",
+        "attributionConfidence": null,
+        "attributionRationale": "The issuer's own regulatory announcements identify Pantheon Infrastructure PLC as the listed global infrastructure fund, confirm its Intersect investment and the March 2026 partial realization while retaining separate IPX exposure. Resolve the historical PINT fund attribution, not a passive LP interest in CAI Fund I; preserve the direct co-investment vehicle and amount qualification."
+      }
+    },
+    {
+      "recordId": "OFA-HIST-BFE04E5597D96451C138BAC2",
+      "companyId": "cmtj597ba00002a2bspz4drmq",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj597ba00002a2bspz4drmq?verification=fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "FTC Solar's filed June 2021 Form 10-Q, note 6, states that it sold its entire Class A common-unit interest in Dimension on June 24, approximately 23% of outstanding common shares. Resolve former corporate balance-sheet attribution, preserving the exact existing qualified stake, direct units and realized period. Earnout and escrow receipts are not continuing equity."
+      }
+    }
+  ],
+  "passed": true
+}
