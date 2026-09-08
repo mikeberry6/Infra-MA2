@@ -1,0 +1,44 @@
+{
+  "artifactType": "PORTCO_AUDIT_HELPER_PORTABILITY",
+  "originalCommit": "c66fd2132be19b9c6e954c44888904d11fa9a4e5",
+  "reason": "PR984 CI on Linux cannot resolve Mac-local static imports. Preserve original producer bytes and normalize executable helpers without changing snapshots, research, diagnostic results or mutation authority.",
+  "changes": [
+    "Static imports use repository-relative modules or the installed Prisma package.",
+    "Lineage helpers that transitively evaluate the large seed data are loaded through the existing createRequire runtime path with explicit function contracts.",
+    "Added explicit result types; no validation assertion or runtime comparison was removed."
+  ],
+  "historicalProducerReferences": "Checkpoint producer hashes describe the original bytes preserved under original-producers and at originalCommit. They do not describe the portable helpers' newer hashes.",
+  "files": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/metadata-lineage.ts",
+      "sha256": "663e49c33937a3f04aaa8159346bab7297356d060c557d3217ea575a89e610c8",
+      "archive": {
+        "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/original-producers/metadata-lineage.ts.txt",
+        "sha256": "d58acee514bae51e310632ead670356f06d99a9914628ae2022af584b41f8015"
+      }
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/portco-capture-closeout.ts",
+      "sha256": "03c30bff8c465aa8cc15d51b597bdc0155f39e1060009bf1873bf50f5824dcd6",
+      "archive": {
+        "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/original-producers/portco-capture-closeout.ts.txt",
+        "sha256": "2d972b3777b878cdd52d1dbca3462609983953254aaae96ebf9c0fe7b5e56ef4"
+      }
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/portco-lineage-closeout.ts",
+      "sha256": "f896aca192ac671a3016de3faa98efd97c35dccf419940216febba30097c0d02",
+      "archive": {
+        "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/original-producers/portco-lineage-closeout.ts.txt",
+        "sha256": "bd53c60affbaa7003653242078a10acc414b01da31312e3498601825ef864506"
+      }
+    }
+  ],
+  "fullProjectTypecheck": {
+    "passed": true,
+    "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "finalRegression": { "files": 209, "tests": 3830, "failed": 0, "logSha256": "414e846ddd52d54986150d0b3fc6ee9fefd8b4984a9672ca001d1be757b5912e" },
+  "snapshotRecapture": false,
+  "databaseWrites": 0
+}

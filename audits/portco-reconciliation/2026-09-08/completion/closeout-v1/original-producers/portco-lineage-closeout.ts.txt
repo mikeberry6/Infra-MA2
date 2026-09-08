@@ -4,24 +4,14 @@ import {gunzipSync} from 'node:zlib';
 import {createRequire} from 'node:module';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
-import {companyImageSha256,verifyProposal,verifyApproval,verifyApplyReceipt} from '../../../../../scripts/portco-reconciliation/artifacts';
-import {sha256Canonical} from '../../../../../scripts/portco-reconciliation/hash';
-import {prismaCompanyRowToImage} from '../../../../../scripts/portco-reconciliation/prisma-company-image';
-import type {ApprovedSeedAfterImageMetadata,SeedRedirectBaselineEntry} from '../../../../../scripts/portco-reconciliation/snapshot';
+import {companyImageSha256,verifyProposal,verifyApproval,verifyApplyReceipt} from '/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair/scripts/portco-reconciliation/artifacts';
+import {sha256Canonical} from '/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair/scripts/portco-reconciliation/hash';
+import {projectApprovedSeedOwners} from '/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair/scripts/portco-reconciliation/approved-seed';
+import {prismaCompanyRowToImage} from '/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair/scripts/portco-reconciliation/prisma-company-image';
+import {loadLegacyProductionRedirectLineage,parseApprovedAfterImages,parseSeedRedirectBaseline,assertSeedRedirectBaselineMatchesLiveDecisions} from '/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair/scripts/portco-reconciliation/snapshot-cli';
 const root='/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair';
 if(process.cwd()!==root)throw Error('Wrong worktree');
 const require=createRequire(root+'/package.json');
-const {projectApprovedSeedOwners}=require('./scripts/portco-reconciliation/approved-seed.ts') as {
- projectApprovedSeedOwners:(image:Parameters<typeof companyImageSha256>[0])=>unknown[];
-};
-// Runtime-only audited readers keep the seed CLI's enormous evaluated data literal
-// outside the application type graph, as in captureSeedIdentity. Validators still run.
-const {loadLegacyProductionRedirectLineage,parseApprovedAfterImages,parseSeedRedirectBaseline,assertSeedRedirectBaselineMatchesLiveDecisions}=require('./scripts/portco-reconciliation/snapshot-cli.ts') as {
- loadLegacyProductionRedirectLineage:(root:string,artifact:unknown)=>Promise<Map<string,string[]>>;
- parseApprovedAfterImages:(value:unknown,legacy?:ReadonlyMap<string,readonly string[]>)=>ApprovedSeedAfterImageMetadata[];
- parseSeedRedirectBaseline:(value:unknown)=>SeedRedirectBaselineEntry[];
- assertSeedRedirectBaselineMatchesLiveDecisions:(value:readonly SeedRedirectBaselineEntry[])=>void;
-};
 const d='audits/portco-reconciliation/2026-09-08/completion/closeout-v1';
 const read=(f:string)=>JSON.parse(readFileSync(f,'utf8'));
 const p=JSON.parse(gunzipSync(readFileSync(d+'/production.json.gz')).toString()),s=JSON.parse(gunzipSync(readFileSync(d+'/seed.json.gz')).toString());
@@ -30,7 +20,7 @@ const ck=(c:any)=>c.name+'\0'+c.country;
 async function main(){
  const checkpoint=read(d+'/checkpoint.json');
  for(const f of checkpoint.publications)if(hash(readFileSync(f.path))!==f.sha256)throw Error('Changed sealed snapshot');
- const entries=s.approvedAfterImages,latest=new Map(),entryChecks:{taskId:string;proposalSha256:string;afterImageSha256?:string;projectionExact:boolean;resolvedProjectionExact?:boolean;limitation?:string}[]=[];
+ const entries=s.approvedAfterImages,latest=new Map(),entryChecks=[];
  const {resolveSeedOwnership}=require('./prisma/seed-runner.ts');
  const resolvedProjection=(owners:any[])=>owners.map(o=>({investmentFirm:o.investmentFirm,...resolveSeedOwnership(o),investmentYear:o.investmentYear??null,exitYear:o.exitYear??null,stake:o.stake??null,status:o.status}));
  for(const e of entries){
@@ -69,7 +59,7 @@ async function main(){
    }catch(error:any){sourceChainGaps.push({taskId:task.taskId,reason:error.message});}
  }
  const redirectLineageGaps:any[]=[];
- const metadata:ApprovedSeedAfterImageMetadata[]=entries.flatMap((e:any)=>{try{return parseApprovedAfterImages([e],legacy);}catch(error:any){redirectLineageGaps.push({taskId:e.taskId,proposalSha256:e.proposalSha256,reason:error.message});return [];}});
+ const metadata=entries.flatMap((e:any)=>{try{return parseApprovedAfterImages([e],legacy);}catch(error:any){redirectLineageGaps.push({taskId:e.taskId,proposalSha256:e.proposalSha256,reason:error.message});return [];}});
  const expectedRedirects=new Map(baseline.map(r=>[r.retiredId,{companyId:r.companyId,lineage:r.lineageKey}]));
  for(const e of metadata){if(!e.productionRetiredCompanyIds.length)continue;if(!e.canonicalCompanyId)throw Error('Missing canonical redirect id');
    const retired=new Set(e.productionRetiredCompanyIds);
