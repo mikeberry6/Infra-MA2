@@ -1,0 +1,219 @@
+{
+  "artifactType": "PRE_TRANSACTION_FAILURE_EVIDENCE",
+  "runId": 34226187046,
+  "run": {
+    "conclusion": "failure",
+    "headSha": "d65c85b9af5d6d0f0d5e1a0ab916fe90e169917d",
+    "jobs": [
+      {
+        "completedAt": "2026-09-08T12:28:51Z",
+        "conclusion": "failure",
+        "databaseId": 102060779981,
+        "name": "Apply reviewed portfolio fund attribution",
+        "startedAt": "2026-09-08T12:27:57Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-09-08T12:27:59Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-09-08T12:27:58Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:27:59Z",
+            "conclusion": "success",
+            "name": "Require protected-main dispatch and exact input shapes",
+            "number": 2,
+            "startedAt": "2026-09-08T12:27:59Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:13Z",
+            "conclusion": "success",
+            "name": "Checkout current protected main",
+            "number": 3,
+            "startedAt": "2026-09-08T12:27:59Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:14Z",
+            "conclusion": "success",
+            "name": "Require exact protected-main release",
+            "number": 4,
+            "startedAt": "2026-09-08T12:28:13Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:21Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+            "number": 5,
+            "startedAt": "2026-09-08T12:28:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:21Z",
+            "conclusion": "success",
+            "name": "Bind merged pull request to the release SHA",
+            "number": 6,
+            "startedAt": "2026-09-08T12:28:21Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:21Z",
+            "conclusion": "success",
+            "name": "Require protected production configuration",
+            "number": 7,
+            "startedAt": "2026-09-08T12:28:21Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:42Z",
+            "conclusion": "success",
+            "name": "Install locked dependencies",
+            "number": 8,
+            "startedAt": "2026-09-08T12:28:21Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:44Z",
+            "conclusion": "success",
+            "name": "Bind required build and canonical deployment",
+            "number": 9,
+            "startedAt": "2026-09-08T12:28:42Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:48Z",
+            "conclusion": "failure",
+            "name": "Verify immutable attribution artifacts",
+            "number": 10,
+            "startedAt": "2026-09-08T12:28:44Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:48Z",
+            "conclusion": "skipped",
+            "name": "Prove staged schema and exact production target",
+            "number": 11,
+            "startedAt": "2026-09-08T12:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:48Z",
+            "conclusion": "skipped",
+            "name": "Dry-run all reviewed mutations against fresh production state",
+            "number": 12,
+            "startedAt": "2026-09-08T12:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:48Z",
+            "conclusion": "skipped",
+            "name": "Prove cache revalidation readiness",
+            "number": 13,
+            "startedAt": "2026-09-08T12:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:48Z",
+            "conclusion": "skipped",
+            "name": "Final release, schema, target, and artifact recheck",
+            "number": 14,
+            "startedAt": "2026-09-08T12:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:48Z",
+            "conclusion": "skipped",
+            "name": "Apply reviewed portfolio fund attribution transactionally",
+            "number": 15,
+            "startedAt": "2026-09-08T12:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:48Z",
+            "conclusion": "skipped",
+            "name": "Revalidate public portfolio caches",
+            "number": 16,
+            "startedAt": "2026-09-08T12:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:48Z",
+            "conclusion": "skipped",
+            "name": "Verify public attribution samples and portfolio page",
+            "number": 17,
+            "startedAt": "2026-09-08T12:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:49Z",
+            "conclusion": "success",
+            "name": "Upload immutable attribution apply evidence",
+            "number": 18,
+            "startedAt": "2026-09-08T12:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:49Z",
+            "conclusion": "skipped",
+            "name": "Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+            "number": 35,
+            "startedAt": "2026-09-08T12:28:49Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:49Z",
+            "conclusion": "success",
+            "name": "Post Checkout current protected main",
+            "number": 36,
+            "startedAt": "2026-09-08T12:28:49Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-08T12:28:49Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 37,
+            "startedAt": "2026-09-08T12:28:49Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/mikeberry6/Infra-MA2/actions/runs/34226187046/job/102060779981"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/mikeberry6/Infra-MA2/actions/runs/34226187046",
+    "workflowName": "Apply Reviewed Portfolio Fund Attribution"
+  },
+  "artifactId": 10055836928,
+  "archiveSha256": "8cdbbdae297aad6ac5dccc9e27a12e28152b47acc225de6373db7287965d5a81",
+  "files": [
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014/failed-apply-34226187046/artifact-validation.json",
+      "sha256": "d31e9575f793d7ea4b97e54d30cccaedce6f4933e0abc38b07b9974bd77e72e8"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014/failed-apply-34226187046/canonical-deployment.json",
+      "sha256": "5e831bcfd421e218591b1f5e8962d947a757ef06fddb6658051f0da9fa5521d2"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014/failed-apply-34226187046/release-provenance.json",
+      "sha256": "7997edc56aae738f3efad63b60a1102f12d6be48d38033b029372322b7fe6353"
+    }
+  ],
+  "databaseStepsSkipped": [
+    "Prove staged schema and exact production target",
+    "Dry-run all reviewed mutations against fresh production state",
+    "Prove cache revalidation readiness",
+    "Final release, schema, target, and artifact recheck",
+    "Apply reviewed portfolio fund attribution transactionally",
+    "Revalidate public portfolio caches",
+    "Verify public attribution samples and portfolio page"
+  ],
+  "transactionOccurred": false,
+  "verifiedAt": "2026-09-08T12:31:34.323Z"
+}

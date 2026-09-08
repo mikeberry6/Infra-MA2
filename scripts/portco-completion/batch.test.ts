@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { activate, attributionSnapshot, beginApply, compileBatch, complete, counts, freeze, markReleased, nextNames,
+import { activate, attributionSnapshot, beginApply, compileBatch, complete, counts, freeze, markReleased, nextNames, recoverPreApply,
   seal, verifyBatch, verifyProgress, verifySnapshot, type Company } from "./batch";
 import { bytesHash, scanPublication, verifyRedaction } from "./files";
 import { canonicalSha256, verifyProductionSnapshot, verifySeedManifest } from "../portfolio-fund-attribution/schema";
@@ -51,6 +51,25 @@ describe("shared ten-name compiler", () => {
   it.each(["NO_CHANGE", "SEED_ONLY"])("%s batches never emit a DB manifest", kind => {
     const f = fixture([kind]); expect(compileBatch(f).manifest).toBeNull();
   });
+  it("supports a metadata-only snapshot with no linked funds and a real published catalog", () => {
+    const f = fixture(["NO_CHANGE"]), raw = structuredClone(f.snapshot);
+    raw.funds = [];
+    raw.companies[0].owners[0].fundId = null;
+    raw.companies[0].owners[0].state.linkedFundName = null;
+    raw.companies[0].image.ownershipPeriods[0].fundName = null;
+    const snapshot = verifySnapshot(reseal({ ...raw, publishedFundNames: ["Unrelated published fund"] }, "snapshotSha256"));
+    const compatible = attributionSnapshot(snapshot, f.batch.asOfDate);
+    expect(snapshot.funds).toEqual([]);
+    expect(compatible.publishedFundCount).toBe(1);
+    expect(compatible.availableFundNames).toEqual(["Unrelated published fund"]);
+    expect(verifyProductionSnapshot(compatible)).toEqual(compatible);
+  });
+  it("rejects an empty catalog locally instead of emitting a protected-workflow-invalid snapshot", () => {
+    const f = fixture(), raw = { ...f.snapshot, funds: [] };
+    expect(() => attributionSnapshot(raw, f.batch.asOfDate)).toThrow();
+    expect(() => verifySnapshot(reseal({ ...f.snapshot, publishedFundNames: [] }, "snapshotSha256"))).toThrow();
+    expect(() => verifySnapshot(reseal({ ...f.snapshot, publishedFundNames: ["Fund", "Fund"] }, "snapshotSha256"))).toThrow(/Duplicate/);
+  });
   it("rejects eleven members", () => expect(() => fixture(Array(11).fill("NO_CHANGE"))).toThrow());
   it("rejects stale complete company state", () => {
     const f = fixture(); f.snapshot.companies[0].image.description = "Changed";
@@ -95,6 +114,47 @@ describe("shared ten-name compiler", () => {
   });
 });
 describe("one-active-release progress and recovery", () => {
+  function recoveryFixture() {
+    const f = fixture(), compiled = compileBatch(f);
+    const progress = freeze(beginApply(markReleased(activate(f.progress, f.batch), release), f.batch, compiled.manifest!), "Artifact validation failed; DB steps skipped.");
+    const snapshot = verifySnapshot(reseal({ ...f.snapshot, capturedAt: "2026-09-08T01:00:00.000Z", publishedFundNames: ["Fund", "Other published fund"] }, "snapshotSha256"));
+    const failureEvidence = { path: "failure.json", sha256: H };
+    const batch = verifyBatch(reseal({ ...f.batch, snapshotSha256: snapshot.snapshotSha256, dependencies: [...f.batch.dependencies, failureEvidence] }, "batchSha256"));
+    const skipped = ["Prove staged schema and exact production target", "Dry-run all reviewed mutations against fresh production state",
+      "Prove cache revalidation readiness", "Final release, schema, target, and artifact recheck", "Apply reviewed portfolio fund attribution transactionally",
+      "Revalidate public portfolio caches", "Verify public attribution samples and portfolio page"];
+    const run = { headSha: SHA, status: "completed", conclusion: "failure", workflowName: "Apply Reviewed Portfolio Fund Attribution",
+      jobs: [{ steps: [{ name: "Verify immutable attribution artifacts", conclusion: "failure" }, ...skipped.map(name => ({ name, conclusion: "skipped" }))] }] };
+    return { progress, priorBatch: f.batch, batch, priorSnapshot: f.snapshot, snapshot, failureEvidence, files: new Map([[failureEvidence.path, H]]), run };
+  }
+  it("recovers only the same frozen pre-transaction batch with preserved decisions and evidence", () => {
+    const f = recoveryFixture(), recovered = recoverPreApply(f);
+    expect(recovered.active?.batchId).toBe(f.priorBatch.batchId);
+    expect(recovered.active?.batchSha256).toBe(f.batch.batchSha256);
+    expect(recovered.active?.state).toBe("PREPARING");
+    expect(recovered.active?.releaseSha).toBeNull();
+    expect(recovered.names).toEqual(f.progress.names);
+    expect(recovered.consumedReceiptHashes).toEqual(f.progress.consumedReceiptHashes);
+  });
+  it.each(["success", "failure", "in_progress"])("rejects recovery when transaction step is %s rather than skipped", conclusion => {
+    const f = recoveryFixture(); f.run.jobs[0].steps.find(s => s.name === "Apply reviewed portfolio fund attribution transactionally")!.conclusion = conclusion;
+    expect(() => recoverPreApply(f)).toThrow();
+  });
+  it("rejects unbound failure evidence, changed before-images and changed decisions", () => {
+    const f = recoveryFixture();
+    expect(() => recoverPreApply({ ...f, files: new Map() })).toThrow(/evidence/);
+    const snapshot = verifySnapshot(reseal({ ...f.snapshot, companies: f.snapshot.companies.map((c,i) => i ? c : { ...c, image: { ...c.image, description: "Drift" } }) }, "snapshotSha256"));
+    const batch = verifyBatch(reseal({ ...f.batch, snapshotSha256: snapshot.snapshotSha256 }, "batchSha256"));
+    expect(() => recoverPreApply({ ...f, snapshot, batch })).toThrow(/preserve/);
+    const changed = structuredClone(f.batch); changed.decisions[0].owners[0].reason = "Different correction";
+    expect(() => recoverPreApply({ ...f, batch: verifyBatch(reseal(changed, "batchSha256")) })).toThrow(/preserve/);
+  });
+  it("rejects another release, an unfinished run and a second recovery", () => {
+    const f = recoveryFixture();
+    expect(() => recoverPreApply({ ...f, run: { ...f.run, headSha: "c".repeat(40) } })).toThrow();
+    expect(() => recoverPreApply({ ...f, run: { ...f.run, status: "in_progress" } })).toThrow();
+    expect(() => recoverPreApply({ ...f, progress: recoverPreApply(f) })).toThrow();
+  });
   it("prioritizes reviewed backlog and selects ten in original order", () => {
     const f = fixture(); expect(nextNames(f.progress).map(n => n.sequence)).toEqual([1,2,3,4,5,6,7,8,9,10]);
     expect(counts(f.progress)).toEqual({ fullyVerified: 0, parked: 0, remaining: 10 });
