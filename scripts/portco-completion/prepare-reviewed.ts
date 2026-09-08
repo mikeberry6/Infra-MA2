@@ -4,7 +4,7 @@ import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { execFileSync } from "node:child_process";
-import { activate, compileBatch, nextNames, seal, verifyBatch, verifyHash, verifyProgress, verifySnapshot, type Decision } from "./batch";
+import { activate, compileBatch, nextNames, seal, verifyBatch, verifyProgress, verifySnapshot, type Decision } from "./batch";
 import { attributionSnapshot } from "./batch";
 import { reviewedInventory, CHRONOLOGY_PATH, EXECUTION_PATH, LEDGER_PATH, SEED_PATH, PROGRESS_PATH } from "./inventory";
 import { bytesHash, localFile, scanPublication, checkPacketFiles, isUnchangedPublishedFile } from "./files";
@@ -14,14 +14,14 @@ import { verifyExecutionManifest } from "../portco-reconciliation/execution-cont
 import { verifyBatchExecutionLedger } from "../portco-reconciliation/batch-control";
 import { capture } from "./snapshot";
 import { assertUnchangedReviewedRecords, completedReleaseSchema, completedSeedLineage } from "./seed-lineage";
+import { assertMatchingAuthorityImages, combineReports, combinationSchema, historicalTestSchema, verifyHistoricalTestMigration } from "./reviewed-packets";
 
 const configSchema = z.strictObject({ batchId: z.string().min(1), asOfDate: z.string(),
   completedReleases: z.array(completedReleaseSchema).default([]),
+  combinations: z.array(combinationSchema).default([]),
+  historicalTests: z.array(historicalTestSchema).default([]),
   sourceFiles: z.array(z.string()).min(1),
   overrides: z.array(z.strictObject({ companyId: z.string(), rationale: z.string().optional(), parkedIssue: z.string().optional() })) });
-const rowSchema = z.object({ companyId: z.string(), ownerId: z.string(), recordId: z.string(),
-  current: z.record(z.string(), z.unknown()), recommended: z.record(z.string(), z.unknown()).optional(),
-  fieldDecisions: z.array(z.record(z.string(), z.unknown())), additionalFieldDecisions: z.array(z.record(z.string(), z.unknown())).optional() }).passthrough();
 
 async function main() {
   if (process.cwd() !== "/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair") throw Error("Explicit permitted worktree required");
@@ -53,35 +53,55 @@ async function main() {
   const sourceByHash = new Map(config.sourceFiles.map(p => { const ref = bind(p); return [ref.sha256, ref]; }));
   const archivedSeeds = config.completedReleases.length ? completedSeedLineage({ releases: config.completedReleases, progress, seed,
     readBytes: (path, expected) => { bind(path, expected); return readFileSync(localFile(process.cwd(), path)); } }) : new Map();
+  const usedHistoricalTests = new Set<string>();
   const packets = selected.map(name => {
-    if (name.reviewedEvidence.length !== 1) throw Error(`Multiple authority packets need explicit combination: ${name.name}`);
-    const ref = name.reviewedEvidence[0], report = read(ref.path); verifyHash(report, "reportSha256"); bind(ref.path, ref.sha256);
-    const rows = z.array(rowSchema).parse(report.rows).filter(r => r.companyId === name.companyId);
-    if (!rows.length) throw Error("Reviewed company rows missing");
-    for (const d of report.dependencies as { path: string; sha256: string }[]) {
-      // Seed gets a frozen before copy, not a dependency on the later patched live seed path.
-      if (d.path === SEED_PATH && bytesHash(readFileSync(SEED_PATH)) !== d.sha256) {
-        const historical = archivedSeeds.get(d.sha256);
-        if (!historical) throw Error("Reviewed seed changed without completed lineage");
-        assertUnchangedReviewedRecords(historical.seed, seed, name.name, rows.map(r => r.recordId));
-        bind(historical.path, d.sha256);
-      } else if (d.path === SEED_PATH) { /* frozen current seed copy is bound below */ }
-      else bind(d.path, d.sha256);
-    }
-    const oldPath = join(dirname(ref.path), "production-snapshot.json"); bind(oldPath);
-    const old = read(oldPath);
-    if (sha256Canonical(old.production) !== old.stateSha256 || old.stateSha256 !== report.productionSnapshotSha256) throw Error("Authority snapshot differs");
-    const override = config.overrides.find(o => o.companyId === name.companyId);
-    if (!override?.parkedIssue) for (const row of rows) {
-      for (const field of [...row.fieldDecisions, ...(row.additionalFieldDecisions ?? [])]) {
-        const hash = String(field.primarySourceSha256 ?? field.sourcePdfSha256 ?? "");
-        if (!sourceByHash.has(hash)) throw Error(`Missing reused source bytes for ${name.name}`);
+    const choices = config.combinations.filter(c => c.companyId === name.companyId);
+    if (choices.length > 1) throw Error("Duplicate authority combination");
+    const normalized = combineReports(name.companyId, name.reviewedEvidence.map(ref => read(ref.path)), choices[0]);
+    const reports = normalized.map(({ report, rows }, index) => {
+      const ref = name.reviewedEvidence[index]; bind(ref.path, ref.sha256);
+      for (const d of report.dependencies as { path: string; sha256: string }[]) {
+        // Seed gets a frozen before copy, not a dependency on the later patched live seed path.
+        if (d.path === SEED_PATH && bytesHash(readFileSync(SEED_PATH)) !== d.sha256) {
+          const historical = archivedSeeds.get(d.sha256);
+          if (!historical) throw Error("Reviewed seed changed without completed lineage");
+          assertUnchangedReviewedRecords(historical.seed, seed, name.name, rows.map(r => r.recordId));
+          bind(historical.path, d.sha256);
+        } else if (d.path === SEED_PATH) { /* frozen current seed copy is bound below */ }
+        else {
+          const tests = config.historicalTests.filter(t => t.path === d.path);
+          if (tests.length > 1) throw Error("Duplicate historical test migration");
+          const test = tests[0];
+          if (!test) bind(d.path, d.sha256);
+          else {
+            if (test.originalSha256 !== d.sha256) throw Error("Historical test original binding differs");
+            bind(test.frozenPath, test.originalSha256); bind(test.path, test.currentSha256);
+            bind("scripts/portco-completion/historical-fixtures.ts");
+            verifyHistoricalTestMigration(readFileSync(localFile(process.cwd(), test.frozenPath), "utf8"), readFileSync(localFile(process.cwd(), test.path), "utf8"));
+            usedHistoricalTests.add(test.path);
+          }
+        }
       }
-      const existing = seed.records.find(r => r.recordId === row.recordId);
-      if (!existing) throw Error(`Existing seed record missing: ${row.recordId}`);
-    }
-    return { name, ref, report, old, rows, override };
+      const oldPath = join(dirname(ref.path), "production-snapshot.json"); bind(oldPath);
+      const old = read(oldPath);
+      if (sha256Canonical(old.production) !== old.stateSha256 || old.stateSha256 !== report.productionSnapshotSha256) throw Error("Authority snapshot differs");
+      const override = config.overrides.find(o => o.companyId === name.companyId);
+      if (!override?.parkedIssue) for (const row of rows) {
+        for (const field of [...row.fieldDecisions, ...(row.additionalFieldDecisions ?? [])]) {
+          const hash = String(field.primarySourceSha256 ?? field.sourcePdfSha256 ?? "");
+          if (!sourceByHash.has(hash)) throw Error(`Missing reused source bytes for ${name.name}`);
+        }
+        const existing = seed.records.find(r => r.recordId === row.recordId);
+        if (!existing) throw Error(`Existing seed record missing: ${row.recordId}`);
+      }
+      return { ref, report, old, rows };
+    });
+    const oldImages = reports.map(p => (p.old.production.images ?? [p.old.production.image]).find((i: { id: string }) => i?.id === name.companyId));
+    assertMatchingAuthorityImages(oldImages);
+    return { name, reports, override: config.overrides.find(o => o.companyId === name.companyId) };
   });
+  if (config.combinations.some(c => !selected.some(n => n.companyId === c.companyId))) throw Error("Unselected authority combination");
+  if (config.historicalTests.some(t => !usedHistoricalTests.has(t.path))) throw Error("Unused historical test migration");
   // All local packet/dependency/source checks have passed. Exactly one scoped READ ONLY capture.
   const snapshot = reuseSha ? verifySnapshot(read(join(output, "completion-before.json"))) : await capture(selected.map(n => n.companyId), [], baseCommit);
   if (snapshot.baseCommit !== baseCommit || (reuseSha && snapshot.snapshotSha256 !== reuseSha)) throw Error("Frozen snapshot recovery binding differs");
@@ -92,13 +112,15 @@ async function main() {
     await write("completion-seed-before.json", seed);
   } else if (verifySeedManifest(read(join(output, "completion-seed-before.json"))).manifestSha256 !== seed.manifestSha256) throw Error("Frozen seed changed during recovery");
   bind(join(output, "completion-seed-before.json"));
-  const decisions: Decision[] = packets.map(({ name, ref, report, old, rows, override }) => {
+  const decisions: Decision[] = packets.map(({ name, reports, override }) => {
     const fresh = snapshot.companies.find(c => c.image.id === name.companyId)!;
-    const prior = (old.production.images ?? [old.production.image]).find((i: { id: string }) => i?.id === name.companyId);
-    if (sha256Canonical(prior) !== sha256Canonical(fresh.image)) throw Error(`Changed canonical company dependency: ${name.name}; retained snapshot, review offline`);
-    for (const r of rows) if (sha256Canonical(r.current) !== sha256Canonical(fresh.owners.find(o => o.id === r.ownerId)?.state)) throw Error(`Changed attribution before-image: ${name.name}`);
+    for (const { old, rows } of reports) {
+      const prior = (old.production.images ?? [old.production.image]).find((i: { id: string }) => i?.id === name.companyId);
+      if (sha256Canonical(prior) !== sha256Canonical(fresh.image)) throw Error(`Changed canonical company dependency: ${name.name}; retained snapshot, review offline`);
+      for (const r of rows) if (sha256Canonical(r.current) !== sha256Canonical(fresh.owners.find(o => o.id === r.ownerId)?.state)) throw Error(`Changed attribution before-image: ${name.name}`);
+    }
     const issue = override?.parkedIssue ?? null;
-    const owners: Decision["owners"] = issue ? [] : rows.map(row => {
+    const owners: Decision["owners"] = issue ? [] : reports.flatMap(({ report, rows }) => rows.map(row => {
       const original = fresh.owners.find(o => o.id === row.ownerId)!, record = seed.records.find(r => r.recordId === row.recordId)!;
       const desired = { ...original.state, ...(row.recommended ?? {}) };
       const fields = [...row.fieldDecisions, ...(row.additionalFieldDecisions ?? [])];
@@ -118,13 +140,13 @@ async function main() {
         productionChange: sha256Canonical(original.state) === sha256Canonical(desired) ? "NONE" : "SUBSTANTIVE_ATTRIBUTION",
         reason: override?.rationale ? "Issuer-confirmed existing fund link contradicts stale no-fund-match rationale. Preserve all economic and ownership facts." : String(report.interpretation ?? "Persist the exact reviewed attribution decision; preserve documented exceptions."),
         sources: [{ ...source, url: sourceUrls[0], primary: true }] };
-    });
+    }));
     const productionChanges = owners.some(o => o.productionChange !== "NONE");
     const seedChanges = owners.some(o => { const record = seed.records.find(r => r.recordId === o.seedRecordId)!;
       const { linkedFundName, ...metadata } = o.desired;
       return sha256Canonical(record) !== sha256Canonical({ ...record, ...metadata, targetLinkedFundName: linkedFundName, evidenceUrls: o.sources.map(s => s.url) }); });
     return { companyId: name.companyId, name: name.name, sequence: name.sequence, classification: issue ? "PARKED" : productionChanges ? "ATTRIBUTION_CORRECTION" : seedChanges ? "SEED_ONLY" : "NO_CHANGE",
-      expectedCompanySha256: sha256Canonical(fresh), evidence: [ref], owners, issue,
+      expectedCompanySha256: sha256Canonical(fresh), evidence: reports.map(p => p.ref), owners, issue,
       preservedOwnerIds: fresh.owners.filter(o => !owners.some(p => p.ownerId === o.id)).map(o => o.id) };
   });
   const batch = verifyBatch(seal({ schemaVersion: 1, artifactType: "PORTCO_COMPLETION_BATCH", batchId: config.batchId, baseCommit, asOfDate: config.asOfDate,
