@@ -1,49 +1,29 @@
 # PortCo completion checkpoint
 
-Work only in /Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair; never the main checkout. Locator only: sealed artifacts, immutable receipts and live state are authoritative.
+Work only in /Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair; never the main checkout. Locator only: sealed artifacts, immutable receipts and live state are authoritative. Follow scripts/portco-completion/README.md; no repeated ChatGPT, source-task reopening, full seed execution or unrelated changes.
 
-## Completed boundary
+## Active release: portco-completion-023
 
-Batch portco-completion-022 is COMPLETED. Progress idle:99 fully verified /56 parked /0 initial-pass remaining;18 parks await this follow-up pass. Progress SHA b400d35b6e3bc74eac19e4da30882954b13cc1778e3be03ac2b83c2f2999d457.
+Branch codex/portco-completion-023, based on protected main d21b866273375e98cf56962497140de71334f54f. Carries022 completion bookkeeping. All ten source decisions are complete under completion/batch-023-evidence/, with exact source captures, source-review-001/002, authority-review and packet/config.json. Reuse these; do not repeat source research.
 
-Scope: audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-022. PR981 merged as protected main d21b866273375e98cf56962497140de71334f54f; PR CI34267205196 and main CI34267650016 passed. Canonical Git-integrated deployment dpl_8cybKGSyDepfWGWN1kxv9Uhdhw6Q verified at exact merge.
+Offline validation passed:10 names,2650 bound files,zero DB reads/writes. Targeted125 tests/12 files and tool typecheck passed. One pinned READ ONLY production capture and compilation succeeded. Snapshot SHA c6b86ca095793f3bb6647bfa913a1b393463802f8ddb7c9630cc89e24b4f64c0; NEVER recapture to hide drift. Complete10 companies/41 owners and published fund catalog are bound.
 
-ONE apply34268382838 succeeded with protected approval, deployment6335288813/environment14040984384. Receipt SHA49a2446abfdb85d9bff9cc294a634f97573f624c91356a6a4cfc5edb296d5290; pipeline cmtt23h3p0000fu425nnrdpg1 updated7/inserted0. Immutable archive10072835283 digest3a70b3e150614e3b34592c06b71d23e326f68555b04c469dcc971ac01879d081. NEVER replay this or any earlier transaction.
+Root progress has the sole023 active batch. Four safe names:383 USIC,385 AEP Indiana Michigan,386 AEP Ohio,387 Aerostar. Six precise parks:380 EdgeCore,382 Milestone,384 407 International,388 FirstLight,413 WRM,415 Vela.13 attribution metadata mutations:9 DIRECT_PROGRAM,4 DISCLOSED;zero fund creates/updates/links or owner identity changes. Seven proven historical seed overlays added,not new owners. Root seed has1420 overlays (1393 active/27 historical),schema SHA be32b2f538e978c6c3d4acbe0533cfbe49d8b53f19e68c83bf3e94ca0811e3e3.
 
-Completion evidence binds complete10-company/39-owner after-images, unchanged194-fund catalog, seed parity, all7 changed API rows, complete safe-name identity/ownership/citation/redirect checks and three individually visually inspected rendered PNGs.359 DartPoints,377 Intersect Power and379 Dimension Energy are fully verified.368 Bruce Power,370 Leeward,371 Navisun,372 Northstar,373 Teranet,376 Skyway and378 Budderfly retain precise parks with no partial writes.
+Scope audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-023. Apply manifest SHA08e40b55d82f7132f1f881b23da96bb8ba97d50b4796363204dba128055dc37a; automatic policy approval SHA 567028a7d4cd61eabc674539b53a356c730d4fd1b63b08f96f6da25961118689. No PR or dispatch yet. Full final regression,seed validation and publication staging are underway; inspect /tmp/portco-023-*.log and live handles before rerunning. Preparation-checks.json will record completed checks. Exact source originals remain immutable; excluded403/empty bodies local only. No new redactions required.
 
-Seed SHA ca98e2e285e1e56e624d3d097c6f9a592636bd81499d71edf6803aaceb4e74ca:1,413 metadata overlays (1,393 active/20 historical), no new owners. All3,824 tests/208 files, targeted125/12, strict tool typecheck, changed-test ESLint and offline seed validation passed.54 seed warnings; zero errors. Source HTML whitespace intentionally preserved. No full seed execution, repeat ChatGPT or unrelated changes.
+Next: complete final checks and exact allowlist/secret scan; one protected combined PR. Require exact main CI and canonical ordinary Git-integrated Vercel merge SHA before any DB write. Persist APPLYING+intent before ONE dispatch. Unknown outcome/post-apply failure freezes VERIFYING_FAILED; recover receipts,never replay. Verify complete after-images,seed,API,redirects,citations and individually inspect all four safe rendered cards before completion. Carry completion bookkeeping next batch.
 
-Original source manifest/ledger:496 terminal tasks,41 exact DEFERRED exceptions,0 PENDING, no active source bundle. Never reopen terminal tasks.
+## Last completed boundary and counts
 
-## Next release
+022 is COMPLETED;99 fully verified/56 parked/0 initial-pass remaining;18 parks await follow-up including the active ten. No023 name counts as verified yet. Prior idle progress SHA b400d35b6e3bc74eac19e4da30882954b13cc1778e3be03ac2b83c2f2999d457. After023, select nextNames(progress,true),not this locator.
 
-Completion-only commit ba39dc7779a1600e8dd3894cf127b0f0ce4c333c is confirmed pushed on codex/portco-completion-022. Current branch codex/portco-completion-023 was created from fresh origin/main d21b866273375e98cf56962497140de71334f54f and carries that completion bookkeeping as c400d282. No separate preliminary audit deployment and no023 activation or production snapshot yet.
+022 PR981 merge d21b866273375e98cf56962497140de71334f54f, canonical deployment dpl_8cybKGSyDepfWGWN1kxv9Uhdhw6Q. ONE successful apply34268382838,receipt SHA49a2446abfdb85d9bff9cc294a634f97573f624c91356a6a4cfc5edb296d5290,pipeline cmtt23h3p0000fu425nnrdpg1. Full immutable evidence in scope portco-completion-022; NEVER replay.023 config includes all22 completed release chains.
 
-Next parked ten in original order:380 EdgeCore Digital Infrastructure;382 Milestone Equipment Holdings;383 USIC;384 407 International;385 AEP Indiana Michigan Transmission;386 AEP Ohio Transmission;387 Aerostar Airport;388 FirstLight USA;413 Waste Resource Management;415 Vela Wind Holdco. Use nextNames(progress,true), not this locator, for authority.
+Original source manifest/ledger remain496 terminal tasks,41 exact DEFERRED,0 PENDING and no active source bundle. Final closeout requires all parked revisits,whole production/seed identity,ownership and redirect reconciliation, population counts and precise exceptions including original deferrals. closeout-deferral-chain-recheck.json is historical evidence,not fresh live parity. Only after final protected closeout deployment mark goal complete and delete heartbeat.
 
-Final022 input is completion/batch-022-evidence/packet-v2/config.json with21 preceding release chains. Add completed022 immutable chain for023. The old packet/ is superseded local-only.022 frozen snapshot6d52f4274d6e8f271a3aa1dc0934da934dfb3e435029a1c56e42abcb7fd65926 was reused after OMERS manager-link conflicts were parked. Never recapture to hide drift.
+## Publication and token discipline
 
-023 offline readiness is preserved at completion/batch-023-evidence/readiness.json, byteSHA225350df66fa085a5d22e5855bdbfe7ed142e35b224493f86c21d157a4c709b3. All164 prior evidence references match; all41 owners have exact evaluated seed counterparts, with20 missing historical attribution overlays. This resolves the old tooling barrier, not source truth: AEP chronology, WRM organization and any other unresolved ownership gaps still require precise adjudication. Review existing evidence before reopening only needed direct sources. No023 authority, approval or final classification exists yet. /tmp/portco-revisit-readiness.ts now accepts explicit previous config and completed scope arguments; do not rerun over the frozen readiness output.
+Exact allowlists and secret scans only. Preserve all unrelated untracked files. Never stage492/0472–0492/424/incomplete444 or superseded packets.022 sources/intersect-cai.html is LOCAL SECRET ORIGINAL; publish only its verified redacted copy.023 excluded milestone-wood-creek-acquisition.html and usic-hl-kohlberg.html bodies stay local; exclusion metadata may publish.
 
-023 first-three-name source review is saved in completion/batch-023-evidence/source-review-001.json, review-001.md and decisions/0380.json,0382.json,0383.json. Eleven accepted original source captures are hash-bound and pass known-secret scanning; no redactions needed. Candidate383 covers all five exact owner IDs and resolves former OMERS DIRECT_PROGRAM from its explicit issuer statement; preserve the other unknown aggregate fund allocations. The substantive Harris Williams2010 article is in its captured __NEXT_DATA__ legacyRte payload, independently parsed and reviewed. Do not confuse this with the212-byte empty Houlihan Lokey shell, which is excluded. No new ChatGPT research.
-
-380 now has direct evidence for Mount Elbert Capital Partners Fund1 and GIC/OPTrust programs, but remains a candidate park because seller rollover was expressly unavailable in accepted research while all three founder periods are marked REALIZED2022. No partial write.382 has direct current co-control and manager-succession evidence; original historical Business Wire release ID20150303006481 was located but returned403. It remains a candidate park pending substantive direct history evidence. Preserve the failed response and empty HL body locally; publish only exclusion metadata. Continue384/385/386/387/388/413/415 before assembling the whole ten-name packet. Partial candidates are not completed names and do not advance the register.
-
-/tmp/portco-materialize-revisit-authority.ts has been generalized locally to require an explicit authority-review.json instead of hardcoded022 narrative and accept exact ownerId alongside organization (needed for USIC re-entry and Aerostar). It has not run for023. Assemble authority.json only after all ten decisions, add data-driven extraEvidence, and retain the original byte-bound sources and complete-owner guards.
-
-Follow scripts/portco-completion/README.md and shared small-record tooling. Reuse source bytes and completed research. Only unresolved facts/changed dependencies warrant fresh sources. Evaluate every owner and exact seed identity; one application primary citation per decision. Preserve unavailable facts explicitly. No production wording harmonization or partial parked corrections.
-
-## Release safety and final closeout
-
-One active release. Offline files first, one target-pinned read-only snapshot, exact before-images/dependencies, supported metadata/existing-fund-link corrections only. Unsupported identities, organizations, literal vehicles, stakes, dates and canonical text remain precise parks. No Deal Database/public API/UI/schema/layout/enrichment changes.
-
-Exact protected-main CI and canonical Git-integrated merge before write; persist APPLYING and intent before ONE dispatch. Unknown outcomes/post-apply failures freeze VERIFYING_FAILED. Recover receipts, never replay. Completion requires all after-images/catalog/seed/API/redirect/ownership/citation checks and individually inspected safe rendered cards.
-
-Exact staging allowlists and secret scans only. Keep022 raw sources/intersect-cai.html LOCAL: contains Userback widget token. Publication copy has explicit verified one-token redaction. Never stage unrelated492/0472–0492/424/incomplete444 artifacts, prior secret originals, unreferenced/challenged downloads or superseded packets. Preserve them locally.
-
-Carry completion bookkeeping in next combined release; publish final closeout if no next batch. After18 remaining parked revisits, freshly reconcile whole production/seed identities, ownership and redirects; publish population counts and precise exception report including41 original deferrals. closeout-deferral-chain-recheck.json binds45 original outcomes/315 hashes, not live parity. Only then mark goal complete and remove heartbeat.
-
-## Token discipline
-
-Keep evidence/logs on disk; return counts/hashes/failures. Reuse shared tools and unchanged evidence. Targeted preparation tests, one full final regression, required GitHub checks unchanged. Poll exact existing handles; never restart from a missing observation alone.
+Keep full logs/evidence on disk; show counts,failures and paths. Run shared validators rather than rereading unchanged chains. Poll existing handles; observation timeout alone is not process failure.

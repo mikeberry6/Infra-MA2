@@ -1,0 +1,68 @@
+{
+  "batchId": "portco-completion-023",
+  "packet": "packet/config.json",
+  "offline": {
+    "names": 10,
+    "boundFiles": 2650,
+    "passed": true,
+    "databaseReads": 0,
+    "databaseWrites": 0,
+    "logSha256": "9fc5479f6b863da3a359c1299842e6d69f341396e6d55d27d21ba8053c9ef82c"
+  },
+  "compiled": {
+    "safeNames": 4,
+    "parkedNames": 6,
+    "mutations": 13,
+    "fundLinkChanges": 0,
+    "ownershipIdentityChanges": 0,
+    "addedHistoricalOverlays": 7,
+    "companies": 10,
+    "owners": 41,
+    "publishedFundNames": 194,
+    "snapshotSha256": "c6b86ca095793f3bb6647bfa913a1b393463802f8ddb7c9630cc89e24b4f64c0"
+  },
+  "targeted": {
+    "files": 12,
+    "tests": 125,
+    "passed": true,
+    "logSha256": "3f52385d55b11d5f4b13795b95fe59b987b0ae00e20c885399249a9cbfac2c97"
+  },
+  "fullRegression": {
+    "files": 208,
+    "tests": 3824,
+    "passed": true,
+    "runsOnFinalContents": 1,
+    "logSha256": "8cc33eb69bf2351799cb4c46f515b675caec41f57a6f89f79410664562626ec4"
+  },
+  "typecheck": {
+    "command": "npx tsc -p scripts/portco-completion/tsconfig.json",
+    "passed": true,
+    "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "eslint": {
+    "path": "scripts/portfolio-fund-attribution/seed-manifest.test.ts",
+    "passed": true,
+    "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "seedValidation": {
+    "errors": 0,
+    "warnings": 54,
+    "passed": true,
+    "fullSeedExecuted": false,
+    "logSha256": "277bfda16291b13fd00f2f819761dfc8e1114b4642e2376050f96ee0d86760ea"
+  },
+  "artifactValidation": {
+    "passed": true,
+    "logSha256": "c97d7d35af528d9efdcdf4efce9a4a8d3d7131e5f56daf94af38eb5794b08601"
+  },
+  "publicationScan": {
+    "filesBeforeThisReport": 118,
+    "secretFindings": 0,
+    "explicitRedactions": 0
+  },
+  "diffCheck": {
+    "codeAndAuditJsonPassed": true,
+    "exception": "Source HTML retains exact captured whitespace. Do not normalize immutable evidence bytes."
+  },
+  "productionApplyOccurred": false
+}
