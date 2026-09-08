@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "2894529aef9ba397d00e9f9f321f79616a973bf48692bcfc3f4d7a9361c42e4f",
+  "approvalSha256": "d211ede38f12c96a8d12345d7ae02be60b15badfe91d9169290b7f1db1d0f183",
+  "environment": "production",
+  "pipelineRunId": "cmtscd1by0000g64x9bok0us8",
+  "mutationCount": 8,
+  "changed": 8,
+  "idempotent": false,
+  "beforeFingerprint": "8edf47364122119bf9c8a031687139d2316c5e3cf76aca817e34942ebd337b6f",
+  "afterFingerprint": "27638970368e402170cdf4c0a29dbe0f9a574578b1a64864bd665a0c13827b47",
+  "rows": [
+    {
+      "recordId": "OFA-A08891398105",
+      "ownershipPeriodId": "cmrxpk2hr01xmivhevyothznb",
+      "companyId": "cmrxpjgn500yyivhe7tr8lc9h",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2020 is 2 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "BlackRock's October 24, 2022 release explicitly lists Vanguard Renewables among Global Energy & Power Infrastructure Fund III investments. Preserve the existing GEPIF III link; the fund is disclosed, not estimated."
+      }
+    },
+    {
+      "recordId": "OFA-425E6CAAAEB7",
+      "ownershipPeriodId": "cmrxpjv4o01m3ivhekpgpv69r",
+      "companyId": "cmrxpj9tv00okivhe1bj1dtst",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Brookfield BIF V",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield BIF V",
+        "attributionConfidence": null,
+        "attributionRationale": "Boralex's management circular identifies Brookfield Infrastructure Fund V and BIF Thunder as the acquisition structure, and the August 2026 closing release confirms Brookfield's current 70% ownership."
+      },
+      "after": {
+        "linkedFundName": "Brookfield BIF V",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield BIF V",
+        "attributionConfidence": null,
+        "attributionRationale": "Boralex's May 1, 2026 management circular identifies Brookfield Infrastructure Fund V and BIF Thunder Holdings Inc.; page 85 names the Fund V entities providing equity commitments. Boralex's August 2026 release confirms completion of the arrangement. Preserve the existing BIF V fund link."
+      }
+    },
+    {
+      "recordId": "OFA-B77DB437C882",
+      "ownershipPeriodId": "cmrxpjv5701m4ivheldnfexl5",
+      "companyId": "cmrxpj9tv00okivhe1bj1dtst",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's 2017 entry and August 2026 closing releases establish its current 30% direct equity interest. The reviewed sources do not identify a distinct La Caisse fund vehicle."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Boralex's management circular identifies La Caisse itself as the equity-commitment provider alongside the Brookfield Fund V entities (page 85), and the August 2026 closing release confirms completion. This is disclosed La Caisse direct equity through the acquisition structure, not an unidentified third-party fund."
+      }
+    },
+    {
+      "recordId": "OFA-3CD0DD9A5E61",
+      "ownershipPeriodId": "cmrxpjwxu01p2ivhet3z3ze2b",
+      "companyId": "cmrxpjbnh00rcivheoc17wxk3",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "CDPQ Infrastructure",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's July 15, 2025 announcement expressly identifies its US$200 million primary equity commitment in Renewa through its Sustainable Land Management initiative within its Infrastructure portfolio. This is a disclosed direct program, not an inferred CDPQ Infrastructure fund."
+      }
+    },
+    {
+      "recordId": "OFA-B4D1519E0475",
+      "ownershipPeriodId": "cmrxpjwyh01p3ivheanfbimsd",
+      "companyId": "cmrxpjbnh00rcivheoc17wxk3",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: QIC | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Supplemental detail states the fund was not publicly disclosed."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The July 15, 2025 joint announcement states that QIC-managed funds acquired Renewa in 2022, but does not name those funds. Preserve the managed-fund relationship without inventing a fund name or treating nondisclosure as direct-program evidence."
+      }
+    },
+    {
+      "recordId": "OFA-819FD505BA7F",
+      "ownershipPeriodId": "cmrxpjx3r01p9ivhecnt245kc",
+      "companyId": "cmrxpjbqt00riivhe4i0hbeof",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CDPQ Infrastructure",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: CDPQ | Fund: CDPQ Infrastructure | Ownership Interest: 30% Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's April 2, 2019 announcement identifies CDPQ itself as the investor acquiring a 30% stake in Vertical Bridge's main operating subsidiary. Vertical Bridge's 2026 KKR announcement confirms La Caisse remains a sponsor. CDPQ Infrastructure is not a disclosed separate fund in these sources."
+      }
+    },
+    {
+      "recordId": "OFA-5696A4EBDDAC",
+      "ownershipPeriodId": "cmrxpjx4d01paivhemkp8i7lc",
+      "companyId": "cmrxpjbqt00riivhe4i0hbeof",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DigitalBridge Equity",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: DigitalBridge | Fund: DigitalBridge Equity | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DigitalBridge's October 13, 2021 closing release identifies funds affiliated with DigitalBridge Investment Management as acquiring control of Vertical Bridge but does not name the funds. DigitalBridge Equity is a strategy/platform label, not an expressly disclosed fund for this holding."
+      }
+    },
+    {
+      "recordId": "OFA-5C7702D6C6A7",
+      "ownershipPeriodId": "cmrxpjx4w01pbivheojejxaas",
+      "companyId": "cmrxpjbqt00riivhe4i0hbeof",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "KKR Global Infrastructure Investors V",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.33, vintage 2024 is 2 years before investment, North America-relevant mandate; next candidate trails by 12.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Vertical Bridge's strategic equity announcement states that KKR is funding its investment primarily through its core infrastructure strategy. It does not identify KKR Global Infrastructure Investors V or another specific fund; retain the disclosed strategy without estimating a fund."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T07:21:54.698Z",
+  "receiptSha256": "69ca38c65226cba27399f96338bf26890d6a07347ee7d5159ea5865cf4223169"
+}
