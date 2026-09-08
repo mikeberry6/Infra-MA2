@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+  "dependencies": [
+    {
+      "path": "prisma/seed-data/companies.ts",
+      "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.ts",
+      "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+      "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+    },
+    {
+      "path": "prisma/seed-data/portco-types.ts",
+      "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+    },
+    {
+      "path": "prisma/entity-resolution.ts",
+      "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+    },
+    {
+      "path": "prisma/seed-runner.ts",
+      "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+    }
+  ],
+  "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+  "companies": [
+    {
+      "name": "Lighthouse",
+      "country": "United States",
+      "companySha256": "17aef89642a3551c47bb9fd70780a333f55d6538659265531299a60e444c7b32",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "BlackRock",
+            "ownershipVehicle": "Evergreen Infrastructure Fund",
+            "fundName": "Evergreen Infrastructure Fund",
+            "vehicleName": "Evergreen Infrastructure Fund",
+            "investmentYear": 2023,
+            "stake": "Acquired 100% of Excelsior's membership interests; total project-level economic percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "BlackRock",
+          "vehicleName": "Evergreen Infrastructure Fund",
+          "fundLookupName": "Evergreen Infrastructure Fund",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Excelsior Energy Capital",
+            "ownershipVehicle": "Excelsior Renewable Energy Investment Fund I LP",
+            "vehicleName": "Excelsior Renewable Energy Investment Fund I LP",
+            "exitYear": 2023,
+            "stake": "Sold 100% of its membership interests; total project-level economic percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Excelsior Energy Capital",
+          "vehicleName": "Excelsior Renewable Energy Investment Fund I LP",
+          "fundLookupName": "Excelsior Renewable Energy Investment Fund I LP",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    {
+      "name": "Permanent Power Company",
+      "country": "United States",
+      "companySha256": "c20b14757eab7fb485e1cf89813a557232a18818c00d7902635f3a3d8e3c95ce",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "CIM Group",
+            "ownershipVehicle": "CIM Group / undisclosed Westlands joint-venture partner",
+            "vehicleName": "CIM Group / undisclosed Westlands joint-venture partner",
+            "investmentYear": 2014,
+            "exitYear": 2025,
+            "stake": "Not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "CIM Group",
+          "vehicleName": "CIM Group / undisclosed Westlands joint-venture partner",
+          "fundLookupName": "CIM Group / undisclosed Westlands joint-venture partner",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "CIM Group",
+            "ownershipVehicle": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+            "vehicleName": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+            "investmentYear": 2025,
+            "stake": "66.7% total economic interest at March 31, 2026 (63.2% direct plus approximately 3.5% through COZ 1, LLC)",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "CIM Group",
+          "vehicleName": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+          "fundLookupName": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "CIM Group",
+            "ownershipVehicle": "Other CIM-affiliated entities / managed accounts",
+            "vehicleName": "Other CIM-affiliated entities / managed accounts",
+            "investmentYear": 2025,
+            "stake": "33.3% aggregate economic interest at March 31, 2026",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "CIM Group",
+          "vehicleName": "Other CIM-affiliated entities / managed accounts",
+          "fundLookupName": "Other CIM-affiliated entities / managed accounts",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    }
+  ],
+  "proofSha256": "96297a4bee4a3f6944d382cb31378d4ba3554067ef42bb9627653dcb5dce7144"
+}

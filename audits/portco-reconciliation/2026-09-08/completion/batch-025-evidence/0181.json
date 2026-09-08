@@ -1,0 +1,118 @@
+{
+  "companyId": "cmrxpjbw800rsivhe6s7g89eh",
+  "name": "Permanent Power Company",
+  "sequence": 181,
+  "classification": "SEED_ONLY",
+  "expectedImageSemanticSha256": "81c136342535bf5fd83592e5653d33c1766759eb4134fcf1d80dd8c5b2bbfba7",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjxay01pmivhevwqj1bv4",
+      "sha256": "874af1589e630760d89f5e3affc4474fdbd23d599f03800f0a15f631bc5bf90d"
+    },
+    {
+      "ownerId": "cmrxpjxbg01pnivhe6uy36dxh",
+      "sha256": "16b47e667f980ce04d644acc99956a911075af302f26ceff697fc964ba3587ce"
+    },
+    {
+      "ownerId": "cmt6dgzz60014znyyj8wy3hw3",
+      "sha256": "03c2533786c730a3df764a873e5972bd7339b5045aa4f4511a4fdc6690dba8f4"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-006/completion-evidence.json",
+      "sha256": "b6a374e5c9c43fffd87c75447bac16b633434911a2e45ab1138a1a76ed25844c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/ownership-diagnostic.json",
+      "sha256": "0e89d5ee202c0c5fd73ca38f142cc84fbbcab0a98504ce4394fa8e2dfba735b4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/research-decision.json",
+      "sha256": "b98c189093effd2f742b60fb42464728aa0e0f0abafe2bdfaa384097d760e8e9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/source-verification.json",
+      "sha256": "f32b4d71dad122ed656d5795934544071c376bd64bb96ef853613e56bbd070e3"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjxbg01pnivhe6uy36dxh",
+      "seedRecordId": "OFA-HIST-7B3BC9D767F7134671167B70",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "16b47e667f980ce04d644acc99956a911075af302f26ceff697fc964ba3587ce",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's Westlands development history supports the former CIM and joint-venture ownership period, but the reviewed public evidence does not identify a specific CIM fund or the joint-venture partner. Remove the unsupported CIM Infrastructure Fund I inference while preserving the historical ownership period.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "Insert only the missing historical seed attribution overlay for this already-existing, source-verified owner; preserve exact production state and all undisclosed facts.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-025-evidence/cim-aquamarine.html",
+          "sha256": "0aecbf16a8554b5fbc0b69a33b5a7a29944e6729b344462c11af652a4e73d9a7",
+          "url": "https://www.cimgroup.com/case-studies/aquamarine-solar-project",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmt6dgzz60014znyyj8wy3hw3",
+      "seedRecordId": "OFA-D98B843B30FB",
+      "expectedSeedSha256": "3ffe2feb9f8342065c432303a92120cc954b20dabca901d73623d9f027110c00",
+      "expectedOwnerSha256": "03c2533786c730a3df764a873e5972bd7339b5045aa4f4511a4fdc6690dba8f4",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "SEC filings directly disclose that other CIM-affiliated entities hold the remaining 33.3% aggregate interest but do not identify their entities, funds or managed accounts; preserve the ownership while leaving fund attribution unresolved.",
+      "productionChange": "NONE",
+      "reason": "Preserve null production rationale and the existing source-qualified seed-only explanation for the undisclosed other CIM entities. No owner, fund or metadata write.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/permanent-q1.html",
+          "sha256": "dfe881b11cf2b72e1ace050f4cf4a778a922ea50ac08de43ec431decc42a38cf",
+          "url": "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmrxpjxay01pmivhevwqj1bv4"
+  ],
+  "issue": null,
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0181-permanent-power-company-v4/proposal.json",
+      "sha256": "0ab00fb0448fc43f932ea6951cc3447b7a7c85da75fac0b2da85aade3a8343c4"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0181-permanent-power-company-v4.json",
+      "sha256": "f77327619a37cd9ab76b99523d8ccde67d399d76e4655c86a967c8be61e69208"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/production-apply/batch-apply-receipt.json",
+      "sha256": "0f08ee6d3c01059fe5eb81906f314838cfa42960dfb8b29fdfd06e36c3a0e3ef",
+      "memberIndex": 4
+    },
+    "receiptSha256": "f191f10d04ab87138333eacfd2fa146c1995c8b60f154933b0517eb853aa9b26"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-025-evidence/cim-aquamarine.html.capture.json",
+      "sha256": "e63c0c2eae99265f187e9db72bc9bf933c044302645699dec62a986d032260a6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/permanent-q1.html.capture.json",
+      "sha256": "e2b55b938c495652c55b9c1e00a71aa685b5fcf8214027993b25523c6efdf7ba"
+    }
+  ]
+}

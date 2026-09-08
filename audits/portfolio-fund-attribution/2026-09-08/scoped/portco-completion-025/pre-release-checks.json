@@ -1,0 +1,50 @@
+{
+  "artifactType": "PORTCO_COMPLETION_PRE_RELEASE_CHECKS",
+  "batchId": "portco-completion-025",
+  "batchSha256": "21b16c3b5f6c4fbf55c7cb89ff28165a5a5c2096e3321674f9d50a186d6690a4",
+  "seedManifestSha256": "bf18691c3490ab485c3f7d391ba1f2f7a70ba9de3836dbe1164737bb094d7f4e",
+  "checkedAt": "2026-09-08T22:08:33.360Z",
+  "fullRegression": {
+    "files": 209,
+    "tests": 3830,
+    "failed": 0,
+    "logSha256": "486202a4cd7c1a1b2acc0785c3b62c51e38f82b6e3517be4e1328c27995cacb1"
+  },
+  "typecheck": {
+    "passed": true,
+    "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "lint": {
+    "passed": true,
+    "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "seedTestLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "seedValidation": {
+    "errors": 0,
+    "warnings": 54,
+    "logSha256": "6effdd225b439eba6bdf8811a2fac9c4c4fd7a8100dece5a0fbff1d0b427cd2e"
+  },
+  "publicationScan": {
+    "files": 67,
+    "findings": 0,
+    "compressedEvidenceInspectedAfterDecompression": true,
+    "redactions": 0
+  },
+  "diffCheck": {
+    "codeAndAuthoredArtifacts": "PASS",
+    "rawSourceException": {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-025-evidence/cim-aquamarine.html",
+      "whitespaceOnlyLines": [
+        46,
+        681,
+        718,
+        862,
+        873,
+        882
+      ],
+      "reason": "Preserve immutable ordinary HTTP response bytes; no formatting or redaction."
+    }
+  },
+  "databaseMutations": 0,
+  "requiresProtectedReleaseAndCompleteVerification": true
+}

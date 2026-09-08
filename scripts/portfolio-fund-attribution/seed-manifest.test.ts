@@ -52,9 +52,9 @@ describe("portfolio fund attribution seed manifest", () => {
     const ownerKeys = owners.map(ownerKey);
     const manifestKeys = manifest.records.map(ownerKey);
 
-    // All 1,393 active owners remain covered. Batches 019–024 add thirty-four proven former-owner
+    // All 1,393 active owners remain covered. Batches 019–025 add thirty-six proven former-owner
     // metadata overlays, not owners; every added key must exist in evaluated seed.
-    expect(manifest.records).toHaveLength(1_427);
+    expect(manifest.records).toHaveLength(1_429);
     expect(owners).toHaveLength(1_393);
     expect(new Set(ownerKeys)).toHaveProperty("size", ownerKeys.length);
     expect(new Set(manifestKeys)).toHaveProperty("size", manifestKeys.length);
@@ -62,7 +62,7 @@ describe("portfolio fund attribution seed manifest", () => {
     expect(manifestKeys.filter(key => activeKeys.has(key)).sort()).toEqual([...ownerKeys].sort());
     expect(manifestKeys.every(key => allKeys.has(key))).toBe(true);
     const historical = manifest.records.filter(record => !activeKeys.has(ownerKey(record)));
-    expect(historical).toHaveLength(34);
+    expect(historical).toHaveLength(36);
     expect(historical.every(record => record.recordId.startsWith("OFA-HIST-") && record.fundAttribution !== "INFERRED")).toBe(true);
   });
 
@@ -80,7 +80,8 @@ describe("portfolio fund attribution seed manifest", () => {
     // Batch 016 removes Wren House QSP's unsupported direct/program classification.
     // Batch 023 preserves USIC's undisclosed aggregate fund allocations without production wording changes.
     // Batch 024 resolves sourced corporate/fund metadata while preserving AIF's unknown historical fund.
-    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(92);
+    // Batch 025 adds Permanent Power's existing historical unresolved owner to the seed overlay only.
+    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(93);
     expect(manifest.records.every((record) => (
       record.fundAttribution !== "INFERRED"
       || (

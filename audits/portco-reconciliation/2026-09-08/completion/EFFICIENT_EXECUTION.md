@@ -4,6 +4,7 @@ User-authorized token reduction for this task:
 
 - Start with CURRENT.md and compact status below. Validate authoritative hashes and relevant live state. Load only evidence needed for the next unresolved requirement; checkpoints are never proof.
 - Store complete evidence/logs/snapshots in files; return counts, failures and paths. Inspect full detail only for exceptions. Never truncate stored evidence.
+- Keep discovery bounded: use `git status --short --untracked-files=no` for tracked state, then inspect untracked files only under the exact proposed staging paths. Do not print the entire audit inventory, snapshots, HTML, or passing test logs. Output limits are a fallback, not a substitute for filtering before tool output; retain complete files for verification.
 - Use shared validators and small decisions, not per-company scripts/tests. Checks still examine every required record.
 - Reuse accepted research and successful checks only while exact inputs/code/dependencies remain valid. Fresh pre-apply state and mandatory release checks are never cached away. No repeated ChatGPT research.
 - Targeted checks during preparation; full regression on final contents. Rerun affected gates after relevant changes; retain required GitHub checks.
