@@ -1,9 +1,10 @@
 import { readFile, writeFile, mkdir, access } from "node:fs/promises";
 import { resolve } from "node:path";
 import { execFileSync } from "node:child_process";
-import { attributionSnapshot, compileBatch, counts, nextNames, verifyProgress } from "./batch";
-import { checkPacketFiles } from "./files";
-import { verifyExecutionManifest } from "../portco-reconciliation/execution-control";
+import { attributionSnapshot, compileBatch, counts, nextNames, recheckProgress, progressRecheckSchema, verifyHash, verifyProgress } from "./batch";
+import { bytesHash, checkPacketFiles, localFile } from "./files";
+import { verifySeedManifest } from "../portfolio-fund-attribution/schema";
+import { executionTerminalStatuses, verifyExecutionManifest } from "../portco-reconciliation/execution-control";
 import { verifyBatchExecutionLedger } from "../portco-reconciliation/batch-control";
 
 const ROOT = "/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair";
@@ -21,6 +22,29 @@ async function main() {
       next: progress.active ? [] : nextNames(progress).map(n => ({ name: n.name, sequence: n.sequence })),
       nextParked: progress.active || summary.remaining ? [] : nextNames(progress, true).map(n => ({ name: n.name, sequence: n.sequence })),
     }, null, 2)); return;
+  }
+  if (command === "prepare-recheck") {
+    const request = verifyHash(progressRecheckSchema.parse(await json(get("request"))), "recheckSha256");
+    const seed = verifySeedManifest(await json(get("seed")));
+    const execution = verifyExecutionManifest(await json("audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json"));
+    const ledger = verifyBatchExecutionLedger(await json("audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json"));
+    if (execution.activeTaskId || ledger.activeBatchId || execution.tasks.some(t => !executionTerminalStatuses.includes(t.status))) throw Error("Terminal idle source boundary required");
+    const files = new Map<string, string>();
+    for (const correction of request.corrections) {
+      for (const ref of [correction.prior.completion!, correction.diagnostic, ...correction.prior.reviewedEvidence]) {
+        const bytes = await readFile(localFile(ROOT, ref.path));
+        if (bytesHash(bytes) !== ref.sha256) throw Error("Changed recheck evidence bytes");
+        files.set(ref.path, ref.sha256);
+      }
+    }
+    const candidate = recheckProgress(progress, request, seed.manifestSha256, files);
+    const output = resolve(get("output"));
+    await mkdir(output); // Exclusive preparation only; never mutate the authoritative register.
+    const artifacts = { "recheck-request.json": request, "progress-before.json": progress, "progress-rechecked.json": candidate,
+      "source-boundary.json": { executionManifestSha256: execution.manifestSha256, sourceLedgerSha256: ledger.ledgerSha256,
+        seedManifestSha256: seed.manifestSha256, authoritativeRegisterChanged: false, databaseReads: 0, databaseWrites: 0 } };
+    for (const [name, content] of Object.entries(artifacts)) await writeFile(resolve(output, name), `${JSON.stringify(content, null, 2)}\n`, { flag: "wx" });
+    console.log(JSON.stringify({ output, ...counts(candidate), authoritativeRegisterChanged: false, databaseReads: 0, databaseWrites: 0 })); return;
   }
   const { batch, files } = checkPacketFiles(ROOT, await json(get("batch")));
   const execution = verifyExecutionManifest(await json("audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json"));

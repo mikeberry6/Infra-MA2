@@ -1,7 +1,7 @@
 /** Replay completed releases offline before reusing an older seed-bound review. */
 import { join } from "node:path";
 import { z } from "zod";
-import { activate, compileBatch, complete, markReleased, verifyProgress, type Progress } from "./batch";
+import { activate, compileBatch, complete, markReleased, recheckProgress, verifyProgress, type Progress } from "./batch";
 import { bytesHash } from "./files";
 import { verifySeedManifest } from "../portfolio-fund-attribution/schema";
 import { sha256Canonical } from "../portco-reconciliation/hash";
@@ -9,6 +9,26 @@ import { checkActualSeedIdentity } from "./seed-identity-files";
 
 export const completedReleaseSchema = z.strictObject({ directory: z.string().min(1), receiptPath: z.string().min(1).nullable() });
 type Seed = ReturnType<typeof verifySeedManifest>;
+
+export function replayProgressRechecks(start: Progress, target: Progress, seedManifestSha256: string,
+  readBytes: (path: string, expected?: string) => Buffer) {
+  let current = verifyProgress(start);
+  const end = verifyProgress(target);
+  while (current.progressSha256 !== end.progressSha256) {
+    const requests = (end.recheckHistory ?? []).filter(r => r.beforeProgressSha256 === current.progressSha256);
+    if (requests.length !== 1) throw Error("Incomplete or reordered completion recheck lineage");
+    const files = new Map<string, string>();
+    for (const correction of requests[0].corrections) {
+      for (const ref of [correction.prior.completion!, correction.diagnostic, ...correction.prior.reviewedEvidence]) {
+        const bytes = readBytes(ref.path, ref.sha256);
+        if (bytesHash(bytes) !== ref.sha256) throw Error("Changed recheck evidence bytes");
+        files.set(ref.path, ref.sha256);
+      }
+    }
+    current = recheckProgress(current, requests[0], seedManifestSha256, files);
+  }
+  return current;
+}
 
 export function assertUnchangedReviewedRecords(before: Seed, current: Seed, companyName: string, recordIds: string[]) {
   const selected = (seed: Seed) => seed.records.filter(r => r.companyName === companyName || recordIds.includes(r.recordId));
@@ -27,6 +47,7 @@ export function completedSeedLineage(input: { releases: z.infer<typeof completed
   for (const release of input.releases) {
     const p = (name: string) => join(release.directory, name);
     const before = verifyProgress(read(p("progress-before.json")));
+    if (previous && previousSeed) previous = replayProgressRechecks(previous, before, previousSeed.manifestSha256, input.readBytes);
     if ((!previous && (before.completedBatchIds.length || before.consumedReceiptHashes.length))
       || (previous && previous.progressSha256 !== before.progressSha256)) throw Error("Incomplete or reordered completion lineage");
     const seedBytes = input.readBytes(p("completion-seed-before.json")), seed = verifySeedManifest(JSON.parse(seedBytes.toString()));
@@ -53,6 +74,7 @@ export function completedSeedLineage(input: { releases: z.infer<typeof completed
     if (previous.progressSha256 !== verifyProgress(read(p("progress-completed.json"))).progressSha256) throw Error("Recorded completion differs from replay");
     previousSeed = compiled.seed; ids.push(compiled.batch.batchId);
   }
+  if (previous && previousSeed) previous = replayProgressRechecks(previous, verifyProgress(input.progress), previousSeed.manifestSha256, input.readBytes);
   if (!previous || previous.progressSha256 !== input.progress.progressSha256 || previousSeed?.manifestSha256 !== input.seed.manifestSha256
     || sha256Canonical(ids) !== sha256Canonical(input.progress.completedBatchIds)) throw Error("Current progress/seed is not the completed release lineage");
   return archived;

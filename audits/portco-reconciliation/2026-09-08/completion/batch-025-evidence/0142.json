@@ -1,0 +1,90 @@
+{
+  "companyId": "cmrxpj8x000n4ivhefbfwnig3",
+  "name": "Lighthouse",
+  "sequence": 142,
+  "classification": "SEED_ONLY",
+  "expectedImageSemanticSha256": "f5bfa4a43f8138bf1add46176f656abf4e978e5dd174df37fa608a75811b3857",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpju7s01kkivheqy4idfr6",
+      "sha256": "043b20371b2ec8dcd86fee161167b1f22d9e4489f3c04dcbd8a5df63d89930f9"
+    },
+    {
+      "ownerId": "cmt5ogans000fu7yykyfg3253",
+      "sha256": "54679069a8892685c28f25265b7ecbf801142d4e50e9f6ca8cdfc756d37f68f3"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-003/completion-evidence.json",
+      "sha256": "1b847a511754ec27b9e3a1be699408ed838c7facdcea1a70fecb5e72fde31e0b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/authority.json",
+      "sha256": "d226f5cbba1b409ac39ed11eebbf97bb2626e682ae59132e2fdd4e3fd01a337a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/ownership-diagnostic.json",
+      "sha256": "0e89d5ee202c0c5fd73ca38f142cc84fbbcab0a98504ce4394fa8e2dfba735b4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/research-decision.json",
+      "sha256": "3bff51896c51e80daef94bd7135f0d19c3b0d3dfd97e392b4e8ad191c3dcb271"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/source-verification.json",
+      "sha256": "fa62f3e775a38cce32fbf50c72432de1f31e6de7b44b6f9cf9eb2781db9ad9d9"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmt5ogans000fu7yykyfg3253",
+      "seedRecordId": "OFA-HIST-548EC4499833224C398971DD",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "54679069a8892685c28f25265b7ecbf801142d4e50e9f6ca8cdfc756d37f68f3",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Excelsior Renewable Energy Investment Fund I LP",
+        "attributionConfidence": null,
+        "attributionRationale": "Excelsior's sale announcement and KeyBanc transaction record directly identify Excelsior Renewable Energy Investment Fund I LP as the seller of the consolidated Lighthouse portfolio; the former vehicle is disclosed but has no separate curated fund link.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "Insert only the missing historical seed attribution overlay for this already-existing, source-verified owner; preserve exact production state and all undisclosed facts.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/seller.html",
+          "sha256": "2f8168ce2c3a723335ab80f466b84b59d2a6726c0b64f7c50f16b72e36110d6c",
+          "url": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmrxpju7s01kkivheqy4idfr6"
+  ],
+  "issue": null,
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0142-lighthouse-v1/proposal.json",
+      "sha256": "c001c860a431b047b0571cde473d98bbf75b1b28a0d2d6cabd48ca80b53e0896"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0142-lighthouse-v1.json",
+      "sha256": "ddfe53e50cd1b532593ab10ab35e7ab406f8b6be62e7a181f29b11dd482cedc8"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v2/production-apply/batch-apply-receipt.json",
+      "sha256": "65c45be9b0bedab8912e9c844c17c2da029d33a6f1c0376296b1ec508016ab41",
+      "memberIndex": 1
+    },
+    "receiptSha256": "53602319c8dab72feca72d8feca2732b727c1d56192847320cf41dfded3616ff"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-025-evidence/seller-reused.capture.json",
+      "sha256": "5152fd58c0cc58106c40cd4980e606adb4b8a822e120ec7dd84dae1af10185f1"
+    }
+  ]
+}

@@ -511,15 +511,14 @@
         {
           "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/authority.json",
           "sha256": "d226f5cbba1b409ac39ed11eebbf97bb2626e682ae59132e2fdd4e3fd01a337a"
-        },
-        {
-          "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/ownership-diagnostic.json",
-          "sha256": "0e89d5ee202c0c5fd73ca38f142cc84fbbcab0a98504ce4394fa8e2dfba735b4"
         }
       ],
-      "status": "REMAINING",
+      "status": "VERIFIED",
       "issue": null,
-      "completion": null
+      "completion": {
+        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-003/completion-evidence.json",
+        "sha256": "1b847a511754ec27b9e3a1be699408ed838c7facdcea1a70fecb5e72fde31e0b"
+      }
     },
     {
       "companyId": "cmrxpj8xk00n5ivhezp5xja2f",
@@ -869,15 +868,13 @@
       "companyId": "cmrxpjbw800rsivhe6s7g89eh",
       "name": "Permanent Power Company",
       "sequence": 181,
-      "reviewedEvidence": [
-        {
-          "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/ownership-diagnostic.json",
-          "sha256": "0e89d5ee202c0c5fd73ca38f142cc84fbbcab0a98504ce4394fa8e2dfba735b4"
-        }
-      ],
-      "status": "REMAINING",
+      "reviewedEvidence": [],
+      "status": "VERIFIED",
       "issue": null,
-      "completion": null
+      "completion": {
+        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-006/completion-evidence.json",
+        "sha256": "b6a374e5c9c43fffd87c75447bac16b633434911a2e45ab1138a1a76ed25844c"
+      }
     },
     {
       "companyId": "cmrxpjc5l00s5ivheovw4f1er",
@@ -2536,67 +2533,7 @@
       }
     }
   ],
-  "recheckHistory": [
-    {
-      "schemaVersion": 1,
-      "artifactType": "PORTCO_COMPLETION_RECHECK",
-      "beforeProgressSha256": "59309aad80f4d4b4f4c1483dd379ea779843cadd0ba1b4f8031a146e9bdc906d",
-      "seedManifestSha256": "512c4f0a8cc3b6ee3ef897de0a272823bd0b6a93202a0a794f0fb10013920ff3",
-      "corrections": [
-        {
-          "prior": {
-            "companyId": "cmrxpj8x000n4ivhefbfwnig3",
-            "name": "Lighthouse",
-            "sequence": 142,
-            "reviewedEvidence": [
-              {
-                "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/authority.json",
-                "sha256": "d226f5cbba1b409ac39ed11eebbf97bb2626e682ae59132e2fdd4e3fd01a337a"
-              }
-            ],
-            "status": "VERIFIED",
-            "issue": null,
-            "completion": {
-              "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-003/completion-evidence.json",
-              "sha256": "1b847a511754ec27b9e3a1be699408ed838c7facdcea1a70fecb5e72fde31e0b"
-            }
-          },
-          "diagnostic": {
-            "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/ownership-diagnostic.json",
-            "sha256": "0e89d5ee202c0c5fd73ca38f142cc84fbbcab0a98504ce4394fa8e2dfba735b4"
-          },
-          "reason": "Whole-population closeout found the former Excelsior owner has disclosed production metadata but no effective historical seed overlay. Recheck complete company seed alignment against the existing source and receipt packet; do not rewrite production or repeat research."
-        },
-        {
-          "prior": {
-            "companyId": "cmrxpjbw800rsivhe6s7g89eh",
-            "name": "Permanent Power Company",
-            "sequence": 181,
-            "reviewedEvidence": [],
-            "status": "VERIFIED",
-            "issue": null,
-            "completion": {
-              "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-006/completion-evidence.json",
-              "sha256": "b6a374e5c9c43fffd87c75447bac16b633434911a2e45ab1138a1a76ed25844c"
-            }
-          },
-          "diagnostic": {
-            "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/ownership-diagnostic.json",
-            "sha256": "0e89d5ee202c0c5fd73ca38f142cc84fbbcab0a98504ce4394fa8e2dfba735b4"
-          },
-          "reason": "Whole-population closeout found missing effective seed rationale on the historical CIM owner and an intentional-text candidate on another CIM owner. Recheck complete company seed alignment against existing source and receipt evidence; preserve unknown fund identities and do not rewrite production wording."
-        }
-      ],
-      "recheckSha256": "b9618c78094a85db80606b40a40ee76918f0e999aabd58f67e816088cb7a32ce"
-    }
-  ],
-  "active": {
-    "batchId": "portco-completion-025",
-    "batchSha256": "21b16c3b5f6c4fbf55c7cb89ff28165a5a5c2096e3321674f9d50a186d6690a4",
-    "state": "PREPARING",
-    "releaseSha": null,
-    "failure": null
-  },
+  "active": null,
   "completedBatchIds": [
     "portco-completion-001",
     "portco-completion-002",
@@ -2649,5 +2586,5 @@
     "0a75fd3843d4c75f56b763736bed0a5df22c289249d3fb2806b48acb76bb8788",
     "e8180ce7ce553873736158e67fb5bd5a213345c956a9ab87a7e9166d258eb712"
   ],
-  "progressSha256": "e1a37cc0723e181de4646e83a4a32a6aa3c3b509149c0ad4d883c9114685c609"
+  "progressSha256": "59309aad80f4d4b4f4c1483dd379ea779843cadd0ba1b4f8031a146e9bdc906d"
 }
