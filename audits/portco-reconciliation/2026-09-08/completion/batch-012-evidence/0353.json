@@ -1,0 +1,114 @@
+{
+  "companyId": "cmrxpjlu70171ivheax0ogxib",
+  "name": "CSV Midstream Solutions Corp.",
+  "sequence": 353,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0352-csv-midstream/attempt-1/research-decision.json",
+      "sha256": "982b9d310c186f2f2046446dec9673702b292fb395a1e449eef2c3bb75eb57d3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0352-csv-midstream/attempt-1/source-verification.json",
+      "sha256": "de481ea5841ef5591225111a0566903e7cfb759b618450420bf9957556fb89fd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0352-csv-midstream/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "5ecbf11c2a81648d1415948f94e37ae6143c9ecf502e4647063755072169db31"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0352-csv-midstream/attempt-1/chatgpt-response-validation.json",
+      "sha256": "cf3766b7f1b0df7e960a207adc23811860bae2cb03efb6e696c5920608aa7454"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0352-csv-midstream/attempt-1/chatgpt-attestation.json",
+      "sha256": "b43edd8ca285adf5660d61fe4a7f5b3afe9a37f1838c38f42bb7f7e1f8b19b30"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0353-csv-midstream-solutions-corp/attempt-1/application-research-decision-v1.json",
+      "sha256": "f56322e214e158ebad527e66dcac898e8877e363e980b1f4db8332ec3850d692"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/review.json",
+      "sha256": "723f925a5c4cabb15df9f0191838d9e90d314c729d7dc92477c6703b124391b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/source-config.json",
+      "sha256": "cca6f03d91245229d047357afb58401f64c495b03cf38dc2f202a13cd1f96c01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/fund-source-config.json",
+      "sha256": "eda2a00195a46070eea58ee2dca370ec5913700b74d04ae684cbf2a99dd0a288"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/targeted-source-config.json",
+      "sha256": "659064eb48c369a149520541cf7eb9fea7e0af96fae8561c5b41c8a64cb73394"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk86q026givheoq8wg0qm",
+      "seedRecordId": "OFA-DB7DABFD82F7",
+      "expectedSeedSha256": "f0542f9fd3e8db5698b03996986868e385e7f9267e25bbd51305ec03cd618c81",
+      "expectedOwnerSha256": "38baf6234520c72f0f8f2253b9d5a09a2b3252d1336066bb00da95755380aa5c",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CSV's June 28, 2019 release identifies infrastructure funds managed by Northleaf as the 100% buyer but does not name an exact fund. Northleaf NEIF was an unsupported model estimate and is removed; direct investment by managed funds is not a direct corporate program. Preserve the 2019 entry and genuinely undisclosed allocation.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Direct June 28, 2019 company release explicitly says infrastructure funds managed by Northleaf acquired 100%; it does not name NEIF. Remove the unsupported estimate, retaining UNRESOLVED exact fund allocation rather than incorrectly labeling fund ownership a direct corporate program. Former Apollo funds remain genuinely undisclosed and untouched.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/csv-close.html",
+          "sha256": "4c632cfc18fa5ddf66c83ea6a2f918710a5880db8d36cd28d534b8c6a2f785f0",
+          "url": "https://www.csvmidstream.com/news/press-releases/northleaf-capital-partners-acquires-csv-midstream-solutions-corp/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmtixl9yo0006yr2benhsmrec"
+  ],
+  "issue": null,
+  "expectedImageSemanticSha256": "a666a6553d158fea4d92767f41f58b8d3a8060cb2c9521cf41939411ae4c39c8",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk86q026givheoq8wg0qm",
+      "sha256": "38baf6234520c72f0f8f2253b9d5a09a2b3252d1336066bb00da95755380aa5c"
+    },
+    {
+      "ownerId": "cmtixl9yo0006yr2benhsmrec",
+      "sha256": "3eb37b82c49e01ca943ff1019f584eacea3ec883556d85f9b19534574ec7ea68"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0353-csv-midstream-solutions-corp-v4/proposal.json",
+      "sha256": "9783a050c4caba3700164c1b6e55aa994374557e123dc1a076eb41bc7f87df71"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0353-csv-midstream-solutions-corp-v4.json",
+      "sha256": "5efc4165aa094c63728d5d66600da9ea1ef7bc741852abdea3c0e895f9fed7f8"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0351-0355-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "d10c4cf17216695f031aaf71c0626b0efcc0b86a0fcb945246e908b54975c0bf",
+      "memberIndex": 2
+    },
+    "receiptSha256": "82312ccc9868d146822ee6d49efd8427ed488f7111bfce031f8406219005c31d"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/csv-close.html.capture.json",
+      "sha256": "f0dbdf9a8444b84ad7314bbc4d9873b1600ba3ef98d6eecde6aac482ed8a6639"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "companyId": "cmtizepat001r282b9z7zrd9h",
+  "name": "Harbor Logistics, LLC",
+  "sequence": 360,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/research-decision.json",
+      "sha256": "66502409818a382df0d18e7d2dd95e5ea686642dd8597d30235da5abe20eee12"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/source-verification.json",
+      "sha256": "5f86abd456970c2674bfb4c91cc661996819ae36635a938e83470bd1c990cc1f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "098c785fe55dc9f8bde1b2527008400d2a151ec3555fec670f40d813b09192a9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "0ea0541e279e6ca16c1510b7a7abe23115a127fabc473ddac04cb395cb07933b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/chatgpt-attestation.json",
+      "sha256": "00dbfcc59a3702d5da5c655a56f3cc7ddbb6de180ca6710d27f4336cabf787b4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/review.json",
+      "sha256": "723f925a5c4cabb15df9f0191838d9e90d314c729d7dc92477c6703b124391b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/source-config.json",
+      "sha256": "cca6f03d91245229d047357afb58401f64c495b03cf38dc2f202a13cd1f96c01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/fund-source-config.json",
+      "sha256": "eda2a00195a46070eea58ee2dca370ec5913700b74d04ae684cbf2a99dd0a288"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/targeted-source-config.json",
+      "sha256": "659064eb48c369a149520541cf7eb9fea7e0af96fae8561c5b41c8a64cb73394"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtizepvq0022282b6vpwx4ba",
+      "seedRecordId": "OFA-4E5BE0BF3D59",
+      "expectedSeedSha256": "dddd112cc114a572766faf3b8b340e0a1e414872315ef6622918ad1dae3dd636",
+      "expectedOwnerSha256": "ab3ba4fc837576b4f3e85074a04a9244ca159f57b7b563de772210e3330e1e5c",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "NOVA's current team biographies expressly identify Harbor Logistics as a NOVA Fund I portfolio company. Replace unresolved attribution with this directly disclosed fund, retaining the audited December 2021 platform entry, controlling ownership with undisclosed exact stake and existing legal identity. No curated fund link is inferred.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Current Bryant Dang, Marc Kramer and Eric Mautner biographies explicitly identify Harbor Logistics as a NOVA Fund I portfolio company. Use this as Harbor's sole application-primary source, rather than manager-only portfolio language.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-team.html",
+          "sha256": "dbbf4d0fbe4b05d7a0861721e5414371f47cdd7d8e37950a77fb8df0c999bc75",
+          "url": "https://www.novainfrastructure.com/team",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-investments.html",
+          "sha256": "57462f3c981f6942df1c2c5251ee522a0cc400d6384cec12af008baca40887c4",
+          "url": "https://www.novainfrastructure.com/investments-index",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-harbor.html",
+          "sha256": "6fa6f38b82b34b326bec4c2fd399bf0f2b802f810922a3c845f5acad114f2bdf",
+          "url": "https://www.novainfrastructure.com/nova-invests-in-warehousing-logistics-business",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "74e23df34daddb499399a469c60462a5d1bd49c7a86efabb06ad00fc543a8015",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtizepvq0022282b6vpwx4ba",
+      "sha256": "ab3ba4fc837576b4f3e85074a04a9244ca159f57b7b563de772210e3330e1e5c"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0360-harbor-logistics-llc-v1/proposal.json",
+      "sha256": "95020354cd4fa9944485f5d3387ab785d40b474f5d19adbfd5024e3fb5e8cd5a"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0360-harbor-logistics-llc-v1.json",
+      "sha256": "159c08c1836714d281f27a6644b4d75f23b1d0b470cb9b492db033cda03347fb"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0356-0360-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "c8ae512aa0fe9c8488cc42eaba01a055129b77fd45fe7208a5a773ba990fe011",
+      "memberIndex": 4
+    },
+    "receiptSha256": "eac79c38109300a6585f10cf091674edf30b7971471db083152e8c6b1592f69f"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-team.html.capture.json",
+      "sha256": "517f4876180849b26796fae3b1f9d189603bf0e0fbd203f2316714e75b48b5b8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-investments.html.capture.json",
+      "sha256": "ba665fb711643cd29ea8d9b98ac29449c21549db2aa1a3dd49b3ca5ce6fe69a1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-harbor.html.capture.json",
+      "sha256": "509ead4a19c40bf87d27f3118d52574f3b0c48a4044e05114b11f1b7721f9170"
+    }
+  ]
+}

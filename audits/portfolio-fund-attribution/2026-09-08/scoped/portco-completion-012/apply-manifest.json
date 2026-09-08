@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "a52fa0f0d9fdf458f3551d93deb5d425bbe8d9bc43518caea2e5feb66b12db8b",
+  "sourceSnapshotSha256": "7c4c8926492ddfce887376ac19fc1209db509cac2f1deecac1716b02d91088c5",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 2,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 1,
+      "UNRESOLVED": 2
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 5,
+  "mutations": [
+    {
+      "recordId": "OFA-DB7DABFD82F7",
+      "ownershipPeriodId": "cmrxpk86q026givheoq8wg0qm",
+      "companyName": "CSV Midstream Solutions Corp.",
+      "country": "Canada",
+      "investmentFirm": "Northleaf",
+      "currentVehicleName": "Infrastructure funds managed by Northleaf; exact fund allocation not publicly disclosed",
+      "databaseVehicleName": "Infrastructure funds managed by Northleaf; exact fund allocation not publicly disclosed",
+      "investmentYear": 2019,
+      "stake": "100%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CSV's June 28, 2019 release identifies infrastructure funds managed by Northleaf as the 100% buyer but does not name an exact fund. Northleaf NEIF was an unsupported model estimate and is removed; direct investment by managed funds is not a direct corporate program. Preserve the 2019 entry and genuinely undisclosed allocation."
+      },
+      "evidenceUrls": [
+        "https://www.csvmidstream.com/news/press-releases/northleaf-capital-partners-acquires-csv-midstream-solutions-corp/"
+      ]
+    },
+    {
+      "recordId": "OFA-A31F4316086F",
+      "ownershipPeriodId": "cmrxpk88n026kivhei801lcbr",
+      "companyName": "Odfjell Terminals US Holdings LLC",
+      "country": "United States",
+      "investmentFirm": "Northleaf",
+      "currentVehicleName": "NCP US Terminals LP",
+      "databaseVehicleName": "NCP US Terminals LP",
+      "investmentYear": 2019,
+      "stake": "49%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Odfjell's June 7, 2019 closing release identifies funds managed by Northleaf as the buyer of 49%, without naming the investing funds. The Northleaf NEIF estimate is unsupported; NCP US Terminals LP remains the legal vehicle, not a substitute fund name. Exact fund allocation remains undisclosed."
+      },
+      "evidenceUrls": [
+        "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/"
+      ]
+    },
+    {
+      "recordId": "OFA-B279DCE8DA89",
+      "ownershipPeriodId": "cmtizeehq0004282bgkp8kda2",
+      "companyName": "Odfjell Terminals US Holdings LLC",
+      "country": "United States",
+      "investmentFirm": "Odfjell SE",
+      "currentVehicleName": "Odfjell Terminals Americas LLC",
+      "databaseVehicleName": "Odfjell Terminals Americas LLC",
+      "investmentYear": 2011,
+      "stake": "51%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Odfjell's corporate terminals table directly reports its 51% ownership of both U.S. terminals. This is corporate ownership through the existing Odfjell Terminals Americas LLC vehicle, not an unresolved investment-fund allocation. Preserve the legal vehicle, entry year and stake without creating or linking a fund."
+      },
+      "evidenceUrls": [
+        "https://www.odfjell.com/terminals",
+        "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/"
+      ]
+    },
+    {
+      "recordId": "OFA-4E5BE0BF3D59",
+      "ownershipPeriodId": "cmtizepvq0022282b6vpwx4ba",
+      "companyName": "Harbor Logistics, LLC",
+      "country": "United States",
+      "investmentFirm": "NOVA Infrastructure",
+      "currentVehicleName": "NOVA Infrastructure Fund I",
+      "databaseVehicleName": "NOVA Infrastructure Fund I",
+      "investmentYear": 2021,
+      "stake": "Controlling owner; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "NOVA's current team biographies expressly identify Harbor Logistics as a NOVA Fund I portfolio company. Replace unresolved attribution with this directly disclosed fund, retaining the audited December 2021 platform entry, controlling ownership with undisclosed exact stake and existing legal identity. No curated fund link is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.novainfrastructure.com/team",
+        "https://www.novainfrastructure.com/investments-index",
+        "https://www.novainfrastructure.com/nova-invests-in-warehousing-logistics-business"
+      ]
+    },
+    {
+      "recordId": "OFA-D681A8F7AF1F",
+      "ownershipPeriodId": "cmtj0jm8f000axx2be82y69im",
+      "companyName": "Xchange Telecom LLC",
+      "country": "United States",
+      "investmentFirm": "NOVA Infrastructure",
+      "currentVehicleName": "NOVA Infrastructure Fund I / NOVA-Xchange Investco, L.P.",
+      "databaseVehicleName": "NOVA Infrastructure Fund I / NOVA-Xchange Investco, L.P.",
+      "investmentYear": 2022,
+      "stake": "100%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed New York PSC petition, PDF pages 5-7, discloses NOVA Infrastructure Fund I's 71% economic participation in the acquisition complex alongside a blocker and GP structure. The Investco owns 100% of Xchange; that platform stake is not the fund's standalone percentage. Replace unresolved attribution with the disclosed Fund I, preserve the legal Investco vehicle and 2022 equity entry, and do not infer a curated fund link or direct Apollo ownership."
+      },
+      "evidenceUrls": [
+        "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B001E2688-0000-C613-91D7-60845F7F6CE4%7D",
+        "https://www.novainfrastructure.com/nova-infrastructure-acquires-xchange-telecom-skywire-networks",
+        "https://www.novainfrastructure.com/investments-index"
+      ]
+    }
+  ],
+  "manifestSha256": "7eef0b2d40be773f22575c363ff340fe2c3ad14ab9100f7bdcfe6abbaa2ef088"
+}
