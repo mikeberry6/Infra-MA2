@@ -14,7 +14,7 @@ Authoritative worktree: /Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repai
 
 Use nextNames(progress, true), preserving original source order: 331 Potters, 332 TraPac, 335 Yusen, 340 TowerPoint, 341 CRCHUM, 343 Altan, 354 Mercury, 355 Millennium, 357 Pocahontas, 358 Ascension.
 
-Read-only offline diagnostic on the actual evaluated seed/resolvers found exact counterparts for all 45 ownership periods across these ten names. This is preliminary evidence only: recapture and seal the selected safe-company proof during packet preparation. No production snapshot was taken for 021.
+Read-only offline diagnostic on the actual evaluated seed/resolvers found exact counterparts for all 42 ownership periods across these ten names. This is preliminary evidence only: recapture and seal the selected safe-company proof during packet preparation. No production snapshot was taken for 021.
 
 Prior completed batch directories: 011 for 331/332/335/340/341; 012 for 343/354/355/357/358. Their completion-after.json, decision records, original research chains, source bytes and review.json are reusable. Earlier parks caused by unsupported historical overlays or null production rationale may now be resolvable using the released seedIdentity / seedOnlyRationale paths. This does not resolve factual or identity gaps automatically. In particular, preserve CRCHUM's historical/current fund distinctions and Millennium's expressly inferred stake; never infer facts or count partial cleanup complete.
 
