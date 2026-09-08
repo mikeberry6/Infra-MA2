@@ -1,0 +1,135 @@
+{
+  "companyId": "cmrxpj9tv00okivhe1bj1dtst",
+  "name": "Boralex Inc.",
+  "sequence": 171,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/research-decision.json",
+      "sha256": "9e1c3c47c0a9520f5349411d5e4b36a168e5111f118437265d10a639af6cd9c4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/source-verification.json",
+      "sha256": "7765aaa261ecd794366769337ce5800d731c366d400fcf87468b7baac93fdcea"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e6f0af13ac1e02e7c803d2f8783a09042364d1e474b18b23f6601bf785ad6e1c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "c929128b47810d51c2459a756f5422400e2ab3b973d43d98a47097022d3f0ec2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0171-boralex-inc/attempt-1/chatgpt-attestation.json",
+      "sha256": "f2963ad2c26de20634a695a44c55fe77c53ff5d41f7e39965461de14ef06fcc5"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjv4o01m3ivhekpgpv69r",
+      "seedRecordId": "OFA-425E6CAAAEB7",
+      "expectedSeedSha256": "db8a834a0422b52ff045a97a91f286acd22a58e66f591037e77f91b021dcf090",
+      "expectedOwnerSha256": "17a024e4ecc435c27ab7560c9cec9ee72a8235ce8f0414fa8caa6a97e58bcb0e",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield BIF V",
+        "attributionConfidence": null,
+        "attributionRationale": "Boralex's May 1, 2026 management circular identifies Brookfield Infrastructure Fund V and BIF Thunder Holdings Inc.; page 85 names the Fund V entities providing equity commitments. Boralex's August 2026 release confirms completion of the arrangement. Preserve the existing BIF V fund link.",
+        "linkedFundName": "Brookfield BIF V"
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Preserve the disclosed Fund V attribution and link. Correct the rationale's inaccurate assertion that the closing release itself states 70%: the circular supplies the fund/structure evidence, while the closing release establishes completion. No canonical ownership percentage, legal vehicle, identity or date is changed.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/boralex-circular.pdf",
+          "sha256": "b092ed454abb8b19b044b90851c8326a8b8189da99f03e0d5e63cc8a716e7b61",
+          "url": "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/boralex-closing.html",
+          "sha256": "2d33962e27c6a28313b98f29f02b9eae22e6f79f3b695c25e923696e7ffbfb7c",
+          "url": "https://www.boralex.com/en/press-releases/brookfield-and-la-caisse-complete-acquisition-boralex",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpjv5701m4ivheldnfexl5",
+      "seedRecordId": "OFA-B77DB437C882",
+      "expectedSeedSha256": "9c7b047c79545f91684d38083f4f480f6abc628e9dc4947378ff06010b23124f",
+      "expectedOwnerSha256": "2ebe5e945a7cda234ed9297003f949d31325be428f2a8515ab5b2b249e7e0497",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Boralex's management circular identifies La Caisse itself as the equity-commitment provider alongside the Brookfield Fund V entities (page 85), and the August 2026 closing release confirms completion. This is disclosed La Caisse direct equity through the acquisition structure, not an unidentified third-party fund.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "The circular expressly distinguishes La Caisse's own equity commitment from Brookfield's named funds. Replace UNRESOLVED with supported DIRECT_PROGRAM; preserve the existing 30% interest, 2017 entry lineage, legal vehicle and manager identity.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/boralex-circular.pdf",
+          "sha256": "b092ed454abb8b19b044b90851c8326a8b8189da99f03e0d5e63cc8a716e7b61",
+          "url": "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/boralex-lacaisse.html",
+          "sha256": "2ca6efd701947cb26e7f7cd9f5132a5e838b3b5d8670d41aa8dc2082fb972ca4",
+          "url": "https://www.lacaisse.com/en/news/pressreleases/brookfield-caisse-complete-acquisition-boralex",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "b74840307f0b7a6ca1830265a9de1b5360336cc7c6759cb3ccbede99cd25a7c1",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjv4o01m3ivhekpgpv69r",
+      "sha256": "17a024e4ecc435c27ab7560c9cec9ee72a8235ce8f0414fa8caa6a97e58bcb0e"
+    },
+    {
+      "ownerId": "cmrxpjv5701m4ivheldnfexl5",
+      "sha256": "2ebe5e945a7cda234ed9297003f949d31325be428f2a8515ab5b2b249e7e0497"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0171-boralex-inc-v1/proposal.json",
+      "sha256": "e386b5b03c0e4c07045b3f196ae5efe3915d2dd9a3e3d2d85f3540af564ba52e"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0171-boralex-inc-v1.json",
+      "sha256": "330d1c674103b1e71d9117f41853f7715e9ca5b7b035388808873d04c169c987"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0167-0171-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "1021df080a0849260cd40b1ddcb06b2cd8e1f504d75a705419f467561e891ad8",
+      "memberIndex": 4
+    },
+    "receiptSha256": "580c995e912f097b6ec28217ce2fd0477a66083921bb60a136ff96c5161ebb64"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/boralex-circular.pdf.capture.json",
+      "sha256": "8e911833709837e05b6c1ca27d6c3d1cef3b5437c0948e2dbba6f80101393b8c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/boralex-closing.html.capture.json",
+      "sha256": "fd4c88cd652874dcb7a63c1c0d01c71c005baeab2ac624b261182c0cbace1f09"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/boralex-lacaisse.html.capture.json",
+      "sha256": "d8c4d19bd794469c4689948783a674ad2bc81d10bbb3ac859384c7397175ae6e"
+    }
+  ]
+}

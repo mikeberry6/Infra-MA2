@@ -1,0 +1,98 @@
+{
+  "companyId": "cmrxpj9zn00orivhel69huml1",
+  "name": "Duke Energy Florida",
+  "sequence": 162,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/research-decision.json",
+      "sha256": "654d91b821048c71da9e39ca6348d27321841cecf042004d18d35f44fd2431fd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/source-verification.json",
+      "sha256": "564e434bca02632af864443e6737067931a71869fec1aea880a6a8b4144b3e12"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "193c76da058433cbb117fe9c36f0e862f93c5c2835c52f07792a029094fc4508"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/chatgpt-response-validation.json",
+      "sha256": "405c266774ca964d80ec8f1dc43c047922c42d67783fc7e9d35dcf40bfcb5aec"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0162-duke-energy-florida/attempt-1/chatgpt-attestation.json",
+      "sha256": "81bba8434fcf1dd6e6203d684d2454afef698b917ef50523fdbc931863a3420e"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjv8s01mbivhez214hok2",
+      "seedRecordId": "OFA-11FAF168D3AD",
+      "expectedSeedSha256": "0ef40f70b7694a57d632ab43864328e9e96fd91967f9ff4dff78520344b810ae",
+      "expectedOwnerSha256": "d51832ad0ef0ee3f4838a5c7378ed37488fbe3ab575404741fe8a01e579438d6",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield Super-Core Infrastructure Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Duke Energy's executed agreement and closing filings identify Brookfield Super-Core Infrastructure Partners and Peninsula Power Holdings L.P. as the direct investment fund and vehicle for the closed 9.19% indirect interest in Duke Energy Florida.",
+        "linkedFundName": "Brookfield Super-Core Infrastructure Partners"
+      },
+      "productionChange": "NONE",
+      "reason": "Executed agreement names the BSIP fund entities and their equity commitment to the investor; the June 2026 10-Q confirms the March 3 first closing at 9.19%. Preserve production attribution and all current/pending tranche distinctions; align equivalent seed wording only.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/duke-agreement.html",
+          "sha256": "6671e63584e3edb080d536bca5eee26ce8b1fc472fab9c8c6af38c178718f8bc",
+          "url": "https://www.sec.gov/Archives/edgar/data/30371/000132616025000192/duk-202509x10qxexx101.htm",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/duke-current.html",
+          "sha256": "28d324093e6222e59a6ab34ddb2e8f9231f4fa18b0e931a1f9f6e06e57f2d155",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326160/000132616026000040/duk-20260630.htm",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "99a0b1bb87352a2990984ed0e7b627abfaeeac5153207b99971b29fd3e790730",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjv8s01mbivhez214hok2",
+      "sha256": "d51832ad0ef0ee3f4838a5c7378ed37488fbe3ab575404741fe8a01e579438d6"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0162-duke-energy-florida-v1/proposal.json",
+      "sha256": "de78328f67314c79e984f6c4eaa4a4d306c5544d4036e26404747a285d97b9f7"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0162-duke-energy-florida-v1.json",
+      "sha256": "08d6cdb92bfb039a4865f4247fa66aba92fc19737be77ced5e534b4fc7c16d2b"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0162-0166-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "a9768f5340ce906843cb282438dbc057bde2a29832289583143427af07c75af0",
+      "memberIndex": 0
+    },
+    "receiptSha256": "b67070febd343b054e19c2e8b371e6561c7756b2059b79b22ca30ed0ecf4aac7"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/duke-agreement.html.capture.json",
+      "sha256": "c2a3bdb0110f2c0a1993fb5972742010fa91ca4a02fc0f01bc29cbd48996fa1f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/duke-current.html.capture.json",
+      "sha256": "f9bfff6c39186ec0836ff9b32b52e004f9bd572cd6bdf74d24a74618a95b000d"
+    }
+  ]
+}

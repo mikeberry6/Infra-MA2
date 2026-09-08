@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "2bef63f392db8b17edb276a75c0ee737b79695fc0232ff1235189e226d93886e",
+  "sourceSnapshotSha256": "6eb300632ab813a613c15dc1ca7f5a1b7db478ec581a4cdd011ef75af971cf36",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 2,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 3,
+      "UNRESOLVED": 3
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 8,
+  "mutations": [
+    {
+      "recordId": "OFA-A08891398105",
+      "ownershipPeriodId": "cmrxpk2hr01xmivhevyothznb",
+      "companyName": "Vanguard Renewables",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "BlackRock Global Energy & Power Infrastructure Fund III",
+      "databaseVehicleName": null,
+      "investmentYear": 2022,
+      "stake": "Majority interest; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "BlackRock's October 24, 2022 release explicitly lists Vanguard Renewables among Global Energy & Power Infrastructure Fund III investments. Preserve the existing GEPIF III link; the fund is disclosed, not estimated."
+      },
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close"
+      ]
+    },
+    {
+      "recordId": "OFA-425E6CAAAEB7",
+      "ownershipPeriodId": "cmrxpjv4o01m3ivhekpgpv69r",
+      "companyName": "Boralex Inc.",
+      "country": "United States / Canada / France / United Kingdom",
+      "investmentFirm": "Brookfield",
+      "currentVehicleName": "BIF Thunder Holdings Inc.; participating partners include Brookfield Renewable Partners",
+      "databaseVehicleName": "BIF Thunder Holdings Inc.; participating partners include Brookfield Renewable Partners",
+      "investmentYear": 2026,
+      "stake": "70%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Brookfield BIF V",
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": "Brookfield BIF V"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield BIF V",
+        "attributionConfidence": null,
+        "attributionRationale": "Boralex's May 1, 2026 management circular identifies Brookfield Infrastructure Fund V and BIF Thunder Holdings Inc.; page 85 names the Fund V entities providing equity commitments. Boralex's August 2026 release confirms completion of the arrangement. Preserve the existing BIF V fund link."
+      },
+      "evidenceUrls": [
+        "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+        "https://www.boralex.com/en/press-releases/brookfield-and-la-caisse-complete-acquisition-boralex"
+      ]
+    },
+    {
+      "recordId": "OFA-B77DB437C882",
+      "ownershipPeriodId": "cmrxpjv5701m4ivheldnfexl5",
+      "companyName": "Boralex Inc.",
+      "country": "United States / Canada / France / United Kingdom",
+      "investmentFirm": "La Caisse de dépôt (CDPQ)",
+      "currentVehicleName": "Direct equity through the BIF Thunder acquisition structure",
+      "databaseVehicleName": "Direct equity through the BIF Thunder acquisition structure",
+      "investmentYear": 2017,
+      "stake": "30% current; 17.3% at 2017 entry and approximately 15% immediately before closing",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Boralex's management circular identifies La Caisse itself as the equity-commitment provider alongside the Brookfield Fund V entities (page 85), and the August 2026 closing release confirms completion. This is disclosed La Caisse direct equity through the acquisition structure, not an unidentified third-party fund."
+      },
+      "evidenceUrls": [
+        "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+        "https://www.lacaisse.com/en/news/pressreleases/brookfield-caisse-complete-acquisition-boralex"
+      ]
+    },
+    {
+      "recordId": "OFA-3CD0DD9A5E61",
+      "ownershipPeriodId": "cmrxpjwxu01p2ivhet3z3ze2b",
+      "companyName": "Renewa",
+      "country": "United States",
+      "investmentFirm": "La Caisse de dépôt (CDPQ)",
+      "currentVehicleName": "Sustainable Land Management initiative",
+      "databaseVehicleName": "Sustainable Land Management initiative",
+      "investmentYear": 2025,
+      "stake": "US$200 million primary equity investment; percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's July 15, 2025 announcement expressly identifies its US$200 million primary equity commitment in Renewa through its Sustainable Land Management initiative within its Infrastructure portfolio. This is a disclosed direct program, not an inferred CDPQ Infrastructure fund."
+      },
+      "evidenceUrls": [
+        "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under"
+      ]
+    },
+    {
+      "recordId": "OFA-B4D1519E0475",
+      "ownershipPeriodId": "cmrxpjwyh01p3ivheanfbimsd",
+      "companyName": "Renewa",
+      "country": "United States",
+      "investmentFirm": "QIC",
+      "currentVehicleName": "Managed client / QIC-managed funds; exact vehicle not publicly disclosed",
+      "databaseVehicleName": "Managed client / QIC-managed funds; exact vehicle not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The July 15, 2025 joint announcement states that QIC-managed funds acquired Renewa in 2022, but does not name those funds. Preserve the managed-fund relationship without inventing a fund name or treating nondisclosure as direct-program evidence."
+      },
+      "evidenceUrls": [
+        "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under"
+      ]
+    },
+    {
+      "recordId": "OFA-819FD505BA7F",
+      "ownershipPeriodId": "cmrxpjx3r01p9ivhecnt245kc",
+      "companyName": "Vertical Bridge",
+      "country": "United States",
+      "investmentFirm": "La Caisse de dépôt (CDPQ)",
+      "currentVehicleName": "La Caisse de dépôt (CDPQ)",
+      "databaseVehicleName": null,
+      "investmentYear": 2019,
+      "stake": "30% at 2019 entry; current percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's April 2, 2019 announcement identifies CDPQ itself as the investor acquiring a 30% stake in Vertical Bridge's main operating subsidiary. Vertical Bridge's 2026 KKR announcement confirms La Caisse remains a sponsor. CDPQ Infrastructure is not a disclosed separate fund in these sources."
+      },
+      "evidenceUrls": [
+        "https://www.lacaisse.com/en/news/pressreleases/cdpq-acquire-30-stake-us-wireless-infrastructure-leader-vertical-bridge",
+        "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr"
+      ]
+    },
+    {
+      "recordId": "OFA-5696A4EBDDAC",
+      "ownershipPeriodId": "cmrxpjx4d01paivhemkp8i7lc",
+      "companyName": "Vertical Bridge",
+      "country": "United States",
+      "investmentFirm": "DigitalBridge",
+      "currentVehicleName": "Affiliated funds; exact vehicles not publicly disclosed",
+      "databaseVehicleName": "Affiliated funds; exact vehicles not publicly disclosed",
+      "investmentYear": 2014,
+      "stake": "Controlling stake from 2021; current percentage and post-2026 control not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DigitalBridge's October 13, 2021 closing release identifies funds affiliated with DigitalBridge Investment Management as acquiring control of Vertical Bridge but does not name the funds. DigitalBridge Equity is a strategy/platform label, not an expressly disclosed fund for this holding."
+      },
+      "evidenceUrls": [
+        "https://www.digitalbridge.com/news/2021-10-13-digitalbridge-completes-acquisition-of-controlling-stake-in-vertical-bridge",
+        "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr"
+      ]
+    },
+    {
+      "recordId": "OFA-5C7702D6C6A7",
+      "ownershipPeriodId": "cmrxpjx4w01pbivheojejxaas",
+      "companyName": "Vertical Bridge",
+      "country": "United States",
+      "investmentFirm": "KKR",
+      "currentVehicleName": "Core infrastructure strategy; exact fund or affiliate not publicly disclosed",
+      "databaseVehicleName": "Core infrastructure strategy; exact fund or affiliate not publicly disclosed",
+      "investmentYear": 2026,
+      "stake": "US$1.5 billion equity investment; percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Vertical Bridge's strategic equity announcement states that KKR is funding its investment primarily through its core infrastructure strategy. It does not identify KKR Global Infrastructure Investors V or another specific fund; retain the disclosed strategy without estimating a fund."
+      },
+      "evidenceUrls": [
+        "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr"
+      ]
+    }
+  ],
+  "manifestSha256": "2894529aef9ba397d00e9f9f321f79616a973bf48692bcfc3f4d7a9361c42e4f"
+}

@@ -65,10 +65,10 @@ describe("portfolio fund attribution seed manifest", () => {
     const inferred = manifest.records.filter((record) => record.fundAttribution === "INFERRED");
     expect(manifest.policy.fundCreates).toBe(0);
     expect(manifest.policy.fundUpdates).toBe(0);
-    // Completion batch 002 replaces five unsupported estimates with sourced classifications.
-    expect(manifest.policy.inferredAssignments).toBe(449);
-    expect(inferred).toHaveLength(449);
-    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(71);
+    // Batch 005 discloses Vanguard's fund and identifies Boralex/La Caisse's direct equity.
+    expect(manifest.policy.inferredAssignments).toBe(448);
+    expect(inferred).toHaveLength(448);
+    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(70);
     expect(manifest.records.every((record) => (
       record.fundAttribution !== "INFERRED"
       || (

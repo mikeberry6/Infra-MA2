@@ -1,0 +1,162 @@
+{
+  "companyId": "cmrxpjbqt00riivhe4i0hbeof",
+  "name": "Vertical Bridge",
+  "sequence": 174,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/research-decision.json",
+      "sha256": "f02d89a2cd35c6d1cc2ff0bcbf5bc260c0a86ddd914f1f02f77ad5673fa76739"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/source-verification.json",
+      "sha256": "e9515bb8937cf696927fe554a69b3154f65e5eb8591319a8483b31ec00315ee0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "148ff03bb4450786d71ff0ee03f08ac64051afa660aa187dbd824e7c3eb09b83"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/chatgpt-response-validation.json",
+      "sha256": "5ba6136ce275b86cbf8d91842fc16b2da3d0cc5f0844a14dba63b00f4595b3e7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0174-vertical-bridge/attempt-1/chatgpt-attestation.json",
+      "sha256": "1f1c5d274558bdd5b3ac45da0e65d65ec2fc815f7d6127f7e1e7bbd00ea7a02c"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjx3r01p9ivhecnt245kc",
+      "seedRecordId": "OFA-819FD505BA7F",
+      "expectedSeedSha256": "dac0c8795424f50053f27eabf3e5555fe326a84dd5a0c12bc86f052d127ce950",
+      "expectedOwnerSha256": "9e436dcdcb37756bebd0ae3bd1f726b063828d22cbd602e8af3ce0dab8615ca1",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's April 2, 2019 announcement identifies CDPQ itself as the investor acquiring a 30% stake in Vertical Bridge's main operating subsidiary. Vertical Bridge's 2026 KKR announcement confirms La Caisse remains a sponsor. CDPQ Infrastructure is not a disclosed separate fund in these sources.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Distinguish pension direct ownership from a supposed named CDPQ Infrastructure fund. Preserve the historical entry stake and current unknown-stake qualification; no new holding, year or legal vehicle.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vertical-lacaisse.html",
+          "sha256": "705efe6f53891bd366c0ed6c47de57da3909cc130f2ef56ba127359acd56080a",
+          "url": "https://www.lacaisse.com/en/news/pressreleases/cdpq-acquire-30-stake-us-wireless-infrastructure-leader-vertical-bridge",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vertical-kkr.html",
+          "sha256": "bad085b2a6736b67ae3905357c113110d5fb4507be155e9c9c8110cc978fad10",
+          "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpjx4d01paivhemkp8i7lc",
+      "seedRecordId": "OFA-5696A4EBDDAC",
+      "expectedSeedSha256": "07509b2e35a6af538fa3af34bebf2c3c7cd71d55dbd6317e740374977ef62b30",
+      "expectedOwnerSha256": "3e1f5369851cd492c68ff8050ee578e44db4adaaf7ee615a1ef8b47c66ffbb22",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DigitalBridge's October 13, 2021 closing release identifies funds affiliated with DigitalBridge Investment Management as acquiring control of Vertical Bridge but does not name the funds. DigitalBridge Equity is a strategy/platform label, not an expressly disclosed fund for this holding.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove unsupported named-fund attribution while preserving affiliated-fund ownership, entry/control chronology and current stake qualification. The 2026 investment announcement confirms DigitalBridge remains a sponsor, without naming a fund.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vertical-digitalbridge.html",
+          "sha256": "861b0ba91073387831a233afb6dc4c98e2885c6ae1ea3da232e757fa92d50aed",
+          "url": "https://www.digitalbridge.com/news/2021-10-13-digitalbridge-completes-acquisition-of-controlling-stake-in-vertical-bridge",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vertical-kkr.html",
+          "sha256": "bad085b2a6736b67ae3905357c113110d5fb4507be155e9c9c8110cc978fad10",
+          "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpjx4w01pbivheojejxaas",
+      "seedRecordId": "OFA-5C7702D6C6A7",
+      "expectedSeedSha256": "18462a9d9e5f1a1fef6850037cfe9a797f542d2c90499cbd4046f2a423885303",
+      "expectedOwnerSha256": "aee0e23f5931f399b4beca36dd2e36f3894ffb6156117bc77cc6ab9fe914dcd5",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Vertical Bridge's strategic equity announcement states that KKR is funding its investment primarily through its core infrastructure strategy. It does not identify KKR Global Infrastructure Investors V or another specific fund; retain the disclosed strategy without estimating a fund.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove INFERRED/MEDIUM Fund V assignment unsupported by the direct issuer announcement. Preserve the existing core-strategy vehicle description, investment timing and undisclosed ownership percentage.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vertical-kkr.html",
+          "sha256": "bad085b2a6736b67ae3905357c113110d5fb4507be155e9c9c8110cc978fad10",
+          "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "602c5a0cf7ed9ae1b3bdfa887e78e3a7af0e9415404d11d4e87686bc9332c8aa",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjx3r01p9ivhecnt245kc",
+      "sha256": "9e436dcdcb37756bebd0ae3bd1f726b063828d22cbd602e8af3ce0dab8615ca1"
+    },
+    {
+      "ownerId": "cmrxpjx4d01paivhemkp8i7lc",
+      "sha256": "3e1f5369851cd492c68ff8050ee578e44db4adaaf7ee615a1ef8b47c66ffbb22"
+    },
+    {
+      "ownerId": "cmrxpjx4w01pbivheojejxaas",
+      "sha256": "aee0e23f5931f399b4beca36dd2e36f3894ffb6156117bc77cc6ab9fe914dcd5"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0174-vertical-bridge-v2/proposal.json",
+      "sha256": "38062135023ab84b2247d5e994f2f5fe9f7f089a75c1dcaead66b04b19d4e8d1"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0174-vertical-bridge-v2.json",
+      "sha256": "cc097752e23c88fe400295282b61e0f6db69e89d8e46868563cd36b5c09abced"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v7/production-apply/batch-apply-receipt.json",
+      "sha256": "7352c94e46e3609069f5e38313043845ac1ea9bab5cc6460d7a44ad440b831c2",
+      "memberIndex": 2
+    },
+    "receiptSha256": "475207db1cc2c4971f34480147de460872685ac905eb11b5fff66bc488ec5156"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vertical-lacaisse.html.capture.json",
+      "sha256": "57dee4b33673701d26a3b5f1f547a895bd3c92d29a489aa8c2bf77ab5843cfd5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vertical-kkr.html.capture.json",
+      "sha256": "e64033d3d333626d984e34f5bc64a1b0ca9af447aee15e39f210bb2422c0f583"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vertical-digitalbridge.html.capture.json",
+      "sha256": "f189da4a1c329abe43632c83528750e2769d4e04c126090feeb25c2484614cbf"
+    }
+  ]
+}
