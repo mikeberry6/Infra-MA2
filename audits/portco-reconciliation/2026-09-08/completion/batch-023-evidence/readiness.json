@@ -1,0 +1,2276 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_REVISIT_OFFLINE_READINESS",
+  "createdAt": "2026-09-08T19:26:32.801Z",
+  "progressSha256": "b400d35b6e3bc74eac19e4da30882954b13cc1778e3be03ac2b83c2f2999d457",
+  "scope": "Read-only existing evidence and evaluated seed comparison. Not research, approval, production capture, batch activation or completion.",
+  "rows": [
+    {
+      "sequence": 380,
+      "name": "EdgeCore Digital Infrastructure",
+      "companyId": "cmtj598vu000k2a2bg9cs4trp",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001",
+      "priorIssue": "Former GIC, OPTrust and Mount Elbert ownership is UNRESOLVED without active seed bindings. PG minority co-investment is disclosed in 2024, and fresh Task381 SEC filing also names EdgeCore Holdings LP with an August 22 2024 acquisition, but this does not resolve complete historical ownership or exact allocation. No partial current patch or inferred seller rollover.",
+      "evidenceChecked": 14,
+      "owners": [
+        {
+          "ownerId": "cmtj5996s000v2a2bgsd0ybtr",
+          "organization": "Partners Group",
+          "active": true,
+          "vehicle": "EdgeCore Holdings, L.P.; Partners Group client vehicles",
+          "stake": "Majority; individual client allocations not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-380000000001",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Partners Group",
+            "ownershipVehicle": "EdgeCore Holdings, L.P.; Partners Group client vehicles",
+            "vehicleName": "EdgeCore Holdings, L.P.; Partners Group client vehicles",
+            "investmentYear": 2022,
+            "stake": "Majority; individual client allocations not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj5997z000w2a2bnhjz0x1s",
+          "organization": "GIC",
+          "active": false,
+          "vehicle": "EdgeCore Internet Real Estate, LLC",
+          "stake": "Anchor investment; percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-E267093B929B46413BA01159",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "GIC",
+            "ownershipVehicle": "EdgeCore Internet Real Estate, LLC",
+            "vehicleName": "EdgeCore Internet Real Estate, LLC",
+            "investmentYear": 2018,
+            "exitYear": 2022,
+            "stake": "Anchor investment; percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj59990000x2a2b7l5362uy",
+          "organization": "OPTrust",
+          "active": false,
+          "vehicle": "EdgeCore Internet Real Estate, LLC",
+          "stake": "Equity interest; percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-65E2316596F9787E174921EF",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "OPTrust",
+            "ownershipVehicle": "EdgeCore Internet Real Estate, LLC",
+            "vehicleName": "EdgeCore Internet Real Estate, LLC",
+            "investmentYear": 2018,
+            "exitYear": 2022,
+            "stake": "Equity interest; percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj599ar000z2a2bopod66aa",
+          "organization": "Mount Elbert Capital Partners",
+          "active": false,
+          "vehicle": "EdgeCore Internet Real Estate, LLC",
+          "stake": "Founding equity; percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-355CF133C2BEFE177DB13EAD",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Mount Elbert Capital Partners",
+            "ownershipVehicle": "EdgeCore Internet Real Estate, LLC",
+            "vehicleName": "EdgeCore Internet Real Estate, LLC",
+            "investmentYear": 2018,
+            "exitYear": 2022,
+            "stake": "Founding equity; percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "EdgeCore Digital Infrastructure",
+            "country": "United States",
+            "companySha256": "69eaad14f7db1590e3e69a938c87b32a148c8a14b1b1744679f00bfb9d7ac07f",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Partners Group",
+                  "ownershipVehicle": "EdgeCore Holdings, L.P.; Partners Group client vehicles",
+                  "vehicleName": "EdgeCore Holdings, L.P.; Partners Group client vehicles",
+                  "investmentYear": 2022,
+                  "stake": "Majority; individual client allocations not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Partners Group",
+                "vehicleName": "EdgeCore Holdings, L.P.; Partners Group client vehicles",
+                "fundLookupName": "EdgeCore Holdings, L.P.; Partners Group client vehicles",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "GIC",
+                  "ownershipVehicle": "EdgeCore Internet Real Estate, LLC",
+                  "vehicleName": "EdgeCore Internet Real Estate, LLC",
+                  "investmentYear": 2018,
+                  "exitYear": 2022,
+                  "stake": "Anchor investment; percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "GIC",
+                "vehicleName": "EdgeCore Internet Real Estate, LLC",
+                "fundLookupName": "EdgeCore Internet Real Estate, LLC",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "OPTrust",
+                  "ownershipVehicle": "EdgeCore Internet Real Estate, LLC",
+                  "vehicleName": "EdgeCore Internet Real Estate, LLC",
+                  "investmentYear": 2018,
+                  "exitYear": 2022,
+                  "stake": "Equity interest; percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "OPTrust",
+                "vehicleName": "EdgeCore Internet Real Estate, LLC",
+                "fundLookupName": "EdgeCore Internet Real Estate, LLC",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Mount Elbert Capital Partners",
+                  "ownershipVehicle": "EdgeCore Internet Real Estate, LLC",
+                  "vehicleName": "EdgeCore Internet Real Estate, LLC",
+                  "investmentYear": 2018,
+                  "exitYear": 2022,
+                  "stake": "Founding equity; percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Mount Elbert Capital Partners",
+                "vehicleName": "EdgeCore Internet Real Estate, LLC",
+                "fundLookupName": "EdgeCore Internet Real Estate, LLC",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "284f2d5b25aa07d48d7f9894b37a10189cb4e8a687d83623efecc118ce3dcc57"
+      }
+    },
+    {
+      "sequence": 382,
+      "name": "Milestone Equipment Holdings, LLC",
+      "companyId": "cmtj59bjr001l2a2bu371qye3",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001",
+      "priorIssue": "Current PG/Barings exact funds and vehicles unavailable; seed DISCLOSED values represent undisclosed vehicle placeholders. Preserve genuine UNRESOLVED production and historical Wood Creek/Blackstone unknowns; null rationale/seed mismatch cannot be harmonized through unsupported text/identity inference.",
+      "evidenceChecked": 14,
+      "owners": [
+        {
+          "ownerId": "cmtj59bt4001u2a2bszavwsg3",
+          "organization": "Partners Group",
+          "active": true,
+          "vehicle": "Partners Group client infrastructure vehicles not publicly disclosed",
+          "stake": "Co-control; percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-382000000001",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Partners Group",
+            "ownershipVehicle": "Partners Group client infrastructure vehicles not publicly disclosed",
+            "vehicleName": "Partners Group client infrastructure vehicles not publicly disclosed",
+            "investmentYear": 2021,
+            "stake": "Co-control; percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj59bun001w2a2by53f2sni",
+          "organization": "Barings",
+          "active": true,
+          "vehicle": "Barings private-infrastructure vehicles not publicly disclosed",
+          "stake": "Co-control; percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-382000000002",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Barings",
+            "ownershipVehicle": "Barings private-infrastructure vehicles not publicly disclosed",
+            "vehicleName": "Barings private-infrastructure vehicles not publicly disclosed",
+            "investmentYear": 2016,
+            "stake": "Co-control; percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj59bw8001y2a2bierdpugi",
+          "organization": "Wood Creek Capital Management",
+          "active": false,
+          "vehicle": "Wood Creek vehicles not publicly disclosed",
+          "stake": "Majority; percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-0C21EC6EB3C43D85164C8A60",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Wood Creek Capital Management",
+            "ownershipVehicle": "Wood Creek vehicles not publicly disclosed",
+            "vehicleName": "Wood Creek vehicles not publicly disclosed",
+            "investmentYear": 2015,
+            "exitYear": 2016,
+            "stake": "Majority; percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj59bxs00202a2b46lfg8my",
+          "organization": "Blackstone Tactical Opportunities",
+          "active": false,
+          "vehicle": "Blackstone-managed funds not publicly disclosed",
+          "stake": "Control or majority; percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-C47B604A572FA0793FB08A0F",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Blackstone Tactical Opportunities",
+            "ownershipVehicle": "Blackstone-managed funds not publicly disclosed",
+            "vehicleName": "Blackstone-managed funds not publicly disclosed",
+            "investmentYear": 2012,
+            "exitYear": 2015,
+            "stake": "Control or majority; percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Milestone Equipment Holdings, LLC",
+            "country": "United States",
+            "companySha256": "ca98154481622a94ba4e7f3e5fa72f3faa49f980a1ce4b4618782f7556f0ba9c",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Partners Group",
+                  "ownershipVehicle": "Partners Group client infrastructure vehicles not publicly disclosed",
+                  "vehicleName": "Partners Group client infrastructure vehicles not publicly disclosed",
+                  "investmentYear": 2021,
+                  "stake": "Co-control; percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Partners Group",
+                "vehicleName": "Partners Group client infrastructure vehicles not publicly disclosed",
+                "fundLookupName": "Partners Group client infrastructure vehicles not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Barings",
+                  "ownershipVehicle": "Barings private-infrastructure vehicles not publicly disclosed",
+                  "vehicleName": "Barings private-infrastructure vehicles not publicly disclosed",
+                  "investmentYear": 2016,
+                  "stake": "Co-control; percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Barings",
+                "vehicleName": "Barings private-infrastructure vehicles not publicly disclosed",
+                "fundLookupName": "Barings private-infrastructure vehicles not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Wood Creek Capital Management",
+                  "ownershipVehicle": "Wood Creek vehicles not publicly disclosed",
+                  "vehicleName": "Wood Creek vehicles not publicly disclosed",
+                  "investmentYear": 2015,
+                  "exitYear": 2016,
+                  "stake": "Majority; percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Wood Creek Capital Management",
+                "vehicleName": "Wood Creek vehicles not publicly disclosed",
+                "fundLookupName": "Wood Creek vehicles not publicly disclosed",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Blackstone Tactical Opportunities",
+                  "ownershipVehicle": "Blackstone-managed funds not publicly disclosed",
+                  "vehicleName": "Blackstone-managed funds not publicly disclosed",
+                  "investmentYear": 2012,
+                  "exitYear": 2015,
+                  "stake": "Control or majority; percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Blackstone Tactical Opportunities",
+                "vehicleName": "Blackstone-managed funds not publicly disclosed",
+                "fundLookupName": "Blackstone-managed funds not publicly disclosed",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "3241fe266807fad1dfa98d37729300ca1c916abf1011c9177517c5f7cc3548fd"
+      }
+    },
+    {
+      "sequence": 383,
+      "name": "USIC",
+      "companyId": "cmtj59czh00262a2bzt0pt8u6",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001",
+      "priorIssue": "Former OMERS Private Equity is known direct program but UNRESOLVED without active seed binding; current PG/Kohlberg fund allocations and co-investor title/stakes remain unavailable. Preserve exact50/50 current ownership and separate Kohlberg historical re-entry. No partial current correction.",
+      "evidenceChecked": 14,
+      "owners": [
+        {
+          "ownerId": "cmtj59dbx002j2a2bgolap12z",
+          "organization": "Partners Group",
+          "active": true,
+          "vehicle": "Indirect Onecall ownership; client vehicles not publicly disclosed",
+          "stake": "50%; sole control from 2017 until the 2022 partial sell-down",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-383000000001",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Partners Group",
+            "ownershipVehicle": "Indirect Onecall ownership; client vehicles not publicly disclosed",
+            "vehicleName": "Indirect Onecall ownership; client vehicles not publicly disclosed",
+            "investmentYear": 2017,
+            "stake": "50%; sole control from 2017 until the 2022 partial sell-down",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj59ddg002l2a2bl4b1a0in",
+          "organization": "Kohlberg",
+          "active": true,
+          "vehicle": "Kohlberg-led consortium through indirect Onecall ownership",
+          "stake": "50%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-383000000002",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Kohlberg",
+            "ownershipVehicle": "Kohlberg-led consortium through indirect Onecall ownership",
+            "vehicleName": "Kohlberg-led consortium through indirect Onecall ownership",
+            "investmentYear": 2022,
+            "stake": "50%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj59deh002m2a2b4y2u8av8",
+          "organization": "Kohlberg",
+          "active": false,
+          "vehicle": "Kohlberg affiliates not publicly disclosed",
+          "stake": "Control; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-76050086DC5FDCB96731869B",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Kohlberg",
+            "ownershipVehicle": "Kohlberg affiliates not publicly disclosed",
+            "vehicleName": "Kohlberg affiliates not publicly disclosed",
+            "investmentYear": 2008,
+            "exitYear": 2010,
+            "stake": "Control; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj59dg1002o2a2bx9lfm09l",
+          "organization": "OMERS Private Equity",
+          "active": false,
+          "vehicle": "Direct private-equity vehicle not publicly disclosed",
+          "stake": "Control; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-4152381812680D7862E42E73",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "OMERS Private Equity",
+            "ownershipVehicle": "Direct private-equity vehicle not publicly disclosed",
+            "vehicleName": "Direct private-equity vehicle not publicly disclosed",
+            "investmentYear": 2010,
+            "exitYear": 2013,
+            "stake": "Control; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj59dhl002q2a2bwdfvcyq7",
+          "organization": "Leonard Green",
+          "active": false,
+          "vehicle": "Leonard Green affiliates not publicly disclosed",
+          "stake": "Control; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-0290C9FC3E5D6A68445ACEEE",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Leonard Green",
+            "ownershipVehicle": "Leonard Green affiliates not publicly disclosed",
+            "vehicleName": "Leonard Green affiliates not publicly disclosed",
+            "investmentYear": 2013,
+            "exitYear": 2017,
+            "stake": "Control; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "USIC",
+            "country": "United States",
+            "companySha256": "4ea6ca953ce3209f8c92452764e96f7615e67dc114d82365fb2bd790aed5f1bb",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Partners Group",
+                  "ownershipVehicle": "Indirect Onecall ownership; client vehicles not publicly disclosed",
+                  "vehicleName": "Indirect Onecall ownership; client vehicles not publicly disclosed",
+                  "investmentYear": 2017,
+                  "stake": "50%; sole control from 2017 until the 2022 partial sell-down",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Partners Group",
+                "vehicleName": "Indirect Onecall ownership; client vehicles not publicly disclosed",
+                "fundLookupName": "Indirect Onecall ownership; client vehicles not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Kohlberg",
+                  "ownershipVehicle": "Kohlberg-led consortium through indirect Onecall ownership",
+                  "vehicleName": "Kohlberg-led consortium through indirect Onecall ownership",
+                  "investmentYear": 2022,
+                  "stake": "50%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Kohlberg",
+                "vehicleName": "Kohlberg-led consortium through indirect Onecall ownership",
+                "fundLookupName": "Kohlberg-led consortium through indirect Onecall ownership",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Kohlberg",
+                  "ownershipVehicle": "Kohlberg affiliates not publicly disclosed",
+                  "vehicleName": "Kohlberg affiliates not publicly disclosed",
+                  "investmentYear": 2008,
+                  "exitYear": 2010,
+                  "stake": "Control; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Kohlberg",
+                "vehicleName": "Kohlberg affiliates not publicly disclosed",
+                "fundLookupName": "Kohlberg affiliates not publicly disclosed",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "OMERS Private Equity",
+                  "ownershipVehicle": "Direct private-equity vehicle not publicly disclosed",
+                  "vehicleName": "Direct private-equity vehicle not publicly disclosed",
+                  "investmentYear": 2010,
+                  "exitYear": 2013,
+                  "stake": "Control; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "OMERS Private Equity",
+                "vehicleName": "Direct private-equity vehicle not publicly disclosed",
+                "fundLookupName": "Direct private-equity vehicle not publicly disclosed",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Leonard Green",
+                  "ownershipVehicle": "Leonard Green affiliates not publicly disclosed",
+                  "vehicleName": "Leonard Green affiliates not publicly disclosed",
+                  "investmentYear": 2013,
+                  "exitYear": 2017,
+                  "stake": "Control; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Leonard Green",
+                "vehicleName": "Leonard Green affiliates not publicly disclosed",
+                "fundLookupName": "Leonard Green affiliates not publicly disclosed",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "6e7d8d565277ff68243b467dc50ec9eeb27f4365dba983f4ab2033e9e6b00af9"
+      }
+    },
+    {
+      "sequence": 384,
+      "name": "407 International Inc.",
+      "companyId": "cmtj6tww600003s2blir9wvv5",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001",
+      "priorIssue": "Former AtkinsRealis, Macquarie listed-vehicle and CDPQ interests retain UNRESOLVED attribution without active seed bindings; current SPVs must not be fund names. Preserve Ferrovial48.29/CPP44.20 block including undisclosed co-investors/PSP7.51 and exact years. Do not infer CPP look-through.",
+      "evidenceChecked": 14,
+      "owners": [
+        {
+          "ownerId": "cmtj6txeb000b3s2bezrzzmzd",
+          "organization": "Ferrovial N.V.",
+          "active": true,
+          "vehicle": "Cintra 4352238 Investments Inc.; 1568417 B.C. Ltd.",
+          "stake": "48.29%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-384000000001",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Ferrovial N.V.",
+            "ownershipVehicle": "Cintra 4352238 Investments Inc.; 1568417 B.C. Ltd.",
+            "vehicleName": "Cintra 4352238 Investments Inc.; 1568417 B.C. Ltd.",
+            "investmentYear": 1999,
+            "stake": "48.29%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6txgi000c3s2b7riugcxh",
+          "organization": "CPP Investments",
+          "active": true,
+          "vehicle": "Ramp Canada Roads LP; 7577702 Canada Inc.; MICI Inc.",
+          "stake": "44.20% block with non-controlling institutional co-investors; look-through split not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-384000000002",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "CPP Investments",
+            "ownershipVehicle": "Ramp Canada Roads LP; 7577702 Canada Inc.; MICI Inc.",
+            "vehicleName": "Ramp Canada Roads LP; 7577702 Canada Inc.; MICI Inc.",
+            "investmentYear": 2010,
+            "stake": "44.20% block with non-controlling institutional co-investors; look-through split not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6txi4000d3s2ba0ctahxs",
+          "organization": "PSP Investments",
+          "active": true,
+          "vehicle": "Spectre Infra Limited Partnership",
+          "stake": "7.51%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-384000000003",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "PSP Investments",
+            "ownershipVehicle": "Spectre Infra Limited Partnership",
+            "vehicleName": "Spectre Infra Limited Partnership",
+            "investmentYear": 2025,
+            "stake": "7.51%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6txkr000f3s2bkqwygjyu",
+          "organization": "AtkinsRéalis",
+          "active": false,
+          "vehicle": "AtkinsRéalis Highway Holdings Inc. and predecessors",
+          "stake": "16.77% by 2004-2019; 6.76% thereafter; fully sold",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-0E92FF20D6B454E81BCA0FC1",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "AtkinsRéalis",
+            "ownershipVehicle": "AtkinsRéalis Highway Holdings Inc. and predecessors",
+            "vehicleName": "AtkinsRéalis Highway Holdings Inc. and predecessors",
+            "investmentYear": 1999,
+            "exitYear": 2025,
+            "stake": "16.77% by 2004-2019; 6.76% thereafter; fully sold",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj6txme000g3s2bo2sgwxpy",
+          "organization": "Macquarie Group",
+          "active": false,
+          "vehicle": "Macquarie Infrastructure (Toll Route) S.A.; MICI Inc.; later Intoll Group",
+          "stake": "16.13% fully diluted from 2002; 30% from 2004",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-49A50918945B056AA6A0E22F",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Macquarie Group",
+            "ownershipVehicle": "Macquarie Infrastructure (Toll Route) S.A.; MICI Inc.; later Intoll Group",
+            "vehicleName": "Macquarie Infrastructure (Toll Route) S.A.; MICI Inc.; later Intoll Group",
+            "investmentYear": 2002,
+            "exitYear": 2010,
+            "stake": "16.13% fully diluted from 2002; 30% from 2004",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj6txo1000h3s2b6p0rmxt9",
+          "organization": "La Caisse de dépôt (CDPQ)",
+          "active": false,
+          "vehicle": "Capital d'Amérique CDPQ Inc.",
+          "stake": "16.13% fully diluted convertible position",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-EF9E2538AF99EF746F6F0382",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "La Caisse de dépôt (CDPQ)",
+            "ownershipVehicle": "Capital d'Amérique CDPQ Inc.",
+            "vehicleName": "Capital d'Amérique CDPQ Inc.",
+            "investmentYear": 1999,
+            "exitYear": 2002,
+            "stake": "16.13% fully diluted convertible position",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "407 International Inc.",
+            "country": "Canada",
+            "companySha256": "45a2baaa78528c34241421ad33a18a2a20e193d315619a0d68fecc4211a2c1ab",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Ferrovial N.V.",
+                  "ownershipVehicle": "Cintra 4352238 Investments Inc.; 1568417 B.C. Ltd.",
+                  "vehicleName": "Cintra 4352238 Investments Inc.; 1568417 B.C. Ltd.",
+                  "investmentYear": 1999,
+                  "stake": "48.29%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Ferrovial N.V.",
+                "vehicleName": "Cintra 4352238 Investments Inc.; 1568417 B.C. Ltd.",
+                "fundLookupName": "Cintra 4352238 Investments Inc.; 1568417 B.C. Ltd.",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "CPP Investments",
+                  "ownershipVehicle": "Ramp Canada Roads LP; 7577702 Canada Inc.; MICI Inc.",
+                  "vehicleName": "Ramp Canada Roads LP; 7577702 Canada Inc.; MICI Inc.",
+                  "investmentYear": 2010,
+                  "stake": "44.20% block with non-controlling institutional co-investors; look-through split not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "CPP Investments",
+                "vehicleName": "Ramp Canada Roads LP; 7577702 Canada Inc.; MICI Inc.",
+                "fundLookupName": "Ramp Canada Roads LP; 7577702 Canada Inc.; MICI Inc.",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "PSP Investments",
+                  "ownershipVehicle": "Spectre Infra Limited Partnership",
+                  "vehicleName": "Spectre Infra Limited Partnership",
+                  "investmentYear": 2025,
+                  "stake": "7.51%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "PSP Investments",
+                "vehicleName": "Spectre Infra Limited Partnership",
+                "fundLookupName": "Spectre Infra Limited Partnership",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "AtkinsRéalis",
+                  "ownershipVehicle": "AtkinsRéalis Highway Holdings Inc. and predecessors",
+                  "vehicleName": "AtkinsRéalis Highway Holdings Inc. and predecessors",
+                  "investmentYear": 1999,
+                  "exitYear": 2025,
+                  "stake": "16.77% by 2004-2019; 6.76% thereafter; fully sold",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "AtkinsRéalis",
+                "vehicleName": "AtkinsRéalis Highway Holdings Inc. and predecessors",
+                "fundLookupName": "AtkinsRéalis Highway Holdings Inc. and predecessors",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Macquarie Group",
+                  "ownershipVehicle": "Macquarie Infrastructure (Toll Route) S.A.; MICI Inc.; later Intoll Group",
+                  "vehicleName": "Macquarie Infrastructure (Toll Route) S.A.; MICI Inc.; later Intoll Group",
+                  "investmentYear": 2002,
+                  "exitYear": 2010,
+                  "stake": "16.13% fully diluted from 2002; 30% from 2004",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Macquarie Group",
+                "vehicleName": "Macquarie Infrastructure (Toll Route) S.A.; MICI Inc.; later Intoll Group",
+                "fundLookupName": "Macquarie Infrastructure (Toll Route) S.A.; MICI Inc.; later Intoll Group",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "La Caisse de dépôt (CDPQ)",
+                  "ownershipVehicle": "Capital d'Amérique CDPQ Inc.",
+                  "vehicleName": "Capital d'Amérique CDPQ Inc.",
+                  "investmentYear": 1999,
+                  "exitYear": 2002,
+                  "stake": "16.13% fully diluted convertible position",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "La Caisse de dépôt (CDPQ)",
+                "vehicleName": "Capital d'Amérique CDPQ Inc.",
+                "fundLookupName": "Capital d'Amérique CDPQ Inc.",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "af2b4b34cd7e7500f379a1577cc05d4c4e932abd73d80ce94a83f4e89a1973e5"
+      }
+    },
+    {
+      "sequence": 385,
+      "name": "AEP Indiana Michigan Transmission Company, Inc.",
+      "companyId": "cmtj6tzbx000n3s2bctwx91rm",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001",
+      "priorIssue": "Former AEP corporate period remains UNRESOLVED without active seed binding; original application research expressly names four KKR Diversified Core Infrastructure master funds, so do not call KKR fund family unknown. Exact fund allocations remain unavailable. Internal reorganization date differs from aggregate economic ownership representation and requires scoped history review. Preserve80.1/9.95/9.95 and Olympus/Midwest legal chain; no partial current patch.",
+      "evidenceChecked": 14,
+      "owners": [
+        {
+          "ownerId": "cmtj6tzut000y3s2bxijl9hxq",
+          "organization": "American Electric Power",
+          "active": true,
+          "vehicle": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+          "stake": "80.1% look-through",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-385000000001",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "American Electric Power",
+            "ownershipVehicle": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+            "vehicleName": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+            "investmentYear": 2025,
+            "stake": "80.1% look-through",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6tzwe000z3s2bmpb4m4jk",
+          "organization": "KKR",
+          "active": true,
+          "vehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+          "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-385000000002",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "KKR",
+            "ownershipVehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+            "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+            "investmentYear": 2025,
+            "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6tzxz00103s2b24wafga7",
+          "organization": "PSP Investments",
+          "active": true,
+          "vehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+          "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-385000000003",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "PSP Investments",
+            "ownershipVehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+            "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+            "investmentYear": 2025,
+            "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6tzzj00113s2bpyikhtpj",
+          "organization": "American Electric Power",
+          "active": false,
+          "vehicle": "AEP Transmission Company, LLC",
+          "stake": "100% before the minority sale",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-29500CCBCF07F04E829A28B6",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "American Electric Power",
+            "ownershipVehicle": "AEP Transmission Company, LLC",
+            "vehicleName": "AEP Transmission Company, LLC",
+            "investmentYear": 2009,
+            "exitYear": 2025,
+            "stake": "100% before the minority sale",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "AEP Indiana Michigan Transmission Company, Inc.",
+            "country": "United States",
+            "companySha256": "9127c233d3fdf688e9c5bee5c2a23be4414b1ea4fd83c600f50de1aa3944f693",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "American Electric Power",
+                  "ownershipVehicle": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+                  "vehicleName": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+                  "investmentYear": 2025,
+                  "stake": "80.1% look-through",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "American Electric Power",
+                "vehicleName": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+                "fundLookupName": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "KKR",
+                  "ownershipVehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                  "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                  "investmentYear": 2025,
+                  "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "KKR",
+                "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                "fundLookupName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "PSP Investments",
+                  "ownershipVehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                  "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                  "investmentYear": 2025,
+                  "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "PSP Investments",
+                "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                "fundLookupName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "American Electric Power",
+                  "ownershipVehicle": "AEP Transmission Company, LLC",
+                  "vehicleName": "AEP Transmission Company, LLC",
+                  "investmentYear": 2009,
+                  "exitYear": 2025,
+                  "stake": "100% before the minority sale",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "American Electric Power",
+                "vehicleName": "AEP Transmission Company, LLC",
+                "fundLookupName": "AEP Transmission Company, LLC",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "505022e113a8545e1315e63130ed38fe8f96d886868c528fbbfaa10e45ba0fee"
+      }
+    },
+    {
+      "sequence": 386,
+      "name": "AEP Ohio Transmission Company, Inc.",
+      "companyId": "cmtj6u1k600173s2b9gcrd9gz",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001",
+      "priorIssue": "Former AEP corporate period remains UNRESOLVED without active seed binding; KKR four Diversified Core master funds known in original research. Infra-PSP Canada is a vehicle, not fund. Internal reorganization/history issue outside metadata-only workflow. Preserve80.1/9.95/9.95 and exact existingyears/vehicles; no partial patch.",
+      "evidenceChecked": 14,
+      "owners": [
+        {
+          "ownerId": "cmtj6u1za001g3s2bs6awj9o4",
+          "organization": "American Electric Power",
+          "active": true,
+          "vehicle": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+          "stake": "80.1% look-through",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-386000000001",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "American Electric Power",
+            "ownershipVehicle": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+            "vehicleName": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+            "investmentYear": 2025,
+            "stake": "80.1% look-through",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6u20v001h3s2byi8uhdxs",
+          "organization": "KKR",
+          "active": true,
+          "vehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+          "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-386000000002",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "KKR",
+            "ownershipVehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+            "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+            "investmentYear": 2025,
+            "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6u22f001i3s2bsj99g39j",
+          "organization": "PSP Investments",
+          "active": true,
+          "vehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+          "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-386000000003",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "PSP Investments",
+            "ownershipVehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+            "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+            "investmentYear": 2025,
+            "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6u240001j3s2b49ko53xg",
+          "organization": "American Electric Power",
+          "active": false,
+          "vehicle": "AEP Transmission Company, LLC",
+          "stake": "100% before the minority sale",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-D5044F908064B898507CF2C2",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "American Electric Power",
+            "ownershipVehicle": "AEP Transmission Company, LLC",
+            "vehicleName": "AEP Transmission Company, LLC",
+            "investmentYear": 2009,
+            "exitYear": 2025,
+            "stake": "100% before the minority sale",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "AEP Ohio Transmission Company, Inc.",
+            "country": "United States",
+            "companySha256": "d50c1683e2c500774415bccd395ca24bdff0c21789b7e47ae26f0aaf6de7edf2",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "American Electric Power",
+                  "ownershipVehicle": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+                  "vehicleName": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+                  "investmentYear": 2025,
+                  "stake": "80.1% look-through",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "American Electric Power",
+                "vehicleName": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+                "fundLookupName": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "KKR",
+                  "ownershipVehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                  "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                  "investmentYear": 2025,
+                  "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "KKR",
+                "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                "fundLookupName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "PSP Investments",
+                  "ownershipVehicle": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                  "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                  "investmentYear": 2025,
+                  "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "PSP Investments",
+                "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                "fundLookupName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "American Electric Power",
+                  "ownershipVehicle": "AEP Transmission Company, LLC",
+                  "vehicleName": "AEP Transmission Company, LLC",
+                  "investmentYear": 2009,
+                  "exitYear": 2025,
+                  "stake": "100% before the minority sale",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "American Electric Power",
+                "vehicleName": "AEP Transmission Company, LLC",
+                "fundLookupName": "AEP Transmission Company, LLC",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "b8a2b1167194d8a9ceaba8b2c65083d49bf3a139228f5b677a27b85888537ba4"
+      }
+    },
+    {
+      "sequence": 387,
+      "name": "Aerostar Airport Holdings, LLC",
+      "companyId": "cmtj6u3oc001p3s2bno6biaiq",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001",
+      "priorIssue": "Former Oaktree/Highstar IV and parallel-vehicle periods retain UNRESOLVED attribution without active seed bindings. Current ASUR corporate/PSP program cannot be partially corrected while history unresolved. Preserve60/40 current and aggregate50% former qualification, no invented split or PSP2013-as-Aerostar-entry.",
+      "evidenceChecked": 14,
+      "owners": [
+        {
+          "ownerId": "cmtj6u45r00213s2byzs8obq6",
+          "organization": "Grupo Aeroportuario del Sureste",
+          "active": true,
+          "vehicle": "Aeropuerto de Cancún, S.A. de C.V.",
+          "stake": "60% (50% at entry; additional 10% closed in 2017)",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-387000000001",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Grupo Aeroportuario del Sureste",
+            "ownershipVehicle": "Aeropuerto de Cancún, S.A. de C.V.",
+            "vehicleName": "Aeropuerto de Cancún, S.A. de C.V.",
+            "investmentYear": 2012,
+            "stake": "60% (50% at entry; additional 10% closed in 2017)",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6u47c00223s2bcn8qoekd",
+          "organization": "PSP Investments",
+          "active": true,
+          "vehicle": "AviAlliance Canada Inc. and related PSP-side member",
+          "stake": "40%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-387000000002",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "PSP Investments",
+            "ownershipVehicle": "AviAlliance Canada Inc. and related PSP-side member",
+            "vehicleName": "AviAlliance Canada Inc. and related PSP-side member",
+            "investmentYear": 2017,
+            "stake": "40%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtj6u48x00233s2bmmqfopla",
+          "organization": "Oaktree Capital",
+          "active": false,
+          "vehicle": "Highstar Capital IV, L.P.",
+          "stake": "Part of an aggregate 50%; vehicle split not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-AA846A37897681AB58D014ED",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Oaktree Capital",
+            "ownershipVehicle": "Highstar Capital IV, L.P.",
+            "vehicleName": "Highstar Capital IV, L.P.",
+            "investmentYear": 2012,
+            "exitYear": 2017,
+            "stake": "Part of an aggregate 50%; vehicle split not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj6u4ai00243s2b2foflzeb",
+          "organization": "Oaktree Capital",
+          "active": false,
+          "vehicle": "Highstar Aerostar Prism/IV-A Holdings, L.P.",
+          "stake": "Part of an aggregate 50%; vehicle split not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-306B7A0E81EB178494CF4601",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Oaktree Capital",
+            "ownershipVehicle": "Highstar Aerostar Prism/IV-A Holdings, L.P.",
+            "vehicleName": "Highstar Aerostar Prism/IV-A Holdings, L.P.",
+            "investmentYear": 2012,
+            "exitYear": 2017,
+            "stake": "Part of an aggregate 50%; vehicle split not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Aerostar Airport Holdings, LLC",
+            "country": "United States",
+            "companySha256": "c522e1d247bc5cf15eba34b900822033121c054698ad478185dafc1b42ccf4b0",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Grupo Aeroportuario del Sureste",
+                  "ownershipVehicle": "Aeropuerto de Cancún, S.A. de C.V.",
+                  "vehicleName": "Aeropuerto de Cancún, S.A. de C.V.",
+                  "investmentYear": 2012,
+                  "stake": "60% (50% at entry; additional 10% closed in 2017)",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Grupo Aeroportuario del Sureste",
+                "vehicleName": "Aeropuerto de Cancún, S.A. de C.V.",
+                "fundLookupName": "Aeropuerto de Cancún, S.A. de C.V.",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "PSP Investments",
+                  "ownershipVehicle": "AviAlliance Canada Inc. and related PSP-side member",
+                  "vehicleName": "AviAlliance Canada Inc. and related PSP-side member",
+                  "investmentYear": 2017,
+                  "stake": "40%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "PSP Investments",
+                "vehicleName": "AviAlliance Canada Inc. and related PSP-side member",
+                "fundLookupName": "AviAlliance Canada Inc. and related PSP-side member",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Oaktree Capital",
+                  "ownershipVehicle": "Highstar Capital IV, L.P.",
+                  "vehicleName": "Highstar Capital IV, L.P.",
+                  "investmentYear": 2012,
+                  "exitYear": 2017,
+                  "stake": "Part of an aggregate 50%; vehicle split not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Oaktree Capital",
+                "vehicleName": "Highstar Capital IV, L.P.",
+                "fundLookupName": "Highstar Capital IV, L.P.",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Oaktree Capital",
+                  "ownershipVehicle": "Highstar Aerostar Prism/IV-A Holdings, L.P.",
+                  "vehicleName": "Highstar Aerostar Prism/IV-A Holdings, L.P.",
+                  "investmentYear": 2012,
+                  "exitYear": 2017,
+                  "stake": "Part of an aggregate 50%; vehicle split not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Oaktree Capital",
+                "vehicleName": "Highstar Aerostar Prism/IV-A Holdings, L.P.",
+                "fundLookupName": "Highstar Aerostar Prism/IV-A Holdings, L.P.",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "b0a84cfabbb236de01c14c2c222974b4e00e196c1ba9e51b7fd5a3b2c74d83cb"
+      }
+    },
+    {
+      "sequence": 388,
+      "name": "FirstLight USA, LLC",
+      "companyId": "cmtj6u5vu002a3s2bjqe8f76f",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001",
+      "priorIssue": "Former ECP FundI and ENGIE corporate periods remain UNRESOLVED without active seed bindings. Existing production already records signed pending Hull Street sale as ofSeptember1 2026. Do not infer closing or change transaction/ownership via attribution workflow. Queue historical attribution and exact pending-exit verification separately.",
+      "evidenceChecked": 14,
+      "owners": [
+        {
+          "ownerId": "cmtj6u6h6002p3s2bwxy9jp8f",
+          "organization": "PSP Investments",
+          "active": true,
+          "vehicle": "FirstLight Holding Inc. / PSP FL USA LLC; PSP H2O FL USA LLC at entry",
+          "stake": "100%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-388000000001",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "PSP Investments",
+            "ownershipVehicle": "FirstLight Holding Inc. / PSP FL USA LLC; PSP H2O FL USA LLC at entry",
+            "vehicleName": "FirstLight Holding Inc. / PSP FL USA LLC; PSP H2O FL USA LLC at entry",
+            "investmentYear": 2016,
+            "stake": "100%",
+            "status": "Active",
+            "transactionState": "SIGNED_PENDING_EXIT"
+          }
+        },
+        {
+          "ownerId": "cmtj6u6ir002q3s2b94c11r92",
+          "organization": "Energy Capital Partners",
+          "active": false,
+          "vehicle": "Energy Capital Partners I / FirstLight Power Enterprises, Inc.",
+          "stake": "100%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-9A92419E2C56E830BBC29911",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Energy Capital Partners",
+            "ownershipVehicle": "Energy Capital Partners I / FirstLight Power Enterprises, Inc.",
+            "vehicleName": "Energy Capital Partners I / FirstLight Power Enterprises, Inc.",
+            "investmentYear": 2006,
+            "exitYear": 2008,
+            "stake": "100%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtj6u6kb002r3s2bkervam0n",
+          "organization": "ENGIE",
+          "active": false,
+          "vehicle": "SUEZ Bidco, LLC / FirstLight Power Enterprises, Inc.",
+          "stake": "100%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-40C8BF39FB996C8BFB46C412",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "ENGIE",
+            "ownershipVehicle": "SUEZ Bidco, LLC / FirstLight Power Enterprises, Inc.",
+            "vehicleName": "SUEZ Bidco, LLC / FirstLight Power Enterprises, Inc.",
+            "investmentYear": 2008,
+            "exitYear": 2016,
+            "stake": "100%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "FirstLight USA, LLC",
+            "country": "United States",
+            "companySha256": "d44c9f47708a050c8fd50bdbe65c107e495bd5f4c1bcf24526a888f719e71b3e",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "PSP Investments",
+                  "ownershipVehicle": "FirstLight Holding Inc. / PSP FL USA LLC; PSP H2O FL USA LLC at entry",
+                  "vehicleName": "FirstLight Holding Inc. / PSP FL USA LLC; PSP H2O FL USA LLC at entry",
+                  "investmentYear": 2016,
+                  "stake": "100%",
+                  "status": "Active",
+                  "transactionState": "SIGNED_PENDING_EXIT"
+                },
+                "organizationName": "PSP Investments",
+                "vehicleName": "FirstLight Holding Inc. / PSP FL USA LLC; PSP H2O FL USA LLC at entry",
+                "fundLookupName": "FirstLight Holding Inc. / PSP FL USA LLC; PSP H2O FL USA LLC at entry",
+                "transactionState": "SIGNED_PENDING_EXIT"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Energy Capital Partners",
+                  "ownershipVehicle": "Energy Capital Partners I / FirstLight Power Enterprises, Inc.",
+                  "vehicleName": "Energy Capital Partners I / FirstLight Power Enterprises, Inc.",
+                  "investmentYear": 2006,
+                  "exitYear": 2008,
+                  "stake": "100%",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Energy Capital Partners",
+                "vehicleName": "Energy Capital Partners I / FirstLight Power Enterprises, Inc.",
+                "fundLookupName": "Energy Capital Partners I / FirstLight Power Enterprises, Inc.",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "ENGIE",
+                  "ownershipVehicle": "SUEZ Bidco, LLC / FirstLight Power Enterprises, Inc.",
+                  "vehicleName": "SUEZ Bidco, LLC / FirstLight Power Enterprises, Inc.",
+                  "investmentYear": 2008,
+                  "exitYear": 2016,
+                  "stake": "100%",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "ENGIE",
+                "vehicleName": "SUEZ Bidco, LLC / FirstLight Power Enterprises, Inc.",
+                "fundLookupName": "SUEZ Bidco, LLC / FirstLight Power Enterprises, Inc.",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "125fe0f272dcb51094dee2d554b01b0b3f2fa357c8413b9a90c97fae16136164"
+      }
+    },
+    {
+      "sequence": 413,
+      "name": "Waste Resource Management",
+      "companyId": "cmrxpjn16018zivhe8i1og54q",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-015",
+      "priorIssue": "Former ownership binds NGP Energy Capital Management while the original approved research/description identifies NGP Energy Technology Partners. Resolve that organization identity through an appropriate scoped workflow; the current attribution workflow cannot change organizations. Do not partially correct Ridgewood's unsupported Fund I inference, infer Fund II from secondary reporting, or invent NGP/North Sky fund allocations.",
+      "evidenceChecked": 28,
+      "owners": [
+        {
+          "ownerId": "cmrxpk9lf028livhe59iv90gl",
+          "organization": "Ridgewood Infrastructure",
+          "active": true,
+          "vehicle": "Exact acquisition vehicle not publicly disclosed",
+          "stake": "Acquired the platform; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "INFERRED",
+            "attributedFundName": "Ridgewood Water & Strategic Infrastructure Fund I",
+            "attributionConfidence": "LOW",
+            "attributionRationale": "Estimated from manager match 1.00, vintage 2018 precedes investment by 5 years, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 7.0 points. Public disclosure does not identify a distinct fund.",
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-A96C523B90AD",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Ridgewood Infrastructure",
+            "ownershipVehicle": "Exact acquisition vehicle not publicly disclosed",
+            "vehicleName": "Exact acquisition vehicle not publicly disclosed",
+            "investmentYear": 2023,
+            "stake": "Acquired the platform; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtjg0y0y000nse2b2sv0p7ix",
+          "organization": "NGP Energy Capital Management",
+          "active": false,
+          "vehicle": "NGP Energy Technology Partners-managed fund; exact vehicle not publicly disclosed",
+          "stake": "Former owner; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-BA7894B044BA124E0E7BA649",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "NGP Energy Capital Management",
+            "ownershipVehicle": "NGP Energy Technology Partners-managed fund; exact vehicle not publicly disclosed",
+            "vehicleName": "NGP Energy Technology Partners-managed fund; exact vehicle not publicly disclosed",
+            "exitYear": 2023,
+            "stake": "Former owner; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtjg0y5j000pse2bxbbj1xpk",
+          "organization": "North Sky Capital",
+          "active": false,
+          "vehicle": "Direct and indirect WRM investments; exact vehicles not publicly disclosed",
+          "stake": "Former investor; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-E365DB667478F6D46C59AE54",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "North Sky Capital",
+            "ownershipVehicle": "Direct and indirect WRM investments; exact vehicles not publicly disclosed",
+            "vehicleName": "Direct and indirect WRM investments; exact vehicles not publicly disclosed",
+            "exitYear": 2023,
+            "stake": "Former investor; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Waste Resource Management",
+            "country": "United States",
+            "companySha256": "de52505253d9ae240bceec967a0750f7985955e2c918afec0510fc5a16298a79",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Ridgewood Infrastructure",
+                  "ownershipVehicle": "Exact acquisition vehicle not publicly disclosed",
+                  "vehicleName": "Exact acquisition vehicle not publicly disclosed",
+                  "investmentYear": 2023,
+                  "stake": "Acquired the platform; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Ridgewood Infrastructure",
+                "vehicleName": "Exact acquisition vehicle not publicly disclosed",
+                "fundLookupName": "Exact acquisition vehicle not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "NGP Energy Capital Management",
+                  "ownershipVehicle": "NGP Energy Technology Partners-managed fund; exact vehicle not publicly disclosed",
+                  "vehicleName": "NGP Energy Technology Partners-managed fund; exact vehicle not publicly disclosed",
+                  "exitYear": 2023,
+                  "stake": "Former owner; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "NGP Energy Capital Management",
+                "vehicleName": "NGP Energy Technology Partners-managed fund; exact vehicle not publicly disclosed",
+                "fundLookupName": "NGP Energy Technology Partners-managed fund; exact vehicle not publicly disclosed",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "North Sky Capital",
+                  "ownershipVehicle": "Direct and indirect WRM investments; exact vehicles not publicly disclosed",
+                  "vehicleName": "Direct and indirect WRM investments; exact vehicles not publicly disclosed",
+                  "exitYear": 2023,
+                  "stake": "Former investor; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "North Sky Capital",
+                "vehicleName": "Direct and indirect WRM investments; exact vehicles not publicly disclosed",
+                "fundLookupName": "Direct and indirect WRM investments; exact vehicles not publicly disclosed",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "9f3905e2094c880a51444294c343e87c2e47520d79d8d571d4b6a02b1eaeb323"
+      }
+    },
+    {
+      "sequence": 415,
+      "name": "Vela Wind Holdco, LLC",
+      "companyId": "cmtjhlk8d000k0t2bf8masqei",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-015",
+      "priorIssue": "Former Algonquin/Liberty 51% corporate ownership remains UNRESOLVED without an active seed binding. Correct historical fund-versus-corporate representation through a supported historical path before whole-name verification; do not partially update current owners. Preserve LS Power 51%, RWE 25%, Greencoat 24%, and the 2025 Liberty exit.",
+      "evidenceChecked": 24,
+      "owners": [
+        {
+          "ownerId": "cmtjhlkwj000u0t2bodhuj84l",
+          "organization": "LS Power",
+          "active": true,
+          "vehicle": "Clearlight Energy Holdings, L.P. through the acquired Altius Renewables perimeter",
+          "stake": "51%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-38A412592726",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "LS Power",
+            "ownershipVehicle": "Clearlight Energy Holdings, L.P. through the acquired Altius Renewables perimeter",
+            "vehicleName": "Clearlight Energy Holdings, L.P. through the acquired Altius Renewables perimeter",
+            "investmentYear": 2025,
+            "stake": "51%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtjhlkz3000v0t2b7isigs94",
+          "organization": "RWE",
+          "active": true,
+          "vehicle": "RWE affiliate through Vela; intermediate holder not publicly disclosed",
+          "stake": "25%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-9CFD88560B4E",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "RWE",
+            "ownershipVehicle": "RWE affiliate through Vela; intermediate holder not publicly disclosed",
+            "vehicleName": "RWE affiliate through Vela; intermediate holder not publicly disclosed",
+            "investmentYear": 2020,
+            "stake": "25%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtjhll1m000w0t2bxqvkiilz",
+          "organization": "Schroders Greencoat",
+          "active": true,
+          "vehicle": "Greencoat Vela LLC; managed mandates not publicly disclosed by exact legal name",
+          "stake": "24%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-2C4459FE1AE7",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Schroders Greencoat",
+            "ownershipVehicle": "Greencoat Vela LLC; managed mandates not publicly disclosed by exact legal name",
+            "vehicleName": "Greencoat Vela LLC; managed mandates not publicly disclosed by exact legal name",
+            "investmentYear": 2021,
+            "stake": "24%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtjhll5i000y0t2by398zfh4",
+          "organization": "Algonquin / Liberty",
+          "active": false,
+          "vehicle": "Algonquin Power Fund (America) Inc. through Vela",
+          "stake": "51%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-DF2965401D223DCEDC21AB7C",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Algonquin / Liberty",
+            "ownershipVehicle": "Algonquin Power Fund (America) Inc. through Vela",
+            "vehicleName": "Algonquin Power Fund (America) Inc. through Vela",
+            "investmentYear": 2021,
+            "exitYear": 2025,
+            "stake": "51%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Vela Wind Holdco, LLC",
+            "country": "United States",
+            "companySha256": "d8734f166cae1fab2da434925c2d4a7765ea0a6cc321053a9201db1cb9eca133",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "LS Power",
+                  "ownershipVehicle": "Clearlight Energy Holdings, L.P. through the acquired Altius Renewables perimeter",
+                  "vehicleName": "Clearlight Energy Holdings, L.P. through the acquired Altius Renewables perimeter",
+                  "investmentYear": 2025,
+                  "stake": "51%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "LS Power",
+                "vehicleName": "Clearlight Energy Holdings, L.P. through the acquired Altius Renewables perimeter",
+                "fundLookupName": "Clearlight Energy Holdings, L.P. through the acquired Altius Renewables perimeter",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "RWE",
+                  "ownershipVehicle": "RWE affiliate through Vela; intermediate holder not publicly disclosed",
+                  "vehicleName": "RWE affiliate through Vela; intermediate holder not publicly disclosed",
+                  "investmentYear": 2020,
+                  "stake": "25%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "RWE",
+                "vehicleName": "RWE affiliate through Vela; intermediate holder not publicly disclosed",
+                "fundLookupName": "RWE affiliate through Vela; intermediate holder not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Schroders Greencoat",
+                  "ownershipVehicle": "Greencoat Vela LLC; managed mandates not publicly disclosed by exact legal name",
+                  "vehicleName": "Greencoat Vela LLC; managed mandates not publicly disclosed by exact legal name",
+                  "investmentYear": 2021,
+                  "stake": "24%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Schroders Greencoat",
+                "vehicleName": "Greencoat Vela LLC; managed mandates not publicly disclosed by exact legal name",
+                "fundLookupName": "Greencoat Vela LLC; managed mandates not publicly disclosed by exact legal name",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Algonquin / Liberty",
+                  "ownershipVehicle": "Algonquin Power Fund (America) Inc. through Vela",
+                  "vehicleName": "Algonquin Power Fund (America) Inc. through Vela",
+                  "investmentYear": 2021,
+                  "exitYear": 2025,
+                  "stake": "51%",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Algonquin / Liberty",
+                "vehicleName": "Algonquin Power Fund (America) Inc. through Vela",
+                "fundLookupName": "Algonquin Power Fund (America) Inc. through Vela",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "5aa7800b61804de16295ee4d389c92c87a0b277a969bd413f92f02f90e0a28e2"
+      }
+    }
+  ]
+}

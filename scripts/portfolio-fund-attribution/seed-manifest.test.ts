@@ -52,9 +52,9 @@ describe("portfolio fund attribution seed manifest", () => {
     const ownerKeys = owners.map(ownerKey);
     const manifestKeys = manifest.records.map(ownerKey);
 
-    // All 1,393 active owners remain covered. Batches 019–022 add twenty proven former-owner
+    // All 1,393 active owners remain covered. Batches 019–023 add twenty-seven proven former-owner
     // metadata overlays, not owners; every added key must exist in evaluated seed.
-    expect(manifest.records).toHaveLength(1_413);
+    expect(manifest.records).toHaveLength(1_420);
     expect(owners).toHaveLength(1_393);
     expect(new Set(ownerKeys)).toHaveProperty("size", ownerKeys.length);
     expect(new Set(manifestKeys)).toHaveProperty("size", manifestKeys.length);
@@ -62,7 +62,7 @@ describe("portfolio fund attribution seed manifest", () => {
     expect(manifestKeys.filter(key => activeKeys.has(key)).sort()).toEqual([...ownerKeys].sort());
     expect(manifestKeys.every(key => allKeys.has(key))).toBe(true);
     const historical = manifest.records.filter(record => !activeKeys.has(ownerKey(record)));
-    expect(historical).toHaveLength(20);
+    expect(historical).toHaveLength(27);
     expect(historical.every(record => record.recordId.startsWith("OFA-HIST-") && record.fundAttribution !== "INFERRED")).toBe(true);
   });
 
@@ -78,8 +78,8 @@ describe("portfolio fund attribution seed manifest", () => {
     // Batch 012 removes unsupported Northleaf estimates for CSV and Odfjell without inventing funds.
     // Batch 015 removes Crosstimbers' holding-vehicle-as-fund seed attribution without changing production.
     // Batch 016 removes Wren House QSP's unsupported direct/program classification.
-    // Batch 022 preserves exact unknown Astra, Greenbelt and Partners Group funds.
-    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(87);
+    // Batch 023 preserves USIC's undisclosed aggregate fund allocations without production wording changes.
+    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(91);
     expect(manifest.records.every((record) => (
       record.fundAttribution !== "INFERRED"
       || (
