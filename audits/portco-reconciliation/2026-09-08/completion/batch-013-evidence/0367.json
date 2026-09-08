@@ -1,0 +1,137 @@
+{
+  "companyId": "cmtj20h9o00002h2bvrmv121y",
+  "name": "I-595 Express, LLC",
+  "sequence": 367,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0367-i-595-express-corridor-improvements-project/attempt-1/research-decision.json",
+      "sha256": "42f21e4e117256e1b6e3f23d38643f9572118feca38fdc3ca3be5ca378beb994"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0367-i-595-express-corridor-improvements-project/attempt-1/source-verification.json",
+      "sha256": "7dc2778a4103ef2f72545de328484fdb19504b2d4813667f254c4943eb69c4f5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0367-i-595-express-corridor-improvements-project/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "2ecb3e256fe18e0fab010eb17fd5e0d29ece109835f10f94cc89f84a595af4e0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0367-i-595-express-corridor-improvements-project/attempt-1/chatgpt-response-validation.json",
+      "sha256": "8f4b4013d8351ad363a2ab84e2ccc5fd1181d1bd9d0f75615ef9821cdde6076b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0367-i-595-express-corridor-improvements-project/attempt-1/chatgpt-attestation.json",
+      "sha256": "23ed0d4d04a4f2210d1822ac79e65ec8ad4b0f0beca238078b97f937f06eba91"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/review.json",
+      "sha256": "dcbcdb329960a4baf2d595618d633a1c85bc93b3559277a4d969ea59559b0189"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/source-config.json",
+      "sha256": "9b1e220deced2c9f7009eaf0a430472bfa30f7659ddd243bf41a41cc692280c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0367-i-595-express-corridor-improvements-project/attempt-1/application-research-decision-v1.json",
+      "sha256": "7ac66f22816b583ca4c3bb99b43ec680d9e3db0d6935cbb36f00422803c39fe1"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtj20ifd000b2h2btswmpm6p",
+      "seedRecordId": "OFA-F0A043893E8E",
+      "expectedSeedSha256": "8ae5a4a021cf7750772a08632a03a1804f1e5239403bdcfcda8ad3ff24bf9138",
+      "expectedOwnerSha256": "b71c4d2c0634c106e790d8639905d357b96eb3bb7272780ba23acebfc1272bf8",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TIAA's filed June 2025 Schedule Y identifies its wholly owned TIAA Infrastructure Investments LLC and I 595 Toll Road LLC insurance holding chain. This is TIAA's direct general-account investment, not an unresolved managed-fund allocation. Preserve the audited 87.5% stake, 2011 entry and legal vehicle without a fund link.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "TIAA's filed June 2025 Schedule Y identifies its wholly owned TIAA Infrastructure Investments LLC and I 595 Toll Road LLC insurance holding chain. This is TIAA's direct general-account investment, not an unresolved managed-fund allocation. Preserve the audited 87.5% stake, 2011 entry and legal vehicle without a fund link.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/sources/tiaa-schedule.pdf",
+          "sha256": "a3abd93aa71165e43588fa69c6f526f423c62fb47013706adda6d074eaaff6f1",
+          "url": "https://documents.nuveen.com/Documents/Nuveen/Viewer.aspx?uniqueId=5e020f65-f797-4b0c-9598-9d3ea00b2625",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/sources/i595-owners.html",
+          "sha256": "628d4735e225628b4bb8fedfa139beb8f2d8d2953048dff651c4fe814545a4b0",
+          "url": "https://www.i595express.com/about.php",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtj20imd000d2h2bwdmah1g6",
+      "seedRecordId": "OFA-1B79030F99AD",
+      "expectedSeedSha256": "a6d71471058d6d3fe794454e7ca2eb51d2d1abfc61fb4aa42dca590a929f8f54",
+      "expectedOwnerSha256": "61809c19d7a0993e7953c4ab074b08a443eb0b8b5c713bd2f26a6991f9fe3960",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The concessionaire directly identifies ACS Infrastructure Development Inc. as a corporate joint owner, not an investment fund. Replace unresolved fund attribution with direct corporate investment and preserve the audited 12.5% retained stake, 2009 entry and legal vehicle without a fund link.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "The concessionaire directly identifies ACS Infrastructure Development Inc. as a corporate joint owner, not an investment fund. Replace unresolved fund attribution with direct corporate investment and preserve the audited 12.5% retained stake, 2009 entry and legal vehicle without a fund link.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/sources/i595-owners.html",
+          "sha256": "628d4735e225628b4bb8fedfa139beb8f2d8d2953048dff651c4fe814545a4b0",
+          "url": "https://www.i595express.com/about.php",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "a7fb761795f4347d8456fe50c02728ec6c1bc9cc4b5191f7de817d596d2359af",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtj20ifd000b2h2btswmpm6p",
+      "sha256": "b71c4d2c0634c106e790d8639905d357b96eb3bb7272780ba23acebfc1272bf8"
+    },
+    {
+      "ownerId": "cmtj20imd000d2h2bwdmah1g6",
+      "sha256": "61809c19d7a0993e7953c4ab074b08a443eb0b8b5c713bd2f26a6991f9fe3960"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0367-i-595-express-corridor-improvements-project-v1/proposal.json",
+      "sha256": "668156f50d0d958f8bb3e499f10674a8c2b793c75d1b46a0fa00ecc337a3caf7"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0367-i-595-express-corridor-improvements-project-v1.json",
+      "sha256": "871eee5469196e311c8f2d4bd36869c3876d67f9d49dd73c3387f5fce78061e7"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0367-0372-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "296be3616e10e67bdd53798c2e87c1df7129e28d0e2a994b3fa866beb826462d",
+      "memberIndex": 0
+    },
+    "receiptSha256": "72cab12cfa050b3dee78540d431b40e590df47bbec0d99af26af7da1c6bd5e58"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/sources/tiaa-schedule.pdf.capture.json",
+      "sha256": "d3a873013fb221234727ddd894c59850e4a88ededf68f451b2f7d734504c25ad"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/sources/i595-owners.html.capture.json",
+      "sha256": "39599d002cdaafa6ebb80712a6bcb9c92ae25007ffbfff403d56ccd4b62fe346"
+    }
+  ]
+}
