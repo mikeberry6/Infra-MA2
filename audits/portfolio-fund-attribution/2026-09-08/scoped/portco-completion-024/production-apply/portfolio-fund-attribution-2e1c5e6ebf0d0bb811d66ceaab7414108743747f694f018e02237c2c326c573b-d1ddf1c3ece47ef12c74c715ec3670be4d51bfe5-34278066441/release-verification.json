@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T21:02:35.262Z",
+  "manifestSha256": "2e1c5e6ebf0d0bb811d66ceaab7414108743747f694f018e02237c2c326c573b",
+  "approvalSha256": "c964685625fe3d30c7766e6882c2aa795093ede383b7d739bf46da19b57d75dd",
+  "receiptSha256": "e8180ce7ce553873736158e67fb5bd5a213345c956a9ab87a7e9166d258eb712",
+  "mutationCount": 9,
+  "changed": 9,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-C5C18D31FFF9",
+      "companyId": "cmtjhluly00280t2bbyiyibak",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtjhluly00280t2bbyiyibak?verification=2e1c5e6ebf0d0bb811d66ceaab7414108743747f694f018e02237c2c326c573b",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Sixth Street TAO Partners, L.P. and affiliated parallel investment vehicles",
+        "attributionConfidence": null,
+        "attributionRationale": "The CPUC A.24-10-021 proposed decision, page 5, identifies Mallard Evergreen as wholly owned by Sixth Street TAO Partners, L.P. and affiliated parallel vehicles. Disclose that combined fund attribution without allocating economics among parallel funds or creating a fund link. This pre-close document supports fund identity, not proof of closing; retain the separately evidenced existing 2024/2025 chronology."
+      }
+    },
+    {
+      "recordId": "OFA-96CE03EC7EA3",
+      "companyId": "cmtjhlnk800140t2bxvibgnuw",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtjhlnk800140t2bxvibgnuw?verification=2e1c5e6ebf0d0bb811d66ceaab7414108743747f694f018e02237c2c326c573b",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "JERA directly identifies JERA Nex as the corporate investor in Happy and Oxbow. This is corporate renewable-energy ownership, not an unidentified third-party fund. Preserve the existing JERA Nex Americas/Crawfish vehicle, current 50% and qualified former 100% interest; no fund or ownership identity change."
+      }
+    }
+  ],
+  "passed": true
+}
