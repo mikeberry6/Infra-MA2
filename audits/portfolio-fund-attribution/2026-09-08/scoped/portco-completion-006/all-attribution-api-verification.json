@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T07:59:02.189Z",
+  "manifestSha256": "86120cb4969655c63ea6e996f96a3fe465169e7fb946d6e59339c68a488aff1c",
+  "approvalSha256": "2ede82f708ff5fa52385226ad1eb19f747f4098479b9bdcafcfb1a25f67467b4",
+  "receiptSha256": "13d0dfe045c39745637269a6d00169afa75ef7385460a162b37a8cc8aae20a96",
+  "mutationCount": 5,
+  "changed": 5,
+  "verificationScope": "ALL_RECEIPT_ROWS",
+  "sampledRows": [
+    {
+      "recordId": "OFA-D9F261D438DF",
+      "companyId": "cmrxpjbsf00rlivhe8c3xqhxg",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjbsf00rlivhe8c3xqhxg?verification=86120cb4969655c63ea6e996f96a3fe465169e7fb946d6e59339c68a488aff1c",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's October 2021 announcement and the February 2025 recapitalization adviser disclosure identify CIM Group backing but do not identify the investing fund. Remove the unsupported CIM Infrastructure Fund III estimate; the fund remains unresolved."
+      }
+    },
+    {
+      "recordId": "OFA-8710EAB6D356",
+      "companyId": "cmrxpjbsf00rlivhe8c3xqhxg",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjbsf00rlivhe8c3xqhxg?verification=86120cb4969655c63ea6e996f96a3fe465169e7fb946d6e59339c68a488aff1c",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Tiger's February 10, 2025 announcement confirms its completed growth investment in Bolder Industries but does not name the investing fund. Do not infer Tiger Infrastructure Partners Fund III from unrelated transactions or fund vintage."
+      }
+    },
+    {
+      "recordId": "OFA-4AFABE6F62C1",
+      "companyId": "cmt6dgo9j0000znyy8ne9nv5w",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmt6dgo9j0000znyy8ne9nv5w?verification=86120cb4969655c63ea6e996f96a3fe465169e7fb946d6e59339c68a488aff1c",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's IENTC case study identifies CIM Real Assets & Credit Fund (RACR) and another unnamed CIM-managed institutional fund as the combined 45% equity investors. The March 31, 2026 RACR report separately shows a 21.3% interest in IENTC 1, LLC. The complete combined-owner fund allocation is unresolved; do not treat it as a direct program or assign the combined 45% to RACR alone."
+      }
+    },
+    {
+      "recordId": "OFA-C5ACA6155F29",
+      "companyId": "cmrxpjc9d00scivhe5ub7c3d3",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjc9d00scivhe5ub7c3d3?verification=86120cb4969655c63ea6e996f96a3fe465169e7fb946d6e59339c68a488aff1c",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": "Copenhagen Infrastructure V (CI V)",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Copenhagen Infrastructure V (CI V)",
+        "attributionConfidence": null,
+        "attributionRationale": "The Kentucky PSC-filed Lost City corporate chart traces CI V LPs through CI V Sunrise HoldCo LLC and CI V Sunrise Renewables LLC to Lost City Renewables LLC. This directly supports the existing Copenhagen Infrastructure V (CI V) link; remove the stale inferred CI IV attribution."
+      }
+    },
+    {
+      "recordId": "OFA-9718B3CCF7A1",
+      "companyId": "cmrxpjmb4017tivhe2f61twxg",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjmb4017tivhe2f61twxg?verification=86120cb4969655c63ea6e996f96a3fe465169e7fb946d6e59339c68a488aff1c",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The December 22, 2016 closing announcement identifies CPP Investment Board's pension investment through Promotora Punta Cometa. Real Assets (Infrastructure) is a strategy label, not a disclosed fund vehicle. Preserve the historical 29% PPC stake qualification and do not infer a current Arco Norte look-through percentage."
+      }
+    }
+  ],
+  "passed": true
+}

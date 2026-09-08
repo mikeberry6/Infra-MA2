@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "86120cb4969655c63ea6e996f96a3fe465169e7fb946d6e59339c68a488aff1c",
+  "approvalSha256": "2ede82f708ff5fa52385226ad1eb19f747f4098479b9bdcafcfb1a25f67467b4",
+  "environment": "production",
+  "pipelineRunId": "cmtsdnipq0000gk4xk70nao6t",
+  "mutationCount": 5,
+  "changed": 5,
+  "idempotent": false,
+  "beforeFingerprint": "1786a3774ba4e79cd89f49c206a6688ecc36237b62687373054b8295d2be44b8",
+  "afterFingerprint": "bb566e47ecd3bd47dd0b3bf2b112538d1db4d766b3554833b496207e2f99cac3",
+  "rows": [
+    {
+      "recordId": "OFA-D9F261D438DF",
+      "ownershipPeriodId": "cmrxpjx6h01peivhehagglx73",
+      "companyId": "cmrxpjbsf00rlivhe8c3xqhxg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "CIM Infrastructure Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.50, vintage 2021 is 0 years before investment, North America-relevant mandate; next candidate trails by 10.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's October 2021 announcement and the February 2025 recapitalization adviser disclosure identify CIM Group backing but do not identify the investing fund. Remove the unsupported CIM Infrastructure Fund III estimate; the fund remains unresolved."
+      }
+    },
+    {
+      "recordId": "OFA-8710EAB6D356",
+      "ownershipPeriodId": "cmrxpjx7001pfivheodnrp1ll",
+      "companyId": "cmrxpjbsf00rlivhe8c3xqhxg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Tiger Infrastructure Partners Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2022 is 3 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Tiger's February 10, 2025 announcement confirms its completed growth investment in Bolder Industries but does not name the investing fund. Do not infer Tiger Infrastructure Partners Fund III from unrelated transactions or fund vintage."
+      }
+    },
+    {
+      "recordId": "OFA-4AFABE6F62C1",
+      "ownershipPeriodId": "cmt6dgp9h000cznyy8rkfpiy5",
+      "companyId": "cmt6dgo9j0000znyy8ne9nv5w",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's IENTC case study identifies CIM Real Assets & Credit Fund (RACR) and another unnamed CIM-managed institutional fund as the combined 45% equity investors. The March 31, 2026 RACR report separately shows a 21.3% interest in IENTC 1, LLC. The complete combined-owner fund allocation is unresolved; do not treat it as a direct program or assign the combined 45% to RACR alone."
+      }
+    },
+    {
+      "recordId": "OFA-C5ACA6155F29",
+      "ownershipPeriodId": "cmrxpjxo001q6ivhezy6w5aze",
+      "companyId": "cmrxpjc9d00scivhe5ub7c3d3",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Copenhagen Infrastructure V (CI V)",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Copenhagen Infrastructure IV (CI IV)",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2020 is 2 years before investment, North America-relevant mandate; next candidate trails by 10.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "Copenhagen Infrastructure V (CI V)",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Copenhagen Infrastructure V (CI V)",
+        "attributionConfidence": null,
+        "attributionRationale": "The Kentucky PSC-filed Lost City corporate chart traces CI V LPs through CI V Sunrise HoldCo LLC and CI V Sunrise Renewables LLC to Lost City Renewables LLC. This directly supports the existing Copenhagen Infrastructure V (CI V) link; remove the stale inferred CI IV attribution."
+      }
+    },
+    {
+      "recordId": "OFA-9718B3CCF7A1",
+      "ownershipPeriodId": "cmrxpk8ox027aivhey29wjo5v",
+      "companyId": "cmrxpjmb4017tivhe2f61twxg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Real Assets (Infrastructure)",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: CPP Investments | Fund: Real Assets (Infrastructure) | Ownership Interest: 29% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The December 22, 2016 closing announcement identifies CPP Investment Board's pension investment through Promotora Punta Cometa. Real Assets (Infrastructure) is a strategy label, not a disclosed fund vehicle. Preserve the historical 29% PPC stake qualification and do not infer a current Arco Norte look-through percentage."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T07:58:04.559Z",
+  "receiptSha256": "13d0dfe045c39745637269a6d00169afa75ef7385460a162b37a8cc8aae20a96"
+}
