@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_EVIDENCE",
+  "batchId": "portco-completion-014",
+  "batchSha256": "9a23cc92ae947acfdf7712a86eacfeae2f46d40ad9d71928f5db5646485b2142",
+  "verifiedAt": "2026-09-08T12:57:03.288Z",
+  "release": {
+    "mergeSha": "ee4315e8032a0baa854f7c4cf1098f99911af73a",
+    "canonicalSha": "ee4315e8032a0baa854f7c4cf1098f99911af73a",
+    "headSha": "ee4315e8032a0baa854f7c4cf1098f99911af73a",
+    "gitRef": "main",
+    "gitProvider": "github",
+    "canonicalUrl": "https://infra-ma-2.vercel.app",
+    "ready": true,
+    "requiredChecksPassed": true,
+    "evidence": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001/canonical-release.json",
+      "sha256": "14e1f334a50cbe4e614a3a01d8358f51a903429b47b3a2ae9057c940e5841e1b"
+    }
+  },
+  "receipt": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001/receipt-verification.json",
+    "sha256": "02e3a8c7fe45e67122db09344affcbe5dfea7c10615e883ffc1c16a4f9a72135"
+  },
+  "snapshotSha256": "53abb18aeea0db1828622c754ca94ae4bfb22cd71e737ed99198abd34b52d736",
+  "seedManifestSha256": "2a132dce89ca588bffaf93e80db17a031f6bb0bdb975f66a8af487261b5a3c54",
+  "proof": [
+    {
+      "companyId": "cmtj59aap00152a2bkeju8781",
+      "checks": {
+        "api": true,
+        "redirects": true,
+        "ownership": true,
+        "citations": true,
+        "renderedCard": true,
+        "afterImages": true,
+        "seedAlignment": true
+      },
+      "evidence": [
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001/completion-after.json",
+          "sha256": "8f687759d52d3a7e95b8bf995d034e3556f148694757ae6b9884b33812961845"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001/live-verification.json",
+          "sha256": "e1b73950b45c07543bf7c889a7f4885d7a34de2396962f5b3d68f00daadc91f4"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001/rendered-0381.png",
+          "sha256": "8b63475a8bf479d8f124907bcaaf4d1acb2858516aabeb72f23287adcfa6fc7f"
+        }
+      ]
+    }
+  ],
+  "renderedReview": "Actually displayed and inspected rendered-0381.png from canonical production. Exus shows Partners Group, 2023-Present, Partners Group Next Generation Infrastructure LLC explicitly qualified as one disclosed participating fund, the preserved Exus US Holdings LP/client-vehicle description, and stake not publicly disclosed. The second owner is Exus founders and management, 2018-Present, retained and rolled equity, Direct / program investment, and stake not publicly disclosed. Neither owner displays an estimated/low-confidence fund or a pending attribution label. The overview, 2023/2018 timeline and SEC/Partners Group source cards remain present and legible. No ownership percentage, exclusive client-fund allocation, vehicle, year or fund link was inferred. Full API and after-image checks separately verified all ten companies and 38 ownership periods, including all nine unchanged parked companies.",
+  "renderedReviewFile": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-014-recovery-001/rendered-review.json",
+    "sha256": "2f355609a5444e85fb2115dec0cc135dcad50fc692983cb88d5af84570c713d9"
+  },
+  "parked": [
+    {
+      "companyId": "cmtj597ba00002a2bspz4drmq",
+      "issue": "Former FTC Solar corporate ownership is UNRESOLVED without active seed binding; current PG fund allocation/minority members remain unavailable, with a vehicle-as-fund seed record. Preserve qualified manager control and exact historical 23% stake. No partial current patch or invented minority owners."
+    },
+    {
+      "companyId": "cmtj598vu000k2a2bg9cs4trp",
+      "issue": "Former GIC, OPTrust and Mount Elbert ownership is UNRESOLVED without active seed bindings. PG minority co-investment is disclosed in 2024, and fresh Task381 SEC filing also names EdgeCore Holdings LP with an August 22 2024 acquisition, but this does not resolve complete historical ownership or exact allocation. No partial current patch or inferred seller rollover."
+    },
+    {
+      "companyId": "cmtj59bjr001l2a2bu371qye3",
+      "issue": "Current PG/Barings exact funds and vehicles unavailable; seed DISCLOSED values represent undisclosed vehicle placeholders. Preserve genuine UNRESOLVED production and historical Wood Creek/Blackstone unknowns; null rationale/seed mismatch cannot be harmonized through unsupported text/identity inference."
+    },
+    {
+      "companyId": "cmtj59czh00262a2bzt0pt8u6",
+      "issue": "Former OMERS Private Equity is known direct program but UNRESOLVED without active seed binding; current PG/Kohlberg fund allocations and co-investor title/stakes remain unavailable. Preserve exact50/50 current ownership and separate Kohlberg historical re-entry. No partial current correction."
+    },
+    {
+      "companyId": "cmtj6tww600003s2blir9wvv5",
+      "issue": "Former AtkinsRealis, Macquarie listed-vehicle and CDPQ interests retain UNRESOLVED attribution without active seed bindings; current SPVs must not be fund names. Preserve Ferrovial48.29/CPP44.20 block including undisclosed co-investors/PSP7.51 and exact years. Do not infer CPP look-through."
+    },
+    {
+      "companyId": "cmtj6tzbx000n3s2bctwx91rm",
+      "issue": "Former AEP corporate period remains UNRESOLVED without active seed binding; original application research expressly names four KKR Diversified Core Infrastructure master funds, so do not call KKR fund family unknown. Exact fund allocations remain unavailable. Internal reorganization date differs from aggregate economic ownership representation and requires scoped history review. Preserve80.1/9.95/9.95 and Olympus/Midwest legal chain; no partial current patch."
+    },
+    {
+      "companyId": "cmtj6u1k600173s2b9gcrd9gz",
+      "issue": "Former AEP corporate period remains UNRESOLVED without active seed binding; KKR four Diversified Core master funds known in original research. Infra-PSP Canada is a vehicle, not fund. Internal reorganization/history issue outside metadata-only workflow. Preserve80.1/9.95/9.95 and exact existingyears/vehicles; no partial patch."
+    },
+    {
+      "companyId": "cmtj6u3oc001p3s2bno6biaiq",
+      "issue": "Former Oaktree/Highstar IV and parallel-vehicle periods retain UNRESOLVED attribution without active seed bindings. Current ASUR corporate/PSP program cannot be partially corrected while history unresolved. Preserve60/40 current and aggregate50% former qualification, no invented split or PSP2013-as-Aerostar-entry."
+    },
+    {
+      "companyId": "cmtj6u5vu002a3s2bjqe8f76f",
+      "issue": "Former ECP FundI and ENGIE corporate periods remain UNRESOLVED without active seed bindings. Existing production already records signed pending Hull Street sale as ofSeptember1 2026. Do not infer closing or change transaction/ownership via attribution workflow. Queue historical attribution and exact pending-exit verification separately."
+    }
+  ]
+}
