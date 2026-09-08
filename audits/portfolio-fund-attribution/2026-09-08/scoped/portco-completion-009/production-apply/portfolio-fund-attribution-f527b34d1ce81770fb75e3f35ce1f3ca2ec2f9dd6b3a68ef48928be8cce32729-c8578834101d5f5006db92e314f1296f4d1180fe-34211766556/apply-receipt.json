@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "f527b34d1ce81770fb75e3f35ce1f3ca2ec2f9dd6b3a68ef48928be8cce32729",
+  "approvalSha256": "c8eb9a7d259e392d1f4b28ca0317016c420d4aa5390e001dd3747c3b02bc5f81",
+  "environment": "production",
+  "pipelineRunId": "cmtshjzbu0000a64xsfu59j8i",
+  "mutationCount": 3,
+  "changed": 3,
+  "idempotent": false,
+  "beforeFingerprint": "8aed626143f55511fa8b6b49a5a1d9c7c6a0956c4c93b01739faf6efd787f1a8",
+  "afterFingerprint": "5d069e0e2955c3e56d426147e9967772359944dad82eb39f4d0c7a49c9f91340",
+  "rows": [
+    {
+      "recordId": "OFA-AEA81C9BFA30",
+      "ownershipPeriodId": "cmrxpk3tb01zpivhel7rowy9i",
+      "companyId": "cmrxpjhwq010yivhe6klfgqf5",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Social Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Harrison Street | Fund: Social Infrastructure Fund | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Harrison Street acquired Cincinnati Zoo Solar through its Social Infrastructure Strategy, but the reviewed public sources do not identify a specific fund, managed account, upstream vehicle or ownership percentage."
+      }
+    },
+    {
+      "recordId": "OFA-F6C24C7B3F60",
+      "ownershipPeriodId": "cmti5finb000fwa2b2yfvpsyp",
+      "companyId": "cmti5fikq0002wa2bf07a5mgt",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ISQ Global Infrastructure Fund III, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Spire's purchase agreement identifies ISQ Global Infrastructure Fund III, L.P. as the buyer fund and equity provider for the Subterra acquisition chain, and the closing filing plus I Squared announcement establish the completed acquisition and Bear River platform launch. The named fund is not yet a curated Fund Database record, so no fund link is created; the disclosed 100% interest applies to Belle Butte LLC and is not promoted to an unsupported Bear River-level percentage."
+      }
+    },
+    {
+      "recordId": "OFA-CFAB054E7339",
+      "ownershipPeriodId": "cmrxpjrju01gaivheyreqldij",
+      "companyId": "cmrxpj6j700jfivhen42ptow2",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Elevate Renewables / ArcLight",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: ArcLight Capital Partners | Fund: Elevate Renewables / ArcLight | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "ArcLight identifies Elevate as an ArcLight Energy Partners Fund VII portfolio platform, and the reviewed transaction sources establish that Elevate acquired Prospect in the December 2025 closing period. The exact project-level percentage is not publicly disclosed."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T09:47:19.715Z",
+  "receiptSha256": "d868ffc5ad67ec93ab9cb4abc8aa26972856765f2fb35b408fce0caa277a89cf"
+}
