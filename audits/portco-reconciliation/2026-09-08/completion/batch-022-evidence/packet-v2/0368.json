@@ -1,0 +1,130 @@
+{
+  "companyId": "cmrxpjm8e017oivhe1inhdhjr",
+  "name": "Bruce Power",
+  "sequence": 368,
+  "classification": "PARKED",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0368-bruce-power/attempt-1/research-decision.json",
+      "sha256": "64c86279e3e925b4b45d1145a81a54ee75f05a48115e194f00ac188de6c4404b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0368-bruce-power/attempt-1/source-verification.json",
+      "sha256": "d82654ba2cb7f6d12e30320f3a3e5180df7b9cde6855359558e9458c97f603e6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0368-bruce-power/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "9c4c6dbcd8233d9f96b4e3fa39016f942c2cbb1747663f11ab56f86e64d43b7e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0368-bruce-power/attempt-1/chatgpt-response-validation.json",
+      "sha256": "62e5e17f0dab80cc034cd08e96114bf0cf6269a8d23f6d3014ad3fe391d14e4e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0368-bruce-power/attempt-1/chatgpt-attestation.json",
+      "sha256": "0dea81ef0b37375520560a278e3fc3934167a60a387ff4046d4723ebac48d21f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/review.json",
+      "sha256": "dcbcdb329960a4baf2d595618d633a1c85bc93b3559277a4d969ea59559b0189"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-013-evidence/source-config.json",
+      "sha256": "9b1e220deced2c9f7009eaf0a430472bfa30f7659ddd243bf41a41cc692280c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0368-bruce-power/attempt-1/application-research-decision-v1.json",
+      "sha256": "af899c71ab5b6ea69faa6114353096e00a6d44750a01d5b2600a07cf21a78c15"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0368-bruce-power-v1/proposal.json",
+      "sha256": "b97904d5641726ff488f258670f2a78c510b02fa76bcda6718f5568fe03e70c0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0368-bruce-power-v1.json",
+      "sha256": "ed7931d27bd422d310338ededf83e2f5b13082f964a2587a46167c75f0e5753b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0367-0372-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "296be3616e10e67bdd53798c2e87c1df7129e28d0e2a994b3fa866beb826462d"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013/completion-evidence.json",
+      "sha256": "a88e116dc3a2a6523eda9e38acdba28307813cbdbfeab58ccaa4bc460af54c11"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-013/completion-after.json",
+      "sha256": "55ffc195aaedbb4bc0fedc04e01dfc2a597cb834f6f15d06669931045e05ccc2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-022-evidence/packet-v2/review.json",
+      "sha256": "4bd80b47b8e1f806d0f60964ee3cf5deea419c87c0f40a9a5d92d65383b8eb84"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-022-evidence/authority.json",
+      "sha256": "ce5e5b378db5f846e68dca29c30ba4f8a5de2c47244c322aaa79e2a6e304e589"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-022-evidence/readiness.json",
+      "sha256": "39c3afb591abe22048b624392bf9e6b1c9eb67ae271793e61bb476ac68fca5d5"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpk8lw0274ivhekizsvd72",
+    "cmtj20olr000s2h2b2xoo2fvq",
+    "cmtj20orc000u2h2bamaxpdgk",
+    "cmtj20oww000w2h2bkayqq8gf",
+    "cmtj20p2g000y2h2blrb7dwo9",
+    "cmtj20p8000102h2bnnbr7249"
+  ],
+  "issue": "Bruce Power has directly evidenced OMERS pension-program ownership, but its existing fund link supplies displayed manager OMERS Infrastructure while the underlying organization is OMERS. The compiler rejects removing that fund link because it would change manager identity. DIRECT_PROGRAM cannot retain a fund link under the existing protected schema. Preserve all owners without partial changes and queue supported manager/organization reconciliation before the complete current-and-historical attribution correction. The source-reviewed historical fund/corporate findings remain preserved; do not weaken either guard.",
+  "expectedImageSemanticSha256": "565b49033479ea6d15483effcc3d0bf96db89798992703199e533adc243d268b",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk8lw0274ivhekizsvd72",
+      "sha256": "f7ee2b739c2abe5f91791bf3a4cd5a69c1ce2c0096f5a45f1c7789465a1a033f"
+    },
+    {
+      "ownerId": "cmtj20olr000s2h2b2xoo2fvq",
+      "sha256": "4238f6435aed0323b4cfcc469ae0b8cbea1b8a12dbb72eba9674f7d697bfc543"
+    },
+    {
+      "ownerId": "cmtj20orc000u2h2bamaxpdgk",
+      "sha256": "371472449ca8da02efde0638bb468c6263d090caec69de00998400d7838b725c"
+    },
+    {
+      "ownerId": "cmtj20oww000w2h2bkayqq8gf",
+      "sha256": "269a133cd9f914aa8bf64bdc39becf91f0def04b245f5a1882c52bf1dbcbf91c"
+    },
+    {
+      "ownerId": "cmtj20p2g000y2h2blrb7dwo9",
+      "sha256": "2f6df6ad10b7f96b3620dba4d15822d4a0b85d7555179aae868e579e8bf0bd53"
+    },
+    {
+      "ownerId": "cmtj20p8000102h2bnnbr7249",
+      "sha256": "eae00160197652d46d8a7fb5b54fcf3e49228224391d7f8d86a9296a4c62e816"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0368-bruce-power-v1/proposal.json",
+      "sha256": "b97904d5641726ff488f258670f2a78c510b02fa76bcda6718f5568fe03e70c0"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0368-bruce-power-v1.json",
+      "sha256": "ed7931d27bd422d310338ededf83e2f5b13082f964a2587a46167c75f0e5753b"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0367-0372-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "296be3616e10e67bdd53798c2e87c1df7129e28d0e2a994b3fa866beb826462d",
+      "memberIndex": 1
+    },
+    "receiptSha256": "5dd5834fd46608fff72df395c54e6cd678a960fbe16c5f3cee8b721e63110b7d"
+  },
+  "sourceCaptures": []
+}

@@ -1,0 +1,14 @@
+{
+  "batchId": "portco-completion-022",
+  "packet": "packet-v2/config.json",
+  "offline": {"names": 10, "boundFiles": 2560, "passed": true, "databaseWrites": 0},
+  "compiled": {"safeNames": 3, "parkedNames": 7, "mutations": 7, "fundLinkChanges": 0, "ownershipIdentityChanges": 0, "addedHistoricalOverlays": 5},
+  "targeted": {"files": 12, "tests": 125, "passed": true, "logSha256": "8814aadb43e6cb052cd97fdc7ce1411020674a4de918a17a33997770a17871cd"},
+  "fullRegression": {"files": 208, "tests": 3824, "passed": true, "runsOnFinalContents": 1, "logSha256": "34e27d07a7c50a48c4d3aac61e863670cb8c68b618d5f630b241e67fe83d69ca"},
+  "typecheck": {"command": "npx tsc -p scripts/portco-completion/tsconfig.json", "passed": true},
+  "eslint": {"path": "scripts/portfolio-fund-attribution/seed-manifest.test.ts", "passed": true},
+  "seedValidation": {"errors": 0, "warnings": 54, "passed": true, "fullSeedExecuted": false, "logSha256": "277bfda16291b13fd00f2f819761dfc8e1114b4642e2376050f96ee0d86760ea"},
+  "publicationScan": {"filesBeforeThisReport": 92, "secretFindings": 0, "explicitRedactions": 1},
+  "diffCheck": {"codeAndAuditJsonPassed": true, "exception": "Source HTML retains exact captured whitespace. Do not normalize immutable evidence bytes."},
+  "productionApplyOccurred": false
+}

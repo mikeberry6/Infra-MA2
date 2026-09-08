@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+  "dependencies": [
+    {
+      "path": "prisma/seed-data/companies.ts",
+      "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.ts",
+      "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+      "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+    },
+    {
+      "path": "prisma/seed-data/portco-types.ts",
+      "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+    },
+    {
+      "path": "prisma/entity-resolution.ts",
+      "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+    },
+    {
+      "path": "prisma/seed-runner.ts",
+      "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+    }
+  ],
+  "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+  "companies": [
+    {
+      "name": "DartPoints Holding Company, LLC",
+      "country": "United States",
+      "companySha256": "553a27fca936c6333ce8f8be5240d1c44e227956318fd5e26529bf62d70cdd25",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "NOVA Infrastructure",
+            "ownershipVehicle": "NOVA Infrastructure Fund II",
+            "vehicleName": "NOVA Infrastructure Fund II",
+            "investmentYear": 2025,
+            "stake": "Controlling majority; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "NOVA Infrastructure",
+          "vehicleName": "NOVA Infrastructure Fund II",
+          "fundLookupName": "NOVA Infrastructure Fund II",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Astra Capital Management",
+            "ownershipVehicle": "Astra investment vehicle; exact vehicle not publicly disclosed",
+            "vehicleName": "Astra investment vehicle; exact vehicle not publicly disclosed",
+            "investmentYear": 2020,
+            "stake": "Meaningful minority retained after 2025 control sale; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Astra Capital Management",
+          "vehicleName": "Astra investment vehicle; exact vehicle not publicly disclosed",
+          "fundLookupName": "Astra investment vehicle; exact vehicle not publicly disclosed",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Orion Infrastructure Capital",
+            "ownershipVehicle": "OIC Credit Opportunities Fund IV",
+            "vehicleName": "OIC Credit Opportunities Fund IV",
+            "investmentYear": 2025,
+            "stake": "Minority equity; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Orion Infrastructure Capital",
+          "vehicleName": "OIC Credit Opportunities Fund IV",
+          "fundLookupName": "OIC Credit Opportunities Fund IV",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    {
+      "name": "Intersect Power",
+      "country": "United States",
+      "companySha256": "e3825c5a4b8bd6e668f9e2cbcba440b4f7a17a7cab6871e00355595234d9ba82",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Alphabet Inc.",
+            "ownershipVehicle": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+            "vehicleName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+            "investmentYear": 2024,
+            "stake": "Minority from 2024; 100% control after the 2026 carve-out and acquisition",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Alphabet Inc.",
+          "vehicleName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+          "fundLookupName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Climate Adaptive Infrastructure",
+            "ownershipVehicle": "CAI Fund I",
+            "vehicleName": "CAI Fund I",
+            "investmentYear": 2020,
+            "exitYear": 2026,
+            "stake": "Not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Climate Adaptive Infrastructure",
+          "vehicleName": "CAI Fund I",
+          "fundLookupName": "CAI Fund I",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Greenbelt Capital Partners",
+            "ownershipVehicle": "Trilantic / Greenbelt investment vehicle",
+            "vehicleName": "Trilantic / Greenbelt investment vehicle",
+            "investmentYear": 2020,
+            "exitYear": 2026,
+            "stake": "Not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Greenbelt Capital Partners",
+          "vehicleName": "Trilantic / Greenbelt investment vehicle",
+          "fundLookupName": "Trilantic / Greenbelt investment vehicle",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "TPG",
+            "ownershipVehicle": "TPG Rise Climate",
+            "vehicleName": "TPG Rise Climate",
+            "investmentYear": 2022,
+            "exitYear": 2026,
+            "stake": "Lead investor; percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "TPG",
+          "vehicleName": "TPG Rise Climate",
+          "fundLookupName": "TPG Rise Climate",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Pantheon Infrastructure Plc",
+            "ownershipVehicle": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+            "vehicleName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+            "investmentYear": 2025,
+            "exitYear": 2026,
+            "stake": "Approximately US$40 million invested; percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Pantheon Infrastructure Plc",
+          "vehicleName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+          "fundLookupName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    {
+      "name": "Dimension Energy",
+      "country": "United States",
+      "companySha256": "7b00239de6469c763a61d6f6eba88891fc0f0aff0920572225caf8851b4183a8",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Partners Group",
+            "ownershipVehicle": "PG Delta Holdco LLC; client infrastructure accounts",
+            "vehicleName": "PG Delta Holdco LLC; client infrastructure accounts",
+            "investmentYear": 2021,
+            "stake": "Controlling; exact manager-level percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Partners Group",
+          "vehicleName": "PG Delta Holdco LLC; client infrastructure accounts",
+          "fundLookupName": "PG Delta Holdco LLC; client infrastructure accounts",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "FTC Solar, Inc.",
+            "ownershipVehicle": "Direct Class A units of Dimension Energy LLC",
+            "vehicleName": "Direct Class A units of Dimension Energy LLC",
+            "investmentYear": 2018,
+            "exitYear": 2021,
+            "stake": "Approximately 23%; entire interest sold",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "FTC Solar, Inc.",
+          "vehicleName": "Direct Class A units of Dimension Energy LLC",
+          "fundLookupName": "Direct Class A units of Dimension Energy LLC",
+          "transactionState": "REALIZED"
+        }
+      ]
+    }
+  ],
+  "proofSha256": "7ff800e57bc0ee2166dca93d15634d070a2a3d81546ff027f2d3b4c8c5e9ed53"
+}

@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "def715c699d140eebc6aea71b624bb00155f82d87bf1b3158835686a1f07ce59",
+  "sourceSnapshotSha256": "60f2643d2469da2d17835ff4a2d82b49f208949ed0c71fca82d9713f8de0eeee",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 4,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 3,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 7,
+  "mutations": [
+    {
+      "recordId": "OFA-CE08871CC054",
+      "ownershipPeriodId": "cmtizen2o001g282b6qk46p7u",
+      "companyName": "DartPoints Holding Company, LLC",
+      "country": "United States",
+      "investmentFirm": "NOVA Infrastructure",
+      "currentVehicleName": "NOVA Infrastructure Fund II",
+      "databaseVehicleName": "NOVA Infrastructure Fund II",
+      "investmentYear": 2025,
+      "stake": "Controlling majority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "NOVA's Fund II closing release explicitly identifies DartPoints as one of the fund's first two investments. Resolve missing fund metadata without changing control, vehicle, entry year or adding a fund link."
+      },
+      "evidenceUrls": [
+        "https://www.novainfrastructure.com/article-nova-infrastructure-exceeds-target-and-raises-145-billion-in-aggregate-capital-commitments-for-nova-fund-ii",
+        "https://www.novainfrastructure.com/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth"
+      ]
+    },
+    {
+      "recordId": "OFA-92E02F840B2E",
+      "ownershipPeriodId": "cmtizen8m001k282bt7218x0k",
+      "companyName": "DartPoints Holding Company, LLC",
+      "country": "United States",
+      "investmentFirm": "Orion Infrastructure Capital",
+      "currentVehicleName": "OIC Credit Opportunities Fund IV",
+      "databaseVehicleName": "OIC Credit Opportunities Fund IV",
+      "investmentYear": 2025,
+      "stake": "Minority equity; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "OIC Credit Opportunities Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "OIC's own Fund IV release identifies DartPoints among its announced capital partnerships, and NOVA's transaction release separately confirms OIC as both lender and minority-equity investor. Resolve the existing OIC Fund IV attribution; preserve the minority equity period and do not convert the senior credit facility into equity."
+      },
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20260331863914/en/OIC-Successfully-Closes-Credit-Opportunities-Fund-IV-Above-Target-at-%241.58BN",
+        "https://www.novainfrastructure.com/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth"
+      ]
+    },
+    {
+      "recordId": "OFA-4E07DAA3E43E",
+      "ownershipPeriodId": "cmtj3t1t80019062ba36l7k9c",
+      "companyName": "Intersect Power",
+      "country": "United States",
+      "investmentFirm": "Alphabet Inc.",
+      "currentVehicleName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+      "databaseVehicleName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Minority from 2024; 100% control after the 2026 carve-out and acquisition",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's direct closing release identifies Google's completed Intersect acquisition and the separate IPX spinout. Resolve corporate-program attribution for the unchanged Alphabet owner; preserve the minority-to-control period and canonical carve-out. No IPX transaction is repeated."
+      },
+      "evidenceUrls": [
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-74878B7EDD3AE70484F80332",
+      "ownershipPeriodId": "cmtj3t1ts001a062baywbhcvg",
+      "companyName": "Intersect Power",
+      "country": "United States",
+      "investmentFirm": "Climate Adaptive Infrastructure",
+      "currentVehicleName": "CAI Fund I",
+      "databaseVehicleName": "CAI Fund I",
+      "investmentYear": 2020,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CAI Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "CAI directly states that its inaugural Fund I led Intersect's 2020 repurchase from SoftBank. Resolve the missing historical fund metadata, preserving the existing vehicle and realized period. The publication copy removes only a reviewed third-party widget token."
+      },
+      "evidenceUrls": [
+        "https://www.climateadaptiveinfra.com/news-and-insights/cai-announces-alphabet-agreement-to-acquire-intersect-to-advance-us-energy-innovation"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-9C2AE66F19500928ECB8EFF5",
+      "ownershipPeriodId": "cmtj3t1us001d062bxomyfh66",
+      "companyName": "Intersect Power",
+      "country": "United States",
+      "investmentFirm": "TPG",
+      "currentVehicleName": "TPG Rise Climate",
+      "databaseVehicleName": "TPG Rise Climate",
+      "investmentYear": 2022,
+      "stake": "Lead investor; percentage not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG explicitly identifies TPG Rise Climate as the investing climate platform and seller of the Intersect stake. Resolve the existing platform attribution without guessing which dedicated pool invested, naming a different TPG fund, or altering the realized ownership period. Preserve TPG Rise Climate as the literal vehicle, with no separately attributed fund."
+      },
+      "evidenceUrls": [
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-50A5D61E561F3CAF62CACAA2",
+      "ownershipPeriodId": "cmtj3t1vf001f062bqji4lxkl",
+      "companyName": "Intersect Power",
+      "country": "United States",
+      "investmentFirm": "Pantheon Infrastructure Plc",
+      "currentVehicleName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+      "databaseVehicleName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+      "investmentYear": 2025,
+      "stake": "Approximately US$40 million invested; percentage not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Pantheon Infrastructure Plc",
+        "attributionConfidence": null,
+        "attributionRationale": "The issuer's own regulatory announcements identify Pantheon Infrastructure PLC as the listed global infrastructure fund, confirm its Intersect investment and the March 2026 partial realization while retaining separate IPX exposure. Resolve the historical PINT fund attribution, not a passive LP interest in CAI Fund I; preserve the direct co-investment vehicle and amount qualification."
+      },
+      "evidenceUrls": [
+        "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/net-asset-value-s-/9630754",
+        "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/intersect-power-update/9314446"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-BFE04E5597D96451C138BAC2",
+      "ownershipPeriodId": "cmtj597pm000d2a2beqkf9j9e",
+      "companyName": "Dimension Energy",
+      "country": "United States",
+      "investmentFirm": "FTC Solar, Inc.",
+      "currentVehicleName": "Direct Class A units of Dimension Energy LLC",
+      "databaseVehicleName": "Direct Class A units of Dimension Energy LLC",
+      "investmentYear": 2018,
+      "stake": "Approximately 23%; entire interest sold",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "FTC Solar's filed June 2021 Form 10-Q, note 6, states that it sold its entire Class A common-unit interest in Dimension on June 24, approximately 23% of outstanding common shares. Resolve former corporate balance-sheet attribution, preserving the exact existing qualified stake, direct units and realized period. Earnout and escrow receipts are not continuing equity."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1828161/000095017021001227/ftci-20210630.htm"
+      ]
+    }
+  ],
+  "manifestSha256": "fda4f4065052a97b7846f80786ba0585241b4bf4aa6e8625daf5358506db94bb"
+}
