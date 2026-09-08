@@ -1,0 +1,1712 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Terminals</title>
+        <title>Terminals | Odfjell</title>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Terminals" />
+<meta property="og:url" content="https://www.odfjell.com/terminals" />
+<meta property="og:site_name" content="Odfjell" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Terminals" />
+<link href="https://www.odfjell.com" rel="home" />
+<link href="https://www.odfjell.com/terminals" rel="canonical" />
+<link type="text/plain" rel="author" href="https://www.odfjell.com/humans.txt" />
+        <meta property="og:title" content="Terminals">
+<meta property="og:description" content="">
+<meta property="og:type" content="website">
+<meta property="og:url" content="/terminals">
+<meta property="og:image" content="https://odfjell.hel1.your-objectstorage.com/assets/images/_career/at-sea_anthony-tuala_odfjell.jpeg">
+<meta property="og:image:width" content="88">
+<meta property="og:image:height" content="88">
+<meta property="og:image:alt" content="Terminals">
+<meta property="og:image:type" content="image/png">
+        <link rel="icon" href="https://odfjell.hel1.your-objectstorage.com/assets/logo-and-graphics/logo-white.svg" type="image/x-icon">
+        <script  data-navigate-once="true">window.livewireScriptConfig = {"csrf":"etVnJlLvKKJayNxxLouzx1TO0BdTERqRkCZzZvuO","uri":"\/livewire\/update","progressBar":"","nonce":""};</script>
+
+        <link rel="preload" as="style" href="https://www.odfjell.com/build/assets/site-CKNyy53j.css" /><link rel="modulepreload" as="script" href="https://www.odfjell.com/build/assets/site-CBe00mIn.js" /><link rel="stylesheet" href="https://www.odfjell.com/build/assets/site-CKNyy53j.css" data-navigate-track="reload" /><script type="module" src="https://www.odfjell.com/build/assets/site-CBe00mIn.js" data-navigate-track="reload"></script>
+        <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+<link rel="preconnect" href="https://ka-p.fontawesome.com" crossorigin>
+<script defer src="https://kit.fontawesome.com/deadc54e2c.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body class="bg-white text-navy font-base leading-normal min-h-screen flex flex-col">
+        
+
+<header
+    x-data="{
+        openMenu: null,
+        initialDarkBg: true,
+        isDarkBg: false,
+        lastScrollTop: 0,
+        isHidden: false,
+        scrollThreshold: 100,
+        isScrolled: false,
+        navContrast: null,
+    }"
+    x-init="
+        isDarkBg = initialDarkBg || false
+
+        navContrast = window.NavContrast?.init($el, {
+            isMenuOpen: () => openMenu !== null,
+            isScrolled: () => isScrolled,
+            setDarkBg: (value) => { isDarkBg = value },
+        }) ?? null
+
+        $watch('openMenu', value => {
+            document.documentElement.style.overflow = value !== null ? 'hidden' : ''
+            document.body.style.overflow = value !== null ? 'hidden' : ''
+
+            if (value !== null) {
+                isDarkBg = true
+                return
+            }
+
+            if (isScrolled) {
+                isDarkBg = false
+                return
+            }
+
+            navContrast?.update()
+        })
+    "
+    @scroll.window="
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        isScrolled = currentScroll > 0;
+        if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+            isHidden = true;
+        } else {
+            isHidden = false;
+        }
+        lastScrollTop = Math.max(currentScroll, 0);
+
+        if (openMenu === null) {
+            if (isScrolled) {
+                isDarkBg = false
+            } else {
+                navContrast?.update()
+            }
+        }
+    "
+    class="fixed flex-col top-0 left-0 right-0 z-50 transition-transform duration-300 print:hidden!"
+    :class="{
+        'openMenu': openMenu !== null,
+        '-translate-y-full': isHidden && !openMenu,
+        'translate-y-0': !isHidden || openMenu,
+        'bg-white': isScrolled
+    }"
+    role="banner"
+>
+
+    <div class="custom-container p-0">
+        <div
+            class="header-inner custom-container mx-auto"
+            :class="{
+                'text-white': isDarkBg,
+                'text-navy': !isDarkBg,
+            }"
+        >
+            <div class="header-left">
+                <a href="/" class="header-logo-link ml-0">
+                    <template x-if="isDarkBg">
+                        <img src="https://odfjell.hel1.your-objectstorage.com/assets/logo-and-graphics/logo_white.svg" alt="Odfjell Logo" class="header-logo-img" width="130" height="34">
+                    </template>
+                    <template x-if="!isDarkBg">
+                        <img src="https://odfjell.hel1.your-objectstorage.com/assets/logo-and-graphics/logo_dark.svg" alt="Odfjell Logo" class="header-logo-img" width="130" height="34">
+                    </template>
+                </a>
+            </div>
+            <div class="header-center">
+                
+                
+                    <ul class="hidden lg:block no-ul-style">
+                        <li>
+                            <a class="hover:border-b hover:border-solid hover:border-[#6698F5] pb-1" href="/shipping">Tankers</a>
+
+                        </li>
+                    </ul>
+                
+                    <ul class="hidden lg:block no-ul-style">
+                        <li>
+                            <a class="hover:border-b hover:border-solid hover:border-[#6698F5] pb-1" href="/terminals">Terminals</a>
+
+                        </li>
+                    </ul>
+                
+                    <ul class="hidden lg:block no-ul-style">
+                        <li>
+                            <a class="hover:border-b hover:border-solid hover:border-[#6698F5] pb-1" href="/sustainability">Sustainability</a>
+
+                        </li>
+                    </ul>
+                
+                    <ul class="hidden lg:block no-ul-style">
+                        <li>
+                            <a class="hover:border-b hover:border-solid hover:border-[#6698F5] pb-1" href="/career">Career</a>
+
+                        </li>
+                    </ul>
+                
+                    <ul class="hidden lg:block no-ul-style">
+                        <li>
+                            <a class="hover:border-b hover:border-solid hover:border-[#6698F5] pb-1" href="/investors">Investors</a>
+
+                        </li>
+                    </ul>
+                
+                    <ul class="hidden lg:block no-ul-style">
+                        <li>
+                            <a class="hover:border-b hover:border-solid hover:border-[#6698F5] pb-1" href="/about">About</a>
+
+                        </li>
+                    </ul>
+                
+            </div>
+            <div class="header-right gap-2">
+                <button type="button" class="btn border-current text-current z-90 hover:bg-white hover:text-navy hover:border-white rounded-full w-[44px] cursor-pointer pointer-events-auto"
+    x-show="openMenu === null || openMenu === `report`" @click="openMenu = `search`" aria-label="Search">
+    
+        <i class="fa-solid fa-search"></i>
+    
+    
+    
+</button>
+                <button type="button" class="btn border-current text-current z-90 hover:bg-white hover:text-navy hover:border-white cursor-pointer pointer-events-auto"
+    x-show="openMenu === `search`" @click="openMenu = null">
+    
+        <i class="fa-solid fa-xmark"></i>
+    
+    
+    
+</button>
+                <a href="/contact" class="hidden sm:inline-flex items-center p-1.5 px-2 border-current rounded-full border-2 text-current z-90 hover:bg-white hover:text-navy hover:border-white">Contact</a>
+                <button type="button" class="btn border-current text-current z-90 hover:bg-white hover:text-navy hover:border-white cursor-pointer pointer-events-auto"
+    x-show="openMenu === null" @click="openMenu = `report`">
+    
+        <i class="fa-solid fa-bars"></i>
+    
+    Menu
+    
+</button>
+                <button type="button" class="btn border-current text-current z-90 hover:bg-white hover:text-navy hover:border-white cursor-pointer pointer-events-auto"
+    x-show="openMenu === `search`" @click="openMenu = `report`">
+    
+        <i class="fa-solid fa-bars"></i>
+    
+    Menu
+    
+</button>
+                <button type="button" class="btn border-current text-current z-90 hover:bg-white hover:text-navy hover:border-white cursor-pointer pointer-events-auto"
+    x-show="openMenu === `report`" @click="openMenu = null">
+    
+        <i class="fa-solid fa-xmark"></i>
+    
+    Close
+    
+</button>
+            </div>
+        </div>
+        <nav x-cloak x-show="openMenu === 'report'" x-transition @click.outside="openMenu = null" class="header-nav-report" :class="'h-[calc(100vh-16px)] md:w-auto fixed md:relative inset-0 md:inset-auto m-2 w-[calc(100%-16px)] rounded-lg'" aria-label="Menu"
+            x-data="{ openSub: null }"
+            >
+            <div class="header-nav-content">
+                <div class="custom-container">
+                    <div class="hidden md:block">
+                        <div class="grid grid-cols-3 md:gap-16 lg:gap-20 max-w-6xl mx-auto py-8">
+                            
+                                <div class="flex flex-col h-full">
+                                    <!-- Top level heading with border hover effect -->
+                                    <div class="pb-4 mb-6 border-b-1 border-white hover:border-white transition-colors duration-300">
+                                        <a href="/shipping" 
+                                        @click="openMenu = null" 
+                                        class="h4 text-white hover:text-white/80 transition-colors">
+                                            Tankers
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Second level items in column -->
+                                    
+                                        <ul class="flex flex-col space-y-3 flex-1 no-ul-style">
+                                        
+                                            <li>
+                                                <a href="/shipping/ship-management" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Ship Management
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/shipping/fleet-list" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Fleet overview
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/shipping/flumar" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Flumar
+                                                </a>
+                                            </li>
+                                        
+                                        </ul>
+                                    
+                                </div>
+                            
+                                <div class="flex flex-col h-full">
+                                    <!-- Top level heading with border hover effect -->
+                                    <div class="pb-4 mb-6 border-b-1 border-white hover:border-white transition-colors duration-300">
+                                        <a href="/terminals" 
+                                        @click="openMenu = null" 
+                                        class="h4 text-white hover:text-white/80 transition-colors">
+                                            Terminals
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Second level items in column -->
+                                    
+                                        <ul class="flex flex-col space-y-3 flex-1 no-ul-style">
+                                        
+                                            <li>
+                                                <a href="/terminals/houston" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Houston, USA
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/terminals/charleston" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Charleston, USA
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/terminals/ulsan" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Ulsan, Korea
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/terminals/noord-natie" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Noord Natie, Belgium
+                                                </a>
+                                            </li>
+                                        
+                                        </ul>
+                                    
+                                </div>
+                            
+                                <div class="flex flex-col h-full">
+                                    <!-- Top level heading with border hover effect -->
+                                    <div class="pb-4 mb-6 border-b-1 border-white hover:border-white transition-colors duration-300">
+                                        <a href="/sustainability" 
+                                        @click="openMenu = null" 
+                                        class="h4 text-white hover:text-white/80 transition-colors">
+                                            Sustainability
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Second level items in column -->
+                                    
+                                        <ul class="flex flex-col space-y-3 flex-1 no-ul-style">
+                                        
+                                            <li>
+                                                <a href="/sustainability/environment" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Environmental
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/sustainability/social" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Social
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/sustainability/sustainable-governance" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Governance
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/sustainability/esg-reports-and-policies" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                ESG reports & policies
+                                                </a>
+                                            </li>
+                                        
+                                        </ul>
+                                    
+                                </div>
+                            
+                                <div class="flex flex-col h-full">
+                                    <!-- Top level heading with border hover effect -->
+                                    <div class="pb-4 mb-6 border-b-1 border-white hover:border-white transition-colors duration-300">
+                                        <a href="/career" 
+                                        @click="openMenu = null" 
+                                        class="h4 text-white hover:text-white/80 transition-colors">
+                                            Career
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Second level items in column -->
+                                    
+                                        <ul class="flex flex-col space-y-3 flex-1 no-ul-style">
+                                        
+                                            <li>
+                                                <a href="/career/at-sea" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                At sea
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/career/onshore" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                At the office
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/career/at-the-terminal" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                At the terminal
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/career/job-openings" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Job openings
+                                                </a>
+                                            </li>
+                                        
+                                        </ul>
+                                    
+                                </div>
+                            
+                                <div class="flex flex-col h-full">
+                                    <!-- Top level heading with border hover effect -->
+                                    <div class="pb-4 mb-6 border-b-1 border-white hover:border-white transition-colors duration-300">
+                                        <a href="/investors" 
+                                        @click="openMenu = null" 
+                                        class="h4 text-white hover:text-white/80 transition-colors">
+                                            Investors
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Second level items in column -->
+                                    
+                                        <ul class="flex flex-col space-y-3 flex-1 no-ul-style">
+                                        
+                                            <li>
+                                                <a href="/investors/shares" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Shares & shareholder information
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/investors/general-meetings" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                General meetings
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/investors/reports-presentation" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Reports & presentations
+                                                </a>
+                                            </li>
+                                        
+                                        </ul>
+                                    
+                                </div>
+                            
+                                <div class="flex flex-col h-full">
+                                    <!-- Top level heading with border hover effect -->
+                                    <div class="pb-4 mb-6 border-b-1 border-white hover:border-white transition-colors duration-300">
+                                        <a href="/about" 
+                                        @click="openMenu = null" 
+                                        class="h4 text-white hover:text-white/80 transition-colors">
+                                            About
+                                        </a>
+                                    </div>
+                                    
+                                    <!-- Second level items in column -->
+                                    
+                                        <ul class="flex flex-col space-y-3 flex-1 no-ul-style">
+                                        
+                                            <li>
+                                                <a href="/about/our-organization" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                Our organization
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/about/news" 
+                                                @click="openMenu = null" 
+                                                class="text-white hover:text-white transition-colors text-xl-semibold block py-1">
+                                                <i class="fa-solid fa-chevron-right text-white mr-2"></i>
+                                                News
+                                                </a>
+                                            </li>
+                                        
+                                        </ul>
+                                    
+                                </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="md:hidden pt-8 w-full absolute left-0">
+                        
+                            <ul class="flex flex-col w-full no-ul-style">
+                                
+                                    <li class="w-full">
+                                        <div class="flex items-center justify-between w-full border-1 border-tertiary">
+                                            <a href="/shipping" @click="openMenu = null" class="h6 w-full border-e-1 border-tertiary py-4 px-6 underline">Tankers</a>
+                                            <button 
+                                                @click="openSub === 'tankers' ? openSub = null : openSub = 'tankers'"
+                                                class="text-white w-[80px]"
+                                            >
+                                                <i class="fa-solid fa-plus transition-transform" :class="openSub === 'tankers' ? 'rotate-180' : ''"></i>
+                                            </button>
+                                        </div>
+
+                                        <div x-show="openSub === 'tankers'" 
+                                            x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-[500px]"
+                                            x-transition:leave="transition ease-in duration-150"
+                                            x-transition:leave-start="opacity-100 max-h-[500px]"
+                                            x-transition:leave-end="opacity-0 max-h-0"
+                                            class="overflow-hidden">
+                                            <ul class="space-y-3 py-4 px-6 no-ul-style">
+                                            
+                                                <li>
+                                                    <a href="/shipping/ship-management" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Ship Management
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/shipping/fleet-list" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Fleet overview
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/shipping/flumar" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Flumar
+                                                    </a>
+                                                </li>
+                                            
+                                            </ul>
+                                        </div>
+                                    </li>
+                                
+                            
+                        
+                            <ul class="flex flex-col w-full no-ul-style">
+                                
+                                    <li class="w-full">
+                                        <div class="flex items-center justify-between w-full border-1 border-tertiary">
+                                            <a href="/terminals" @click="openMenu = null" class="h6 w-full border-e-1 border-tertiary py-4 px-6 underline">Terminals</a>
+                                            <button 
+                                                @click="openSub === 'terminals' ? openSub = null : openSub = 'terminals'"
+                                                class="text-white w-[80px]"
+                                            >
+                                                <i class="fa-solid fa-plus transition-transform" :class="openSub === 'terminals' ? 'rotate-180' : ''"></i>
+                                            </button>
+                                        </div>
+
+                                        <div x-show="openSub === 'terminals'" 
+                                            x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-[500px]"
+                                            x-transition:leave="transition ease-in duration-150"
+                                            x-transition:leave-start="opacity-100 max-h-[500px]"
+                                            x-transition:leave-end="opacity-0 max-h-0"
+                                            class="overflow-hidden">
+                                            <ul class="space-y-3 py-4 px-6 no-ul-style">
+                                            
+                                                <li>
+                                                    <a href="/terminals/houston" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Houston, USA
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/terminals/charleston" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Charleston, USA
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/terminals/ulsan" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Ulsan, Korea
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/terminals/noord-natie" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Noord Natie, Belgium
+                                                    </a>
+                                                </li>
+                                            
+                                            </ul>
+                                        </div>
+                                    </li>
+                                
+                            
+                        
+                            <ul class="flex flex-col w-full no-ul-style">
+                                
+                                    <li class="w-full">
+                                        <div class="flex items-center justify-between w-full border-1 border-tertiary">
+                                            <a href="/sustainability" @click="openMenu = null" class="h6 w-full border-e-1 border-tertiary py-4 px-6 underline">Sustainability</a>
+                                            <button 
+                                                @click="openSub === 'sustainability' ? openSub = null : openSub = 'sustainability'"
+                                                class="text-white w-[80px]"
+                                            >
+                                                <i class="fa-solid fa-plus transition-transform" :class="openSub === 'sustainability' ? 'rotate-180' : ''"></i>
+                                            </button>
+                                        </div>
+
+                                        <div x-show="openSub === 'sustainability'" 
+                                            x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-[500px]"
+                                            x-transition:leave="transition ease-in duration-150"
+                                            x-transition:leave-start="opacity-100 max-h-[500px]"
+                                            x-transition:leave-end="opacity-0 max-h-0"
+                                            class="overflow-hidden">
+                                            <ul class="space-y-3 py-4 px-6 no-ul-style">
+                                            
+                                                <li>
+                                                    <a href="/sustainability/environment" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Environmental
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/sustainability/social" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Social
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/sustainability/sustainable-governance" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Governance
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/sustainability/esg-reports-and-policies" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        ESG reports & policies
+                                                    </a>
+                                                </li>
+                                            
+                                            </ul>
+                                        </div>
+                                    </li>
+                                
+                            
+                        
+                            <ul class="flex flex-col w-full no-ul-style">
+                                
+                                    <li class="w-full">
+                                        <div class="flex items-center justify-between w-full border-1 border-tertiary">
+                                            <a href="/career" @click="openMenu = null" class="h6 w-full border-e-1 border-tertiary py-4 px-6 underline">Career</a>
+                                            <button 
+                                                @click="openSub === 'career' ? openSub = null : openSub = 'career'"
+                                                class="text-white w-[80px]"
+                                            >
+                                                <i class="fa-solid fa-plus transition-transform" :class="openSub === 'career' ? 'rotate-180' : ''"></i>
+                                            </button>
+                                        </div>
+
+                                        <div x-show="openSub === 'career'" 
+                                            x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-[500px]"
+                                            x-transition:leave="transition ease-in duration-150"
+                                            x-transition:leave-start="opacity-100 max-h-[500px]"
+                                            x-transition:leave-end="opacity-0 max-h-0"
+                                            class="overflow-hidden">
+                                            <ul class="space-y-3 py-4 px-6 no-ul-style">
+                                            
+                                                <li>
+                                                    <a href="/career/at-sea" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        At sea
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/career/onshore" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        At the office
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/career/at-the-terminal" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        At the terminal
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/career/job-openings" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Job openings
+                                                    </a>
+                                                </li>
+                                            
+                                            </ul>
+                                        </div>
+                                    </li>
+                                
+                            
+                        
+                            <ul class="flex flex-col w-full no-ul-style">
+                                
+                                    <li class="w-full">
+                                        <div class="flex items-center justify-between w-full border-1 border-tertiary">
+                                            <a href="/investors" @click="openMenu = null" class="h6 w-full border-e-1 border-tertiary py-4 px-6 underline">Investors</a>
+                                            <button 
+                                                @click="openSub === 'investors' ? openSub = null : openSub = 'investors'"
+                                                class="text-white w-[80px]"
+                                            >
+                                                <i class="fa-solid fa-plus transition-transform" :class="openSub === 'investors' ? 'rotate-180' : ''"></i>
+                                            </button>
+                                        </div>
+
+                                        <div x-show="openSub === 'investors'" 
+                                            x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-[500px]"
+                                            x-transition:leave="transition ease-in duration-150"
+                                            x-transition:leave-start="opacity-100 max-h-[500px]"
+                                            x-transition:leave-end="opacity-0 max-h-0"
+                                            class="overflow-hidden">
+                                            <ul class="space-y-3 py-4 px-6 no-ul-style">
+                                            
+                                                <li>
+                                                    <a href="/investors/shares" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Shares & shareholder information
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/investors/general-meetings" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        General meetings
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/investors/reports-presentation" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Reports & presentations
+                                                    </a>
+                                                </li>
+                                            
+                                            </ul>
+                                        </div>
+                                    </li>
+                                
+                            
+                        
+                            <ul class="flex flex-col w-full no-ul-style">
+                                
+                                    <li class="w-full">
+                                        <div class="flex items-center justify-between w-full border-1 border-tertiary">
+                                            <a href="/about" @click="openMenu = null" class="h6 w-full border-e-1 border-tertiary py-4 px-6 underline">About</a>
+                                            <button 
+                                                @click="openSub === 'about' ? openSub = null : openSub = 'about'"
+                                                class="text-white w-[80px]"
+                                            >
+                                                <i class="fa-solid fa-plus transition-transform" :class="openSub === 'about' ? 'rotate-180' : ''"></i>
+                                            </button>
+                                        </div>
+
+                                        <div x-show="openSub === 'about'" 
+                                            x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-[500px]"
+                                            x-transition:leave="transition ease-in duration-150"
+                                            x-transition:leave-start="opacity-100 max-h-[500px]"
+                                            x-transition:leave-end="opacity-0 max-h-0"
+                                            class="overflow-hidden">
+                                            <ul class="space-y-3 py-4 px-6 no-ul-style">
+                                            
+                                                <li>
+                                                    <a href="/about/our-organization" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        Our organization
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/about/news" @click="openMenu = null" class="font[350] text[20px] py-2 flex items-center">
+                                                        News
+                                                    </a>
+                                                </li>
+                                            
+                                            </ul>
+                                        </div>
+                                    </li>
+                                
+                            
+                        
+                        <li><a href="/contact" class="w-full block py-4 px-6 border-b border-white text-xl">Contact</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Search Overlay -->
+        <div x-cloak x-show="openMenu === 'search'" 
+            x-transition:enter="transition ease-out duration-200" 
+            x-transition:enter-start="opacity-0 transform -translate-y-4" 
+            x-transition:enter-end="opacity-100 transform translate-y-0" 
+            x-transition:leave="transition ease-in duration-150" 
+            x-transition:leave-start="opacity-100 transform translate-y-0" 
+            x-transition:leave-end="opacity-0 transform -translate-y-4"
+            @click.outside="openMenu = null" 
+            class="fixed top-0 left-0 right-0 w-screen bg-midnight backdrop-blur-sm z-40"
+            style="height: 40vh; padding-top: 80px;">
+            
+            <!-- Search input area -->
+            <div class="custom-container h-full flex items-center justify-center">
+                <div class="w-full">
+                    <div class="relative">
+                        <input 
+                            x-ref="searchInput"
+                            x-init="$nextTick(() => { if (openMenu === 'search') $refs.searchInput.focus() })"
+                            x-effect="if (openMenu === 'search') $nextTick(() => $refs.searchInput.focus())"
+                            @keydown.escape="openMenu = null"
+                            @keydown.enter="$event.target.value && (window.location.href = '/search?q=' + encodeURIComponent($event.target.value))"
+                            type="text" 
+                            placeholder="Type keyword..." 
+                            class="w-full bg-transparent border-0 border-b-2 border-white/30 text-white  h3 md:h2  placeholder-[#6E7382] focus:border-white focus:outline-none py-4"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                        <button 
+                            @click="$refs.searchInput.value && (window.location.href = '/search?q=' + encodeURIComponent($refs.searchInput.value))"
+                            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white transition-colors">
+                            <i class="fa-kit fa-search text-2xl border-2 border-white rounded-full p-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="flex-1">
+            
+            
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="m-0 hero-focal-1 p-0 max-w-screen w-screen text-white" data-nav-theme="dark">
+        <div class="relative flex min-h-[700px] md:min-h-[812px] overflow-hidden"  style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('https://odfjell.hel1.your-objectstorage.com/assets/images/_terminals/odfjell-terminals-bridge.jpg?w=1920&h=812&fit=crop&fm=webp&q=80'); background-size: cover; background-position: var(--hero-focal, center);">
+            
+            <div class="relative  custom-container flex flex-col grow">
+                <div class="flex flex-col gap-10 grow justify-end">
+                    <div class="flex flex-col justify-between items-end gap-12 md:flex-row md:gap-28">
+                        <div class="flex flex-col gap-10 w-full md:w-[60%]">
+                            <h1>Tank storage solutions for the chemical industry</h1>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <hr class="mt-10">
+                    <div class="flex flex-wrap gap-20">
+                        
+                            <div class="flex flex-col">
+                                <p>Operational, part owned terminals</p>
+                                <div class="flex gap-5 items-center">
+                                    <i class="fa-kit fa-kit fa-terminals fa-5x" style="color: var(--color-tomato);"></i>
+                                    <span class="text-[64px]">4</span>
+                                </div>
+                            </div>
+                        
+                            <div class="flex flex-col">
+                                <p>Total storage capacity (cbm, million)</p>
+                                <div class="flex gap-5 items-center">
+                                    <i class="fa-kit fa-kit fa-volume fa-5x" style="color: var(--color-tomato);"></i>
+                                    <span class="text-[64px]">1.3</span>
+                                </div>
+                            </div>
+                        
+                            <div class="flex flex-col">
+                                <p>Total number of storage tanks</p>
+                                <div class="flex gap-5 items-center">
+                                    <i class="fa-kit fa-kit fa-tank fa-5x" style="color: var(--color-tomato);"></i>
+                                    <span class="text-[64px]">476</span>
+                                </div>
+                            </div>
+                        
+                            <div class="flex flex-col">
+                                <p>Terminals employees</p>
+                                <div class="flex gap-5 items-center">
+                                    <i class="fa-kit fa-kit fa-employees fa-5x" style="color: var(--color-tomato);"></i>
+                                    <span class="text-[64px]">235</span>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+            
+                <section data-nav-theme="dark" class="m-0 p-0 max-w-screen bg-midnight text-white">
+    <div class="custom-container py-20">
+        <div class="grid grid-cols-12 gap-y-8">
+            
+                
+                    <p class="heading-m col-span-12 lg:col-span-8">Odfjell Terminals offers safe and efficient storage for vital liquids, chemicals, and oil products at international shipping hubs.</p>
+                
+            
+                
+                    <div class="bard col-span-12 lg:col-span-7 lg:col-start-2 prose [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:mb-2 [&_table]:w-full [&_td]:border-b [&_td]:py-3 [&_td]:pr-4 [&_th]:border-b [&_th]:py-3 [&_th]:pr-4 [&_th]:text-left text-secondary [&_td]:border-white/30 [&_th]:border-white/30">
+                        <p>The four tank terminals in the US, Belgium, and Korea provide a diversified service offering and product mix. By combining shipping and tank terminals, Odfjell is uniquely positioned to deliver increased safety, stronger product stewardship, greater efficiency, and improved arrival accuracy for customers.</p>
+                    </div>
+                
+            
+        </div>
+    </div>
+</section>
+
+            
+                <section data-nav-theme="dark" class="bg-midnight text-white m-0 p-0 max-w-screen w-screen">
+    <div class="custom-container">
+    <div class="flex justify-between items-end mb-10">
+        <h3 class="h4 pb-0!">Our terminals</h3>
+        
+    </div>
+
+    <div class="overflow-hidden">
+    <div id="image-menu-container" class="flex gap-4 overflow-x-auto overflow-y-hidden pb-6 sm:pb-0 snap-x snap-mandatory scroll-smooth flex-nowrap md:gap-6 md:pb-0">
+        
+            
+                <div class="relative group overflow-hidden rounded-lg aspect-[300/300] w-full sm:w-[300px] md:flex-[0_0_calc(25%-18px)] snap-start md:snap-none">
+                    
+                        <a href="/terminals/houston" class="absolute inset-0 z-10"><span class="sr-only">Odfjell Terminals Houston (OTH)</span></a>
+                    
+                    <img src="https://odfjell.hel1.your-objectstorage.com/assets/images/_terminals/_houston/odfjell-terminal-tank-staircase-industrial-design.jpg?w=600&h=600&fit=crop&fm=webp&q=80" alt="Industrial staircase and shadow detail on Odfjell storage tank under bright sunlight." class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6">
+                        <p class="heading-m text-white inline-block text-center">Odfjell Terminals Houston (OTH)</p>
+                        
+                            <a href="/terminals/houston" class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-navy z-20">
+                                Learn more
+                                <i class="fa-kit fa-icon-arrow-right"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <div class="relative group overflow-hidden rounded-lg aspect-[300/300] w-full sm:w-[300px] md:flex-[0_0_calc(25%-18px)] snap-start md:snap-none">
+                    
+                        <a href="/terminals/charleston" class="absolute inset-0 z-10"><span class="sr-only">Odfjell Terminals Charleston (OTC)</span></a>
+                    
+                    <img src="https://odfjell.hel1.your-objectstorage.com/assets/images/_terminals/_charleston/odfjell-terminal-worker-inspection-storage-tank.jpg?w=600&h=600&fit=crop&fm=webp&q=80" alt="Odfjell terminal worker inspecting a chemical storage tank under bright sky." class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6">
+                        <p class="heading-m text-white inline-block text-center">Odfjell Terminals Charleston (OTC)</p>
+                        
+                            <a href="/terminals/charleston" class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-navy z-20">
+                                Learn more
+                                <i class="fa-kit fa-icon-arrow-right"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <div class="relative group overflow-hidden rounded-lg aspect-[300/300] w-full sm:w-[300px] md:flex-[0_0_calc(25%-18px)] snap-start md:snap-none">
+                    
+                        <a href="/terminals/ulsan" class="absolute inset-0 z-10"><span class="sr-only">Odfjell Terminals Korea (OTK)</span></a>
+                    
+                    <img src="https://odfjell.hel1.your-objectstorage.com/assets/images/_terminals/_ulsan/img_5502.jpg?w=600&h=600&fit=crop&fm=webp&q=80" alt="Odfjell Terminals Korea (OTK)" class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6">
+                        <p class="heading-m text-white inline-block text-center">Odfjell Terminals Korea (OTK)</p>
+                        
+                            <a href="/terminals/ulsan" class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-navy z-20">
+                                Learn more
+                                <i class="fa-kit fa-icon-arrow-right"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <div class="relative group overflow-hidden rounded-lg aspect-[300/300] w-full sm:w-[300px] md:flex-[0_0_calc(25%-18px)] snap-start md:snap-none">
+                    
+                        <a href="/terminals/noord-natie" class="absolute inset-0 z-10"><span class="sr-only">Noord Natie Odfjell Antwerp Terminals (NNOAT)</span></a>
+                    
+                    <img src="https://odfjell.hel1.your-objectstorage.com/assets/images/_terminals/_noord-natie/odfjell-terminals-storage-tanks.jpg?w=600&h=600&fit=crop&fm=webp&q=80" alt="Low-angle view of Odfjell terminal storage tanks and connecting pipes under clear blue sky." class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6">
+                        <p class="heading-m text-white inline-block text-center">Noord Natie Odfjell Antwerp Terminals (NNOAT)</p>
+                        
+                            <a href="/terminals/noord-natie" class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-navy z-20">
+                                Learn more
+                                <i class="fa-kit fa-icon-arrow-right"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+        
+    </div>
+    </div>
+
+    
+    </div>
+</section>
+            
+                <section data-nav-theme="dark" class="m-0 p-0 max-w-screen bg-midnight text-white">
+    <div class="custom-container">
+        
+        <div class="overflow-x-auto">
+            <table class="w-full min-w-max">
+                <tbody>
+                    
+                        <tr class="border-b hover:bg-navy  ">
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <div class="whitespace-nowrap "><p><strong>Terminal</strong></p>
+</div>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <div class="whitespace-nowrap "><p><strong>Location</strong></p>
+</div>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <div class="whitespace-nowrap "><p><strong>Ownership</strong></p>
+</div>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <div class="whitespace-nowrap "><p><strong>Capacity</strong></p>
+</div>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <div class="whitespace-nowrap "><p><strong>Stainless steel</strong></p>
+</div>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <div class="whitespace-nowrap "><p><strong>Tanks</strong></p>
+</div>
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr class="border-b hover:bg-navy  ">
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">Odfjell Terminals Houston Inc.</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">Houston, USA</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">51%</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">412,519 cbm</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">112,985 cbm</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">128</span>
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr class="border-b hover:bg-navy  ">
+                            
+                        </tr>
+                    
+                        <tr class="border-b hover:bg-navy  ">
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">Odfjell Terminals Charleston LLC</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">Charleston, USA</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">51%</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">79,243 cbm</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">N/A</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">9</span>
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr class="border-b hover:bg-navy  ">
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">Odfjell Terminals Korea Co. Ltd</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">Ulsan, Korea</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">50%</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">313,710 cbm</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">15,860 cbm</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">85</span>
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                        <tr class="border-b hover:bg-navy  ">
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">Noord Natie Odfjell Antwerp Terminals</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  ">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">Antwerp, Belgium</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">25%</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">500,689 cbm</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">195,332 cbm</span>
+                                    
+                                </td>
+                            
+                                <td class="px-2 py-3  text-right">
+                                    
+                                        <span class="text-l-regular whitespace-nowrap">254</span>
+                                    
+                                </td>
+                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+            
+                <section data-nav-theme="dark" class="m-0 p-0 max-w-screen bg-midnight text-white">
+    <div class="custom-container">
+        <div class="grid grid-cols-12 gap-6 items-center hover:bg-navy transition-colors duration-300 rounded-lg overflow-hidden group">
+            <div class="col-span-12 md:col-span-6  overflow-hidden rounded-lg">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<picture><source type='image/webp' media='(min-width: 1280px)' srcset='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/d6b0059343224516a31f7ec819dc8719/odfjell-terminal-port-facility-sunset.webp 580w,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/fdb0adf5d198f446b61b009ed223f634/odfjell-terminal-port-facility-sunset.webp 1160w' sizes='580px' width='580' height='580'><source type='image/webp' media='(min-width: 1024px)' srcset='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/d6b0059343224516a31f7ec819dc8719/odfjell-terminal-port-facility-sunset.webp 580w,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/fdb0adf5d198f446b61b009ed223f634/odfjell-terminal-port-facility-sunset.webp 1160w' sizes='calc(50vw - 60px)' width='580' height='580'><source type='image/webp' media='(min-width: 768px)' srcset='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/fab523504349d06f6217aada7d43c132/odfjell-terminal-port-facility-sunset.webp 476w,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/f0821b418466137ef4099a07bd0b098f/odfjell-terminal-port-facility-sunset.webp 952w' sizes='calc(50vw - 36px)' width='476' height='476'><source type='image/webp' media='(min-width: 640px)' srcset='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/8148eb618667cd104f6a11bd0541dd82/odfjell-terminal-port-facility-sunset.webp 720w,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/0541161334ba4453e02bfb06533a6d7f/odfjell-terminal-port-facility-sunset.webp 1440w' sizes='calc(100vw - 48px)' width='720' height='720'><source type='image/webp' srcset='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/bd4fcc51cbdb3c275f466f521a21ac74/odfjell-terminal-port-facility-sunset.webp 608w,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/5bbb544ad3387abef65296a05eb0f603/odfjell-terminal-port-facility-sunset.webp 1216w' sizes='calc(100vw - 32px)' width='608' height='608'><img src='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/_terminals/odfjell-terminal-port-facility-sunset.jpeg/4959d63221732dfebbeabc513c297bd5/odfjell-terminal-port-facility-sunset.webp' alt='Aerial view of Odfjell terminal and port facility at sunset, with chemical storage tanks and docked vessels.' class='w-full transition-transform duration-300 group-hover:scale-110 rounded-lg object-cover' loading='lazy' width='608' height='608' style='aspect-ratio: 1/1'></picture>
+
+            </div>
+            <div class="col-span-12 md:col-span-6 hover:bg-navy transition-colors duration-300 p-4 md:pl-20 md:pr-8 ">
+                <h3>Terminal expansions: Increased capacity to meet growing demands</h3>
+                <div class="text-[20px] text-white line-height-[28px] whitespace-pre-line">
+                    As global trade patterns evolve and supply chains rationalize, tank terminals remain vital infrastructure in the chemical value chain. Operating high-barrier assets in key hubs, Odfjell combines long-term partnerships, safe operations, and local execution that together sustain value. To strengthen the platform and create additional value, we are growing our terminal business.
+                </div>
+                <div class="pt-10">
+                    
+    <div class="flex gap-6">
+    
+        <a href="https://annual2025.odfjell.com/articles/terminals-expansions" class="flex items-center gap-2 text-current group/link">
+            <span class="underline decoration-current transition-colors duration-300 group-hover/link:no-underline">Learn more</span>
+            <i class="fa-kit text-1xl fa-icon-arrow-right-short border-2 rounded-full group-hover/link:bg-white group-hover/link:text-navy" style="padding: 6px;"></i>
+        </a>
+    
+    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            
+                <section data-nav-theme="dark" class="m-0 p-0 max-w-screen bg-midnight text-white">
+    <div class="custom-container">
+    <div class="flex justify-between items-end mb-10">
+        <h3 class="h3 pb-0!">Related stories</h3>
+        
+        <a href="/about/news" class="flex items-center gap-2 text-current group/link">
+            <span class="underline decoration-current transition-colors duration-300 group-hover/link:no-underline">See all news</span>
+            <i class="fa-kit text-2xl fa-icon-arrow-right border-2 rounded-full group-hover/link:bg-white group-hover/link:text-navy" style="padding: 2px;"></i>
+        </a>
+    </div>
+    
+        <div id="articles-container-regular" class="flex sm:grid sm:grid-cols-12 gap-4 overflow-x-auto pb-6 sm:pb-0 sm:overflow-x-visible snap-x snap-mandatory scroll-smooth">
+            
+                
+                    <div class="w-full flex-none sm:w-auto sm:col-span-6 md:col-span-6 lg:col-span-3 overflow-hidden snap-start relative group">
+                        <a href="/about/news/orbie-award-recognizes-otus-leadership-in-cybersecurity" class="absolute inset-0 z-10">
+                            <span class="sr-only">ORBIE award recognizes OTUS’ leadership in cybersecurity</span>
+                        </a>
+                        
+                            <div class="h-[300px] bg-white/10 flex items-center justify-center rounded-lg relative overflow-hidden">
+                                <img src="https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/news/import/orbie-award-recognizes-otus-leadership-in-cybersecurity-fcef1190.png/cbee573a2312ae137d63b37a8a6ac5d3/orbie-award-recognizes-otus-leadership-in-cybersecurity-fcef1190.webp" width="400" height="300" loading="lazy" decoding="async" onerror="this.remove()" alt="" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            </div>
+                            <div class="pt-3 sm:sticky sm:top-0 bg-midnight sm:bg-transparent">
+                                <h4 class="heading-s pb-2">ORBIE award recognizes OTUS’ leadership in cybersecurity</h4>
+                                <div class="flex items-center gap-4 text-sm ">
+                                    <span class="text-s-semibold">Press release</span>
+                                    <span class="text-s-regular">May 13, 2026</span>
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+                    <div class="w-full flex-none sm:w-auto sm:col-span-6 md:col-span-6 lg:col-span-3 overflow-hidden snap-start relative group">
+                        <a href="/about/news/odfjell-terminals-a-measured-transformation" class="absolute inset-0 z-10">
+                            <span class="sr-only">Odfjell Terminals – a measured transformation</span>
+                        </a>
+                        
+                            <div class="h-[300px] bg-white/10 flex items-center justify-center rounded-lg relative overflow-hidden">
+                                <img src="https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/news/import/odfjell-terminals-a-measured-transformation-fab08d30.jpg/206e37f8b025083c6d7c0d128ef54e8e/odfjell-terminals-a-measured-transformation-fab08d30.webp" width="400" height="300" loading="lazy" decoding="async" onerror="this.remove()" alt="" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            </div>
+                            <div class="pt-3 sm:sticky sm:top-0 bg-midnight sm:bg-transparent">
+                                <h4 class="heading-s pb-2">Odfjell Terminals – a measured transformation</h4>
+                                <div class="flex items-center gap-4 text-sm ">
+                                    <span class="text-s-semibold">Press release</span>
+                                    <span class="text-s-regular">December 30, 2025</span>
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+                    <div class="w-full flex-none sm:w-auto sm:col-span-6 md:col-span-6 lg:col-span-3 overflow-hidden snap-start relative group">
+                        <a href="/about/news/noord-natie-recognized-for-entrepreneurial-excellence" class="absolute inset-0 z-10">
+                            <span class="sr-only">Noord Natie recognized for entrepreneurial excellence</span>
+                        </a>
+                        
+                            <div class="h-[300px] bg-white/10 flex items-center justify-center rounded-lg relative overflow-hidden">
+                                <img src="https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/news/import/noord-natie-recognized-for-entrepreneurial-excellence-2cf74c38.png/2b04421734be276225d5ed901838b46c/noord-natie-recognized-for-entrepreneurial-excellence-2cf74c38.webp" width="400" height="300" loading="lazy" decoding="async" onerror="this.remove()" alt="" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            </div>
+                            <div class="pt-3 sm:sticky sm:top-0 bg-midnight sm:bg-transparent">
+                                <h4 class="heading-s pb-2">Noord Natie recognized for entrepreneurial excellence</h4>
+                                <div class="flex items-center gap-4 text-sm ">
+                                    <span class="text-s-semibold">Press release</span>
+                                    <span class="text-s-regular">October 23, 2025</span>
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+                    <div class="w-full flex-none sm:w-auto sm:col-span-6 md:col-span-6 lg:col-span-3 overflow-hidden snap-start relative group">
+                        <a href="/about/news/nnoat-secures-iscc-certifications-and-voka-charter-for-2025" class="absolute inset-0 z-10">
+                            <span class="sr-only">NNOAT secures ISCC certifications and Voka Charter for 2025</span>
+                        </a>
+                        
+                            <div class="h-[300px] bg-white/10 flex items-center justify-center rounded-lg relative overflow-hidden">
+                                <img src="https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/news/import/nnoat-secures-iscc-certifications-and-voka-charter-for-2025-d551ea15.png/045a2a310314eb35e2401769f4629e47/nnoat-secures-iscc-certifications-and-voka-charter-for-2025-d551ea15.webp" width="400" height="300" loading="lazy" decoding="async" onerror="this.remove()" alt="" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            </div>
+                            <div class="pt-3 sm:sticky sm:top-0 bg-midnight sm:bg-transparent">
+                                <h4 class="heading-s pb-2">NNOAT secures ISCC certifications and Voka Charter for 2025</h4>
+                                <div class="flex items-center gap-4 text-sm ">
+                                    <span class="text-s-semibold">Press release</span>
+                                    <span class="text-s-regular">September 3, 2025</span>
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+            
+        </div>
+        
+
+    
+    </div>
+</section>
+
+            
+                <section data-nav-theme="dark" class="bg-midnight text-white m-0 p-0 max-w-screen w-screen">
+    <div class="custom-container">
+        <div class="grid grid-cols-12 gap-6">
+            
+            <div class="col-span-12 mb-8">
+                <h3>Contacts</h3>
+            </div>
+            
+            <div class="col-span-12" x-data="{ activeTab: '' }">
+                
+                <div class="grid grid-cols-12 gap-4">
+                    
+                        
+                            <div class="col-span-12 sm:col-span-3" >
+                                <div class="flex flex-col h-full overflow-hidden text-white">
+    
+        <picture><source type='image/webp' srcset='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/adrian-lenning,-managing-director-terminals.png/1f9d05fb0d4cc3e1ad3361f76e832cd5/adrian-lenning,-managing-director-terminals.webp 1x,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/adrian-lenning,-managing-director-terminals.png/ac362745c31fea8e3b5981406fbb7300/adrian-lenning,-managing-director-terminals.webp 2x,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/adrian-lenning,-managing-director-terminals.png/b69d199178ee81bcaaa13503d44dbfe4/adrian-lenning,-managing-director-terminals.webp 3x' width='600' height='600'><img src='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/adrian-lenning,-managing-director-terminals.png/1d7a67971e49acd92424efc1999541db/adrian-lenning,-managing-director-terminals.webp' alt='Adrian Lenning' class='w-full aspect-[1/1] object-cover rounded-[5px]' loading='lazy' width='600' height='600'></picture>
+    
+
+    <div class="flex flex-col flex-1" x-data="{ open: false }">
+        
+        <div
+            class="flex justify-between items-start gap-4 py-6 cursor-pointer"
+            role="button"
+            tabindex="0"
+            :aria-expanded="open ? 'true' : 'false'"
+            @click="open = !open"
+            @keydown.enter.prevent="open = !open"
+            @keydown.space.prevent="open = !open"
+        >
+            <div>
+                <h5 class="text-lg font-medium pb-1">Adrian Lenning</h5>
+                <p class="text-m-semibold">Managing Director, Terminals</p>
+                
+            </div>
+            <span class="w-10 h-10 flex justify-center items-center rounded-full shrink-0 pointer-events-none" aria-hidden="true">
+                <i class="fa-solid fa-plus" x-show="!open"></i>
+                <i class="fa-solid fa-xmark" x-show="open" x-cloak></i>
+            </span>
+        </div>
+
+        <div x-show="open" x-cloak x-transition class="pb-6 flex flex-col gap-3">
+            
+            
+            <a href="tel:+47 5527 0000" @click.stop class="underline text-sm">+47 5527 0000</a>
+            
+            
+            
+            <a href="mailto:mail@odfjell.com" @click.stop class="underline text-sm">mail@odfjell.com</a>
+            
+            
+            
+        </div>
+
+        
+        <div class="flex-1" aria-hidden="true"></div>
+        <div class="border-b-2 border-white" aria-hidden="true"></div>
+    </div>
+</div>
+
+                            </div>
+                        
+                            <div class="col-span-12 sm:col-span-3" >
+                                <div class="flex flex-col h-full overflow-hidden text-white">
+    
+        <picture><source type='image/webp' srcset='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/ulf-hedlund,-director-operational-excellence-&-technical-services-4.png/3dbab643f82ba74ed737b3610938606b/ulf-hedlund,-director-operational-excellence-&-technical-services-4.webp 1x,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/ulf-hedlund,-director-operational-excellence-&-technical-services-4.png/5d8830c6fe5e5c230e88276d7521dce5/ulf-hedlund,-director-operational-excellence-&-technical-services-4.webp 2x,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/ulf-hedlund,-director-operational-excellence-&-technical-services-4.png/8b7ef4d250ffad19aa3f7ce33046694c/ulf-hedlund,-director-operational-excellence-&-technical-services-4.webp 3x' width='600' height='600'><img src='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/ulf-hedlund,-director-operational-excellence-&-technical-services-4.png/11ee325304d5ca6e63838dea5f95ee15/ulf-hedlund,-director-operational-excellence-&-technical-services-4.webp' alt='Ulf Hedlund' class='w-full aspect-[1/1] object-cover rounded-[5px]' loading='lazy' width='600' height='600'></picture>
+    
+
+    <div class="flex flex-col flex-1" x-data="{ open: false }">
+        
+        <div
+            class="flex justify-between items-start gap-4 py-6 cursor-pointer"
+            role="button"
+            tabindex="0"
+            :aria-expanded="open ? 'true' : 'false'"
+            @click="open = !open"
+            @keydown.enter.prevent="open = !open"
+            @keydown.space.prevent="open = !open"
+        >
+            <div>
+                <h5 class="text-lg font-medium pb-1">Ulf Hedlund</h5>
+                <p class="text-m-semibold">Director Operational Excellence & Technical Services</p>
+                
+                
+                <p class="text-sm text-secondary">Terminals</p>
+                
+                
+            </div>
+            <span class="w-10 h-10 flex justify-center items-center rounded-full shrink-0 pointer-events-none" aria-hidden="true">
+                <i class="fa-solid fa-plus" x-show="!open"></i>
+                <i class="fa-solid fa-xmark" x-show="open" x-cloak></i>
+            </span>
+        </div>
+
+        <div x-show="open" x-cloak x-transition class="pb-6 flex flex-col gap-3">
+            
+            
+            
+            <a href="tel:+47 9054 7744" @click.stop class="underline text-sm">+47 9054 7744</a>
+            
+            
+            <a href="mailto:ulf.hedlund@odfjell.com" @click.stop class="underline text-sm">ulf.hedlund@odfjell.com</a>
+            
+            
+            
+            <a href="https://www.odfjell.com/employees/ulf-hedlund/vcard" @click.stop class="flex items-center gap-2 underline text-sm mt-2 text-left">
+                Download V-card <i class="fa-solid fa-download text-xs"></i>
+            </a>
+            
+        </div>
+
+        
+        <div class="flex-1" aria-hidden="true"></div>
+        <div class="border-b-2 border-white" aria-hidden="true"></div>
+    </div>
+</div>
+
+                            </div>
+                        
+                            <div class="col-span-12 sm:col-span-3" >
+                                <div class="flex flex-col h-full overflow-hidden text-white">
+    
+        <picture><source type='image/webp' srcset='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/stian-ommedal-manager-business-analysis.png/75c4b085622697ad35d11f55d068150c/stian-ommedal-manager-business-analysis.webp 1x,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/stian-ommedal-manager-business-analysis.png/02e7c0841b6b87478c822e76a836dcbc/stian-ommedal-manager-business-analysis.webp 2x,https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/stian-ommedal-manager-business-analysis.png/14da6dff50318e87572221e2dc5df3e8/stian-ommedal-manager-business-analysis.webp 3x' width='600' height='600'><img src='https://odfjell.hel1.your-objectstorage.com/glide_cache/containers/assets/images/employees/stian-ommedal-manager-business-analysis.png/37c69b804a1c1e748eaf7d3e0c2f4a77/stian-ommedal-manager-business-analysis.webp' alt='Stian Ommedal' class='w-full aspect-[1/1] object-cover rounded-[5px]' loading='lazy' width='600' height='600'></picture>
+    
+
+    <div class="flex flex-col flex-1" x-data="{ open: false }">
+        
+        <div
+            class="flex justify-between items-start gap-4 py-6 cursor-pointer"
+            role="button"
+            tabindex="0"
+            :aria-expanded="open ? 'true' : 'false'"
+            @click="open = !open"
+            @keydown.enter.prevent="open = !open"
+            @keydown.space.prevent="open = !open"
+        >
+            <div>
+                <h5 class="text-lg font-medium pb-1">Stian Ommedal</h5>
+                <p class="text-m-semibold">Manager Business Analysis</p>
+                
+                
+                <p class="text-sm text-secondary">Terminals</p>
+                
+                
+            </div>
+            <span class="w-10 h-10 flex justify-center items-center rounded-full shrink-0 pointer-events-none" aria-hidden="true">
+                <i class="fa-solid fa-plus" x-show="!open"></i>
+                <i class="fa-solid fa-xmark" x-show="open" x-cloak></i>
+            </span>
+        </div>
+
+        <div x-show="open" x-cloak x-transition class="pb-6 flex flex-col gap-3">
+            
+            
+            
+            <a href="tel:+47 9301 2266" @click.stop class="underline text-sm">+47 9301 2266</a>
+            
+            
+            <a href="mailto:stian.ommedal@odfjell.com" @click.stop class="underline text-sm">stian.ommedal@odfjell.com</a>
+            
+            
+            
+            <a href="https://www.odfjell.com/employees/stian-ommedal/vcard" @click.stop class="flex items-center gap-2 underline text-sm mt-2 text-left">
+                Download V-card <i class="fa-solid fa-download text-xs"></i>
+            </a>
+            
+        </div>
+
+        
+        <div class="flex-1" aria-hidden="true"></div>
+        <div class="border-b-2 border-white" aria-hidden="true"></div>
+    </div>
+</div>
+
+                            </div>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            
+            
+        </main>
+        <footer class="bg-midnight">
+    <div class="custom-container">
+        <div class="flex flex-col md:flex-row items-start justify-between">
+            <img src="https://odfjell.hel1.your-objectstorage.com/assets/logo-and-graphics/logo-white.svg?w=88&h=88&fit=contain&fm=webp&q=70" alt="Odfjell Logo" class="w-[88px] h-auto pb-16 md:pb-0" width="47" height="34">
+            <div class="border-transparent border-l border-r lg:border-[#6E7382] px-0 md:px-20">
+                <div class="flex flex-col md:flex-row gap-10 md:gap-20">
+                    
+                        <div>
+                            <h4 class="text-l-semibold text-white pb-1">Social media</h4>
+                            <div class="w-[80px] h-[2px] bg-[#fff] mb-6"></div>
+                            
+                                <ul class="space-y-4 no-ul-style">
+                                    
+                                        <li>
+                                            <a href="https://www.instagram.com/Odfjell_se/" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Instagram</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="https://www.facebook.com/Odfjell/" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Facebook</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="https://www.linkedin.com/company/odfjell/" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Linkedin</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="https://www.youtube.com/channel/UCl2CMs5zshdkf9P1ojA6vZQ" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Youtube</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </div>
+                    
+                        <div>
+                            <h4 class="text-l-semibold text-white pb-1">Privacy</h4>
+                            <div class="w-[80px] h-[2px] bg-[#fff] mb-6"></div>
+                            
+                                <ul class="space-y-4 no-ul-style">
+                                    
+                                        <li>
+                                            <a href="/cookies-policy" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Cookie policy</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/report-a-concern" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Report a concern</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/privacy-and-data-protection" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Privacy and data protection</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </div>
+                    
+                        <div>
+                            <h4 class="text-l-semibold text-white pb-1">Portals</h4>
+                            <div class="w-[80px] h-[2px] bg-[#fff] mb-6"></div>
+                            
+                                <ul class="space-y-4 no-ul-style">
+                                    
+                                        <li>
+                                            <a href="https://customerportal.odfjell.com/login" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Customer portal</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="https://mingle-portal.eu1.inforcloudsuite.com/ODFJELL_PRD" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Ship management portal</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="https://odfjell.cloud.com/" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Employee login</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="https://odfjell.sharepoint.com/sites/insite" class="text-secondary  text-l-regular hover:text-white hover:translate-x-[10px] transition-all duration-300 inline-block">Insite</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    </body>
+</html>

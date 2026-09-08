@@ -1,0 +1,147 @@
+{
+  "companyId": "cmrxpjlw50175ivhez9ani7qd",
+  "name": "Odfjell Terminals US Holdings LLC",
+  "sequence": 356,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/research-decision.json",
+      "sha256": "bf210a00a9be8aeeb4c705838502aef751a497e8dccb0e99e6ec946e595f3071"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/source-verification.json",
+      "sha256": "7596c3c326ced1a8f30a831a261537cdee79b4db1c7344203f99cdb31cba1928"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "eabe48854e8755b0aaa26e7a26d16f438feb29c65eec69700881f43b41b4e289"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/chatgpt-response-validation.json",
+      "sha256": "a42ddfaba6f8645495aacdf1f2ab2f76076ad58617162d669a66975947cf0532"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/chatgpt-attestation.json",
+      "sha256": "81f4e790746ee86fbdf77246a7ae00c9b29c53bbfa637ca47cc3d9d1d4c8c147"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/review.json",
+      "sha256": "723f925a5c4cabb15df9f0191838d9e90d314c729d7dc92477c6703b124391b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/source-config.json",
+      "sha256": "cca6f03d91245229d047357afb58401f64c495b03cf38dc2f202a13cd1f96c01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/fund-source-config.json",
+      "sha256": "eda2a00195a46070eea58ee2dca370ec5913700b74d04ae684cbf2a99dd0a288"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/targeted-source-config.json",
+      "sha256": "659064eb48c369a149520541cf7eb9fea7e0af96fae8561c5b41c8a64cb73394"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk88n026kivhei801lcbr",
+      "seedRecordId": "OFA-A31F4316086F",
+      "expectedSeedSha256": "9c260bbd21ea9791634b1414ab8f7e4b7bcb560c4bb14b34572df488c9e8793e",
+      "expectedOwnerSha256": "0fc06ce64e59c7043be780b4b71e4a3b18056ca9dc3664d3543a3f6d4816a676",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Odfjell's June 7, 2019 closing release identifies funds managed by Northleaf as the buyer of 49%, without naming the investing funds. The Northleaf NEIF estimate is unsupported; NCP US Terminals LP remains the legal vehicle, not a substitute fund name. Exact fund allocation remains undisclosed.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Direct June 7, 2019 corporate release confirms Northleaf-managed funds acquired Lindsay Goldberg's 49%. NCP US Terminals LP is a legal holding vehicle, not evidence naming the investing fund. Remove NEIF estimate without substituting the SPV as a fund.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/odfjell-close.html",
+          "sha256": "48760a38f5e8781fe0a6f1aaf03aecbb71dce07a3e5e5be2f6ab2d6d334a98be",
+          "url": "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtizeehq0004282bgkp8kda2",
+      "seedRecordId": "OFA-B279DCE8DA89",
+      "expectedSeedSha256": "ac9deddbc00ce999620cdee5ead467d386f5b6dc896eeab3b7fadf0889faed34",
+      "expectedOwnerSha256": "31c5ff9a8dbcfa303152522d11a757b196a837d45e5da089fc109281bbecef5e",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Odfjell's corporate terminals table directly reports its 51% ownership of both U.S. terminals. This is corporate ownership through the existing Odfjell Terminals Americas LLC vehicle, not an unresolved investment-fund allocation. Preserve the legal vehicle, entry year and stake without creating or linking a fund.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Current corporate terminal table expressly lists Odfjell's Houston and Charleston ownership as 51%. Corporate ownership supports DIRECT_PROGRAM with no fund name. Preserve its holding vehicle, 2011 entry and 51% stake and the former Lindsay Goldberg period with genuine undisclosed fund allocation.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/odfjell-terminals.html",
+          "sha256": "ee5a85224a1ee7a66b5c7c3b8b801dde4c1cfc1f40ebb0bfb4de5e38bb8818d3",
+          "url": "https://www.odfjell.com/terminals",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/odfjell-close.html",
+          "sha256": "48760a38f5e8781fe0a6f1aaf03aecbb71dce07a3e5e5be2f6ab2d6d334a98be",
+          "url": "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmtizeeky0006282b69pauznv"
+  ],
+  "issue": null,
+  "expectedImageSemanticSha256": "7e5abd25be7bd4e912bcaf81637c2a05acfd53636dbab66ce5683b63ffd7535e",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk88n026kivhei801lcbr",
+      "sha256": "0fc06ce64e59c7043be780b4b71e4a3b18056ca9dc3664d3543a3f6d4816a676"
+    },
+    {
+      "ownerId": "cmtizeehq0004282bgkp8kda2",
+      "sha256": "31c5ff9a8dbcfa303152522d11a757b196a837d45e5da089fc109281bbecef5e"
+    },
+    {
+      "ownerId": "cmtizeeky0006282b69pauznv",
+      "sha256": "c64b51bfab0008d4a9e7110b42c6ec96f06926ae2b8c7b3cc6ae2c60797046fe"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0356-odfjell-terminals-us-v3/proposal.json",
+      "sha256": "4cc383bb3667ff0f02c20c2dc73695437ee282610f14740b46c75b873982ea7c"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0356-odfjell-terminals-us-v3.json",
+      "sha256": "66a645aaccc9f06b529d5f0b67747081b7d20274f240bc26ce58bbc71089e8ac"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0356-0360-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "c8ae512aa0fe9c8488cc42eaba01a055129b77fd45fe7208a5a773ba990fe011",
+      "memberIndex": 0
+    },
+    "receiptSha256": "24bf93afc711060ce40098a8ce5147c3a5279d19f5312b8f7a51b5c4663f5ee0"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/odfjell-close.html.capture.json",
+      "sha256": "e6654ce7939f5f71d225e650f59243a3f4f41ad5f5ae098cf032f4d52c5eb702"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/odfjell-terminals.html.capture.json",
+      "sha256": "f03fa00b7228e1af193222375d687feea5ca1ead16d86939c9e9816dcbdc8434"
+    }
+  ]
+}

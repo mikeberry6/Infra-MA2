@@ -1,0 +1,124 @@
+{
+  "companyId": "cmtj0jm5c0000xx2b23nagtjp",
+  "name": "Xchange Telecom LLC",
+  "sequence": 362,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/research-decision.json",
+      "sha256": "f9ed4878b92cafb9628581be4e696108bb0c5825c07293ac8d1bffa8572db931"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/source-verification.json",
+      "sha256": "745871eff8cb9d4290bc2b23a6b7b4c6d422a9c69a08540f7e00bae52db9e589"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "1d51235681f6ca0c4491f8060c745e11a3069c8b767027931f7371b784404741"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/chatgpt-response-validation.json",
+      "sha256": "7a11faa073103d639c51ba543ee2110fb58687504aa0803a2a3bb7746abd63cd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/chatgpt-attestation.json",
+      "sha256": "dc12c57659c3c3306b6d84af4cd775f00d9786ee0808b512310e4459b4397956"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/review.json",
+      "sha256": "723f925a5c4cabb15df9f0191838d9e90d314c729d7dc92477c6703b124391b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/source-config.json",
+      "sha256": "cca6f03d91245229d047357afb58401f64c495b03cf38dc2f202a13cd1f96c01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/fund-source-config.json",
+      "sha256": "eda2a00195a46070eea58ee2dca370ec5913700b74d04ae684cbf2a99dd0a288"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/targeted-source-config.json",
+      "sha256": "659064eb48c369a149520541cf7eb9fea7e0af96fae8561c5b41c8a64cb73394"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtj0jm8f000axx2be82y69im",
+      "seedRecordId": "OFA-D681A8F7AF1F",
+      "expectedSeedSha256": "8f16d6a85e43e0a9458a5a802971d7593ff1d1c4929d35a70d55e71346b04698",
+      "expectedOwnerSha256": "f261f658f794d9aaa4de16fb243c0c5de0df064af9f160f7da4de5e5c20148f1",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed New York PSC petition, PDF pages 5-7, discloses NOVA Infrastructure Fund I's 71% economic participation in the acquisition complex alongside a blocker and GP structure. The Investco owns 100% of Xchange; that platform stake is not the fund's standalone percentage. Replace unresolved attribution with the disclosed Fund I, preserve the legal Investco vehicle and 2022 equity entry, and do not infer a curated fund link or direct Apollo ownership.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Exact filed bytes match the independently captured original SHA 854a1d46fd569b0b8d514456c11c0a843af56f037584c86a4d868bd130fd1940. Main agent extracted and visually inspected complete PDF pages 5-7: 100% platform ownership via Investco; 71% Fund I, 27% blocker and GP chain are upstream economics. Name NOVA Infrastructure Fund I as the disclosed fund within this complex, preserve the 100% manager-platform stake and acquisition vehicle, and do not label the LP a fund or Apollo a direct equity owner. No fund link is inferred. The attempted page-12 rendering was out of range; no nonexistent exhibit was used as evidence. The petition's text on pages 5-7 is the source relied upon.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/xchange-petition.pdf",
+          "sha256": "854a1d46fd569b0b8d514456c11c0a843af56f037584c86a4d868bd130fd1940",
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B001E2688-0000-C613-91D7-60845F7F6CE4%7D",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-xchange.html",
+          "sha256": "454361a2681ce4b2f2e45ae8b2b761accb0b047769f1b9e12fb7a69147031b8d",
+          "url": "https://www.novainfrastructure.com/nova-infrastructure-acquires-xchange-telecom-skywire-networks",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-investments.html",
+          "sha256": "57462f3c981f6942df1c2c5251ee522a0cc400d6384cec12af008baca40887c4",
+          "url": "https://www.novainfrastructure.com/investments-index",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "ad0b0696744d8dc4e1c9db4e03243518c22ad866647ecb0f865a43040202b803",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtj0jm8f000axx2be82y69im",
+      "sha256": "f261f658f794d9aaa4de16fb243c0c5de0df064af9f160f7da4de5e5c20148f1"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0362-skywire-networks-xchange-telecom-v2/proposal.json",
+      "sha256": "082c9a8b53252f2c463bb974689ae8a4530df4d361787bdc88ce455a2555ef7a"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0362-skywire-networks-xchange-telecom-v2.json",
+      "sha256": "161b8a2388ea7c2bd5142f5d8e7d21a4a76257e307609d26451ebd20c4fa938d"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "fdeeadac4ed5ec2fcb579629c2fb49f6ea0b3a31c252a1d2f6d43f74a3fd26dd",
+      "memberIndex": 1
+    },
+    "receiptSha256": "1b629c0feb0895ea5cc9e15d45c4a6434ed1d2f554fdde0026a99fb804c08fb7"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/xchange-petition.pdf.capture.json",
+      "sha256": "202c7acf141099d599d3855ba651d892a2bb66ebca4759e98aae908261d85927"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-xchange.html.capture.json",
+      "sha256": "6a8b06eb8d5120e13a6348fb50b5e60dcbd4d0f2d786a5ca03956c9eda158977"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-investments.html.capture.json",
+      "sha256": "ba665fb711643cd29ea8d9b98ac29449c21549db2aa1a3dd49b3ca5ce6fe69a1"
+    }
+  ]
+}
