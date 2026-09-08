@@ -5,7 +5,7 @@ import { companyImageSchema } from "../portco-reconciliation/schema";
 import { verifyAttributionChain } from "../portco-reconciliation/attribution-chronology";
 import {
   attributionMutationSchema, attributionSeedRecordSchema, canonicalSha256,
-  verifyManifest, verifySeedManifest, type AttributionApplyManifest,
+  verifyManifest, verifyProductionSnapshot, verifySeedManifest, type AttributionApplyManifest,
 } from "../portfolio-fund-attribution/schema";
 
 const text = z.string().trim().min(1);
@@ -28,6 +28,9 @@ export const snapshotSchema = z.strictObject({
   baseCommit: commit, capturedAt: z.string().datetime(), targetFingerprint: hash,
   companies: z.array(companySchema).min(1).max(10),
   funds: z.array(z.strictObject({ id: text, fundName: text, managerName: text })),
+  // Separate published catalog from the possibly empty selected link dependencies.
+  // Optional only for immutable legacy snapshots; every new capture supplies it.
+  publishedFundNames: z.array(text).min(1).optional(),
   snapshotSha256: hash,
 });
 const patchSchema = z.strictObject({
@@ -97,6 +100,7 @@ export function verifySnapshot(value: unknown) {
   const s = verifyHash(snapshotSchema.parse(value), "snapshotSha256");
   unique(s.companies.map(c => c.image.id!), "snapshot company");
   unique(s.funds.map(f => f.id), "fund ID"); unique(s.funds.map(f => f.fundName), "fund name");
+  if (s.publishedFundNames) unique(s.publishedFundNames, "published fund name");
   for (const c of s.companies) {
     unique(c.owners.map(o => o.id), "snapshot owner");
     if (!equal(c.owners.map(o => o.id).sort(), c.image.ownershipPeriods.map(o => o.id).sort())) throw Error("Complete owner coverage required");
@@ -196,10 +200,12 @@ export function attributionSnapshot(snapshot: Snapshot, asOfDate: string) {
       currentAttributionRationale: o.state.attributionRationale, investmentYear: core.investmentYear, stake: core.stake,
       isActive: core.isActive, milestones: c.image.milestones, sources: c.image.citations };
   }));
+  const availableFundNames = snapshot.publishedFundNames ?? snapshot.funds.map(f => f.fundName);
   const content = { schemaVersion: 1, artifactType: "PORTFOLIO_FUND_ATTRIBUTION_PRODUCTION_SNAPSHOT", asOfDate,
     companyCount: snapshot.companies.length, activeOwnershipCount: records.length,
-    publishedFundCount: snapshot.funds.length, availableFundNames: snapshot.funds.map(f => f.fundName), records };
-  return { ...content, capturedAt: snapshot.capturedAt, snapshotSha256: canonicalSha256(content) };
+    publishedFundCount: availableFundNames.length, availableFundNames, records };
+  // Exercise the actual protected-workflow schema during local compilation.
+  return verifyProductionSnapshot({ ...content, capturedAt: snapshot.capturedAt, snapshotSha256: canonicalSha256(content) });
 }
 
 const progressNameSchema = z.strictObject({ companyId: text, name: text, sequence: z.number().int().positive(),
@@ -252,6 +258,42 @@ export function freeze(progress: unknown, reason: string) {
   return reseal({ ...p, active: { ...p.active, state: "VERIFYING_FAILED", failure: reason } });
 }
 
+/** Narrow recovery for a conclusively skipped transaction, never an uncertain apply. */
+export function recoverPreApply(input: { progress: unknown; priorBatch: unknown; batch: unknown;
+  priorSnapshot: unknown; snapshot: unknown; failureEvidence: z.infer<typeof fileSchema>;
+  files: Map<string, string>; run: { headSha: string; status: string; conclusion: string; workflowName: string;
+    jobs: { steps: { name: string; conclusion: string }[] }[] } }) {
+  const p = verifyProgress(input.progress), old = verifyBatch(input.priorBatch), batch = verifyBatch(input.batch);
+  const before = verifySnapshot(input.priorSnapshot), snapshot = verifySnapshot(input.snapshot), run = input.run;
+  if (!p.active || p.active.state !== "VERIFYING_FAILED" || p.active.batchSha256 !== old.batchSha256
+    || p.active.batchId !== batch.batchId || old.batchId !== batch.batchId
+    || p.completedBatchIds.includes(batch.batchId) || batch.baseCommit !== p.active.releaseSha
+    || run.headSha !== p.active.releaseSha || run.status !== "completed" || run.conclusion !== "failure"
+    || run.workflowName !== "Apply Reviewed Portfolio Fund Attribution" || run.jobs.length !== 1) throw Error("Exact failed pre-apply release required");
+  const steps = run.jobs[0].steps;
+  if (steps.filter(s => s.conclusion === "failure").length !== 1
+    || steps.find(s => s.name === "Verify immutable attribution artifacts")?.conclusion !== "failure") throw Error("Failure was not at immutable-artifact gate");
+  for (const name of ["Prove staged schema and exact production target", "Dry-run all reviewed mutations against fresh production state",
+    "Prove cache revalidation readiness", "Final release, schema, target, and artifact recheck",
+    "Apply reviewed portfolio fund attribution transactionally", "Revalidate public portfolio caches", "Verify public attribution samples and portfolio page"]) {
+    if (steps.find(s => s.name === name)?.conclusion !== "skipped") throw Error("Cannot prove all database and apply steps skipped");
+  }
+  if (input.files.get(input.failureEvidence.path) !== input.failureEvidence.sha256
+    || !batch.dependencies.some(d => equal(d, input.failureEvidence))) throw Error("Immutable failure evidence must be bound");
+  for (const dependency of old.dependencies) if (!batch.dependencies.some(d => equal(d, dependency))) throw Error("Prior evidence must be preserved");
+  if (old.snapshotSha256 !== before.snapshotSha256 || batch.snapshotSha256 !== snapshot.snapshotSha256
+    || snapshot.baseCommit !== batch.baseCommit || !snapshot.publishedFundNames?.length
+    || snapshot.capturedAt <= before.capturedAt || snapshot.targetFingerprint !== before.targetFingerprint
+    || batch.targetFingerprint !== old.targetFingerprint || !equal(before.companies, snapshot.companies)
+    || !equal(before.funds, snapshot.funds) || !equal(old.decisions, batch.decisions)
+    || old.seedManifestSha256 !== batch.seedManifestSha256 || old.progressSha256 !== batch.progressSha256
+    || old.executionManifestSha256 !== batch.executionManifestSha256 || old.sourceLedgerSha256 !== batch.sourceLedgerSha256
+    || old.asOfDate !== batch.asOfDate) throw Error("Recovery must preserve every reviewed decision and complete target before-image");
+  // This gate validates the newly supplied real catalog without weakening the protected schema.
+  attributionSnapshot(snapshot, batch.asOfDate);
+  return reseal({ ...p, active: { ...p.active, batchSha256: batch.batchSha256, state: "PREPARING", releaseSha: null, failure: null } });
+}
+
 export const releaseSchema = z.strictObject({ mergeSha: commit, canonicalSha: commit, headSha: commit,
   gitRef: z.literal("main"), gitProvider: z.literal("github"), canonicalUrl: z.literal("https://infra-ma-2.vercel.app"),
   ready: z.literal(true), requiredChecksPassed: z.literal(true), evidence: fileSchema });
@@ -280,6 +322,7 @@ export function complete(input: { progress: unknown; compiled: ReturnType<typeof
   if (input.files.get(r.evidence.path) !== r.evidence.sha256) throw Error("Release evidence missing");
   if (verifySeedManifest(input.seed).manifestSha256 !== c.seed.manifestSha256) throw Error("Complete seed alignment differs");
   if (!equal(after.companies, c.projected) || !equal(after.funds, c.snapshot.funds)) throw Error("Complete after-image/redirect/owner dependency mismatch");
+  if (c.snapshot.publishedFundNames && !equal(after.publishedFundNames, c.snapshot.publishedFundNames)) throw Error("Published fund catalog changed during release");
   let receiptHash: string | null = null;
   if (c.manifest) {
     if (!input.chain) throw Error("Mutation needs immutable production receipt");

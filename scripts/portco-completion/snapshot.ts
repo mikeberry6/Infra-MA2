@@ -6,6 +6,10 @@ import { databaseTargetIdentity } from "../portco-reconciliation/snapshot";
 import { seal, verifySnapshot } from "./batch";
 
 export const PRODUCTION_FINGERPRINT = "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929";
+export async function observePublishedFundNames(tx: Prisma.TransactionClient) {
+  return (await tx.fund.findMany({ where: { status: "PUBLISHED" }, select: { fundName: true },
+    orderBy: { fundName: "asc" } })).map(f => f.fundName);
+}
 export async function observeCompanies(tx: Prisma.TransactionClient, companyIds: string[], fundNames: string[]) {
   const companies = await Promise.all(companyIds.map(async id => {
     const image = await loadPrismaCompanyImage(tx, id);
@@ -34,7 +38,9 @@ export async function capture(companyIds: string[], fundNames: string[], baseCom
   try {
     const data = await db.$transaction(async tx => {
       await tx.$executeRawUnsafe("SET TRANSACTION READ ONLY");
-      return observeCompanies(tx, companyIds, fundNames);
+      const selected = await observeCompanies(tx, companyIds, fundNames);
+      const publishedFundNames = await observePublishedFundNames(tx);
+      return { ...selected, publishedFundNames };
     }, { isolationLevel: "RepeatableRead", timeout: 90000 });
     return verifySnapshot(seal(JSON.parse(JSON.stringify({ schemaVersion: 1, artifactType: "PORTCO_COMPLETION_SNAPSHOT", baseCommit,
       capturedAt: new Date().toISOString(), targetFingerprint: target.fingerprint, ...data })), "snapshotSha256"));

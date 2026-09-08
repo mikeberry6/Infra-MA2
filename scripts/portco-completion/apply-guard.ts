@@ -8,7 +8,7 @@ import { verifyExecutionManifest } from "../portco-reconciliation/execution-cont
 import { verifyBatchExecutionLedger } from "../portco-reconciliation/batch-control";
 import { checkPacketFiles } from "./files";
 import { compileBatch, verifyProgress } from "./batch";
-import { observeCompanies } from "./snapshot";
+import { observeCompanies, observePublishedFundNames } from "./snapshot";
 import { EXECUTION_PATH, LEDGER_PATH, PROGRESS_PATH, SEED_PATH } from "./inventory";
 
 export function assertCompleteState(actual: unknown, expected: unknown, label: string) {
@@ -40,5 +40,8 @@ export function loadCompletionGuard(manifestPath: string, manifest: AttributionA
     }
     const actual = await observeCompanies(tx, compiled.batch.decisions.map(d => d.companyId), compiled.snapshot.funds.map(f => f.fundName));
     assertCompleteState(actual, phase === "before" ? expected : projected, phase);
+    if (compiled.snapshot.publishedFundNames) {
+      assertCompleteState(await observePublishedFundNames(tx), compiled.snapshot.publishedFundNames, `${phase} published fund catalog`);
+    }
   };
 }
