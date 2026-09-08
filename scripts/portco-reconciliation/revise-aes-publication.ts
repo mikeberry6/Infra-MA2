@@ -1,0 +1,20 @@
+/** One-time offline publication revision; no DB/network or repeated capture. */
+import {readFileSync,writeFileSync,existsSync} from "node:fs";
+import {createHash} from "node:crypto";
+import {sha256Canonical,hashWithoutField} from "./hash";
+import {proveAesFieldAuthority,AES as M,AES_SOURCE_ROOT as S,AES_TASK_ROOT as T,AES_PACKET as P,AES_SOURCES as U,AES_BATCH_ROOT as B,AES_RENDERED as R} from "./aes-field-authority";
+if(process.cwd()!=="/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair")throw Error("Permitted worktree required");
+for(const f of ["authority-v2.json","capture-verification-v2.json"])if(existsSync(`${S}/${f}`))throw Error("Frozen publication revision exists");
+const j=(p:string)=>JSON.parse(readFileSync(p,"utf8"));
+const c=j("audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json");
+const chain=(id:string)=>{const [manifest,approval,receipt]=c.receiptReferences.find((r:{pipelineRunId:string})=>r.pipelineRunId===id).sourceFiles.map((f:{path:string})=>j(f.path));return{manifest,approval,receipt};};
+const o=j("audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json").production;
+const old=j(`${S}/authority.json`),capture=j(`${S}/capture-verification.json`),snapshot=j(`${S}/production-snapshot.json`);
+if(old.reportSha256!=="bb79179ad4739bd87d62d0e498b503823c2f960881294f4d43d0115e708d9cd0"||hashWithoutField(old,"reportSha256")!==old.reportSha256||capture.reportSha256!==old.reportSha256||sha256Canonical(snapshot.production)!==old.productionSnapshotSha256)throw Error("Frozen first proof changed");
+for(const f of old.dependencies)if(createHash("sha256").update(readFileSync(f.path)).digest("hex")!==f.sha256)throw Error("Protected dependency changed");
+const proof=proveAesFieldAuthority({chronology:c,priorAuthority:j("audits/portco-reconciliation/2026-09-07/attribution-field-authority/stratos/authority.json"),seed:j("prisma/seed-data/ownership-attributions.manifest.json"),proposal:j("audits/portco-reconciliation/2026-08-03/proposals/0154-the-aes-corporation-v2/proposal.json"),approval:j("audits/portco-reconciliation/2026-08-03/approvals/0154-the-aes-corporation-v2.json"),receipt:j(`${B}/production-apply/batch-apply-receipt.json`).members[2].receipt,batchReceipt:j(`${B}/production-apply/batch-apply-receipt.json`),batchManifest:j(`${B}/batch-manifest-v2.json`),seedSpec:j(`${B}/seed-attribution-reconciliation-spec.json`),seedBatchManifest:j(`${B}/batch-manifest-v2.json`),seedOverlay:j("prisma/seed-data/approved-portco-after-images.json"),attribution:chain("cmsxywrmw0000fn6hw9gllg6y"),laterAttribution:chain("cmt5x4hfa0000ewyy0jj6zuuk"),production:snapshot.production,sourceCapture:j(`${S}/source-capture.json`),filingReview:j(`${S}/filing-review-v2.json`),redactions:j(`${S}/source-redactions.json`),originalState:{company:o.companies.find((r:{id:string})=>r.id===M.companyId),redirects:o.redirects.filter((r:{companyId:string;retiredId:string})=>r.companyId===M.companyId||r.retiredId===M.companyId)},packet:P.map(([file])=>({file,bytes:readFileSync(`${T}/${file}`)})),sources:U.map(s=>({id:s.id,bytes:readFileSync(s.path)})),rendered:R.map(r=>({file:r.file,bytes:readFileSync(`${S}/${r.file}`)}))});
+const report={...proof,baseCommit:old.baseCommit,executionManifestSha256:old.executionManifestSha256,ledgerSha256:old.ledgerSha256,productionSnapshotSha256:old.productionSnapshotSha256,dependencies:old.dependencies,sourceCaptureSha256:old.sourceCaptureSha256};
+const reportSha256=sha256Canonical(report);
+writeFileSync(`${S}/authority-v2.json`,JSON.stringify({...report,reportSha256},null,2)+"\n",{flag:"wx"});
+writeFileSync(`${S}/capture-verification-v2.json`,JSON.stringify({...capture,reportSha256,sourceCaptureCheckedAt:capture.checkedAt,publicationRevisionAt:new Date().toISOString(),supersedesLocalOnlyAuthoritySha256:old.reportSha256,reusesFrozenReadonlySnapshot:true,databaseRecapture:false},null,2)+"\n",{flag:"wx"});
+console.log(JSON.stringify({reportSha256,databaseWrites:0,databaseRecapture:false}));
