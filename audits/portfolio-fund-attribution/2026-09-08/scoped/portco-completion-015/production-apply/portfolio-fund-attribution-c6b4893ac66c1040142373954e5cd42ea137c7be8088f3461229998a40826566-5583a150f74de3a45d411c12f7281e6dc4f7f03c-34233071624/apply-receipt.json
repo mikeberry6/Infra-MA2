@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "c6b4893ac66c1040142373954e5cd42ea137c7be8088f3461229998a40826566",
+  "approvalSha256": "3a2f4b232cca9948d939143d856389bb64bb4ae1fc96f175df95cba1bb2b7bb5",
+  "environment": "production",
+  "pipelineRunId": "cmtsptfsv0000g04xqdoi570o",
+  "mutationCount": 6,
+  "changed": 6,
+  "idempotent": false,
+  "beforeFingerprint": "0a095837965752b07b23002fdc7626a714617474e1b9137ee79f8ecdcef0d7b7",
+  "afterFingerprint": "24e05cf1f7fec35cd6b05b9ead34bb847754a05bb46662357d0d3714829a030a",
+  "rows": [
+    {
+      "recordId": "OFA-6C8E11838DAF",
+      "ownershipPeriodId": "cmrxpk9i3028jivhekdbezmnu",
+      "companyId": "cmrxpjmzy018xivheiq5ev2lk",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Ridgewood Water & Strategic Infrastructure Fund I",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, investment predates reported close by 1 year; pre-close deployment is plausible, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 43.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Ridgewood Water & Strategic Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Ridgewood's direct SiEnergy announcement identifies Undine among investments of the Ridgewood Water & Strategic Infrastructure Fund, without a numbered vintage. Remove the unsupported Fund I inference; no numbered fund or acquisition SPV is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-4F57DCE9ED67",
+      "ownershipPeriodId": "cmrxpk9kr028kivher9994mn5",
+      "companyId": "cmrxpjn0j018yivhek81ibli0",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Ridgewood Water & Strategic Infrastructure Fund I",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2018 precedes investment by 6 years, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 7.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ridgewood directly confirms the Q4 2024 founder-led recapitalization, but the reviewed announcement and annual review do not identify a fund or acquisition SPV."
+      }
+    },
+    {
+      "recordId": "OFA-E23AA66E480C",
+      "ownershipPeriodId": "cmtjg0u03000dse2bl1z8528h",
+      "companyId": "cmrxpjn0j018yivhek81ibli0",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Valley Cold identifies Clay Bush as a current founder owner. This is direct individual ownership, so no managed fund applies and no vehicle is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-47FADD5D8B22",
+      "ownershipPeriodId": "cmtjg0u4q000fse2bbf0vzgr0",
+      "companyId": "cmrxpjn0j018yivhek81ibli0",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Valley Cold identifies Jennifer Bush as a current founder owner. This is direct individual ownership, so no managed fund applies and no vehicle is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-ECCD9C3A3B89",
+      "ownershipPeriodId": "cmtjhlhku000d0t2bkdvljnrv",
+      "companyId": "cmtjhlgn200000t2bdsrjkf8u",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDPR's retained 20% interest is direct corporate ownership rather than a managed infrastructure fund, and the upstream affiliate is not publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-32374AF35D85",
+      "ownershipPeriodId": "cmtjhlrww00220t2bnibomntd",
+      "companyId": "cmtjhlr53001q0t2bt9rtjuxc",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BP's 51% controlling interest is direct corporate ownership rather than a managed infrastructure fund."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T13:38:35.000Z",
+  "receiptSha256": "537169cc266da1a8892b73d6c35b6d6bf909f9d039426d5d32a26cb894c77c10"
+}
