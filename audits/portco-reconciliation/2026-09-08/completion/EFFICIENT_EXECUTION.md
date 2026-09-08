@@ -11,6 +11,8 @@ User-authorized token reduction for this task:
 - Keep ten-name releases, one active release, serial writes and precise parks. Reviewed-but-unapplied is not verified.
 - Wait on specific live jobs; back off unchanged polling. Never restart a transaction after an observation timeout. Keep heartbeat instructions as stable pointers, not historical recaps.
 - Brief updates: verified/parked/remaining names, material change, blocker. Avoid repeating hashes and passing logs.
+- Default tool output: filter to counts, at most ten relevant rows, failures and artifact paths before returning it. Parse structured tool results rather than dumping their raw bodies. Expand only the exact failing record; never mistake truncated output for a complete check.
+- Keep CURRENT.md a compact locator, not a growing narrative. Preserve displaced detail in a named checkpoint and read it only when its unresolved issue becomes active. Do not restart discovery or an already-passed release merely because context was compacted.
 - Preserve every before/after-image, source, secret scan, exact production SHA, protected approval, atomic apply, immutable receipt, seed/API/redirect/ownership and affected rendered-card gate.
 - No automatic model downgrade, effort reduction, extra agents or new conversations. No scope changes. Archive detailed checkpoints; keep CURRENT.md short. Exact staging only.
 
