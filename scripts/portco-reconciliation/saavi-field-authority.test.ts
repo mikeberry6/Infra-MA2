@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {SAAVI as M,SAAVI_SOURCE_ROOT as S,SAAVI_TASK_ROOT as T,SAAVI_PACKET as P,SAAVI_SOURCES as U,SAAVI_BATCH_ROOT as B,SAAVI_PRIMARY as PRIMARY,proveSaaviFieldAuthority,type SaaviInput} from "./saavi-field-authority";

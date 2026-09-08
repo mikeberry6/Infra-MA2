@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {ASTER,ASTER_SOURCE_ROOT,ASTER_TASK_ROOT,ASTER_ATTRIBUTION_ROOT,ASTER_PACKET,ASTER_SOURCES,ASTER_OWNERS,proveAsterFieldAuthority,type AsterInput} from "./aster-bloom-field-authority";

@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {STRATOS as M,STRATOS_SOURCE_ROOT as S,STRATOS_TASK_ROOT as T,STRATOS_PACKET as P,STRATOS_SOURCES as U,STRATOS_BATCH_ROOT as B,STRATOS_PRIMARIES as PRIMARY,proveStratosFieldAuthority,type StratosInput} from "./stratos-field-authority";

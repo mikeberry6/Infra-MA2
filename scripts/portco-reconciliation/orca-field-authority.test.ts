@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { ORCA, ORCA_SOURCES, ORCA_SOURCE_ROOT, ORCA_PACKET, ORCA_TASK_ROOT, proveOrcaFieldAuthority, type OrcaInput } from "./orca-field-authority";

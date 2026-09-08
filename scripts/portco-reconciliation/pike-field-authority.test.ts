@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { PIKE, PIKE_SOURCES, PIKE_SOURCE_ROOT, PIKE_PACKET, PIKE_TASK_ROOT, provePikeFieldAuthority, type PikeInput } from "./pike-field-authority";

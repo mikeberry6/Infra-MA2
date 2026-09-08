@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { ARBOUR, ARBOUR_SOURCES, ARBOUR_SOURCE_ROOT, ARBOUR_PACKET, ARBOUR_TASK_ROOT, proveArbourFieldAuthority, type ArbourInput } from "./arbour-field-authority";

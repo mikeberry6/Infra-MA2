@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { describe, expect, it } from "vitest";
 import { verifyAttributionChain, verifyAttributionDatabaseHistory } from "./attribution-chronology";
 import { hashWithoutField, sha256Canonical, sha256Text } from "./hash";

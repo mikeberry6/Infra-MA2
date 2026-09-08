@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import { Prisma } from "../src/generated/prisma/client";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 import { withImportTransaction } from "../src/lib/prisma-transaction";
+import { loadCompletionGuard } from "./portco-completion/apply-guard";
 import {
   PORTFOLIO_FUND_ATTRIBUTION_WRITE_TOKEN,
   canonicalSha256,
@@ -260,6 +261,7 @@ async function main(): Promise<void> {
   const values = args(process.argv.slice(2));
   const apply = values.get("apply") === "true";
   const manifest = verifyManifest(readJson(required(values, "manifest")));
+  const completionGuard = loadCompletionGuard(required(values, "manifest"), manifest);
   if (manifest.policy.sourceScope !== "PRODUCTION_SNAPSHOT") {
     throw new Error("Database apply requires a production-snapshot manifest");
   }
@@ -294,7 +296,11 @@ async function main(): Promise<void> {
   }
 
   if (!apply) {
-    const observed = await withImportTransaction((tx) => observeManifest(tx, manifest));
+    const observed = await withImportTransaction(async tx => {
+      await tx.$executeRawUnsafe("SET TRANSACTION READ ONLY");
+      await completionGuard?.(tx, "before");
+      return observeManifest(tx, manifest);
+    });
     console.log(JSON.stringify({
       mode: "DRY_RUN",
       databaseWrites: false,
@@ -321,6 +327,7 @@ async function main(): Promise<void> {
   }
 
   const result = await withImportTransaction(async (tx) => {
+    await completionGuard?.(tx, "before");
     const observed = await observeManifest(tx, manifest);
     const pending = observed.filter((row) => row.state === "PENDING");
     const pipeline = await tx.pipelineRun.create({
@@ -332,6 +339,7 @@ async function main(): Promise<void> {
       select: { id: true },
     });
     await applyPendingOwnershipUpdates(tx, pending);
+    await completionGuard?.(tx, "after");
     const byCompany = new Map<string, ObservedRow[]>();
     for (const row of pending) byCompany.set(row.companyId, [...(byCompany.get(row.companyId) ?? []), row]);
     if (byCompany.size > 0) {

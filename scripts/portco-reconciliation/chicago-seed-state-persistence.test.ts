@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { describe, expect, it } from "vitest";
 import { baseCompanies, companies } from "../../prisma/seed-data/companies";
 import { applyApprovedPortCoAfterImages } from "../../prisma/seed-data/approved-portco-after-images";

@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {BLUEPOINT as M,BLUEPOINT_SOURCE_ROOT as S,BLUEPOINT_TASK_ROOT as T,BLUEPOINT_PACKET as P,BLUEPOINT_SOURCES as U,BLUEPOINT_OWNERS as O,BLUEPOINT_BATCH_ROOT as B,proveBluepointFieldAuthority,type BluepointInput} from "./bluepoint-field-authority";

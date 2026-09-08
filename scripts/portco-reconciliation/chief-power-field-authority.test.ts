@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { CHIEF_SOURCES, CHIEF_TEXT, CHIEF, proveChiefPowerFieldAuthority, type ChiefInput } from "./chief-power-field-authority";

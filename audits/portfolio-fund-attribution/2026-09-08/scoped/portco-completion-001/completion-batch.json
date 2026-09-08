@@ -1,0 +1,1025 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_BATCH",
+  "batchId": "portco-completion-001",
+  "baseCommit": "a1f863c67b23124d48cb89722b74b1f47b484091",
+  "asOfDate": "2026-09-08",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "sourceLedgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "progressSha256": "872cb2a5725a808b72717dcf8527f63c828e8fe1f4ca39c64b89d3d5587bc220",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "snapshotSha256": "519f7c99b2da98b76f1364b5ea0804addb407233161c4554af69b713566a5695",
+  "targetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0001-amwaste-llc-v4.json",
+      "sha256": "4193b6d49cf895480b29519ac00517bfc9e24e9b4ef30302598026ea6dff1d2f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0002-ec-waste-v1.json",
+      "sha256": "25cb8d638a606be548ddbcdfd0db068e866b04b4f9bb379abf12218fc965b45b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0003-regional-rail-llc-v3.json",
+      "sha256": "1918be9040ac0d0025916bf6b98a896ba09d724340689f24f83aaf302ac9dd3c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0017-durham-region-courthouse-v3.json",
+      "sha256": "0d3a26b77be20ea2047ecb84d6e46920690f7bd90f6b662a29f0cd92e6012f8e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0062-usd-clean-fuels-v1.json",
+      "sha256": "ec8bc9f8be0ffbd4f31b08f8bb087c56f6b29f9ea73274e56945b1b7ae5a7e6b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0066-chief-power-v2.json",
+      "sha256": "0297eb270242150b11dd0bdc81564784d762f56bd9492ffa6d6408209e4f397e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0079-orca-v1.json",
+      "sha256": "c77bd241e68c856f773c487464cbea13b11f276f771e8bfbe05c17f3d1c89b1b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0081-pike-holdings-transmontaigne-partners-llc-v1.json",
+      "sha256": "9c76717679774f27d8e65faeb662244ac3a9e821d789f362ac10da919f6d8f83"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0091-rover-pipeline-v2.json",
+      "sha256": "333e974334b37a7203055b7fc0fec95c700cc2df0ef23494cc616082d63b306e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0109-virginia-international-gateway-v2.json",
+      "sha256": "f08abc00b1836d418b8d00a6954b2fe43d4f64d8eb67d1dbefe1d399364f039f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/recoveries/0001-amwaste/apply-receipt.json",
+      "sha256": "6b335b36fa4d004b318313bd323be211aa2af7a3ba59e77e9e0a705728f0c249"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0002-ec-waste/production-apply/apply-receipt.json",
+      "sha256": "ab93bd6d0e6548a203dbade40bd0df162d801efe2148d840a9e481d0258c6665"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0003-regional-rail-llc/production-apply/apply-receipt.json",
+      "sha256": "554ac44c386d61802616bf67016a2b18074e9dcf98b12ffe5b20c756740c3dc0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0017-durham-region-courthouse/attempt-3/production-apply/apply-receipt.json",
+      "sha256": "01eaa60e71e3d60d0975c2f2942ef90bf390b4ab66bc876b1da65a2f5b314448"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0017-durham-region-courthouse/research-decision.json",
+      "sha256": "c7afd68ef25d87eb708f1f701bfddf036b4615e4ef5f611fbaf4ae4e05a53340"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0062-usd-clean-fuels/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "4fac8f252962a2fcf139b67b711faa5f3de550197d058059133a69adc2d9b27e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0062-usd-clean-fuels/research-decision.json",
+      "sha256": "7c73040e3dca8d60ed769f57ad55cef953de035235be8bcd8e19f75475a5c293"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/context.json",
+      "sha256": "3c5459d73df83f2677dafd81ad6c04860089e5e6a47a50563008b40dba91c32f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "9aec66606bce0d74af8e8a7604a45df1ef3390193003c45602e20f8968c01f63"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/proposal-spec.json",
+      "sha256": "7b273f72200ee1ae91e6c632224f824952cac2d23f922be1f0a1a0838e0f4965"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/task-snapshot.json",
+      "sha256": "27326b0df96a21955fe81bb1aa7d761b55e3c91cfd261edd3ce6b79159574fda"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-attestation.json",
+      "sha256": "8cf1030df890abad50df10dd6c3a41b24b493b56807d091273e289d8fb47f86c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-complete-transcript.txt",
+      "sha256": "82b14371e020ac77a9ccb614d6a4cf48e4c53f4878d40afe14486115d5c6cd87"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-initial-response.json",
+      "sha256": "c285c6bee285ed6a30e1aa2729c3e974bffb1e25492116dfd87f3a7130439ab0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-repair-response.json",
+      "sha256": "1a2594644169b69ffb698fbaf0b2bb35a8ee4b0359e7addce007f7906d4aed62"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "90fd64ddc1ab8c4bf1e42beb80925833413c3c8f44b692794540af11c558edf3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-response-validation.json",
+      "sha256": "7c4a7aaf88275264ad497e90741480f2d22f83fdd4b4c2a79ac6e079b4d54a45"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-response.txt",
+      "sha256": "68d52c3edfab9d16bec3f767dd386970f2a7ffa0d93ef3b1746628a60e80d853"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-transcript.txt",
+      "sha256": "f44b2ee856dfc03fc0a6b94441ae2ec5d2d9923478616b7072d8c4091460d333"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/context.json",
+      "sha256": "6e34ab2f57e8473a4a881eebebb4d3ab40d7479d88b87f18200001d715ae9d90"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/locked-production-snapshot.json",
+      "sha256": "6f4cccd20173c3315e37f80e8dc8caf6e1d2bee2f6b339b170731de12c8eaa8c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/locked-task-snapshot.json",
+      "sha256": "7df02abbb1277c21481ec23e854b2fa6c548ea83b34b193754d5d1f875496db2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "501381c5e92663c6f10713a8faa564f99fa664f8932077b9e800ae6cd765ecca"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/proposal-spec.json",
+      "sha256": "8b6c2fd746d6f2a8858d81a3327626db829c140a87acd7ea2781c307c8436ab1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/repair-prompt.md",
+      "sha256": "73970d2e9a17bd1c4d42533b3f27ac2e5dcfd52c77595f7704c946207199dad7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/research-decision.json",
+      "sha256": "2772fd56c27f73c9aea272f1978bfcb21aa3a3ea673c35eceb54ed82c7cff5b8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/research-decision.md",
+      "sha256": "d0be7cc7187c91ac77f9cd810835b058f2e1239fa32e40ff11232f2b01e84ba4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/research-prompt.md",
+      "sha256": "0cde84d85d35d9b7b405dd34b9392a40505246d72c6a9fa9ffaff5f89b36c158"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/source-verification.json",
+      "sha256": "19429f38dfc5ff5b51d7cb861709a880b8a13bcdb45b57d5f4fd6fe8fdad8e42"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/task-snapshot.json",
+      "sha256": "526a216f8b338834b10f302005165dfa5ebc246e4330099ed631320a6b29763e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-attestation.json",
+      "sha256": "948fd02cc6f99ae57816d424b9c1f5f9648353f5a557a490bdbb68bf1a49bf1e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-complete-transcript.txt",
+      "sha256": "5a01e91786e04258a5171542bd2a1cebf3b7db3dda2981696a94595646a0d311"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-initial-response.json",
+      "sha256": "914e7fd918dddafaa7c442b3403f4464713eeba8df0e2ac553e3ef0de5c5665c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-repair-response.json",
+      "sha256": "ee7251b9a9bda446eda3752b6dd0d2276854d15788dbe944f07a8088baea773b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "ee7251b9a9bda446eda3752b6dd0d2276854d15788dbe944f07a8088baea773b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-response-validation.json",
+      "sha256": "14ee14225b33a14831a0e5380c82115fb5e4df70946f34ff7e64b29be1c50867"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-response.txt",
+      "sha256": "4ab938279fabfcf89033f53f2eacbac1b8f1d01c712f3fa993754fb9d86cccd4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-transcript.txt",
+      "sha256": "c036f7e26377a8570cfdac7c37d7552ed0bdf6761adb5ac0db053cbfa83a3c41"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/context.json",
+      "sha256": "c6666df53b0b06c517a65d74e90c657bbe7ea057cfd11f4fea6e2999584733e9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/locked-production-snapshot.json",
+      "sha256": "e9c858ecf4c8aacda5568133fbf3b527f287f9bd24e12f1f8c958415c8ff7b87"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/locked-task-snapshot.json",
+      "sha256": "c465e1b986f6fe660d9a1d7dd6f20fc5baeae34a12519c59044a723d12ed69f5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "1c91ec791e338cb1590ec236af9656ff82ae7d7ec83a81304b9343856143074c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/proposal-spec.json",
+      "sha256": "4034b63e8385e3e6c3c07a832ee4c1e3079c64cc3d32a3605b87cef22b8eea2f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/repair-prompt.md",
+      "sha256": "b0c18605e96e91b0dbb7827284253ae5134e0308cc4a72202639bb92f8813529"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/research-decision.json",
+      "sha256": "cc34409694159bc0784bd5249b6ad47003609f68aaed3211e44842c28618d0d4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/research-decision.md",
+      "sha256": "0e7863ad3496f4327ac4c1476bc537e0dca9f09ed9e718dfcd38ce6174c9fc3b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/research-prompt.md",
+      "sha256": "51535e7cce753bcb2cf613ed514297fd09800f63e5966659c970102e5ab785f8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/source-verification.json",
+      "sha256": "abed5d7dceabb5d680fcba10766617298dd397022876e052075d60d40d39d957"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/task-snapshot.json",
+      "sha256": "5b50dcde7780a788e82ac36a41cc3b5bba3e2d327c1956f121a2d3abf5ff67c5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-attestation.json",
+      "sha256": "70536ec3c6af7322c464819ba3e8910fa52a94475a1834359a107aa0a15b6694"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "b3cab0d5497c016271a3de758dd1392feef6ff00d033351b7cdd7a11e9a07546"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-response-validation.json",
+      "sha256": "e36b6f2259355d2364b3c0a87705669340d47514322db8d8758dd6468ddad660"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-response.txt",
+      "sha256": "b3cab0d5497c016271a3de758dd1392feef6ff00d033351b7cdd7a11e9a07546"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-transcript.txt",
+      "sha256": "61453e12981d541ad2db0ec503369561df97f04fd5a802da84ca49151774bb08"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/context.json",
+      "sha256": "cc0bcc9bd8c0d8c679fcd0e4718ebaa75757f149a3f6bf50073caceac257d07e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/locked-production-snapshot.json",
+      "sha256": "80f5b968a7685c86e5ac6255ee18904778a279590f162c5cd1f15e0fc1016ff6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/locked-task-snapshot.json",
+      "sha256": "4695d11d7f53090c207241db82eababf90de1498eb0db8f6cb94d96dfafdde11"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/proposal-spec.json",
+      "sha256": "a01e11339d2f76ff0f9ed331d5db176ccf1e818c0bd18cde08d255eb45aaaeb8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/research-decision.json",
+      "sha256": "7007619afc804573a5ad59961911c04b239c594b12e36fcf48e4486bbb059257"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/research-decision.md",
+      "sha256": "c57fcd46fada07f16c65ed0dd7feb7ac8b9e8ad836fa8da4b765fc56eb099a47"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/research-prompt.md",
+      "sha256": "688b736096507c05e1ea14f3dc1996fcd83ce82bba1cfabc302938ff2f379fb3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/source-verification.json",
+      "sha256": "6bdc45005ae42c045c8f94b65d5efe791129959bcdceccd3bd4e2c749602b5c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/task-snapshot.json",
+      "sha256": "7da7cb41b6402313a9e45b8f2245207f373db7b90c1e539aaff51edd0d195c82"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-2/execution-correction.json",
+      "sha256": "9d4bb9f1cc17cdde15b1da7122baa886a0a84c9298c4ca28df13d522a7393a83"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-2/locked-task-snapshot.json",
+      "sha256": "bf1af3707f5504797b5747e7a42a80a7cb59e2f42476d5cb4a0be8deb992a562"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "83dcb60daabf52a8d25e5341bb7ed221998ad663ed3a2df824981548497dd404"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-attestation.json",
+      "sha256": "72dffe50f3a6cf39663ba782035ef381f526260e0b343c889d3ce51bcb56eae9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "458ade938c109b6533ed7fb2fde1a9fb70be328188e2fd1d85dfe829d86af240"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "9250c9b39abea3b51be484efd14c516bba5ac2cc6884209f3adeeaeee4732841"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-response-validation.json",
+      "sha256": "845a3de56d817add17691e50c8f60ea7f59e9f572b6a81641a073be2cf1cd4af"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-transcript.txt",
+      "sha256": "918b528851bffc710d301529dbcfc3cba15e486996e028e2984d3b817647ce7f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/context.json",
+      "sha256": "c694ce828355ab122d47a1aac13ce09516ba8b8f078f6afe287801247b678ce7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/locked-production-snapshot.json",
+      "sha256": "944b0d1a424b8eaceacaf99092970cd7dc41f42801d1c6f954353fc1a62926df"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/locked-task-snapshot.json",
+      "sha256": "a693220de8a1265f9a2822a5019a63ec8168f699b04061c5d880a0098c170beb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/proposal-spec.json",
+      "sha256": "aa5c58637c5e1b2be1eacd5f76542fba1186a958157e549418889bec419e8228"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/repair-prompt.md",
+      "sha256": "eca4ac7d177696f0c4b4e93373900fa6fede4a9f888e6eda20312563f69582c4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/research-decision.json",
+      "sha256": "bb5c8c60ebed07799d350e06ba550a996705a10512bee06ede27f2a7ab768594"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/research-decision.md",
+      "sha256": "a311f46463abcfc5a6b99a9859e10de4ffebd0d63d9304bcd7f09a649020c701"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/research-prompt.md",
+      "sha256": "1662cfb8cf8c2aefaf80c5ea02dc4dd3347ef0bbda3872ac60a01ea45fb9d9cd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/source-verification.json",
+      "sha256": "0f778bebf82c913b42f0cd9918cd46632794394f0de25b377736599f57c8bc83"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/task-snapshot.json",
+      "sha256": "df331ee825bbb2a1784622a77bd54ecb9d2f3ed1b0bb02616f0072376b610a4f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-2/locked-task-snapshot.json",
+      "sha256": "8efbb6d2ff1c44d3b6e2003d9fcbec3d597121393e941f7cc1f6d84c3334d1bd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "48c9ffcd85c7e7299581e7487a1b22805343030cf6fe66497f43843d228cdfa8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-2/research-binding.json",
+      "sha256": "f6477f284d5510cd01529a43badff98d9195a679d052e3608c3c835d188dc520"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0001-amwaste-llc-v4/proposal.json",
+      "sha256": "a482c4ee4a663c81ea05326f84c5acb339069cf40ecec22814bd5420988d5481"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0002-ec-waste-v1/proposal.json",
+      "sha256": "a4715c31032245f440292f13d59c6e5b93039225366bc05a0273535d7a4fc4e8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0003-regional-rail-llc-v3/proposal.json",
+      "sha256": "ae102c239c3c7e8b63b8066bad85bb5a13e6738a13bb9b6c1c6b5cef0e58bf01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0017-durham-region-courthouse-v3/proposal.json",
+      "sha256": "35c1dec1db338969cb857e6290d9fca97e9026577b3c6987aa046de20cad7601"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0062-usd-clean-fuels-v1/proposal.json",
+      "sha256": "b8b659410d9c87c231bf1e8b04bddbcf81137fed4722382c61f7eb683c23dac7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0066-chief-power-v2/proposal.json",
+      "sha256": "c2b1141762238783cd606162c5b173189cdf22c0735c0dfbe177c90937fed2cc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0079-orca-v1/proposal.json",
+      "sha256": "ea477114c9d2e617712afd08a4e4c35848eaefbce17488f8cd1ed9d3f84fae3e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0081-pike-holdings-transmontaigne-partners-llc-v1/proposal.json",
+      "sha256": "96581fb77f0507a238e45c033bd131baee84fd61b65829b60a0c7605e7f0d121"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0091-rover-pipeline-v1/proposal.json",
+      "sha256": "80d4161035f14fcc74843dc3275ea0bc5572425d6cbd8783ba11b794b4e3c76f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0091-rover-pipeline-v2/proposal.json",
+      "sha256": "bc88dd348ace2d52008d71354b1d2e6730578dc9486d7fbb21466a7910fdf972"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0109-virginia-international-gateway-v1/proposal.json",
+      "sha256": "a57e898a428da32e0697e04ca49acb51bae56738d061a4f2ffbc83a088ff03b4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0109-virginia-international-gateway-v2/proposal.json",
+      "sha256": "309fb087497157fe0fdab985036759cc6529a5bd5dbea885b691b52bf4cbad11"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/arclight-esg.pdf",
+      "sha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/authority.json",
+      "sha256": "963c3e83d63feebdb638980723c069d9f17f72e8506a65953f300f4470795c12"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/production-snapshot.json",
+      "sha256": "69a9b8b2fc4c7f23faa443367006416ed8a9574326670e3738039b26e88190f0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/source-capture.json",
+      "sha256": "d456b20b6b31ecb5aae553f86304e58b2fffce800ea60bb5ab2207624cd6ba27"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/durham-region-courthouse/authority.json",
+      "sha256": "8aa5dd12fc54edd83f619e10ea1ec1075d8a569a14e2f26b87f911f610962470"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/durham-region-courthouse/inpp.html",
+      "sha256": "cd4fefdb3266402ca4b812f89a9722c9a3f4af6799cfef2ef8a7d45d0017cbfb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/durham-region-courthouse/production-snapshot.json",
+      "sha256": "e1e352000d1c5858aab8865d84e882facac7d918e01f304c02d243eafadfa63f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/orca/authority.json",
+      "sha256": "5a7602f4b95eb3a00349a524add95dbee95f0f6207d9a35dfcfae6987df09bce"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/orca/production-snapshot.json",
+      "sha256": "32fb9416e399651cdac6b53148da263fce07c859c5b55b50ea5fcc578e51d6f2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/pike/authority.json",
+      "sha256": "ec94b6bdf3eabf88d8022cc59f5358e61236bb9da4b42250bf85fff9b0c73573"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/pike/production-snapshot.json",
+      "sha256": "0273cfd9e6e942e0601b92716a55d940da41c7edfcd03624b09c8d8c63c9724e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/pike/sec-fund-vi.html",
+      "sha256": "93edb4077aca3a1c3bf91de53eabc91adf32e27658894d969f074e8917926d43"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/authority.json",
+      "sha256": "7a063e08d45141d1e07e6b43c112c66d2d738cc86d7b8cd8676a24d7256d046a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-mubadala/authority.json",
+      "sha256": "b4da1b444f3f61be9b2f996646d8c5d16cc1034ef72048500ab44187c97dc5d0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rover/authority.json",
+      "sha256": "9240d8eb2d68c18897a76a8da1caa4209f590de9bc25822f2cb0ed596b4b5a19"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rover/production-snapshot.json",
+      "sha256": "a6282e18c87f55e235a8f32b71287e38dc4ab5f4f937011b784cdfa7a6f188b1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/authority.json",
+      "sha256": "5c1eb4cb4ddb38a727eae488f5bd0074f36385ec4792df39e5896878bb514979"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/production-snapshot.json",
+      "sha256": "c203a67cf9c40dae031d6ac0c8b7bd21aa7a3b7462ad161d07fc2608f6e57c34"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/source.pdf",
+      "sha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/usd-clean-fuels/ara-portfolio.html",
+      "sha256": "a1e8325fa8ea2c7f36e7b771ffa23e6d1b598284380a4144964f03f3d85b0987"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/usd-clean-fuels/authority.json",
+      "sha256": "79ffb3a059ac4b78323002e78759b0e7e8a04f794a06e98b52986c33c4060eb5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/usd-clean-fuels/production-snapshot.json",
+      "sha256": "85b4e043eebb019e9080d5bb0ff063105d8315a31cbb2e80faa0a7516f8f67ed"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/astatine-active.html",
+      "sha256": "3e9271f3fadd15f3591e2305b6f257b69ff34662db815f053dc51979a4948d95"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/authority.json",
+      "sha256": "92dd7a00b4dee6d5d0562588b33409563ad714195ef770972226ee6c59f31889"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/production-snapshot.json",
+      "sha256": "b3332c68a91e56e6701e42a5113c9bba773caf7cf91766eee7bbeab05f943b03"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/vpa-2025.pdf",
+      "sha256": "0059321e43dfe89299da20c50f639b1684d28a6ead8d18bd8a2d83a8b765301d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-001-decisions.json",
+      "sha256": "296b514864f9aed61cd34e4d7e3c4294d29dd61d33d8220f3e710f93f4153cd7"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/completion-seed-before.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/funds.manifest.json",
+      "sha256": "6cce21787660a2d096e2836ddfae7f7fbc1ec60697ce5446de07c431055fd902"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "decisions": [
+    {
+      "companyId": "cmrxpj40p00fuivhezgldc4dl",
+      "name": "Amwaste LLC",
+      "sequence": 1,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "c98953d817fa26fcba8d0a460ae67ab0b386906027278fa58e4050d496c8a9c6",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/authority.json",
+          "sha256": "5c1eb4cb4ddb38a727eae488f5bd0074f36385ec4792df39e5896878bb514979"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmrxpjp2j01c9ivhe3f8q2cck",
+          "seedRecordId": "OFA-674978762296",
+          "expectedSeedSha256": "dcf990417a4ca68b673093265decee4717e5e0bbcf61ed4f9dfd97619d15af95",
+          "expectedOwnerSha256": "e72e81a5318108c4f9873b5e887cadc69265743f421e02ccd779e57dc7dcc878",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "3i NA Infrastructure Fund",
+            "attributionConfidence": null,
+            "attributionRationale": "3i Group's FY2026 results, pages 21-22, identify Amwaste among the North American Infrastructure Fund (NAIF) investments. This disclosed fund corresponds to the existing curated 3i NA Infrastructure Fund link; the old statement that no curated fund matched is incorrect. Preserve the separately verified company identity, vehicle, entry year and undisclosed exact stake.",
+            "linkedFundName": "3i NA Infrastructure Fund"
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Issuer-confirmed existing fund link contradicts stale no-fund-match rationale. Preserve all economic and ownership facts.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/source.pdf",
+              "sha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+              "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    },
+    {
+      "companyId": "cmrxpj41b00fvivhe1q7x5nxw",
+      "name": "EC Waste",
+      "sequence": 2,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "eda605c10f803fb68cc6e0f6601277b8e74a797632f510619a8c2cab30fe7d2c",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/authority.json",
+          "sha256": "5c1eb4cb4ddb38a727eae488f5bd0074f36385ec4792df39e5896878bb514979"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmrxpjp3601caivhek02rzmhq",
+          "seedRecordId": "OFA-7622B7199679",
+          "expectedSeedSha256": "a5393cfde35b2ceb79d64dec69455f8089c7d8e09b1ac0a2f9775b216642368e",
+          "expectedOwnerSha256": "6551d47d041caf44024e0706afff6f01532b1f24be1b2e2b222e86d78aab71d2",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "3i NA Infrastructure Fund",
+            "attributionConfidence": null,
+            "attributionRationale": "3i Group's FY2026 results, pages 21-22, identify EC Waste among the North American Infrastructure Fund (NAIF) investments. This disclosed fund corresponds to the existing curated 3i NA Infrastructure Fund link; the old statement that no curated fund matched is incorrect. Preserve the separately verified company identity, vehicle, entry year and undisclosed exact stake.",
+            "linkedFundName": "3i NA Infrastructure Fund"
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Issuer-confirmed existing fund link contradicts stale no-fund-match rationale. Preserve all economic and ownership facts.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/source.pdf",
+              "sha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+              "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    },
+    {
+      "companyId": "cmrxpj41q00fwivhexqyc15b2",
+      "name": "Regional Rail, LLC",
+      "sequence": 3,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "e237c2d112e1c4c5f9fb307abcd2225f1e9ddbda1d31f6aef15922da6c8455a8",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/authority.json",
+          "sha256": "5c1eb4cb4ddb38a727eae488f5bd0074f36385ec4792df39e5896878bb514979"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmrxpjp3t01cbivhertzicggz",
+          "seedRecordId": "OFA-CBBD8E860C97",
+          "expectedSeedSha256": "d9ad2ba4e0e37291958a728f273fa850944e23e8c72dbcc1ad67f755fd08cb77",
+          "expectedOwnerSha256": "490354c628c9bb2d23aaf84a3ca8eb2b997e8ceae2c32f64d2dafbca25e5e12a",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "3i NA Infrastructure Fund",
+            "attributionConfidence": null,
+            "attributionRationale": "3i Group's FY2026 results, pages 21-22, identify Regional Rail among the North American Infrastructure Fund (NAIF) investments. This disclosed fund corresponds to the existing curated 3i NA Infrastructure Fund link; the old statement that no curated fund matched is incorrect. Preserve the separately verified company identity, vehicle, entry year and ownership stake.",
+            "linkedFundName": "3i NA Infrastructure Fund"
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Issuer-confirmed existing fund link contradicts stale no-fund-match rationale. Preserve all economic and ownership facts.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/source.pdf",
+              "sha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0",
+              "url": "https://www.3i.com/media/04oheewu/3i-group-press-release-fy26.pdf",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    },
+    {
+      "companyId": "cmrxpj4wp00gyivhev35xgvdp",
+      "name": "Durham Region Courthouse",
+      "sequence": 17,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "8218499f24d986cdd783d7a253aaf565e26e77ac76f95038ef2b223dea8f86a1",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/durham-region-courthouse/authority.json",
+          "sha256": "8aa5dd12fc54edd83f619e10ea1ec1075d8a569a14e2f26b87f911f610962470"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmrxpjpvv01dkivhevlg6jwl3",
+          "seedRecordId": "OFA-0AE7BA9757C5",
+          "expectedSeedSha256": "bcce6011f3a8795765b5573b34bdf6824453305a0f725b075f4edb6aea8db104",
+          "expectedOwnerSha256": "4e3f5b3d7a8b41bf5a1e5630ddb67c10e3f5178d476235e8ee6fb1b457eef052",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "International Public Partnerships (INPP)",
+            "attributionConfidence": null,
+            "attributionRationale": "INPP's official Durham Region Court House case study reports 100% equity ownership, operational status and March 2007 financial close. The issuer identifies itself as International Public Partnerships Limited and Amber Infrastructure as investment adviser. This supports the existing International Public Partnerships (INPP) curated investment-company link and disclosed attribution. Preserve task17's canonical 100% stake, 2007 investment year, manager/organization distinction and existing vehicle label; do not infer a different holding entity.",
+            "linkedFundName": "International Public Partnerships (INPP)"
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "The issuer's existing project page directly establishes the named listed infrastructure investment company and project ownership; Amber's page corroborates. The current INPP short label and curated fund link are supported. The old seed's missing link is not adopted. A stale rationale says the ownership interest is undisclosed despite task17's approved 100% and both issuer/manager pages.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/durham-region-courthouse/inpp.html",
+              "sha256": "cd4fefdb3266402ca4b812f89a9722c9a3f4af6799cfef2ef8a7d45d0017cbfb",
+              "url": "https://www.internationalpublicpartnerships.com/investments/case-studies/durham-region-court-house",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    },
+    {
+      "companyId": "cmrxpj66d00iwivhehmeoxiek",
+      "name": "USD Clean Fuels, LLC",
+      "sequence": 62,
+      "classification": "SEED_ONLY",
+      "expectedCompanySha256": "e5bdc87e4defbf8854772b401b1fac0d1d6cfdd90f0d51ccf906eef265216210",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/usd-clean-fuels/authority.json",
+          "sha256": "79ffb3a059ac4b78323002e78759b0e7e8a04f794a06e98b52986c33c4060eb5"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmrxpjr7m01frivheqgpnrk72",
+          "seedRecordId": "OFA-163D37942AED",
+          "expectedSeedSha256": "47caedeb7040fff0999092c8e267028d8ff8b9bf3bdf1db3673829c42191075a",
+          "expectedOwnerSha256": "b0189af1c726ab9a27a036bfc6adb34fbffb3fa9418e0f661103fcd833ee0574",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "Ara Infrastructure Fund I",
+            "attributionConfidence": null,
+            "attributionRationale": "Matched supplemental ownership detail: Firm: Ara Partners | Fund: Ara Infrastructure Fund I | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+            "linkedFundName": "Ara Infrastructure Fund I"
+          },
+          "productionChange": "NONE",
+          "reason": "Ara's exact USD Clean Fuels portfolio panel names Infra Fund I, identifies the Infrastructure strategy, gives December 2023 investment and active status. Together with the existing exact Ara fund and canonical task62 receipt, this supports retaining the Ara Infrastructure Fund I link, not unlinking it to match the seed. Adjacent Private Equity Ara Fund I panels are separate companies and are not the evidence for this decision.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/usd-clean-fuels/ara-portfolio.html",
+              "sha256": "a1e8325fa8ea2c7f36e7b771ffa23e6d1b598284380a4144964f03f3d85b0987",
+              "url": "https://www.arapartners.com/portfolio/",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    },
+    {
+      "companyId": "cmsqy1iqt0000ee4s76s3uleu",
+      "name": "Chief Power",
+      "sequence": 66,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "d77e60d16a04c5a450e0611274a693af3bfe5cf2290fe50df5c89830df058100",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/authority.json",
+          "sha256": "963c3e83d63feebdb638980723c069d9f17f72e8506a65953f300f4470795c12"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmsqy1ks0000hee4s99nkni2v",
+          "seedRecordId": "OFA-C5C4181CF197",
+          "expectedSeedSha256": "7d4a85dc12471a848047967e41e76c8462bedb203ff8f5a1c6b53ca81b225f64",
+          "expectedOwnerSha256": "0956e09ebdba6ebd62381fd7c1b22869607a5e6f088aa0f0a8adbc665775dfa8",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "ArcLight Energy Partners Fund V, L.P.",
+            "attributionConfidence": null,
+            "attributionRationale": "ArcLight's 2025 ESG Report, page 18, explicitly lists Chief Power under Fund V as of December 31, 2024. This is disclosed fund attribution, not a vintage/mandate estimate. Preserve the separately verified residual-tranche vehicle, 2014 entry and approximately 3% retained-interest text; exact economic percentage remains unavailable.",
+            "linkedFundName": "ArcLight Energy Partners Fund V, L.P."
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "The issuer's exact Chief Power / Power / Fund V row in its 2025 ESG appendix establishes disclosed attribution. The existing Fund V link/name are retained for the two separately verified active tranches; classification, confidence and rationale require correction, without redoing company research.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/arclight-esg.pdf",
+              "sha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+              "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "ownerId": "cmsqy1l04000iee4sludeh502",
+          "seedRecordId": "OFA-44F1F236D9F0",
+          "expectedSeedSha256": "3ba08006f015d30de777383b72861d7e69ea2aabe646ee95d5ef54ad6cd78e56",
+          "expectedOwnerSha256": "6e778f9e81effe6227fd47563e7d406ab68a36522186618bfacab4c34dfef65a",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "ArcLight Energy Partners Fund V, L.P.",
+            "attributionConfidence": null,
+            "attributionRationale": "ArcLight's 2025 ESG Report, page 18, explicitly lists Chief Power under Fund V as of December 31, 2024. This is disclosed fund attribution, not a vintage/mandate estimate. Preserve the separately verified Chief Power Finance II vehicle, 2019 entry and greater-than-10% voting-interest text for each II plant owner; exact economic percentage remains unavailable.",
+            "linkedFundName": "ArcLight Energy Partners Fund V, L.P."
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "The issuer's exact Chief Power / Power / Fund V row in its 2025 ESG appendix establishes disclosed attribution. The existing Fund V link/name are retained for the two separately verified active tranches; classification, confidence and rationale require correction, without redoing company research.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/arclight-esg.pdf",
+              "sha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+              "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [
+        "cmsqy1kj9000gee4svk29j3v4"
+      ],
+      "issue": null
+    },
+    {
+      "companyId": "cmstu15ni0000cv6hlqbn9wqr",
+      "name": "Orca Acquisitions, LLC",
+      "sequence": 79,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "65f58279bbd7edbe9884455ac1666bd1a89ac8fc9bd0460b0d0b611fd15d7d86",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/orca/authority.json",
+          "sha256": "5a7602f4b95eb3a00349a524add95dbee95f0f6207d9a35dfcfae6987df09bce"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmstu17dv000fcv6h6mqm8bzk",
+          "seedRecordId": "OFA-65C03C85D47B",
+          "expectedSeedSha256": "9cc91b2d69a5b20615efbd6609e65f273862530eedea9373d60704c224284369",
+          "expectedOwnerSha256": "09d109f094f9203ab15d44f9fa02949d9b6e45f82b515fe20e6c8f92f6eb288d",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "ArcLight Energy Partners Fund VI, L.P.",
+            "attributionConfidence": null,
+            "attributionRationale": "ArcLight's 2025 ESG Report, page 19, explicitly lists Orca under Fund VI in its investments as of December 31, 2024. This is disclosed fund attribution, not a vintage/mandate estimate. Preserve the separately verified ArcLight Orca Holdings, LLC vehicle, 2016 year-level entry and 95% Class A managing-interest/control text; exact overall economic interest across classes remains unavailable.",
+            "linkedFundName": "ArcLight Energy Partners Fund VI, L.P."
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "The issuer's exact Orca / Power / Fund VI row establishes disclosed attribution. Retain the existing Fund VI link/name; replace inference, confidence and rationale without reopening canonical company adjudication.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/arclight-esg.pdf",
+              "sha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902",
+              "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    },
+    {
+      "companyId": "cmstz2o5i0000ai6hiuspmigq",
+      "name": "TransMontaigne Partners LLC",
+      "sequence": 81,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "ce952ce6b2ee40aad4beaae3d566999033e676f8019f45624c130976031e5390",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/pike/authority.json",
+          "sha256": "ec94b6bdf3eabf88d8022cc59f5358e61236bb9da4b42250bf85fff9b0c73573"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmstz2otm000fai6h7d10qs2v",
+          "seedRecordId": "OFA-917913E3AD1F",
+          "expectedSeedSha256": "92f2da31d532174b0503fcfb05776d324131b8ebc8c99263b863dc894ee3af18",
+          "expectedOwnerSha256": "c8c1c3f73369e3048519dfc21ff06f97b550f28ca34a4a33b2f30dba2419b9a5",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "ArcLight Energy Partners Fund VI, L.P.",
+            "attributionConfidence": null,
+            "attributionRationale": "TransMontaigne's September 3, 2025 SEC-filed issuer release expressly identifies TLP Finance Holdings, LLC as the controlling member and an indirect wholly owned subsidiary of ArcLight Energy Partners Fund VI, L.P. Fund VI is disclosed, not estimated from vintage or mandate. Preserve the canonical 2016 control-entry year, 2019 full-platform-ownership distinction and unavailable current Pike Petroleum Holdings shell capitalization.",
+            "linkedFundName": "ArcLight Energy Partners Fund VI, L.P."
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "The exact SEC-filed company release establishes disclosed Fund VI attribution to TransMontaigne through TLP Finance. Retain its existing fund link/name and correct only classification, confidence and rationale.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/pike/sec-fund-vi.html",
+              "sha256": "93edb4077aca3a1c3bf91de53eabc91adf32e27658894d969f074e8917926d43",
+              "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465925086822/tm2524750d1_ex99-1.htm",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    },
+    {
+      "companyId": "cmrxpj9ha00o1ivheosmpe7bo",
+      "name": "Rover Pipeline",
+      "sequence": 91,
+      "classification": "PARKED",
+      "expectedCompanySha256": "9eae23d20debb534f5468262a875f00335a32728f7846c31df7e8d5e4f749b4e",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rover/authority.json",
+          "sha256": "9240d8eb2d68c18897a76a8da1caa4209f590de9bc25822f2cb0ed596b4b5a19"
+        }
+      ],
+      "owners": [],
+      "preservedOwnerIds": [
+        "cmrxpjurl01liivhe773ju18n",
+        "cmrxpjus401ljivhe34mwseet",
+        "cmsvbu6a20009i26htjxkt26v",
+        "cmsvbu6aj000bi26hy4frkjxt"
+      ],
+      "issue": "The reviewed Ares attribution correction is supported, but two non-target active-owner rationale defects remain explicitly unadjudicated in the Rover authority report: Energy Transfer's rationale omits the canonical 32.6% economic interest, and ePointZero's generic no-fund rationale accompanies DIRECT_PROGRAM. Reuse the already-cited issuer sources to adjudicate those exact fields, then release one complete company packet. Do not change the 32.4% Ares indirect stake, substitute the separate 49.9% holding-company interest, replay the v2 PortCo transaction or mark the company fully verified after an Ares-only fix."
+    },
+    {
+      "companyId": "cmsy7wza30000dx6h68hfhefh",
+      "name": "Virginia International Gateway",
+      "sequence": 109,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "6f946fe07586a72616807c89ae15b7a790dbe92d9d546e487b8782c3347eee66",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/authority.json",
+          "sha256": "92dd7a00b4dee6d5d0562588b33409563ad714195ef770972226ee6c59f31889"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmsy7x07j0008dx6hgibhfue0",
+          "seedRecordId": "OFA-6C517EC7BDAE",
+          "expectedSeedSha256": "e0f6055ce0c3944b9df8d96276f4f323d39b37663bf7221198882280d3f4dc6d",
+          "expectedOwnerSha256": "521c21749a15980728ac96b9af9c136a428995e3be82877de7ae24f07a85d6f1",
+          "desired": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": "Astatine identifies Virginia International Gateway as a current managed investment, but the reviewed public evidence does not disclose the active fund, managed account, or holding vehicle. The separate Alinda Infrastructure Fund II investment was exited in 2019, so the current period is intentionally left unlinked rather than inferred to a later Astatine fund.",
+            "linkedFundName": null
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Persist the exact reviewed attribution decision; preserve documented exceptions.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/astatine-active.html",
+              "sha256": "3e9271f3fadd15f3591e2305b6f257b69ff34662db815f053dc51979a4948d95",
+              "url": "https://astatineip.com/investment/virginia-international-gateway/",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "ownerId": "cmsy7x0bx0009dx6h6mp61aj3",
+          "seedRecordId": "OFA-D7AB4D5F917C",
+          "expectedSeedSha256": "7a9746f790ea0649d2ab4a38adc14c7512ea53d77c1e9513171a0fcf17a13afa",
+          "expectedOwnerSha256": "eb4001618004b955da04b74bdc3ee9f6efd68aa8d4b5019280cdcc482547171c",
+          "desired": {
+            "fundAttribution": "DIRECT_PROGRAM",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": "The Virginia Port Authority's Series 2025 final official statement identifies Public Sector Pension Investments (PSP) and USS as VIG's joint underlying owners. Classify PSP's directly held pension investment as DIRECT_PROGRAM without inventing a third-party fund or legal holding vehicle. PSP's exact percentage and entry date remain not publicly disclosed; the 2025 lease amendment is not a sale of terminal title.",
+            "linkedFundName": null
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Persist the exact reviewed attribution decision; preserve documented exceptions.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/vpa-2025.pdf",
+              "sha256": "0059321e43dfe89299da20c50f639b1684d28a6ead8d18bd8a2d83a8b765301d",
+              "url": "https://finpressllc.com/doc/16391/Virginia%20Port%20Authority%20Final%20Official%20Statement%20Series%202025.pdf?source=website",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [
+        "cmsy7x0fq000adx6h6ui4jj4g"
+      ],
+      "issue": null
+    }
+  ],
+  "batchSha256": "db0ae7197eda0fd5c6d43eed85ab27f02c86780566638c981b1fe601354f0be8"
+}

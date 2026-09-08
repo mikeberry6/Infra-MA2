@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {ALLETE as M,ALLETE_SOURCE_ROOT as S,ALLETE_TASK_ROOT as T,ALLETE_PACKET as P,ALLETE_SOURCES as U,ALLETE_OWNERS as O,ALLETE_BATCH_ROOT as B,proveAlleteFieldAuthority,type AlleteInput} from "./allete-field-authority";

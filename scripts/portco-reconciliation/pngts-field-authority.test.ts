@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {PNGTS as M,PNGTS_SOURCE_ROOT as S,PNGTS_TASK_ROOT as T,PNGTS_PACKET as P,PNGTS_SOURCES as U,PNGTS_OWNERS as O,PNGTS_BATCH_ROOT as B,PNGTS_RENDERED_PAGES as RP,PNGTS_PRIMARY as PRIMARY,provePngtsFieldAuthority,type PngtsInput} from "./pngts-field-authority";

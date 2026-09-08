@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {MOSAIC as M,MOSAIC_SOURCE_ROOT as S,MOSAIC_TASK_ROOT as T,MOSAIC_PACKET as P,MOSAIC_SOURCES as U,MOSAIC_OWNERS as O,MOSAIC_BATCH_ROOT as B,proveMosaicFieldAuthority,type MosaicInput} from "./mosaic-field-authority";

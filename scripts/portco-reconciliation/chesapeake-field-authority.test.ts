@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { CHESAPEAKE, CHESAPEAKE_OWNERS, CHESAPEAKE_SOURCES, CHESAPEAKE_SOURCE_ROOT, CHESAPEAKE_PACKET, CHESAPEAKE_TASK_ROOT, proveChesapeakeFieldAuthority, type ChesapeakeInput } from "./chesapeake-field-authority";

@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { describe, expect, it } from "vitest";
 import { RIO_GRANDE_SOURCES, proveRioGrandeFieldAuthority, type RioGrandeInput } from "./rio-grande-field-authority";
 import { hashWithoutField, sha256Canonical, sha256Text } from "./hash";

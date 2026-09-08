@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import { describe, expect, it } from "vitest";
 import { RIO_GRANDE_SOURCES } from "./rio-grande-field-authority";
 import { proveRioMubadalaFieldAuthority, RIO_MUBADALA_OWNER, type RioMubadalaInput } from "./rio-mubadala-field-authority";

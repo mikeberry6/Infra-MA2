@@ -1,4 +1,4 @@
-import {readFileSync} from "node:fs";
+import { readHistoricalAuditFileSync as readFileSync } from "../portco-completion/historical-fixtures";
 import {createHash} from "node:crypto";
 import {describe,expect,it} from "vitest";
 import {GIGAPOWER as M,GIGAPOWER_SOURCE_ROOT as S,GIGAPOWER_TASK_ROOT as T,GIGAPOWER_PACKET as P,GIGAPOWER_SOURCES as U,GIGAPOWER_OWNERS as O,GIGAPOWER_BATCH_ROOT as B,proveGigapowerFieldAuthority,type GigapowerInput} from "./gigapower-field-authority";
