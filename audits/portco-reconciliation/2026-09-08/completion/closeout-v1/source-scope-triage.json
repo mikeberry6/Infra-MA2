@@ -1,0 +1,758 @@
+{
+  "artifactType": "PORTCO_GLOBAL_SCOPE_TRIAGE",
+  "inputs": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    }
+  ],
+  "databaseReads": 0,
+  "databaseWrites": 0,
+  "sourceTaskChanges": 0,
+  "registerChanges": 0,
+  "completedReceiptUnboundCompanies": 63,
+  "companiesWithCandidateTasks": 4,
+  "policy": "Read-only navigation aid. Verify original decision/research/snapshot identity and direct evidence before classifying scope. A missing completed receipt or subject match is not proof that a company is outside scope. Existing exact deferrals are retained, not resolved.",
+  "companies": [
+    {
+      "companyId": "cmrxpjbeg00r0ivhexajc8rv7",
+      "name": "A25 Concession",
+      "diagnosticIssueIndices": [
+        92,
+        93,
+        94,
+        95
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbf200r1ivhenqhkgvg1",
+      "name": "AES Indiana",
+      "diagnosticIssueIndices": [
+        96,
+        97,
+        98,
+        99
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbfm00r2ivhedejq6vo0",
+      "name": "AES Ohio",
+      "diagnosticIssueIndices": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpj4to00gtivhe5o1os28c",
+      "name": "Alberta Schools Alternative Procurement I",
+      "diagnosticIssueIndices": [
+        19,
+        20
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjiko011xivhebv11f7bv",
+      "name": "Aleatica, S.A.B. de C.V.",
+      "diagnosticIssueIndices": [
+        306,
+        307
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpj47700g6ivheh80125ia",
+      "name": "Arevon Energy, Inc.",
+      "diagnosticIssueIndices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjc1900rxivhex2yldcu1",
+      "name": "Buffalo Plains Wind Farm",
+      "diagnosticIssueIndices": [
+        158,
+        159
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjdra00umivhedgzd66w4",
+      "name": "Captis Energy",
+      "diagnosticIssueIndices": [
+        204,
+        205
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjf5c00wtivhebt9v2dff",
+      "name": "Central Utility Block (Heartland Petrochemical Complex)",
+      "diagnosticIssueIndices": [
+        224,
+        225,
+        226
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpj47q00g7ivhe2d22x3iq",
+      "name": "Chicago Parking Meters, LLC",
+      "diagnosticIssueIndices": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "candidateTasks": [
+        {
+          "sequence": 345,
+          "taskId": "ledger:0345:chicago-parking-meters:1a7d998e",
+          "subject": "Chicago Parking Meters",
+          "status": "DEFERRED",
+          "matchMethod": "EXPLICIT_RECORDED_COMPANY_ALIAS_CANDIDATE",
+          "exceptionReason": "Direct evidence resolves Chicago Parking Meters, Chicago Parking Meters, LLC and CPM to the existing production concessionaire and ParkChicago to its brand. The filed 2026 proposal identifies a contemplated Stonepeak acquisition and a proposal-date holder snapshot, but no direct cutoff source establishes an executed purchase agreement, final City action, executed consent, legal closing, current complete member register, retained or rolled interests, or Stonepeak as current owner. Preserve the approved MSIP, Allianz and ADIA display without treating it as new legal ownership evidence and make no database, seed or display change.",
+          "decision": {
+            "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/terminal-decision-deferred-v1.json",
+            "sha256": "c7851206d5922964d4aa8b9ac526f98040eb6672be7edc57eaa817d894791381"
+          }
+        }
+      ],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjd9j00tuivhettvdurgk",
+      "name": "ConGlobal",
+      "diagnosticIssueIndices": [
+        183
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjdrr00univhe6utkjs4n",
+      "name": "Conterra Networks",
+      "diagnosticIssueIndices": [
+        206
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjdsd00uoivhe5wiqp848",
+      "name": "Desert Sky Energy",
+      "diagnosticIssueIndices": [
+        207
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbgo00r4ivhexcz53r7l",
+      "name": "DP World Canada",
+      "diagnosticIssueIndices": [
+        104,
+        105,
+        106,
+        107
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjf8l00wvivhe9di0ym1s",
+      "name": "Edmonton Valley Line LRT Southeast",
+      "diagnosticIssueIndices": [
+        227,
+        228,
+        229
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbh700r5ivhetsvem8vl",
+      "name": "Enel Green Power Mexico",
+      "diagnosticIssueIndices": [
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjda000tvivhek380dt35",
+      "name": "Expedient",
+      "diagnosticIssueIndices": [
+        184
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjdak00twivheazjbfqum",
+      "name": "Extenet (formerly ExteNet Systems)",
+      "diagnosticIssueIndices": [
+        185,
+        186
+      ],
+      "candidateTasks": [
+        {
+          "sequence": 213,
+          "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+          "subject": "Extenet (formerly ExteNet Systems)",
+          "status": "DEFERRED",
+          "matchMethod": "NORMALIZED_SUBJECT_CANDIDATE",
+          "exceptionReason": "Direct evidence resolves one continuing Extenet platform, active operations and the February 13, 2025 42% Stonepeak / 32% KH Killington / 26% Other Members cap table. It does not establish the September 4, 2026 owner set, stakes and vehicles, bridge JH Killington to KH Killington, or resolve Northleaf's, DigitalBridge's and Manulife's cutoff positions or the outcome of the reported outdoor DAS and small-cell sale process.",
+          "decision": {
+            "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/terminal-decision-deferred-v1.json",
+            "sha256": "9d2ee05085dbcdeab654e7f313d80b8479d194a5cb604eb5e167e86cfa5ffb21"
+          }
+        },
+        {
+          "sequence": 424,
+          "taskId": "ledger:0424:extenet-formerly-extenet-systems:deec194f",
+          "subject": "Extenet (formerly ExteNet Systems)",
+          "status": "SUPERSEDED",
+          "matchMethod": "NORMALIZED_SUBJECT_CANDIDATE",
+          "exceptionReason": "Fresh task resolution proves this is the same canonical Extenet identity already represented by task 213. Task 213 preserves the unresolved Northleaf disposition and JH-to-KH legal bridge for final deferred re-adjudication, so creating a second mutation or deferral would duplicate the same company-level issue.",
+          "decision": {
+            "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/terminal-decision-v1.json",
+            "sha256": "3fa7bc24717546d651d903e2da72e1da0152461a9387bb48c2ba603e1bc88bca"
+          }
+        }
+      ],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjc3c00s1ivheh0230va5",
+      "name": "Fighting Jays Solar",
+      "diagnosticIssueIndices": [
+        160,
+        161
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpj48b00g8ivhectbglmuo",
+      "name": "FirstEnergy Transmission, LLC",
+      "diagnosticIssueIndices": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjhon010jivheqq1c1oke",
+      "name": "Fort Detrick Energy Production Facility",
+      "diagnosticIssueIndices": [
+        299,
+        300
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjf9n00wxivhedu5fmw6t",
+      "name": "Fort St. James Green Energy Project",
+      "diagnosticIssueIndices": [
+        230,
+        231,
+        232
+      ],
+      "candidateTasks": [
+        {
+          "sequence": 247,
+          "taskId": "ledger:0247:fort-st-james-green-energy-project:dbc63243",
+          "subject": "Fort St. James Green Energy Project",
+          "status": "DEFERRED",
+          "matchMethod": "NORMALIZED_SUBJECT_CANDIDATE",
+          "exceptionReason": "Direct evidence verifies BioNorth's 2021 acquisition, the current named parties, and separate 40% disclosures for Nak'azdli and Arrow at different partnership levels, but it does not bridge those levels, allocate the residual 20%, or directly map a Nexus PMG holder and stake. The stale Fengate attribution cannot be replaced without an inferred cap table.",
+          "decision": {
+            "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/terminal-decision-deferred-v1.json",
+            "sha256": "7b52010e2d9bedc914239de7f3c396df04393046e79d85cf50084e9d1a4afd1b"
+          }
+        }
+      ],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfa900wyivheqr821jt0",
+      "name": "Freeport Energy Center",
+      "diagnosticIssueIndices": [
+        233
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfar00wzivheujr4fq1n",
+      "name": "Freeport Power Limited",
+      "diagnosticIssueIndices": [
+        234
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjosv01bvivhe6x3dbw22",
+      "name": "Guzman Energy",
+      "diagnosticIssueIndices": [
+        402
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjkmo0155ivhejm9uec3n",
+      "name": "Hunt Energy Network, LLC",
+      "diagnosticIssueIndices": [
+        334
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbib00r7ivhewg54x0oj",
+      "name": "ICA Operadora de Vías Terrestres, S.A.P.I. de C.V.",
+      "diagnosticIssueIndices": [
+        113,
+        114,
+        115,
+        116
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbiv00r8ivhe7ydq2fty",
+      "name": "Indiana Toll Road",
+      "diagnosticIssueIndices": [
+        117,
+        118,
+        119,
+        120,
+        121,
+        122
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjblv00r9ivhepi9anjoz",
+      "name": "Innergex Renewable Energy",
+      "diagnosticIssueIndices": [
+        123,
+        124,
+        125,
+        126
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpj8lj00mnivhecvfdxmtv",
+      "name": "InTransit BC",
+      "diagnosticIssueIndices": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbmd00raivhe0z1866id",
+      "name": "Invenergy Renewables LLC",
+      "diagnosticIssueIndices": [
+        127,
+        128,
+        129,
+        130
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpj5rl00i9ivhelzcaiyyj",
+      "name": "IonicBlue",
+      "diagnosticIssueIndices": [
+        23,
+        24
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjkn70156ivhejtldxot6",
+      "name": "J-POWER USA Generation, L.P.",
+      "diagnosticIssueIndices": [
+        335,
+        336
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfdj00x4ivheestkwqla",
+      "name": "Jim Pattison Outpatient Care and Surgery Centre",
+      "diagnosticIssueIndices": [
+        235,
+        236,
+        237
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfe300x5ivhe0dn9ajx6",
+      "name": "Lambton College Residence",
+      "diagnosticIssueIndices": [
+        238
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpj65s00ivivhekk7buvw1",
+      "name": "Lincoln Terminal Holdings",
+      "diagnosticIssueIndices": [
+        28
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjeo200w1ivhe76qz7i0k",
+      "name": "Lumos Fiber",
+      "diagnosticIssueIndices": [
+        215,
+        216
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjff600x7ivheocc0bl0u",
+      "name": "Merritt Biomass Plant",
+      "diagnosticIssueIndices": [
+        239,
+        240,
+        241
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjisp012civhep58w70qr",
+      "name": "Millennium Garages",
+      "diagnosticIssueIndices": [
+        310,
+        311,
+        312,
+        313
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjffr00x8ivhe354l7jdk",
+      "name": "Morris Cogeneration Facility",
+      "diagnosticIssueIndices": [
+        242
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpj6t100jtivhegccczk0y",
+      "name": "MXT Holdings",
+      "diagnosticIssueIndices": [
+        35,
+        36
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfhb00xbivhe8zn3sgld",
+      "name": "Oakville Trafalgar Memorial Hospital",
+      "diagnosticIssueIndices": [
+        243,
+        244,
+        245
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbmy00rbivhehh6cicf4",
+      "name": "Plenary Americas",
+      "diagnosticIssueIndices": [
+        131,
+        132,
+        133,
+        134
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfhv00xcivhenpa3gni7",
+      "name": "PowerFin Partners Texas Solar Portfolio",
+      "diagnosticIssueIndices": [
+        246,
+        247,
+        248
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjmyb018uivheyba3ewkn",
+      "name": "Prospect Lake Clean Water Center",
+      "diagnosticIssueIndices": [
+        385
+      ],
+      "candidateTasks": [
+        {
+          "sequence": 409,
+          "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+          "subject": "Prospect Lake Clean Water Center",
+          "status": "DEFERRED",
+          "matchMethod": "NORMALIZED_SUBJECT_CANDIDATE",
+          "exceptionReason": "Identity, historic contractual interests and the current general-partner chain are verified; the July 2026 filing has been visually read and concerns the existing GP detail/address. The complete cutoff-current direct-holder register and exact equity interests remain unavailable, so no ownership mutation is supported.",
+          "decision": {
+            "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/terminal-decision-deferred-v1.json",
+            "sha256": "19d4fb43af031ae9ff8116981b649fd3ed7c288d8247c413614453253e92c2c1"
+          }
+        }
+      ],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfjj00xfivhe0e0iuklw",
+      "name": "Providence Care Hospital",
+      "diagnosticIssueIndices": [
+        253,
+        254,
+        255
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjdsv00upivhenx60t7fz",
+      "name": "Public Infrastructure Partnership",
+      "diagnosticIssueIndices": [
+        208
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjdte00uqivhe6a6jxd0v",
+      "name": "PureSky Energy",
+      "diagnosticIssueIndices": [
+        209
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjiim011tivhemt7m9kp4",
+      "name": "QSL International Ltd.",
+      "diagnosticIssueIndices": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbo200rdivhepvecb6f4",
+      "name": "Réseau express métropolitain",
+      "diagnosticIssueIndices": [
+        135,
+        136,
+        137
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfk300xgivhe01tzwcet",
+      "name": "Saskatoon Civic Operations Centre",
+      "diagnosticIssueIndices": [
+        256,
+        257,
+        258
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjclz00svivhen9hcoprt",
+      "name": "Sempra Infrastructure Partners, LP",
+      "diagnosticIssueIndices": [
+        173,
+        174,
+        175,
+        176,
+        177
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbok00reivhetjuixnom",
+      "name": "Southern Star Central Gas Pipeline",
+      "diagnosticIssueIndices": [
+        138,
+        139,
+        140,
+        141
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbp500rfivhebgr2avam",
+      "name": "Student Transportation of America and Canada",
+      "diagnosticIssueIndices": [
+        142,
+        143,
+        144,
+        145
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfn400xhivhe2vjqgu7a",
+      "name": "Sunningdale Solar Project",
+      "diagnosticIssueIndices": [
+        259,
+        260,
+        261
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpje6900v9ivhemqf7i4b2",
+      "name": "SunShare, LLC",
+      "diagnosticIssueIndices": [
+        212
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjbpq00rgivhedjou7u6e",
+      "name": "SunZia Wind and Transmission",
+      "diagnosticIssueIndices": [
+        146,
+        147,
+        148,
+        149
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfqc00xiivhe70ut2i58",
+      "name": "Surrey Memorial Hospital Critical Care Tower",
+      "diagnosticIssueIndices": [
+        262,
+        263,
+        264
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjfr700xkivhepyrxxkvd",
+      "name": "The Peter Gilgan Mississauga Hospital and Shah Family Hospital for Women and Children",
+      "diagnosticIssueIndices": [
+        265
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpj63100iqivheckl3915o",
+      "name": "US Wind",
+      "diagnosticIssueIndices": [
+        26,
+        27
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjdty00urivheqf6ca4v0",
+      "name": "West Coast Hydro",
+      "diagnosticIssueIndices": [
+        210
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjafz00phivhe43iiqdy2",
+      "name": "Westinghouse Electric Company",
+      "diagnosticIssueIndices": [
+        85,
+        86
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    },
+    {
+      "companyId": "cmrxpjdui00usivhespx7r91z",
+      "name": "Woodford Social Infrastructure",
+      "diagnosticIssueIndices": [
+        211
+      ],
+      "candidateTasks": [],
+      "adjudication": "UNRESOLVED_SCOPE; candidate name matching does not prove canonical identity or authorize exclusion/correction"
+    }
+  ]
+}
