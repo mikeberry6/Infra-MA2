@@ -65,6 +65,15 @@ describe("shared small decision records", () => {
     expect(() => validateDecisionRecords({ ...f, records: f.records.slice(1) })).toThrow(/eligible group/);
     expect(() => validateDecisionRecords({ ...f, records: [...f.records].reverse() })).toThrow(/eligible group/);
   });
+  it("validates parked-pass packets offline only with an explicit phase after the main pass", () => {
+    const f = fixture();
+    const { progressSha256: _old, ...content } = f.progress;
+    const progress = verifyProgress(seal({ ...content, names: content.names.map(n => ({ ...n, status: "PARKED", issue: "Prior supported correction awaits review" })) }, "progressSha256"));
+    expect(() => validateDecisionRecords({ ...f, progress })).toThrow(/eligible group/);
+    expect(validateDecisionRecords({ ...f, progress, phase: "PARKED_REVISIT" })).toHaveLength(2);
+    expect(() => validateDecisionRecords({ ...f, phase: "PARKED_REVISIT" })).toThrow(/main pass/);
+    expect(() => validateDecisionRecords({ ...f, progress, phase: "PARKED_REVISIT", records: f.records.slice(1) })).toThrow(/eligible group/);
+  });
   it("rejects unbound original receipts", () => {
     const f = fixture(); f.records[0].originalApply.receiptSha256 = "f".repeat(64);
     expect(() => validateDecisionRecords(f)).toThrow(/Original applied/);

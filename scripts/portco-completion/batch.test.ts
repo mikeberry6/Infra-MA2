@@ -272,6 +272,65 @@ describe("one-active-release progress and recovery", () => {
     expect(() => nextNames(p, true)).toThrow(/main pass/);
   });
 });
+describe("ordered evidence-bound parked revisit", () => {
+  function revisitFixture() {
+    const f = fixture(["NO_CHANGE", "SEED_ONLY", "PARKED"]);
+    const progress = verifyProgress(reseal({ ...f.progress, names: f.progress.names.map(n => ({ ...n, status: "PARKED", issue: `Prior exact issue ${n.sequence}` })) }, "progressSha256"));
+    const batch = verifyBatch(reseal({ ...f.batch, phase: "PARKED_REVISIT", progressSha256: progress.progressSha256 }, "batchSha256"));
+    return { ...f, progress, batch };
+  }
+  function finish(f: ReturnType<typeof revisitFixture>) {
+    const compiled = compileBatch(f);
+    const proof = f.batch.decisions.filter(d => d.classification !== "PARKED").map(d => ({ companyId: d.companyId,
+      checks: { afterImages: true, seedAlignment: true, api: true, redirects: true, ownership: true, citations: true, renderedCard: true }, evidence: [file] }));
+    return { progress: markReleased(activate(f.progress, f.batch), release), compiled, after: f.snapshot, seed: compiled.seed,
+      release, proof, completionFile: file, files: f.files };
+  }
+  it("binds revisit phase and refuses early, unbound or partial selection", () => {
+    const f = revisitFixture();
+    expect(activate(f.progress, f.batch).active?.state).toBe("PREPARING");
+    expect(() => activate(f.progress, f.batch, false)).toThrow(/phase/);
+    const { phase: _phase, ...plain } = f.batch;
+    const batch = verifyBatch(reseal(plain, "batchSha256"));
+    expect(() => activate(f.progress, batch, true)).toThrow(/phase/);
+    expect(() => activate(f.progress, batch)).toThrow(/earliest ten/);
+    expect(() => activate(f.progress, verifyBatch(reseal({ ...f.batch, decisions: f.batch.decisions.slice(1) }, "batchSha256")))).toThrow(/earliest ten/);
+    const progress = verifyProgress(reseal({ ...f.progress, names: f.progress.names.map((n,i) => i ? n : { ...n, status: "REMAINING", issue: null }) }, "progressSha256"));
+    expect(() => activate(progress, verifyBatch(reseal({ ...f.batch, progressSha256: progress.progressSha256 }, "batchSha256")))).toThrow(/main pass/);
+  });
+  it("retains exact prior issues and completion hashes without counting renewed exceptions as verified", () => {
+    const f = revisitFixture(), done = complete(finish(f));
+    expect(counts(done)).toEqual({ fullyVerified: 2, parked: 1, remaining: 0 });
+    expect(done.names.map(n => n.parkedReview)).toEqual(f.progress.names.map(n => ({ priorIssue: n.issue, batchId: f.batch.batchId, completion: file })));
+    expect(done.names[2].issue).toBe(f.batch.decisions[2].issue);
+    expect(done.names[2].completion).toBeNull();
+    expect(nextNames(done, true)).toEqual([]);
+    const nextBatch = verifyBatch(reseal({ ...f.batch, batchId: "revisit-duplicate", progressSha256: done.progressSha256 }, "batchSha256"));
+    expect(() => activate(done, nextBatch)).toThrow(/earliest ten/);
+  });
+  it("does not advance review markers on incomplete proof or a frozen release", () => {
+    const f = revisitFixture(), input = finish(f);
+    input.proof[0].checks.renderedCard = false;
+    expect(() => complete(input)).toThrow(/renderedCard/);
+    expect(input.progress.names.every(n => n.parkedReview === undefined)).toBe(true);
+    const frozen = freeze(input.progress, "Rendered verification failed");
+    expect(() => nextNames(frozen, true)).toThrow(/active/);
+    expect(() => complete({ ...input, progress: frozen })).toThrow(/renderedCard/);
+    input.proof[0].checks.renderedCard = true;
+    expect(complete({ ...input, progress: frozen }).names.every(n => n.parkedReview)).toBe(true);
+  });
+  it("selects ten untouched parks in source order rather than repeatedly selecting renewed exceptions", () => {
+    const f = fixture();
+    const names = Array.from({ length: 23 }, (_,i) => ({ ...f.progress.names[0], companyId: `park${i}`, name: `Park ${i}`, sequence: i+1,
+      reviewedEvidence: i%2 ? [] : [file], status: "PARKED", issue: `Issue ${i}`,
+      ...(i < 10 ? { parkedReview: { priorIssue: `Original ${i}`, batchId: "reviewed", completion: file } } : {}) }));
+    const progress = verifyProgress(reseal({ ...f.progress, names, completedBatchIds: ["reviewed"] }, "progressSha256"));
+    expect(nextNames(progress, true).map(n => n.sequence)).toEqual([11,12,13,14,15,16,17,18,19,20]);
+    expect(counts(progress)).toEqual({ fullyVerified: 0, parked: 23, remaining: 0 });
+    expect(() => verifyProgress(reseal({ ...progress, completedBatchIds: [] }, "progressSha256"))).toThrow(/lineage/);
+  });
+});
+
 describe("publication redaction", () => {
   it("finds secrets without exposing their values", () => {
     const value = ["pk", "eyJ" + "x".repeat(60)].join(".");

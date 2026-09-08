@@ -10,6 +10,8 @@ The progress register is keyed by canonical company ID, not by fields or duplica
 
 `nextNames()` selects ten reviewed backlog companies in original source order before unreviewed names. Fewer are allowed only when that eligible pool is exhausted. Parked companies are revisited after the main pass. One active release is enforced independently of the permanently idle, terminal source ledger. No source tasks are reopened.
 
+For the parked pass, set `phase: "PARKED_REVISIT"` in the small-record preparation configuration. This phase is included in the sealed batch, checked offline before capture, and replayed by the same completion-lineage validator. It cannot start while any main-pass name remains. Select the earliest ten not-yet-revisited parked names in original source order, regardless of evidence availability. Only successful protected completion records `parkedReview` with the exact prior issue, batch ID and completion-file hash. A name that remains parked retains its current precise issue and is skipped for the rest of this pass; it never increments the verified count. Frozen/unfinished reviews do not advance the queue. A later attempt at a reviewed exception requires a separately authorized, evidence-bound follow-up, not removing its marker or reopening source tasks. Immutable main-pass batches omit this optional phase and retain their original hashes and replay results.
+
 ## Preparation
 
 1. Use small `decisionSchema` records. Bind existing authority/receipt/source files by byte SHA; exactly one primary citation per owner decision. Review only unresolved facts or changed dependencies. No repeated ChatGPT requests. Preserve evidence qualifications and legal-vehicle/manager distinctions.
