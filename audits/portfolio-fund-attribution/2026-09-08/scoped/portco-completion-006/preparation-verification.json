@@ -1,0 +1,59 @@
+{
+  "batchId": "portco-completion-006",
+  "batchSha256": "b75db5537cc6d68b66bc6852e76db6839ae878d20532637496c36c63a8eea1bd",
+  "snapshotSha256": "f486c0a636cd30976590aa614746280cd5157f7899860e3d8b931ff809158548",
+  "manifestSha256": "86120cb4969655c63ea6e996f96a3fe465169e7fb946d6e59339c68a488aff1c",
+  "approvalSha256": "2ede82f708ff5fa52385226ad1eb19f747f4098479b9bdcafcfb1a25f67467b4",
+  "offline": {
+    "names": 10,
+    "boundFiles": 988,
+    "databaseReads": 0,
+    "databaseWrites": 0
+  },
+  "snapshot": {
+    "readOnlyTransactions": 1,
+    "companies": 10,
+    "owners": 16,
+    "funds": 3
+  },
+  "classificationCounts": {
+    "ATTRIBUTION_CORRECTION": 4,
+    "SEED_ONLY": 3,
+    "PARKED": 3
+  },
+  "mutationCount": 5,
+  "fundCreates": 0,
+  "fundUpdates": 0,
+  "fundLinkChanges": 0,
+  "ownershipIdentityChanges": 0,
+  "inferredWrites": 0,
+  "checks": {
+    "targeted": {
+      "tests": 14,
+      "passed": true
+    },
+    "fullFinalRegression": {
+      "files": 207,
+      "tests": 3778,
+      "passed": true
+    },
+    "appTypecheck": true,
+    "toolTypecheck": true,
+    "targetedEslint": true,
+    "applyValidateOnly": true,
+    "offlineSeedValidation": {
+      "errors": 0,
+      "warnings": 54,
+      "contentSha256": "f07d72f0233659513d278efee386960b7eef3f82a39f5462ba3b5caa72f97144"
+    },
+    "authoredDiffWhitespace": true
+  },
+  "publication": {
+    "secretFindings": 0,
+    "redactions": 0,
+    "rawHtmlWhitespace": "Original issuer bytes preserved verbatim; only raw HTML excluded from whitespace-style check.",
+    "excluded": "Unreferenced artifacts, duplicate generated seed/progress and unrelated orphan files"
+  },
+  "databaseWrites": 0,
+  "readyForProtectedReview": true
+}

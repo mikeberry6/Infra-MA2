@@ -1,0 +1,133 @@
+{
+  "companyId": "cmrxpjbsf00rlivhe8c3xqhxg",
+  "name": "Bolder Industries",
+  "sequence": 176,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/research-decision.json",
+      "sha256": "966a56b02bcb1341adb19c73d16d4091a1d6dd33a1e9d048b17b2477b5ff522a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/source-verification.json",
+      "sha256": "e3f5532a63e10cf7d943d777d781a88497ed86295ddbb94e33c71c73c6f0ae42"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "7fb29465eee5c65526df2f25678b61c99eaec528c14360e13e95d68eeba4c1d7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/chatgpt-response-validation.json",
+      "sha256": "002a1daf218b7e6a51e94df01c1062bc0ab0ddf91a6589464d97f7031c702482"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0176-bolder-industries/attempt-1/chatgpt-attestation.json",
+      "sha256": "275002b27e20a2205b08dcf69ad2fb82b60a0f71eeac33bd03d84f625d424bdb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/review.json",
+      "sha256": "80c50511721fd30a65b8ff4142698522e2d6af46bb55de52119f1dcd4e6c12f0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjx6h01peivhehagglx73",
+      "seedRecordId": "OFA-D9F261D438DF",
+      "expectedSeedSha256": "ca3e8d50518668bffb3ba69c728cf3f7fe008c55cb95b471dd3994609939bedd",
+      "expectedOwnerSha256": "18653bdcc8d79fcd53150e96f5002e6834b5f1103ce2bf9914a1d98bc8d19362",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's October 2021 announcement and the February 2025 recapitalization adviser disclosure identify CIM Group backing but do not identify the investing fund. Remove the unsupported CIM Infrastructure Fund III estimate; the fund remains unresolved.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove an unsupported named-fund inference, not a wording change.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/bolder-cim.html",
+          "sha256": "8b7b120ccf96f844e3826571e8dcafbdce31b47d9a43b54726ce1ad01ff56091",
+          "url": "https://www.cimgroup.com/press-releases/cim-group-expands-investment-in-end-of-life-tire-recycling-company-bolder-industries-a-certified-b-corporation",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/bolder-recap.html",
+          "sha256": "d80342d9246ea8f010f739de8b89c2341c586cb7c2930140702790628b5f7139",
+          "url": "https://www.stblaw.com/about-us/news/view/2025/02/13/simpson-thacher-represents-cim-group-in-recapitalization-of-bolder-industries",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpjx7001pfivheodnrp1ll",
+      "seedRecordId": "OFA-8710EAB6D356",
+      "expectedSeedSha256": "22c8490a5ed177a540b8072e0da5107b4aa382c08d70861c84c0cd6e3fc41c3b",
+      "expectedOwnerSha256": "5ae65d734aa04265e993ee50177808c6405a9b50ae1254087f5a7bda0a897589",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Tiger's February 10, 2025 announcement confirms its completed growth investment in Bolder Industries but does not name the investing fund. Do not infer Tiger Infrastructure Partners Fund III from unrelated transactions or fund vintage.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove an unsupported Tiger Fund III attribution; retain the disclosed investment and existing owner.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/bolder-tiger.html",
+          "sha256": "8bf5626698a02317a31d69db2b176934562c2a0b265c9e10e153cc54a4ea09b8",
+          "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-completes-transformational-growth-investment-in-bolder-industries-a-circular-economy-infrastructure-platform-converting-end-of-life-tires-into-sustainable-materials-302372336.html",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "7eed0f151ee80e376bd48bfea9aef65b393b88d31c236bc834372f3cecf84af4",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjx6h01peivhehagglx73",
+      "sha256": "18653bdcc8d79fcd53150e96f5002e6834b5f1103ce2bf9914a1d98bc8d19362"
+    },
+    {
+      "ownerId": "cmrxpjx7001pfivheodnrp1ll",
+      "sha256": "5ae65d734aa04265e993ee50177808c6405a9b50ae1254087f5a7bda0a897589"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0176-bolder-industries-v2/proposal.json",
+      "sha256": "4bef7966a1ec494abff9262a072d36cb7800a259d04b9e69ac8c4dd5cba4db3c"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0176-bolder-industries-v2.json",
+      "sha256": "cb782b9e6c889cad302d7fe47dea8b3f219cf898f12db7b8f4ae4f05d63774e3"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v7/production-apply/batch-apply-receipt.json",
+      "sha256": "7352c94e46e3609069f5e38313043845ac1ea9bab5cc6460d7a44ad440b831c2",
+      "memberIndex": 4
+    },
+    "receiptSha256": "392e0511dbd3f1d84e8e735f3b1f16561dee276ea10965ce7c76273249f35d74"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/bolder-cim.html.capture.json",
+      "sha256": "dffb4bb677803e3539f247d49da5c132f2c3bceba515428df54bfda2438ac520"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/bolder-recap.html.capture.json",
+      "sha256": "510027866fd1fd24e154b4d1d5303dc3c6388744a599dffd6847e36580537b90"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/bolder-tiger.html.capture.json",
+      "sha256": "6f26a7776574be1f84c349f4644306ec4bc963d6790b6eeb6d6a36fbf7dbf490"
+    }
+  ]
+}

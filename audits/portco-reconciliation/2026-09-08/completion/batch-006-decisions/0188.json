@@ -1,0 +1,102 @@
+{
+  "companyId": "cmrxpjcbk00sgivhe5kyio04t",
+  "name": "Toqlukuti'k Wind & Hydrogen",
+  "sequence": 188,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/research-decision.json",
+      "sha256": "7ddfc69ce12fa781a3bb8a4a11805136570c0f90b91099f17cc2efdc926cb7a5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/source-verification.json",
+      "sha256": "c3fc29e4b1f0f2414dee3ac127607ff1de12eaa84d71dfd60bdaa20e9e55739b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "30b1fe7cbf44d1b3aa233bcbdf42d5cdeaae918661b6de700315595f3be9a995"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/chatgpt-response-validation.json",
+      "sha256": "bc794342c1883f0fa7c19ae7782908627bc73ab09bafec4711895e455993f6b1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/chatgpt-attestation.json",
+      "sha256": "fb008d1f73d175a52cd0d122fb60b6243cec8dcb25fc6605e643db47264270aa"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/review.json",
+      "sha256": "80c50511721fd30a65b8ff4142698522e2d6af46bb55de52119f1dcd4e6c12f0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjxq701qaivhe3xcmrpfp",
+      "seedRecordId": "OFA-611844D7D616",
+      "expectedSeedSha256": "9c0e18bb123df7d69dd340632130dd3587440664a26bfb00e8b324a8992bc90a",
+      "expectedOwnerSha256": "3b1e84a3a4a7ded4ef09ac41494e0db9d6b89483cf2976117210fbe64638df9d",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Energy Transition Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Copenhagen Infrastructure Partners | Fund: Energy Transition Fund I | Ownership Interest: 90% Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "CIP explicitly names CI ETF I and ABO confirms transfer of 90%, retaining 10%. Production's Energy Transition Fund I label is equivalent to the longer seed label. Align seed evidence and metadata only; do not rewrite production or alter the qualified ownership.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/toqlukutik-cip.html",
+          "sha256": "20a765df55720d7fff5eeaa65781be71f1bd241dc4a306b386fc51ffda622a07",
+          "url": "https://news.cision.com/copenhagen-infrastructure-partners-p-s/r/copenhagen-infrastructure-partners-acquires-majority-stake-in-abo-energy-s-wind-and-hydrogen-project%2Cc4357452",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/toqlukutik-close.html",
+          "sha256": "226b74a48926d2538540b092d2811d1afce89995c11d648fea36bbd1aee36e56",
+          "url": "https://www.aboenergy.com/en/media-center/press/2024/2024-12-17_toqlukuti-k_cip_en.html",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "a44f345e0ceb6b5f3bc3299de8e167930ebbe935ee0c44d7119470ae9715a143",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjxq701qaivhe3xcmrpfp",
+      "sha256": "3b1e84a3a4a7ded4ef09ac41494e0db9d6b89483cf2976117210fbe64638df9d"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0188-toqlukuti-k-wind-and-hydrogen-v1/proposal.json",
+      "sha256": "f8d497437b0c1f886a96fcb81e3bd10e4f49fd34897ae2c93baa139e8577dd0a"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0188-toqlukuti-k-wind-and-hydrogen-v1.json",
+      "sha256": "b11991d4532982eeb25ea37f9f776afbbc1ff108f8fcd72b0e7327a37464f175"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0187-0191-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "d00a7b1499f2984c46b434c539528de5c2e7b5b750b79776cca0a0504dda7b5e",
+      "memberIndex": 1
+    },
+    "receiptSha256": "43db75652cddde35af1c326de6436bfb79f41d632526cb21b07b1a1e6030d869"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/toqlukutik-cip.html.capture.json",
+      "sha256": "b1d676757d2aba58111a55c6a6a91298e03447c1d18b650d35ab09e73c33987b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/toqlukutik-close.html.capture.json",
+      "sha256": "0dd6a258c2b45b81421ea45c16f42d8477cc6c5c66f67a70315ced3dd66c5897"
+    }
+  ]
+}
