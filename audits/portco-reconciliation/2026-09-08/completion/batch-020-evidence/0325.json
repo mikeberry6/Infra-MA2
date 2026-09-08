@@ -1,0 +1,256 @@
+{
+  "companyId": "cmrxpjjwz0142ivhel1oxig89",
+  "name": "Port Arthur LNG",
+  "sequence": 325,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0325-port-arthur-lng/attempt-1/research-decision.json",
+      "sha256": "3d5006957fa945786443b2dd2028c64694aa5d09d551b8b7f5da97db7b838c6c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0325-port-arthur-lng/attempt-1/source-verification.json",
+      "sha256": "1316956a71bec969b6f321e3cda61e699e82484bb8e5172af1801ae1e41b679f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0325-port-arthur-lng/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "cdbc807ef0561a76c44479fa0f0014a051698594eba04f38b280d0b5182a8c28"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0325-port-arthur-lng/attempt-1/chatgpt-response-validation.json",
+      "sha256": "f77f3558fcad76b4523aaee0dd8653e494d99adce585934f25335a6d23c1adad"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0325-port-arthur-lng/attempt-1/chatgpt-attestation.json",
+      "sha256": "1827c37f1b993a4ed3dc29d3eefaa9060fbca91f175b7975c690c0b1f9217d8b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/review.json",
+      "sha256": "86c525a7b579e125c7964e79eb588cd5de014d605714b7168bf49968d884afcf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0325-port-arthur-lng-v3/proposal.json",
+      "sha256": "4a029c01726d6dc2415a81b8003e27dc1f81039dbe4e7a46961bde24a4473613"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0325-port-arthur-lng-v3.json",
+      "sha256": "e6c454c0680de21f58c98ef4c8d0e298c28ead791e58381a3e897d99337032a8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0324-0328-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "42a869575ed386db40dd5eed8f0e975749f6ef2112cc50cef24890114c4dbd40"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-010/completion-evidence.json",
+      "sha256": "fcbd00726d6359ddba860766300bdb5b245486224984d47c8392881bb4e6221b"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-010/completion-after.json",
+      "sha256": "a53f85b0f1e91e10146ae4beac2fbca942282c5f9e50ab3c2ab12a6d47c71fdf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/review.json",
+      "sha256": "6b7a9425645fd980badb9a4651cb3d171524747a87a7a3052a8ee2449129586b"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk5y7022wivhe4xw352ck",
+      "seedRecordId": "OFA-E10FA0D9B9EA",
+      "expectedSeedSha256": "41ec35e7a070b841ce5f5b3ad362776b0d6eaddb08c8eec3bf0110d13340ddae",
+      "expectedOwnerSha256": "11eaacee2b97a1f5135dc1fb3c4cbd7aa052647071bc5546db13e53d8211cf20",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "KKR's 42% indirect Phase 1 ownership is directly evidenced, but no reviewed production source supports the former generic K-INFRA link or a target-linked fund record.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove inferred K-INFRA/LOW attribution unsupported by the direct completed Phase 1 sale; preserve the existing 42% indirect interest and literal legal chain.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-issuer.pdf",
+          "sha256": "0536e9f8b4576139863ebf5d83c0d0f62c67c5d5769735c3ed893f1a7d362487",
+          "url": "https://investor.sempra.com/node/43366/pdf",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtimipjv000i2i2bm4uly3a5",
+      "seedRecordId": "OFA-AF2615F482CD",
+      "expectedSeedSha256": "f144cede70b011d85cc66016ed18b2ee851748c5eda2320b5437e3a6ab00e90c",
+      "expectedOwnerSha256": "50305dc8530f19352e5906bec10e831c4f06780af16027dc82ab70ed75e52390",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Sempra Infrastructure directly retains its Phase 1 interest through the project holding chain; this is corporate ownership rather than a fund attribution.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "The direct completed Phase 1 sale establishes Sempra's retained corporate 28% indirect interest, not an unidentified fund.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-issuer.pdf",
+          "sha256": "0536e9f8b4576139863ebf5d83c0d0f62c67c5d5769735c3ed893f1a7d362487",
+          "url": "https://investor.sempra.com/node/43366/pdf",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtimippr000k2i2bi2w6vz1r",
+      "seedRecordId": "OFA-C43DA9E1FF5C",
+      "expectedSeedSha256": "4763937f79ed90d4e220df986b6bb8e18691d57942c21e9966d98caeb296a72e",
+      "expectedOwnerSha256": "ff5abb66f83f9a0c79200c4b5d6bd2e9c016dd36e410850f86ac638dcaf07b88",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ConocoPhillips directly owns its Phase 1 project interest; this is corporate ownership rather than a fund attribution.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "The issuer directly identifies ConocoPhillips' corporate 30% Phase 1 ownership; replace unresolved fund metadata only.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-issuer.pdf",
+          "sha256": "0536e9f8b4576139863ebf5d83c0d0f62c67c5d5769735c3ed893f1a7d362487",
+          "url": "https://investor.sempra.com/node/43366/pdf",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtimiptn000l2i2b62lgrc1w",
+      "seedRecordId": "OFA-C509098CFF3C",
+      "expectedSeedSha256": "cac87b4e1c64b1ee5e2a99590d58f1a5cd4e315206edb4651b00c2751cb72df4",
+      "expectedOwnerSha256": "880de603e2ae55f09ce828e9408e9d0aee1a20975d234a0bba6ec0c5534e8f88",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Sempra Infrastructure directly owns the 50.1% Phase 2 member interest; this is corporate ownership rather than a fund attribution.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "DOE's filed Phase 2 control determination directly identifies Sempra's 50.1% strategic-member holding chain; classify corporate ownership without changing it.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-phase-two.pdf",
+          "sha256": "956efa17bbabf5ad932df126be01442158011f626be2fcbe521c010a825ec69b",
+          "url": "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtimipzj000n2i2b3dp2ajau",
+      "seedRecordId": "OFA-A276FFB1126F",
+      "expectedSeedSha256": "0ac0d75ce7bb54707592987523cb5fa45879c5d4963d2c2afafa421b7c2c6cef",
+      "expectedOwnerSha256": "a85f3a3997a1f5e4732eab649814257c62599adf8cc5ddef67e7d6d9d618a676",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "The consortium's 40% direct Phase 2 member interest is evidenced, but sponsor-level allocations and target-linked funds are not publicly disclosed.",
+      "productionChange": "NONE",
+      "reason": "Preserve correct unresolved consortium exact-fund state and null production rationale; no individual sponsor allocation is inferred from aggregate indirect control.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-phase-two.pdf",
+          "sha256": "956efa17bbabf5ad932df126be01442158011f626be2fcbe521c010a825ec69b",
+          "url": "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtimiq3g000o2i2b2rmhzxo9",
+      "seedRecordId": "OFA-E2F9B7DECB2C",
+      "expectedSeedSha256": "44548fdec8bde84e077dd2ecee39008343f2f93ec32cecadafa1087181111531",
+      "expectedOwnerSha256": "2bac778ba8081786ecd1f5ff365616265a48adad8c2d77df21fa1d6204ad78a1",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Private Credit Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "The Phase 2 control filing directly names Blackstone Private Credit Fund in the 9.9% ownership chain; no matching published fund record is linked.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "DOE directly states BX Frontier Member II is wholly owned by Blackstone Private Credit Fund. Disclose that fund without creating or linking a nonexistent published record.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-phase-two.pdf",
+          "sha256": "956efa17bbabf5ad932df126be01442158011f626be2fcbe521c010a825ec69b",
+          "url": "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "34773e7e514d29100422b9f64eac7359e445bf73f3c0470d24b4bac5c072cd6d",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk5y7022wivhe4xw352ck",
+      "sha256": "11eaacee2b97a1f5135dc1fb3c4cbd7aa052647071bc5546db13e53d8211cf20"
+    },
+    {
+      "ownerId": "cmtimipjv000i2i2bm4uly3a5",
+      "sha256": "50305dc8530f19352e5906bec10e831c4f06780af16027dc82ab70ed75e52390"
+    },
+    {
+      "ownerId": "cmtimippr000k2i2bi2w6vz1r",
+      "sha256": "ff5abb66f83f9a0c79200c4b5d6bd2e9c016dd36e410850f86ac638dcaf07b88"
+    },
+    {
+      "ownerId": "cmtimiptn000l2i2b62lgrc1w",
+      "sha256": "880de603e2ae55f09ce828e9408e9d0aee1a20975d234a0bba6ec0c5534e8f88"
+    },
+    {
+      "ownerId": "cmtimipzj000n2i2b3dp2ajau",
+      "sha256": "a85f3a3997a1f5e4732eab649814257c62599adf8cc5ddef67e7d6d9d618a676"
+    },
+    {
+      "ownerId": "cmtimiq3g000o2i2b2rmhzxo9",
+      "sha256": "2bac778ba8081786ecd1f5ff365616265a48adad8c2d77df21fa1d6204ad78a1"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0325-port-arthur-lng-v3/proposal.json",
+      "sha256": "4a029c01726d6dc2415a81b8003e27dc1f81039dbe4e7a46961bde24a4473613"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0325-port-arthur-lng-v3.json",
+      "sha256": "e6c454c0680de21f58c98ef4c8d0e298c28ead791e58381a3e897d99337032a8"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0324-0328-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "42a869575ed386db40dd5eed8f0e975749f6ef2112cc50cef24890114c4dbd40",
+      "memberIndex": 1
+    },
+    "receiptSha256": "e0385397ace08b40fb08c1560aca4a620fcbd98ccec2dda9c57e0974410cb5c1"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-issuer.pdf.capture.json",
+      "sha256": "9a4235e0d7e1d88ae6a62f7e6cc34a70be8006e0cc0eb07f8c67059df6422249"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/port-arthur-phase-two.pdf.capture.json",
+      "sha256": "b30869f9ba623370edf74a6d377782402ded88b61464fef85a77becbd26338a9"
+    }
+  ]
+}

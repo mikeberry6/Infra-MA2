@@ -1,0 +1,107 @@
+{
+  "companyId": "cmrxpjjwg0141ivhecv1bf8dw",
+  "name": "Pembina Gas Infrastructure Inc.",
+  "sequence": 324,
+  "classification": "PARKED",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0324-pembina-gas-infrastructure-inc/attempt-1/research-decision.json",
+      "sha256": "a7e85f118c489d597d81e639ad24928f4f1f5bef6d572c6dd7d66ea1014015bb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0324-pembina-gas-infrastructure-inc/attempt-1/source-verification.json",
+      "sha256": "0b94f31ab68896fa8b537db25f80ff177ef4a04989c37625c5d9884e9422a266"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0324-pembina-gas-infrastructure-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "6967e64801cbdd6de618937226e1ddbaa58289ec8ad94a58eee7356d30530d2d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0324-pembina-gas-infrastructure-inc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "7a73c576d0dd80233cecbc8093e3186dc44977f41ee88d596dca507581ff1a50"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0324-pembina-gas-infrastructure-inc/attempt-1/chatgpt-attestation.json",
+      "sha256": "8f2873e9ff1b07377cb3084e8e2fb093f97b52eeafaa57cdbc84e1418b645863"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-010-evidence/review.json",
+      "sha256": "86c525a7b579e125c7964e79eb588cd5de014d605714b7168bf49968d884afcf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0324-pembina-gas-infrastructure-inc-v4/proposal.json",
+      "sha256": "269ac11699824cc2d3dc56cbd344439e86f05962223583face8f8fd0b9184762"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0324-pembina-gas-infrastructure-inc-v4.json",
+      "sha256": "2f9e8bcbb9dbb2dd621003b55f8753ca115ab7f3579ff52341aa97f9f90ed6a0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0324-0328-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "42a869575ed386db40dd5eed8f0e975749f6ef2112cc50cef24890114c4dbd40"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-010/completion-evidence.json",
+      "sha256": "fcbd00726d6359ddba860766300bdb5b245486224984d47c8392881bb4e6221b"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-010/completion-after.json",
+      "sha256": "a53f85b0f1e91e10146ae4beac2fbca942282c5f9e50ab3c2ab12a6d47c71fdf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/review.json",
+      "sha256": "6b7a9425645fd980badb9a4651cb3d171524747a87a7a3052a8ee2449129586b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/pembina-seed-identity-diagnostic.json",
+      "sha256": "a9d4b7fca2bc0fa722d79aae13dc01979469b08549445fe1bc3daf88e638a965"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-020-evidence/pembina-seed-identity-diagnostic-checks.json",
+      "sha256": "7c5119c98acf7675ffc80ed682ba472a7dc6414b11d15b8e3e629669620f2b66"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpk5xq022vivhef3kubyqk",
+    "cmtimijiw00072i2bero81uhy",
+    "cmtimijn400082i2bihiyop2a"
+  ],
+  "issue": "Historical metadata overlays and seed-only rationale handling are now supported, but all three ownership periods have literal database vehicleName null while the actual seed resolver produces the respective KKR, Pembina and Apollo firm labels. Required work: supported complete canonical/seed vehicle-identity reconciliation before metadata repair. Preserve former KKR 40%, current Pembina 60% and Apollo 40%, chronology, and unavailable Apollo exact fund. No partial corporate-owner correction.",
+  "expectedImageSemanticSha256": "090403ed6c80507a7632eddc93a2d64a650e93c08dd5b175834d0f8da31d52e0",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk5xq022vivhef3kubyqk",
+      "sha256": "821e8336c8362a6f0f95c4bbc0434a2bf79876c03e25624dc3b644f321c7a0e8"
+    },
+    {
+      "ownerId": "cmtimijiw00072i2bero81uhy",
+      "sha256": "d4471ae942434fef91a9bccd79872288b154c1b705658ab627ab5952ad8f0ceb"
+    },
+    {
+      "ownerId": "cmtimijn400082i2bihiyop2a",
+      "sha256": "b4abae348adc89a9af4f423150371d50bc50a640b9d83be54431a9bae2daf37d"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0324-pembina-gas-infrastructure-inc-v4/proposal.json",
+      "sha256": "269ac11699824cc2d3dc56cbd344439e86f05962223583face8f8fd0b9184762"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0324-pembina-gas-infrastructure-inc-v4.json",
+      "sha256": "2f9e8bcbb9dbb2dd621003b55f8753ca115ab7f3579ff52341aa97f9f90ed6a0"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0324-0328-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "42a869575ed386db40dd5eed8f0e975749f6ef2112cc50cef24890114c4dbd40",
+      "memberIndex": 0
+    },
+    "receiptSha256": "bf44cb52317e453215abf726b67ec50c7b568c1a5054a79beed2fab49d240683"
+  },
+  "sourceCaptures": []
+}

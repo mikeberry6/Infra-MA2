@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+  "dependencies": [
+    {
+      "path": "prisma/seed-data/companies.ts",
+      "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.ts",
+      "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+      "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+    },
+    {
+      "path": "prisma/seed-data/portco-types.ts",
+      "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+    },
+    {
+      "path": "prisma/entity-resolution.ts",
+      "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+    },
+    {
+      "path": "prisma/seed-runner.ts",
+      "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+    }
+  ],
+  "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+  "companies": [
+    {
+      "name": "Pembina Gas Infrastructure Inc.",
+      "country": "Canada",
+      "companySha256": "3a072b26929b0adb78b8f932ad2a6480440e59b1e282fb3e3239688d4695c1f7",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "KKR",
+            "ownershipVehicle": "KKR",
+            "investmentYear": 2022,
+            "exitYear": 2026,
+            "stake": "40%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "KKR",
+          "vehicleName": "KKR",
+          "fundLookupName": "KKR",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Pembina Pipeline Corporation",
+            "ownershipVehicle": "Pembina Pipeline Corporation",
+            "investmentYear": 2022,
+            "stake": "60%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Pembina Pipeline Corporation",
+          "vehicleName": "Pembina Pipeline Corporation",
+          "fundLookupName": "Pembina Pipeline Corporation",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Apollo Global Management",
+            "ownershipVehicle": "Apollo Global Management",
+            "investmentYear": 2026,
+            "stake": "40%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Apollo Global Management",
+          "vehicleName": "Apollo Global Management",
+          "fundLookupName": "Apollo Global Management",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    }
+  ],
+  "proofSha256": "a3d178d5c87d42c77419e053fa96c41eb530afe8de2d9074edf0fd17404839a3"
+}
