@@ -13,8 +13,10 @@ import { verifySeedManifest } from "../portfolio-fund-attribution/schema";
 import { verifyExecutionManifest } from "../portco-reconciliation/execution-control";
 import { verifyBatchExecutionLedger } from "../portco-reconciliation/batch-control";
 import { capture } from "./snapshot";
+import { assertUnchangedReviewedRecords, completedReleaseSchema, completedSeedLineage } from "./seed-lineage";
 
 const configSchema = z.strictObject({ batchId: z.string().min(1), asOfDate: z.string(),
+  completedReleases: z.array(completedReleaseSchema).default([]),
   sourceFiles: z.array(z.string()).min(1),
   overrides: z.array(z.strictObject({ companyId: z.string(), rationale: z.string().optional(), parkedIssue: z.string().optional() })) });
 const rowSchema = z.object({ companyId: z.string(), ownerId: z.string(), recordId: z.string(),
@@ -49,19 +51,26 @@ async function main() {
   };
   [EXECUTION_PATH, LEDGER_PATH, CHRONOLOGY_PATH, configPath].forEach(p => bind(p));
   const sourceByHash = new Map(config.sourceFiles.map(p => { const ref = bind(p); return [ref.sha256, ref]; }));
+  const archivedSeeds = config.completedReleases.length ? completedSeedLineage({ releases: config.completedReleases, progress, seed,
+    readBytes: (path, expected) => { bind(path, expected); return readFileSync(localFile(process.cwd(), path)); } }) : new Map();
   const packets = selected.map(name => {
     if (name.reviewedEvidence.length !== 1) throw Error(`Multiple authority packets need explicit combination: ${name.name}`);
     const ref = name.reviewedEvidence[0], report = read(ref.path); verifyHash(report, "reportSha256"); bind(ref.path, ref.sha256);
+    const rows = z.array(rowSchema).parse(report.rows).filter(r => r.companyId === name.companyId);
+    if (!rows.length) throw Error("Reviewed company rows missing");
     for (const d of report.dependencies as { path: string; sha256: string }[]) {
       // Seed gets a frozen before copy, not a dependency on the later patched live seed path.
-      if (d.path === SEED_PATH) { if (bytesHash(readFileSync(SEED_PATH)) !== d.sha256) throw Error("Reviewed seed changed; re-adjudicate dependency"); }
+      if (d.path === SEED_PATH && bytesHash(readFileSync(SEED_PATH)) !== d.sha256) {
+        const historical = archivedSeeds.get(d.sha256);
+        if (!historical) throw Error("Reviewed seed changed without completed lineage");
+        assertUnchangedReviewedRecords(historical.seed, seed, name.name, rows.map(r => r.recordId));
+        bind(historical.path, d.sha256);
+      } else if (d.path === SEED_PATH) { /* frozen current seed copy is bound below */ }
       else bind(d.path, d.sha256);
     }
     const oldPath = join(dirname(ref.path), "production-snapshot.json"); bind(oldPath);
     const old = read(oldPath);
     if (sha256Canonical(old.production) !== old.stateSha256 || old.stateSha256 !== report.productionSnapshotSha256) throw Error("Authority snapshot differs");
-    const rows = z.array(rowSchema).parse(report.rows).filter(r => r.companyId === name.companyId);
-    if (!rows.length) throw Error("Reviewed company rows missing");
     const override = config.overrides.find(o => o.companyId === name.companyId);
     if (!override?.parkedIssue) for (const row of rows) {
       for (const field of [...row.fieldDecisions, ...(row.additionalFieldDecisions ?? [])]) {
@@ -85,7 +94,7 @@ async function main() {
   bind(join(output, "completion-seed-before.json"));
   const decisions: Decision[] = packets.map(({ name, ref, report, old, rows, override }) => {
     const fresh = snapshot.companies.find(c => c.image.id === name.companyId)!;
-    const prior = old.production.images.find((i: { id: string }) => i.id === name.companyId);
+    const prior = (old.production.images ?? [old.production.image]).find((i: { id: string }) => i?.id === name.companyId);
     if (sha256Canonical(prior) !== sha256Canonical(fresh.image)) throw Error(`Changed canonical company dependency: ${name.name}; retained snapshot, review offline`);
     for (const r of rows) if (sha256Canonical(r.current) !== sha256Canonical(fresh.owners.find(o => o.id === r.ownerId)?.state)) throw Error(`Changed attribution before-image: ${name.name}`);
     const issue = override?.parkedIssue ?? null;
