@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T20:23:13.598Z",
+  "manifestSha256": "08e40b55d82f7132f1f881b23da96bb8ba97d50b4796363204dba128055dc37a",
+  "approvalSha256": "567028a7d4cd61eabc674539b53a356c730d4fd1b63b08f96f6da25961118689",
+  "receiptSha256": "0a75fd3843d4c75f56b763736bed0a5df22c289249d3fb2806b48acb76bb8788",
+  "mutationCount": 13,
+  "changed": 13,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-385000000002",
+      "companyId": "cmtj6tzbx000n3s2bctwx91rm",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj6tzbx000n3s2bctwx91rm?verification=08e40b55d82f7132f1f881b23da96bb8ba97d50b4796363204dba128055dc37a",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "KKR Diversified Core Infrastructure Master Fund L.P.; KKR Diversified Core Infrastructure Master Fund (A) SCSp; KKR Diversified Core Infrastructure Master Fund (B) SCSp; KKR Diversified Core Infrastructure Master Fund (SBS) L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed agreement expressly defines KKR Sponsors as these four named Diversified Core Infrastructure master funds. Resolve their combined disclosed attribution without assigning the aggregate9.95% economic stake to any one fund or inventing allocations. Keep the exact existing Olympus/Midwest vehicle,2025 investment year and null curated fund link. The existing schema supports combined disclosed names; no funds or ownership periods are created."
+      }
+    },
+    {
+      "recordId": "OFA-HIST-4152381812680D7862E42E73",
+      "companyId": "cmtj59czh00262a2bzt0pt8u6",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtj59czh00262a2bzt0pt8u6?verification=08e40b55d82f7132f1f881b23da96bb8ba97d50b4796363204dba128055dc37a",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "OMERS, USIC and Leonard Green's joint issuer release explicitly describes OMERS' direct investment program and identifies OPE as the pension fund's private-equity arm. Resolve the former OMERS attribution to DIRECT_PROGRAM without a fund name or link. Preserve the existing 2010-2013 period, qualified control stake and undisclosed legal vehicle. The June 24, 2013 sale announcement is not used as a closing date."
+      }
+    }
+  ],
+  "passed": true
+}
