@@ -1,0 +1,92 @@
+{
+  "companyId": "cmrxpjdb400txivhexf162x1c",
+  "name": "Fibernow",
+  "sequence": 214,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/research-decision.json",
+      "sha256": "da10fe52d3233d96e5309ad41afeaffe8a8dd5ec2251dcef9f54eaa42ae784c0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/source-verification.json",
+      "sha256": "c8749cbeccd686c52d180b1b52b9fd4bf383517a84a1aead129ab09aae766c3f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "79f172023944313eae0264d37fb511ed2ef27ca58170de5395d7e8eab7686297"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/chatgpt-response-validation.json",
+      "sha256": "ef89f3d9813c95685b53266144982d5c1d63556d2bd84a778c4fe77074d41368"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/chatgpt-attestation.json",
+      "sha256": "cc0f5beef5eb75675c7e791533ec1fc1f721f45b1907b5445fe2ef41d61c811d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/review.json",
+      "sha256": "26e1cd9e004b372b0951c1ef4d99e912950b21defd947470551ffcdef576cd25"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjyun01ryivhezbsnwobo",
+      "seedRecordId": "OFA-F9D18680FD55",
+      "expectedSeedSha256": "66a220e3e76438838897fd88a24f54974aaf8c28ac7a78792501a2c672624f9d",
+      "expectedOwnerSha256": "4d24c808d0332639cca4195dc6ca8903d05683ee35788eb40ca72338093a7ade",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DigitalBridge Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: DigitalBridge | Fund: DigitalBridge Partners III | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": "DigitalBridge Fund III"
+      },
+      "productionChange": "NONE",
+      "reason": "Issuer explicitly lists FiberNow within DBP III. Existing DigitalBridge Fund III attribution and link are equivalent and correct; preserve production wording and legal acquisition vehicle, align seed with stronger explicit fund evidence only.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/fibernow-fund.html",
+          "sha256": "2a2a13801c9e84a4d15222c1b4b96fb46a8533240edca60834c4bc9909c166f1",
+          "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-total-commitments-117-billion-fund-and/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "71ffc383ccc2009bf5c17378b8da7dffaa6b1409cd49a7b417ab9eeea8663dab",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjyun01ryivhezbsnwobo",
+      "sha256": "4d24c808d0332639cca4195dc6ca8903d05683ee35788eb40ca72338093a7ade"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0214-fibernow-v1/proposal.json",
+      "sha256": "2b0ff6ee178505094469460caf7ce84ccd6a5563602ab9100224ee3856776126"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0214-fibernow-v1.json",
+      "sha256": "85bc10d5961ddfe78197c03ce3fd7ca57c58e748706fdb697f7c390f72ff5a77"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0214-0218-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "e55b584010d1ce87c04f371c4d98513206ad69dabe1f11a929e2be43fd1cfef9",
+      "memberIndex": 0
+    },
+    "receiptSha256": "20ec681dedac3d7595b5101bf01bdb2d7a4171faf62d0a6ad999600cd36a136a"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/fibernow-fund.html.capture.json",
+      "sha256": "d85b9c058b85517932cde947bf0a6eee7939790615c67e48cbf3fc214511a14c"
+    }
+  ]
+}

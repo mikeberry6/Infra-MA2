@@ -1,0 +1,92 @@
+{
+  "companyId": "cmrxpjd5200tqivheyj3gg8uj",
+  "name": "ValorC3 Data Centers",
+  "sequence": 209,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0209-tonaquint-data-centers/attempt-1/research-decision.json",
+      "sha256": "3f98fffa3e011d72e678f9395d002e33a550cfe2a6a8b85b8d9873a348a30675"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0209-tonaquint-data-centers/attempt-1/source-verification.json",
+      "sha256": "f83b4ea3b9afadf3bcbb99903b4740a0c7667894f06d0bba42dec4f41b502292"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0209-tonaquint-data-centers/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e082341c0faaf78a077d75bac9501775be720d44d8b65ae7670ebfd2684d5c47"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0209-tonaquint-data-centers/attempt-1/chatgpt-response-validation.json",
+      "sha256": "916a2d444f5a1732f0e38ae59584d2ba4aabef0edd3bd0ef87d4128bc46c3b7c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0209-tonaquint-data-centers/attempt-1/chatgpt-attestation.json",
+      "sha256": "b1f930bdd4600b51ba7fd06a4ed90188f61174ad326d27971a599ce9c2512835"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/review.json",
+      "sha256": "26e1cd9e004b372b0951c1ef4d99e912950b21defd947470551ffcdef576cd25"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjyp701roivherr3dpvqf",
+      "seedRecordId": "OFA-07F34C50B3F1",
+      "expectedSeedSha256": "8baa15b9cc8fea9ce71eb1a403b06a0ebffcbf7088fa2d1e7b272b56af037a14",
+      "expectedOwnerSha256": "c35930f402137f89bffc8cf43b8eb1bea078893197e2c374c1ed96914443f38e",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DIF CIF III",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: CVC DIF | Fund: DIF CIF III | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": "DIF CIF III"
+      },
+      "productionChange": "NONE",
+      "reason": "Existing DIF CIF III abbreviation is equivalent to the explicitly disclosed core-plus CIF III fund. Preserve production metadata and original majority/unknown percentage; align seed only.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/valorc3.html",
+          "sha256": "2eab03b257c23661711708648cfcb6697ea5e84eeb588b6917fd7d8aa50aaefa",
+          "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-acquires-us-based-data-centre-provider-tonaquint",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "fe3ef7337dbd3d57a15603e339dcc1c451b193bb986c8043f19db48b3067d886",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjyp701roivherr3dpvqf",
+      "sha256": "c35930f402137f89bffc8cf43b8eb1bea078893197e2c374c1ed96914443f38e"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0209-valorc3-data-centers-v1/proposal.json",
+      "sha256": "b81ee5e3cb80e0420474d3c12eaf976c01b84afe6c85546da8198844b08f8c12"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0209-valorc3-data-centers-v1.json",
+      "sha256": "d1922c189de1ac2043e616e58fa280137090232b73b05751f28457de5e4721de"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0209-0213-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "2e98c55a8bf32ec26166f0ca6beb91718d6d5893e37c9614e90ad949de56da75",
+      "memberIndex": 0
+    },
+    "receiptSha256": "0e061394b96e751801c653135a14bee68081bc2d7ba8f01522d2dd8a2bbf119e"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/valorc3.html.capture.json",
+      "sha256": "5a31546f75915334951760b1398988124d942a0707daceaa4e78586f588e184c"
+    }
+  ]
+}

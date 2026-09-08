@@ -1,0 +1,92 @@
+{
+  "companyId": "cmrxpjcyj00teivhe0d58ngch",
+  "name": "GS Power Partners",
+  "sequence": 204,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/research-decision.json",
+      "sha256": "8135397eed32263022caef06678157ea66b3bcd7e6834a88bbb8d3937108447f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/source-verification.json",
+      "sha256": "bae258e7ad7ff9c4058000019bd03ab622217d051e50ca5586620abaf1a88b7e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b39ee012bd387a16824c13d1a770dae4fc35b7ab719045f9acaf497d0e1af5cd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/chatgpt-response-validation.json",
+      "sha256": "83a0eefa4331ecaad4f895633ad295f78d963e65d54ab4547c6d39279ec2fa30"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/chatgpt-attestation.json",
+      "sha256": "05237198e34d21e1c149566a131f455f530874965ca1132112ca4b77ca0b33f2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/review.json",
+      "sha256": "26e1cd9e004b372b0951c1ef4d99e912950b21defd947470551ffcdef576cd25"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjyg501rcivheu7f99nh3",
+      "seedRecordId": "OFA-03B7C977156B",
+      "expectedSeedSha256": "bbd9c6799b6a863d899363fdc2ab34b57fb40a37305ff743a023124f4c0290b9",
+      "expectedOwnerSha256": "0b0b930162c75bacd1fbeffed59c01f431b0c8ede273a2ecc5c8a869bedbd965",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DIF Infrastructure VII",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: CVC DIF | Fund: DIF Infrastructure VII | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": "DIF Infrastructure VII"
+      },
+      "productionChange": "NONE",
+      "reason": "Existing DISCLOSED DIF Infrastructure VII metadata is source-supported and equivalent to seed. Retain exact production wording, majority/unknown percentage and original entry; seed-only alignment.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/gs-power.html",
+          "sha256": "8f647f595806d04532bae7abf353c11a69ddc978b76c7005eccdf7540cb2850e",
+          "url": "https://gspowerpartners.com/dif-capital-partners-agrees-to-acquire-majority-interest-in-us-based-solar-platform-green-street-power-partners/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "d53884dc1922dadf9508d38f13dbb933bae9bf9fc38dc02a204f05c2e445785c",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjyg501rcivheu7f99nh3",
+      "sha256": "0b0b930162c75bacd1fbeffed59c01f431b0c8ede273a2ecc5c8a869bedbd965"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0204-gs-power-partners-v1/proposal.json",
+      "sha256": "1f796833cfd5328450abf483a005b9f2500aaf552ae6041a41757751e7211a62"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0204-gs-power-partners-v1.json",
+      "sha256": "8669a7c0c2f7244660f56c5dc8e502d50a9dfba711a94e61b454ebf3fb2e21a8"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0204-0208-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "2932fa84ff3e868efae8e96d7bb19aa769fabf8436b4cb111cf3dad6603c8eef",
+      "memberIndex": 0
+    },
+    "receiptSha256": "b46f0879385d4391e77b05fa358c64535265aefdf1e4bc393b1bdaa7bd9a1f5b"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/gs-power.html.capture.json",
+      "sha256": "e407b1c5ce6d346724ece053ab7c6f3c06e855116befb0645312433527bd6dfc"
+    }
+  ]
+}

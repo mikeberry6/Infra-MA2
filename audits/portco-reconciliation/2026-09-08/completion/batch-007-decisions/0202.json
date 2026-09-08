@@ -1,0 +1,96 @@
+{
+  "companyId": "cmrxpjcwx00tbivhed8tnctp1",
+  "name": "ENFRA",
+  "sequence": 202,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/research-decision.json",
+      "sha256": "6e32ac638eb677a15cc2261d3c4dde5f52f14623812680072168c8191c3b54a8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/source-verification.json",
+      "sha256": "485f537d6febf44b52317b85df711815305da18856bc19a0817da9a968ff64f2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e7391e9ccd5996864d8e6f557be81d328722317d825116a3ff88ecc70e558d85"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "e960aa3daa49681e1d52c8c9130283b792bbb60a2639f3acf8cadb092b83c258"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/chatgpt-attestation.json",
+      "sha256": "f2d033cb3faadf8b2c981b8ddafab2070acbfee523fcd084916750d152b81176"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0202-enfra/attempt-1/application-research-decision.json",
+      "sha256": "6164062d9440d3758bc8edccf61e5d551b23091e02d8f68ec51095520a26f389"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/review.json",
+      "sha256": "26e1cd9e004b372b0951c1ef4d99e912950b21defd947470551ffcdef576cd25"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjye801r9ivhe0aq0zjxs",
+      "seedRecordId": "OFA-71957B17A181",
+      "expectedSeedSha256": "87699e2ca6a812fd0fbb0b9c34fed3fcdf6dd0a2b61dc4295bcb5998855f6cb5",
+      "expectedOwnerSha256": "979ec0cea1ab09eb36161ad77ea95d527dd8cb8578677c9029bde7ce1c3cfef2",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DIF Infrastructure VI",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: CVC DIF | Fund: DIF Infrastructure VI | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": "DIF Infrastructure VI"
+      },
+      "productionChange": "NONE",
+      "reason": "Existing DISCLOSED DIF Infrastructure VI metadata matches explicit company evidence and audited Bernhard/ENFRA continuity. Preserve exact production metadata and majority/unknown percentage; align seed only.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/enfra.html",
+          "sha256": "4f094f9a76ccd20be48f890f298700a707fc40895fd4e059b43a9d9f6554eee2",
+          "url": "https://enfrasolutions.com/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "b28829afead85a1506230e6b26a8232332b100b91b86860550cafe33cd1c4eb5",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjye801r9ivhe0aq0zjxs",
+      "sha256": "979ec0cea1ab09eb36161ad77ea95d527dd8cb8578677c9029bde7ce1c3cfef2"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0202-enfra-v2/proposal.json",
+      "sha256": "a28703902192f4320e5daf4a61c7e72dfbc1bb7248863c7c4df957795468ca5a"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0202-enfra-v2.json",
+      "sha256": "920c37b7c9e5ab37a0e938eba0883c609824f58ec6e7e0ee2d8fc38bd441336f"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0198-0202-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "8f022266a54db1e17103a7d05389cfd2b9d3cd7b3a279ca8077bc0e6140b7026",
+      "memberIndex": 4
+    },
+    "receiptSha256": "872511df7d9a0a66091c7cd3b7a96e646b191c1f3cce44f8d7ee7d2637c60ae7"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/enfra.html.capture.json",
+      "sha256": "f414666277b70c77037c73a9feef63febc68b8be84659fe213d702ffc77d11a8"
+    }
+  ]
+}
