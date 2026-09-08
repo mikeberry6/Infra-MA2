@@ -1,0 +1,154 @@
+{
+  "batchId": "portco-completion-015",
+  "reviewedBy": "main-agent",
+  "asOfDate": "2026-09-08",
+  "status": "OFFLINE_REVIEW_NOT_APPLIED",
+  "scope": [
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    439,
+    440
+  ],
+  "reuse": "Reuse original completed research/proposal/approval/receipt and exact ownership lineage. Thirteen existing-conflict direct captures were independently opened, read and hashed; no repeated ChatGPT research.",
+  "publication": {
+    "files": 39,
+    "secretFindings": 0,
+    "redactions": [],
+    "originals": "Original bytes and capture metadata preserved byte-identical; relocated metadata changes only the path."
+  },
+  "pdfInspection": "Previously actually displayed annual review physical page 2 / printed 29, Texas PUC physical page 4 / printed 3 and FCC physical page 2 / printed 9787. The manager annual review does not identify Valley's fund. PUC identifies equity funding by Undine's managers, not a fund or exact SPV. FCC identifies the Fund II AIV chain and historical 93.26%, not current percentage.",
+  "intentionalRationaleDifferences": [
+    {
+      "sequence": 411,
+      "ownerId": "cmtjg0py90005se2beofmiwzr",
+      "production": "Keep null rationale and entire owner state unchanged",
+      "seed": "Crosstimbers' portfolio and the Texas regulatory filing confirm its Undine investment, but do not identify a managed fund. XT Undine Co-Investment, LP remains the previously approved holding vehicle, not a disclosed fund; no separate fund is inferred."
+    },
+    {
+      "sequence": 414,
+      "ownerId": "cmtjhlhf7000b0t2b92whsddg",
+      "production": "Keep null rationale and entire owner state unchanged",
+      "seed": "The manager and 80% interest are directly disclosed, but the exact Greencoat-managed funds and acquisition vehicle are not publicly identified."
+    },
+    {
+      "sequence": 417,
+      "ownerId": "cmtjhlrzf00230t2bdi0vutmh",
+      "production": "Keep null rationale and entire owner state unchanged",
+      "seed": "Sixth Street directly identifies US Energy Logistics as an investment but does not identify the managed fund. Preserve the approved Lerado Investments, LLC and undisclosed additional 2023 affiliate qualification without treating either as a disclosed fund."
+    }
+  ],
+  "decisions": [
+    {
+      "sequence": 411,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmrxpk9i3028jivhekdbezmnu",
+          "reason": "Replace unsupported numbered Fund I / low-confidence inference with the directly disclosed unnumbered fund; preserve manager, legal vehicle, year, unknown percentage and null fund link."
+        },
+        {
+          "ownerId": "cmtjg0py90005se2beofmiwzr",
+          "reason": "Seed-only removal of holding-vehicle-as-fund attribution. Preserve the complete UNRESOLVED production owner including null rationale; no inferred direct-program classification or vehicle/ownership change."
+        }
+      ]
+    },
+    {
+      "sequence": 412,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmrxpk9kr028kivher9994mn5",
+          "reason": "Remove unsupported Fund I inference; the original Fund II claim is not directly supported by the manager's acquisition announcement or annual review. Preserve the known recapitalization and exact unavailable-fund qualification."
+        },
+        {
+          "ownerId": "cmtjg0u03000dse2bl1z8528h",
+          "reason": "Correct individual-owner metadata from unresolved fund to direct ownership; preserve current unknown percentage and null investment year."
+        },
+        {
+          "ownerId": "cmtjg0u4q000fse2bbf0vzgr0",
+          "reason": "Correct individual-owner metadata from unresolved fund to direct ownership; preserve current unknown percentage and null investment year."
+        }
+      ]
+    },
+    {
+      "sequence": 413,
+      "classification": "PARKED",
+      "issue": "Former ownership binds NGP Energy Capital Management while the original approved research/description identifies NGP Energy Technology Partners. Resolve that organization identity through an appropriate scoped workflow; the current attribution workflow cannot change organizations. Do not partially correct Ridgewood's unsupported Fund I inference, infer Fund II from secondary reporting, or invent NGP/North Sky fund allocations.",
+      "owners": []
+    },
+    {
+      "sequence": 414,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmtjhlhf7000b0t2b92whsddg",
+          "reason": "Preserve the entire genuinely UNRESOLVED Greencoat production owner, including null rationale. Retain only the source-supported seed explanation; 80%, 2021 and the exact unavailable funds/vehicle qualification are unchanged."
+        },
+        {
+          "ownerId": "cmtjhlhku000d0t2bkdvljnrv",
+          "reason": "Correct retained corporate ownership classification, not stake or vehicle. Preserve EDPR's 20% and Greencoat's 80%."
+        }
+      ]
+    },
+    {
+      "sequence": 415,
+      "classification": "PARKED",
+      "issue": "Former Algonquin/Liberty 51% corporate ownership remains UNRESOLVED without an active seed binding. Correct historical fund-versus-corporate representation through a supported historical path before whole-name verification; do not partially update current owners. Preserve LS Power 51%, RWE 25%, Greencoat 24%, and the 2025 Liberty exit.",
+      "owners": []
+    },
+    {
+      "sequence": 416,
+      "classification": "PARKED",
+      "issue": "Former Lightsource bp 100% corporate ownership is UNRESOLVED without an active seed binding. Historical attribution correction is unsupported by the current active-record workflow. Preserve current JERA 50% / Schroders 50%, JERA's prior 100% qualification and July 30, 2025 transition; no partial current-owner correction or inferred fund.",
+      "owners": []
+    },
+    {
+      "sequence": 417,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmtjhlrww00220t2bnibomntd",
+          "reason": "Correct corporate-owner fund/program classification using BP's direct SEC report of the 49% sale in a controlled affiliate; retain 51% control and all canonical vehicle/year qualifications."
+        },
+        {
+          "ownerId": "cmtjhlrzf00230t2bdi0vutmh",
+          "reason": "Preserve the complete Sixth Street UNRESOLVED production owner and null rationale. Add no TAO fund inference; retain canonical 49%, 2021 and Lerado/additional-2023-affiliate qualification from the original approved chain."
+        }
+      ]
+    },
+    {
+      "sequence": 418,
+      "classification": "PARKED",
+      "issue": "Former Caliche Management II, Energy Spectrum VII, GCM and OIC preferred periods retain UNRESOLVED metadata without active seed bindings. Review and correct historical corporate/program/fund representation through an appropriate path, preserving existing period dates and preferred-equity qualifications. No partial current Sixth Street TAO / management attribution update.",
+      "owners": []
+    },
+    {
+      "sequence": 439,
+      "classification": "SEED_ONLY",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmrxpkamd02abivhesy9hobss",
+          "reason": "Production already discloses and links Tiger Infrastructure Partners Fund II. Preserve its existing rationale byte-for-byte; align seed and source binding only. The FCC's 93.26% indirect AIV interest is explicitly historical August 10, 2018, not current ownership."
+        }
+      ]
+    },
+    {
+      "sequence": 440,
+      "classification": "PARKED",
+      "issue": "Original accepted/applied research lists additional minority owners Reid 8.17%, Mercuria 7.19%, Taylor 1.63% and Gray 1.23%, while the canonical ownership structure only represents Tiger's 81.79%. Resolve minority-owner representation through an authorized structural workflow; do not count Tiger Fund II wording alignment as whole-name verification, create owners here, or infer bankruptcy sale closing.",
+      "owners": []
+    }
+  ],
+  "boundary": "Only supported attribution metadata and seed alignment; no identity, organizations, ownership structure, vehicle, stake, year, canonical text, schema or UI changes. Five parked names remain unresolved and are not done. Fresh target-pinned snapshot and all safeguards must pass before activation/application."
+}

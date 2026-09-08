@@ -1,0 +1,30 @@
+{
+  "batchSha256": "602896c563bbe358dbfc1525a61f9630a31b4c71e2afe1d11d9b336b4191bd8d",
+  "manifestSha256": "c6b4893ac66c1040142373954e5cd42ea137c7be8088f3461229998a40826566",
+  "approvalSha256": "3a2f4b232cca9948d939143d856389bb64bb4ae1fc96f175df95cba1bb2b7bb5",
+  "fullRegression": {
+    "filesPassed": 207,
+    "testsPassed": 3790,
+    "durationSeconds": 55.28
+  },
+  "applicationTypecheck": "PASS",
+  "completionToolTypecheck": "PASS",
+  "changedCodeEslint": "PASS",
+  "protectedApplyValidateOnly": {
+    "passed": true,
+    "databaseWrites": false,
+    "mutationCount": 6
+  },
+  "offlineSeed": {
+    "errors": 0,
+    "preexistingWarnings": 54,
+    "contentSha256": "f07d72f0233659513d278efee386960b7eef3f82a39f5462ba3b5caa72f97144"
+  },
+  "publication": {
+    "secretFindings": 0,
+    "redactions": 0,
+    "sourceBytes": "Exact captured HTML bytes retain original line endings/whitespace; all other changed files pass diff check."
+  },
+  "preliminaryFailure": "Initial full regression caught the exact UNRESOLVED seed count changing from 72 to 73 after removing Crosstimbers' holding-vehicle-as-fund attribution. Updated the expected count with a batch-specific explanation; full final contents passed.",
+  "scope": "Five safe names and five parked issues. Six supported metadata corrections, no fund link changes or owner/identity/stake/vehicle/year/canonical-text changes. Null production rationale stays unchanged for source-supported seed-only annotations; no workflow or schema weakening."
+}

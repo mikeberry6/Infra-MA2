@@ -107,6 +107,40 @@ describe("shared ten-name compiler", () => {
     const batch = verifyBatch(reseal(f.batch, "batchSha256"));
     expect(() => compileBatch({ ...f, batch })).toThrow(/wording-only/);
   });
+  function nullRationaleFixture(kind: "NO_CHANGE" | "SEED_ONLY") {
+    const f = fixture([kind]), raw = structuredClone(f.snapshot);
+    raw.companies[0].owners[0].state.attributionRationale = null;
+    const snapshot = verifySnapshot(reseal(raw, "snapshotSha256"));
+    const content = structuredClone(f.batch), d = content.decisions[0], patch = d.owners[0];
+    content.snapshotSha256 = snapshot.snapshotSha256;
+    d.expectedCompanySha256 = sha256Canonical(snapshot.companies[0]);
+    patch.expectedOwnerSha256 = sha256Canonical(snapshot.companies[0].owners[0]);
+    patch.desired.attributionRationale = null;
+    patch.seedOnlyRationale = "Disclosed fund.";
+    return { ...f, snapshot, batch: verifyBatch(reseal(content, "batchSha256")) };
+  }
+  it.each(["NO_CHANGE", "SEED_ONLY"] as const)("%s preserves null production rationale with a sourced seed-only explanation", kind => {
+    const f = nullRationaleFixture(kind), result = compileBatch(f);
+    expect(result.manifest).toBeNull();
+    expect(result.projected).toEqual(f.snapshot.companies);
+    expect(result.projected[0].owners[0].state.attributionRationale).toBeNull();
+    expect(result.seed.records[0].attributionRationale).toBe("Disclosed fund.");
+  });
+  it("does not permit a seed-only explanation to mask a changed production state", () => {
+    const f = nullRationaleFixture("SEED_ONLY"), raw = structuredClone(f.batch);
+    raw.decisions[0].owners[0].desired.attributedFundName = "Different fund";
+    expect(() => compileBatch({ ...f, batch: verifyBatch(reseal(raw, "batchSha256")) })).toThrow(/wording-only/);
+    raw.decisions[0].owners[0].productionChange = "SUBSTANTIVE_ATTRIBUTION";
+    expect(() => verifyBatch(reseal(raw, "batchSha256"))).toThrow(/Seed-only rationale/);
+  });
+  it("requires explicit seed-only annotation for null rationale and rejects overriding nonnull rationale", () => {
+    const f = nullRationaleFixture("SEED_ONLY"), raw = structuredClone(f.batch);
+    delete raw.decisions[0].owners[0].seedOnlyRationale;
+    expect(() => compileBatch({ ...f, batch: verifyBatch(reseal(raw, "batchSha256")) })).toThrow();
+    const existing = fixture(["SEED_ONLY"]), other = structuredClone(existing.batch);
+    other.decisions[0].owners[0].seedOnlyRationale = "A replacement explanation";
+    expect(() => verifyBatch(reseal(other, "batchSha256"))).toThrow(/Seed-only rationale/);
+  });
   it("requires all owners to be reviewed or explicitly preserved", () => {
     const f = fixture(["NO_CHANGE"]); f.batch.decisions[0].owners = [];
     const batch = verifyBatch(reseal(f.batch, "batchSha256"));

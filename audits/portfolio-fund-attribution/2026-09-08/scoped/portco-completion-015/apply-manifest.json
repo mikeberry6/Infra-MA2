@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "602896c563bbe358dbfc1525a61f9630a31b4c71e2afe1d11d9b336b4191bd8d",
+  "sourceSnapshotSha256": "623d77e654e76c6d3ae86462ad5a82fb41b0e9ce5e7b561afeeda48e5fd6656f",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 4,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 6,
+  "mutations": [
+    {
+      "recordId": "OFA-6C8E11838DAF",
+      "ownershipPeriodId": "cmrxpk9i3028jivhekdbezmnu",
+      "companyName": "Undine",
+      "country": "United States",
+      "investmentFirm": "Ridgewood Infrastructure",
+      "currentVehicleName": "Ridgewood Water & Strategic Infrastructure Fund; exact acquisition SPV not publicly disclosed",
+      "databaseVehicleName": "Ridgewood Water & Strategic Infrastructure Fund; exact acquisition SPV not publicly disclosed",
+      "investmentYear": 2017,
+      "stake": "Current equity owner; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Ridgewood Water & Strategic Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Ridgewood's direct SiEnergy announcement identifies Undine among investments of the Ridgewood Water & Strategic Infrastructure Fund, without a numbered vintage. Remove the unsupported Fund I inference; no numbered fund or acquisition SPV is inferred."
+      },
+      "evidenceUrls": [
+        "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-sienergy-lp/",
+        "https://ridgewoodinfrastructure.com/undine/",
+        "https://interchange.puc.texas.gov/Documents/56354_3818_1517901.PDF"
+      ]
+    },
+    {
+      "recordId": "OFA-4F57DCE9ED67",
+      "ownershipPeriodId": "cmrxpk9kr028kivher9994mn5",
+      "companyName": "Valley Cold Storage & Transportation",
+      "country": "United States",
+      "investmentFirm": "Ridgewood Infrastructure",
+      "currentVehicleName": "Exact acquisition SPV not publicly disclosed",
+      "databaseVehicleName": "Exact acquisition SPV not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Recapitalization investment; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ridgewood directly confirms the Q4 2024 founder-led recapitalization, but the reviewed announcement and annual review do not identify a fund or acquisition SPV."
+      },
+      "evidenceUrls": [
+        "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+        "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-E23AA66E480C",
+      "ownershipPeriodId": "cmtjg0u03000dse2bl1z8528h",
+      "companyName": "Valley Cold Storage & Transportation",
+      "country": "United States",
+      "investmentFirm": "Clay Bush",
+      "currentVehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+      "databaseVehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+      "investmentYear": null,
+      "stake": "Current owner; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Valley Cold identifies Clay Bush as a current founder owner. This is direct individual ownership, so no managed fund applies and no vehicle is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.valleycoldstore.com/about",
+        "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/"
+      ]
+    },
+    {
+      "recordId": "OFA-47FADD5D8B22",
+      "ownershipPeriodId": "cmtjg0u4q000fse2bbf0vzgr0",
+      "companyName": "Valley Cold Storage & Transportation",
+      "country": "United States",
+      "investmentFirm": "Jennifer Bush",
+      "currentVehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+      "databaseVehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+      "investmentYear": null,
+      "stake": "Current owner; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Valley Cold identifies Jennifer Bush as a current founder owner. This is direct individual ownership, so no managed fund applies and no vehicle is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.valleycoldstore.com/about",
+        "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/"
+      ]
+    },
+    {
+      "recordId": "OFA-ECCD9C3A3B89",
+      "ownershipPeriodId": "cmtjhlhku000d0t2bkdvljnrv",
+      "companyName": "Illinois Wind Portfolio (Bright Stalk & Harvest Ridge)",
+      "country": "United States",
+      "investmentFirm": "EDP Renewables",
+      "currentVehicleName": "EDPR affiliate; exact upstream holder not publicly disclosed",
+      "databaseVehicleName": "EDPR affiliate; exact upstream holder not publicly disclosed",
+      "investmentYear": null,
+      "stake": "20% retained interest",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "EDPR's retained 20% interest is direct corporate ownership rather than a managed infrastructure fund, and the upstream affiliate is not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://edp.com/en/investors/investor-information/market-notifications/edp-announces-upsize-80-stake-405-mw-asset"
+      ]
+    },
+    {
+      "recordId": "OFA-32374AF35D85",
+      "ownershipPeriodId": "cmtjhlrww00220t2bnibomntd",
+      "companyName": "US Energy Logistics",
+      "country": "United States",
+      "investmentFirm": "BP",
+      "currentVehicleName": "BP-controlled U.S. logistics affiliates; exact member names not fully disclosed",
+      "databaseVehicleName": "BP-controlled U.S. logistics affiliates; exact member names not fully disclosed",
+      "investmentYear": null,
+      "stake": "51% and control",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BP's 51% controlling interest is direct corporate ownership rather than a managed infrastructure fund."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/313807/000165495421004651/a6518w.htm"
+      ]
+    }
+  ],
+  "manifestSha256": "c6b4893ac66c1040142373954e5cd42ea137c7be8088f3461229998a40826566"
+}

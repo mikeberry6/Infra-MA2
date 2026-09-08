@@ -13,7 +13,7 @@ const hash = z.string().regex(/^[a-f0-9]{64}$/);
 const commit = z.string().regex(/^[a-f0-9]{40}$/);
 export const fileSchema = z.strictObject({ path: text, sha256: hash });
 const stateSchema = attributionMutationSchema.shape.set.extend({ linkedFundName: text.nullable(), attributionRationale: z.string().nullable() });
-const desiredSchema = stateSchema.extend({ attributionRationale: text });
+const desiredSchema = stateSchema.extend({ attributionRationale: text.nullable() });
 const sourceSchema = fileSchema.extend({ url: z.string().url(), primary: z.boolean() });
 const ownerSchema = z.strictObject({
   id: text, companyId: text, fundId: text.nullable(), organizationId: text.nullable(),
@@ -37,6 +37,9 @@ const patchSchema = z.strictObject({
   ownerId: text, seedRecordId: text,
   expectedSeedSha256: hash, expectedOwnerSha256: hash,
   desired: desiredSchema,
+  // Seed schema requires a source-supported explanation, even when production has none.
+  // This annotation can never authorize or accompany a production mutation.
+  seedOnlyRationale: text.optional(),
   // Explicit substantive justification; wording-only differences never authorize writes.
   productionChange: z.enum(["NONE", "SUBSTANTIVE_ATTRIBUTION"]),
   reason: text, sources: z.array(sourceSchema).min(1),
@@ -91,6 +94,7 @@ export function verifyBatch(value: unknown) {
       if (o.sources.filter(s => s.primary).length !== 1) throw Error("Exactly one primary citation per owner decision required");
       unique(o.sources.map(s => s.url), "source URL");
       if (o.desired.fundAttribution === "INFERRED") throw Error("New inferred assignments are forbidden");
+      if (o.seedOnlyRationale !== undefined && (o.productionChange !== "NONE" || o.desired.attributionRationale !== null)) throw Error("Seed-only rationale requires unchanged null production rationale");
     }
   }
   unique(owners, "conflicting owner"); unique(seeds, "seed target");
@@ -147,8 +151,10 @@ export function compileBatch(input: { batch: unknown; snapshot: unknown; seed: u
       if (owner.fundId !== (target?.id ?? null) && (target?.managerName ?? core.organizationName) !== core.managerName) throw Error("Fund change would alter owner; park instead");
       const differs = !equal(owner.state, desired);
       if (differs !== (patch.productionChange === "SUBSTANTIVE_ATTRIBUTION")) throw Error("No-op/wording-only production write forbidden");
+      if (differs && desired.attributionRationale === null) throw Error("Production correction requires a substantive rationale");
       const { linkedFundName, ...metadata } = desired;
-      const nextRecord = attributionSeedRecordSchema.parse({ ...record, ...metadata, targetLinkedFundName: linkedFundName,
+      const nextRecord = attributionSeedRecordSchema.parse({ ...record, ...metadata,
+        attributionRationale: patch.seedOnlyRationale ?? metadata.attributionRationale, targetLinkedFundName: linkedFundName,
         evidenceUrls: patch.sources.map(s => s.url) });
       if (!equal(nextRecord, record)) { seedChanges++; records[records.indexOf(record)] = nextRecord; }
       if (differs) {
