@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CLOSEOUT_PRELIMINARY_CHECKPOINT",
+  "status": "INCOMPLETE",
+  "capturedReleaseSha": "d1ddf1c3ece47ef12c74c715ec3670be4d51bfe5",
+  "databaseWrites": 0,
+  "publicationScan": {
+    "files": 6,
+    "secretFindings": 0,
+    "redactions": 0,
+    "originalsRetained": true
+  },
+  "publications": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7",
+      "decodedSha256": "b79810d192291a8a32c2039b3559b787318b7cb8371a12ed2b3b45c39e8cc44f",
+      "decodedBytes": 11246000,
+      "encoding": "gzip",
+      "originalRetainedAt": "/tmp/portco-closeout-20260908/production.json"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/seed.json.gz",
+      "sha256": "4d95655315ca3839e02e63ecfc92141b55e8a37905599a4ee012f1cddda3afeb",
+      "decodedSha256": "9ec7a784100d3406adc151db9979c74f91f86514d6abac44e67914c113ba1e52",
+      "decodedBytes": 12758005,
+      "encoding": "gzip",
+      "originalRetainedAt": "/tmp/portco-closeout-20260908/seed.json"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/capture.json",
+      "sha256": "c70a0235db885edf2d090f60fb45ddf4ca66a4c674be3e26cb3b05f3b9b8f03d",
+      "decodedSha256": "c70a0235db885edf2d090f60fb45ddf4ca66a4c674be3e26cb3b05f3b9b8f03d",
+      "decodedBytes": 2787,
+      "encoding": "utf8",
+      "originalRetainedAt": "/tmp/portco-closeout-20260908/capture.json"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/ownership-diagnostic.json",
+      "sha256": "0e89d5ee202c0c5fd73ca38f142cc84fbbcab0a98504ce4394fa8e2dfba735b4",
+      "decodedSha256": "0e89d5ee202c0c5fd73ca38f142cc84fbbcab0a98504ce4394fa8e2dfba735b4",
+      "decodedBytes": 270383,
+      "encoding": "utf8",
+      "originalRetainedAt": "/tmp/portco-closeout-20260908/ownership-diagnostic.json"
+    }
+  ],
+  "producers": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/portco-capture-closeout.ts",
+      "sha256": "2d972b3777b878cdd52d1dbca3462609983953254aaae96ebf9c0fe7b5e56ef4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/portco-compare-closeout.ts",
+      "sha256": "6d1685f723b836368bf8b3b92f7cce1b21fbd3008b65f470a40f46ee29bc66e3"
+    }
+  ],
+  "productionTotals": {
+    "companies": 1161,
+    "ownershipPeriods": 1620,
+    "pendingOwnershipTransactions": 20,
+    "milestones": 4197,
+    "managementRoles": 33,
+    "citations": 5860,
+    "redirects": 70
+  },
+  "publishedCompanyCounts": {
+    "active": 1116,
+    "realized": 12,
+    "total": 1128
+  },
+  "seedCompanyIdentityComparison": {
+    "exactNameCountryMatches": 1128,
+    "missingProduction": 0,
+    "extraPublishedProduction": 0,
+    "extraArchivedProduction": 33,
+    "duplicateKeys": 0,
+    "companyFieldsChecked": [
+      "sector",
+      "subsector",
+      "region",
+      "description",
+      "website",
+      "yearFounded",
+      "headquarters",
+      "countryTags"
+    ],
+    "fieldMismatches": 0
+  },
+  "ownershipDiagnostic": {
+    "issues": 663,
+    "byField": {
+      "fundName": 58,
+      "fundAttribution": 91,
+      "attributedFundName": 92,
+      "attributionConfidence": 24,
+      "attributionRationale": 180,
+      "ownerIdentity": 109,
+      "productionOwnerUnmatched": 109
+    },
+    "byReviewStatus": {
+      "OUTSIDE_REVIEW_REGISTER": 303,
+      "VERIFIED": 100,
+      "PARKED": 260
+    },
+    "distinctAffectedNames": 204
+  },
+  "limitations": [
+    "Ownership diagnostic is not adjudication or write authorization. It reports strict evaluated seed differences, including intentional documented seed-only rationale annotations and legacy null-vehicle/display fallbacks that require explicit evidence-bound treatment.",
+    "Current 106 VERIFIED entries reflect completed batch contracts; whole-population ownership parity remains unproven. Do not relabel historical receipts or silently reopen terminal source tasks.",
+    "109 unmatched seed keys and109 unmatched production owners may refer to the same109 pairs; do not count them as218 independent owners.",
+    "The33 archived rows and20 pending transactions require lineage-aware comparison with approved seed after-images. Published company count parity alone does not prove those checks.",
+    "Final closeout PR and deployment are not yet ready. Preserve all snapshots; no recapture to hide differences."
+  ],
+  "nextActions": [
+    "Bind intentional seed-only annotations to exact completed decisions.",
+    "Resolve legacy null-vehicle and organization-name differences using existing immutable lineage; report unsupported changes precisely without rewriting production.",
+    "Check Lighthouse former Excelsior attribution against its completed source proposal and seed overlay: exact historical metadata mismatch was observed.",
+    "Reconcile all70 redirects and20 pending transactions against approved source lineage; account for33 archived exclusions.",
+    "Adjudicate remaining genuine differences and publish final exception/count report only after the whole-population check is complete."
+  ]
+}
