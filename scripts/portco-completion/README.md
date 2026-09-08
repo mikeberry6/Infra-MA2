@@ -14,6 +14,10 @@ For the parked pass, set `phase: "PARKED_REVISIT"` in the small-record preparati
 
 ## Preparation
 
+A newly evidenced gap in a previously verified company uses an explicit `PORTCO_COMPLETION_RECHECK`, never a manual progress edit or a replayed transaction. This is allowed only after the main and parked passes are idle and fully traversed. The request binds the exact current progress and seed hashes, up to ten exact prior verified records (including prior completion and parked-review history), a diagnostic file and reason for each. `recheckProgress()` preserves the whole prior record in append-only `recheckHistory`, keeps all completed batch IDs and consumed receipts, and requeues only those names in source order. The full ordinary preparation/release/verification gates run again with a new batch ID. It cannot reopen a parked issue, a source task or an active/unfinished release; it does not approve a mutation or accept the diagnostic as source truth.
+
+`prepare-recheck` checks the exact evidence bytes and terminal idle source boundary and writes an exclusive candidate directory only. It never changes the authoritative register, seed or database. Assemble sourced decisions before promoting a candidate. Completed-release replay reconstructs every intervening recheck from its exact before-progress, unchanged seed and evidence bytes; unexplained edits, missing lineage or altered evidence remain fatal. Legacy releases omit `recheckHistory` and keep their existing hashes. A rechecked name is not counted as verified until its new full completion succeeds.
+
 1. Use small `decisionSchema` records. Bind existing authority/receipt/source files by byte SHA; exactly one primary citation per owner decision. Review only unresolved facts or changed dependencies. No repeated ChatGPT requests. Preserve evidence qualifications and legal-vehicle/manager distinctions.
 2. Validate files offline before any production capture. `scanPublication` rejects known credential formats without echoing values; GitHub secret scanning remains required. Keep raw originals local when necessary. `verifyRedaction` checks exact replacement counts plus original/publication hashes; never publish the original literal token or change substantive evidence. Do not automatically sanitize source evidence.
 3. Capture all selected company images, owner metadata/IDs, redirects and linked/target fund dependencies in one target-pinned RepeatableRead, READ ONLY transaction using `capture()`. Preserve the output exclusively. A successful snapshot is not recaptured to hide a failed comparison. Rebind stale inputs only after reviewing the change.
@@ -57,6 +61,8 @@ Store completion evidence durably. Carry release bookkeeping in the next combine
 ## Commands
 
 `npx tsx scripts/portco-completion/cli.ts status --progress=<progress.json>`
+
+`npx tsx scripts/portco-completion/cli.ts prepare-recheck --progress=<progress.json> --request=<sealed-recheck.json> --seed=prisma/seed-data/ownership-attributions.manifest.json --output=<new-candidate-directory>`
 
 `npx tsx scripts/portco-completion/cli.ts offline --progress=<progress.json> --batch=<completion-batch.json>`
 

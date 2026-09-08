@@ -247,8 +247,13 @@ const progressNameSchema = z.strictObject({ companyId: text, name: text, sequenc
   reviewedEvidence: z.array(fileSchema), status: z.enum(["REMAINING", "PARKED", "VERIFIED"]),
   parkedReview: z.strictObject({ priorIssue: text, batchId: text, completion: fileSchema }).optional(),
   issue: text.nullable(), completion: fileSchema.nullable() });
+export const progressRecheckSchema = z.strictObject({ schemaVersion: z.literal(1),
+  artifactType: z.literal("PORTCO_COMPLETION_RECHECK"), beforeProgressSha256: hash, seedManifestSha256: hash,
+  corrections: z.array(z.strictObject({ prior: progressNameSchema, diagnostic: fileSchema, reason: text })).min(1).max(10),
+  recheckSha256: hash });
 export const progressSchema = z.strictObject({ schemaVersion: z.literal(1), artifactType: z.literal("PORTCO_COMPLETION_PROGRESS"),
   universe: fileSchema, names: z.array(progressNameSchema).min(1),
+  recheckHistory: z.array(progressRecheckSchema).optional(),
   active: z.strictObject({ batchId: text, batchSha256: hash,
     state: z.enum(["PREPARING", "RELEASED", "APPLYING", "VERIFYING", "VERIFYING_FAILED"]),
     releaseSha: commit.nullable(), failure: text.nullable() }).nullable(),
@@ -258,6 +263,13 @@ export function verifyProgress(value: unknown) {
   const p = verifyHash(progressSchema.parse(value), "progressSha256");
   unique(p.names.map(n => n.companyId), "progress name");
   unique(p.completedBatchIds, "completed batch"); unique(p.consumedReceiptHashes, "receipt");
+  unique((p.recheckHistory ?? []).map(r => r.recheckSha256), "completion recheck");
+  for (const r of p.recheckHistory ?? []) {
+    verifyHash(r, "recheckSha256");
+    unique(r.corrections.map(c => c.prior.companyId), "rechecked company");
+    if (r.corrections.some(c => c.prior.status !== "VERIFIED" || !c.prior.completion
+      || !p.names.some(n => n.companyId === c.prior.companyId))) throw Error("Invalid prior recheck completion");
+  }
   for (const n of p.names) {
     if ((n.status === "PARKED") !== (n.issue !== null) || (n.status === "VERIFIED") !== (n.completion !== null)) throw Error("Incorrect name status evidence");
     if (n.parkedReview && (n.status === "REMAINING" || !p.completedBatchIds.includes(n.parkedReview.batchId)
@@ -282,6 +294,30 @@ export function counts(value: unknown) {
     parked: p.names.filter(n => n.status === "PARKED").length, remaining: p.names.filter(n => n.status === "REMAINING").length };
 }
 function reseal(p: Progress) { const { progressSha256: _old, ...content } = p; return verifyProgress(seal(content, "progressSha256")); }
+/** Requeue proven post-completion gaps, never source tasks or applied transactions. */
+export function recheckProgress(progress: unknown, input: unknown, seedManifestSha256: string, files: Map<string, string>) {
+  const p = verifyProgress(progress), request = verifyHash(progressRecheckSchema.parse(input), "recheckSha256");
+  if (p.active || p.names.some(n => n.status === "REMAINING" || (n.status === "PARKED" && !n.parkedReview))
+    || request.beforeProgressSha256 !== p.progressSha256 || request.seedManifestSha256 !== seedManifestSha256
+    || p.recheckHistory?.some(r => r.recheckSha256 === request.recheckSha256)) throw Error("Active, unfinished, duplicate or stale completion recheck");
+  unique(request.corrections.map(c => c.prior.companyId), "rechecked company");
+  for (const correction of request.corrections) {
+    const prior = p.names.find(n => n.companyId === correction.prior.companyId);
+    if (!prior || prior.status !== "VERIFIED" || !prior.completion || !equal(prior, correction.prior)) throw Error("Recheck must preserve exact verified prior name");
+    for (const ref of [prior.completion, correction.diagnostic, ...prior.reviewedEvidence]) {
+      if (files.get(ref.path) !== ref.sha256) throw Error("Missing or stale recheck evidence");
+    }
+  }
+  const names = p.names.map(n => {
+    const correction = request.corrections.find(c => c.prior.companyId === n.companyId);
+    if (!correction) return n;
+    const { parkedReview: _priorParkedReview, ...prior } = n;
+    const reviewedEvidence = prior.reviewedEvidence.some(f => equal(f, correction.diagnostic))
+      ? prior.reviewedEvidence : [...prior.reviewedEvidence, correction.diagnostic];
+    return { ...prior, reviewedEvidence, status: "REMAINING" as const, completion: null };
+  });
+  return reseal({ ...p, names, recheckHistory: [...(p.recheckHistory ?? []), request] });
+}
 export function activate(progress: unknown, input: unknown, revisitParked?: boolean) {
   const p = verifyProgress(progress), batch = verifyBatch(input);
   const revisit = batch.phase === "PARKED_REVISIT";
