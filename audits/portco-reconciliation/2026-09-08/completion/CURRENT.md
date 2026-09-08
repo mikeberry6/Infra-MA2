@@ -18,11 +18,13 @@ Original source manifest/ledger:496 terminal tasks,41 exact DEFERRED exceptions,
 
 ## Next release
 
-Current branch codex/portco-completion-022 is merged; commit and push completion-only bookkeeping, then create codex/portco-completion-023 from fresh origin/main and carry that completion commit. No separate preliminary audit deployment and no023 activation yet.
+Completion-only commit ba39dc7779a1600e8dd3894cf127b0f0ce4c333c is confirmed pushed on codex/portco-completion-022. Current branch codex/portco-completion-023 was created from fresh origin/main d21b866273375e98cf56962497140de71334f54f and carries that completion bookkeeping as c400d282. No separate preliminary audit deployment and no023 activation or production snapshot yet.
 
 Next parked ten in original order:380 EdgeCore Digital Infrastructure;382 Milestone Equipment Holdings;383 USIC;384 407 International;385 AEP Indiana Michigan Transmission;386 AEP Ohio Transmission;387 Aerostar Airport;388 FirstLight USA;413 Waste Resource Management;415 Vela Wind Holdco. Use nextNames(progress,true), not this locator, for authority.
 
 Final022 input is completion/batch-022-evidence/packet-v2/config.json with21 preceding release chains. Add completed022 immutable chain for023. The old packet/ is superseded local-only.022 frozen snapshot6d52f4274d6e8f271a3aa1dc0934da934dfb3e435029a1c56e42abcb7fd65926 was reused after OMERS manager-link conflicts were parked. Never recapture to hide drift.
+
+023 offline readiness is preserved at completion/batch-023-evidence/readiness.json, byteSHA225350df66fa085a5d22e5855bdbfe7ed142e35b224493f86c21d157a4c709b3. All164 prior evidence references match; all41 owners have exact evaluated seed counterparts, with20 missing historical attribution overlays. This resolves the old tooling barrier, not source truth: AEP chronology, WRM organization and any other unresolved ownership gaps still require precise adjudication. Review existing evidence before reopening only needed direct sources. No023 authority, approval or final classification exists yet. /tmp/portco-revisit-readiness.ts now accepts explicit previous config and completed scope arguments; do not rerun over the frozen readiness output.
 
 Follow scripts/portco-completion/README.md and shared small-record tooling. Reuse source bytes and completed research. Only unresolved facts/changed dependencies warrant fresh sources. Evaluate every owner and exact seed identity; one application primary citation per decision. Preserve unavailable facts explicitly. No production wording harmonization or partial parked corrections.
 
