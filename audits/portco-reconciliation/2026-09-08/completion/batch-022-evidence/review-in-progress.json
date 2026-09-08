@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "batchId": "portco-completion-022",
+  "status": "OFFLINE_PREPARATION_ONLY",
+  "reviewedBy": "main-agent",
+  "progressSha256": "2b5a310e2304f542915496a264e4bd06326cc8f53abe5c077f995dc70d1483f8",
+  "readinessSha256": "39c3afb591abe22048b624392bf9e6b1c9eb67ae271793e61bb476ac68fca5d5",
+  "scope": "The earliest ten parked names were inspected against immutable previous after-images and actual evaluated seed ownership. This is not a fresh production snapshot, authority to apply, a final decision packet, or a completion claim. No source task or completion register was changed.",
+  "checks": {
+    "names": 10,
+    "existingEvidenceReferencesMatched": 123,
+    "owners": 39,
+    "exactSeedOwnerMatches": 37,
+    "identityFailures": 2,
+    "freshDirectSourcesCaptured": 12,
+    "freshHttp200": 12,
+    "qualification": "HTTP success and seed identity matching do not by themselves prove substantive source authority. Main agent reviewed relevant extracted passages; final per-owner review remains required."
+  },
+  "identityExceptions": [
+    {
+      "sequence": 370,
+      "name": "Leeward Renewable Energy",
+      "ownerId": "cmtj20ur6001d2h2bg2jgb50f",
+      "finding": "The production former ArcLight period has vehicleName null and an existing ArcLight Energy Partners Fund VI, L.P. fund link. The evaluated seed resolves its literal vehicleName to ArcLight Energy Partners Fund VI, L.P. This is a vehicle identity mismatch, not merely a missing historical attribution overlay.",
+      "requiredWork": "Reconcile the explicit null-versus-fund-name vehicle under a supported canonical/seed identity workflow. The current protected attribution workflow must not modify the vehicle or weaken its identity guard; no partial OMERS correction."
+    },
+    {
+      "sequence": 376,
+      "name": "Skyway Concession Company LLC",
+      "ownerId": "cmtj3t17f000t062bho13ij5o",
+      "finding": "The production former MIP period uses organizationName Macquarie Infrastructure Partners. The actual seed organization resolver maps the same raw investmentFirm to Macquarie Asset Management. Vehicle, 22.5% stake and 2006-2016 historical period do not resolve this distinct organization identity mismatch.",
+      "requiredWork": "Audit and reconcile the exact organization through a supported identity workflow. Do not change the shared organization resolver, relabel the production organization, or partially correct the other six owners in this metadata-only release."
+    }
+  ],
+  "sourceFindings": {
+    "dartpoints-nova.html": "NOVA directly reports the completed majority investment, meaningful retained Astra minority, and OIC participation. Astra minority ownership alone does not establish a direct corporate program or exact Astra fund.",
+    "nova-fund-ii.html": "The manager's Fund II closing release explicitly lists DartPoints and UGE as that fund's first two platform investments. This supports named NOVA Infrastructure Fund II attribution, subject to the complete owner packet.",
+    "dartpoints-astra.html": "The 2020 Astra majority-investment announcement identifies the manager and investment but the reviewed passages do not name an exact fund. Preserve the unavailable fund allocation rather than inventing DIRECT_PROGRAM status.",
+    "bruce-owners.html": "The company identifies a Canadian-owned partnership of TC Energy, OMERS, Power Workers' Union and Society of United Professionals, with employees also owners. It distinguishes the publicly owned leased site from the operating partnership. Do not rewrite aggregate legal stakes or the existing ownership periods.",
+    "bruce-omers.html": "OMERS expressly states that it has been directly invested since 2003 and identifies BPC Generation Infrastructure Trust as its holding company. Debt raised by that trust is not a separate investing fund.",
+    "bruce-cameco.html": "Cameco's direct annual-report note confirms sale of its 31.6% BPLP interest on March 27, 2014. Captured bytes exactly match the original recorded source SHA. This supports former corporate ownership, without changing its audited changing stake or dates.",
+    "teranet-company.html": "The company timeline identifies the Income Fund IPO and later OMERS acquisition. It labels the Province's exit as 2004, whereas the original audited AIF decision uses the specific 2003 securities acquisition. The full original AIF must be bound and the different milestones distinguished before declaring historical ownership fully verified.",
+    "teranet-osc.html": "The securities regulator's order distinguishes Teranet Income Fund, Borealis Acquisition Corporation and the underlying partnership units. Do not substitute the acquisition corporation or an operating holding trust for the named public fund. Further complete historical review remains required.",
+    "intersect-tpg.html": "TPG directly reports completion of the Intersect sale to Google on March 10, 2026, with TPG Rise Climate selling its stake and grid-tied assets spun into IPX. Preserve the canonical carve-out and do not repeat any Intersect/IPX transaction.",
+    "intersect-cai.html": "CAI explicitly states that its inaugural Fund I led the 2020 repurchase from SoftBank. Captured bytes exactly match the original recorded source. This supports the historical fund, not merely an unnamed investment vehicle.",
+    "intersect-greenbelt.html": "The manager describes its 2020 entry and the 2026 transaction, but the reviewed passages do not disclose an exact legacy fund. Preserve that distinction and do not infer it from manager or holding-vehicle names.",
+    "dimension-pg.html": "Partners Group expressly invests on behalf of clients in a controlling equity stake. This alone does not disclose exact client-fund allocations or justify treating PG Delta Holdco as an investing fund. Historical FTC Solar and complete ownership qualifications still need source-bound review."
+  },
+  "remainingPreparation": [
+    "Complete source and per-owner adjudication for all ten names, preserving the existing Navisun, Northstar and Budderfly ownership qualifications rather than assuming historical-overlay support resolves them.",
+    "DartPoints: obtain a usable exact source binding for OIC Credit Opportunities Fund IV equity, distinct from debt; consider the existing null-rationale seed-only annotation mechanism for unchanged Astra metadata without inventing fund facts.",
+    "Bruce Power: bind British Energy historical direct evidence and preserve complete union/employee/general-partner aggregate qualifications.",
+    "Teranet: bind and inspect the original filed AIF for Ontario, Teramira and Income Fund distinctions and reconcile the two different historical date descriptions without unsupported date writes.",
+    "Intersect: bind Pantheon/PINT historical co-investment and confirm the complete Greenbelt fund exception. No change to IPX.",
+    "Dimension: bind FTC Solar's direct equity-sale disclosure and retain unresolved client allocation/minority-member qualifications.",
+    "Only after decisions are complete, produce final small records and final safe-company seed proof, append immutable completed batch021 lineage, pass offline checks, and capture one target-pinned read-only production snapshot. Do not activate or apply until all gates pass."
+  ]
+}

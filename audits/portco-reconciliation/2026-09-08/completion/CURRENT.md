@@ -15,11 +15,15 @@ Work only in /Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair. Never us
 
 ## Next action
 
-Preserve and push batch021 completion bookkeeping on the merged codex/portco-completion-021 branch, then create codex/portco-completion-022 from fresh origin/main and carry only that completion commit into the next combined release. No separate preliminary deployment.
+Batch021 completion commit200b23b3d6ace886f9b60d255c8c322704476d6b is confirmed pushed. Current branch codex/portco-completion-022 was created from fresh origin/main23383498dc40225af0e0a7506f087fe9836bdb76 and carries only that completion bookkeeping as c072e51d. No separate preliminary deployment. No022 batch is active and no022 production snapshot or write has occurred.
 
 Next parked ten in original order: 359DartPoints,368Bruce Power,370Leeward,371Navisun,372Northstar New Jersey Lottery,373Teranet,376Skyway,377Intersect Power,378Budderfly,379Dimension Energy. Use nextNames(progress,true); do not activate a second release. Reuse original completed packets, receipts, source bytes and precise prior parks. Only reopen sources for unresolved facts or changed dependencies.
 
 Follow scripts/portco-completion/README.md and its small-record preparation path. For021, final inputs are batch-021-evidence/packet/config.json (20 preceding release chains), not superseded root drafts. Add completed021 to exact immutable lineage for022. Reuse the shared helpers; inspect relevant code before first use.
+
+022 preparation is preserved under completion/batch-022-evidence/: readiness.json checks123 prior evidence hashes and all39 existing owners against actual evaluated seed;37 match exactly. review-in-progress.json records findings and remaining source work, not final decisions. Leeward's former ArcLight vehicle is null in production but resolves to the fund name in seed. Skyway's former MIP organization is Macquarie Infrastructure Partners in production but resolves to Macquarie Asset Management in seed. Both need unsupported identity reconciliation, not weakened metadata guards.
+
+Twelve direct HTML sources were captured successfully for unresolved attribution facts. Reuse these bytes and capture records; do not refetch or repeat ChatGPT. Relevant source passages have been reviewed, but complete per-owner packets remain unfinished. See review-in-progress.json for British Energy, Teranet AIF, DartPoints OIC, Pantheon/PINT and FTC Solar follow-ups and the pre-existing Navisun/Northstar/Budderfly ownership issues. The CAI original contains a Userback widget token: keep sources/intersect-cai.html local and NEVER stage it. Use intersect-cai-publication.html plus its capture and verified one-token redaction record; substantive article text is unchanged. Other publication copies passed the local secret scan.
 
 ## Gates and closeout
 
