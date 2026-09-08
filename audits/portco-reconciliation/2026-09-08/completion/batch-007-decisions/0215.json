@@ -1,0 +1,155 @@
+{
+  "companyId": "cmrxpj6er00j7ivhe4q6f5u9y",
+  "name": "Invenergy AMPCI Thermal Power",
+  "sequence": 215,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/research-decision.json",
+      "sha256": "5719829a8d94a14918b0e7b7974a249be31bdf5da2fd36e02d74f735e3b7fbbd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/source-verification.json",
+      "sha256": "56a431ba5eef09c89aeb24ae0e8bc3166e684d6bffe77cc5e9f60ba10fda60cb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "511feccbec839e1dd2e8f9731902f75fb7747f963676b1e28a8f01b0d6870e98"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/chatgpt-response-validation.json",
+      "sha256": "28018129602e51414e9929208885cc3bb1e6a0191d824b83a449ecddeed49883"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/chatgpt-attestation.json",
+      "sha256": "5036480e7800bbc22c62a72d9ba1b35e67dfc45c6f6336b4f1942ea168227182"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/review.json",
+      "sha256": "26e1cd9e004b372b0951c1ef4d99e912950b21defd947470551ffcdef576cd25"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjrff01g2ivhek768az2y",
+      "seedRecordId": "OFA-1EEE202528D8",
+      "expectedSeedSha256": "ee2ac98677b228286631606a3e720e9c365e7e66c92734fd955d97d029b801f2",
+      "expectedOwnerSha256": "ed9007bb4dde7bbc977445d876698e38c6106d43d48470100594d76dc7c18aae",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "AMP Capital Global Infrastructure Fund II (GIF II)",
+        "attributionConfidence": null,
+        "attributionRationale": "Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": "AMP Capital Global Infrastructure Fund II (GIF II)"
+      },
+      "productionChange": "NONE",
+      "reason": "Existing GIF II attribution is supported by original manager evidence and FTC named InfraBridge Fund II B entity. Preserve exact production metadata and SIGNED_PENDING_EXIT; seed-only alignment, regulatory clearance is not legal close.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-ftc.html",
+          "sha256": "d4539575131245fab1b9bf0051efdd4a3e3fc2e2a5895f0021307ef464df12b6",
+          "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261126",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-portfolio.html",
+          "sha256": "0b45b7a7733b7f3b9426ac16493a64e5efa9c06ea7bdcbed0da66acd2aa48730",
+          "url": "https://www.infrabridge.com/our-portfolio",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-pending.html",
+          "sha256": "16c766473f5d2879d6ddde6996964d4a9d607d0158b4ce97139b610410b99a5a",
+          "url": "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmte32n0h000i2k2bsx05txra",
+      "seedRecordId": "OFA-8543ED5D9EBA",
+      "expectedSeedSha256": "f8831ce9d7f729ee8723574a2f441967f29aed174a72ffdb65feafe8cabe3198",
+      "expectedOwnerSha256": "ab123b3d66b265b1e06fad2654884c7c933ce8d6033880c3ec791f9e796144ec",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Invenergy's company announcement identifies Invenergy Clean Power LLC as its corporate natural-gas holding company in the 50/50 partnership with AMP Capital. InfraBridge's sale announcement preserves Invenergy's existing interest and operational role. The continuing 50% owner is a corporate investment program, not an unresolved infrastructure fund.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Resolve corporate ownership attribution only; preserve50% legal stake, vehicle and signed pending exit of the other owner.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-corporate.html",
+          "sha256": "3d1913b87e8df2c3112563a4850318b71d3426ae904779850cb11e0e2c69b670",
+          "url": "https://invenergy.com/news/invenergy-strengthens-its-diversified-clean-energy-platform-through-new-equity-transactions-with-cdpq-and-amp-capital",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-pending.html",
+          "sha256": "16c766473f5d2879d6ddde6996964d4a9d607d0158b4ce97139b610410b99a5a",
+          "url": "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-portfolio.html",
+          "sha256": "0b45b7a7733b7f3b9426ac16493a64e5efa9c06ea7bdcbed0da66acd2aa48730",
+          "url": "https://www.infrabridge.com/our-portfolio",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "1f43caa5aec86818443619a93deeb4bb5c1cb8806e67ca6ab584b85d2c946fe5",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjrff01g2ivhek768az2y",
+      "sha256": "ed9007bb4dde7bbc977445d876698e38c6106d43d48470100594d76dc7c18aae"
+    },
+    {
+      "ownerId": "cmte32n0h000i2k2bsx05txra",
+      "sha256": "ab123b3d66b265b1e06fad2654884c7c933ce8d6033880c3ec791f9e796144ec"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0215-invenergy-ampci-thermal-power-v1/proposal.json",
+      "sha256": "e954b4269ad0ce3a3f3c0f0d1464844ba5c02558703caf31b4869c1d964ddc23"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0215-invenergy-ampci-thermal-power-v1.json",
+      "sha256": "6137cd889938b98ef5e51e8f02b9434e665985db3b39bdc2c861a94266d9ead1"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0214-0218-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "e55b584010d1ce87c04f371c4d98513206ad69dabe1f11a929e2be43fd1cfef9",
+      "memberIndex": 1
+    },
+    "receiptSha256": "d813e7b97005feb9d7aaaacbd2e90538d5740ce40aae1e8b5ba3df414c317bd5"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-ftc.html.capture.json",
+      "sha256": "665c814b3ed2c580644d7c8b6ed491c878be1ac0ddb34e1658d7bdd412fb5703"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-portfolio.html.capture.json",
+      "sha256": "9995cbb32a1cb9a495c14e24295d5262c1c885b475d2696a111ea3d507db9df0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-pending.html.capture.json",
+      "sha256": "061f0a1c4a029f3be4c51fe2f1b721b34677b7c98ae9f6d63d08f3d486cd6f99"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/invenergy-corporate.html.capture.json",
+      "sha256": "918f0ba1dbb022113e038404d59dae9a91bf91fa78067565d9d2a83b53c66330"
+    }
+  ]
+}

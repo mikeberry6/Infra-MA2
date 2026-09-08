@@ -1,0 +1,64 @@
+{
+  "verifiedAt": "2026-09-08T08:18:56Z",
+  "batchId": "portco-completion-007",
+  "batchSha256": "e0c50123e9982c5810552bd6b1846c33d6b8287581f21d3f6da5374b0388384e",
+  "snapshotSha256": "043d63988496ed76789538f5efd615e307ace245fbff56ae42e5f13f39d7929e",
+  "manifestSha256": "1336c17cc1e1265c54d454e2d20c120e202362d18c632ba95978314e7205914e",
+  "approvalSha256": "8444011e59b8217a3621ff7f6e4c118a6ce9502771e1ea944062d3a66601c0c7",
+  "offline": {
+    "names": 10,
+    "boundFiles": 1130,
+    "databaseReads": 0,
+    "databaseWrites": 0
+  },
+  "snapshot": {
+    "readOnlyTransactions": 1,
+    "companies": 10,
+    "owners": 15,
+    "funds": 6,
+    "completeCanonicalImagesMatch": true,
+    "completeOwnerImagesMatch": true
+  },
+  "classificationCounts": {
+    "ATTRIBUTION_CORRECTION": 4,
+    "SEED_ONLY": 6,
+    "PARKED": 0
+  },
+  "mutationCount": 7,
+  "fundCreates": 0,
+  "fundUpdates": 0,
+  "fundLinkChanges": 0,
+  "ownershipIdentityChanges": 0,
+  "inferredWrites": 0,
+  "checks": {
+    "fullFinalRegression": {
+      "files": 207,
+      "tests": 3778,
+      "passed": true
+    },
+    "appTypecheck": true,
+    "toolTypecheck": true,
+    "targetedEslint": true,
+    "applyValidateOnly": true,
+    "offlineSeedValidation": {
+      "errors": 0,
+      "warnings": 54,
+      "contentSha256": "f07d72f0233659513d278efee386960b7eef3f82a39f5462ba3b5caa72f97144"
+    },
+    "authoredDiffWhitespace": true
+  },
+  "publication": {
+    "secretFindings": 0,
+    "redactions": 2,
+    "redactionProofs": [
+      "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/carma-publication.html.redaction.json",
+      "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/jw-water-publication.html.redaction.json"
+    ],
+    "rawOriginalsRetainedLocally": true,
+    "excluded": "Original source copies with embedded API keys, unrelated orphan artifacts, duplicate generated seed/progress. HTML source whitespace retained."
+  },
+  "databaseWrites": 0,
+  "readyForProtectedReview": true,
+  "fullyVerifiedNamesAdded": 0,
+  "completionRequires": "Exact merged canonical production and main CI, one protected atomic apply, immutable receipt and pipeline, all15 complete owner afterimages and all6 fund dependencies, all10 company APIs/redirects/ownership/citations/rendered cards, then shared complete()."
+}

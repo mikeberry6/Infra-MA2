@@ -1,0 +1,129 @@
+{
+  "companyId": "cmrxpjd8g00tsivhe75mpfqhf",
+  "name": "Beanfield Metroconnect",
+  "sequence": 211,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0211-beanfield-metroconnect/attempt-1/research-decision.json",
+      "sha256": "f5c4867591f8f48f477eeb20cf9b4095d455adef5e5d938957f6d80fe48ee3d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0211-beanfield-metroconnect/attempt-1/source-verification.json",
+      "sha256": "66055b009086756dc3bd8cb1c633a6681cae55486b597e05ebb6add9d266ab5c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0211-beanfield-metroconnect/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "45c073de2dfd731706b37d7b4ca5c21bafbc3952f8252ee6cc82a2b1ff5114e7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0211-beanfield-metroconnect/attempt-1/chatgpt-response-validation.json",
+      "sha256": "819ce6f4c4fa5c7147ddc99d496f44720818c0e7f63f7215f40df8cb348726e2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0211-beanfield-metroconnect/attempt-1/chatgpt-attestation.json",
+      "sha256": "67a189e97af7e713c676dea4cdc24bec75f2255d948a75cf78488ad31e968197"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/review.json",
+      "sha256": "26e1cd9e004b372b0951c1ef4d99e912950b21defd947470551ffcdef576cd25"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjyqc01rqivheiou7knv7",
+      "seedRecordId": "OFA-BBD7466A51A3",
+      "expectedSeedSha256": "5f749debc253c748ff3bab80605f5cbb2291adb6d54d2bba56ebc96ca2249ae1",
+      "expectedOwnerSha256": "0ca7bfce5953e1f7d9c8b2f128f798a136ced7099c0613b182ea8ed717412ff6",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Digital Colony Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Beanfield's 2019 acquisition announcement explicitly names Digital Colony Partners as acquirer; the 2023 OMERS announcement confirms DigitalBridge retains majority ownership. The generic DigitalBridge Equity label does not identify that disclosed fund. Retain Digital Colony Partners without inventing a matching fund link or exact ownership percentage.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct generic equity strategy to disclosed acquisition fund and remove erroneous existing-fund-match claim; no link or ownership change.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/beanfield-digital.html",
+          "sha256": "a62a564bb345de7590436c7f0d85d6067bc910f9ac0cbfd4e7e7fb361a5f949f",
+          "url": "https://blog.beanfield.com/digital-colony-acquires-beanfield-technologies-inc/",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/beanfield-omers.html",
+          "sha256": "ada19ab40d83ae6b7d953731bb11c25b9de43b653369ea4a3528991d9406f7c9",
+          "url": "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpk8lh0273ivhe33cjsxfs",
+      "seedRecordId": "OFA-444A05FD3DFD",
+      "expectedSeedSha256": "6eb7bf203ea39a458d9f8854ae1c5c3573e3c65f2f2255ade78847979f5394d4",
+      "expectedOwnerSha256": "a43cbe596e2c98ff854ada2cdf62e57f22138890c12a38f983f3d91fb445bfcc",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "OMERS' transaction announcement identifies the pension investor's Infrastructure program capital commitment to Beanfield while DigitalBridge remains majority owner. No distinct fund is disclosed. Retain the completed minority investment as DIRECT_PROGRAM rather than infer a fund from the manager name; the exact percentage and separate vehicle remain undisclosed.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove manager-name fund inference and LOW confidence; preserve exact minority stake and closed2023ownership from prior applied evidence.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/beanfield-omers.html",
+          "sha256": "ada19ab40d83ae6b7d953731bb11c25b9de43b653369ea4a3528991d9406f7c9",
+          "url": "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "d15f03db6b5a8c6566c537699695e98836fee21b1c62db15dd2e6d0d6e28d2a7",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjyqc01rqivheiou7knv7",
+      "sha256": "0ca7bfce5953e1f7d9c8b2f128f798a136ced7099c0613b182ea8ed717412ff6"
+    },
+    {
+      "ownerId": "cmrxpk8lh0273ivhe33cjsxfs",
+      "sha256": "a43cbe596e2c98ff854ada2cdf62e57f22138890c12a38f983f3d91fb445bfcc"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0211-beanfield-metroconnect-v1/proposal.json",
+      "sha256": "8f5df23c0c369d39ccfae07769652284093ec28ad97e6f1f890d060abca2ba26"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0211-beanfield-metroconnect-v1.json",
+      "sha256": "d7c995a12d27611dce7ec575678257d2b34dc68bca372ccaa02b22951778d4a7"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0209-0213-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "2e98c55a8bf32ec26166f0ca6beb91718d6d5893e37c9614e90ad949de56da75",
+      "memberIndex": 2
+    },
+    "receiptSha256": "0f5d2a828edfad8695a34a7d1a1e6a109a410ecee9939f3613259cbdc721ac23"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/beanfield-digital.html.capture.json",
+      "sha256": "f90e7d80214589f37d71d1308400c97527937abbe1a09b7b5db2bfb40f0e8691"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/beanfield-omers.html.capture.json",
+      "sha256": "92aa6771a1ca3e671f74da38f8670f2d15df76c0f18ea0a55fa1daa53063c797"
+    }
+  ]
+}

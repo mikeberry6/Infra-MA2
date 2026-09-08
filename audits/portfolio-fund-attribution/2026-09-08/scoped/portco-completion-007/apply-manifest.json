@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "e0c50123e9982c5810552bd6b1846c33d6b8287581f21d3f6da5374b0388384e",
+  "sourceSnapshotSha256": "bb37cdf002bdd7e21c9ed3d9922a05067947e08647427b5b18a2ee0f49e8a1c0",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 4,
+      "UNRESOLVED": 2
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 7,
+  "mutations": [
+    {
+      "recordId": "OFA-04277D895FFB",
+      "ownershipPeriodId": "cmrxpjxw601qgivhep9veksy1",
+      "companyName": "Caturus",
+      "country": "United States",
+      "investmentFirm": "CPP Investments",
+      "currentVehicleName": "Kimmeridge SoTex Aggregator, LLC / Kimmeridge-managed funds",
+      "databaseVehicleName": "Kimmeridge SoTex Aggregator, LLC / Kimmeridge-managed funds",
+      "investmentYear": 2025,
+      "stake": "22.8% direct governance; additional 10.3% economic look-through through Kimmeridge-managed funds",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DOE filings distinguish CPP Investments' 22.8% direct governance interest via Kimmeridge SoTex Aggregator from its additional 10.3% economic look-through through Kimmeridge-managed funds. The exact fund allocation is not publicly disclosed; Sustainable Energies is a strategy label, not a disclosed fund, and no allocation is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf",
+        "https://www.energy.gov/documents/commonwealth-follow-questions"
+      ]
+    },
+    {
+      "recordId": "OFA-5957D5F357A4",
+      "ownershipPeriodId": "cmrxpk5lt022divheaglek2t6",
+      "companyName": "Caturus",
+      "country": "United States",
+      "investmentFirm": "Kimmeridge",
+      "currentVehicleName": "Kimmeridge-managed funds; exact allocation not publicly disclosed",
+      "databaseVehicleName": "Kimmeridge-managed funds; exact allocation not publicly disclosed",
+      "investmentYear": 2023,
+      "stake": "52.6% direct governance after the May 2026 closing",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DOE's June 2026 filings establish Kimmeridge-managed interests' 52.6% direct governance stake after rounding correction but do not disclose the exact fund or co-investment allocation. The previous Fund V / Fund VI / SoTex Co-Invest estimate is not established for this ownership period and is not retained."
+      },
+      "evidenceUrls": [
+        "https://www.energy.gov/documents/commonwealth-follow-questions",
+        "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf"
+      ]
+    },
+    {
+      "recordId": "OFA-AAA626D5F54F",
+      "ownershipPeriodId": "cmt6iw22r0018wfyyex8urcg5",
+      "companyName": "Caturus",
+      "country": "United States",
+      "investmentFirm": "Mubadala",
+      "currentVehicleName": "Mubadala",
+      "databaseVehicleName": null,
+      "investmentYear": 2025,
+      "stake": "24.1% direct governance",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DOE's filed September 5, 2025 notice identifies Mubadala Energy, a subsidiary of Mubadala Investment Company, as the corporate investor whose 24.1% acquisition closed on August 7, 2025. This is a direct corporate investment program, not an undisclosed infrastructure fund; no separate fund or legal vehicle is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.energy.gov/sites/default/files/2025-09/Commonwealth%20LNG%20DOE%20Notice%20of%20Change%20in%20Control%20%28Mubadala-Caturus%29%20-%209.5.2025.pdf",
+        "https://www.energy.gov/documents/commonwealth-follow-questions"
+      ]
+    },
+    {
+      "recordId": "OFA-69CA15E3689B",
+      "ownershipPeriodId": "cmrxpjxzf01qmivhephymt31i",
+      "companyName": "Pacifico Sur",
+      "country": "Mexico",
+      "investmentFirm": "CPP Investments",
+      "currentVehicleName": "CPP Investments",
+      "databaseVehicleName": null,
+      "investmentYear": 2019,
+      "stake": "29%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The joint transaction announcement identifies CPP Investments' direct 29% interest in CAGT alongside Ontario Teachers' 20% interest. Real Assets (Infrastructure) describes the investment program, not a separately disclosed fund. No distinct fund or acquisition SPV is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/"
+      ]
+    },
+    {
+      "recordId": "OFA-BBD7466A51A3",
+      "ownershipPeriodId": "cmrxpjyqc01rqivheiou7knv7",
+      "companyName": "Beanfield Metroconnect",
+      "country": "Canada",
+      "investmentFirm": "DigitalBridge",
+      "currentVehicleName": "Digital Colony Partners",
+      "databaseVehicleName": "Digital Colony Partners",
+      "investmentYear": 2019,
+      "stake": "Majority interest after the 2023 OMERS investment; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Digital Colony Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Beanfield's 2019 acquisition announcement explicitly names Digital Colony Partners as acquirer; the 2023 OMERS announcement confirms DigitalBridge retains majority ownership. The generic DigitalBridge Equity label does not identify that disclosed fund. Retain Digital Colony Partners without inventing a matching fund link or exact ownership percentage."
+      },
+      "evidenceUrls": [
+        "https://blog.beanfield.com/digital-colony-acquires-beanfield-technologies-inc/",
+        "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect"
+      ]
+    },
+    {
+      "recordId": "OFA-444A05FD3DFD",
+      "ownershipPeriodId": "cmrxpk8lh0273ivhe33cjsxfs",
+      "companyName": "Beanfield Metroconnect",
+      "country": "Canada",
+      "investmentFirm": "OMERS Infrastructure",
+      "currentVehicleName": "OMERS Infrastructure",
+      "databaseVehicleName": null,
+      "investmentYear": 2023,
+      "stake": "Minority interest; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "OMERS' transaction announcement identifies the pension investor's Infrastructure program capital commitment to Beanfield while DigitalBridge remains majority owner. No distinct fund is disclosed. Retain the completed minority investment as DIRECT_PROGRAM rather than infer a fund from the manager name; the exact percentage and separate vehicle remain undisclosed."
+      },
+      "evidenceUrls": [
+        "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect"
+      ]
+    },
+    {
+      "recordId": "OFA-8543ED5D9EBA",
+      "ownershipPeriodId": "cmte32n0h000i2k2bsx05txra",
+      "companyName": "Invenergy AMPCI Thermal Power",
+      "country": "United States / Canada",
+      "investmentFirm": "Invenergy",
+      "currentVehicleName": "Invenergy Clean Power LLC",
+      "databaseVehicleName": "Invenergy Clean Power LLC",
+      "investmentYear": 2018,
+      "stake": "50%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Invenergy's company announcement identifies Invenergy Clean Power LLC as its corporate natural-gas holding company in the 50/50 partnership with AMP Capital. InfraBridge's sale announcement preserves Invenergy's existing interest and operational role. The continuing 50% owner is a corporate investment program, not an unresolved infrastructure fund."
+      },
+      "evidenceUrls": [
+        "https://invenergy.com/news/invenergy-strengthens-its-diversified-clean-energy-platform-through-new-equity-transactions-with-cdpq-and-amp-capital",
+        "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+        "https://www.infrabridge.com/our-portfolio"
+      ]
+    }
+  ],
+  "manifestSha256": "1336c17cc1e1265c54d454e2d20c120e202362d18c632ba95978314e7205914e"
+}

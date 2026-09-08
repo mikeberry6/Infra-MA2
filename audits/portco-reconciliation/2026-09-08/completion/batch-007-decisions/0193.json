@@ -1,0 +1,176 @@
+{
+  "companyId": "cmrxpjjko013jivhegryhtkk9",
+  "name": "Caturus",
+  "sequence": 193,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/research-decision.json",
+      "sha256": "63681d82ac45369871f90d54ca7ae40ceafeb9d81072e1bb5e5f4a59a642e239"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/source-verification.json",
+      "sha256": "471f84d3cc7b86637d70f02a9d9edda3bda33edf7475857532c183f10d888fc6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "caa3d52b48708f433d97ced72365965ddb7350ae8c1e88acbe7a03e1dbfd7dc7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/chatgpt-response-validation.json",
+      "sha256": "e84ff2d5624b50a13105758a49776a2982a8133c4d526098fd5472faa212ce0d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/chatgpt-attestation.json",
+      "sha256": "6079aebcf4baff12ab7ba3e006a63fccac8f9f48829f2f46a0586d7f4afc55db"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0193-commonwealth-lng/attempt-1/application-research-decision.json",
+      "sha256": "9b32eca4cf3824b0861324e9627c2d816b4499353cbb5e4e0547052256321cc4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/review.json",
+      "sha256": "26e1cd9e004b372b0951c1ef4d99e912950b21defd947470551ffcdef576cd25"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjxw601qgivhep9veksy1",
+      "seedRecordId": "OFA-04277D895FFB",
+      "expectedSeedSha256": "f04a66ab5def58af655f8665ae70c8b0265d299abc1c561910d7e4a91a10f657",
+      "expectedOwnerSha256": "bee8ad1633fbf6af3f0aff95b2361c1ce5a7d4cc558746b4b8754fe334643d4b",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DOE filings distinguish CPP Investments' 22.8% direct governance interest via Kimmeridge SoTex Aggregator from its additional 10.3% economic look-through through Kimmeridge-managed funds. The exact fund allocation is not publicly disclosed; Sustainable Energies is a strategy label, not a disclosed fund, and no allocation is inferred.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove falsely disclosed strategy-as-fund and stale12% rationale; preserve exact combined direct/economic qualified stake and all identity fields.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/caturus-cpp.html",
+          "sha256": "484e14ed055566c53cdbcef96c5dfc8f43eab90af843a08f83dd8f9128390295",
+          "url": "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/caturus-follow.html",
+          "sha256": "6b83bab6ed9c15137a885007b107798cbd2f1e6f643949f890fb649ce819a07e",
+          "url": "https://www.energy.gov/documents/commonwealth-follow-questions",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpk5lt022divheaglek2t6",
+      "seedRecordId": "OFA-5957D5F357A4",
+      "expectedSeedSha256": "5449a331aa30ab554df7c6a3028d626d32cb4c9a969802a09020c4012cee6f85",
+      "expectedOwnerSha256": "594fdfdad02e7f5c0a6c2ab28811b1a5cd16349ff493c81e9e4ecd888df291c5",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DOE's June 2026 filings establish Kimmeridge-managed interests' 52.6% direct governance stake after rounding correction but do not disclose the exact fund or co-investment allocation. The previous Fund V / Fund VI / SoTex Co-Invest estimate is not established for this ownership period and is not retained.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Unsupported fund allocation inference is a factual attribution defect, not equivalent wording.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/caturus-follow.html",
+          "sha256": "6b83bab6ed9c15137a885007b107798cbd2f1e6f643949f890fb649ce819a07e",
+          "url": "https://www.energy.gov/documents/commonwealth-follow-questions",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/caturus-cpp.html",
+          "sha256": "484e14ed055566c53cdbcef96c5dfc8f43eab90af843a08f83dd8f9128390295",
+          "url": "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmt6iw22r0018wfyyex8urcg5",
+      "seedRecordId": "OFA-AAA626D5F54F",
+      "expectedSeedSha256": "0c6192995f903d2d200335b5a22889a480bac8ae99aa86cca66b1343668d6d3b",
+      "expectedOwnerSha256": "61db15223acb6e73607dc141a8789cec2205f3470471e0cd936c2d7fc5f45e33",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DOE's filed September 5, 2025 notice identifies Mubadala Energy, a subsidiary of Mubadala Investment Company, as the corporate investor whose 24.1% acquisition closed on August 7, 2025. This is a direct corporate investment program, not an undisclosed infrastructure fund; no separate fund or legal vehicle is inferred.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace unresolved null metadata for a directly disclosed corporate investor; preserve published parent manager and vehicle identity.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/mubadala-doe.pdf",
+          "sha256": "ea2ee5e6912f24f7911e26748bd9c45882ea9e07c065cc3420568a30118d8fda",
+          "url": "https://www.energy.gov/sites/default/files/2025-09/Commonwealth%20LNG%20DOE%20Notice%20of%20Change%20in%20Control%20%28Mubadala-Caturus%29%20-%209.5.2025.pdf",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/caturus-follow.html",
+          "sha256": "6b83bab6ed9c15137a885007b107798cbd2f1e6f643949f890fb649ce819a07e",
+          "url": "https://www.energy.gov/documents/commonwealth-follow-questions",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "ae696ac37c9d4b9b35aba2ab94b6b3019ba66438fcca723f662a8df324590a11",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjxw601qgivhep9veksy1",
+      "sha256": "bee8ad1633fbf6af3f0aff95b2361c1ce5a7d4cc558746b4b8754fe334643d4b"
+    },
+    {
+      "ownerId": "cmrxpk5lt022divheaglek2t6",
+      "sha256": "594fdfdad02e7f5c0a6c2ab28811b1a5cd16349ff493c81e9e4ecd888df291c5"
+    },
+    {
+      "ownerId": "cmt6iw22r0018wfyyex8urcg5",
+      "sha256": "61db15223acb6e73607dc141a8789cec2205f3470471e0cd936c2d7fc5f45e33"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0193-commonwealth-lng-v1/proposal.json",
+      "sha256": "222c8241b3fdac30ec1287cd6937d32a767aa97d367b5ce4c078d1a84608d478"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0193-commonwealth-lng-v1.json",
+      "sha256": "e7b64ea377ca19751087ab473d66e591887756487687f4550a4893883c87a464"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/production-apply/batch-apply-receipt.json",
+      "sha256": "538c746181b5cc6916dcffc93875905bf6a364383ff3bed1eff5fcd11f1d5b33",
+      "memberIndex": 0
+    },
+    "receiptSha256": "9c14be0309ef2917b3ac0899afad0dda1e5301912720d7e6942a71797f294e6a"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/caturus-cpp.html.capture.json",
+      "sha256": "60892d86e4c26d9a9885371cfe6d49858394b7ccde1d842743b1016e9f46aec1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/caturus-follow.html.capture.json",
+      "sha256": "5a9138a93f26a4458ed050002481912c61a978137864a4304fc404924049e755"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/mubadala-doe.pdf.capture.json",
+      "sha256": "8bee5326b87b840007feb557be9ba83e049a13db95b0fb3ca4d7bf9fd8ee1ea1"
+    }
+  ]
+}

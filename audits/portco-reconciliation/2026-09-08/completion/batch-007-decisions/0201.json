@@ -1,0 +1,96 @@
+{
+  "companyId": "cmrxpjcvs00t9ivhes1jkf37g",
+  "name": "CARMA Corp.",
+  "sequence": 201,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/research-decision.json",
+      "sha256": "90c4c3086c02a6559278804c2797476f8eb75452843b4b1f4490f561433956a7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/source-verification.json",
+      "sha256": "d35618797b8664743ae9895bd445dab6cb1af9619e627c9401afe2573c3e05cc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "36e66bed7939f8662f3092ed3901e4334d4a360c87edf8a6725cc3a45a3a16cd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/chatgpt-response-validation.json",
+      "sha256": "9499cb980250d046406053833cce647c3d4c85db9c61a775ec8ce450286f615e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/chatgpt-attestation.json",
+      "sha256": "44a5e8e0bfee73abadfb3409e2c39efb1e3810d6dc74ed356e8bc5be8b184e2e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/review.json",
+      "sha256": "26e1cd9e004b372b0951c1ef4d99e912950b21defd947470551ffcdef576cd25"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/carma-publication.html.redaction.json",
+      "sha256": "7ac6b86e65838257bd913e8a1a720fad6e10580a4208d51c25459164b898c311"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjyd401r7ivhe8d9ndnfn",
+      "seedRecordId": "OFA-969769738F27",
+      "expectedSeedSha256": "7f4aad5c005a6e013c860593d6ed73d713ed69c1c127608520c1f78b660ffdfa",
+      "expectedOwnerSha256": "f21935d72407907ac07d1b2e281a69d268b42c8ab934d7b12d8f86e47c111132",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DIF Infrastructure VIII",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": "DIF Infrastructure VIII"
+      },
+      "productionChange": "NONE",
+      "reason": "Existing DISCLOSED DIF Infrastructure VIII metadata matches explicit manager evidence. Preserve exact production rationale, linked fund, legal vehicle, close year and unknown percentage; seed-only equivalent wording alignment.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/carma-publication.html",
+          "sha256": "d889c3ae2b0f6c42f2259b36905ca235943e773e8af1500ca23af5411811fcf2",
+          "url": "https://www.cvc.com/media/news/2025/cvc-dif-to-acquire-carma-corp-a-leading-canadian-submetering-and-essential-building-services-platform/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "27dee2cf3da2505707683a3555585aeee5d83096d78e7e5906e825955b13d7f4",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjyd401r7ivhe8d9ndnfn",
+      "sha256": "f21935d72407907ac07d1b2e281a69d268b42c8ab934d7b12d8f86e47c111132"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0201-carma-corp-v2/proposal.json",
+      "sha256": "d3e38ae7457a20638ba4daf827dcf4128748ad13099a7766c7d1149f092e80ea"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0201-carma-corp-v2.json",
+      "sha256": "899583c30101707bf44bcebeef2a58a5a8946acd5d834f9c56e3dd48436b0ef0"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0198-0202-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "8f022266a54db1e17103a7d05389cfd2b9d3cd7b3a279ca8077bc0e6140b7026",
+      "memberIndex": 3
+    },
+    "receiptSha256": "5615e5de9efbc2b89dbe6fde0273a2c458513ff28f717d3fcb1e5506479ae914"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/carma-publication.html.capture.json",
+      "sha256": "51badabb6fdcec8c9fc35b0207f57fbf5d2033244e7812e81da74bdfa1bf90e6"
+    }
+  ]
+}

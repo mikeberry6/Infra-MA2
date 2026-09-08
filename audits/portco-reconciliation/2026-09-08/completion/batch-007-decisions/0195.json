@@ -1,0 +1,119 @@
+{
+  "companyId": "cmrxpjckc00ssivhet8xg6gs5",
+  "name": "Pacifico Sur",
+  "sequence": 195,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/research-decision.json",
+      "sha256": "2b013c37f653014d686681c3acc4e6a010593188c287728ae8783057db24fc73"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/source-verification.json",
+      "sha256": "34f59ae6c569991e1c1d14acd89470366b102089603c84e7f73ddfd816170c8f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "033b173970f85d2e7908eb012ba50ff95aaf972229975cff558cc752e891678b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/chatgpt-response-validation.json",
+      "sha256": "a504839fc45c1c27fce33804a29c32bddd7694e59152ed69facb7b7399cf1ebb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/chatgpt-attestation.json",
+      "sha256": "5f467dfb5eac6d059dc33c3824bda10dcb6bc5fd98c871e21d57e1160cc40b4c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/review.json",
+      "sha256": "26e1cd9e004b372b0951c1ef4d99e912950b21defd947470551ffcdef576cd25"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjxzf01qmivhephymt31i",
+      "seedRecordId": "OFA-69CA15E3689B",
+      "expectedSeedSha256": "fecc10424d3da3d3957faaa2284440d2252c0b923a8a4a796a17ccaf7b39d3f4",
+      "expectedOwnerSha256": "7356dcf10efce26fb30c376f277982d5dd39b524750b5912b7c778614d5e031f",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The joint transaction announcement identifies CPP Investments' direct 29% interest in CAGT alongside Ontario Teachers' 20% interest. Real Assets (Infrastructure) describes the investment program, not a separately disclosed fund. No distinct fund or acquisition SPV is inferred.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct strategy misclassified as disclosed fund; preserve existing29%stake and2019close.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/pacifico.html",
+          "sha256": "2a6a2655599ecd9607ad6aed6f2610e0cd9d727edad929d5a53f6400f1bd7410",
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpjxzy01qnivhez34f1suv",
+      "seedRecordId": "OFA-C9FF8CD22913",
+      "expectedSeedSha256": "1e3218ff692e6ff3defb113b977e1c9b2368b2ee21dde4f9f9916f126382de96",
+      "expectedOwnerSha256": "2e72016712c961face26b8e9530110c40cd17d029909f7e0861ff36057bd3bfb",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Ontario Teachers' Pension Plan | Fund: Not publicly disclosed. | Ownership Interest: 20% Supplemental detail states the fund was not publicly disclosed.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "Existing DIRECT_PROGRAM/no separate fund metadata is supported and equivalent; preserve production wording and align seed only.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/pacifico.html",
+          "sha256": "2a6a2655599ecd9607ad6aed6f2610e0cd9d727edad929d5a53f6400f1bd7410",
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "71d3361d91b29aa8645108206fb9c8f45eb2f445ef139cdbc38c84ade2487efb",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjxzf01qmivhephymt31i",
+      "sha256": "7356dcf10efce26fb30c376f277982d5dd39b524750b5912b7c778614d5e031f"
+    },
+    {
+      "ownerId": "cmrxpjxzy01qnivhez34f1suv",
+      "sha256": "2e72016712c961face26b8e9530110c40cd17d029909f7e0861ff36057bd3bfb"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0195-pacifico-sur-v1/proposal.json",
+      "sha256": "4ae4500bb299e76c08e5529b7ad83c9a4cfb2b12068948b1e13e871b0fe43fa6"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0195-pacifico-sur-v1.json",
+      "sha256": "f5c204a5711a7793f95332af3de2fa142e4a85a482eb6b4afd6b5c4201c11e7a"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/production-apply/batch-apply-receipt.json",
+      "sha256": "538c746181b5cc6916dcffc93875905bf6a364383ff3bed1eff5fcd11f1d5b33",
+      "memberIndex": 2
+    },
+    "receiptSha256": "db40b645298ddc2b0a67742f1d82e5d3def7778324236d09d47a2fb4c8a211cf"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/pacifico.html.capture.json",
+      "sha256": "a39a5343e887f9985bb475a1d832f6905bc30d2607b48571c01275dbc0a785a2"
+    }
+  ]
+}

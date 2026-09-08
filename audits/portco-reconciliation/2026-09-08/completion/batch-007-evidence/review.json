@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_SOURCE_REVIEW",
+  "batchId": "portco-completion-007",
+  "reviewedAt": "2026-09-08T08:13:00.000Z",
+  "reviewer": "main-agent",
+  "method": "Reuse original applied research and reciprocal lineage. Bind missing local source bytes and review only fund-attribution or changed pending-close dependencies; no new ChatGPT research.",
+  "findings": [
+    {
+      "sequence": 193,
+      "decision": "ATTRIBUTION_CORRECTION",
+      "sources": [
+        "caturus-cpp.html",
+        "caturus-follow.html",
+        "mubadala-doe.pdf"
+      ],
+      "review": "DOE June 15 notice pages1-4 and visually inspected page10 chart distinguish CPP direct22.8% via SoTex Aggregator from fund look-through10.3%; June24 follow-up visually inspected page1 corrects Kimmeridge52.6% and expressly denies extra CPP governance. Neither filing names exact Kimmeridge funds or allocations. Sustainable Energies is not a disclosed fund here. Preserve CPP combined direct/economic qualified stake, retain exact fund allocation as UNRESOLVED, remove old12% rationale. Kimmeridge unsupported V/VI/co-invest estimate becomes UNRESOLVED without changing its52.6% stake. September5,2025 DOE notice page1 visually inspected proves August7 close and Mubadala Energy corporate subsidiary stake24.1%; DIRECT_PROGRAM, no invented vehicle. Prior audited parent/subsidiary relationship Task193->191 reused. June15 filing chart52.7 rounding and narrative September2026 typo are not propagated."
+    },
+    {
+      "sequence": 195,
+      "decision": "ATTRIBUTION_CORRECTION",
+      "sources": [
+        "pacifico.html"
+      ],
+      "review": "OTPP transaction release explicitly identifies CPP29% and OTPP20% direct CAGT interests; Real Assets(Infrastructure) is not a named fund. Correct CPP to DIRECT_PROGRAM. Existing OTPP DIRECT_PROGRAM metadata retained exactly, align seed only. Previously verified2019 close, entity and qualified current stake retained."
+    },
+    {
+      "sequence": 201,
+      "decision": "SEED_ONLY",
+      "sources": [
+        "carma-publication.html"
+      ],
+      "review": "CVC explicitly names DIF Infrastructure VIII. Existing disclosed VIII and linked fund correct; preserve exact production rationale including distinction from initially undisclosed supplemental record. Original closing and legal-vehicle evidence reused, not newly inferred from signing announcement."
+    },
+    {
+      "sequence": 202,
+      "decision": "SEED_ONLY",
+      "sources": [
+        "enfra.html"
+      ],
+      "review": "Official Bernhard announcement explicitly names DIF Infrastructure VI and management retention. Audited Task202->200 same legal entity lineage reused. Preserve exact production attribution and majority/unknown percentage, align seed only."
+    },
+    {
+      "sequence": 204,
+      "decision": "SEED_ONLY",
+      "sources": [
+        "gs-power.html"
+      ],
+      "review": "Company transaction release explicitly names DIF Infrastructure VII and majority equity, no exact percentage. Existing correct production VII metadata preserved; original closing and rebrand evidence reused."
+    },
+    {
+      "sequence": 206,
+      "decision": "SEED_ONLY",
+      "sources": [
+        "jw-water-publication.html"
+      ],
+      "review": "CVC completed-acquisition release names DIF Infrastructure VII for both JW and eight Robson utilities. Preserve exact production attribution, existing integrated canonical boundary and unknown manager-level percentage."
+    },
+    {
+      "sequence": 209,
+      "decision": "SEED_ONLY",
+      "sources": [
+        "valorc3.html"
+      ],
+      "review": "CVC DIF source names its core-plus CIF III fund and continuing management minority. Preserve existing DIF CIF III metadata and majority/unknown percentage. Original December2022 entry and legal dba evidence reused rather than infer entry from January2023 announcement."
+    },
+    {
+      "sequence": 211,
+      "decision": "ATTRIBUTION_CORRECTION",
+      "sources": [
+        "beanfield-digital.html",
+        "beanfield-omers.html"
+      ],
+      "review": "2019 company release explicitly names Digital Colony Partners acquisition, not generic DigitalBridge Equity. Retain existing null fund link and qualified majority stake, correct disclosed attributed name and invalid fund-list-match rationale. 2023 OMERS release names pension program capital and continuing DigitalBridge majority; remove inference and LOW confidence, use DIRECT_PROGRAM. Original counsel closing proof and current manager portfolio checks reused; exact stake and vehicle remain unknown."
+    },
+    {
+      "sequence": 214,
+      "decision": "SEED_ONLY",
+      "sources": [
+        "fibernow-fund.html"
+      ],
+      "review": "DigitalBridge November18,2025 issuer release explicitly names DigitalBridge Partners III and includes FiberNow in its portfolio. Existing DigitalBridge Fund III linked/display name is equivalent, retain exact production metadata. No fund inference from Snowbird legal vehicle; original legal vehicle/closing evidence reused."
+    },
+    {
+      "sequence": 215,
+      "decision": "ATTRIBUTION_CORRECTION",
+      "sources": [
+        "invenergy-ftc.html",
+        "invenergy-portfolio.html",
+        "invenergy-pending.html",
+        "invenergy-corporate.html"
+      ],
+      "review": "FTC transaction20261126 names InfraBridge Global Infrastructure Fund II B LP and acquired entity IATP; clearance is not closing. InfraBridge current portfolio continues to list50/50 JV and March12,2026 release remains conditional expectedH2 close; no close inferred. Original GIF II mapping and DigitalBridge manager lineage reused, exact production fund metadata retained. Invenergy2018 company release directly identifies corporate Invenergy Clean Power50/50 partnership and2026 sale release retains its ownership. Correct corporate owner null attribution to DIRECT_PROGRAM, preserve all pending transaction states and legal vehicle/stakes. Targeted current search did not produce direct closed-transfer evidence; no absent-search proof used."
+    }
+  ],
+  "sourceFailures": [
+    {
+      "url": "https://mubadalaenergy.com/news/mubadala-energy-closes-strategic-investment-in-u-s-natural-gas-and-lng-sector-with-kimmeridge/",
+      "outcome": "Node fetch transport failure; not accepted. Original independently filed DOE closing source used instead."
+    }
+  ],
+  "boundaries": {
+    "databaseWrites": 0,
+    "sourceTasksReopened": 0,
+    "newResearchConversations": 0,
+    "identityChanges": 0,
+    "ownershipStructureChanges": 0,
+    "publicInterfaceChanges": 0
+  },
+  "redactions": [
+    {
+      "artifactType": "PORTCO_SOURCE_REDACTION",
+      "originalPath": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/carma.html",
+      "publicationPath": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/carma-publication.html",
+      "originalCapturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/carma.html.capture.json",
+      "originalSha256": "c4c565a2599b8a933f34c6960c1603a7afd00d5dacdfdf4801756b7a96e74f1c",
+      "publishedSha256": "d889c3ae2b0f6c42f2259b36905ca235943e773e8af1500ca23af5411811fcf2",
+      "redactionCount": 1,
+      "detector": [
+        "bearer-token"
+      ],
+      "scope": "Embedded website config.apiKey values only; preserve investment text and all other bytes",
+      "verifiedBy": "verifyRedaction",
+      "originalRetainedLocally": true
+    },
+    {
+      "artifactType": "PORTCO_SOURCE_REDACTION",
+      "originalPath": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/jw-water.html",
+      "publicationPath": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/jw-water-publication.html",
+      "originalCapturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-007-evidence/jw-water.html.capture.json",
+      "originalSha256": "34dbc0d17acdf901d5642182c4465c96805ffa29e499a0bc9533f267c4662082",
+      "publishedSha256": "7124a8c91d22402b9f48b004ed11c2725e355ecf5a8955e81c6272119762c66e",
+      "redactionCount": 1,
+      "detector": [
+        "bearer-token"
+      ],
+      "scope": "Embedded website config.apiKey values only; preserve investment text and all other bytes",
+      "verifiedBy": "verifyRedaction",
+      "originalRetainedLocally": true
+    }
+  ]
+}
