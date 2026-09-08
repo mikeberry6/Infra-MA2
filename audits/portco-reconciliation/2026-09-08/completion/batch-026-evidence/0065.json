@@ -1,0 +1,63 @@
+{
+  "companyId": "cmrxpj67x00izivheqinytkio",
+  "name": "Catalyst Old River Hydroelectric Limited Partnership",
+  "sequence": 65,
+  "classification": "PARKED",
+  "expectedImageSemanticSha256": "f2ee1eb1fbac093402d1b4f8c2e02cb4c0fd9888ca0e32dea142389d955f3502",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjr9601fuivhem1seogi3",
+      "sha256": "ff688c82437556ad041ac5f8898e73acdc9be0bac50bdd7973dee90072497b8d"
+    },
+    {
+      "ownerId": "cmsqvuood0008jh4s8cb50wqg",
+      "sha256": "875f10caf9a79a50619e64b1228c14e9eb13bc436bda34d444633122a244dba3"
+    },
+    {
+      "ownerId": "cmsqvuopl0009jh4s1ezj3kcl",
+      "sha256": "d45aaae4bd09dc29a8513ba98b2a8f7199010a55225986cabb14b7a42dae1088"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpjr9601fuivhem1seogi3",
+    "cmsqvuood0008jh4s8cb50wqg",
+    "cmsqvuopl0009jh4s1ezj3kcl"
+  ],
+  "issue": "The observed Brookfield BII fund link/INFERRED attribution differs from the original applied canonical image, and the historical Fund V seed link differs from production. Preserve both complete images; require exact intervening attribution-receipt projection and sourced correction review before any write. No ownership, fund-link or text harmonization is authorized by this park.",
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0065-catalyst-old-river-hydroelectric-v2/proposal.json",
+      "sha256": "5db3d8fd45f285545974ff289c0b467aefbe1e10c8ff676b6e815e690643ecdd"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0065-catalyst-old-river-hydroelectric-v2.json",
+      "sha256": "53b1b4099c192069d4fd86bb3282f11cc927bfa76da3d07508f7975244c61ea2"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0065-catalyst-old-river-hydroelectric/attempt-3/production-apply/apply-receipt.json",
+      "sha256": "00963bd388e2f09845ed02b0936c8288c7a91233e469e5a7b1613906733a5826",
+      "memberIndex": null
+    },
+    "receiptSha256": "19050bac654cae551af92755dc73a9f3cfc324eae208188deaac4d5e0b0082c9"
+  },
+  "sourceCaptures": [],
+  "parkedObservedImage": {
+    "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/0065-observed-image.json",
+    "sha256": "c7ce1d0767428ea3c586f7a6b23bebe557fed3135262a3f5ca2aef52f4470ba2"
+  }
+}

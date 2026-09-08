@@ -1,0 +1,62 @@
+{
+  "companyId": "cmrxpj9mq00o7ivheg939dp9z",
+  "name": "TXNM Energy",
+  "sequence": 161,
+  "classification": "PARKED",
+  "expectedImageSemanticSha256": "9f634f83666d333a4a55769c70ae178b52d99b6d0453b68ded5c39a132e99acf",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjuvp01lqivheohs4h1mf",
+      "sha256": "d91f18f0bab9d61cab699bf1191acb0115e3af7f5ddf5ed9cc4a2e7c408bd151"
+    },
+    {
+      "ownerId": "cmt5zk80j001f1jyy7q0bgji4",
+      "sha256": "7289fc67f3b7005f9113325b7f34daf632195d92f86801db3efc59f8c7284022"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0161-txnm-energy/attempt-1/research-decision.json",
+      "sha256": "b533500353592ba3bc1b20cc4962e4f2b482cbcaf6a3bec090bbed6f7bd2593a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0161-txnm-energy/attempt-1/source-verification.json",
+      "sha256": "4604f6baa6ef798029ee20236bc75b719e4f63b8b6d551282cd598d854a6d5aa"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpjuvp01lqivheohs4h1mf",
+    "cmt5zk80j001f1jyy7q0bgji4"
+  ],
+  "issue": "The public-market owner's null production vehicle does not exactly match the evaluated seed's display fallback. The strict historical-overlay identity gate therefore cannot attest the complete company. Resolve this representation through an explicit seed projection proof, preserving literal null production vehicle, and recover required historical filing bytes before alignment. Do not replay the completed Blackstone attribution repair.",
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0161-txnm-energy-v1/proposal.json",
+      "sha256": "d2dab1f4db6cc331a99dd8c03856123def5afc3b3d2b158bf9f9c7273deb9363"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0161-txnm-energy-v1.json",
+      "sha256": "822040512dfc9a5e3e108e6136794ead45061176b690bf7201005334ce95911b"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0157-0161-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "ac774423922dd7a6224f90cc379900cb6c42e93bebd50ee4579eb2ffab071114",
+      "memberIndex": 4
+    },
+    "receiptSha256": "bf37beedd297a9e5b6db3b41409f14783524288eff0111420227647ad6399fcd"
+  },
+  "sourceCaptures": []
+}

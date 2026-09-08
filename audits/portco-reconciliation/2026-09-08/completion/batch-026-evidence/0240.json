@@ -1,0 +1,99 @@
+{
+  "companyId": "cmrxpjezu00wjivhep4zsd3j9",
+  "name": "Kelowna and Vernon Hospitals Project",
+  "sequence": 240,
+  "classification": "SEED_ONLY",
+  "expectedImageSemanticSha256": "229a9bc9fd95f9a614faa3e7f96d8c2019664977b8e83c637906221dcbe87f72",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk0pd01usivhehlbgkvdg",
+      "sha256": "9865287c9c89db9f354bb175d22e697ad15ddc402cee40b28dcbed3f34a19875"
+    },
+    {
+      "ownerId": "cmtehfwf3000bsm2bbqigdneu",
+      "sha256": "9d8bfb5c69ba8d086832ded86020153d4b360a88d20c1d49e95e7629d1187861"
+    },
+    {
+      "ownerId": "cmtehfwjq000dsm2bhxnhpivo",
+      "sha256": "9d8e2322b65087e135f461c07542f9242dbc03cd4d4bef12492407629f3c4e01"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0240-kelowna-and-vernon-hospitals-project/attempt-1/research-decision.json",
+      "sha256": "e10193fb604e9b2ad162af733fa2af1b2c0424357c632fe49042a1ac5e6b9d71"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0240-kelowna-and-vernon-hospitals-project/attempt-1/application-research-decision.json",
+      "sha256": "1bb97318f0e664d255ba63c283b4aafb9e744d5af73ce9d44260a608779037c4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0240-kelowna-and-vernon-hospitals-project/attempt-1/source-verification.json",
+      "sha256": "b61cbdb8316f60bc60668908c09c49831ed8878c25027598e938afa951e127c2"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk0pd01usivhehlbgkvdg",
+      "seedRecordId": "OFA-HIST-DDEF6E09F7A2FB33FC1FC804",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "9865287c9c89db9f354bb175d22e697ad15ddc402cee40b28dcbed3f34a19875",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Jura Acquisition",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Equitix | Fund: Jura Acquisition | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "All three existing evaluated owners match production. The issuer's 28 September 2018 scheme-effective announcement names Jura Acquisition Limited and both Equitix/Dalmore managed-fund groups. Preserve the existing shortened Jura Acquisition attribution as the named acquisition vehicle, not as a newly identified underlying fund. Insert only the missing former Equitix overlay. Preserve Dalmore's unresolved underlying fund and all undisclosed allocations; preserve current BBGI and the existing realization dates. The original Euroland link is blocked; the issuer announcement is available via its existing syndicated source.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/kelowna-scheme.html",
+          "sha256": "8b5c3028d9afa248f86c37fadafbbdee785e213d6877691886841cd425b65e1b",
+          "url": "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmtehfwf3000bsm2bbqigdneu",
+    "cmtehfwjq000dsm2bhxnhpivo"
+  ],
+  "issue": null,
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0240-kelowna-and-vernon-hospitals-project-v1/proposal.json",
+      "sha256": "2723fed21c39dfb58738be4d3a3fe6f56305cd783be65e69590c63b8515c04fd"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0240-kelowna-and-vernon-hospitals-project-v1.json",
+      "sha256": "4907f7597aa7e38b29023f2fbecbce1ea1c455db718c2c26757aa11011030e18"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0239-0243-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "39eb573a8069e9f46fc108afad7b8aa77005abeb57105ddee0e7ecb8d8ad9dd3",
+      "memberIndex": 1
+    },
+    "receiptSha256": "8557d44e766cb689a5b2caa76cd853f123635540ab489a5b0953cc0b528ee384"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/kelowna-scheme.capture.json",
+      "sha256": "0aadf12553d302a9fcedaf333c5b71cac8c1716c88771db7001d762360e0e039"
+    }
+  ]
+}

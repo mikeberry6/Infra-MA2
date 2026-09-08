@@ -1,0 +1,18 @@
+{
+  "artifactType": "PORTCO_COMPLETION_PREFLIGHT_CHECKS",
+  "batchId": "portco-completion-026",
+  "batchSha256": "7085d05416739b4a0e2033039adfc7e2f5a189fe5105a899f552e9fab6de0b40",
+  "snapshotSha256": "f310e61a6a4a6424db5424f47218e24ae78d805508c3a0510ec1c7be79174289",
+  "seedManifestSha256": "64162ff1fb04496a2bc89c6dbcd4f1e88554c4c106d82b0f2304c857fee5a161",
+  "independentRecompile": "PASSED; exact saved seed and complete expected after-image bytes",
+  "databaseMutationCount": 0,
+  "classificationCounts": {"SEED_ONLY": 3, "PARKED": 7},
+  "strictCompletionTypecheck": "PASSED",
+  "changedScriptEslint": "PASSED",
+  "offlineSeedValidation": {"passed": true, "errors": 0, "logSha256": "6effdd225b439eba6bdf8811a2fac9c4c4fd7a8100dece5a0fbff1d0b427cd2e"},
+  "fullRegression": {"passed": true, "testFiles": 210, "tests": 3837, "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-026/regression.log", "sha256": "5027b443d7409ed0bf6eda19d55f8daf9cf39ed6b6c51814466d07ea23c07150"},
+  "publicationScan": {"changedFilesBeforeThisReport": 62, "secretFindings": 0, "newRedactions": 0},
+  "diffCheck": "Authored files passed. Raw primary-source HTML whitespace is preserved byte-for-byte and is excluded only from formatting checks, never hash or secret checks.",
+  "completionClaim": false,
+  "remainingGates": ["protected PR and required GitHub checks", "exact canonical Git-integrated production SHA", "complete after-images and seed parity", "API, redirects, ownership, citations and individually inspected rendered cards", "durable source outcome bookkeeping"]
+}
