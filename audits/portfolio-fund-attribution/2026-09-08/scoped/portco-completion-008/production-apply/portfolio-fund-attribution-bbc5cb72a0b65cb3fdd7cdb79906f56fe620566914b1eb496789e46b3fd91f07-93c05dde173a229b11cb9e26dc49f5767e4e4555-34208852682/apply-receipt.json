@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "bbc5cb72a0b65cb3fdd7cdb79906f56fe620566914b1eb496789e46b3fd91f07",
+  "approvalSha256": "7ee9df02a64b68d2e47dda489e7b4b25471765226d7f3bf485624ac3ef137733",
+  "environment": "production",
+  "pipelineRunId": "cmtsgfrhi0000he4xojw9opda",
+  "mutationCount": 4,
+  "changed": 4,
+  "idempotent": false,
+  "beforeFingerprint": "9f82d0dea1d1ba57cfff56778a1416cdfee4e2f35823a9f2d0785e3c525909af",
+  "afterFingerprint": "6b1770dc4ad179c87413c3d8f5f19b0813c3a14d88b2fdc8bc836b797d3ac867",
+  "rows": [
+    {
+      "recordId": "OFA-69B14010FAB9",
+      "ownershipPeriodId": "cmrxpjyv901rzivhejyznedjv",
+      "companyId": "cmrxpjdbm00tyivher2rzd195",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DigitalBridge Equity",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: DigitalBridge | Fund: DigitalBridge Equity | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MTP Mexico Holding B.V.",
+        "attributionConfidence": null,
+        "attributionRationale": "Current issuer filings identify MTP Mexico Holding B.V. as DigitalBridge's 50.00% shareholder. No separate commingled fund is disclosed, so the exact holding vehicle is retained without an inferred fund link."
+      }
+    },
+    {
+      "recordId": "OFA-150326E4BC3E",
+      "ownershipPeriodId": "cmrxpjyvp01s0ivhe4ik2jsqg",
+      "companyId": "cmrxpjdbm00tyivher2rzd195",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MMIF",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Macquarie Asset Management | Fund: MMIF | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MMIT I and MMIT II",
+        "attributionConfidence": null,
+        "attributionRationale": "Current issuer filings disclose Macquarie's aggregate 50.00% interest through MMIT I and MMIT II, split 34.0270% and 15.9730%. The reviewed vehicles are not linked to a matching current Fund Database row."
+      }
+    },
+    {
+      "recordId": "OFA-91160E7050EC",
+      "ownershipPeriodId": "cmte333pi001a2k2b9606fvaf",
+      "companyId": "cmrxpjdcs00u0ivhec2k6lhpt",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Aware Super and DigitalBridge announced Aware's Switch co-investment, and Aware's current infrastructure portfolio continues to list Switch. No separate fund or additive ownership percentage is publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-55FB61B16D3F",
+      "ownershipPeriodId": "cmte333v1001c2k2bt52pzzbx",
+      "companyId": "cmrxpjdcs00u0ivhec2k6lhpt",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The latest comparable ownership schedule reports a 7.0% management rollover interest through parent entities. This is direct management ownership, not an infrastructure fund attribution."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T09:16:03.998Z",
+  "receiptSha256": "a7ac0360313f9fa1bf664e5bf75b6a92f7197f7e80fa8b009247f61d0f54f4e2"
+}
