@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "6d9258df56ee965f6f8ba6c4e768243fe808106251ae8dc552b557d2d7bd83a1",
+  "sourceSnapshotSha256": "822a72623ee87652049ab3c6dd1f476fe379be7aa76a1d3571fd790a9e2bfdbe",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 2,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 3,
+  "mutations": [
+    {
+      "recordId": "OFA-AEA81C9BFA30",
+      "ownershipPeriodId": "cmrxpk3tb01zpivhel7rowy9i",
+      "companyName": "CZ Solar Warren, LLC",
+      "country": "United States",
+      "investmentFirm": "Harrison Street",
+      "currentVehicleName": "Harrison Street",
+      "databaseVehicleName": null,
+      "investmentYear": 2022,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Harrison Street acquired Cincinnati Zoo Solar through its Social Infrastructure Strategy, but the reviewed public sources do not identify a specific fund, managed account, upstream vehicle or ownership percentage."
+      },
+      "evidenceUrls": [
+        "https://harrisonst.com/wp-content/uploads/2025/06/Harrison-Street-Acquires-28-MW-Cincinnati-Solar-Project-Press-Release.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-F6C24C7B3F60",
+      "ownershipPeriodId": "cmti5finb000fwa2b2yfvpsyp",
+      "companyName": "Bear River Midstream",
+      "country": "United States",
+      "investmentFirm": "I Squared Capital",
+      "currentVehicleName": "ISQ Global Infrastructure Fund III, L.P.; Subterra Energy Holdings, LLC / Subterra Energy Borrower, LLC",
+      "databaseVehicleName": "ISQ Global Infrastructure Fund III, L.P.; Subterra Energy Holdings, LLC / Subterra Energy Borrower, LLC",
+      "investmentYear": 2026,
+      "stake": "100% of Belle Butte LLC; Bear River upstream percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ISQ Global Infrastructure Fund III, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Spire's purchase agreement identifies ISQ Global Infrastructure Fund III, L.P. as the buyer fund and equity provider for the Subterra acquisition chain, and the closing filing plus I Squared announcement establish the completed acquisition and Bear River platform launch. The named fund is not yet a curated Fund Database record, so no fund link is created; the disclosed 100% interest applies to Belle Butte LLC and is not promoted to an unsupported Bear River-level percentage."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1126956/000119312526155936/sr-ex10_1.htm",
+        "https://www.sec.gov/Archives/edgar/data/1126956/000119312526290674/sr-20260630.htm",
+        "https://isquaredcapital.com/news/acquisition-spire-storage-assets-bear-river-midstream/"
+      ]
+    },
+    {
+      "recordId": "OFA-CFAB054E7339",
+      "ownershipPeriodId": "cmrxpjrju01gaivheyreqldij",
+      "companyName": "Prospect Power",
+      "country": "United States",
+      "investmentFirm": "ArcLight Capital Partners",
+      "currentVehicleName": "Elevate Renewables / Elevate Infrastructure",
+      "databaseVehicleName": "Elevate Renewables / Elevate Infrastructure",
+      "investmentYear": 2025,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": "ArcLight Energy Partners Fund VII, L.P.",
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": "ArcLight Energy Partners Fund VII, L.P."
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "ArcLight identifies Elevate as an ArcLight Energy Partners Fund VII portfolio platform, and the reviewed transaction sources establish that Elevate acquired Prospect in the December 2025 closing period. The exact project-level percentage is not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://arclight.com/portfolio-services/",
+        "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/",
+        "https://www.ifminvestors.com/news-and-insights/thought-leadership/batteries-in-the-energy-transition/"
+      ]
+    }
+  ],
+  "manifestSha256": "f527b34d1ce81770fb75e3f35ce1f3ca2ec2f9dd6b3a68ef48928be8cce32729"
+}

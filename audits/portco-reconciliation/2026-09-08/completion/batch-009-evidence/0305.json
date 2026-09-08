@@ -1,0 +1,118 @@
+{
+  "companyId": "cmrxpj6j700jfivhen42ptow2",
+  "name": "Prospect Power",
+  "sequence": 305,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0305-prospect-power/attempt-1/research-decision.json",
+      "sha256": "a4ec2ba5691f0043cf061a73b86ada4051f61d2b36d8ce5fc4a2bd3bbd5ae828"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0305-prospect-power/attempt-1/source-verification.json",
+      "sha256": "b9eefd344e2e4a852f6b641bfe38481b4ee7f9c9906fa833a8c6404b6658b142"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0305-prospect-power/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "bae7c488e25087c3d0e67d284dd4dab8c0c5470b5a5c7e67dc0d0dda41994c91"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0305-prospect-power/attempt-1/chatgpt-response-validation.json",
+      "sha256": "f30d096bedc9701d142a74d8d0e14c4a65bc3969aa865d9086b873229d9c35d0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0305-prospect-power/attempt-1/chatgpt-attestation.json",
+      "sha256": "a9a4c223375f3909832df91d8c71584ea0e03791de026a7777c0eca960546d89"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/review.json",
+      "sha256": "41beff6725553727e9ad5f4b73e5c9d621ec0696304830ca82146b727f54d12a"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjrju01gaivheyreqldij",
+      "seedRecordId": "OFA-CFAB054E7339",
+      "expectedSeedSha256": "7d4dc761b08589d77dca29f9c53f1bd35a40fdfa2e90a0ac761c6a53fe4b80f2",
+      "expectedOwnerSha256": "3897f81270f14900cec49afe28eb7114cbe63db03c0b0c0a4353a24498d2f5fd",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "ArcLight identifies Elevate as an ArcLight Energy Partners Fund VII portfolio platform, and the reviewed transaction sources establish that Elevate acquired Prospect in the December 2025 closing period. The exact project-level percentage is not publicly disclosed.",
+        "linkedFundName": "ArcLight Energy Partners Fund VII, L.P."
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Read ArcLight's substantive ADS Portfolio Showcase identifying Elevate Renewables as Fund VII's portfolio company, Swift Current's January 15, 2026 completed-sale release, and IFM's statement that Prospect was sold in December 2025. Replace generic Elevate/ArcLight attributed name with exact already-linked ArcLight Energy Partners Fund VII, L.P.; preserve the project stake as unknown. Former IFM's specific fund remains genuinely unavailable in the original research, so preserve that inactive UNRESOLVED period and all identity, vehicle and date fields.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/prospect-arclight.html",
+          "sha256": "14384e528711e0a6b9dc3d60276661cf896017710496ad0aa3d49d4eec8ecf6e",
+          "url": "https://arclight.com/portfolio-services/",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/prospect-sale.html",
+          "sha256": "7e6718d4f70aef4ce24b97dea6b711b652241d22c182a8da125ccfe4890cd0c3",
+          "url": "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/prospect-ifm.html",
+          "sha256": "11bffbc59452a8a1ed4e9749839a4f48c22938f10a8f8cb56ca9e6e2e187cae8",
+          "url": "https://www.ifminvestors.com/news-and-insights/thought-leadership/batteries-in-the-energy-transition/",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmrxpjrkd01gbivhepnv27o1y"
+  ],
+  "issue": null,
+  "expectedImageSemanticSha256": "0b77533fb8f7b71435b37b8cdbfccb2e8564639f5216a98c7ce3a1731879f013",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjrju01gaivheyreqldij",
+      "sha256": "3897f81270f14900cec49afe28eb7114cbe63db03c0b0c0a4353a24498d2f5fd"
+    },
+    {
+      "ownerId": "cmrxpjrkd01gbivhepnv27o1y",
+      "sha256": "365226def7a48951d8b4264c424c3bbb62a60cd802ba21a08aab92ecdc464e72"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0305-prospect-power-v2/proposal.json",
+      "sha256": "41b207a7ea8421333f2902ed232d43fb4011e662131fd26108e031948eb9b916"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0305-prospect-power-v2.json",
+      "sha256": "c479ac32fd43fcef190b9a2751549fdf7fb929650214dfb3437c7a8acbaee3bc"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0302-0306-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "8ba390d4d8e48171d5fd6886aa7e1621094a0b70639e8a66db8ae77197e4942f",
+      "memberIndex": 2
+    },
+    "receiptSha256": "83e2a8d7c0c7a5c13ef77eedfa92cc3af4c5107aed8a05d09899aedc0fe9c2aa"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/prospect-arclight.html.capture.json",
+      "sha256": "7442edcdaf14d89a232f59386f2e39dfda254501875e2dee76a1d277ff360aaf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/prospect-sale.html.capture.json",
+      "sha256": "6448c4659e9dd008b6675542c28a605295a05731249750cfa0a57abbda4c6024"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-009-evidence/prospect-ifm.html.capture.json",
+      "sha256": "6fcbe16a1dfc10901ec95cea528fec6bbfd35deb46bdcb62e9af71ab5ce37d5e"
+    }
+  ]
+}
