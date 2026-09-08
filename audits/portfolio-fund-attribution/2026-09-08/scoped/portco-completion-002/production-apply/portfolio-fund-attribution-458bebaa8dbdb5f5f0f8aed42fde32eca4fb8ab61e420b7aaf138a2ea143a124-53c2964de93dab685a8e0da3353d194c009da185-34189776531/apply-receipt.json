@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "458bebaa8dbdb5f5f0f8aed42fde32eca4fb8ab61e420b7aaf138a2ea143a124",
+  "approvalSha256": "685a34e178e5bbe271003fc87a432fac739f8145c1743c44ce97e61d4e69767b",
+  "environment": "production",
+  "pipelineRunId": "cmts7t6z20000g54xlvvivcno",
+  "mutationCount": 22,
+  "changed": 22,
+  "idempotent": false,
+  "beforeFingerprint": "9a94a84192056df7d14bd9ab4f7b4f26afd51e2d7c3056ac205a66d17654d636",
+  "afterFingerprint": "e26f682cfba7c07d822d1f432c53648f8e70aee12c4c8d9acfcd314561813767",
+  "rows": [
+    {
+      "recordId": "OFA-03DCA6090529",
+      "ownershipPeriodId": "cmrxpjslx01hxivhery0xa53f",
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "AustralianSuper Infrastructure Portfolio",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AustralianSuper Infrastructure Portfolio",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DataBank's October 2024 announcement identifies AustralianSuper's retirement-savings investment and global real-assets portfolio. This supports pension-program attribution, not a separately disclosed AustralianSuper Infrastructure Portfolio fund or an inferred legal holding affiliate. The precise significant-minority percentage remains unavailable."
+      }
+    },
+    {
+      "recordId": "OFA-B83EF29EAE12",
+      "ownershipPeriodId": "cmrxpjsmy01hzivhez2e7jdnj",
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "DigitalBridge Partners, LP",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "DigitalBridge Partners, LP",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, investment predates reported close by 2 years; pre-close deployment is plausible, North America-relevant mandate; next candidate trails by 43.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DigitalBridge's January 30, 2025 issuer release explicitly describes its retained 7.8% position as a corporate balance-sheet investment, not DigitalBridge Partners, LP. Its December 2019 balance-sheet entry is distinct from the existing 2016 sponsor-entry year, which is preserved. This attribution review does not establish a new legal holding vehicle or closing date."
+      }
+    },
+    {
+      "recordId": "OFA-8CBE74D0871F",
+      "ownershipPeriodId": "cmsydgkjw000ib46h70jf5jhl",
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DataBank's August 30, 2022 closing release identifies Northleaf among the four-manager consortium acquiring a combined 35%. It does not identify Northleaf's underlying fund, holding entity or individual share. Northleaf NEIF is not inferred from a manager match; the precise fund and individual-share exceptions are preserved."
+      }
+    },
+    {
+      "recordId": "OFA-07E4341A4708",
+      "ownershipPeriodId": "cmsydgkmw000jb46hyotidjx9",
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DataBank's August 30, 2022 closing release identifies Ardian among the four-manager consortium acquiring a combined 35%. Neither that release nor the investor roster identifies the underlying Ardian fund or its individual share. AAIF V is not inferred from manager, geography or vintage; the precise exceptions remain."
+      }
+    },
+    {
+      "recordId": "OFA-DA47514092BE",
+      "ownershipPeriodId": "cmsydgkpw000kb46hpgan1qz3",
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DataBank's investor roster identifies CBRE Caledon and describes its fund and separate-account client business, without allocating DataBank to a named fund or account. Preserve the existing CBRE Investment Management association without inferring CBRE GIF, a holding entity, entry year or percentage."
+      }
+    },
+    {
+      "recordId": "OFA-03A4A9DE1EAA",
+      "ownershipPeriodId": "cmrxpjsli01hwivhe5k0u55ih",
+      "companyId": "cmrxpjcnm00syivhep9wizt9q",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "AustralianSuper Infrastructure Portfolio",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AustralianSuper Infrastructure Portfolio",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "AustralianSuper's December 17, 2020 release identifies its 25% Chesapeake investment as direct infrastructure ownership for retirement-fund members. Classify the pension's own infrastructure program as DIRECT_PROGRAM, not an inferred third-party fund. AustralianSuper Infrastructure Portfolio is a portfolio label, not a disclosed deal-specific fund or legal holding vehicle. Preserve the approved 2021 entry and undisclosed SPV."
+      }
+    },
+    {
+      "recordId": "OFA-51C1667D08B1",
+      "ownershipPeriodId": "cmrxpjy4z01qwivhe6vb1btix",
+      "companyId": "cmrxpjcnm00syivhep9wizt9q",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Real Assets (Infrastructure)",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: CPP Investments | Fund: Real Assets (Infrastructure) | Ownership Interest: 15% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CPP Investments' December 16, 2020 release identifies its 15% Chesapeake investment within the infrastructure portfolio managed for Canada Pension Plan contributors and beneficiaries. Classify this direct pension investment as DIRECT_PROGRAM, not a separately disclosed third-party fund. Real Assets (Infrastructure) is the preserved strategy/vehicle label; no deal-specific SPV is disclosed. Preserve the approved 2021 entry."
+      }
+    },
+    {
+      "recordId": "OFA-21744437AC3C",
+      "ownershipPeriodId": "cmsyqdden000dgy6hngggcvdk",
+      "companyId": "cmrxpj86h00lzivhe009kcwjc",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Extendicare's Q2 2026 MD&A identifies its own 15% managed interest in Axium Extendicare LTC II LP, accounted for as an equity-method corporate investment. Classify this operating-company joint-venture interest as DIRECT_PROGRAM, not a disclosed third-party fund. Preserve the legal JV vehicle, 2023 entry and 15% managed-interest qualification; management fees are separate from ownership."
+      }
+    },
+    {
+      "recordId": "OFA-0608648B2EFC",
+      "ownershipPeriodId": "cmrxpjsok01i2ivhex4m45yih",
+      "companyId": "cmrxpj7m000l1ivhezpjsd4h1",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Reviewed evidence identifies AIC II as the disclosed fund for the Aster vehicle, but that fund is not yet present in the curated fund database. The ownership period remains unlinked pending separate fund review."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "AIC II",
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's 2022 ESG report explicitly identifies AgeCare (Axium Aster, AIC II) on page 40 and identifies AIC II as a country-level fund on pages 24 and 39. Record the disclosed AIC II label without expanding its legal name or creating a fund link. The report is as of December 31, 2022; it does not allocate Bloom to AIC II or establish a new September 2026 fund transaction. Preserve Aster Joint Venture Limited Partnership, 2020 entry and the qualified current-versus-entry stake."
+      }
+    },
+    {
+      "recordId": "OFA-12909CD4862F",
+      "ownershipPeriodId": "cmsyv921z0006e36h8wvsbdhd",
+      "companyId": "cmrxpj7m000l1ivhezpjsd4h1",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's exact Aster & Bloom portfolio panel identifies its ownership of two separate portfolios but does not identify the underlying fund for Bloom. Preserve Bloom Limited Partnership as the legal holding vehicle and retain unlinked UNRESOLVED attribution. AIC II is explicitly associated with Aster in the 2022 ESG report, not with Bloom; neither shared management nor a neighboring asset or generic AxInfra Fund I-IV record establishes Bloom's fund."
+      }
+    },
+    {
+      "recordId": "OFA-3774D0005579",
+      "ownershipPeriodId": "cmsyv922o0008e36hzrpvjgx4",
+      "companyId": "cmrxpj7m000l1ivhezpjsd4h1",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's January 8, 2020 formation release identifies AgeCare's retained equity in the Aster partnership separately from its role operating the facilities. Classify AgeCare's operating-company joint-venture investment as unlinked DIRECT_PROGRAM, not an undisclosed third-party fund. Preserve the canonical 7.5% current (20% at 2020 entry) qualification, 2020 entry and Aster Joint Venture Limited Partnership vehicle; the current portfolio panel corroborates AgeCare's minority equity in both portfolios."
+      }
+    },
+    {
+      "recordId": "OFA-B4AB46D0382D",
+      "ownershipPeriodId": "cmsyv922x0009e36hgi0oh55o",
+      "companyId": "cmrxpj7m000l1ivhezpjsd4h1",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Goodmans, acting for Revera, reports the August 22, 2022 sale of Revera's 15% interest in certain Alberta and British Columbia homes to AgeCare for joint ownership with Axium. Classify AgeCare's corporate joint-venture equity as unlinked DIRECT_PROGRAM, separately from its operator role. Preserve Bloom Limited Partnership, 2022 entry and the exact 7.5% current / acquired 15% historical stake qualification; do not turn the historical acquired interest into the current percentage."
+      }
+    },
+    {
+      "recordId": "OFA-EAE85C54365C",
+      "ownershipPeriodId": "cmrxpjt0n01imivheii10kfbf",
+      "companyId": "cmrxpjcxf00tcivhevo1ton8u",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Axium Infrastructure Canada II L.P",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Axium Infrastructure | Fund: Axium Infrastructure Canada II L.P. | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Axium Infrastructure Canada II L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's May 2016 financial-close release explicitly names Axium Infrastructure Canada II L.P. as an equity sponsor of Etobicoke Healthcare Partnership and identifies Axium Infrastructure Inc. as its fund manager. Preserve the exact disclosed fund name, including the final period, without creating a curated Fund row or substituting generic AxInfra Fund I-IV. Retain the canonical legal vehicle, 2016 entry and unavailable sponsor percentage; this dated disclosure does not establish a new September 2026 ownership event."
+      }
+    },
+    {
+      "recordId": "OFA-4AC0C8501926",
+      "ownershipPeriodId": "cmsz53jmp000gdt6h4220bl99",
+      "companyId": "cmsz53i1l0000dt6h9gk6sej6",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Fiera Axium Infrastructure Canada II L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Axium's March 6, 2015 acquisition release explicitly names Fiera Axium Infrastructure Canada II L.P. as a member of the consortium acquiring Montreal Gateway Terminals Partnership and identifies its infrastructure fund manager. Preserve that exact dated disclosed fund name without creating a curated Fund row or substituting generic AxInfra Fund I-IV. The consortium acquired 100%, not Axium individually; retain the unavailable Axium-specific percentage, canonical legal vehicle and 2015 entry. This disclosure does not establish a new September 2026 ownership event or the current stakes of other consortium members."
+      }
+    },
+    {
+      "recordId": "OFA-C2BCBE65BD0B",
+      "ownershipPeriodId": "cmrxpk6nt0244ivhetvms2jd6",
+      "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Macquarie Infrastructure Partners III",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Macquarie Infrastructure Partners III",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2014 is 2 years before investment, North America-relevant mandate; next candidate trails by 15.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "Macquarie Infrastructure Partners III",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Infrastructure Partners III",
+        "attributionConfidence": null,
+        "attributionRationale": "Cleco's April 13, 2016 closing disclosure expressly identifies Macquarie Infrastructure Partners III, L.P. as providing transaction funding alongside the other consortium investors. The March 29, 2017 prospectus identifies MIP Cleco Partners L.P. as the consortium member affiliated with MIP III, and defines MIP III collectively to include its PV partnership. Preserve the existing MIP III fund link and MIP Cleco Partners L.P. legal vehicle; no split or allocation between parallel partnerships or new September 2026 ownership event is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-71C920291F6F",
+      "ownershipPeriodId": "cmrxpk6od0245ivhe8mp691um",
+      "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Manulife Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Manulife Investment Management | Fund: Manulife Infrastructure Fund I | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The March 29, 2017 Cleco prospectus identifies John Hancock Life Insurance Company (U.S.A.) in its Investors definition and describes John Hancock Financial as part of Manulife. It does not identify Manulife Infrastructure Fund I as the underlying investor. Preserve the disclosed insurer vehicle and current unlinked fund state, but remove the unsupported specific-fund assertion. The reviewed evidence does not resolve allocation between insurer capital and any underlying client fund; do not infer a direct-program classification, fund, stake or new ownership event."
+      }
+    },
+    {
+      "recordId": "OFA-DD94B87AFDC9",
+      "ownershipPeriodId": "cmrxpk6re0246ivhen4ze6pdf",
+      "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Infrastructure & Renewable Resources",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure & Renewable Resources",
+        "attributionConfidence": null,
+        "attributionRationale": "Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BCI's combined Infrastructure and Renewable Resources financial statements for the year ended December 31, 2024 describe a program comprising several funds and structured entities, not one legal investment entity. Note 7 reports Cleco Corporation as an investment held through intermediary corporations. This supports program attribution, not a particular constituent fund or allocation to a named Bolsena vehicle. Preserve bcIMC Como Investment LP and the existing owner identity; no current percentage or September 2026 ownership event is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-436579DE7AF5",
+      "ownershipPeriodId": "cmrxpjtuf01jzivhepih49uhp",
+      "companyId": "cmrxpj8mm00mpivhecizreyp5",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: PSP Investments | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Supplemental detail states the fund was not publicly disclosed."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "PSP's August 9, 2018 affiliation announcement classifies the investment under Natural Resources and describes PSP's long-term TimberWest investment. It supports mandate-level attribution, not a named legal fund. The reviewed statutory report separately identifies BCI and PSP as ultimate owners. Preserve the existing PSP owner and mandate vehicle with exact legal fund and published percentage unavailable; neither the 2018 conditional announcement nor a residual calculation proves a new ownership event or disclosed stake."
+      }
+    },
+    {
+      "recordId": "OFA-66D69D686558",
+      "ownershipPeriodId": "cmrxpjtv101k0ivhec6b6y0bg",
+      "companyId": "cmrxpj8mm00mpivhecizreyp5",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Infrastructure & Renewable Resources",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure & Renewable Resources",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: British Columbia Investment Management Corporation (BCI) | Fund: Infrastructure & Renewable Resources | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BCI's combined Infrastructure and Renewable Resources statements identify a program comprising several constituent funds and structured entities, not a legal entity. Note 7 reports Mosaic LP held through intermediary corporations and 56.1% in the 2025 and 2024 columns; it does not allocate Mosaic to a named constituent fund. Preserve the BCI organization and existing holding-vehicle limitation, using program attribution without a linked legal fund. The report covers December 31, 2025; do not infer September 2026 ownership."
+      }
+    },
+    {
+      "recordId": "OFA-80176364D654",
+      "ownershipPeriodId": "cmrxpjtvk01k1ivhe0phin08t",
+      "companyId": "cmrxpj8n500mqivhe8jt4n9mw",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Infrastructure Investments Fund (IIF)",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure Investments Fund (IIF)",
+        "attributionConfidence": null,
+        "attributionRationale": "Seed milestones or source evidence explicitly name the current fund vehicle."
+      },
+      "after": {
+        "linkedFundName": "Infrastructure Investments Fund (IIF)",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure Investments Fund (IIF)",
+        "attributionConfidence": null,
+        "attributionRationale": "Filed Tennessee testimony explicitly identifies Infrastructure Investments Fund (IIF) as the investor through IIF Subway Investment LP. The separate CPUC appendix supplies the proposed holding-company chain, and the April 2, 2024 company release confirms closing on April 1. Retain disclosed IIF attribution, the exact existing vehicle and 37.5% indirect stake without treating a calculated indirect percentage as a separately published direct share or making a new September 2026 ownership claim."
+      }
+    },
+    {
+      "recordId": "OFA-0FA6F5493747",
+      "ownershipPeriodId": "cmrxpjtw401k2ivhe8o927nx7",
+      "companyId": "cmrxpj8n500mqivhe8jt4n9mw",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Infrastructure & Renewable Resources",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Infrastructure & Renewable Resources",
+        "attributionConfidence": null,
+        "attributionRationale": "Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BCI's 2025 combined Infrastructure and Renewable Resources statements define a program, not a legal entity, and report Nexus Water Group through intermediary holding corporations at 50.0% in 2025 and 2024. They do not allocate Nexus to a named constituent fund. Preserve the BCI organization, Corix affiliate vehicle and dated stake; use unlinked DIRECT_PROGRAM with no invented Bolsena or other legal-fund allocation."
+      }
+    },
+    {
+      "recordId": "OFA-FB004BCB75BC",
+      "ownershipPeriodId": "cmt5g4daz000mxryya5zuuoee",
+      "companyId": "cmrxpj8n500mqivhe8jt4n9mw",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Filed Tennessee testimony identifies Bazos CIV, L.P. as indirectly owned by Munich Re; MEAG's June 15, 2018 release separately confirms its managed indirect SouthWest investment closed June 14. The CPUC holding-company appendix and existing canonical Nexus receipt bind the continuation, not a new 2018 Nexus ownership period. Attribute the identified Munich Re capital managed by MEAG as DIRECT_PROGRAM, without inventing a named MEAG fund, and preserve the existing 12.5% indirect stake limitation."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T05:14:32.338Z",
+  "receiptSha256": "e594879256ab81349a5895343ffd58b62ab3a2fa2f9c04ac0540b585735f2f8c"
+}

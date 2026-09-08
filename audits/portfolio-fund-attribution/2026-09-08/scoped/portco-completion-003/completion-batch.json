@@ -1,0 +1,2601 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_BATCH",
+  "batchId": "portco-completion-003",
+  "baseCommit": "53c2964de93dab685a8e0da3353d194c009da185",
+  "asOfDate": "2026-09-08",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "sourceLedgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "progressSha256": "954c09612238b502042c53056d0e6e5573da898df2afec377f35a214d77d0817",
+  "seedManifestSha256": "0f7085755565f1b7e2a1b1622f225c3e8c93ead02208d9b3ddeaf8fb4d8cfe1e",
+  "snapshotSha256": "a19e95f04349830f32eb67daac2737e86dbd284017c40d546acac243db04dae4",
+  "targetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0001-amwaste-llc-v4.json",
+      "sha256": "4193b6d49cf895480b29519ac00517bfc9e24e9b4ef30302598026ea6dff1d2f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0002-ec-waste-v1.json",
+      "sha256": "25cb8d638a606be548ddbcdfd0db068e866b04b4f9bb379abf12218fc965b45b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0003-regional-rail-llc-v3.json",
+      "sha256": "1918be9040ac0d0025916bf6b98a896ba09d724340689f24f83aaf302ac9dd3c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0017-durham-region-courthouse-v3.json",
+      "sha256": "0d3a26b77be20ea2047ecb84d6e46920690f7bd90f6b662a29f0cd92e6012f8e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0062-usd-clean-fuels-v1.json",
+      "sha256": "ec8bc9f8be0ffbd4f31b08f8bb087c56f6b29f9ea73274e56945b1b7ae5a7e6b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0066-chief-power-v2.json",
+      "sha256": "0297eb270242150b11dd0bdc81564784d762f56bd9492ffa6d6408209e4f397e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0079-orca-v1.json",
+      "sha256": "c77bd241e68c856f773c487464cbea13b11f276f771e8bfbe05c17f3d1c89b1b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0081-pike-holdings-transmontaigne-partners-llc-v1.json",
+      "sha256": "9c76717679774f27d8e65faeb662244ac3a9e821d789f362ac10da919f6d8f83"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0091-rover-pipeline-v2.json",
+      "sha256": "333e974334b37a7203055b7fc0fec95c700cc2df0ef23494cc616082d63b306e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0109-virginia-international-gateway-v2.json",
+      "sha256": "f08abc00b1836d418b8d00a6954b2fe43d4f64d8eb67d1dbefe1d399364f039f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0110-databank-v1.json",
+      "sha256": "362657e3c7982b6087588ace8e5b43c4710b21b6c3f09c4facff7ff2eccb4cc2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0112-transurban-chesapeake-v1.json",
+      "sha256": "ebd62cc5b306272e0b2035cff118f627c9ba042a4eda7a77a368c862b6fc64bc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0113-arbour-heights-v2.json",
+      "sha256": "47f03083cab24f14d2579320483fa9261fff9fa0808f749906063c68598093a0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0114-axium-aster-and-axium-bloom-v1.json",
+      "sha256": "d74f9bf8c4d71aed7ed8d4e4a1886b643a79b1c5d0c1c31e7c9da82434d5802e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0117-etobicoke-general-hospital-phase-1-patient-tower-v2.json",
+      "sha256": "674bbcc2098783247d081970f65ee567dde2218dad62fe73c4efe826e7dbb07c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0118-montreal-gateway-terminals-v2.json",
+      "sha256": "d6f1156d86225e7f4a46a7300e267f6bcecd26493bd880e861ba9607626a0c13"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0121-r-e-l-a-m-v1.json",
+      "sha256": "cc25a8c8f719c9dd88f152ac8ceafc3004421172a93931d899a81ead0d65c4ef"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0122-cleco-corporate-holdings-llc-v1.json",
+      "sha256": "77816845f43fe493977bbf8ca1098b22da5747f5ca61333374d9d7b488461c20"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0126-mosaic-forest-management-v1.json",
+      "sha256": "23c910c5a088a65e3b456f1ac57ef2ce5ac036c8a534f8eeaf2a9898d710e390"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0127-nexus-water-group-v1.json",
+      "sha256": "5b5f88bde3ae1c1592d5edfafccd757d99d8da21ec36f7fca80fba1f27f50e87"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0128-puget-energy-v1.json",
+      "sha256": "25c62e13a004b42580a3c70da2c3a9bb9422d58c2e4b2a786caa015f272f2c0d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0132-aligned-data-centers-v1.json",
+      "sha256": "b99c9f8406974a2fac4f8497dd49dcc9f5a9fc0c625a4fa3e36953f102441f48"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0133-allete-inc-v1.json",
+      "sha256": "3bff36f0954caab585b35a3da359deb340c433dc2bf51abf67f10a05cf44573a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0135-bluepoint-wind-v1.json",
+      "sha256": "4c87f70459f84f888c5e215b50edc81f9e3aefeeee74493b6448b237dc1823ed"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0137-clearway-energy-group-v2.json",
+      "sha256": "bd4b14390d303e0a9ae097774b950c49dc58fbf7422ac14b011fc953cfb086b1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0140-environmental-360-solutions-v1.json",
+      "sha256": "31bf39d941a461ce860f3af81508ea2651115fc77b60b17be527bfdf0af1c029"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0141-eolian-v1.json",
+      "sha256": "00772553bc7bb0884c78c27f232d74b347ae83cd37e8b71a3a7a39e7ec5ea36d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0142-lighthouse-v1.json",
+      "sha256": "ddfe53e50cd1b532593ab10ab35e7ab406f8b6be62e7a181f29b11dd482cedc8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0143-gigapower-v1.json",
+      "sha256": "b8063612e14a1cb87f0ac9b05207b1098130bf29d817c69622c669e4b64cbd2d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0148-national-renewable-solutions-v3.json",
+      "sha256": "96203e0ddaf1eceaebada1ebb64cf899a14043695ae4ec57cacb943978bf70ac"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/recoveries/0001-amwaste/apply-receipt.json",
+      "sha256": "6b335b36fa4d004b318313bd323be211aa2af7a3ba59e77e9e0a705728f0c249"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0002-ec-waste/production-apply/apply-receipt.json",
+      "sha256": "ab93bd6d0e6548a203dbade40bd0df162d801efe2148d840a9e481d0258c6665"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0003-regional-rail-llc/production-apply/apply-receipt.json",
+      "sha256": "554ac44c386d61802616bf67016a2b18074e9dcf98b12ffe5b20c756740c3dc0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0017-durham-region-courthouse/attempt-3/production-apply/apply-receipt.json",
+      "sha256": "01eaa60e71e3d60d0975c2f2942ef90bf390b4ab66bc876b1da65a2f5b314448"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0017-durham-region-courthouse/research-decision.json",
+      "sha256": "c7afd68ef25d87eb708f1f701bfddf036b4615e4ef5f611fbaf4ae4e05a53340"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0062-usd-clean-fuels/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "4fac8f252962a2fcf139b67b711faa5f3de550197d058059133a69adc2d9b27e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0062-usd-clean-fuels/research-decision.json",
+      "sha256": "7c73040e3dca8d60ed769f57ad55cef953de035235be8bcd8e19f75475a5c293"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/context.json",
+      "sha256": "3c5459d73df83f2677dafd81ad6c04860089e5e6a47a50563008b40dba91c32f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "9aec66606bce0d74af8e8a7604a45df1ef3390193003c45602e20f8968c01f63"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/proposal-spec.json",
+      "sha256": "7b273f72200ee1ae91e6c632224f824952cac2d23f922be1f0a1a0838e0f4965"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0066-chief-power/attempt-2/task-snapshot.json",
+      "sha256": "27326b0df96a21955fe81bb1aa7d761b55e3c91cfd261edd3ce6b79159574fda"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-attestation.json",
+      "sha256": "8cf1030df890abad50df10dd6c3a41b24b493b56807d091273e289d8fb47f86c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-complete-transcript.txt",
+      "sha256": "82b14371e020ac77a9ccb614d6a4cf48e4c53f4878d40afe14486115d5c6cd87"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-initial-response.json",
+      "sha256": "c285c6bee285ed6a30e1aa2729c3e974bffb1e25492116dfd87f3a7130439ab0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-repair-response.json",
+      "sha256": "1a2594644169b69ffb698fbaf0b2bb35a8ee4b0359e7addce007f7906d4aed62"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "90fd64ddc1ab8c4bf1e42beb80925833413c3c8f44b692794540af11c558edf3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-response-validation.json",
+      "sha256": "7c4a7aaf88275264ad497e90741480f2d22f83fdd4b4c2a79ac6e079b4d54a45"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-response.txt",
+      "sha256": "68d52c3edfab9d16bec3f767dd386970f2a7ffa0d93ef3b1746628a60e80d853"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/chatgpt-transcript.txt",
+      "sha256": "f44b2ee856dfc03fc0a6b94441ae2ec5d2d9923478616b7072d8c4091460d333"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/context.json",
+      "sha256": "6e34ab2f57e8473a4a881eebebb4d3ab40d7479d88b87f18200001d715ae9d90"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/locked-production-snapshot.json",
+      "sha256": "6f4cccd20173c3315e37f80e8dc8caf6e1d2bee2f6b339b170731de12c8eaa8c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/locked-task-snapshot.json",
+      "sha256": "7df02abbb1277c21481ec23e854b2fa6c548ea83b34b193754d5d1f875496db2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "501381c5e92663c6f10713a8faa564f99fa664f8932077b9e800ae6cd765ecca"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/proposal-spec.json",
+      "sha256": "8b6c2fd746d6f2a8858d81a3327626db829c140a87acd7ea2781c307c8436ab1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/repair-prompt.md",
+      "sha256": "73970d2e9a17bd1c4d42533b3f27ac2e5dcfd52c77595f7704c946207199dad7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/research-decision.json",
+      "sha256": "2772fd56c27f73c9aea272f1978bfcb21aa3a3ea673c35eceb54ed82c7cff5b8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/research-decision.md",
+      "sha256": "d0be7cc7187c91ac77f9cd810835b058f2e1239fa32e40ff11232f2b01e84ba4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/research-prompt.md",
+      "sha256": "0cde84d85d35d9b7b405dd34b9392a40505246d72c6a9fa9ffaff5f89b36c158"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/source-verification.json",
+      "sha256": "19429f38dfc5ff5b51d7cb861709a880b8a13bcdb45b57d5f4fd6fe8fdad8e42"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0079-orca/attempt-1/task-snapshot.json",
+      "sha256": "526a216f8b338834b10f302005165dfa5ebc246e4330099ed631320a6b29763e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-attestation.json",
+      "sha256": "948fd02cc6f99ae57816d424b9c1f5f9648353f5a557a490bdbb68bf1a49bf1e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-complete-transcript.txt",
+      "sha256": "5a01e91786e04258a5171542bd2a1cebf3b7db3dda2981696a94595646a0d311"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-initial-response.json",
+      "sha256": "914e7fd918dddafaa7c442b3403f4464713eeba8df0e2ac553e3ef0de5c5665c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-repair-response.json",
+      "sha256": "ee7251b9a9bda446eda3752b6dd0d2276854d15788dbe944f07a8088baea773b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "ee7251b9a9bda446eda3752b6dd0d2276854d15788dbe944f07a8088baea773b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-response-validation.json",
+      "sha256": "14ee14225b33a14831a0e5380c82115fb5e4df70946f34ff7e64b29be1c50867"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-response.txt",
+      "sha256": "4ab938279fabfcf89033f53f2eacbac1b8f1d01c712f3fa993754fb9d86cccd4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/chatgpt-transcript.txt",
+      "sha256": "c036f7e26377a8570cfdac7c37d7552ed0bdf6761adb5ac0db053cbfa83a3c41"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/context.json",
+      "sha256": "c6666df53b0b06c517a65d74e90c657bbe7ea057cfd11f4fea6e2999584733e9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/locked-production-snapshot.json",
+      "sha256": "e9c858ecf4c8aacda5568133fbf3b527f287f9bd24e12f1f8c958415c8ff7b87"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/locked-task-snapshot.json",
+      "sha256": "c465e1b986f6fe660d9a1d7dd6f20fc5baeae34a12519c59044a723d12ed69f5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "1c91ec791e338cb1590ec236af9656ff82ae7d7ec83a81304b9343856143074c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/proposal-spec.json",
+      "sha256": "4034b63e8385e3e6c3c07a832ee4c1e3079c64cc3d32a3605b87cef22b8eea2f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/repair-prompt.md",
+      "sha256": "b0c18605e96e91b0dbb7827284253ae5134e0308cc4a72202639bb92f8813529"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/research-decision.json",
+      "sha256": "cc34409694159bc0784bd5249b6ad47003609f68aaed3211e44842c28618d0d4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/research-decision.md",
+      "sha256": "0e7863ad3496f4327ac4c1476bc537e0dca9f09ed9e718dfcd38ce6174c9fc3b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/research-prompt.md",
+      "sha256": "51535e7cce753bcb2cf613ed514297fd09800f63e5966659c970102e5ab785f8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/source-verification.json",
+      "sha256": "abed5d7dceabb5d680fcba10766617298dd397022876e052075d60d40d39d957"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0081-pike-holdings/attempt-1/task-snapshot.json",
+      "sha256": "5b50dcde7780a788e82ac36a41cc3b5bba3e2d327c1956f121a2d3abf5ff67c5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-attestation.json",
+      "sha256": "70536ec3c6af7322c464819ba3e8910fa52a94475a1834359a107aa0a15b6694"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "b3cab0d5497c016271a3de758dd1392feef6ff00d033351b7cdd7a11e9a07546"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-response-validation.json",
+      "sha256": "e36b6f2259355d2364b3c0a87705669340d47514322db8d8758dd6468ddad660"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-response.txt",
+      "sha256": "b3cab0d5497c016271a3de758dd1392feef6ff00d033351b7cdd7a11e9a07546"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/chatgpt-transcript.txt",
+      "sha256": "61453e12981d541ad2db0ec503369561df97f04fd5a802da84ca49151774bb08"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/context.json",
+      "sha256": "cc0bcc9bd8c0d8c679fcd0e4718ebaa75757f149a3f6bf50073caceac257d07e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/locked-production-snapshot.json",
+      "sha256": "80f5b968a7685c86e5ac6255ee18904778a279590f162c5cd1f15e0fc1016ff6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/locked-task-snapshot.json",
+      "sha256": "4695d11d7f53090c207241db82eababf90de1498eb0db8f6cb94d96dfafdde11"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/proposal-spec.json",
+      "sha256": "a01e11339d2f76ff0f9ed331d5db176ccf1e818c0bd18cde08d255eb45aaaeb8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/research-decision.json",
+      "sha256": "7007619afc804573a5ad59961911c04b239c594b12e36fcf48e4486bbb059257"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/research-decision.md",
+      "sha256": "c57fcd46fada07f16c65ed0dd7feb7ac8b9e8ad836fa8da4b765fc56eb099a47"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/research-prompt.md",
+      "sha256": "688b736096507c05e1ea14f3dc1996fcd83ce82bba1cfabc302938ff2f379fb3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/source-verification.json",
+      "sha256": "6bdc45005ae42c045c8f94b65d5efe791129959bcdceccd3bd4e2c749602b5c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-1/task-snapshot.json",
+      "sha256": "7da7cb41b6402313a9e45b8f2245207f373db7b90c1e539aaff51edd0d195c82"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-2/execution-correction.json",
+      "sha256": "9d4bb9f1cc17cdde15b1da7122baa886a0a84c9298c4ca28df13d522a7393a83"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-2/locked-task-snapshot.json",
+      "sha256": "bf1af3707f5504797b5747e7a42a80a7cb59e2f42476d5cb4a0be8deb992a562"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "83dcb60daabf52a8d25e5341bb7ed221998ad663ed3a2df824981548497dd404"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-attestation.json",
+      "sha256": "72dffe50f3a6cf39663ba782035ef381f526260e0b343c889d3ce51bcb56eae9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "458ade938c109b6533ed7fb2fde1a9fb70be328188e2fd1d85dfe829d86af240"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "9250c9b39abea3b51be484efd14c516bba5ac2cc6884209f3adeeaeee4732841"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-response-validation.json",
+      "sha256": "845a3de56d817add17691e50c8f60ea7f59e9f572b6a81641a073be2cf1cd4af"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/chatgpt-transcript.txt",
+      "sha256": "918b528851bffc710d301529dbcfc3cba15e486996e028e2984d3b817647ce7f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/context.json",
+      "sha256": "c694ce828355ab122d47a1aac13ce09516ba8b8f078f6afe287801247b678ce7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/locked-production-snapshot.json",
+      "sha256": "944b0d1a424b8eaceacaf99092970cd7dc41f42801d1c6f954353fc1a62926df"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/locked-task-snapshot.json",
+      "sha256": "a693220de8a1265f9a2822a5019a63ec8168f699b04061c5d880a0098c170beb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/proposal-spec.json",
+      "sha256": "aa5c58637c5e1b2be1eacd5f76542fba1186a958157e549418889bec419e8228"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/repair-prompt.md",
+      "sha256": "eca4ac7d177696f0c4b4e93373900fa6fede4a9f888e6eda20312563f69582c4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/research-decision.json",
+      "sha256": "bb5c8c60ebed07799d350e06ba550a996705a10512bee06ede27f2a7ab768594"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/research-decision.md",
+      "sha256": "a311f46463abcfc5a6b99a9859e10de4ffebd0d63d9304bcd7f09a649020c701"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/research-prompt.md",
+      "sha256": "1662cfb8cf8c2aefaf80c5ea02dc4dd3347ef0bbda3872ac60a01ea45fb9d9cd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/source-verification.json",
+      "sha256": "0f778bebf82c913b42f0cd9918cd46632794394f0de25b377736599f57c8bc83"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-1/task-snapshot.json",
+      "sha256": "df331ee825bbb2a1784622a77bd54ecb9d2f3ed1b0bb02616f0072376b610a4f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-2/locked-task-snapshot.json",
+      "sha256": "8efbb6d2ff1c44d3b6e2003d9fcbec3d597121393e941f7cc1f6d84c3334d1bd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "48c9ffcd85c7e7299581e7487a1b22805343030cf6fe66497f43843d228cdfa8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0109-virginia-international-gateway/attempt-2/research-binding.json",
+      "sha256": "f6477f284d5510cd01529a43badff98d9195a679d052e3608c3c835d188dc520"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/chatgpt-attestation.json",
+      "sha256": "6370ac7839ea93655514cc6c30eab59fdd5eb1d28cc93d0e8d3176d107c7b464"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "91d2487a661e5604b5cdb97232d50f96697f389645248570ffddec935360530a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/chatgpt-response-validation.json",
+      "sha256": "13a58d735635fa19f67e762049f73c1833f6ca2c3c22675ccdf47334be1ef2da"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "7959d0693b65a890385d68c4350913b70f67c2cf1d83a72c08b30cccd5b46b57"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/research-binding.json",
+      "sha256": "9946f5d0b7337fbfdf152bbced41cf00b2fe4da6d89829671fde119cca03065e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/research-decision.json",
+      "sha256": "a4962225b52b0ab9f3e59903aa68cbf5df95bcbce253183ad7ed63dde9f07d44"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/source-verification.json",
+      "sha256": "78f5af2523cca8ff4f99e3bf591318c36a886ffbecbf771627845ae1e553350e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/chatgpt-attestation.json",
+      "sha256": "f197206e641779ba244da68bed94c9be59f2394b03315cacee1191140bc86aca"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "728951f5687273699fd9f8f22595bd70c511c63085e93682f2e5938341dcaa67"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/chatgpt-response-validation.json",
+      "sha256": "b04faeb1cd6078bc611da42eaf7d6388487802bdc1b93b8df46b05663ef2e0b8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/chatgpt-transcript.txt",
+      "sha256": "bedfe61c885de9b8c1f06eee9b50dfce7d05f0cf4029d4a532eb91eb3b70e305"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/locked-production-snapshot.json",
+      "sha256": "6f5fc70215c11279fc992b58bf635311616a08407c39316c3488cce232d26857"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/locked-task-snapshot.json",
+      "sha256": "b9b2190f674c5c849fb46485c629ba87af0bf0c6e40f239ba1a5ecea6f9e2de8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "99b4a0e0f7b33698d8fb44c9f1bd23c8254b29379491354cabadf2fe00bb59ad"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/research-binding.json",
+      "sha256": "605a41694f0a9fe634a1bfc0e57a005ab79aab0c1f5c44cfd31fe7edb25cd72d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/research-decision.json",
+      "sha256": "e95e5d57282442336843a19142d43a21a60fab642c9dab2e37ee1959376366d7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/research-decision.md",
+      "sha256": "a03b2e6542a6328e973d97e571c94dee1e5c8cf4c29d89bb0c6185d93ce62c29"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/research-prompt.md",
+      "sha256": "ff8ee0acab320ab368df393b47bbf5d60d403926529503de7fbde33421fe31dd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0112-transurban-chesapeake/attempt-1/source-verification.json",
+      "sha256": "222d4b9187759c3ae752d008e7f2decee584c9e515faa1406406e4a1eb0f320e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-attestation.json",
+      "sha256": "3761592272db8855c14481d1230224e6ad5b4c68f7733a091446b1a7043273be"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "c0ea59e64b5043915e5d009b72d9d8c4394d4ff4b3bff327872a1b75591eefca"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "8ea681c87a17ab28ac8240380ae1a19c2bf2268df4519a3a6aa3055b3c13917b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "a8589694001cfc583701b8a2192b363854e07d4713fca1175621402ab1acc6c6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-response-validation.json",
+      "sha256": "3ce4dced8412e760c266b9223b29448660b378ec89c963d2ff6a28c56912784a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-transcript.txt",
+      "sha256": "8cb98659167072117fe5d7e5eb70332a4e4c9b10f9ede036132d6ba9681c19d1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/failed-dry-run-analysis.json",
+      "sha256": "3f3c84805b13cdd58ec6cb4d8e00c2bb553b4050b15bd40a64c7bebb11e1ca25"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/locked-production-snapshot.json",
+      "sha256": "83bc7f9eca966d3c6f108b58b4b11565c5d9e3e2d9f5c91d07723963608f0b47"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/research-binding.json",
+      "sha256": "10b6ac649ee5e315b63025a04e83e6d652bdaf30076968bfda609a554d0c0da2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/research-decision.json",
+      "sha256": "a7839007436f98fff8b23c8f79ee1d51b2ebe3c8a3abbbcb5cf3a71426fc8ef4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/research-decision.md",
+      "sha256": "d8c299b747caf531bee2933a8db202fe10ae0cbbaeafeb7c80b0941c70b4f177"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/research-prompt.md",
+      "sha256": "8543891d8a7b9c49f4f83968ec3effb85d7c83ad73ff2d9aa2c11abeedc1fd38"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/source-verification.json",
+      "sha256": "f9d3fe9898f3b2f3690e53554fa011343ea2c6507b4cd107e8a0957f78ce3358"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-2/locked-task-snapshot.json",
+      "sha256": "c50c9d00482c72797c06fd0e52657666fef83ba43960353832408f282fa39de9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "3a4574987caeabd27380ca9186ecd25ca34457d1fd17a9b85a4d4fce63f397e9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-2/retry-binding.json",
+      "sha256": "a1dee3326cb789ff98e9e49c8d6135b39fa3fde752ed0dd86c6efcb049db5ab2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/chatgpt-attestation.json",
+      "sha256": "c334f52e7f7cbb1b1c4e3d8c9f1e65a94e2a0472c35a2ffb3b952e638c203a60"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "ef2b5cc9a9b4f49fde0cf059884e01b858dc839eaef93a7245d7826533043edc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "207b051d78ca75d01204b64cadf94f6f3adff47bd2beeea2b5db745fbb8ef914"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "847d1488c79c954a261992909e385177a12007e82a93b25510289ea0162fc311"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/chatgpt-response-validation.json",
+      "sha256": "cab0ac4e94a605f08c9ab6d0775d3d0d68e82df7966d42bcc65aabb12101326f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/chatgpt-transcript.txt",
+      "sha256": "50826f2cb1c477a885972e0f34dda7d1a4d36b0a7cf8a46294da7851b27f0a5f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/failed-dry-run-analysis.json",
+      "sha256": "9d93da1c1e921718f0f479b7f209428f13002d287ea72112047d21a5d63b4e18"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/locked-production-snapshot.json",
+      "sha256": "479a0f5d1cb55bf7c31cce766d2158ba012c67a31c9278b4c63956edc479cbdc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/locked-task-snapshot.json",
+      "sha256": "15267ae2ed5b9ff5c4544d70834a98ab8457e9d36f27858553991f383e8c6d88"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "6f4d922b1df7b0efcf02337b43fed199f686278253199b72a56291bcd7e92fdc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/research-binding.json",
+      "sha256": "28bd0ffbaad90358b64c387061da8aadc7e2f18f2bcd468e7d98bf2b3a0b7236"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/research-decision.json",
+      "sha256": "15d1ba2dcae1b498decfb3fecfb888bd25b2eed598288242a6d176522144eb69"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/research-decision.md",
+      "sha256": "54daded9e48d76bc33071507dba7320717eb6befeea97623fe2b94062dfe961f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/research-prompt.md",
+      "sha256": "774777d8e4983d91d7b9fe820b2d26ff26b421d614f54733494823e9c9c05cdb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0114-axium-aster-and-axium-bloom/attempt-1/source-verification.json",
+      "sha256": "e2fc60843b224a2faa2b5148f3b33b338be7c8b2817365f925bce023cebe4556"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/chatgpt-attestation.json",
+      "sha256": "2c87b51a537ac39f08bd87743a0d1e042c9b9cd99a461914fe77da4160c1bacc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "5b23f7baa7a58e14cf487d850f63a30801b656082ac4226df7bd99e362536f2d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/chatgpt-response-validation.json",
+      "sha256": "c8a7151c6ccb0fd4917b6579f115cb7e7e28a7e923286bcc0f7298506aa7883e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/chatgpt-transcript.txt",
+      "sha256": "17a096f139f53dd79c9907d1eb52cf0a6df491e1d4ef1a96e73cd5b80c3e3e31"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/research-decision.json",
+      "sha256": "23afba168db29b98a17ec68f159a33f31736a7af3f5977be85dde3f2413d8ad9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/research-decision.md",
+      "sha256": "8eb078ca9ae8a889226dd57ef9c44435dc81a4b4bf6b6ebe37597375e6e8f50e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/research-prompt.md",
+      "sha256": "674268cad94b4bc77604e15dc2665dbd06ffb492d4fa56df7bc87a7c30af0c65"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-1/source-verification.json",
+      "sha256": "7479cc785ead6c51273e475abb7fa834663fb28b0f1d08e1caf964423fab971b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/locked-production-snapshot.json",
+      "sha256": "100b0533d668d6c26e5455ec013d369219cbc187e3347f1e8861a7a16fcb8cca"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/locked-task-snapshot.json",
+      "sha256": "ee66d96f99f3cc6dd351e745a9660141cdf822e39bd53cef116f4be10b665ff9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "19f062a740dce66cf325f00bedbf7e1ad75e503d9f1d02bf061cecc57271cf39"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0117-etobicoke-general-hospital-phase-1-patient-tower/attempt-2/research-binding.json",
+      "sha256": "b1caa55d3bf1bd673733e3decd80007422aa0868ae3d1d0662fd4037b4e55774"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/chatgpt-attestation.json",
+      "sha256": "78ffb599d1613aa541af0292985c4c11b590fdeb027e18b47f1527072d76fadf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "4ea3c05edd0e331bb9859f4f9ff565cc8af20254db0981be50d74d291a5ea1f8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/chatgpt-response-validation.json",
+      "sha256": "43bd0a23bb76688a5419f124ff95c5ecaae709ba4bf847450c3ddfb0b5fed350"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/chatgpt-transcript.txt",
+      "sha256": "3c4e3c9dd17cc0dacc948975c852183acbb9908a4425e78347380ea84a77ec0d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "6fc810709365dc9e6379bdd6ea4138f84878a2bd39eccdcca5ea1594a6772ac4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/research-decision.json",
+      "sha256": "12cbd9295a04371258595a6299ddebbba9950085c3fa20a4663cc34effafbeb1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/research-decision.md",
+      "sha256": "7c3b8542c35021b75e5c919edba299de338b16ec607d4162f043efbcded2fabf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/research-prompt.md",
+      "sha256": "168a55841bb60abc0d67124eaf0df6392e309de4232e8e6641b50551f05c87a0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-1/source-verification.json",
+      "sha256": "6cc8ded68170115ec58d4457e2275e448f02e24e8a3dccfa21d329ec6271cee7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-2/locked-production-snapshot.json",
+      "sha256": "2177a3bb78afbaea717b2042e64e286ba405b84a04c3dbf5a35d2f80733d43e4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0118-montreal-gateway-terminals/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "effb3bdd5f3dbc7a08979e2f8e31c20ed5ceca21fa43241809062d33eb59bebe"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "7770514570b0b17a1788a6cb5d36be16c2163bc9c00a2b469a8359014f05cc70"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/chatgpt-attestation.json",
+      "sha256": "6585088e46ebf76dbf396d7b71ca6dbb0c770c8f688e54a4ecf48eacca04f349"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "7770514570b0b17a1788a6cb5d36be16c2163bc9c00a2b469a8359014f05cc70"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "07f15dcaf6c94f4a8a3b1bd41fe7aa46b9872de44d80bd029c319b1c432ce963"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/chatgpt-response-validation.json",
+      "sha256": "132c122cc7be9fb000ad4b4ecea9908ea1ef65d2cbfe766e31bb30e8f3f2c44a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/chatgpt-transcript.txt",
+      "sha256": "08c8322979bda995652dfbc11211ee316aa600af612380a4fc542ea8c748bfed"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/locked-production-snapshot.json",
+      "sha256": "adad392046b748bffcd354233aca1a1c46dbbc7120afc787ee7408166b9a84f5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/locked-task-snapshot.json",
+      "sha256": "32acbf8fca6d7ce7eb5ff46c3e9c271ceaf55a3aa225300d96951645ba244fd6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/research-decision.json",
+      "sha256": "02f240ee7b8f56f5e8224225c9cc67fc63ce23709f90dcd957989f7c2670e7f5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/research-decision.md",
+      "sha256": "5e5f4f69f00950157a5117b82c41155437f3899df069c9512c14c689d38bed54"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/research-prompt.md",
+      "sha256": "928ffe6bfa9b4f2ddc2fcb5d8fd7fa962849b372e34cdb23ea807e3844d0e531"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/source-verification.json",
+      "sha256": "47e30e6b6fa81e4c2c4abb2d18aa2486d297a2b2179a1767d8b436778154d843"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "89d862ae03ebc7bf259c91cd3cd98937cd52ca5f4fdb10d518d55e7b28a1544d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-attestation.json",
+      "sha256": "d4a8118d4630e3f1c350d6cf549ca1c481fb5ea4cbc60ef87589059f80803997"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "89d862ae03ebc7bf259c91cd3cd98937cd52ca5f4fdb10d518d55e7b28a1544d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "e9184887b794e4caf980c7995a220b34f96916f2a5812e734a3764c777ab2319"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/chatgpt-transcript.txt",
+      "sha256": "daf7c295222b0bd695f30c60fdef14868b1e5c3b10bd8d6ea09c7347e321aa7f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/locked-production-snapshot.json",
+      "sha256": "634d605b22102acc62bdbcec90de9f859eb71eddffe342e37b26f5a59533d067"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/locked-task-snapshot.json",
+      "sha256": "08c387e2b4bbdc6b5ddb6c9ec347b4b222599e8208fff0f8fa485a513f80b24a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/research-decision.json",
+      "sha256": "3e16aa1201cb13ca5486d1740a2c37c527e4c6e1b66dd19366126f9f4104c284"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/research-decision.md",
+      "sha256": "a176452591dd11b5bcc6987584acaa439fb041c986fe93d9803fd9d02960d7dc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/research-prompt.md",
+      "sha256": "93eb4c68a1e002e8e6ec33aecbae8a86989be388a44c47f4878271bbe3f97a58"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/source-verification.json",
+      "sha256": "b3eb001072664d46a570814df972480c590f8a54483ee7d40e00ada904ad7159"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b92f184cdadb9d6cdd78c72f1c175bbd2a3ab6baf85990c1372413a6d8ce2dcf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-attestation.json",
+      "sha256": "d65984c845218d3bac96781c520afed80a35e7d50fe70938bc8dd2d830266550"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "b92f184cdadb9d6cdd78c72f1c175bbd2a3ab6baf85990c1372413a6d8ce2dcf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-response-validation.json",
+      "sha256": "63867eade44f6f2dd5af1368b1e118e8645714e80419b828f4d809dd73084031"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/chatgpt-transcript.txt",
+      "sha256": "5568ba2e0f000f1bd6beb106718192085258843ede13eccef48de3bcd72be638"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/locked-production-snapshot.json",
+      "sha256": "df9d8f778f828fb4f3aafe3830f0d84dda3d5dc881731f1efc73bca2672337ed"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/locked-task-snapshot.json",
+      "sha256": "d50575d4690ebb50563999bfb780167c7acf641066e37623434e36d842660f7e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/research-decision.json",
+      "sha256": "0cad5b6d1230ae5e821cca28737a78681056f14a108292bc918daf467964533a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/research-decision.md",
+      "sha256": "141a1df5c1f342f4c425aa7e2ed2a694c292326eceabc6ecc34215b9fa69970a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/research-prompt.md",
+      "sha256": "1376d8cb29445cc7f988fb8e6e8883598d65d631b62e9f911cc9762380224ec2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/source-verification.json",
+      "sha256": "e2f4e5f494464f0d5f4be7a18ac2b0411fd4610c01bfa15f2c8eda8b759e92a3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "3bf6fc00e7a1e845ba173e1825ab1c5f8ea60d513d6cad9fde558c860b6aff38"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/chatgpt-attestation.json",
+      "sha256": "be29f6d9e86c31da44b9996fa5e4782e0341d6816a8c914495c0c7847102b80f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "3bf6fc00e7a1e845ba173e1825ab1c5f8ea60d513d6cad9fde558c860b6aff38"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/chatgpt-response-validation.json",
+      "sha256": "7fe1e335ceac44b1fe35d24617b07fb1c86e283961fb182d4d66b2af8eda7082"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/chatgpt-transcript.txt",
+      "sha256": "515e4f67f307fbdeb46a852b9538ee4b0033abf74a8c878d6071384996720e82"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/locked-production-snapshot.json",
+      "sha256": "88d8b4efef3f35e6b12766a92c14e40c21f92eb9777053497fbcc2a32c704945"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/locked-task-snapshot.json",
+      "sha256": "279290072015a17cc8ceeb2c3dd6a78bf8664b9cd5fd6c58eaa5c3eb36d0f68b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/research-decision.json",
+      "sha256": "456e0f5b6101324f192dde5315963aac4ca282f29c05d27b6538f6ddef940fba"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/research-decision.md",
+      "sha256": "4d96a61a96526344e369d6619499594833da5d253d4dc7862710c0255ae58538"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/research-prompt.md",
+      "sha256": "223c2af25c8cf29e5e55c923ee1279da4a8abf5c16bed3b276b8dcbf508ec78b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/source-verification.json",
+      "sha256": "90bff29a63e5e179d85eed1ca7ce6d61ee69d552161d615fa5746fbb3825f7ea"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "88d5125f3ca1611679728a5621df6f0c44258d2cebdbbc35d5732349c7daf734"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/research-decision.json",
+      "sha256": "1732ae5af6a3db2622afb0ce8baa4305e383c29cf04bb269dd4150851edaa33e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/source-verification.json",
+      "sha256": "66ab039197cd87186631752681e04c98ac33b91ff7d77bedf82e1c88e4a9f4bd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "d79a9eecaa5c5c7c9768e38a12c716ec362a5c8aa5d3d2f3db7df48331611d4a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-attestation.json",
+      "sha256": "60317e19401c205cf85ecd6412b902c4f758984d7c2e3104a9ab299263e4acf5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "d79a9eecaa5c5c7c9768e38a12c716ec362a5c8aa5d3d2f3db7df48331611d4a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-response-validation.json",
+      "sha256": "2187fed9797ee7ade2214f6788c596af016302ddd30975f8890affc7905462db"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/chatgpt-transcript.txt",
+      "sha256": "5cb3ec3093c47ab4751bc9400fc1c6665f1b4ef45946e8a40a85a9b16b937231"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/locked-v2-production-snapshot.json",
+      "sha256": "cd6890a9a20b460cffde9cc4a3d0028432ce9359455137ee1287d2254315ec2d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "23fa040363874b9dd05acc4625fd8a4e8bf0f9b4117f6a5e1a574b7f1dade8f8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/release-delta-check.json",
+      "sha256": "deace9893d1ce1cb8fa00c3df24fe1cf256141cd51a1da53fc350fe3fa69f432"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/research-decision.json",
+      "sha256": "6211e66e3492d93c60933c440496c0347e0c6ccc4edc28d4fadb3cc6e94c9dd4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/research-decision.md",
+      "sha256": "07e853432e4fe86f7d50c91c92514085f83ae806783bfead359593f108262876"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/research-prompt.md",
+      "sha256": "77368eacc8f42e4441fbc368ff4a98411023e9a8a2485a6bbe33dd5900eb31fb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/source-verification.json",
+      "sha256": "b5ad6620c823609fa328cb63424a35a15f5e9634afb0e5d27b8c0e6c151a254c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "0e2112a47105562af203f77f1b91cf954f415441567452a09248ab826812f3b0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-attestation.json",
+      "sha256": "5c55ce7048d33a9dff0b95c9894c8a7d568ce651eb9f7b3a8a60f3958e42be6f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "470b08fa3b561c0ac8d339cbdab276c6d0ac97d89ac0c3578dc114b1cf476e45"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "dc50c6a11a6d6076943190dc8e2300c5222f55688067b168cb529726734ffb5a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "81a0bfe1dc5fc7c1800fdb7740b9b1ab82a62a949bce92f7e5ab1bc1a28e267f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/chatgpt-transcript.txt",
+      "sha256": "7ba0327cbfebb5e064fb0708611a9aab350858ca826eae9cb46feb686fb8087c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/locked-production-snapshot.json",
+      "sha256": "9655c2cf1cfcd2753de3e4dce1a801475be574d98217e9c325d1519316db47ac"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/locked-task-snapshot.json",
+      "sha256": "b1548bc8d2ff71a6ab88f9f2500813f5625c42e6ac01f53b6308bdc1150cd7e6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/release-delta-check.json",
+      "sha256": "775a7f91c7c23d888b0b03139cdfe0118c9bc3feb8f83e12af1993375374d5fe"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/research-decision.json",
+      "sha256": "08e1fd3988e713dbf3cc151fdc1eb863049f09d2e2e8b6fc42a51f42f959c9b0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/research-decision.md",
+      "sha256": "a43aaf29d9d0b11eb31d6ddd88f8a4fdcd281e0bcdeb4484401a83d6228c66fc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/research-prompt.md",
+      "sha256": "fe5fbfd8d7e0ef7e15c3ded16cdb966b17fab333a1d7abdf4d206eb5dda65d9f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/source-verification.json",
+      "sha256": "0ef37487dc4d6d1bea42bd7b324cf5bfd8070c15a8cae8f7e4cfab76819377a4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e16f929d21809215a27e89cfb3a9ba48a8c1a90c3c2cb5641e6419b5c5122bf4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-attestation.json",
+      "sha256": "c0d731060480f4ceb400cfa73a8d5fa6c803e9fb0505ee8e5dc9b9445be4660a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "e16f929d21809215a27e89cfb3a9ba48a8c1a90c3c2cb5641e6419b5c5122bf4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-response-validation.json",
+      "sha256": "61cbe80bf0830586ea5316c9127ba2a61085769cec00d02f600f5853563156e9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/chatgpt-transcript.txt",
+      "sha256": "bbddd38a5b2ab4ecf109cca8dc606312870092b176e8c8047f90a1b1fde70abb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/locked-production-snapshot.json",
+      "sha256": "fc3515cbb4ed45a8ca1cfdb47bdf9ec6f5494a9b3853217fea5e68410922205d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/locked-task-snapshot.json",
+      "sha256": "c7010e72db5768b02b0a2cefe12dfaa42667ea8b0cf64de4d58d8fff8e0ed417"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/release-delta-check.json",
+      "sha256": "91606cb2a66f4dd7f192bc2207ae3cf7e611be6fb841cd8a07336245ccc27ac7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/research-decision.json",
+      "sha256": "b2e1041d195baf4131a803efc6c4ce4d757d2b8f1e6dbd83649426646401c84d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/research-decision.md",
+      "sha256": "5e83b0b85ba9e5e474cbcb172133d82833e3decd50cf140c00738122842acf60"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/research-prompt.md",
+      "sha256": "e6551747dcffc3bac248bb8c7976a23a0859f4e2ea1192575c48eea40bc8df82"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/source-verification.json",
+      "sha256": "63ccf764201ad3b5688bbafcd7cf031bb9bae24b93aecd617d0529221b79a93f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "bfe1a5f9c6dc6d7882e5076666977ed90cc4b1da01f361e3af450b6019f8b1e6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/chatgpt-attestation.json",
+      "sha256": "1a29a42a655123ae5040f4fd3d425a88842e76d53d2040e33eeeb618488efa32"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "bfe1a5f9c6dc6d7882e5076666977ed90cc4b1da01f361e3af450b6019f8b1e6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/chatgpt-response-validation.json",
+      "sha256": "14b39476bba6b91539dd2fce337fb23daac384d57860482ae1e4fa86f0ac95d2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/chatgpt-transcript.txt",
+      "sha256": "5ad80bdffd906ee681a0e747316feb00baadadf4c75f06ee8fcae5982b05b3ee"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/locked-v2-production-snapshot.json",
+      "sha256": "f091b4142277274acee9b41d022c6b37d71f42568e2fd73d37233c4e8467a785"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "bdfa2ae4c071bc52d237392591c053433761720d89dc1eb1630b5396016d884d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/release-delta-check.json",
+      "sha256": "a21711b142a2d8a2467e01ac71c6ece31fc69b2d83ca9452b796318cab204b1c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/research-decision.json",
+      "sha256": "930504886e07a7ee7ae862922c65625cd98a6a4d90d81f5d85e73b92f3f55d5b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/research-decision.md",
+      "sha256": "4f5499600b639b410a6cb96588ba621aa07ad06d6b4d639a05b90c712523512a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/research-prompt.md",
+      "sha256": "aa07fed2d969ec06f1c41e59639efbfb0aa3373334c186c583fc7f3f9889ec7d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/source-verification.json",
+      "sha256": "5171e6ebb88cb8e2ea188882eeb6a79635aca8f2069fd58555599034b7f9b4dc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "7ef30495259e13181662746bd424b3a3f67f5e0974d168819e7411c94bedac0c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-attestation.json",
+      "sha256": "cd65cffb63e9e674e857db8da457f89eac4630c6125e6755d18d29c29428b775"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "7ef30495259e13181662746bd424b3a3f67f5e0974d168819e7411c94bedac0c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-response-validation.json",
+      "sha256": "19de1158524273817bff1cce80e9ba6658a1c2215f9aa509a6d4148b5f7b2670"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/chatgpt-transcript.txt",
+      "sha256": "48059f47135740e5a21c1a8f58347845bc8a802469e5d4c2adfe0999aa4173cc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/locked-v2-production-snapshot.json",
+      "sha256": "882e07d6e1f8a984bd97c50e429f5ac901ff91f2934e6a90102bc5105dc14e76"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "61e4a8d7b893f4f84fb276b5d48431de0509c3e7c1df0b617a3bce5ef0cb730f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/release-delta-check.json",
+      "sha256": "a2772f707329995d8c37049fa193ce57032a0678c888c21667aa0a8ecd8afff4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/research-decision.json",
+      "sha256": "5214fbabd55278026f53d1980b957085f751cc492be9aa74e5688e639f087e5d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/research-decision.md",
+      "sha256": "d6a22f67a3d2f4ac653f4b04fe736f2c4cecfa90b4ec55358a0f92a7e2cf3259"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/research-prompt.md",
+      "sha256": "86cf8873781bf7ca9bd6a552dd01fecc9b683ee8f2a03b9a4a14c1b50051cea6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/source-verification.json",
+      "sha256": "11935c43e04bcf1606eaaec87ef0321da3b3387ecb0aa0291f354ace9687915d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e6a405a493f7fd50d1e36483a42f974394ab5d93fef1fbf4775216eb74229225"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/chatgpt-attestation.json",
+      "sha256": "681a2b61d628107f9c489ae13e70d4906680986a03e86e0c6d25d0d8b4a1cfd0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "db80eac9fcae9c1105029dec3c5966ae22938808cc9a5462fb299b4b4dac7627"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "d1c4fae94eb180c69dbe96323d2dc06d04ac191596951120a401d02530151ff0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/chatgpt-response-validation.json",
+      "sha256": "4a04af17ce20b40289d82dbbb6395d035c75ce76847898a11ac0d5cf2ac37df0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/chatgpt-transcript.txt",
+      "sha256": "4c6d9c283ebd61957870424496d4869ae5ae87605cad958ae3d363ec9c0e60b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/locked-production-snapshot.json",
+      "sha256": "ad5550b6d04e98bc0a5b605775e967cbea1f7309f49aaba5aab04ba26db44e35"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/locked-task-snapshot.json",
+      "sha256": "101ac30acc0afeb1d3bdff7a07a2cda31737012cab592098444623a042b2f734"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/release-delta-check.json",
+      "sha256": "16ee0fdd362053c34e0140b2845e23750fb3361dcbf3669cd3508f6bfda8d016"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/research-decision.json",
+      "sha256": "83c25e156add928651cc19e35770d136d6de9675a445d96764789f08ac71d1e3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/research-decision.md",
+      "sha256": "61866fcccbd831356ab35284736e36bb3f21c47b2a751817fb954d05d25ac612"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/research-prompt.md",
+      "sha256": "a2ec55fa3fc981b4fe02f54f24704724cf8e5e9cc202c8093c55ccbabd488092"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/source-verification.json",
+      "sha256": "64d2b2e82e115676d37cc8441f2a2954caa230b4e4f75ccd8f144e8243cb3cff"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e1fe383118083ec4f9ec72873b5a0a9b45bf7bdb6873137b1af1bdd849221c82"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-attestation.json",
+      "sha256": "da613847cc9ee79b0ccd470c2ec1ff1074f53d40e27a96dfc1abb4032a515593"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "7a4131465c5099fcefce9271ae4a4cec8e8a7a4ca1246559d5d6fe135dbf8a88"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "fa4bb70379f30b34c6e3eedb75c1df24ded8ca68691f3d1492d5e95326e7fcfb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-response-validation.json",
+      "sha256": "e3c71ffff11446b12da4a7c91af297057734484577376077f53c0e051518a75c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/chatgpt-transcript.txt",
+      "sha256": "34bd970a8f8b485b213c89da04a711055459b335174e3a18103f98de31920eb4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/locked-production-snapshot.json",
+      "sha256": "9e7ead3ef2d2a9e0aa1ed3786285485ee99a0a8aecdebd4abe8b393fe213efbb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/locked-task-snapshot.json",
+      "sha256": "106e696c00c49a19fa2a4b6301fff6939d689f4342b98bf6233b83b09d15e3c0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/release-delta-check.json",
+      "sha256": "ba0efc48fbf649558da09c6f5c1c22a4afeb8cca2f11c20ee13e6c8e1c8815a6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/research-decision.json",
+      "sha256": "3bff51896c51e80daef94bd7135f0d19c3b0d3dfd97e392b4e8ad191c3dcb271"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/research-decision.md",
+      "sha256": "740872a5c7334b85b4a554b4e6128e65eca9c2858c7529e5360c8f226b473f6d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/research-prompt.md",
+      "sha256": "2264000ff0c2c5bfd1d8a9684f5883886da4b39dca734dc1dd19e154a59a5fea"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0142-excelsior-u-s-solar-and-storage-portfolio/attempt-1/source-verification.json",
+      "sha256": "fa62f3e775a38cce32fbf50c72432de1f31e6de7b44b6f9cf9eb2781db9ad9d9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "d91b86929b04edba2cfd9b61c987ebacb237ce14bf7979cc6a9c19c9af24558d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/chatgpt-attestation.json",
+      "sha256": "f93001bd63ae5de8a950aaf58add0aed2268f9c77dcef7e77cdf5bbc93bd2f21"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "d91b86929b04edba2cfd9b61c987ebacb237ce14bf7979cc6a9c19c9af24558d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/chatgpt-response-validation.json",
+      "sha256": "9ea76d6a9d3e688cf678eb2cd8e33407d01530a64e4cedefff96db7434719e84"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/chatgpt-transcript.txt",
+      "sha256": "7f39fe5393caf269b0fe869a49ec3fe76aa2cdab8795ac7ec1464cea1ef5d311"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/locked-production-snapshot.json",
+      "sha256": "e1f6bda0f4b98977a34fd8611b8cf256ffef6cc2d530069605fb033bb15543f0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/locked-task-snapshot.json",
+      "sha256": "53b6f7fc65883a4e31e5aa4412369e708a3237af406e514ea776381c1d8bbdcb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/release-delta-check.json",
+      "sha256": "2a8d0eb6086d000f2609960ae53e0a94db514819700019670278966b94f5b698"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/research-decision-current-task.json",
+      "sha256": "bb1f52a344fbb32b1191c1e460bab0cdea127369dbdc861700b0b3ed0b094531"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/research-decision.json",
+      "sha256": "cb009b6d15420580b5a50fae4fe686f0a49c3e81b994fbd07a21473a159c3bf3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/research-decision.md",
+      "sha256": "90ab9fa36182b8d395b53db68be2e0780b8e8a55b9a72b317adddafbd83bf646"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/research-prompt.md",
+      "sha256": "1afdc059de88cb2c865d1640a9e55767e1948632c946cccee24eec8a5a15cdea"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/source-verification.json",
+      "sha256": "94857fa1bd023b07ebb9181f9fe11f2f39e11d6f2a56eeb9deebd026bbff0394"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "79206e1e49aba0ea87bff849092981e5f9b5c2d5e167d07e46a02f81ad102f5f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-attestation.json",
+      "sha256": "c88d8e1e936b8b17b7c3652c182440dc948413eb95286923bf07333968002b87"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "79206e1e49aba0ea87bff849092981e5f9b5c2d5e167d07e46a02f81ad102f5f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-response-validation.json",
+      "sha256": "7ce242f8d4491cc47d7b125e576c1c9137eaa886ce2bf93059dc6f640e19c180"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/chatgpt-transcript.txt",
+      "sha256": "07a7e4bbf7db287abe1407853f24d4061f2fae3829db6182c964b986641e76e3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/locked-v2-context.json",
+      "sha256": "da32aa471f47210050d0251d1fb215c82ec6581bc7a101957ae89208377b542a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/locked-v2-production-snapshot.json",
+      "sha256": "a16ccfa1eec2398cf63e5cf904497effbed4667e23e404709d34bdfe47a3eb4a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "7003142e04264f29b960e232894ee581902a1b2b39039be535174b506aba7da0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/research-decision.json",
+      "sha256": "f9c28d710d4dd09f47443be01436292f01a49fdba35b194ba68698333c13b9a3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/research-decision.md",
+      "sha256": "46ce21e7311d832bc55bd6c20969f314dfa03d164385383b3680f85723fe6b6d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/research-prompt.md",
+      "sha256": "7a6925bc146385a917e8ae40518760bb16bdadfbe1a2c1593eb1758d7f22ef9c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/source-verification.json",
+      "sha256": "98129ccd9494db2855f952e2d8f603b7bfd9d20a3fc021865f257909652f3cf1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0001-amwaste-llc-v4/proposal.json",
+      "sha256": "a482c4ee4a663c81ea05326f84c5acb339069cf40ecec22814bd5420988d5481"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0002-ec-waste-v1/proposal.json",
+      "sha256": "a4715c31032245f440292f13d59c6e5b93039225366bc05a0273535d7a4fc4e8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0003-regional-rail-llc-v3/proposal.json",
+      "sha256": "ae102c239c3c7e8b63b8066bad85bb5a13e6738a13bb9b6c1c6b5cef0e58bf01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0017-durham-region-courthouse-v3/proposal.json",
+      "sha256": "35c1dec1db338969cb857e6290d9fca97e9026577b3c6987aa046de20cad7601"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0062-usd-clean-fuels-v1/proposal.json",
+      "sha256": "b8b659410d9c87c231bf1e8b04bddbcf81137fed4722382c61f7eb683c23dac7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0066-chief-power-v2/proposal.json",
+      "sha256": "c2b1141762238783cd606162c5b173189cdf22c0735c0dfbe177c90937fed2cc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0079-orca-v1/proposal.json",
+      "sha256": "ea477114c9d2e617712afd08a4e4c35848eaefbce17488f8cd1ed9d3f84fae3e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0081-pike-holdings-transmontaigne-partners-llc-v1/proposal.json",
+      "sha256": "96581fb77f0507a238e45c033bd131baee84fd61b65829b60a0c7605e7f0d121"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0091-rover-pipeline-v1/proposal.json",
+      "sha256": "80d4161035f14fcc74843dc3275ea0bc5572425d6cbd8783ba11b794b4e3c76f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0091-rover-pipeline-v2/proposal.json",
+      "sha256": "bc88dd348ace2d52008d71354b1d2e6730578dc9486d7fbb21466a7910fdf972"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0109-virginia-international-gateway-v1/proposal.json",
+      "sha256": "a57e898a428da32e0697e04ca49acb51bae56738d061a4f2ffbc83a088ff03b4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0109-virginia-international-gateway-v2/proposal.json",
+      "sha256": "309fb087497157fe0fdab985036759cc6529a5bd5dbea885b691b52bf4cbad11"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0110-databank-v1/proposal.json",
+      "sha256": "63f3a53aa50186494608a94add070226d5da3b7f862ed7ad089f023c23cb56f9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0112-transurban-chesapeake-v1/proposal.json",
+      "sha256": "bbf9b8daf004a38e118aaefd577e4585ac83f30c09b2f3378e1323373c3c5000"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0113-arbour-heights-v1/proposal.json",
+      "sha256": "2f95bcff8dbd5d8dc1ecd6294af62df39d1a44cf9edefb1af6fa67b362aedeff"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0113-arbour-heights-v2/proposal.json",
+      "sha256": "803210d8373013039fddcba4b7996a1d27e70824b0e7793d442dd06a2c0b0aac"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0114-axium-aster-and-axium-bloom-v1/proposal.json",
+      "sha256": "2185af44a5f0ca50705e01599f1abb2b4fd5d7d2a12ea29ec9385e0e1177702b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0117-etobicoke-general-hospital-phase-1-patient-tower-v1/proposal.json",
+      "sha256": "c2796cc03c73840600a60468d750a825b2bc159c9408dc6337e76b1b3c1c2b42"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0117-etobicoke-general-hospital-phase-1-patient-tower-v2/proposal.json",
+      "sha256": "0246acf243c1ddd1159b00f433104701782cab65f1f7971acdccd5376a61599d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0118-montreal-gateway-terminals-v1/proposal.json",
+      "sha256": "21fb87d9e30803cb9bdb9c1bd09d735443096784dc0b213dbb97455fe3b398f5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0118-montreal-gateway-terminals-v2/proposal.json",
+      "sha256": "9cd51d17d63e6b0de3d23e70f32ff8e9d5eca577bb9dd059134f10efc5414447"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0121-r-e-l-a-m-v1/proposal.json",
+      "sha256": "4224562f5149a88ecb422ee522c7bd8df4c72404bfa4876091cd816d9fd98924"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0122-cleco-corporate-holdings-llc-v1/proposal.json",
+      "sha256": "8c497e8331600a13c379ec7d6ec2fcbaa9f1e8d7560013363476338bc6c6d990"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0126-mosaic-forest-management-v1/proposal.json",
+      "sha256": "f31655886d9353eee9af20a68e866bcc63ee1938168bfe64fa62e2ef93a6a8b7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0127-nexus-water-group-v1/proposal.json",
+      "sha256": "5d108d3ba48b1de54eee8579d8f1b2f50325b671c1b339faa3816f6ee1b953f4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0128-puget-energy-v1/proposal.json",
+      "sha256": "407b6779ef11e1eec82cbf1a5abd11c6b9206f2c5851e554a46de348cb92a1f3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0132-aligned-data-centers-v1/proposal.json",
+      "sha256": "5945dba8326d12d52cd06a423e12d7439b7acd9aa9307c7ac3629c2043146e68"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0133-allete-inc-v1/proposal.json",
+      "sha256": "3392dd67cfd1f4f0f6af75fd15e949354f5b1389a38e69cafbe46a4ce5b670ba"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0135-bluepoint-wind-v1/proposal.json",
+      "sha256": "52dac98c48c86636b587687710578bf8c5c8687a6081d57dc41419f1917bf6d9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0137-clearway-energy-group-v2/proposal.json",
+      "sha256": "a5f9f0f94c38df877fa0461391b899095188de5982a58b46373e73c154d5ed0c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0140-environmental-360-solutions-v1/proposal.json",
+      "sha256": "93f122637350f553c9e225dbd375b1fc12f72a4910c593e6e30556ecbd16f3f9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0141-eolian-v1/proposal.json",
+      "sha256": "2cf1d7fa529d9867f5b1a98557ec454ae8f8b87076c47b06d484ac2742b1c111"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0142-lighthouse-v1/proposal.json",
+      "sha256": "c001c860a431b047b0571cde473d98bbf75b1b28a0d2d6cabd48ca80b53e0896"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0143-gigapower-v1/proposal.json",
+      "sha256": "fa41ab1147d80d2b577fd3f15a9c44b7b343dfb3d4eef766e662ad04a86e7197"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0148-national-renewable-solutions-v3/proposal.json",
+      "sha256": "071f6d3443b690434f381c7af091adc23d3736133e057aff747ff305d7721b9a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/batch-manifest.json",
+      "sha256": "a785bc4a2020227da06acb0c77996829ab5cebe2e217082db374b6d9d398d408"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "27f6514a6a027cd6f96309e0f2c5aad2f346dff46ac4682bc274933e5970ce4c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "d44a93b15e679bdec3e956ec5c70c50c6536e5630cc79a8a2c51923e09c8624e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/batch-manifest.json",
+      "sha256": "aca1a60b2cd2f1a7a546a951965522c6ab6133592ace502bf7e562e9b4cd45d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "dcd312a97336a2f1ee766690ba2201310bb5b51698eb93795f66aaebf6bafbe3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "e3c8776c1c89949a2d8b1c51a0e0b7f7e2090c004060ba70f5d3a02dfef1e4f2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/batch-manifest.json",
+      "sha256": "dd1b015cf06175325314fab888eeb25c12a6b094c242f82d0d21808a164011fd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "191b3380e892d46a0e75fc38440fe943445908a2652f9d16f7a7b41518bd2785"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "651156fa39a1420745d639b43ece4369197557b20ea28a9b8a2fb0dcf46f19d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/batch-manifest.json",
+      "sha256": "9cb39c99753c37313371ea2136d64f0de5b763c5c8b62cced595254feab03ae2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "6f7afe4b7b39808b0d75156a0224cebbd64e5518d1a891116cad44850cf2d1e4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "355e002c8660e000cfa869a4187b8a0b1decabc93ee38e11128782cca836a4c5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v1/batch-manifest.json",
+      "sha256": "283c79245be1c2f2961ebaa670781a7545872099c7b0a81d02e33e8bd3bee9bc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v1/seed-attribution-reconciliation-spec.json",
+      "sha256": "0cdb59d928bd4a9a66a60a67c2772b182745e0bc9afd3fa946a6668635db780e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v2/batch-manifest.json",
+      "sha256": "4d531d8fb0e2ac71eab8c925158799a292f4b966843bc40c45e715fc4a584755"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v2/production-apply/batch-apply-receipt.json",
+      "sha256": "65c45be9b0bedab8912e9c844c17c2da029d33a6f1c0376296b1ec508016ab41"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/batch-manifest.json",
+      "sha256": "9b2ef216d8e05dc9a8bdaccb5c8f25176be0038f7c8b8e9b55247569f78722af"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/production-apply/batch-apply-receipt.json",
+      "sha256": "611fcfc943a43057ed19645c7e8b21a9144beeddf049358e8e64af79bc640842"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/seed-attribution-reconciliation-spec-v2.json",
+      "sha256": "0e84ef88724a3321f9a1fa4820c7c24438481ecc6b01e3a72d8a1ee4078709fc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/arbour/authority.json",
+      "sha256": "f2262d610f9c6ba1ba27cee108924f1c8583fca70fc5bfee3dfa771388f79f84"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/arbour/extendicare-q2-2026.pdf",
+      "sha256": "fdb082d8e400088516c7c29e2f8b94e4385b9a1f91d1b1abd2d759e870171e2e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/arbour/production-snapshot.json",
+      "sha256": "2feab0869fd44c131760a9f36c21d315d8348e062d94aec3f70e97509d42c0bd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/aster-bloom/aster-formation.pdf",
+      "sha256": "5b9cb25dca5ec58bb5f276bff8202cc7098a5ce4564c6fcb80197360fe70da0f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/aster-bloom/authority.json",
+      "sha256": "49a64ef4bdde3fb5e92d60f9e9a58695b9adc93c90c7418926a89da8dc919c5b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/aster-bloom/esg-2022-q4.pdf",
+      "sha256": "a8e27ca34531427dc625d65086ea7e9c4d84a0ab9792fa4af000e7f878367949"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/aster-bloom/portfolio.html",
+      "sha256": "3e7384814a3977939946644eb6ad54f63aa2a84766e4fa8f64a6202bb1cd7ae8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/aster-bloom/production-snapshot.json",
+      "sha256": "e661d0dff3636682718984e94d4c3a1a33175d99c6e1186ef5747995648d63ae"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/aster-bloom/revera-sale.html",
+      "sha256": "ec6fc51c30cf49a8862f5e5bc4c15f6c02ece483b2fa1523876002d73916674c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chesapeake/australiansuper.pdf",
+      "sha256": "cd2c399156268d7293740d6f0e23dacf542c1f3ba585c5c9e2df659334cd34e4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chesapeake/authority.json",
+      "sha256": "45cb7c81d2d5ebffa53ba94e3282d37519725082965cd9dd726b962a2ea25499"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chesapeake/cpp.pdf",
+      "sha256": "6614867c4e65fa3522752436eac20dc715e88c2b264581972ccfb8a2af32377e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chesapeake/production-snapshot.json",
+      "sha256": "b1702e95505b6b6bee9bfd5d394e11d5ada9a05308c5285dea9934fcbe5eaeb4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/arclight-esg.pdf",
+      "sha256": "8d3e46c68bcac5a02e01a9710e711d366c68f351a3a380c0933919c763f24902"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/authority.json",
+      "sha256": "963c3e83d63feebdb638980723c069d9f17f72e8506a65953f300f4470795c12"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/production-snapshot.json",
+      "sha256": "69a9b8b2fc4c7f23faa443367006416ed8a9574326670e3738039b26e88190f0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chief-power/source-capture.json",
+      "sha256": "d456b20b6b31ecb5aae553f86304e58b2fffce800ea60bb5ab2207624cd6ba27"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/coastal-gaslink/authority.json",
+      "sha256": "0d4716decf015e74dfce8278b2df54248a918a9710f839f0becace3ded4b895d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/databank/australiansuper.html",
+      "sha256": "d3270a134090148e164613015eae27ab95d93da166faec8cc91e45a09f289c4e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/databank/authority.json",
+      "sha256": "e47afd54f9796b3f9f96437968c17de9fe0abcc1dce9b9257d604be577fc4ff8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/databank/digitalbridge.html",
+      "sha256": "090118578c2c40fc5b10c1a0d4740b3150a6e32a8e3757293abafb1d5bb90e37"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/databank/investors.html",
+      "sha256": "e169acc39e0a236b59d97cfe5cebc4ff8fc817308053f5cbd114cd9affaa9004"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/databank/production-snapshot.json",
+      "sha256": "314cb85966f4ec0a657595d5ddf19d56d441ae4d7f4e96eabb419c87fb4240bb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/databank/recap-2022.html",
+      "sha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/durham-region-courthouse/authority.json",
+      "sha256": "8aa5dd12fc54edd83f619e10ea1ec1075d8a569a14e2f26b87f911f610962470"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/durham-region-courthouse/inpp.html",
+      "sha256": "cd4fefdb3266402ca4b812f89a9722c9a3f4af6799cfef2ef8a7d45d0017cbfb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/durham-region-courthouse/production-snapshot.json",
+      "sha256": "e1e352000d1c5858aab8865d84e882facac7d918e01f304c02d243eafadfa63f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/orca/authority.json",
+      "sha256": "5a7602f4b95eb3a00349a524add95dbee95f0f6207d9a35dfcfae6987df09bce"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/orca/production-snapshot.json",
+      "sha256": "32fb9416e399651cdac6b53148da263fce07c859c5b55b50ea5fcc578e51d6f2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/pike/authority.json",
+      "sha256": "ec94b6bdf3eabf88d8022cc59f5358e61236bb9da4b42250bf85fff9b0c73573"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/pike/production-snapshot.json",
+      "sha256": "0273cfd9e6e942e0601b92716a55d940da41c7edfcd03624b09c8d8c63c9724e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/pike/sec-fund-vi.html",
+      "sha256": "93edb4077aca3a1c3bf91de53eabc91adf32e27658894d969f074e8917926d43"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/aimco.html",
+      "sha256": "8467fef5a91222eeb398f36b65cbb2a67c23533fd498645e8b31bf935d56755d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/authority.json",
+      "sha256": "7a063e08d45141d1e07e6b43c112c66d2d738cc86d7b8cd8676a24d7256d046a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/bci-program.pdf",
+      "sha256": "25c6d351d5642f2f4119cfc04568a0dbeb64016bd33bb97c2d54007c270f7e39"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/macquarie.html",
+      "sha256": "88c8495b622b6a7e436a26ebfc22b2574c06c0f3c53af810464e6935790285ca"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/omers.html",
+      "sha256": "ec776c2f1f111abbd91d2db7b7a4864cbd15bae92d4127604ec3c9a49b295d9f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/otpp.html",
+      "sha256": "b82f7ba7f42940fbb9f9ab183578efa8c28fbae9b9a48a78d6219f3c9d0d1197"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/pggm.html",
+      "sha256": "f69a6a92eebb4e2f91a879cd02343eb237f0f78cddc48488f57f5b31b81d8f88"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/production-snapshot.json",
+      "sha256": "3eafb43eaee615f0f7385c81503a9b2069ca42c8eeebb8b2792534a79dd90e73"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-mubadala/authority.json",
+      "sha256": "b4da1b444f3f61be9b2f996646d8c5d16cc1034ef72048500ab44187c97dc5d0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rover/authority.json",
+      "sha256": "9240d8eb2d68c18897a76a8da1caa4209f590de9bc25822f2cb0ed596b4b5a19"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rover/production-snapshot.json",
+      "sha256": "a6282e18c87f55e235a8f32b71287e38dc4ab5f4f937011b784cdfa7a6f188b1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/authority.json",
+      "sha256": "5c1eb4cb4ddb38a727eae488f5bd0074f36385ec4792df39e5896878bb514979"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/production-snapshot.json",
+      "sha256": "c203a67cf9c40dae031d6ac0c8b7bd21aa7a3b7462ad161d07fc2608f6e57c34"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/three-i/source.pdf",
+      "sha256": "7697bcdd205e57a8b9da9dbd69b9b66ad3f2f54a51d28b67bded3d4cbabdc0f0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/usd-clean-fuels/ara-portfolio.html",
+      "sha256": "a1e8325fa8ea2c7f36e7b771ffa23e6d1b598284380a4144964f03f3d85b0987"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/usd-clean-fuels/authority.json",
+      "sha256": "79ffb3a059ac4b78323002e78759b0e7e8a04f794a06e98b52986c33c4060eb5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/usd-clean-fuels/production-snapshot.json",
+      "sha256": "85b4e043eebb019e9080d5bb0ff063105d8315a31cbb2e80faa0a7516f8f67ed"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/astatine-active.html",
+      "sha256": "3e9271f3fadd15f3591e2305b6f257b69ff34662db815f053dc51979a4948d95"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/authority.json",
+      "sha256": "92dd7a00b4dee6d5d0562588b33409563ad714195ef770972226ee6c59f31889"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/production-snapshot.json",
+      "sha256": "b3332c68a91e56e6701e42a5113c9bba773caf7cf91766eee7bbeab05f943b03"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/vig/vpa-2025.pdf",
+      "sha256": "0059321e43dfe89299da20c50f639b1684d28a6ead8d18bd8a2d83a8b765301d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/aligned/authority.json",
+      "sha256": "9019194c08579017325fb5ef6386c249114bd8aeac5b597507f02b52e24afd23"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/aligned/production-snapshot.json",
+      "sha256": "c4ca7eac239a91b38bf6686a1422116a9ca769d8b0379af621b9c3d789a728da"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/authority.json",
+      "sha256": "0fb7ed52fff93fce972afe0204d2480307bd47d36f07dba5506f189761b64002"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/production-snapshot.json",
+      "sha256": "15b93cf1f53ab711e37d2ca0a53b01686635e1b77839a9de9301ee822c56f5bc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/proxy-dom-excerpt.json",
+      "sha256": "c623dd4df857a66bc93166c51108c953f9475d791e53537e0bcfc4da89ded8d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/authority.json",
+      "sha256": "79cee2a1fc999b9d364e8bbc8a57d82ec3bc4a7c690014bb10dbe33c64102acb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/production-snapshot.json",
+      "sha256": "8c700925779eabfa15d8f0d22b109de302e5b7d7256171bf244b47aee9a7ee13"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf",
+      "sha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/clearway/authority.json",
+      "sha256": "13221d7b26948118670a8fb407bf2513b27a9a3b6936580147c61425896de141"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/clearway/production-snapshot.json",
+      "sha256": "d860b291cb82a5c675ec8f0c8b7c1be43e5d833a4e80515cb976a7c2c10da59b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/authority.json",
+      "sha256": "dc8099d29852478eeb2de43082cb01ba99c7128a252d4f1df8d226d408f93348"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/closing-2016-dom-excerpt.json",
+      "sha256": "1db2756e711f0e4e15e139b88f609af9c915001db9e4e4ece8c96679622f2351"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/production-snapshot.json",
+      "sha256": "5004c46740c1d55d21cabd2850d61c13997ce74e47ec5b1d0cc41a869e35be3f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/cleco/sec-2017-dom-excerpts.json",
+      "sha256": "3a8b997667ff35a28ec3ce1fefc23115fcb4a8f60a24521101884f0451acdaa5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/e360/authority.json",
+      "sha256": "90c3d914abcecc888ec11c310bcc5e7a58fe73bcb8a2af2d48a436d79d407bf0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/e360/production-snapshot.json",
+      "sha256": "1d70a0f651259a60ff780b2702e15910e39ef2160cc4daea8ccca19f370890c8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/eolian/authority.json",
+      "sha256": "964e9e43c5142e26ac7ca614bb8afc9c4d4b3653e823379d35b93cecbb20f4d5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/eolian/production-snapshot.json",
+      "sha256": "12a30e62925c91ef23f568308eede43ed7bf68137d1458658bf3e7d3cbcd5e58"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/etobicoke/authority.json",
+      "sha256": "715d8e23b10c11a58dcae3c7d314eafb76ddeb6fd18cdabb9af0e85655f44e89"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/etobicoke/financial-close.pdf",
+      "sha256": "7320817f943454b01afa26fad1e916d81a17b9e89c14a50f6015da49ce102097"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/etobicoke/production-snapshot.json",
+      "sha256": "4d3b44355d8fd871e94b51786957788778abf72eeace1d5dd6f8b4c14274b990"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/gigapower/authority.json",
+      "sha256": "64aec10464e94d7d0dc2c688c05537d0aef5347b0662ddee518b823f80708463"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/gigapower/production-snapshot.json",
+      "sha256": "7b1421af7342aad8463fa740c620d7eeb911e81e8c21de0a3ff478d08a937fbb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/authority.json",
+      "sha256": "d226f5cbba1b409ac39ed11eebbf97bb2626e682ae59132e2fdd4e3fd01a337a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/buyer-rendered.json",
+      "sha256": "430119a66a8f48facc5550a6fc6490a4abac695c0746e7968559c7a961052745"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/production-snapshot.json",
+      "sha256": "a66ab6e4d5b6bf351c56f2c876e88389645bc0b59d011df55aa0618014475fe2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/montreal/acquisition.pdf",
+      "sha256": "9df085c357251848d9ba943e6bc555d35d4f5291c3c479757d0d34dbc78bf1e2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/montreal/authority.json",
+      "sha256": "5ffbf6e47000fd99888f0b14c93e33995123eb268d84d630f33359f9ec6d0870"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/montreal/production-snapshot.json",
+      "sha256": "56cbe2dfe0ff5e77514ca26ea28b9705d354d9dc6eba027a3ff5d2f1a34c8f56"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/mosaic/authority.json",
+      "sha256": "579093b34d2a04d326b4c4ff2403bd6d18d7ecc689c6fba2d6c9aea3632078e5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/mosaic/bci-program-2025.pdf",
+      "sha256": "45ec0e7391b2d4c7d7bdca8e6a1ded0f71563b4c125242154aeca49e04089889"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/mosaic/production-snapshot.json",
+      "sha256": "e3d296c536f73b04bf3ecc096f6c82a2ac5b38258027b708acebfe4908ab2a0a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/mosaic/psp.html",
+      "sha256": "ebbfc685d7890e9511f8d65b90f4c1bdc18bd2bacc4df5571e3a9a3ee27fde9e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nexus/authority.json",
+      "sha256": "60e3d160c0a96e4a78048d9398b5a7fd40aeb7207b4089b6df18930aae0c8547"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nexus/production-snapshot.json",
+      "sha256": "c66ca5805796aa93ed3a0b1cb71f1ab0f04abc398f135f3be9dd152675ad72d8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nexus/tennessee-testimony.pdf",
+      "sha256": "1a82aa6cb9abc5d4d0f323f7eac8abf2bf3d056e09bc064874781844f918302b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/authority-v2.json",
+      "sha256": "6ca2fb9e5b5a9306855a5dc489e4b80abc990e7f6631909ac3093224b20d4fc9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/counsel.html",
+      "sha256": "ba388e70673ea7dc18f2d963a32c14928e8d4f4358070f216d5a807a1c82616d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/production-snapshot.json",
+      "sha256": "f88af3b5692459a453c585210c55b96d56df377ce48bf1a200dd169a0ef96e8b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/relam/authority.json",
+      "sha256": "7bd138d6e5701c3bf48aac0a9052dd04addf0dd7a766f472d9941157570d93fc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/relam/production-snapshot.json",
+      "sha256": "0aa0b809c17e73e68b3921a46e7fe7caa408831f5266aba1594b5b0276a022d1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/relam/sec-filing.xml",
+      "sha256": "1772f4bf58980df434bed1e9bbe014393473811090023073f5d99cd31c4387d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-001-decisions.json",
+      "sha256": "296b514864f9aed61cd34e4d7e3c4294d29dd61d33d8220f3e710f93f4153cd7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-002-config.json",
+      "sha256": "7b4c812d5b051166c2f8622bccd2d101ba8dc3cc357ba2605ec59e4fdde5e474"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-003-config.json",
+      "sha256": "26cbae579c31369d10045dee9a22eb5df5e97af2c81c1cb16c0f09ac2ce556fb"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-18/scoped/task-114-axium-aster-attribution/apply-manifest.json",
+      "sha256": "efe06d10ae441f891d367ebde78140daf59950d677ce3943abe2cf2ff99ce968"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-18/scoped/task-114-axium-aster-attribution/approval.json",
+      "sha256": "812f1c43ae93208ba698fac6abd47368b3c380c48bac1e3b4462cc2a912a2a71"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-18/scoped/task-114-axium-aster-attribution/production-apply/apply-receipt.json",
+      "sha256": "aaa6016807f92507828899d1e2af503d836bbbc27bb33c2899be67ea6fe209d6"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0136-attribution-repair/apply-manifest.json",
+      "sha256": "1bb47063d154f6a12dbb28edcf3cba3fafb84cc45c993cabcf40404dc09fd0e0"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0136-attribution-repair/approval.json",
+      "sha256": "9c35d2872a8cb6230aa19acecb693d097606c13bdfe9ff375082af49bc785ebd"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0136-attribution-repair/production-apply/apply-receipt.json",
+      "sha256": "b8d6bfd1fafbdc6c05485abae9bc0ebffee897c4dec2f76c85addebf47a7172a"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0141-attribution-repair/apply-manifest.json",
+      "sha256": "6a8143b27aeb8e5647f0e45f5a3c214108d40a996b3ed058ea8caceb03f25f47"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0141-attribution-repair/approval.json",
+      "sha256": "b5ddb24b08ba05e8f25075ea3ebdf0c826f78de0667699c435a8cd73f1331cd4"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0141-attribution-repair/production-apply/apply-receipt.json",
+      "sha256": "fa440b32226bcc2b6c9c792148e8c19f3990f048e93c771328e4f56c852ef34c"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/apply-manifest.json",
+      "sha256": "556bde55424c461b6e4dc544671184a292cd0f2abb379ceb45e5a39930fac9f8"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/approval.json",
+      "sha256": "51c3ff7a3fb2acb7e38ae1b2175b1deb57ce56f2075e1d7b3ea1722ee1ca0416"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/canonical-release.json",
+      "sha256": "63f3eb1399ae0f3eca5de0750129a01195b40c11fbc599d8e0716386e7820475"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/completion-after.json",
+      "sha256": "8a8a7feef2e9562147d6c266f00eead1065199e77da49e702a502bcda9a370cd"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/completion-batch.json",
+      "sha256": "026b9ff14e6c5a0e2bb4546ac9607041ec5908d6665866173b9e2d34bcb90553"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/completion-before.json",
+      "sha256": "e3c741a18b1b0f132db15d0c9fa2d239c52eaaddeceaf36f7e94caae88860f7d"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/completion-evidence.json",
+      "sha256": "a5b820a37e45da76d041f8c59c0e42047e3b1549dd3543a8ca37589cf757525c"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/completion-seed-before.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/live-verification.json",
+      "sha256": "f9a614b33a74fe2448a0183df2b5a05485d115397f5e4925010e35261098de72"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/production-apply/portfolio-fund-attribution-1db23d51f70b5f6a726ef8bd003e1518feb4595f51d84264047140b88dcfb028-2efb61c23df294fa6272075f6645efaca2c25b93-34186950148/apply-receipt.json",
+      "sha256": "6a2a4d598389ce96b824e7616c94a9eb550d43216f89dc3d96aa9886cf1ab140"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/progress-before.json",
+      "sha256": "aff2447c48d1d09b4aed17708524456e0ab62f0c2acc4c6fcdcb0351d2ed0e1d"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/progress-completed.json",
+      "sha256": "ed53eb8675d8d08e3a392ba1914ded08bed7bcb41af5508b687ce830303dd433"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/rendered-0001.png",
+      "sha256": "200093afe1aa48119a06d442a97a62689693e6521c9de21a73593eff712cc79f"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/rendered-0002.png",
+      "sha256": "f01a2572f9c906099b2873b1d4932b2e27d39f2cf3c4811f9bf2d1b714fc9c44"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/rendered-0003.png",
+      "sha256": "fa0d3be4c965bac95937f1afb881538ce8be772940111298f110800d434cea4d"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/rendered-0017.png",
+      "sha256": "ecf33cc7c6ff46992bf34b0fa238ac201eb2bd987d52b8d226904ebbf08954fc"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/rendered-0062.png",
+      "sha256": "0d52dff0c89d610590dd61ba5a5513424e725232d922f08f319a01241f6ab613"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/rendered-0066.png",
+      "sha256": "9a0a68eef5642add1a76c09651111ddf5d6348a9e52dda60df6302327816c640"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/rendered-0079.png",
+      "sha256": "181566a79a06d170343c65c7c6438d3bc814806b9fa26e7f642311f0462cd518"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/rendered-0081.png",
+      "sha256": "b9ca0bcf73e20c9b796f294c898042faea56c8789cefd34a3e9ce0a31705351e"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/rendered-0109.png",
+      "sha256": "f33eae12aff774aea32435ebbfd47bc9e7ac9b3c169c08fd956be41837381f3c"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/apply-manifest.json",
+      "sha256": "88e2ffc04e8f738ecba398dc17129951bb246a43cf0c85c5b92763e4c453e55b"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/approval.json",
+      "sha256": "ca8e0380d8c5ba6b0b77af05d14647e51fbbca74f097521bd09c367a12f99644"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/canonical-release.json",
+      "sha256": "239fb0893f8ebb0175e46ed739e73c6b380e296073981b6a3e0400679572cd38"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/completion-after.json",
+      "sha256": "b90554280e5adc2a4a05c832b2a9ca21b2d19733503ca164ac2f487c9f4c4003"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/completion-batch.json",
+      "sha256": "31b8362d7227e0456153498b934c10813562c8cf5762dc9dc5a2cccbaa9b6ca2"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/completion-before.json",
+      "sha256": "0720f4ff2b48f891becff91a517a1843c6549cce55e7df1007ac606da29aff68"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/completion-evidence.json",
+      "sha256": "000df1ec1ddbae28a265ba2302798393512f539b47dc762507ef3c891892da90"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/completion-seed-before.json",
+      "sha256": "bb1912489c1c00520a9773815090e29c08458fe7e278af3494731ab5fb8859fe"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/live-verification.json",
+      "sha256": "c6ef16196fd47b6c6d2f05185534294a712450f80eefc98439dfe7a24a5b1074"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/production-apply/portfolio-fund-attribution-458bebaa8dbdb5f5f0f8aed42fde32eca4fb8ab61e420b7aaf138a2ea143a124-53c2964de93dab685a8e0da3353d194c009da185-34189776531/apply-receipt.json",
+      "sha256": "1b97fd8790ec278b3e8752c842a570448911ced2739dfbca01a24b7b4fe54aa1"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/progress-before.json",
+      "sha256": "ed53eb8675d8d08e3a392ba1914ded08bed7bcb41af5508b687ce830303dd433"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/progress-completed.json",
+      "sha256": "15abe1e6443be6192416f073704beb0075489540d81d8bc3a349c57e609e7adc"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/rendered-0110.png",
+      "sha256": "e19ca2318113491a32b02385318906e1f835a5ed9194b53502caa4745d1cfe4f"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/rendered-0112.png",
+      "sha256": "0ddda3b350c4431d80158469ba75537f4bc2ad2685b9f6c7ebd87732b3a952aa"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/rendered-0113.png",
+      "sha256": "ed463c5b4a3686bfaa9b6a207b1b62643064dc5ffd9998bda3408df7bc270d51"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/rendered-0114.png",
+      "sha256": "a01853fa44715caf75a1ab479a9570e601033a62a36772af160f7e52f077e899"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/rendered-0117.png",
+      "sha256": "f086c73ab9335028cc895a27573e1517676c7a653bd2c0f81c552ee32bf7b17a"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/rendered-0118.png",
+      "sha256": "787ff3d73ccf806bbe50378ce4e06b5759054a68c39a42e3067bd9bb2bd641fe"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/rendered-0122.png",
+      "sha256": "74bb1d63a57f9bbd12452018bcfe084ada0c4d351caf05a7ec946955af71ca18"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/rendered-0126.png",
+      "sha256": "5751eee78f082002a3335b456511068c66ef97e6d9ea16f09878b6b2fd9af870"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/rendered-0127.png",
+      "sha256": "729d27071b8421cc50439da1a149b98e85b03979837a8ca75cc98ebfeffefa11"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-003/completion-seed-before.json",
+      "sha256": "296ade22a782032b300db67ba0b2eb6ab77030979253e74721b7c19ea64b784d"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/funds.manifest.json",
+      "sha256": "6cce21787660a2d096e2836ddfae7f7fbc1ec60697ce5446de07c431055fd902"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "decisions": [
+    {
+      "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "name": "Puget Energy, Inc.",
+      "sequence": 128,
+      "classification": "PARKED",
+      "expectedCompanySha256": "884fef0403182286beeae9fd8aab2dcd3063d930b4701041dfcbd3ddf7f47f59",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/authority.json",
+          "sha256": "7a063e08d45141d1e07e6b43c112c66d2d738cc86d7b8cd8676a24d7256d046a"
+        }
+      ],
+      "owners": [],
+      "preservedOwnerIds": [
+        "cmrxpjpk701d2ivhenespe9dw",
+        "cmrxpjpks01d3ivhe9nm9wwth",
+        "cmrxpk6fp023pivhewnh4gzo7",
+        "cmrxpk6gd023qivheeomwf03t",
+        "cmrxpk6gr023rivhel4dhkwrw",
+        "cmrxpk6id023uivheusj162vx",
+        "cmt5g4mw40011xryyp7vt8jcj",
+        "cmt5g4mz30012xryyfmtirsji"
+      ],
+      "issue": "The frozen ten-name production snapshot shows OMERS ownership period cmrxpk6gr023rivhel4dhkwrw displays manager OMERS Infrastructure through its current fund link, but its organization is OMERS. Removing the unsupported inferred fund link would change the displayed manager and fails the existing owner-preservation gate. A separately supported organization/owner-binding repair is required alongside the reviewed attribution corrections. Preserve all eight ownership periods and complete before-images; do not partially apply the six reviewed owners or count Puget verified. No fund creation, global alias, canonical text change or terminal source reopening is authorized."
+    },
+    {
+      "companyId": "cmrxpjghb00yoivhejmdrclkw",
+      "name": "Aligned Data Centers",
+      "sequence": 132,
+      "classification": "PARKED",
+      "expectedCompanySha256": "5089631ab40ea0d7cd16efc3f4626942509ba5b95cf2c2e81a383df37e55e403",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/aligned/authority.json",
+          "sha256": "9019194c08579017325fb5ef6386c249114bd8aeac5b597507f02b52e24afd23"
+        }
+      ],
+      "owners": [],
+      "preservedOwnerIds": [
+        "cmrxpk26i01x6ivhertl2pn50",
+        "cmrxpk27301x7ivhepfk5vqti",
+        "cmt5i70pj0006siyy9ds7c8k1",
+        "cmt5i70ue0008siyyetmbg5gl"
+      ],
+      "issue": "Historical owner attribution: Preserve former Macquarie and Mubadala metadata exactly. The inactive Mubadala row retains INFERRED Mubadala Infrastructure/LOW metadata; it is outside the original active-owner603 and remains a separate unadjudicated issue, not source-approved by this report. Vehicle and joint-control boundaries: Keep Mariana/AIP wording and unknown individual percentages from the canonical receipt. FTC raw403 is not evidence; the EU PDF names joint controllers but no Mariana vehicle, specific allocated fund or equity split. Add no AIP, separate BlackRock or direct Mubadala/G42 period. The reviewed attribution subset is not full-name completion. Preserve complete production/seed before-images and resolve these gaps in the parked queue with supported compatible authority; do not infer mutations or reopen terminal source tasks."
+    },
+    {
+      "companyId": "cmrxpjgi100ypivhehaw4at9a",
+      "name": "ALLETE, Inc.",
+      "sequence": 133,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "08cdb5615d253b8e3c94883acf398a8ebcf193c4f89e855808228c7a42c4732b",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/authority.json",
+          "sha256": "0fb7ed52fff93fce972afe0204d2480307bd47d36f07dba5506f189761b64002"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmrxpk27n01x8ivhevmhimy9d",
+          "seedRecordId": "OFA-29A3F2378B92",
+          "expectedSeedSha256": "c9836dcda8cbb1644f8386ea8ffcd1a3aa1b42072c4be725b3ef3caeae2b9a51",
+          "expectedOwnerSha256": "14c68f6f223bc66a89a2f0ffcef20e16d8bf0e38352c3416b31e6d2c1de5e0ae",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "CPP Investment Board Private Holdings (6) Inc.",
+            "attributionConfidence": null,
+            "attributionRationale": "The July 10, 2024 ALLETE definitive merger proxy expressly names CPP Investment Board Private Holdings (6) Inc. as the CPP-affiliated sponsor investment vehicle. Use DISCLOSED for this named legal vehicle, not the generic Real Assets (Infrastructure) strategy or an invented distinct pension fund allocation. Preserve the already-applied 40% indirect interest, 2025 entry and null curated-fund link. Current browser-rendered proxy text is bound separately from the raw HTTP 403 denial.",
+            "linkedFundName": null
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Persist the exact reviewed attribution decision; preserve documented exceptions.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/proxy-dom-excerpt.json",
+              "sha256": "c623dd4df857a66bc93166c51108c953f9475d791e53537e0bcfc4da89ded8d6",
+              "url": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "ownerId": "cmrxpk2ap01x9ivhe4xgl52eu",
+          "seedRecordId": "OFA-2DC2AF15FD6F",
+          "expectedSeedSha256": "f17ffe8d86c7757bbe6d87290d7e0432a1a73a734e2db39aa757e5a45595dc68",
+          "expectedOwnerSha256": "04c2ec3b797cc472584aacba340c9ccb03ab4b7f434f3191120cd80bd10efe82",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "GIP Fund V vehicles and Tower Bridge Infrastructure Partners, L.P.",
+            "attributionConfidence": null,
+            "attributionRationale": "The July 10, 2024 ALLETE definitive merger proxy expressly names the GIP V vehicles and Tower Bridge Infrastructure Partners, L.P., the latter managed by GIP for CalPERS. Use DISCLOSED for those vehicles rather than inferred BlackRock GIF IV. Preserve the canonical combined 60% indirect interest and existing 40%/20% vehicle wording, 2025 entry and null fund link. The public-redacted testimony corroborates the proposed structure; BlackRock is GIP's parent and CalPERS is Tower Bridge's LP, not separate direct ALLETE owners.",
+            "linkedFundName": null
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Persist the exact reviewed attribution decision; preserve documented exceptions.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/allete/proxy-dom-excerpt.json",
+              "sha256": "c623dd4df857a66bc93166c51108c953f9475d791e53537e0bcfc4da89ded8d6",
+              "url": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    },
+    {
+      "companyId": "cmrxpjgj600yrivhex07hc3al",
+      "name": "Bluepoint Wind",
+      "sequence": 135,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "6475d02b4702ba14e062f674250b3a3ca5f28fb15b7de34fb75af61559482d2c",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/authority.json",
+          "sha256": "79cee2a1fc999b9d364e8bbc8a57d82ec3bc4a7c690014bb10dbe33c64102acb"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmrxpk2bs01xbivhem5vf9xzv",
+          "seedRecordId": "OFA-E45A0EBBF804",
+          "expectedSeedSha256": "642ac22f95bdbef863ff0059189b1ee8f0678105533d7b31d992254ee1c27924",
+          "expectedOwnerSha256": "54340c87ccd6cc16612f1a78dd590a50fdf0c9c17760c779dc3f001d1be06b6a",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "Seaway Energy Holdings, L.P.",
+            "attributionConfidence": null,
+            "attributionRationale": "The April 27, 2026 United States-Bluepoint settlement expressly names Seaway Energy Holdings, LP as a 50% owner of Bluepoint Winds Holdings, LLC, the parent of the leaseholder. Use DISCLOSED for the canonical Seaway Energy Holdings, L.P. vehicle rather than inferred BlackRock Global Energy & Power Infrastructure Fund III. The underlying GIP fund/co-investment split is not disclosed by this agreement; preserve GIP's 2022 entry, null curated-fund link and parent-level 50% stake without adding BlackRock or allocating Mubadala's undisclosed participation.",
+            "linkedFundName": null
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Persist the exact reviewed attribution decision; preserve documented exceptions.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf",
+              "sha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958",
+              "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "ownerId": "cmt5i7a48000usiyyrpv39kds",
+          "seedRecordId": "OFA-B08C683A1FB8",
+          "expectedSeedSha256": "ec235365825d31b56825b65e59312dc25d9c6a6b92b265d1ff677a5d7722d6b6",
+          "expectedOwnerSha256": "a76e1d8b44f29a63302f54c9b6e5449b87583aa9b6ae2450fc8cc78f9b937c4b",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "OW North America LLC",
+            "attributionConfidence": null,
+            "attributionRationale": "The April 27, 2026 United States-Bluepoint settlement expressly names OW North America LLC as a 50% owner of Bluepoint Winds Holdings, LLC, the parent of the leaseholder. Use DISCLOSED for that legal vehicle, not an invented Ocean Winds, EDPR or ENGIE fund. Preserve the canonical 2022 entry, null curated-fund link and parent-level 50% stake. Settlement signing alone does not establish completed lease cancellation, payment or an ownership exit.",
+            "linkedFundName": null
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Persist the exact reviewed attribution decision; preserve documented exceptions.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/bluepoint/settlement.pdf",
+              "sha256": "9cbefc444b93deaa943d31b251f1ba415293042e3a2e10599138a116a7524958",
+              "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    },
+    {
+      "companyId": "cmrxpjgjr00ysivhenmpy1x6i",
+      "name": "Clearway Energy Group",
+      "sequence": 137,
+      "classification": "PARKED",
+      "expectedCompanySha256": "892f8aadf92a1e55f979f3e241974e0e2394394751450c44cd8d69b33b9cc8f3",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/clearway/authority.json",
+          "sha256": "13221d7b26948118670a8fb407bf2513b27a9a3b6936580147c61425896de141"
+        }
+      ],
+      "owners": [],
+      "preservedOwnerIds": [
+        "cmrxpk2cd01xcivhef8mj5h2n",
+        "cmt5klrvp000cy8yy6vilhswq",
+        "cmt5kls1m000ey8yygpdp3jzh"
+      ],
+      "issue": "Private group versus listed affiliate: The about-page 13.6GW/27-state paragraph names listed Clearway Energy, Inc., while the canonical group description aggregates those metrics. Preserve the existing description in this two-rationale audit and flag any entity-boundary correction for separate compatible review; do not merge the private group and listed affiliate. Dated ownership and legal chain: Form3 footnotes identify the September12,2022 closing and legal chain, not a fresh exhaustive September2026 ownership-event search. Listed-issuer securities and deemed beneficial ownership are not additional direct group owners. Preserve both active50% periods and the historical2018-2022 GIP period. Current website and source availability: Current home-page 14GW gross/11GW owned,35 development-or-operating states and27 operating states use distinct denominators. The2018 launch has a September4 heading but states August31 completion. Do not import dynamic footer metrics, management or enrichment. Four raw SEC403 responses are limitations, not filings; rendered Form3 authority is captured separately. The reviewed attribution subset is not full-name completion. Preserve complete production/seed before-images and resolve these gaps in the parked queue with supported compatible authority; do not infer mutations or reopen terminal source tasks."
+    },
+    {
+      "companyId": "cmrxpj8wj00n3ivheefc305n4",
+      "name": "Environmental 360 Solutions",
+      "sequence": 140,
+      "classification": "PARKED",
+      "expectedCompanySha256": "cbe4a0bba2868c161a251bf58969d056893a9c9450998bdf9f9188aea0cbb81d",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/e360/authority.json",
+          "sha256": "90c3d914abcecc888ec11c310bcc5e7a58fe73bcb8a2af2d48a436d79d407bf0"
+        }
+      ],
+      "owners": [],
+      "preservedOwnerIds": [
+        "cmrxpju7d01kjivhel2xkl0z1",
+        "cmt5km2dm000xy8yyazng49cl",
+        "cmt5km2j9000zy8yy8pv6w1xt",
+        "cmt5km2oy0011y8yydgkdvdzu",
+        "cmt5km2sq0012y8yybzf7vca7"
+      ],
+      "issue": "Historical Almada ownership: The February 2023 closing release names Almada as a founding investor and majority shareholder whose interest BlackRock acquired. The existing five-period canonical history contains BlackRock, the founder, CBGF, OPTrust and Oaktree but no Almada period. Preserve the canonical after-image and flag a separate compatible history correction; do not invent dates, percentages or a vehicle. Historical-owner metadata: OPTrust and Oaktree remain realized in 2023 with UNRESOLVED attribution and null rationale/vehicle/confidence. They are outside the original active-owner603 denominator and outside the three-row E360 attribution repair. Equality preservation is not substantive adjudication or authority to replay the repair. Evidence scope and dated facts: The February 2023 ARC row identifies the legal acquisition vehicle, not completion or stake; the separate February16 closing release does not name Fund IV. The July13,2026 Marcotte/Michigan operating acquisition is not a platform equity sale. Preserve the August23 canonical cutoff, unknown exact stakes and distinct founder/CBGF display labels versus null legal vehicles; no enrichment or fresh exhaustive ownership-event search. The reviewed attribution subset is not full-name completion. Preserve complete production/seed before-images and resolve these gaps in the parked queue with supported compatible authority; do not infer mutations or reopen terminal source tasks."
+    },
+    {
+      "companyId": "cmrxpjgka00ytivhen28z6djw",
+      "name": "Eolian",
+      "sequence": 141,
+      "classification": "PARKED",
+      "expectedCompanySha256": "02733b567546ebf0c188efa0aa3225d6b48e7fa6f1d432718458d11f5fbae872",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/eolian/authority.json",
+          "sha256": "964e9e43c5142e26ac7ca614bb8afc9c4d4b3653e823379d35b93cecbb20f4d5"
+        }
+      ],
+      "owners": [],
+      "preservedOwnerIds": [
+        "cmrxpk2ct01xdivheok0jco5h",
+        "cmt5og4ch0007u7yykqzqw0ct",
+        "cmt5og4io0009u7yyvbz3oqar"
+      ],
+      "issue": "Non-target employee rationale and seed source attribution: Current home-page text no longer states employee co-ownership, although the dated July 29, 2026 company-issued Flint Grid release explicitly identifies employees and GIP-managed funds as owners. The existing equal production/seed employee rationale cites the current company site. Preserve employee identity, null vehicle/date and undisclosed percentage; separately update the rationale/source binding through compatible persistence. This equality-blind issue is outside the original603 and is not adjudicated as an extra field here. Historical MAP RE/ES attribution: The acquisition announcement describes MAP RE/ES as the acquired renewable-energy business, not a managed investment fund or separately named legal holding entity. Canonical MAP Energy, LLC remains realized in2020 with DISCLOSED/MAP RE/ES metadata; preserve it unchanged and flag the historical classification/vehicle semantics for separate compatible review outside the original active-owner603. Canonical citation label and entry precision: The current GIP portfolio page states Unrealized but does not name GIP IV. The canonical application citation label attributes GIP IV to that page; the named fund is instead directly supported by the acquisition release and corroborated by the leadership account of a2020 spinoff capitalized by GIP Fund IV. Do not turn the December29 announcement into an exact legal closing or current100% stake. The reviewed attribution subset is not full-name completion. Preserve complete production/seed before-images and resolve these gaps in the parked queue with supported compatible authority; do not infer mutations or reopen terminal source tasks."
+    },
+    {
+      "companyId": "cmrxpj8x000n4ivhefbfwnig3",
+      "name": "Lighthouse",
+      "sequence": 142,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "af8b6d5f4885af55dd45842d2d28aca08371507cdd735c9cc44bf05116cad314",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/authority.json",
+          "sha256": "d226f5cbba1b409ac39ed11eebbf97bb2626e682ae59132e2fdd4e3fd01a337a"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmrxpju7s01kkivheqy4idfr6",
+          "seedRecordId": "OFA-CD79593C0120",
+          "expectedSeedSha256": "c633e01cd30e0a62308a5506f05ec2e3d9bb40c24785285ec01af61a03f6d6a4",
+          "expectedOwnerSha256": "6bb9a13a898882096c42a8b32197d9a034621747ad2f8eeaf1b26156de77b47d",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "Evergreen Infrastructure Fund",
+            "attributionConfidence": null,
+            "attributionRationale": "BlackRock's November 16, 2023 announcement directly identifies its Evergreen Infrastructure fund as signing definitive documentation to acquire Lighthouse, subject to closing conditions. This supports the disclosed fund attribution and existing curated Evergreen Infrastructure Fund link, not a separately named legal holding entity. The signing release is not proof of closing or a 100% project-level economic stake; preserve the canonical December 2023 closing and the distinction between all of Excelsior's membership interests and undisclosed total project-level economic ownership.",
+            "linkedFundName": "Evergreen Infrastructure Fund"
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Persist the exact reviewed attribution decision; preserve documented exceptions.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/lighthouse/buyer-rendered.json",
+              "sha256": "430119a66a8f48facc5550a6fc6490a4abac695c0746e7968559c7a961052745",
+              "url": "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [
+        "cmt5ogans000fu7yykyfg3253"
+      ],
+      "issue": null
+    },
+    {
+      "companyId": "cmrxpj8xk00n5ivhezp5xja2f",
+      "name": "Gigapower",
+      "sequence": 143,
+      "classification": "PARKED",
+      "expectedCompanySha256": "1cf989d7f00267dfeb79affa45b02a5086d60cd5d88c36f6b2be44c2f7d32e2b",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/gigapower/authority.json",
+          "sha256": "64aec10464e94d7d0dc2c688c05537d0aef5347b0662ddee518b823f80708463"
+        }
+      ],
+      "owners": [],
+      "preservedOwnerIds": [
+        "cmrxpju8701klivhews3qe3yr",
+        "cmt5oggkj000tu7yyz4u566wy"
+      ],
+      "issue": "Canonical predecessor/name-change citation limitation: The sole canonical application-primary is a ten-page June 16, 2023 application ending with an exhibit list. Page 3 states formation on February 14, 2022, but this captured PDF does not include Exhibit A or state the predecessor name and March 18, 2022 rename. Preserve canonical aliases/milestone/description unchanged while flagging this separate source-binding gap; do not fabricate an exhibit or claim full identity reconciliation. Fresh non-field source limitations: AT&T closing and SEC 10-K returned non-evidentiary 403 bodies; three BusinessWire releases timed out empty; the company about page is a raw200 JavaScript loader. Canonical closing, later stake/manager and footprint claims are preserved from applied history, not newly established by these failed responses. No new exhaustive company research is authorized. The reviewed attribution subset is not full-name completion. Preserve complete production/seed before-images and resolve these gaps in the parked queue with supported compatible authority; do not infer mutations or reopen terminal source tasks."
+    },
+    {
+      "companyId": "cmrxpj90b00naivhedtmfwflb",
+      "name": "National Renewable Solutions",
+      "sequence": 148,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "expectedCompanySha256": "de02e84b419a488bdecfdc92c607b5a734c3dba8eb958f87111be6d494b4c4c7",
+      "evidence": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/authority-v2.json",
+          "sha256": "6ca2fb9e5b5a9306855a5dc489e4b80abc990e7f6631909ac3093224b20d4fc9"
+        }
+      ],
+      "owners": [
+        {
+          "ownerId": "cmrxpjuas01kqivhe76y9ulx8",
+          "seedRecordId": "OFA-24FDA731AE8E",
+          "expectedSeedSha256": "362d5ad6a627453cc2e1923fcbad50dd4c01483ec3e69310cf07924bbf99787f",
+          "expectedOwnerSha256": "9b31cd6ce1e55a18a9570e9770ae5681726f281aa795771e38d6b3380563716c",
+          "desired": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "GRP III Norse Holdings LP (entry vehicle)",
+            "attributionConfidence": null,
+            "attributionRationale": "Transaction counsel directly identifies GRP III Norse Holdings LP, a BlackRock subsidiary, as the buyer of 100% of National Renewable Solutions. This supports the named entry vehicle, not an expanded flagship fund name or the current legal holding chain. Preserve the 2021 entry and undisclosed current percentage. Do not expand GRP III into a full fund name or restore Global Energy & Power Infrastructure Fund III; the curated Global Renewable Power Fund III link requires a separately compatible removal alongside this metadata decision.",
+            "linkedFundName": null
+          },
+          "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+          "reason": "Persist the exact reviewed attribution decision; preserve documented exceptions.",
+          "sources": [
+            {
+              "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/nrs/counsel.html",
+              "sha256": "ba388e70673ea7dc18f2d963a32c14928e8d4f4358070f216d5a807a1c82616d",
+              "url": "https://www.mayerbrown.com/en/people/c/castro-federica-m",
+              "primary": true
+            }
+          ]
+        }
+      ],
+      "preservedOwnerIds": [],
+      "issue": null
+    }
+  ],
+  "batchSha256": "5488ad3a5de7308a7691fbd2594d384b6cd05e8f1ed6192d2e1afc1cbca6f7fa"
+}

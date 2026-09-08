@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "5488ad3a5de7308a7691fbd2594d384b6cd05e8f1ed6192d2e1afc1cbca6f7fa",
+  "sourceSnapshotSha256": "284db7940182ffd0a1b9fc0158f03e5fc6a6986fafd9e3c779aa9ab7a567c5eb",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 6,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 1
+  },
+  "expectedMutationCount": 6,
+  "mutations": [
+    {
+      "recordId": "OFA-29A3F2378B92",
+      "ownershipPeriodId": "cmrxpk27n01x8ivhevmhimy9d",
+      "companyName": "ALLETE, Inc.",
+      "country": "United States",
+      "investmentFirm": "CPP Investments",
+      "currentVehicleName": "CPP Investment Board Private Holdings (6) Inc.",
+      "databaseVehicleName": "CPP Investment Board Private Holdings (6) Inc.",
+      "investmentYear": 2025,
+      "stake": "40% indirect",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CPP Investment Board Private Holdings (6) Inc.",
+        "attributionConfidence": null,
+        "attributionRationale": "The July 10, 2024 ALLETE definitive merger proxy expressly names CPP Investment Board Private Holdings (6) Inc. as the CPP-affiliated sponsor investment vehicle. Use DISCLOSED for this named legal vehicle, not the generic Real Assets (Infrastructure) strategy or an invented distinct pension fund allocation. Preserve the already-applied 40% indirect interest, 2025 entry and null curated-fund link. Current browser-rendered proxy text is bound separately from the raw HTTP 403 denial."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-2DC2AF15FD6F",
+      "ownershipPeriodId": "cmrxpk2ap01x9ivhe4xgl52eu",
+      "companyName": "ALLETE, Inc.",
+      "country": "United States",
+      "investmentFirm": "GIP",
+      "currentVehicleName": "GIP Fund V vehicles (40%) and Tower Bridge Infrastructure Partners, L.P. (20%)",
+      "databaseVehicleName": "GIP Fund V vehicles (40%) and Tower Bridge Infrastructure Partners, L.P. (20%)",
+      "investmentYear": 2025,
+      "stake": "60% indirect",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GIP Fund V vehicles and Tower Bridge Infrastructure Partners, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The July 10, 2024 ALLETE definitive merger proxy expressly names the GIP V vehicles and Tower Bridge Infrastructure Partners, L.P., the latter managed by GIP for CalPERS. Use DISCLOSED for those vehicles rather than inferred BlackRock GIF IV. Preserve the canonical combined 60% indirect interest and existing 40%/20% vehicle wording, 2025 entry and null fund link. The public-redacted testimony corroborates the proposed structure; BlackRock is GIP's parent and CalPERS is Tower Bridge's LP, not separate direct ALLETE owners."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-E45A0EBBF804",
+      "ownershipPeriodId": "cmrxpk2bs01xbivhem5vf9xzv",
+      "companyName": "Bluepoint Wind",
+      "country": "United States",
+      "investmentFirm": "GIP",
+      "currentVehicleName": "Seaway Energy Holdings, L.P.",
+      "databaseVehicleName": "Seaway Energy Holdings, L.P.",
+      "investmentYear": 2022,
+      "stake": "50% of Bluepoint Winds Holdings, LLC",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Seaway Energy Holdings, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The April 27, 2026 United States-Bluepoint settlement expressly names Seaway Energy Holdings, LP as a 50% owner of Bluepoint Winds Holdings, LLC, the parent of the leaseholder. Use DISCLOSED for the canonical Seaway Energy Holdings, L.P. vehicle rather than inferred BlackRock Global Energy & Power Infrastructure Fund III. The underlying GIP fund/co-investment split is not disclosed by this agreement; preserve GIP's 2022 entry, null curated-fund link and parent-level 50% stake without adding BlackRock or allocating Mubadala's undisclosed participation."
+      },
+      "evidenceUrls": [
+        "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement"
+      ]
+    },
+    {
+      "recordId": "OFA-B08C683A1FB8",
+      "ownershipPeriodId": "cmt5i7a48000usiyyrpv39kds",
+      "companyName": "Bluepoint Wind",
+      "country": "United States",
+      "investmentFirm": "Ocean Winds",
+      "currentVehicleName": "OW North America LLC",
+      "databaseVehicleName": "OW North America LLC",
+      "investmentYear": 2022,
+      "stake": "50% of Bluepoint Winds Holdings, LLC",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "OW North America LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "The April 27, 2026 United States-Bluepoint settlement expressly names OW North America LLC as a 50% owner of Bluepoint Winds Holdings, LLC, the parent of the leaseholder. Use DISCLOSED for that legal vehicle, not an invented Ocean Winds, EDPR or ENGIE fund. Preserve the canonical 2022 entry, null curated-fund link and parent-level 50% stake. Settlement signing alone does not establish completed lease cancellation, payment or an ownership exit."
+      },
+      "evidenceUrls": [
+        "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement"
+      ]
+    },
+    {
+      "recordId": "OFA-CD79593C0120",
+      "ownershipPeriodId": "cmrxpju7s01kkivheqy4idfr6",
+      "companyName": "Lighthouse",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "Evergreen Infrastructure Fund",
+      "databaseVehicleName": "Evergreen Infrastructure Fund",
+      "investmentYear": 2023,
+      "stake": "Acquired 100% of Excelsior's membership interests; total project-level economic percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Evergreen Infrastructure Fund",
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": "Evergreen Infrastructure Fund"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Evergreen Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "BlackRock's November 16, 2023 announcement directly identifies its Evergreen Infrastructure fund as signing definitive documentation to acquire Lighthouse, subject to closing conditions. This supports the disclosed fund attribution and existing curated Evergreen Infrastructure Fund link, not a separately named legal holding entity. The signing release is not proof of closing or a 100% project-level economic stake; preserve the canonical December 2023 closing and the distinction between all of Excelsior's membership interests and undisclosed total project-level economic ownership."
+      },
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security"
+      ]
+    },
+    {
+      "recordId": "OFA-24FDA731AE8E",
+      "ownershipPeriodId": "cmrxpjuas01kqivhe76y9ulx8",
+      "companyName": "National Renewable Solutions",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "GRP III Norse Holdings LP (entry vehicle)",
+      "databaseVehicleName": "GRP III Norse Holdings LP (entry vehicle)",
+      "investmentYear": 2021,
+      "stake": "100% at 2021 entry; current exact stake not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "BlackRock Global Renewable Power Fund III"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GRP III Norse Holdings LP (entry vehicle)",
+        "attributionConfidence": null,
+        "attributionRationale": "Transaction counsel directly identifies GRP III Norse Holdings LP, a BlackRock subsidiary, as the buyer of 100% of National Renewable Solutions. This supports the named entry vehicle, not an expanded flagship fund name or the current legal holding chain. Preserve the 2021 entry and undisclosed current percentage. Do not expand GRP III into a full fund name or restore Global Energy & Power Infrastructure Fund III; the curated Global Renewable Power Fund III link requires a separately compatible removal alongside this metadata decision."
+      },
+      "evidenceUrls": [
+        "https://www.mayerbrown.com/en/people/c/castro-federica-m"
+      ]
+    }
+  ],
+  "manifestSha256": "f85a4e1de2fc7354aa520a98f04692ef5e43cb553b41b4e6d52f2970b909ce7b"
+}
