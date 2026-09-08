@@ -17,5 +17,7 @@ Latest: closeout-v1/lineage-checks-v4.json; producer portco-lineage-closeout.ts.
 
 Read ownership-diagnostic.json for specific exceptions only. Prior detailed checkpoint: closeout-v1/checkpoint-before-token-efficiency.md. Diagnostics do not authorize writes or prove global parity.
 
+Metadata provenance: closeout-v1/metadata-lineage.json and metadata-lineage.ts validate70 attribution manifest/approval/receipt chains (46 original plus24 completion releases, including014 recovery).1390of1620 owners exactly match latest receipt metadata;224 have no attribution receipt;6 differ only in linked fund name (PNGTS,Horizon,Aligned,Revolution/Potters/Millennium Parking).299of445 strict seed/production metadata differences match complete receipt after-images. This proves provenance, NOT source truth or seed parity. NGPL2025's Fund VII/INFERRED/LOW state exactly matches the initial apply receipt; Harvestone's generated organization follows ownershipLinks(manager fallback when no fund). Next adjudicate seed-only representation differences versus substantive corrections using existing direct-source packets; retain genuine unknowns, do not harmonize production wording or infer facts.
+
 ## Finish
 Account for full-population identity/ownership/attribution/redirect differences; publish counts and exceptions distinguishing batch parks from source deferrals. Preserve every release/receipt/seed/API/rendered gate. Publish protected closeout with completion bookkeeping and verify exact canonical deployment. Only then complete goal and delete heartbeat.
