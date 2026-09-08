@@ -13,6 +13,7 @@ import { verifyBatchExecutionLedger } from "../portco-reconciliation/batch-contr
 import { verifySeedManifest } from "../portfolio-fund-attribution/schema";
 
 const configSchema = z.strictObject({ batchId: z.string().regex(/^portco-completion-\d{3}$/),
+  phase: z.literal("PARKED_REVISIT").optional(),
   asOfDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), progressSha256: fileSchema.shape.sha256,
   records: z.array(fileSchema).min(1).max(10), completedReleases: z.array(completedReleaseSchema) });
 async function main() {
@@ -41,7 +42,7 @@ async function main() {
   const seed = verifySeedManifest(JSON.parse(readFileSync(SEED_PATH, "utf8")));
   if (progress.completedBatchIds.length) completedSeedLineage({ releases: config.completedReleases, progress, seed, readBytes: bytes });
   else if (config.completedReleases.length) throw Error("Unexpected completion lineage");
-  const records = validateDecisionRecords({ progress, records: config.records.map(r => json(r.path, r.sha256)),
+  const records = validateDecisionRecords({ progress, phase: config.phase, records: config.records.map(r => json(r.path, r.sha256)),
     read: ref => ref.path.endsWith(".json") ? json(ref.path, ref.sha256) : bytes(ref.path, ref.sha256) });
   for (const record of records) {
     const task = execution.tasks.find(t => t.sequence === record.sequence);
@@ -61,6 +62,7 @@ async function main() {
   bytes(join(output, "completion-seed-before.json"));
   const decisions = bindDecisionRecords(records, snapshot);
   const batch = verifyBatch(seal({ schemaVersion: 1, artifactType: "PORTCO_COMPLETION_BATCH", batchId: config.batchId,
+    ...(config.phase ? { phase: config.phase } : {}),
     baseCommit: base, asOfDate: config.asOfDate, executionManifestSha256: execution.manifestSha256, sourceLedgerSha256: ledger.ledgerSha256,
     progressSha256: progress.progressSha256, seedManifestSha256: seed.manifestSha256, snapshotSha256: snapshot.snapshotSha256,
     targetFingerprint: snapshot.targetFingerprint, dependencies: [...refs].map(([path, sha256]) => ({ path, sha256 })).sort((a,b) => a.path.localeCompare(b.path)), decisions }, "batchSha256"));

@@ -56,6 +56,8 @@ export const decisionSchema = z.strictObject({
 export const batchSchema = z.strictObject({
   schemaVersion: z.literal(1), artifactType: z.literal("PORTCO_COMPLETION_BATCH"),
   batchId: text, baseCommit: commit, asOfDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  // Omitted for immutable main-pass releases; explicit and hash-bound for the revisit.
+  phase: z.literal("PARKED_REVISIT").optional(),
   executionManifestSha256: hash, sourceLedgerSha256: hash, progressSha256: hash,
   seedManifestSha256: hash, snapshotSha256: hash, targetFingerprint: hash,
   dependencies: z.array(fileSchema).min(1), decisions: z.array(decisionSchema).min(1).max(10),
@@ -216,6 +218,7 @@ export function attributionSnapshot(snapshot: Snapshot, asOfDate: string) {
 
 const progressNameSchema = z.strictObject({ companyId: text, name: text, sequence: z.number().int().positive(),
   reviewedEvidence: z.array(fileSchema), status: z.enum(["REMAINING", "PARKED", "VERIFIED"]),
+  parkedReview: z.strictObject({ priorIssue: text, batchId: text, completion: fileSchema }).optional(),
   issue: text.nullable(), completion: fileSchema.nullable() });
 export const progressSchema = z.strictObject({ schemaVersion: z.literal(1), artifactType: z.literal("PORTCO_COMPLETION_PROGRESS"),
   universe: fileSchema, names: z.array(progressNameSchema).min(1),
@@ -230,6 +233,8 @@ export function verifyProgress(value: unknown) {
   unique(p.completedBatchIds, "completed batch"); unique(p.consumedReceiptHashes, "receipt");
   for (const n of p.names) {
     if ((n.status === "PARKED") !== (n.issue !== null) || (n.status === "VERIFIED") !== (n.completion !== null)) throw Error("Incorrect name status evidence");
+    if (n.parkedReview && (n.status === "REMAINING" || !p.completedBatchIds.includes(n.parkedReview.batchId)
+      || (n.status === "VERIFIED" && !equal(n.completion, n.parkedReview.completion)))) throw Error("Incorrect parked-review completion lineage");
   }
   return p;
 }
@@ -238,7 +243,9 @@ export function nextNames(value: unknown, revisitParked = false) {
   if (p.active) throw Error("One active release only");
   const remaining = p.names.filter(n => n.status === "REMAINING");
   if (revisitParked && remaining.length) throw Error("Parked queue follows main pass");
-  const pool = revisitParked ? p.names.filter(n => n.status === "PARKED") : remaining;
+  const pool = revisitParked ? p.names.filter(n => n.status === "PARKED" && !n.parkedReview) : remaining;
+  // Every parked name has already had its main pass; never reorder this queue by packet availability.
+  if (revisitParked) return pool.sort((a, b) => a.sequence - b.sequence).slice(0, 10);
   const reviewed = pool.filter(n => n.reviewedEvidence.length > 0);
   return (reviewed.length ? reviewed : pool).sort((a, b) => a.sequence - b.sequence).slice(0, 10);
 }
@@ -248,10 +255,12 @@ export function counts(value: unknown) {
     parked: p.names.filter(n => n.status === "PARKED").length, remaining: p.names.filter(n => n.status === "REMAINING").length };
 }
 function reseal(p: Progress) { const { progressSha256: _old, ...content } = p; return verifyProgress(seal(content, "progressSha256")); }
-export function activate(progress: unknown, input: unknown, revisitParked = false) {
+export function activate(progress: unknown, input: unknown, revisitParked?: boolean) {
   const p = verifyProgress(progress), batch = verifyBatch(input);
+  const revisit = batch.phase === "PARKED_REVISIT";
+  if (revisitParked !== undefined && revisitParked !== revisit) throw Error("Parked revisit must be bound in the batch phase");
   if (p.active || p.completedBatchIds.includes(batch.batchId) || batch.progressSha256 !== p.progressSha256) throw Error("Active, duplicate or stale batch");
-  if (!equal(nextNames(p, revisitParked).map(n => n.companyId), batch.decisions.map(d => d.companyId))) throw Error("Select earliest ten eligible names");
+  if (!equal(nextNames(p, revisit).map(n => n.companyId), batch.decisions.map(d => d.companyId))) throw Error("Select earliest ten eligible names");
   for (const d of batch.decisions) {
     const n = p.names.find(n => n.companyId === d.companyId)!;
     if (n.name !== d.name || n.sequence !== d.sequence) throw Error("Source name/order mismatch");
@@ -294,7 +303,7 @@ export function recoverPreApply(input: { progress: unknown; priorBatch: unknown;
     || !equal(before.funds, snapshot.funds) || !equal(old.decisions, batch.decisions)
     || old.seedManifestSha256 !== batch.seedManifestSha256 || old.progressSha256 !== batch.progressSha256
     || old.executionManifestSha256 !== batch.executionManifestSha256 || old.sourceLedgerSha256 !== batch.sourceLedgerSha256
-    || old.asOfDate !== batch.asOfDate) throw Error("Recovery must preserve every reviewed decision and complete target before-image");
+    || old.asOfDate !== batch.asOfDate || old.phase !== batch.phase) throw Error("Recovery must preserve every reviewed decision and complete target before-image");
   // This gate validates the newly supplied real catalog without weakening the protected schema.
   attributionSnapshot(snapshot, batch.asOfDate);
   return reseal({ ...p, active: { ...p.active, batchSha256: batch.batchSha256, state: "PREPARING", releaseSha: null, failure: null } });
@@ -350,7 +359,9 @@ export function complete(input: { progress: unknown; compiled: ReturnType<typeof
   if (input.files.get(completionFile.path) !== completionFile.sha256) throw Error("Durable completion artifact required");
   const names = p.names.map(n => {
     const d = c.batch.decisions.find(d => d.companyId === n.companyId);
+    if (d && c.batch.phase === "PARKED_REVISIT" && (n.status !== "PARKED" || !n.issue || n.parkedReview)) throw Error("Parked revisit already completed or prior issue missing");
     return !d ? n : { ...n, status: d.classification === "PARKED" ? "PARKED" as const : "VERIFIED" as const,
+      ...(c.batch.phase === "PARKED_REVISIT" ? { parkedReview: { priorIssue: n.issue!, batchId: c.batch.batchId, completion: completionFile } } : {}),
       issue: d.issue, completion: d.classification === "PARKED" ? null : completionFile };
   });
   return reseal({ ...p, names, active: null, completedBatchIds: [...p.completedBatchIds, c.batch.batchId],

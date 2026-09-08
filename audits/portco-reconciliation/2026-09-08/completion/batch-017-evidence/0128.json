@@ -1,0 +1,88 @@
+{
+  "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+  "name": "Puget Energy, Inc.",
+  "sequence": 128,
+  "classification": "PARKED",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/puget-energy/authority.json",
+      "sha256": "7a063e08d45141d1e07e6b43c112c66d2d738cc86d7b8cd8676a24d7256d046a"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-003/completion-evidence.json",
+      "sha256": "1b847a511754ec27b9e3a1be699408ed838c7facdcea1a70fecb5e72fde31e0b"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-003/completion-after.json",
+      "sha256": "f2c9e09be81e0419ac41496e3468febfcf6e102af7875fd1b495846fb0a88194"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/review.json",
+      "sha256": "0f756bac34d00d9bc07fae7b0e54cd05e68ddd5d9a2e26ec9955636d4fcbdcb4"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpjpk701d2ivhenespe9dw",
+    "cmrxpjpks01d3ivhe9nm9wwth",
+    "cmrxpk6fp023pivhewnh4gzo7",
+    "cmrxpk6gd023qivheeomwf03t",
+    "cmrxpk6gr023rivhel4dhkwrw",
+    "cmrxpk6id023uivheusj162vx",
+    "cmt5g4mw40011xryyp7vt8jcj",
+    "cmt5g4mz30012xryyfmtirsji"
+  ],
+  "issue": "The OMERS row's linked-fund manager is OMERS Infrastructure but its physical organization is OMERS. Unlinking would change owner display. Requires organization/owner-binding repair, not global alias or new fund. Preserve eight periods and do not partially apply six reviewed owners.",
+  "expectedImageSemanticSha256": "f6a37879b46a38ca0b7c752f562ad6121d38ea00076dc8cfdec577e6e90becf2",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjpk701d2ivhenespe9dw",
+      "sha256": "035dcbd68b797950ad84d05a90414bcd08c2b0e51f9fcdc67967907a245d9480"
+    },
+    {
+      "ownerId": "cmrxpjpks01d3ivhe9nm9wwth",
+      "sha256": "2d78ae0d73630056b2614f66e4d376a3ec5a01f282df7f1e8d33a04c2b8a8036"
+    },
+    {
+      "ownerId": "cmrxpk6fp023pivhewnh4gzo7",
+      "sha256": "e6f54b57b098a1c727d8ced712f4d774950a38cb07685735f002e8bf74630f31"
+    },
+    {
+      "ownerId": "cmrxpk6gd023qivheeomwf03t",
+      "sha256": "ad997fc88ac90a15a537a3e1c4a40852dd75ed725984f217ff89707137f21be0"
+    },
+    {
+      "ownerId": "cmrxpk6gr023rivhel4dhkwrw",
+      "sha256": "3976a8f8486be7939b5b6529635b701a152b2a6f766caeeb31019679643e7109"
+    },
+    {
+      "ownerId": "cmrxpk6id023uivheusj162vx",
+      "sha256": "215195d24ea4c0da37b3f5523fa6658c9fd7fd11afc431c8ed1b84b4fcf3d86d"
+    },
+    {
+      "ownerId": "cmt5g4mw40011xryyp7vt8jcj",
+      "sha256": "5c282bef72b039446c9cc595a649fa5f9b4e66e1b68704e632e8a7502e2ed91c"
+    },
+    {
+      "ownerId": "cmt5g4mz30012xryyfmtirsji",
+      "sha256": "9df8f6be2b51a83c9d78e8ba051a690bda571ac24779a4409c38efc39651f5d8"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0128-puget-energy-v1/proposal.json",
+      "sha256": "407b6779ef11e1eec82cbf1a5abd11c6b9206f2c5851e554a46de348cb92a1f3"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0128-puget-energy-v1.json",
+      "sha256": "25c62e13a004b42580a3c70da2c3a9bb9422d58c2e4b2a786caa015f272f2c0d"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "dcd312a97336a2f1ee766690ba2201310bb5b51698eb93795f66aaebf6bafbe3",
+      "memberIndex": 2
+    },
+    "receiptSha256": "038ba0356997af25395a8b9a7158261e2cb7db4378a8bcfa184d10b9db7c3869"
+  },
+  "sourceCaptures": []
+}

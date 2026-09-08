@@ -1,0 +1,29 @@
+{
+  "artifactType": "PORTCO_PARKED_PASS_PREPARATION",
+  "preparedAt": "2026-09-08T14:16:29Z",
+  "status": "TOOLING_TESTED_NO_ACTIVE_RELEASE",
+  "progressSha256": "e6aed0afdf6a477e7b50c51ab4f463604fb2b7f15f90c993a57db3a308d61278",
+  "counts": { "fullyVerified": 77, "parked": 78, "remainingMainPass": 0, "parkedAwaitingRevisit": 78 },
+  "priorCompletion": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-016/completion-evidence.json",
+  "priorAppliedReleaseSha": "7186bf21d684f8abbb02cf7d8710bcb266898318",
+  "priorApplyRun": "34235853827",
+  "priorReceiptSha256": "473f7f59aa536daa6b9ce75100a814372338e944d78ede79183d717a6307c945",
+  "nextEligibleSourceSequences": [91, 121, 128, 132, 137, 140, 141, 143, 149, 150],
+  "validation": {
+    "targetedSuites": 11,
+    "targetedTestsPassed": 96,
+    "appTypecheck": "PASS",
+    "toolTypecheck": "PASS",
+    "changedTypeScriptEslint": "PASS",
+    "diffCheck": "PASS",
+    "immutableCompletedReleasesReplayed": 16,
+    "offlineReplay": "PASS",
+    "databaseReads": 0,
+    "databaseWrites": 0,
+    "fullSuite": "Run once on the final combined next-batch contents before release. Prior batch016 passed 207 files / 3790 tests."
+  },
+  "reviewMechanism": "The optional sealed PARKED_REVISIT phase is accepted only after the main pass. Exact original order and at most ten names remain enforced. Only protected completion creates a parkedReview containing the original issue, completed batch ID and completion-file hash. Re-parked names remain PARKED and are not counted verified or selected again in this pass. Failed/unfinished reviews do not advance eligibility. Existing main-pass artifacts retain unchanged hashes and replay semantics.",
+  "remainingToolingAssessment": "Historical metadata support has not been implemented in the completion compiler. The existing protected attribution workflow already accepts expectedIsActive:false; do not mislabel all historical metadata as unsupported production scope. The seed loader processes realized owners and joins on exact company/country/firm/vehicle/year/stake; inline owner metadata overrides the overlay. Any extension must prove a unique evaluated existing seed owner, absence and collision checks for new overlay records, preserve every identity/chronology field and verify effective seed alignment without executing the full seed. Unsupported owner/organization/vehicle/stake/year/canonical-text changes remain precise parks.",
+  "evidenceReuse": "Reuse completed source and authority packets. Do not repeat ChatGPT research. Reopen direct sources only for unresolved claims or changed dependencies. seedOnlyRationale may address existing null-production-rationale representation issues, but is not authority to dismiss other ownership or identity gaps.",
+  "releaseBoundary": "Preparation only. No new production snapshot, active register mutation, apply approval or transaction is authorized by this record. Carry batch016 completion bookkeeping and shared tooling in the next compatible combined protected release; do not create a separate preliminary audit deployment. Never repeat prior transactions. The original exact deferrals and final global reconciliation/exception report still remain."
+}

@@ -1,0 +1,58 @@
+{
+  "companyId": "cmt5dkowd0000ujyy2xt5zh9z",
+  "name": "R.E.L.A.M.",
+  "sequence": 121,
+  "classification": "PARKED",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-07/attribution-field-authority/relam/authority.json",
+      "sha256": "7bd138d6e5701c3bf48aac0a9052dd04addf0dd7a766f472d9941157570d93fc"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/completion-evidence.json",
+      "sha256": "000df1ec1ddbae28a265ba2302798393512f539b47dc762507ef3c891892da90"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-002/completion-after.json",
+      "sha256": "b90554280e5adc2a4a05c832b2a9ca21b2d19733503ca164ac2f487c9f4c4003"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/review.json",
+      "sha256": "0f756bac34d00d9bc07fae7b0e54cd05e68ddd5d9a2e26ec9955636d4fcbdcb4"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmt5dkqph000jujyyvt6q443l",
+    "cmt5dkqtj000kujyypa3je6fu"
+  ],
+  "issue": "Removing the unsupported BIP V link changes displayed manager because the exact owner has no Basalt organization binding. Canonical vehicle/description also assert Fund V. Requires organization binding and canonical-text correction; metadata-only workflow cannot resolve it. Keep whole company parked without partial writes.",
+  "expectedImageSemanticSha256": "069a940df2375b06920a45f997be94f330dbbb1941a8710fc9ba3fd6b73ff153",
+  "expectedOwners": [
+    {
+      "ownerId": "cmt5dkqph000jujyyvt6q443l",
+      "sha256": "9d5ec36352b9e24a6e50b388b7a905176426649216328e0a6d10c7b8be5a5799"
+    },
+    {
+      "ownerId": "cmt5dkqtj000kujyypa3je6fu",
+      "sha256": "e39c085069a16476bbda9bfbb9e9f78a7358c3828ef2c6ddb08d98a24ae5f8a1"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0121-r-e-l-a-m-v1/proposal.json",
+      "sha256": "4224562f5149a88ecb422ee522c7bd8df4c72404bfa4876091cd816d9fd98924"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0121-r-e-l-a-m-v1.json",
+      "sha256": "cc25a8c8f719c9dd88f152ac8ceafc3004421172a93931d899a81ead0d65c4ef"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "27f6514a6a027cd6f96309e0f2c5aad2f346dff46ac4682bc274933e5970ce4c",
+      "memberIndex": 0
+    },
+    "receiptSha256": "d8b05c609bedee0188107ac2dc8720344ddf629abc81d7c78823d54bc7cbd954"
+  },
+  "sourceCaptures": []
+}

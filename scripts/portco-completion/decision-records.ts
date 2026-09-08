@@ -20,10 +20,10 @@ type Read = (ref: z.infer<typeof fileSchema>) => unknown;
 const same = (a: unknown, b: unknown) => sha256Canonical(a) === sha256Canonical(b);
 
 /** Pure offline checks. The reader must check raw file hashes and publication safety. */
-export function validateDecisionRecords(input: { progress: unknown; records: unknown[]; read: Read }) {
+export function validateDecisionRecords(input: { progress: unknown; records: unknown[]; read: Read; phase?: "PARKED_REVISIT" }) {
   const progress = verifyProgress(input.progress);
   if (progress.active) throw Error("One active release: finish it before preparing records");
-  const selected = nextNames(progress), records = input.records.map(r => decisionRecordSchema.parse(r));
+  const selected = nextNames(progress, input.phase === "PARKED_REVISIT"), records = input.records.map(r => decisionRecordSchema.parse(r));
   if (!same(records.map(r => [r.companyId, r.name, r.sequence]), selected.map(r => [r.companyId, r.name, r.sequence]))) throw Error("Complete next eligible group in original order required");
   const ownerIds = new Set<string>(), seedIds = new Set<string>();
   for (const r of records) {

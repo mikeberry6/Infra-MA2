@@ -14,7 +14,14 @@ async function main() {
   const options = new Map(args.map(arg => { const i = arg.indexOf("="); if (!arg.startsWith("--") || i < 3) throw Error("Use --key=value"); return [arg.slice(2, i), arg.slice(i + 1)]; }));
   const get = (name: string) => { const value = options.get(name); if (!value) throw Error(`--${name} required`); return value; };
   const progress = verifyProgress(await json(get("progress")));
-  if (command === "status") { console.log(JSON.stringify({ ...counts(progress), active: progress.active, next: progress.active ? [] : nextNames(progress).map(n => ({ name: n.name, sequence: n.sequence })) }, null, 2)); return; }
+  if (command === "status") {
+    const summary = counts(progress);
+    console.log(JSON.stringify({ ...summary, active: progress.active,
+      parkedAwaitingRevisit: progress.names.filter(n => n.status === "PARKED" && !n.parkedReview).length,
+      next: progress.active ? [] : nextNames(progress).map(n => ({ name: n.name, sequence: n.sequence })),
+      nextParked: progress.active || summary.remaining ? [] : nextNames(progress, true).map(n => ({ name: n.name, sequence: n.sequence })),
+    }, null, 2)); return;
+  }
   const { batch, files } = checkPacketFiles(ROOT, await json(get("batch")));
   const execution = verifyExecutionManifest(await json("audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json"));
   const ledger = verifyBatchExecutionLedger(await json("audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json"));

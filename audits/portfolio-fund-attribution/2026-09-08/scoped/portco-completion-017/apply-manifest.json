@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "6758180fa19fbade595d23c59d97f12cb2a0ac9c2ff70d5af3bd52ba85384c93",
+  "sourceSnapshotSha256": "192e077713943f99712acf42287a7ac3fa007d4cfb0589eb2ce0456b6b266474",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 2,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 3,
+  "mutations": [
+    {
+      "recordId": "OFA-384A8A142A91",
+      "ownershipPeriodId": "cmrxpjurl01liivhe773ju18n",
+      "companyName": "Rover Pipeline",
+      "country": "United States",
+      "investmentFirm": "Ares Management",
+      "currentVehicleName": "BCP Renaissance Parent L.L.C. / BCP Renaissance L.L.C.",
+      "databaseVehicleName": "BCP Renaissance Parent L.L.C. / BCP Renaissance L.L.C.",
+      "investmentYear": 2026,
+      "stake": "32.4% indirect interest in Rover Pipeline",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Ares Core Infrastructure Fund (ACI)",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "Ares Core Infrastructure Fund (ACI)"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Ares Core Infrastructure Fund (ACI)",
+        "attributionConfidence": null,
+        "attributionRationale": "Ares Core Infrastructure Fund's SEC Form 8-K, Item 2.03, states that the Fund acquired BCP Renaissance Parent L.L.C. and BCP Renaissance, L.L.C. as wholly owned indirect subsidiaries on April 28, 2026. The exact fund is disclosed, not estimated from mandate or an existing link. Preserve the canonical 32.4% indirect operating-company stake; the filing's 49.9% refers to ET Rover Pipeline LLC, not Rover Pipeline LLC."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/2031750/000162828026029840/aci-20260428.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-35D38EC34D4E",
+      "ownershipPeriodId": "cmsvbu6a20009i26htjxkt26v",
+      "companyName": "Rover Pipeline",
+      "country": "United States",
+      "investmentFirm": "Energy Transfer LP",
+      "currentVehicleName": "ET Rover Pipeline LLC",
+      "databaseVehicleName": "ET Rover Pipeline LLC",
+      "investmentYear": null,
+      "stake": "32.6% economic interest in Rover Pipeline",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Energy Transfer's SEC-filed Q1 2026 results report a 32.6% economic interest in Rover held by the partnership and its subsidiaries. This is corporate ownership through ET Rover Pipeline LLC, not an undisclosed investment-fund allocation. Preserve DIRECT_PROGRAM, the canonical economic interest and unknown precise initial investment year; the previous ownership-undisclosed rationale is contradicted by the issuer table and its economic-interest footnote."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1276187/000127618726000021/ex991eterq12026.htm",
+        "https://www.sec.gov/Archives/edgar/data/1161154/000116115417000037/ex21contributionagreementd.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-82DDE199305E",
+      "ownershipPeriodId": "cmsvbu6aj000bi26hy4frkjxt",
+      "companyName": "Rover Pipeline",
+      "country": "United States",
+      "investmentFirm": "ePointZero",
+      "currentVehicleName": "Traverse Midstream Partners, LLC",
+      "databaseVehicleName": "Traverse Midstream Partners, LLC",
+      "investmentYear": 2026,
+      "stake": "35%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "2PointZero's July 14, 2026 closing release identifies its subsidiary ePointZero as the acquirer of Traverse Midstream Partners, LLC, including Traverse's 35% non-operated Rover interest. DIRECT_PROGRAM reflects that disclosed corporate acquisition through Traverse, not an inference from the absence of a named fund. Preserve the 2026 entry, existing vehicle and 35% stake; Ohio River System is a separate asset and is not added to Rover."
+      },
+      "evidenceUrls": [
+        "https://2pointzero.com/news-insights/news/2PointZeros-ePointZero-Enters-US-Market-Completes-Acquisition-of-Traverse-Midstream-Partners"
+      ]
+    }
+  ],
+  "manifestSha256": "fe65338be1e50ff017350d190d266827ea48b75eed3c7d91597cb2b87e6abf5d"
+}

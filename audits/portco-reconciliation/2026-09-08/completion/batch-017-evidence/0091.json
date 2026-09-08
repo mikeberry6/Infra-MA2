@@ -1,0 +1,178 @@
+{
+  "companyId": "cmrxpj9ha00o1ivheosmpe7bo",
+  "name": "Rover Pipeline",
+  "sequence": 91,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rover/authority.json",
+      "sha256": "9240d8eb2d68c18897a76a8da1caa4209f590de9bc25822f2cb0ed596b4b5a19"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/completion-evidence.json",
+      "sha256": "a5b820a37e45da76d041f8c59c0e42047e3b1549dd3543a8ca37589cf757525c"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-001/completion-after.json",
+      "sha256": "8a8a7feef2e9562147d6c266f00eead1065199e77da49e702a502bcda9a370cd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/review.json",
+      "sha256": "0f756bac34d00d9bc07fae7b0e54cd05e68ddd5d9a2e26ec9955636d4fcbdcb4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rover/source-capture.json",
+      "sha256": "1f023dbcfec1988b704ed00832a4370ddaf57f5cdc0973ce096235bab46dc55c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rover/capture-verification.json",
+      "sha256": "dbe937fc87d791952f2a2c84b2db1318852bfafe069150dd72119fa816e6bfb1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-2017-agreement.html",
+      "sha256": "ec1fba8138ab3d0c152edc649773e9c19b12bd967f48a98c0b18cd10d4efd98a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-2017-agreement.html.capture.json",
+      "sha256": "f88c2402ec0d8c814d6432a9be7b9ba84a9ef1af3d1e0e751b515d9b775b5820"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-traverse-closing.pdf.capture.json",
+      "sha256": "5c67528ee638522da18beb2f34d528c4db15721af23922e0d6bb4e3ba7019abb"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjurl01liivhe773ju18n",
+      "seedRecordId": "OFA-384A8A142A91",
+      "expectedSeedSha256": "e650e5fbf2d194eaa6a8295f2b99c36286dd5a8634dd095cc3fadc3689ecf8c8",
+      "expectedOwnerSha256": "3b4a8af676039ae260071d4a9b9d39d52f01787fd23c09d22bdccb4d14fc3708",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Ares Core Infrastructure Fund (ACI)",
+        "attributionConfidence": null,
+        "attributionRationale": "Ares Core Infrastructure Fund's SEC Form 8-K, Item 2.03, states that the Fund acquired BCP Renaissance Parent L.L.C. and BCP Renaissance, L.L.C. as wholly owned indirect subsidiaries on April 28, 2026. The exact fund is disclosed, not estimated from mandate or an existing link. Preserve the canonical 32.4% indirect operating-company stake; the filing's 49.9% refers to ET Rover Pipeline LLC, not Rover Pipeline LLC.",
+        "linkedFundName": "Ares Core Infrastructure Fund (ACI)"
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Reuse exact filed ACI Item2.03 bytes: the Fund acquired both BCP Renaissance subsidiaries April28,2026. Keep existing ACI link/name, correct INFERRED/LOW and rationale. Do not confuse holding-company49.9% with canonical operating-company32.4%.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rover/aci-20260428.html",
+          "sha256": "af35a1c89973eff0df796d83695d1e8118195c68ba38f91f98a71851c5799a44",
+          "url": "https://www.sec.gov/Archives/edgar/data/2031750/000162828026029840/aci-20260428.htm",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmsvbu6a20009i26htjxkt26v",
+      "seedRecordId": "OFA-35D38EC34D4E",
+      "expectedSeedSha256": "ce645b6c876088f7bdc45c8afc5c1e38a643ec5ef1272ab29113bffbe54207ef",
+      "expectedOwnerSha256": "d924829f5f3e013c29c5646f953db9e8ae2842a7ae5fd6e725ed688ce5de2298",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Energy Transfer's SEC-filed Q1 2026 results report a 32.6% economic interest in Rover held by the partnership and its subsidiaries. This is corporate ownership through ET Rover Pipeline LLC, not an undisclosed investment-fund allocation. Preserve DIRECT_PROGRAM, the canonical economic interest and unknown precise initial investment year; the previous ownership-undisclosed rationale is contradicted by the issuer table and its economic-interest footnote.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "SEC Q1 results table and footnote(e) expressly disclose the partnership/subsidiaries' total economic interest of32.6%. Corporate direct-program classification and every core field stay unchanged; replace the materially false ownership-undisclosed explanation.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-et-results.html",
+          "sha256": "a182db70a69b2b3b1ecb69d7ca2279bb695d8fd01881adc579ebfbc3dbdaa035",
+          "url": "https://www.sec.gov/Archives/edgar/data/1276187/000127618726000021/ex991eterq12026.htm",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-2017-agreement.html",
+          "sha256": "ec1fba8138ab3d0c152edc649773e9c19b12bd967f48a98c0b18cd10d4efd98a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1161154/000116115417000037/ex21contributionagreementd.htm",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmsvbu6aj000bi26hy4frkjxt",
+      "seedRecordId": "OFA-82DDE199305E",
+      "expectedSeedSha256": "9592fce05991d8fa2c385b86ecd4bd2aeddf8df67b14510c7f2c1214c2126d7d",
+      "expectedOwnerSha256": "d48b24595ad37ba01a131ffaa2d150f3591ad6cdb57f364cd8f0b45301914ca2",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "2PointZero's July 14, 2026 closing release identifies its subsidiary ePointZero as the acquirer of Traverse Midstream Partners, LLC, including Traverse's 35% non-operated Rover interest. DIRECT_PROGRAM reflects that disclosed corporate acquisition through Traverse, not an inference from the absence of a named fund. Preserve the 2026 entry, existing vehicle and 35% stake; Ohio River System is a separate asset and is not added to Rover.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "The direct parent issuer's July14,2026 closing announcement identifies ePointZero as its subsidiary and the corporate acquirer of Traverse, with35% non-operated Rover exposure. This positively supports corporate-program attribution, not inference from failure to find a fund. Keep existing DIRECT_PROGRAM and null named-fund/link/confidence; replace the unsupported generic rationale. Original ADX endpoint returned403; preserve that failure locally and use accessible direct issuer HTML of the same release.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-traverse-issuer.html",
+          "sha256": "37b2b9641eda4f17dfe9146824cfa83a35392232555cd778ec71c693200a91ea",
+          "url": "https://2pointzero.com/news-insights/news/2PointZeros-ePointZero-Enters-US-Market-Completes-Acquisition-of-Traverse-Midstream-Partners",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmrxpjus401ljivhe34mwseet"
+  ],
+  "issue": null,
+  "expectedImageSemanticSha256": "fd068d2bc41dc3f653a8b10681dea82ec69d02aea34569df49b8a0ee42e7ec91",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjurl01liivhe773ju18n",
+      "sha256": "3b4a8af676039ae260071d4a9b9d39d52f01787fd23c09d22bdccb4d14fc3708"
+    },
+    {
+      "ownerId": "cmrxpjus401ljivhe34mwseet",
+      "sha256": "c12f0387243001a60a7871525092c458806e916588cbef36a468addc33f53abf"
+    },
+    {
+      "ownerId": "cmsvbu6a20009i26htjxkt26v",
+      "sha256": "d924829f5f3e013c29c5646f953db9e8ae2842a7ae5fd6e725ed688ce5de2298"
+    },
+    {
+      "ownerId": "cmsvbu6aj000bi26hy4frkjxt",
+      "sha256": "d48b24595ad37ba01a131ffaa2d150f3591ad6cdb57f364cd8f0b45301914ca2"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0091-rover-pipeline-v2/proposal.json",
+      "sha256": "bc88dd348ace2d52008d71354b1d2e6730578dc9486d7fbb21466a7910fdf972"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0091-rover-pipeline-v2.json",
+      "sha256": "333e974334b37a7203055b7fc0fec95c700cc2df0ef23494cc616082d63b306e"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0091-rover-pipeline/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "83dcb60daabf52a8d25e5341bb7ed221998ad663ed3a2df824981548497dd404",
+      "memberIndex": null
+    },
+    "receiptSha256": "67ca39f11c1142085e63c61c26e1948264ab34d160c996460ff6aaf3aade5b20"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-aci.capture.json",
+      "sha256": "ca8c15bff2e2c1639b9f80bc4a0f99e3bbcc9173c3e9720359aa9737b5e7cd4f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-et-results.html.capture.json",
+      "sha256": "4a5be30fc590e402daad0ec705947dc4bf84d0754224a18898969a5a66a963be"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-2017-agreement.html.capture.json",
+      "sha256": "f88c2402ec0d8c814d6432a9be7b9ba84a9ef1af3d1e0e751b515d9b775b5820"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-017-evidence/rover-traverse-issuer.html.capture.json",
+      "sha256": "0e1b60829983a4eaa0ee2fd197cea6279af90336016dd082b1c24125c8a1bb3f"
+    }
+  ]
+}
