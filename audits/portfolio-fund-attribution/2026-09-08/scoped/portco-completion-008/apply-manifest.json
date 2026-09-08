@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "42a7e7a9c144ca82c8b7ba79973e3229b333b71a6b1126e29ce10ec3eabc49a9",
+  "sourceSnapshotSha256": "1d434739ebd8ea9cd6f9552798c8622ef9e64e5fc8780307ad54744939e7c8e3",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 2,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 2,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 4,
+  "mutations": [
+    {
+      "recordId": "OFA-69B14010FAB9",
+      "ownershipPeriodId": "cmrxpjyv901rzivhejyznedjv",
+      "companyName": "Mexico Telecom Partners",
+      "country": "Mexico",
+      "investmentFirm": "DigitalBridge",
+      "currentVehicleName": "MTP Mexico Holding B.V.",
+      "databaseVehicleName": "MTP Mexico Holding B.V.",
+      "investmentYear": 2014,
+      "stake": "50.00%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MTP Mexico Holding B.V.",
+        "attributionConfidence": null,
+        "attributionRationale": "Current issuer filings identify MTP Mexico Holding B.V. as DigitalBridge's 50.00% shareholder. No separate commingled fund is disclosed, so the exact holding vehicle is retained without an inferred fund link."
+      },
+      "evidenceUrls": [
+        "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1578452_f00656_1.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-150326E4BC3E",
+      "ownershipPeriodId": "cmrxpjyvp01s0ivhe4ik2jsqg",
+      "companyName": "Mexico Telecom Partners",
+      "country": "Mexico",
+      "investmentFirm": "Macquarie Asset Management",
+      "currentVehicleName": "MMIT I and MMIT II",
+      "databaseVehicleName": "MMIT I and MMIT II",
+      "investmentYear": 2014,
+      "stake": "50.00% total (34.0270% and 15.9730%)",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MMIT I and MMIT II",
+        "attributionConfidence": null,
+        "attributionRationale": "Current issuer filings disclose Macquarie's aggregate 50.00% interest through MMIT I and MMIT II, split 34.0270% and 15.9730%. The reviewed vehicles are not linked to a matching current Fund Database row."
+      },
+      "evidenceUrls": [
+        "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1578452_f00656_1.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-91160E7050EC",
+      "ownershipPeriodId": "cmte333pi001a2k2b9606fvaf",
+      "companyName": "Switch, Inc.",
+      "country": "United States",
+      "investmentFirm": "Aware Super",
+      "currentVehicleName": "Aware Super",
+      "databaseVehicleName": null,
+      "investmentYear": 2023,
+      "stake": "Current co-investment; exact percentage not publicly disclosed and non-additive to the latest comparable ownership schedule",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Aware Super and DigitalBridge announced Aware's Switch co-investment, and Aware's current infrastructure portfolio continues to list Switch. No separate fund or additive ownership percentage is publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://aware.com.au/member/what-we-offer/investments/what-we-invest-in/infrastructure",
+        "https://www.digitalbridge.com/news/2023-07-13-aware-super-and-digitalbridge-announce-partnership-to-invest-in-renewable-powered-data-centers"
+      ]
+    },
+    {
+      "recordId": "OFA-55FB61B16D3F",
+      "ownershipPeriodId": "cmte333v1001c2k2bt52pzzbx",
+      "companyName": "Switch, Inc.",
+      "country": "United States",
+      "investmentFirm": "Switch management",
+      "currentVehicleName": "DB Sunshine Parent, LP / parent entities",
+      "databaseVehicleName": "DB Sunshine Parent, LP / parent entities",
+      "investmentYear": 2022,
+      "stake": "7.0% in the latest comparable ownership schedule",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The latest comparable ownership schedule reports a 7.0% management rollover interest through parent entities. This is direct management ownership, not an infrastructure fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.ifminvestors.com/capabilities/know-how/asset-management-case-study-switch-inc/"
+      ]
+    }
+  ],
+  "manifestSha256": "bbc5cb72a0b65cb3fdd7cdb79906f56fe620566914b1eb496789e46b3fd91f07"
+}

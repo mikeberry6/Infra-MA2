@@ -1,0 +1,223 @@
+{
+  "companyId": "cmrxpjdcs00u0ivhec2k6lhpt",
+  "name": "Switch, Inc.",
+  "sequence": 218,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/research-decision.json",
+      "sha256": "43342b9a4ddb337dbec406f9f20c0945b55985011c9b9fdbafe4d27885d5126c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/source-verification.json",
+      "sha256": "116108b185d1189abae9f634b55d9cca46823dd4bcacef5e920f5625269a37c9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "0b10326f7187ea77d60eeb28ccc8473ea6a85f34ccd7a97a059852cb06757a0b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "1e61091ac96502ad4e55785f76c9aecebe63e04a588ecbe90164f2b4e4fbe8f7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/chatgpt-attestation.json",
+      "sha256": "3ad65a007088226c8d57078ed907db5c4107e00042ac40414f681a75c1332f74"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/review.json",
+      "sha256": "56096d8dfbf7292cbf7e4327e2aa7df643f24b0d965613054f504996bfd58550"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/application-research-decision.json",
+      "sha256": "75337d0290bf4bbccef5bd61f8cae124a7da15b2a7294f55e3f157e43b21917f"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjyws01s2ivhega71tdl3",
+      "seedRecordId": "OFA-5E93A1F51CEC",
+      "expectedSeedSha256": "d530f513aa209fb3cd4e32fbce3e117c6b294f7bfe45a91c92e5aca79ca37335",
+      "expectedOwnerSha256": "8a88ef34530dab12e98beed753857bb83460d5361fd00b1fdb3c60684e79179c",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DigitalBridge Partners II, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: DigitalBridge | Fund: DigitalBridge Partners II | Ownership Interest: 55.8% Verified fund matches an existing fund-list entry.",
+        "linkedFundName": "DigitalBridge Partners II, LP"
+      },
+      "productionChange": "NONE",
+      "reason": "Preserve the existing disclosed DBP II attribution and complete production rationale. The issuer proxy names DBP II; the closing release and current comparable schedule corroborate the completed transaction. Align seed only where wording differs.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-proxy.html",
+          "sha256": "53050eaf5c85fd3ed320b30e37388759549537adf251ed0be17b943c3c9625dd",
+          "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001710583/b60bada0-b3ef-4a63-94d8-dfef4847dfb8.html",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-close.html",
+          "sha256": "003766a2d99c6134cd47908a406a64ba13d0d39a7f8f687bbee94dbae4a67043",
+          "url": "https://www.digitalbridge.com/news/2022-12-06-digitalbridge-and-ifm-investors-complete-11-billion-take-private-of-switch",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-schedule.html",
+          "sha256": "2f3b75d3953da262438e6764f9458be97ccfc603577b72e4dee4f5c701f0985c",
+          "url": "https://www.ifminvestors.com/capabilities/know-how/asset-management-case-study-switch-inc/",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpjyxf01s3ivhe59c5b3l8",
+      "seedRecordId": "OFA-BF61358B13C2",
+      "expectedSeedSha256": "533633d58af3b83d18a889a6eb45a8c0264ef3bd467d75abf3781946a04f9a87",
+      "expectedOwnerSha256": "66251d652bbb9d773d72303b487dd7b160d05df333696015346b32d7bec1a059",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "IFM Global Infrastructure Fund (GIF)",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: IFM Investors | Fund: Not publicly disclosed. | Ownership Interest: 37.2% Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": "IFM Global Infrastructure Fund (GIF)"
+      },
+      "productionChange": "NONE",
+      "reason": "Preserve the existing IFM GIF link, attribution and complete rationale; issuer proxy explicitly identifies GIF and Conyers trustee. Keep the existing qualified 37.2% schedule date; seed alignment only.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-proxy.html",
+          "sha256": "53050eaf5c85fd3ed320b30e37388759549537adf251ed0be17b943c3c9625dd",
+          "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001710583/b60bada0-b3ef-4a63-94d8-dfef4847dfb8.html",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-close.html",
+          "sha256": "003766a2d99c6134cd47908a406a64ba13d0d39a7f8f687bbee94dbae4a67043",
+          "url": "https://www.digitalbridge.com/news/2022-12-06-digitalbridge-and-ifm-investors-complete-11-billion-take-private-of-switch",
+          "primary": false
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-schedule.html",
+          "sha256": "2f3b75d3953da262438e6764f9458be97ccfc603577b72e4dee4f5c701f0985c",
+          "url": "https://www.ifminvestors.com/capabilities/know-how/asset-management-case-study-switch-inc/",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmte333pi001a2k2b9606fvaf",
+      "seedRecordId": "OFA-91160E7050EC",
+      "expectedSeedSha256": "917a2b28fcb33ffc978527f83c5676242643016e8100396002d9f3ba099641ae",
+      "expectedOwnerSha256": "40ce9bd24e3b2a56130240312032092ce2baadef61ed841fd2fecf7e26920e1e",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Aware Super and DigitalBridge announced Aware's Switch co-investment, and Aware's current infrastructure portfolio continues to list Switch. No separate fund or additive ownership percentage is publicly disclosed.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct unresolved fund classification to a direct pension co-investment. Aware current infrastructure portfolio lists Switch and its own member exposure; retain the exact unavailable percentage/vehicle and non-additive nesting qualification.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-aware-current.html",
+          "sha256": "61a927b3ef126d7706ccf558b880bd68f2135a96658a46e9b3ab63d7cddd86b1",
+          "url": "https://aware.com.au/member/what-we-offer/investments/what-we-invest-in/infrastructure",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-aware.html",
+          "sha256": "eed20a317ae9643e8e79a14ebcf9c9eef2019574e7c7dce969ac8f89f5f11f6c",
+          "url": "https://www.digitalbridge.com/news/2023-07-13-aware-super-and-digitalbridge-announce-partnership-to-invest-in-renewable-powered-data-centers",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmte333v1001c2k2bt52pzzbx",
+      "seedRecordId": "OFA-55FB61B16D3F",
+      "expectedSeedSha256": "a6a5b7e3f4ff1f26cf797358354052224381b340c303c3fb1e5c97b245ef037b",
+      "expectedOwnerSha256": "cfe93beaa37a39be279d668cc3f22ff93853f12bb0e4cda1c0cc076ba5d9585e",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The latest comparable ownership schedule reports a 7.0% management rollover interest through parent entities. This is direct management ownership, not an infrastructure fund attribution.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct unresolved fund classification to direct management rollover, supported by the comparable 7.0% ownership schedule. No management stake, parent vehicle, year, or fund link changes.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-schedule.html",
+          "sha256": "2f3b75d3953da262438e6764f9458be97ccfc603577b72e4dee4f5c701f0985c",
+          "url": "https://www.ifminvestors.com/capabilities/know-how/asset-management-case-study-switch-inc/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "894adb6eef03bb947a632f9f07b0e5aa89cf4a472a4193854f2d8f3a7b392172",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjyws01s2ivhega71tdl3",
+      "sha256": "8a88ef34530dab12e98beed753857bb83460d5361fd00b1fdb3c60684e79179c"
+    },
+    {
+      "ownerId": "cmrxpjyxf01s3ivhe59c5b3l8",
+      "sha256": "66251d652bbb9d773d72303b487dd7b160d05df333696015346b32d7bec1a059"
+    },
+    {
+      "ownerId": "cmte333pi001a2k2b9606fvaf",
+      "sha256": "40ce9bd24e3b2a56130240312032092ce2baadef61ed841fd2fecf7e26920e1e"
+    },
+    {
+      "ownerId": "cmte333v1001c2k2bt52pzzbx",
+      "sha256": "cfe93beaa37a39be279d668cc3f22ff93853f12bb0e4cda1c0cc076ba5d9585e"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0218-switch-inc-v1/proposal.json",
+      "sha256": "c944a9b5e54b124272b83e100702e762815cca983c78e1177b4a4d3652cd9315"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0218-switch-inc-v1.json",
+      "sha256": "5e983dfb1266b8eb48adfbe3b6ee7c6f696057b84ef2f927bb5dad1d3987d1f6"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0214-0218-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "e55b584010d1ce87c04f371c4d98513206ad69dabe1f11a929e2be43fd1cfef9",
+      "memberIndex": 4
+    },
+    "receiptSha256": "16762a558113e6a447b7c4a9ff27ab316bfca09a9b7fa60906f1679a29c42a44"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-proxy.html.capture.json",
+      "sha256": "89719d24db8568aeb9011adb470cb743782b2818388d6ce2cca46cfa0b27016e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-close.html.capture.json",
+      "sha256": "b62d5c51c986e6e9ff78cb7c63653af6fc3def3824f1b97ac686b537daa8fd2b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-schedule.html.capture.json",
+      "sha256": "0e139a6f21d96c2a7711f55a2a18a58d5c401d83a87710981f8087ecaac50bf6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-aware-current.html.capture.json",
+      "sha256": "b0beee66efa3a5e2201de36c72438a6f7146e08cffa8d23a59e9ce0be8b28f5a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/switch-aware.html.capture.json",
+      "sha256": "63015f22af7f16dc29d26f594cd0c33b7bd154ed9cbe40206244abd1f9007189"
+    }
+  ]
+}
