@@ -1,0 +1,102 @@
+{
+  "companyId": "cmt6dgo9j0000znyy8ne9nv5w",
+  "name": "IENTC Telecomunicaciones",
+  "sequence": 177,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0177-infraestructura-energetica-nova-transportation-company-ientc/attempt-1/research-decision.json",
+      "sha256": "3727c39e857f462e1524559d05f8f6ae11e40078132a4bf2ce45e740d0baf06c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0177-infraestructura-energetica-nova-transportation-company-ientc/attempt-1/source-verification.json",
+      "sha256": "67e0b079de4c54604296c28af69fdee6aa6b92d14351771d3d3bdc68c660e8f6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0177-infraestructura-energetica-nova-transportation-company-ientc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "4431f51ee19bcead2e986409059beb98751505d13b183f05c8b66d3af8613a8a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0177-infraestructura-energetica-nova-transportation-company-ientc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "d5d69641ed3fce1ce8c1d639a52e398eefe9a7fd1495adc74a97908b038b0bee"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0177-infraestructura-energetica-nova-transportation-company-ientc/attempt-1/chatgpt-attestation.json",
+      "sha256": "f510604788876d68e86eb99383e451c7ed43d4e30abeab9dc9c042540071b202"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/review.json",
+      "sha256": "80c50511721fd30a65b8ff4142698522e2d6af46bb55de52119f1dcd4e6c12f0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmt6dgp9h000cznyy8rkfpiy5",
+      "seedRecordId": "OFA-4AFABE6F62C1",
+      "expectedSeedSha256": "01210871f11c1ea808a1e071499f46564f9753444779489b01f144352b7cee77",
+      "expectedOwnerSha256": "df3455e389e63aa93c224b1f8b871c8354a7cb4aa60398f927223c15c4a4e314",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's IENTC case study identifies CIM Real Assets & Credit Fund (RACR) and another unnamed CIM-managed institutional fund as the combined 45% equity investors. The March 31, 2026 RACR report separately shows a 21.3% interest in IENTC 1, LLC. The complete combined-owner fund allocation is unresolved; do not treat it as a direct program or assign the combined 45% to RACR alone.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Record the substantive partially disclosed multi-fund boundary absent from production metadata and remove the seed's incorrect direct-program classification. Preserve the combined owner, legal vehicle and qualified stake.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/ientc-funds.html",
+          "sha256": "d2c376a807226b24c595f21917cebf431428a734e6a29eb77bd109778cc564f9",
+          "url": "https://www.cimgroup.com/case-studies/ientc-telecomunicaciones",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/ientc-racr.pdf",
+          "sha256": "4366c37bb4116d57aefa172340346149a10072116b42bc25a621db5c13a2730e",
+          "url": "https://5246398.fs1.hubspotusercontent-na2.net/hubfs/5246398/CIM%20Group%20Corporate%20Website_RACR%20Documents/CIM%20RACR%20Semi-Annual%20Report_3.31.2026%20FINAL_SECURED.pdf",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "335c11344b0f75aa7fac104ed4bfa063c2502e8e1106fdcf3adfbc52d19ab2de",
+  "expectedOwners": [
+    {
+      "ownerId": "cmt6dgp9h000cznyy8rkfpiy5",
+      "sha256": "df3455e389e63aa93c224b1f8b871c8354a7cb4aa60398f927223c15c4a4e314"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0177-ientc-telecomunicaciones-v1/proposal.json",
+      "sha256": "262fff76b5641595efcf77f8f335f01af9432b21ab642304b0f5a608ae3187ff"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0177-ientc-telecomunicaciones-v1.json",
+      "sha256": "19f2a7b5f71a2b9fe6514ab2c5c43b2487359103add774112194c93d7bbcd529"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/production-apply/batch-apply-receipt.json",
+      "sha256": "0f08ee6d3c01059fe5eb81906f314838cfa42960dfb8b29fdfd06e36c3a0e3ef",
+      "memberIndex": 0
+    },
+    "receiptSha256": "7608266ffd7b75610cdd65216b52d22967b5aecc03b547873f70cbc5f679b926"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/ientc-funds.html.capture.json",
+      "sha256": "808de7efedb072b5cf3bcddcacc79e2322fe4546faadf9b8e1140584825ac1bf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/ientc-racr.pdf.capture.json",
+      "sha256": "bf0c9a0f342986811235cf0018c9715a694de823824cac269cb94a49b0d6eee6"
+    }
+  ]
+}

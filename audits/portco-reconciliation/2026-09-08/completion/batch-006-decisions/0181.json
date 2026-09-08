@@ -1,0 +1,103 @@
+{
+  "companyId": "cmrxpjbw800rsivhe6s7g89eh",
+  "name": "Permanent Power Company",
+  "sequence": 181,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/research-decision.json",
+      "sha256": "b98c189093effd2f742b60fb42464728aa0e0f0abafe2bdfaa384097d760e8e9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/source-verification.json",
+      "sha256": "f32b4d71dad122ed656d5795934544071c376bd64bb96ef853613e56bbd070e3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "cfaa3b4ad31b4ea3dc6666461d7e00a0615d3ae776da629da4f8c7495a997fda"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/chatgpt-response-validation.json",
+      "sha256": "7855ec57906f33699af149670242762f3e74e66229468eb70d79f228f5e986ff"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/chatgpt-attestation.json",
+      "sha256": "dc3af7c3e4743e709795f3c25f8d7e9618dacf0a8333b131b771910ee1b2b421"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/review.json",
+      "sha256": "80c50511721fd30a65b8ff4142698522e2d6af46bb55de52119f1dcd4e6c12f0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjxay01pmivhevwqj1bv4",
+      "seedRecordId": "OFA-C0AD3D817897",
+      "expectedSeedSha256": "db5d17d24eeb4b3583dcb560b39a1b49ca7383cc9b104278dbdf04d88c7cb4ce",
+      "expectedOwnerSha256": "874af1589e630760d89f5e3affc4474fdbd23d599f03800f0a15f631bc5bf90d",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CIM Opportunity Zone Fund, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund, L.P. as holding the controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1. No matching normalized fund row exists, so preserve the disclosed vehicle without inferring CIM Infrastructure Fund III.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "Existing production correctly discloses the controlling CIM Opportunity Zone Fund interest. Rebind the seed evidence to the direct March 31, 2026 SEC report without rewriting production wording. Preserve the former unknown-fund owner and other CIM affiliates' unresolved minority; null production rationale is not a contrary fund assignment.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/permanent-q1.html",
+          "sha256": "dfe881b11cf2b72e1ace050f4cf4a778a922ea50ac08de43ec431decc42a38cf",
+          "url": "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmrxpjxbg01pnivhe6uy36dxh",
+    "cmt6dgzz60014znyyj8wy3hw3"
+  ],
+  "issue": null,
+  "expectedImageSemanticSha256": "81c136342535bf5fd83592e5653d33c1766759eb4134fcf1d80dd8c5b2bbfba7",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjxay01pmivhevwqj1bv4",
+      "sha256": "874af1589e630760d89f5e3affc4474fdbd23d599f03800f0a15f631bc5bf90d"
+    },
+    {
+      "ownerId": "cmrxpjxbg01pnivhe6uy36dxh",
+      "sha256": "16b47e667f980ce04d644acc99956a911075af302f26ceff697fc964ba3587ce"
+    },
+    {
+      "ownerId": "cmt6dgzz60014znyyj8wy3hw3",
+      "sha256": "03c2533786c730a3df764a873e5972bd7339b5045aa4f4511a4fdc6690dba8f4"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0181-permanent-power-company-v4/proposal.json",
+      "sha256": "0ab00fb0448fc43f932ea6951cc3447b7a7c85da75fac0b2da85aade3a8343c4"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0181-permanent-power-company-v4.json",
+      "sha256": "f77327619a37cd9ab76b99523d8ccde67d399d76e4655c86a967c8be61e69208"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/production-apply/batch-apply-receipt.json",
+      "sha256": "0f08ee6d3c01059fe5eb81906f314838cfa42960dfb8b29fdfd06e36c3a0e3ef",
+      "memberIndex": 4
+    },
+    "receiptSha256": "f191f10d04ab87138333eacfd2fa146c1995c8b60f154933b0517eb853aa9b26"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/permanent-q1.html.capture.json",
+      "sha256": "e2b55b938c495652c55b9c1e00a71aa685b5fcf8214027993b25523c6efdf7ba"
+    }
+  ]
+}

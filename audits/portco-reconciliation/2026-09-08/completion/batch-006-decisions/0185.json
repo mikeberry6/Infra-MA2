@@ -1,0 +1,92 @@
+{
+  "companyId": "cmrxpjc5000s4ivherillpvgj",
+  "name": "Helax Istmo",
+  "sequence": 185,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0185-helax-istmo/attempt-1/research-decision.json",
+      "sha256": "7e3573188568965749026980121559735d109cbfff7bef4ecefea91affe368d0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0185-helax-istmo/attempt-1/source-verification.json",
+      "sha256": "92a0f1733540cc72aa486754c2a7c5df62d33b3e3df68fb1bf47d51f40553d9c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0185-helax-istmo/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "74723c50d0d0b33d4b158ab16103166e7068b900d2f4b80dd6541c871c75d3d7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0185-helax-istmo/attempt-1/chatgpt-response-validation.json",
+      "sha256": "ba56b78088099157179fd97442a44614f7ddebe74e661421672ff269ccfafc78"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0185-helax-istmo/attempt-1/chatgpt-attestation.json",
+      "sha256": "ebf824ff917c477d46306f493f440aef3ca8db655ff3d836ab84f199e08db7ed"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/review.json",
+      "sha256": "80c50511721fd30a65b8ff4142698522e2d6af46bb55de52119f1dcd4e6c12f0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjxjm01pyivhetajdb7q8",
+      "seedRecordId": "OFA-5D740BAFAB60",
+      "expectedSeedSha256": "079a15c6f64a2b6bfb7647a5087d0176e967d89a26191518c4a908a9950ec0bc",
+      "expectedOwnerSha256": "8a7804edf0d43402b3bef5ecf359fd99e360b4fd93d1a2cf020824e03f9e4033",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CI Growth Markets Fund II / CI Energy Transition Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Copenhagen Infrastructure Partners | Fund: CI Growth Markets Fund II / CI Energy Transition Fund I | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "CIP's filed announcement explicitly identifies Growth Markets Fund II and Energy Transition Fund I. Production's abbreviated disclosed names identify the same funds as the seed's longer labels. Preserve production metadata and align the seed; no individual fund split is inferred.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/helax-funds.pdf",
+          "sha256": "aaa83fbb818b1465d7f44da7ac5e46f5203e948970a0fc61afba636752a4a47f",
+          "url": "https://www.cip-smf.com/media/vuai4aob/copenhagen-infrastructure-partners-signs-mou-with.pdf",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "08848bc3d5b7280186d00b161cc8bf143844580548c1ea9d7deb2e69876e268f",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjxjm01pyivhetajdb7q8",
+      "sha256": "8a7804edf0d43402b3bef5ecf359fd99e360b4fd93d1a2cf020824e03f9e4033"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0185-helax-istmo-v1/proposal.json",
+      "sha256": "05d766fa13a5619794d619d2a2682105762c9814929ab89c286627d88193c081"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0185-helax-istmo-v1.json",
+      "sha256": "e876cd9f575f8aafb7d9da6ada7ac28126b211b9f49f2c6d7e54809726161132"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0182-0186-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "0433944452892bedf86bb881e075b62a527cb1c6f04c7bc4f4f4512cc9637665",
+      "memberIndex": 3
+    },
+    "receiptSha256": "95baf141e2128ef696708eb8325d24034a9486efd20c3e6e0e62aeebf6615177"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/helax-funds.pdf.capture.json",
+      "sha256": "4809d8605bdee691944bd2a319518b3459eb07936c101c8bc7eac66426c3e17f"
+    }
+  ]
+}

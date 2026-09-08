@@ -1,0 +1,117 @@
+{
+  "artifactType": "PORTCO_COMPLETION_SOURCE_REVIEW",
+  "batchId": "portco-completion-006",
+  "reviewedBy": "main-agent",
+  "scope": "Existing identity/ownership attribution gaps only; no repeated ChatGPT research.",
+  "notes": [
+    "Raw sources and capture hashes preserved. All referenced source bodies read; PDF Helax p1, Sunrise p4 and RACR p36 visually inspected. Charts distinguish fund ownership from portfolio weights and combined-manager stakes.",
+    "Permanent Power majority 66.7% directly disclosed; other affiliates' 33.3% fund allocation remains explicitly unresolved in existing seed and production. Preserved former owner also remains unresolved. No word-only production update.",
+    "Helax and Toqlukutik abbreviated production fund names are equivalent to seed full names; align seed to production, not vice versa.",
+    "Novva, Horizon and Vineyard remain parked in full; existing applied company identities and chronology are preserved. A partial correction is not a completed name."
+  ],
+  "decisions": [
+    {
+      "sequence": 175,
+      "classification": "PARKED",
+      "issue": "Both current Novva and former CIM/1547 ownership retain inferred CIM Infrastructure Fund II attribution without a direct fund allocation. The former ownership period cmrxpjx5d01pcivhejo8qz5ky has no matching active seed attribution record and cannot be repaired through this active-record compiler. Required work: a separately scoped historical-period seed binding and supported unknown-fund correction covering both periods; preserve company identity, chronology and all ownership stakes. No partial current-only repair is counted as done.",
+      "ownerReasons": []
+    },
+    {
+      "sequence": 176,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "ownerReasons": [
+        {
+          "ownerId": "cmrxpjx6h01peivhehagglx73",
+          "reason": "Remove an unsupported named-fund inference, not a wording change."
+        },
+        {
+          "ownerId": "cmrxpjx7001pfivheodnrp1ll",
+          "reason": "Remove an unsupported Tiger Fund III attribution; retain the disclosed investment and existing owner."
+        }
+      ]
+    },
+    {
+      "sequence": 177,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "ownerReasons": [
+        {
+          "ownerId": "cmt6dgp9h000cznyy8rkfpiy5",
+          "reason": "Record the substantive partially disclosed multi-fund boundary absent from production metadata and remove the seed's incorrect direct-program classification. Preserve the combined owner, legal vehicle and qualified stake."
+        }
+      ]
+    },
+    {
+      "sequence": 181,
+      "classification": "SEED_ONLY",
+      "issue": null,
+      "ownerReasons": [
+        {
+          "ownerId": "cmrxpjxay01pmivhevwqj1bv4",
+          "reason": "Existing production correctly discloses the controlling CIM Opportunity Zone Fund interest. Rebind the seed evidence to the direct March 31, 2026 SEC report without rewriting production wording. Preserve the former unknown-fund owner and other CIM affiliates' unresolved minority; null production rationale is not a contrary fund assignment."
+        }
+      ]
+    },
+    {
+      "sequence": 182,
+      "classification": "PARKED",
+      "issue": "Production links CI V but still carries an inferred CI IV attribution; the seed asserts CI V. Alberta's registry proves a CI V-named devco exists, not its ultimate fund allocation. CIP's launch says Flagship Funds (plural), and Horizon's backing page names the manager without a specific fund. Required work: direct ownership/fund bridge covering the Canadian platform before selecting a single fund or changing the existing link. Preserve all current data and do not infer a sole CI V assignment from the legal entity name.",
+      "ownerReasons": []
+    },
+    {
+      "sequence": 185,
+      "classification": "SEED_ONLY",
+      "issue": null,
+      "ownerReasons": [
+        {
+          "ownerId": "cmrxpjxjm01pyivhetajdb7q8",
+          "reason": "CIP's filed announcement explicitly identifies Growth Markets Fund II and Energy Transition Fund I. Production's abbreviated disclosed names identify the same funds as the seed's longer labels. Preserve production metadata and align the seed; no individual fund split is inferred."
+        }
+      ]
+    },
+    {
+      "sequence": 186,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "ownerReasons": [
+        {
+          "ownerId": "cmrxpjxo001q6ivhezy6w5aze",
+          "reason": "Replace stale CI IV inference with the direct filed CI V ownership chain, retaining the existing fund link and legal ownership identity."
+        }
+      ]
+    },
+    {
+      "sequence": 188,
+      "classification": "SEED_ONLY",
+      "issue": null,
+      "ownerReasons": [
+        {
+          "ownerId": "cmrxpjxq701qaivhe3xcmrpfp",
+          "reason": "CIP explicitly names CI ETF I and ABO confirms transfer of 90%, retaining 10%. Production's Energy Transition Fund I label is equivalent to the longer seed label. Align seed evidence and metadata only; do not rewrite production or alter the qualified ownership."
+        }
+      ]
+    },
+    {
+      "sequence": 189,
+      "classification": "PARKED",
+      "issue": "The former Vineyard Wind/OCS-A 0522 period retains an inferred CI III attribution with no matching active seed record. The SEC restructuring agreement distinguishes CI II/CI III legal ownership and subsequent CI III beneficial interests and CI IV economic rights. Required work: separately scoped historical-period seed binding and exact legal/economic ownership adjudication before correcting that period. Preserve the currently disclosed CI IV period; no partial repair or inferred single historical fund allocation.",
+      "ownerReasons": []
+    },
+    {
+      "sequence": 190,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "ownerReasons": [
+        {
+          "ownerId": "cmrxpk8oj0279ivhe0fc6b7ay",
+          "reason": "The direct closing announcement supports Ontario Teachers' pension investment through PPC. Existing DIRECT_PROGRAM metadata is semantically correct; align only its seed evidence and preserve production wording."
+        },
+        {
+          "ownerId": "cmrxpk8ox027aivhey29wjo5v",
+          "reason": "Remove the strategy label incorrectly classified as a disclosed fund; retain the pension program, PPC vehicle and historical stake."
+        }
+      ]
+    }
+  ]
+}

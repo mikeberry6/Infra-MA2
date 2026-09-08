@@ -1,0 +1,119 @@
+{
+  "companyId": "cmrxpjmb4017tivhe2f61twxg",
+  "name": "Autopista Arco Norte, S.A. de C.V.",
+  "sequence": 190,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/research-decision.json",
+      "sha256": "d0439bd95a39687544a27cd0de459f8bc12e1bedeb4d98521b567dd8ee8c65fc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/source-verification.json",
+      "sha256": "233d980a55ff0028a88d594640bd28f6b4badfe247f4922ba9857be06ab43e8d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "0fce2900ac56f64346e98932cf672c1c0020ee7fb5e051f2e13343077e6496a8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/chatgpt-response-validation.json",
+      "sha256": "6a2e05534d8afc0fa3b05664242b1e87b5e8711bf859e55bd476d3a6cf5af469"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/chatgpt-attestation.json",
+      "sha256": "3edd2708f4d867440e00d9f6e6adf2afbe9a4a083686c39610d076545982fdc0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/review.json",
+      "sha256": "80c50511721fd30a65b8ff4142698522e2d6af46bb55de52119f1dcd4e6c12f0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk8oj0279ivhe0fc6b7ay",
+      "seedRecordId": "OFA-FE163F5B9519",
+      "expectedSeedSha256": "5cc11dd4ec87c1d7075a3f2c43d0eb1b27ebb37fea40b5cc4ab079dcf1b08517",
+      "expectedOwnerSha256": "1d9e36e4be0df67c6f42a7444bd1ac9b3b425df652fe0b868c5670e280cda588",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Ontario Teachers' Pension Plan | Fund: Not publicly disclosed. | Ownership Interest: 20% Supplemental detail states the fund was not publicly disclosed.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "The direct closing announcement supports Ontario Teachers' pension investment through PPC. Existing DIRECT_PROGRAM metadata is semantically correct; align only its seed evidence and preserve production wording.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/arco-closing.html",
+          "sha256": "830e02ae6f45006149ac508827d5bbad536e710dacedd68be2118674f216fe4e",
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/ontario-teachers-and-cppib-complete-investment-in-ideal-subsidiary-promotora-punta-cometa/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpk8ox027aivhey29wjo5v",
+      "seedRecordId": "OFA-9718B3CCF7A1",
+      "expectedSeedSha256": "d4be9e9cfd415292b8f987cb094d8cf8a91e54e052141017997625a494579f07",
+      "expectedOwnerSha256": "677f9ac6875536473b72192145a4311566fe1939a38c3478fdebf44a5144c8e2",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The December 22, 2016 closing announcement identifies CPP Investment Board's pension investment through Promotora Punta Cometa. Real Assets (Infrastructure) is a strategy label, not a disclosed fund vehicle. Preserve the historical 29% PPC stake qualification and do not infer a current Arco Norte look-through percentage.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove the strategy label incorrectly classified as a disclosed fund; retain the pension program, PPC vehicle and historical stake.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/arco-closing.html",
+          "sha256": "830e02ae6f45006149ac508827d5bbad536e710dacedd68be2118674f216fe4e",
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/ontario-teachers-and-cppib-complete-investment-in-ideal-subsidiary-promotora-punta-cometa/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "e70e063658953bff8382cea32d47eae03adb90627eaf3a7deff37d62c6ff6b9e",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk8oj0279ivhe0fc6b7ay",
+      "sha256": "1d9e36e4be0df67c6f42a7444bd1ac9b3b425df652fe0b868c5670e280cda588"
+    },
+    {
+      "ownerId": "cmrxpk8ox027aivhey29wjo5v",
+      "sha256": "677f9ac6875536473b72192145a4311566fe1939a38c3478fdebf44a5144c8e2"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0190-autopista-arco-norte-v1/proposal.json",
+      "sha256": "2a49ba898829c6e127f32e5f9150cd1ff5b23373c507b0e821dfe9e85dd840af"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0190-autopista-arco-norte-v1.json",
+      "sha256": "28d91804fb8e193df1ff393d2443c7c3247a0aa0d041d21178f61ccbea2c8aa1"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0187-0191-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "d00a7b1499f2984c46b434c539528de5c2e7b5b750b79776cca0a0504dda7b5e",
+      "memberIndex": 3
+    },
+    "receiptSha256": "ec9851072949c15988fce58eec37fd21b158e903e34d5e0544b364fc04db499c"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/arco-closing.html.capture.json",
+      "sha256": "6d856054570d8042c06255a0c67e6509f0c1e93bc80bd5210de81fee989d2371"
+    }
+  ]
+}

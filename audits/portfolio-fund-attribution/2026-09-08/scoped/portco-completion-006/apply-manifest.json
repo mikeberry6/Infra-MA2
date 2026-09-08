@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "b75db5537cc6d68b66bc6852e76db6839ae878d20532637496c36c63a8eea1bd",
+  "sourceSnapshotSha256": "5a039d4e945c7008be954c34429917708632488d3d530c6394db07aba1f960ba",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 1,
+      "UNRESOLVED": 3
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 5,
+  "mutations": [
+    {
+      "recordId": "OFA-D9F261D438DF",
+      "ownershipPeriodId": "cmrxpjx6h01peivhehagglx73",
+      "companyName": "Bolder Industries",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "CIM Group",
+      "databaseVehicleName": null,
+      "investmentYear": null,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's October 2021 announcement and the February 2025 recapitalization adviser disclosure identify CIM Group backing but do not identify the investing fund. Remove the unsupported CIM Infrastructure Fund III estimate; the fund remains unresolved."
+      },
+      "evidenceUrls": [
+        "https://www.cimgroup.com/press-releases/cim-group-expands-investment-in-end-of-life-tire-recycling-company-bolder-industries-a-certified-b-corporation",
+        "https://www.stblaw.com/about-us/news/view/2025/02/13/simpson-thacher-represents-cim-group-in-recapitalization-of-bolder-industries"
+      ]
+    },
+    {
+      "recordId": "OFA-8710EAB6D356",
+      "ownershipPeriodId": "cmrxpjx7001pfivheodnrp1ll",
+      "companyName": "Bolder Industries",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Tiger",
+      "databaseVehicleName": null,
+      "investmentYear": 2025,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Tiger's February 10, 2025 announcement confirms its completed growth investment in Bolder Industries but does not name the investing fund. Do not infer Tiger Infrastructure Partners Fund III from unrelated transactions or fund vintage."
+      },
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-completes-transformational-growth-investment-in-bolder-industries-a-circular-economy-infrastructure-platform-converting-end-of-life-tires-into-sustainable-materials-302372336.html"
+      ]
+    },
+    {
+      "recordId": "OFA-4AFABE6F62C1",
+      "ownershipPeriodId": "cmt6dgp9h000cznyy8rkfpiy5",
+      "companyName": "IENTC Telecomunicaciones",
+      "country": "Mexico",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "CIM Real Assets & Credit Fund and another CIM-managed institutional fund; IENTC 1, LLC for RACR",
+      "databaseVehicleName": "CIM Real Assets & Credit Fund and another CIM-managed institutional fund; IENTC 1, LLC for RACR",
+      "investmentYear": 2022,
+      "stake": "45% aggregate CIM-managed equity; RACR separately reported 21.3% of IENTC 1, LLC",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's IENTC case study identifies CIM Real Assets & Credit Fund (RACR) and another unnamed CIM-managed institutional fund as the combined 45% equity investors. The March 31, 2026 RACR report separately shows a 21.3% interest in IENTC 1, LLC. The complete combined-owner fund allocation is unresolved; do not treat it as a direct program or assign the combined 45% to RACR alone."
+      },
+      "evidenceUrls": [
+        "https://www.cimgroup.com/case-studies/ientc-telecomunicaciones",
+        "https://5246398.fs1.hubspotusercontent-na2.net/hubfs/5246398/CIM%20Group%20Corporate%20Website_RACR%20Documents/CIM%20RACR%20Semi-Annual%20Report_3.31.2026%20FINAL_SECURED.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-C5ACA6155F29",
+      "ownershipPeriodId": "cmrxpjxo001q6ivhezy6w5aze",
+      "companyName": "Sunrise Renewables",
+      "country": "United States",
+      "investmentFirm": "Copenhagen Infrastructure Partners",
+      "currentVehicleName": "CI V Sunrise HoldCo LLC / CI V Sunrise Renewables LLC",
+      "databaseVehicleName": "CI V Sunrise HoldCo LLC / CI V Sunrise Renewables LLC",
+      "investmentYear": null,
+      "stake": "Wholly owned indirect CI V affiliate; manager-level percentage not separately disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Copenhagen Infrastructure V (CI V)",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "Copenhagen Infrastructure V (CI V)"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Copenhagen Infrastructure V (CI V)",
+        "attributionConfidence": null,
+        "attributionRationale": "The Kentucky PSC-filed Lost City corporate chart traces CI V LPs through CI V Sunrise HoldCo LLC and CI V Sunrise Renewables LLC to Lost City Renewables LLC. This directly supports the existing Copenhagen Infrastructure V (CI V) link; remove the stale inferred CI IV attribution."
+      },
+      "evidenceUrls": [
+        "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2A_Lost_City_Attachment_A_Corporate_Information.pdf",
+        "https://www.cip.com/funds/"
+      ]
+    },
+    {
+      "recordId": "OFA-9718B3CCF7A1",
+      "ownershipPeriodId": "cmrxpk8ox027aivhey29wjo5v",
+      "companyName": "Autopista Arco Norte, S.A. de C.V.",
+      "country": "Mexico",
+      "investmentFirm": "CPP Investments",
+      "currentVehicleName": "Promotora Punta Cometa, S.A. de C.V.",
+      "databaseVehicleName": "Promotora Punta Cometa, S.A. de C.V.",
+      "investmentYear": 2016,
+      "stake": "29% of Promotora Punta Cometa at the December 2016 close; current Arco Norte look-through not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The December 22, 2016 closing announcement identifies CPP Investment Board's pension investment through Promotora Punta Cometa. Real Assets (Infrastructure) is a strategy label, not a disclosed fund vehicle. Preserve the historical 29% PPC stake qualification and do not infer a current Arco Norte look-through percentage."
+      },
+      "evidenceUrls": [
+        "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/ontario-teachers-and-cppib-complete-investment-in-ideal-subsidiary-promotora-punta-cometa/"
+      ]
+    }
+  ],
+  "manifestSha256": "86120cb4969655c63ea6e996f96a3fe465169e7fb946d6e59339c68a488aff1c"
+}

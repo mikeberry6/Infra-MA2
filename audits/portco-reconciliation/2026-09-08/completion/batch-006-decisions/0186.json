@@ -1,0 +1,102 @@
+{
+  "companyId": "cmrxpjc9d00scivhe5ub7c3d3",
+  "name": "Sunrise Renewables",
+  "sequence": 186,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0186-sunrise-renewables/attempt-1/research-decision.json",
+      "sha256": "94d922999f82fd820fdb5763f635b27bcb0424c579212d14405d531aa21b9019"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0186-sunrise-renewables/attempt-1/source-verification.json",
+      "sha256": "265ee1506c500407588009f65e00e0e07187d24ebf1345c999078e151980677e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0186-sunrise-renewables/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "73b5f0e534a2fb497ecef1d7db42395c62e0b506e3688c8d52a2374e6fa6239a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0186-sunrise-renewables/attempt-1/chatgpt-response-validation.json",
+      "sha256": "577ad44410f266afad0aeff1dc499dbd4124b7a570a4c85571584d13ba0f9fe2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0186-sunrise-renewables/attempt-1/chatgpt-attestation.json",
+      "sha256": "ce33cabd4514f9eb3e99dca83ed3349a973d5c112e6e5106eabe92a87778f6d9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/review.json",
+      "sha256": "80c50511721fd30a65b8ff4142698522e2d6af46bb55de52119f1dcd4e6c12f0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjxo001q6ivhezy6w5aze",
+      "seedRecordId": "OFA-C5ACA6155F29",
+      "expectedSeedSha256": "2de2a7222c4bd6d7ea1b2db363360302b4aabd030db8011f6e344c0f42085b0e",
+      "expectedOwnerSha256": "40c56a40d45247c53b694da883f9e543a0f307fe20e74780de419b7c6c940a9b",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Copenhagen Infrastructure V (CI V)",
+        "attributionConfidence": null,
+        "attributionRationale": "The Kentucky PSC-filed Lost City corporate chart traces CI V LPs through CI V Sunrise HoldCo LLC and CI V Sunrise Renewables LLC to Lost City Renewables LLC. This directly supports the existing Copenhagen Infrastructure V (CI V) link; remove the stale inferred CI IV attribution.",
+        "linkedFundName": "Copenhagen Infrastructure V (CI V)"
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace stale CI IV inference with the direct filed CI V ownership chain, retaining the existing fund link and legal ownership identity.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/sunrise-chart.pdf",
+          "sha256": "713ecf5635fa8e8f49c4602dccf406e3abf1d51d5e670ce99c943eda0d3ed488",
+          "url": "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2A_Lost_City_Attachment_A_Corporate_Information.pdf",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/cip-funds.html",
+          "sha256": "c3452100a4483c999c9d886158b1b3e53628a30ad7dc6f4ba022d14da1576ad4",
+          "url": "https://www.cip.com/funds/",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "b49864d21b30cb7821ae921afe7a72f0752fa9a1f46d9c2f46bd29163a558917",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjxo001q6ivhezy6w5aze",
+      "sha256": "40c56a40d45247c53b694da883f9e543a0f307fe20e74780de419b7c6c940a9b"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0186-sunrise-renewables-v1/proposal.json",
+      "sha256": "7dc4ac349d7d47f1bdabdb684780cef57c072106bbf8fc8c35ff31400c0deab4"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0186-sunrise-renewables-v1.json",
+      "sha256": "90f32a0634da2191c923330f2040eaa932890822c8a76a9d10a7a3c8715e26d6"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0182-0186-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "0433944452892bedf86bb881e075b62a527cb1c6f04c7bc4f4f4512cc9637665",
+      "memberIndex": 4
+    },
+    "receiptSha256": "31bae814f1a74d943a972982d1db0f721e2c811508643b660bab629dc99add4e"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/sunrise-chart.pdf.capture.json",
+      "sha256": "5ef759abf5b71fda6a2301473693a3671cc2e88ef6158e759a886f4904464056"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-006-evidence/cip-funds.html.capture.json",
+      "sha256": "dcfde17b26feaa6805c23921e8149a96e1be0b6defea2a27d4076874e7882f4c"
+    }
+  ]
+}
