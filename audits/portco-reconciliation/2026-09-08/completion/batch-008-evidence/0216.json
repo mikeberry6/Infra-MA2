@@ -1,0 +1,123 @@
+{
+  "companyId": "cmrxpjdbm00tyivher2rzd195",
+  "name": "Mexico Telecom Partners",
+  "sequence": 216,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/research-decision.json",
+      "sha256": "9a0696ccbf70b9c8ba5b95bb95c7ff09e485b08b0255931215929387fd041c3d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/source-verification.json",
+      "sha256": "8490d5780443617ceba077e02b81e3418bd4293a05c3d68e29657ddf3975a4a9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "27463f0970121f9c7c31a9b4e8392ab9df7fb9e07106bd49682e250d41735bff"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/chatgpt-response-validation.json",
+      "sha256": "658d814ba6a3c33db3434705456e835e4c4a014649f0e2d991a57d59ffc4b6a4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/chatgpt-attestation.json",
+      "sha256": "fd7e1a38f1fa1a008aa199ffa9b6e18f47b44fe38ca3adc0c1c1463cc7f42bdd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/review.json",
+      "sha256": "56096d8dfbf7292cbf7e4327e2aa7df643f24b0d965613054f504996bfd58550"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/application-research-decision.json",
+      "sha256": "7cf71ecf420a6b11d950f0799e58ad266f840254f73b8841341a31f3dbc7856c"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjyv901rzivhejyznedjv",
+      "seedRecordId": "OFA-69B14010FAB9",
+      "expectedSeedSha256": "bd838c9e5e8415d480901a027003a49aeaa68c1619e98aab1a25eb45174fa73d",
+      "expectedOwnerSha256": "f8f671b54a3204ead9c079e37c2a5123154ed19ac263b3c5fdac08b768383043",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MTP Mexico Holding B.V.",
+        "attributionConfidence": null,
+        "attributionRationale": "Current issuer filings identify MTP Mexico Holding B.V. as DigitalBridge's 50.00% shareholder. No separate commingled fund is disclosed, so the exact holding vehicle is retained without an inferred fund link.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace the generic DigitalBridge Equity attribution with the filed exact 50% holder MTP Mexico Holding B.V.; no separate commingled fund or new link is inferred. Preserve legal owner, stake and 2014 entry.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/mtp.pdf",
+          "sha256": "6bd451ccfda3ab8e6226c4ff0d20fdf9a2d352ae7f5a89b3f762872dfacab361",
+          "url": "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1578452_f00656_1.pdf",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpjyvp01s0ivhe4ik2jsqg",
+      "seedRecordId": "OFA-150326E4BC3E",
+      "expectedSeedSha256": "caa8c86cebf379e618a521960d9d44fdd7c37777332cf3bd6df257d3f3fbb1c9",
+      "expectedOwnerSha256": "def6b6f0288c9d3c0c50a11cb4e8e1195e2c86e532059e8d269ba1157da914a7",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MMIT I and MMIT II",
+        "attributionConfidence": null,
+        "attributionRationale": "Current issuer filings disclose Macquarie's aggregate 50.00% interest through MMIT I and MMIT II, split 34.0270% and 15.9730%. The reviewed vehicles are not linked to a matching current Fund Database row.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "The filed 2022 internal reorganization replaces the stale MMIF label with MMIT I and MMIT II. Preserve the already-correct exact legal vehicle and 34.0270%/15.9730% split, aggregate 50%, and 2014 entry; no fund link is created.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/mtp.pdf",
+          "sha256": "6bd451ccfda3ab8e6226c4ff0d20fdf9a2d352ae7f5a89b3f762872dfacab361",
+          "url": "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1578452_f00656_1.pdf",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "137a7e006a6366772e9b035fd4c8614b96bc847b35df93193e586f75ab805596",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjyv901rzivhejyznedjv",
+      "sha256": "f8f671b54a3204ead9c079e37c2a5123154ed19ac263b3c5fdac08b768383043"
+    },
+    {
+      "ownerId": "cmrxpjyvp01s0ivhe4ik2jsqg",
+      "sha256": "def6b6f0288c9d3c0c50a11cb4e8e1195e2c86e532059e8d269ba1157da914a7"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0216-mexico-telecom-partners-v1/proposal.json",
+      "sha256": "a7596f8231fbe140bd5d1bc27554458a6d5885040d98c9a00d3c7d3f87532fea"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0216-mexico-telecom-partners-v1.json",
+      "sha256": "9f9987a5b1b1a9712c8930e02e582a40c446c17e35d0c436995830a592776795"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0214-0218-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "e55b584010d1ce87c04f371c4d98513206ad69dabe1f11a929e2be43fd1cfef9",
+      "memberIndex": 2
+    },
+    "receiptSha256": "afb9c1e3f47d314f1b848f449e88551d65b400290f078d00d5d0e45ac137243e"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-008-evidence/mtp.pdf.capture.json",
+      "sha256": "3a67316be1669772f4e5c20687c5737f5ee57a52556c68d5ace64f3c91b3d396"
+    }
+  ]
+}

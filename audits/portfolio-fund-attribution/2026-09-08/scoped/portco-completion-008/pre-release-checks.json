@@ -1,0 +1,13 @@
+{
+  "batchId": "portco-completion-008",
+  "manifestSha256": "bbc5cb72a0b65cb3fdd7cdb79906f56fe620566914b1eb496789e46b3fd91f07",
+  "offlinePackets": {"names": 10, "boundFiles": 1275, "passed": true, "databaseReads": 0, "databaseWrites": 0},
+  "productionPreparation": {"snapshotCount": 1, "readOnly": true, "completeSelectedBeforeImagesMatch": true, "mutationCount": 4, "databaseWrites": 0},
+  "regression": {"command": "npm test -- --reporter=dot", "testFilesPassed": 207, "testsPassed": 3778, "failed": 0},
+  "appTypecheck": "PASS",
+  "completionToolTypecheck": "PASS",
+  "eslint": "PASS",
+  "offlineSeedValidation": {"errors": 0, "warnings": 54, "warningDisposition": "Existing date-format warnings; no full seed execution."},
+  "publication": {"secretFindings": 0, "explicitRedactions": 1, "indexBytesMatch": true, "rawSourceWhitespace": "Retained exactly to preserve captured evidence hashes; non-HTML diff check passed."},
+  "notProductionCompletion": true
+}
