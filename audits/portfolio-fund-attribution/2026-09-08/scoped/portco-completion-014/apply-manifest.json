@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "79d678990dba3c10e841174a7cc28c01b3fc0c85a5530ff72005606446187f36",
+  "sourceSnapshotSha256": "b53a69456e684784e89e38038e0c8e622b5b617d3a4aaccf59ca77f47c2640a8",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 1,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 2,
+  "mutations": [
+    {
+      "recordId": "OFA-381000000001",
+      "ownershipPeriodId": "cmtj59ak4001e2a2bfu78qhxp",
+      "companyName": "Exus Renewables North America",
+      "country": "United States",
+      "investmentFirm": "Partners Group",
+      "currentVehicleName": "Exus US Holdings, LP; Partners Group infrastructure client vehicles",
+      "databaseVehicleName": "Exus US Holdings, LP; Partners Group infrastructure client vehicles",
+      "investmentYear": 2023,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Partners Group Next Generation Infrastructure, LLC (one disclosed participating fund)",
+        "attributionConfidence": null,
+        "attributionRationale": "The March 31, 2026 SEC investment schedule for Partners Group Next Generation Infrastructure, LLC identifies Exus US Holdings, LP as a direct-equity investment acquired October 3, 2023. Name that one disclosed participating fund instead of treating the holding partnership as a fund; the remaining Partners Group client allocations are not publicly disclosed. Preserve the legal vehicle, unknown stake, 2023 entry and null curated fund link."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm",
+        "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=fac11494-cf82-49d3-8895-3d9580621f4c"
+      ]
+    },
+    {
+      "recordId": "OFA-381000000002",
+      "ownershipPeriodId": "cmtj59alo001g2a2bnmxdxr8f",
+      "companyName": "Exus Renewables North America",
+      "country": "United States",
+      "investmentFirm": "Exus founders and management",
+      "currentVehicleName": "Retained and rolled Exus equity",
+      "databaseVehicleName": "Retained and rolled Exus equity",
+      "investmentYear": 2018,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Partners Group's October 4, 2023 transaction announcement expressly invests alongside Exus founders and management. Their retained equity is a direct ownership interest, not an unresolved investment fund. Preserve the existing retained/rolled vehicle, unknown stake and original entry year; do not infer a minority percentage or manager fund."
+      },
+      "evidenceUrls": [
+        "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=fac11494-cf82-49d3-8895-3d9580621f4c"
+      ]
+    }
+  ],
+  "manifestSha256": "020bb1290d416dba8c233a470994c3aae18244ef0525efcd691b1329d81ef809"
+}
