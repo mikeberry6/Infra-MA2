@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T13:38:37.777Z",
+  "manifestSha256": "c6b4893ac66c1040142373954e5cd42ea137c7be8088f3461229998a40826566",
+  "approvalSha256": "3a2f4b232cca9948d939143d856389bb64bb4ae1fc96f175df95cba1bb2b7bb5",
+  "receiptSha256": "537169cc266da1a8892b73d6c35b6d6bf909f9d039426d5d32a26cb894c77c10",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-6C8E11838DAF",
+      "companyId": "cmrxpjmzy018xivheiq5ev2lk",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjmzy018xivheiq5ev2lk?verification=c6b4893ac66c1040142373954e5cd42ea137c7be8088f3461229998a40826566",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Ridgewood Water & Strategic Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Ridgewood's direct SiEnergy announcement identifies Undine among investments of the Ridgewood Water & Strategic Infrastructure Fund, without a numbered vintage. Remove the unsupported Fund I inference; no numbered fund or acquisition SPV is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-E23AA66E480C",
+      "companyId": "cmrxpjn0j018yivhek81ibli0",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjn0j018yivhek81ibli0?verification=c6b4893ac66c1040142373954e5cd42ea137c7be8088f3461229998a40826566",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Valley Cold identifies Clay Bush as a current founder owner. This is direct individual ownership, so no managed fund applies and no vehicle is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-4F57DCE9ED67",
+      "companyId": "cmrxpjn0j018yivhek81ibli0",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjn0j018yivhek81ibli0?verification=c6b4893ac66c1040142373954e5cd42ea137c7be8088f3461229998a40826566",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ridgewood directly confirms the Q4 2024 founder-led recapitalization, but the reviewed announcement and annual review do not identify a fund or acquisition SPV."
+      }
+    }
+  ],
+  "passed": true
+}
