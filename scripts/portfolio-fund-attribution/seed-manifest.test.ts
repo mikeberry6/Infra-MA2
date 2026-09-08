@@ -71,7 +71,8 @@ describe("portfolio fund attribution seed manifest", () => {
     // Batch 010 resolves Helix's directly evidenced KKR corporate-subsidiary attribution.
     // Batch 012 removes unsupported Northleaf estimates for CSV and Odfjell without inventing funds.
     // Batch 015 removes Crosstimbers' holding-vehicle-as-fund seed attribution without changing production.
-    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(73);
+    // Batch 016 removes Wren House QSP's unsupported direct/program classification.
+    expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(74);
     expect(manifest.records.every((record) => (
       record.fundAttribution !== "INFERRED"
       || (
