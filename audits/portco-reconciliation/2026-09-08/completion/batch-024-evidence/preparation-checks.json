@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_PREPARATION_CHECKS",
+  "batchId": "portco-completion-024",
+  "checkedAt": "2026-09-08T20:45:29.726Z",
+  "reviewedBy": "main-agent",
+  "config": {
+    "path": "audits/portco-reconciliation/2026-09-08/completion/batch-024-evidence/packet-v2/config.json",
+    "sha256": "fd96aacd0c83df3684e828d581757c1f5b1c0e23a1f3732460acb0eb628276ad"
+  },
+  "batch": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-024/completion-batch.json",
+    "sha256": "cfb1c5382924ec665c65d085b0f2cf92efa1ec8013bdcb5f906c04c372cbccee"
+  },
+  "sourceReview": {
+    "path": "audits/portco-reconciliation/2026-09-08/completion/batch-024-evidence/source-review.json",
+    "sha256": "2196bc94020c8dd84c3545ab9231c6cec8a52a4c817f5ec10b4b18a855f47f79"
+  },
+  "preparationRecovery": {
+    "path": "audits/portco-reconciliation/2026-09-08/completion/batch-024-evidence/preparation-recovery-review.json",
+    "sha256": "fc4a9cbb2597eab9ab69286fd53c2b558a99f4ce7316c8eac58d4560d31b865c"
+  },
+  "checks": {
+    "offline": {
+      "passed": true,
+      "names": 8,
+      "boundFiles": 2701,
+      "databaseReads": 0,
+      "databaseWrites": 0
+    },
+    "frozenCompile": {
+      "passed": true,
+      "log": {
+        "path": "/tmp/portco-024-prepare-v2.log",
+        "sha256": "522ef28f41e1b663c1a6dfeeef11093e614d5cb2df03a0f8b0ebcc59ff9f7ad3"
+      },
+      "snapshotReused": true,
+      "noRecapture": true,
+      "mutations": 9
+    },
+    "targeted": {
+      "passed": true,
+      "files": 12,
+      "tests": 125,
+      "log": {
+        "path": "/tmp/portco-024-targeted.log",
+        "sha256": "3fb123c679d4421db20e50088ce5cbae156cfd85ff99f999937f8adca6001ef7"
+      }
+    },
+    "fullRegression": {
+      "passed": true,
+      "files": 208,
+      "tests": 3824,
+      "runCountOnFinalContents": 1,
+      "log": {
+        "path": "/tmp/portco-024-full-regression.log",
+        "sha256": "4d74b7e6a63b55c8bf2a0cd01056dadceb8ff931b935d143d2374daf663d41e2"
+      }
+    },
+    "typecheck": {
+      "passed": true,
+      "log": {
+        "path": "/tmp/portco-024-typecheck.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "eslint": {
+      "passed": true,
+      "log": {
+        "path": "/tmp/portco-024-eslint.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "seedValidation": {
+      "passed": true,
+      "errors": 0,
+      "existingWarnings": 54,
+      "log": {
+        "path": "/tmp/portco-024-seed-validation.log",
+        "sha256": "277bfda16291b13fd00f2f819761dfc8e1114b4642e2376050f96ee0d86760ea"
+      }
+    },
+    "artifactValidation": {
+      "passed": true,
+      "mode": "VALIDATE_ONLY",
+      "databaseWrites": false,
+      "manifestSha256": "2e1c5e6ebf0d0bb811d66ceaab7414108743747f694f018e02237c2c326c573b",
+      "approvalSha256": "c964685625fe3d30c7766e6882c2aa795093ede383b7d739bf46da19b57d75dd",
+      "mutationCount": 9,
+      "fundCreates": 0,
+      "fundUpdates": 0,
+      "fundLinkChanges": 0,
+      "ownershipIdentityChanges": 0
+    },
+    "publicationPreparation": {
+      "scannedNewEvidenceFiles": 38,
+      "secretFindings": 0,
+      "redactions": 0,
+      "scope": "Complete final staging allowlist is independently rescanned before commit; superseded packet excluded."
+    }
+  },
+  "scope": "Eight names in original order. Three candidates with complete owner coverage; five parks without partial updates. No DB write, full seed execution, public interface, schema, Deal Database or scorecard change."
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_OFFLINE_PREPARATION_RECOVERY_REVIEW",
+  "reviewedBy": "main-agent",
+  "recordedAt": "2026-09-08T20:44:31.186Z",
+  "batchId": "portco-completion-024",
+  "firstAttempt": "Checker rejected seedOnlyRationale on the preserved Tiger owner because its production rationale is non-null. No apply manifest, batch activation or database write occurred in that attempt.",
+  "correction": "Shared materializer now emits seedOnlyRationale only when the preserved production rationale is null. A comparison of packet/spec.json and packet-v2/spec.json found exactly this one removed property on task 444 owner cmrxpkatf02akivheklpqesk6; no factual decision changed.",
+  "snapshot": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-024/completion-before.json",
+    "sha256": "55d07974cfbecb774e788dda918a5ffc3e032cb1acd4a6862b58336d5884ecc1"
+  },
+  "snapshotSha256": "6afc67fab69c6f3157fc62f025ced811b6b7927cd372b53452418a0137985532",
+  "recaptured": false,
+  "databaseWrites": 0,
+  "acceptedPacket": {
+    "path": "audits/portco-reconciliation/2026-09-08/completion/batch-024-evidence/packet-v2/config.json",
+    "sha256": "fd96aacd0c83df3684e828d581757c1f5b1c0e23a1f3732460acb0eb628276ad"
+  },
+  "acceptedPreparationLog": {
+    "path": "/tmp/portco-024-prepare-v2.log",
+    "sha256": "522ef28f41e1b663c1a6dfeeef11093e614d5cb2df03a0f8b0ebcc59ff9f7ad3"
+  },
+  "initialFailureLog": {
+    "path": "/tmp/portco-024-prepare.log",
+    "sha256": "17e16dcb5225c5c467aa9456311bcc0942fa661d970bb980af6ad87f09d6e940"
+  },
+  "result": "PASS: validated 2701 bindings, reused the exact frozen eight-company/19-owner snapshot and compiled nine attribution-only mutations. Superseded packet remains local and must not be staged."
+}

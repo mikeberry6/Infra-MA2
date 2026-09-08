@@ -1,0 +1,1248 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_REVISIT_OFFLINE_READINESS",
+  "createdAt": "2026-09-08T20:26:58.065Z",
+  "progressSha256": "244151016f2cba45a6dacacb32c017e0692ca83ffe6340b0daf76deef1c9aff5",
+  "scope": "Read-only existing evidence and evaluated seed comparison. Not research, approval, production capture, batch activation or completion.",
+  "rows": [
+    {
+      "sequence": 416,
+      "name": "Crawfish Solar Holdings 2, LLC",
+      "companyId": "cmtjhlnk800140t2bxvibgnuw",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-015",
+      "priorIssue": "Former Lightsource bp 100% corporate ownership is UNRESOLVED without an active seed binding. Historical attribution correction is unsupported by the current active-record workflow. Preserve current JERA 50% / Schroders 50%, JERA's prior 100% qualification and July 30, 2025 transition; no partial current-owner correction or inferred fund.",
+      "evidenceChecked": 24,
+      "owners": [
+        {
+          "ownerId": "cmtjhloc6001g0t2b2az3hv2w",
+          "organization": "JERA Nex",
+          "active": true,
+          "vehicle": "JERA Nex Americas LLC through Crawfish Solar Holdings 2, LLC",
+          "stake": "50%; 100% from August 2, 2024 until July 30, 2025",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-96CE03EC7EA3",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "JERA Nex",
+            "ownershipVehicle": "JERA Nex Americas LLC through Crawfish Solar Holdings 2, LLC",
+            "vehicleName": "JERA Nex Americas LLC through Crawfish Solar Holdings 2, LLC",
+            "investmentYear": 2024,
+            "stake": "50%; 100% from August 2, 2024 until July 30, 2025",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtjhloep001h0t2bdbmg1k1o",
+          "organization": "Schroders Greencoat",
+          "active": true,
+          "vehicle": "SG US Aggregator LLC; exact managed fund or client pool not publicly disclosed",
+          "stake": "50%",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-E95031E7D28C",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Schroders Greencoat",
+            "ownershipVehicle": "SG US Aggregator LLC; exact managed fund or client pool not publicly disclosed",
+            "vehicleName": "SG US Aggregator LLC; exact managed fund or client pool not publicly disclosed",
+            "investmentYear": 2025,
+            "stake": "50%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtjhloik001j0t2bbj9fxnpv",
+          "organization": "Lightsource bp",
+          "active": false,
+          "vehicle": "Exact selling affiliate not publicly disclosed",
+          "stake": "Former 100% sponsor and common-equity owner",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-D3766F31564EB492525DB2EB",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Lightsource bp",
+            "ownershipVehicle": "Exact selling affiliate not publicly disclosed",
+            "vehicleName": "Exact selling affiliate not publicly disclosed",
+            "exitYear": 2024,
+            "stake": "Former 100% sponsor and common-equity owner",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Crawfish Solar Holdings 2, LLC",
+            "country": "United States",
+            "companySha256": "572b8b5765235e3c4b4415664a901c0011f8f48c3a5ca56e8fbdf0dbcc6127b3",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "JERA Nex",
+                  "ownershipVehicle": "JERA Nex Americas LLC through Crawfish Solar Holdings 2, LLC",
+                  "vehicleName": "JERA Nex Americas LLC through Crawfish Solar Holdings 2, LLC",
+                  "investmentYear": 2024,
+                  "stake": "50%; 100% from August 2, 2024 until July 30, 2025",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "JERA Nex",
+                "vehicleName": "JERA Nex Americas LLC through Crawfish Solar Holdings 2, LLC",
+                "fundLookupName": "JERA Nex Americas LLC through Crawfish Solar Holdings 2, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Schroders Greencoat",
+                  "ownershipVehicle": "SG US Aggregator LLC; exact managed fund or client pool not publicly disclosed",
+                  "vehicleName": "SG US Aggregator LLC; exact managed fund or client pool not publicly disclosed",
+                  "investmentYear": 2025,
+                  "stake": "50%",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Schroders Greencoat",
+                "vehicleName": "SG US Aggregator LLC; exact managed fund or client pool not publicly disclosed",
+                "fundLookupName": "SG US Aggregator LLC; exact managed fund or client pool not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Lightsource bp",
+                  "ownershipVehicle": "Exact selling affiliate not publicly disclosed",
+                  "vehicleName": "Exact selling affiliate not publicly disclosed",
+                  "exitYear": 2024,
+                  "stake": "Former 100% sponsor and common-equity owner",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Lightsource bp",
+                "vehicleName": "Exact selling affiliate not publicly disclosed",
+                "fundLookupName": "Exact selling affiliate not publicly disclosed",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "ce576352b90e60a85e17c4f8517e0883b77396e07a265ee32c1a53fa1eeb0d29"
+      }
+    },
+    {
+      "sequence": 418,
+      "name": "Caliche Development Partners",
+      "companyId": "cmtjhluly00280t2bbyiyibak",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-015",
+      "priorIssue": "Former Caliche Management II, Energy Spectrum VII, GCM and OIC preferred periods retain UNRESOLVED metadata without active seed bindings. Review and correct historical corporate/program/fund representation through an appropriate path, preserving existing period dates and preferred-equity qualifications. No partial current Sixth Street TAO / management attribution update.",
+      "evidenceChecked": 24,
+      "owners": [
+        {
+          "ownerId": "cmtjhlvj3002l0t2b6dx3l8bm",
+          "organization": "Sixth Street",
+          "active": true,
+          "vehicle": "Mallard Evergreen Holdings, LLC; funded by Sixth Street TAO Partners, L.P. and parallel vehicles",
+          "stake": "Majority; exact percentage and equity class not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-C5C18D31FFF9",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Sixth Street",
+            "ownershipVehicle": "Mallard Evergreen Holdings, LLC; funded by Sixth Street TAO Partners, L.P. and parallel vehicles",
+            "vehicleName": "Mallard Evergreen Holdings, LLC; funded by Sixth Street TAO Partners, L.P. and parallel vehicles",
+            "investmentYear": 2024,
+            "stake": "Majority; exact percentage and equity class not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtjhlvn8002n0t2boi8rnkqn",
+          "organization": "Caliche Management",
+          "active": true,
+          "vehicle": "Caliche Management III, LLC",
+          "stake": "Minority with operational leadership; exact percentage and equity class not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-B707E388CC05",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Caliche Management",
+            "ownershipVehicle": "Caliche Management III, LLC",
+            "vehicleName": "Caliche Management III, LLC",
+            "investmentYear": 2024,
+            "stake": "Minority with operational leadership; exact percentage and equity class not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtjhlvpz002o0t2bhfhpoqvp",
+          "organization": "Orion Infrastructure Capital",
+          "active": false,
+          "vehicle": "Preferred equity through CDP II Holdings, LLC; exact OIC vehicle not publicly disclosed",
+          "stake": "Former co-owner; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-F7606D0489D5E8CCA41CDCD5",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Orion Infrastructure Capital",
+            "ownershipVehicle": "Preferred equity through CDP II Holdings, LLC; exact OIC vehicle not publicly disclosed",
+            "vehicleName": "Preferred equity through CDP II Holdings, LLC; exact OIC vehicle not publicly disclosed",
+            "investmentYear": 2022,
+            "exitYear": 2025,
+            "stake": "Former co-owner; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtjhlvsr002p0t2bp1q0kk8q",
+          "organization": "GCM Grosvenor",
+          "active": false,
+          "vehicle": "Texas Direct Infrastructure Program through CDP II Holdings, LLC",
+          "stake": "Former co-owner; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-EFED75184FA71AAE9A9AFEB8",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "GCM Grosvenor",
+            "ownershipVehicle": "Texas Direct Infrastructure Program through CDP II Holdings, LLC",
+            "vehicleName": "Texas Direct Infrastructure Program through CDP II Holdings, LLC",
+            "investmentYear": 2022,
+            "exitYear": 2025,
+            "stake": "Former co-owner; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtjhlvvj002q0t2bk8bb9bu7",
+          "organization": "Caliche Management",
+          "active": false,
+          "vehicle": "Caliche Management II, LLC through CDP II Holdings, LLC",
+          "stake": "Former common-equity owner; total economic percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-DF3384C9214E579CD0AE708D",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Caliche Management",
+            "ownershipVehicle": "Caliche Management II, LLC through CDP II Holdings, LLC",
+            "vehicleName": "Caliche Management II, LLC through CDP II Holdings, LLC",
+            "investmentYear": 2022,
+            "exitYear": 2025,
+            "stake": "Former common-equity owner; total economic percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtjhlvzo002s0t2bl9tcu2p0",
+          "organization": "Energy Spectrum Capital",
+          "active": false,
+          "vehicle": "Energy Spectrum Partners VII, L.P. through the Caliche I predecessor",
+          "stake": "Former sponsor; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-42183E91C5822E9A9E308725",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Energy Spectrum Capital",
+            "ownershipVehicle": "Energy Spectrum Partners VII, L.P. through the Caliche I predecessor",
+            "vehicleName": "Energy Spectrum Partners VII, L.P. through the Caliche I predecessor",
+            "investmentYear": 2016,
+            "exitYear": 2022,
+            "stake": "Former sponsor; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Caliche Development Partners",
+            "country": "United States",
+            "companySha256": "753d6c03db348a6ceae2346a3afed56c76049dfbfb76425104f50983f63ab0e6",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Sixth Street",
+                  "ownershipVehicle": "Mallard Evergreen Holdings, LLC; funded by Sixth Street TAO Partners, L.P. and parallel vehicles",
+                  "vehicleName": "Mallard Evergreen Holdings, LLC; funded by Sixth Street TAO Partners, L.P. and parallel vehicles",
+                  "investmentYear": 2024,
+                  "stake": "Majority; exact percentage and equity class not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Sixth Street",
+                "vehicleName": "Mallard Evergreen Holdings, LLC; funded by Sixth Street TAO Partners, L.P. and parallel vehicles",
+                "fundLookupName": "Mallard Evergreen Holdings, LLC; funded by Sixth Street TAO Partners, L.P. and parallel vehicles",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Caliche Management",
+                  "ownershipVehicle": "Caliche Management III, LLC",
+                  "vehicleName": "Caliche Management III, LLC",
+                  "investmentYear": 2024,
+                  "stake": "Minority with operational leadership; exact percentage and equity class not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Caliche Management",
+                "vehicleName": "Caliche Management III, LLC",
+                "fundLookupName": "Caliche Management III, LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Orion Infrastructure Capital",
+                  "ownershipVehicle": "Preferred equity through CDP II Holdings, LLC; exact OIC vehicle not publicly disclosed",
+                  "vehicleName": "Preferred equity through CDP II Holdings, LLC; exact OIC vehicle not publicly disclosed",
+                  "investmentYear": 2022,
+                  "exitYear": 2025,
+                  "stake": "Former co-owner; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Orion Infrastructure Capital",
+                "vehicleName": "Preferred equity through CDP II Holdings, LLC; exact OIC vehicle not publicly disclosed",
+                "fundLookupName": "Preferred equity through CDP II Holdings, LLC; exact OIC vehicle not publicly disclosed",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "GCM Grosvenor",
+                  "ownershipVehicle": "Texas Direct Infrastructure Program through CDP II Holdings, LLC",
+                  "vehicleName": "Texas Direct Infrastructure Program through CDP II Holdings, LLC",
+                  "investmentYear": 2022,
+                  "exitYear": 2025,
+                  "stake": "Former co-owner; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "GCM Grosvenor",
+                "vehicleName": "Texas Direct Infrastructure Program through CDP II Holdings, LLC",
+                "fundLookupName": "Texas Direct Infrastructure Program through CDP II Holdings, LLC",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Caliche Management",
+                  "ownershipVehicle": "Caliche Management II, LLC through CDP II Holdings, LLC",
+                  "vehicleName": "Caliche Management II, LLC through CDP II Holdings, LLC",
+                  "investmentYear": 2022,
+                  "exitYear": 2025,
+                  "stake": "Former common-equity owner; total economic percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Caliche Management",
+                "vehicleName": "Caliche Management II, LLC through CDP II Holdings, LLC",
+                "fundLookupName": "Caliche Management II, LLC through CDP II Holdings, LLC",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Energy Spectrum Capital",
+                  "ownershipVehicle": "Energy Spectrum Partners VII, L.P. through the Caliche I predecessor",
+                  "vehicleName": "Energy Spectrum Partners VII, L.P. through the Caliche I predecessor",
+                  "investmentYear": 2016,
+                  "exitYear": 2022,
+                  "stake": "Former sponsor; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Energy Spectrum Capital",
+                "vehicleName": "Energy Spectrum Partners VII, L.P. through the Caliche I predecessor",
+                "fundLookupName": "Energy Spectrum Partners VII, L.P. through the Caliche I predecessor",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "a058c067934a631a60c5d975c3892c6d695a30c5f2d9d25a368c12446030db1e"
+      }
+    },
+    {
+      "sequence": 440,
+      "name": "Danskammer Energy",
+      "companyId": "cmrxpjo1u01aoivhe85mr5shs",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-015",
+      "priorIssue": "Original accepted/applied research lists additional minority owners Reid 8.17%, Mercuria 7.19%, Taylor 1.63% and Gray 1.23%, while the canonical ownership structure only represents Tiger's 81.79%. Resolve minority-owner representation through an authorized structural workflow; do not count Tiger Fund II wording alignment as whole-name verification, create owners here, or infer bankruptcy sale closing.",
+      "evidenceChecked": 24,
+      "owners": [
+        {
+          "ownerId": "cmrxpkamv02acivhe1zl26vzb",
+          "organization": "Tiger",
+          "active": true,
+          "vehicle": "Tiger Infrastructure Partners Fund II Danskammer AIV LP and affiliated Tiger vehicles",
+          "stake": "81.79% of HoldCo shares and voting control at the June 2026 bankruptcy filing; fund-level economics not publicly disclosed",
+          "state": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "Tiger Infrastructure Partners Fund II",
+            "attributionConfidence": null,
+            "attributionRationale": "Matched supplemental ownership detail: Firm: Tiger Infrastructure Partners | Fund: Tiger Infrastructure Partners Fund II | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry.",
+            "linkedFundName": "Tiger Infrastructure Partners Fund II"
+          },
+          "seedRecordId": "OFA-B20B1F698F47",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Tiger",
+            "ownershipVehicle": "Tiger Infrastructure Partners Fund II",
+            "fundName": "Tiger Infrastructure Partners Fund II",
+            "vehicleName": "Tiger Infrastructure Partners Fund II Danskammer AIV LP and affiliated Tiger vehicles",
+            "investmentYear": 2017,
+            "stake": "81.79% of HoldCo shares and voting control at the June 2026 bankruptcy filing; fund-level economics not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Danskammer Energy",
+            "country": "United States",
+            "companySha256": "c11852ebd5a922a478fbad86109887e1048bd23aadc8e9f49acd1540b8293fff",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Tiger",
+                  "ownershipVehicle": "Tiger Infrastructure Partners Fund II",
+                  "fundName": "Tiger Infrastructure Partners Fund II",
+                  "vehicleName": "Tiger Infrastructure Partners Fund II Danskammer AIV LP and affiliated Tiger vehicles",
+                  "investmentYear": 2017,
+                  "stake": "81.79% of HoldCo shares and voting control at the June 2026 bankruptcy filing; fund-level economics not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Tiger",
+                "vehicleName": "Tiger Infrastructure Partners Fund II Danskammer AIV LP and affiliated Tiger vehicles",
+                "fundLookupName": "Tiger Infrastructure Partners Fund II",
+                "transactionState": "CLOSED_ACTIVE"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "3f32fb64788336f5b1e2342cdf179b81caeb62383457b6b088d9eac483cbef04"
+      }
+    },
+    {
+      "sequence": 441,
+      "name": "NorthLink Aviation",
+      "companyId": "cmrxpjo6e01ativheqw8diw1y",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-016",
+      "priorIssue": "Existing application research marks Alaska Future Fund's current ownership status and C Change's retained equity unresolved, while the active Alaska Future Fund owner lacks this qualification. Requires direct current status evidence and supported ownership-status/structure correction. Preserve Tiger Fund III; no partial metadata fix or inference from airport land ownership.",
+      "evidenceChecked": 41,
+      "owners": [
+        {
+          "ownerId": "cmrxpkapj02ahivhedpng0ebe",
+          "organization": "Tiger",
+          "active": true,
+          "vehicle": "Tiger Infrastructure Partners Fund III; exact holding SPV not publicly disclosed",
+          "stake": "Controlling interest; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "Tiger Infrastructure Partners Fund III",
+            "attributionConfidence": null,
+            "attributionRationale": "Matched supplemental ownership detail: Firm: Tiger Infrastructure Partners | Fund: Not publicly disclosed. | Ownership Interest: Controlling stake Seed milestones or source evidence explicitly name the current fund vehicle.",
+            "linkedFundName": "Tiger Infrastructure Partners Fund III"
+          },
+          "seedRecordId": "OFA-C367B2E89F9D",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Tiger",
+            "ownershipVehicle": "Tiger Infrastructure Partners Fund III",
+            "fundName": "Tiger Infrastructure Partners Fund III",
+            "vehicleName": "Tiger Infrastructure Partners Fund III; exact holding SPV not publicly disclosed",
+            "investmentYear": 2021,
+            "stake": "Controlling interest; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtjz5boi000qw32b6fe4wl3p",
+          "organization": "Barings",
+          "active": true,
+          "vehicle": "Alaska Future Fund / Alaska Investment Program",
+          "stake": "Disclosed owner and co-investor; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-528614B82D78",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Barings",
+            "ownershipVehicle": "Alaska Future Fund / Alaska Investment Program",
+            "vehicleName": "Alaska Future Fund / Alaska Investment Program",
+            "investmentYear": 2021,
+            "stake": "Disclosed owner and co-investor; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "NorthLink Aviation",
+            "country": "United States",
+            "companySha256": "28e6250a2ee02d8ffbea5e26d771d3178aae99a00f917f57d7d8f7d98c381239",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Tiger",
+                  "ownershipVehicle": "Tiger Infrastructure Partners Fund III",
+                  "fundName": "Tiger Infrastructure Partners Fund III",
+                  "vehicleName": "Tiger Infrastructure Partners Fund III; exact holding SPV not publicly disclosed",
+                  "investmentYear": 2021,
+                  "stake": "Controlling interest; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Tiger",
+                "vehicleName": "Tiger Infrastructure Partners Fund III; exact holding SPV not publicly disclosed",
+                "fundLookupName": "Tiger Infrastructure Partners Fund III",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Barings",
+                  "ownershipVehicle": "Alaska Future Fund / Alaska Investment Program",
+                  "vehicleName": "Alaska Future Fund / Alaska Investment Program",
+                  "investmentYear": 2021,
+                  "stake": "Disclosed owner and co-investor; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Barings",
+                "vehicleName": "Alaska Future Fund / Alaska Investment Program",
+                "fundLookupName": "Alaska Future Fund / Alaska Investment Program",
+                "transactionState": "CLOSED_ACTIVE"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "db4c68a836966803df639894ea8be6f040ef06127af9302c6037d9ffe2e55d51"
+      }
+    },
+    {
+      "sequence": 443,
+      "name": "Summit Carbon Solutions",
+      "companyId": "cmrxpjobk01b3ivhet0tyh274",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-016",
+      "priorIssue": "Completed application research identifies Summit Agricultural Group and Continental as current owners, but the canonical ownership rows contain only Tiger; TPG/SK/Deere current positions also remain uncertain. Requires a supported ownership-structure path and exact current cap-table evidence. Do not declare whole-name completion through Tiger-only seed alignment.",
+      "evidenceChecked": 41,
+      "owners": [
+        {
+          "ownerId": "cmrxpkaxj02asivhe2the1gpw",
+          "organization": "Tiger",
+          "active": true,
+          "vehicle": "Tiger Infrastructure Partners Fund III",
+          "stake": "$100 million investment commitment; current percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "Tiger Infrastructure Partners Fund III",
+            "attributionConfidence": null,
+            "attributionRationale": "Matched supplemental ownership detail: Firm: Tiger Infrastructure Partners | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+            "linkedFundName": "Tiger Infrastructure Partners Fund III"
+          },
+          "seedRecordId": "OFA-23B775B764B6",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Tiger",
+            "ownershipVehicle": "Tiger Infrastructure Partners Fund III",
+            "fundName": "Tiger Infrastructure Partners Fund III",
+            "vehicleName": "Tiger Infrastructure Partners Fund III",
+            "investmentYear": 2021,
+            "stake": "$100 million investment commitment; current percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Summit Carbon Solutions",
+            "country": "United States",
+            "companySha256": "1f25a91eb7bff259b83a6bb6734def2c2cbdce26bff06360a407e92b8e462622",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Tiger",
+                  "ownershipVehicle": "Tiger Infrastructure Partners Fund III",
+                  "fundName": "Tiger Infrastructure Partners Fund III",
+                  "vehicleName": "Tiger Infrastructure Partners Fund III",
+                  "investmentYear": 2021,
+                  "stake": "$100 million investment commitment; current percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Tiger",
+                "vehicleName": "Tiger Infrastructure Partners Fund III",
+                "fundLookupName": "Tiger Infrastructure Partners Fund III",
+                "transactionState": "CLOSED_ACTIVE"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "274aa56c39256f3b7e3bcb9fc24c0101f248834d12afa4d4735208dc9b9b2b26"
+      }
+    },
+    {
+      "sequence": 444,
+      "name": "Unison Energy",
+      "companyId": "cmrxpjo8401awivheqfej0vd7",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-016",
+      "priorIssue": "Historical Hunt corporate owner remains UNRESOLVED without an active seed binding; AIF/AIM Universal historical lineage requires preservation and a supported historical-ownership attribution path. Current Tiger Fund III remains unchanged. No replay of the completed Unison PortCo transaction or IPX attribution repair.",
+      "evidenceChecked": 41,
+      "owners": [
+        {
+          "ownerId": "cmrxpkatf02akivheklpqesk6",
+          "organization": "Tiger",
+          "active": true,
+          "vehicle": "Tiger Infrastructure Partners Fund III AIV U LP",
+          "stake": "Controlling interest; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "DISCLOSED",
+            "attributedFundName": "Tiger Infrastructure Partners Fund III",
+            "attributionConfidence": null,
+            "attributionRationale": "Matched supplemental ownership detail: Firm: Tiger Infrastructure Partners | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+            "linkedFundName": "Tiger Infrastructure Partners Fund III"
+          },
+          "seedRecordId": "OFA-D08241D64928",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Tiger",
+            "ownershipVehicle": "Tiger Infrastructure Partners Fund III",
+            "fundName": "Tiger Infrastructure Partners Fund III",
+            "vehicleName": "Tiger Infrastructure Partners Fund III AIV U LP",
+            "investmentYear": 2024,
+            "stake": "Controlling interest; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtk1baai0005ww2btgv913zl",
+          "organization": "American Infrastructure Funds",
+          "active": false,
+          "vehicle": "AIM Universal Holdings, LLC",
+          "stake": "Former controlling interest; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-797D0CB060C011BF6BD5624E",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "American Infrastructure Funds",
+            "ownershipVehicle": "AIM Universal Holdings, LLC",
+            "vehicleName": "AIM Universal Holdings, LLC",
+            "investmentYear": 2018,
+            "exitYear": 2024,
+            "stake": "Former controlling interest; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        },
+        {
+          "ownerId": "cmtk1baf40007ww2b7mr1wg84",
+          "organization": "Hunt Companies",
+          "active": false,
+          "vehicle": "Holding vehicle not publicly disclosed",
+          "stake": "Former minority interest; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-HIST-042CDCFCCCA64FCD4F173B6B",
+          "existingOverlay": false,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Hunt Companies",
+            "ownershipVehicle": "Holding vehicle not publicly disclosed",
+            "vehicleName": "Holding vehicle not publicly disclosed",
+            "investmentYear": 2018,
+            "exitYear": 2024,
+            "stake": "Former minority interest; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Unison Energy",
+            "country": "United States",
+            "companySha256": "95f6730cceb6382b7d6936799493a39ace191bd01a3d40670feae1ed7757a98b",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Tiger",
+                  "ownershipVehicle": "Tiger Infrastructure Partners Fund III",
+                  "fundName": "Tiger Infrastructure Partners Fund III",
+                  "vehicleName": "Tiger Infrastructure Partners Fund III AIV U LP",
+                  "investmentYear": 2024,
+                  "stake": "Controlling interest; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Tiger",
+                "vehicleName": "Tiger Infrastructure Partners Fund III AIV U LP",
+                "fundLookupName": "Tiger Infrastructure Partners Fund III",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "American Infrastructure Funds",
+                  "ownershipVehicle": "AIM Universal Holdings, LLC",
+                  "vehicleName": "AIM Universal Holdings, LLC",
+                  "investmentYear": 2018,
+                  "exitYear": 2024,
+                  "stake": "Former controlling interest; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "American Infrastructure Funds",
+                "vehicleName": "AIM Universal Holdings, LLC",
+                "fundLookupName": "AIM Universal Holdings, LLC",
+                "transactionState": "REALIZED"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Hunt Companies",
+                  "ownershipVehicle": "Holding vehicle not publicly disclosed",
+                  "vehicleName": "Holding vehicle not publicly disclosed",
+                  "investmentYear": 2018,
+                  "exitYear": 2024,
+                  "stake": "Former minority interest; exact percentage not publicly disclosed",
+                  "status": "Realized",
+                  "transactionState": "REALIZED"
+                },
+                "organizationName": "Hunt Companies",
+                "vehicleName": "Holding vehicle not publicly disclosed",
+                "fundLookupName": "Holding vehicle not publicly disclosed",
+                "transactionState": "REALIZED"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "8b205901474aa3f352815fa42d579c05fb371460c65c27f8d3a2a561c6b60e58"
+      }
+    },
+    {
+      "sequence": 457,
+      "name": "Intermountain Infrastructure Group, LLC",
+      "companyId": "cmtllvuze000ht54xb9389e30",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-016",
+      "priorIssue": "Application research and canonical description identify Future Standard/Post Road successor as another current backer, but ownership rows contain only Wafra. Requires supported owner/organization addition and current ownership evidence. Preserve the 2024 closing ranges as historical, not current percentages; no partial attribution completion.",
+      "evidenceChecked": 41,
+      "owners": [
+        {
+          "ownerId": "cmtllvvob000ut54x1hxyroeb",
+          "organization": "Wafra",
+          "active": true,
+          "vehicle": "Wafra Real Assets & Infrastructure II LP / WRA II-Pioneer (S) LLC",
+          "stake": "Majority owner by June 2026; 19.8%-21.4% at January 2024 closing; current exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-C436BF5E0D62",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Wafra",
+            "ownershipVehicle": "Wafra Real Assets & Infrastructure II LP / WRA II-Pioneer (S) LLC",
+            "vehicleName": "Wafra Real Assets & Infrastructure II LP / WRA II-Pioneer (S) LLC",
+            "investmentYear": 2024,
+            "stake": "Majority owner by June 2026; 19.8%-21.4% at January 2024 closing; current exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Intermountain Infrastructure Group, LLC",
+            "country": "United States",
+            "companySha256": "339900cb2a3b150d13c95d905c1ae985f7b29a5b13c3c67860d802e5599dcc26",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Wafra",
+                  "ownershipVehicle": "Wafra Real Assets & Infrastructure II LP / WRA II-Pioneer (S) LLC",
+                  "vehicleName": "Wafra Real Assets & Infrastructure II LP / WRA II-Pioneer (S) LLC",
+                  "investmentYear": 2024,
+                  "stake": "Majority owner by June 2026; 19.8%-21.4% at January 2024 closing; current exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Wafra",
+                "vehicleName": "Wafra Real Assets & Infrastructure II LP / WRA II-Pioneer (S) LLC",
+                "fundLookupName": "Wafra Real Assets & Infrastructure II LP / WRA II-Pioneer (S) LLC",
+                "transactionState": "CLOSED_ACTIVE"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "0c3667def9979415f9c576ad08d630c8caca2946701c20d2e3dde59814cf73f6"
+      }
+    },
+    {
+      "sequence": 458,
+      "name": "Mission Clean Energy LLC",
+      "companyId": "cmtllvy0y0012t54xezjygddr",
+      "priorDirectory": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-016",
+      "priorIssue": "Both direct Mission investor page and December 2024 Orsted announcement say strategic investment, not minority. The applied Orsted minority stake/text is unsupported. Requires supported stake/canonical-text correction or direct minority evidence, outside this metadata workflow. Preserve Wafra-managed affiliate and exact unavailable fund; no partial metadata completion or invented percentage.",
+      "evidenceChecked": 41,
+      "owners": [
+        {
+          "ownerId": "cmtllvyov001ft54xkju6lo26",
+          "organization": "Wafra",
+          "active": true,
+          "vehicle": "Affiliate of funds managed by Wafra; exact vehicle not publicly disclosed",
+          "stake": "Controlling interest; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-1691970A2FDD",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Wafra",
+            "ownershipVehicle": "Affiliate of funds managed by Wafra; exact vehicle not publicly disclosed",
+            "vehicleName": "Affiliate of funds managed by Wafra; exact vehicle not publicly disclosed",
+            "investmentYear": 2022,
+            "stake": "Controlling interest; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        },
+        {
+          "ownerId": "cmtllvyqu001gt54x0f52m3cl",
+          "organization": "Ørsted",
+          "active": true,
+          "vehicle": "Investment vehicle not publicly disclosed",
+          "stake": "Minority strategic investment; exact percentage not publicly disclosed",
+          "state": {
+            "fundAttribution": "UNRESOLVED",
+            "attributedFundName": null,
+            "attributionConfidence": null,
+            "attributionRationale": null,
+            "linkedFundName": null
+          },
+          "seedRecordId": "OFA-7BB3047EF243",
+          "existingOverlay": true,
+          "identity": "EXACT",
+          "inline": {
+            "investmentFirm": "Ørsted",
+            "ownershipVehicle": "Investment vehicle not publicly disclosed",
+            "vehicleName": "Investment vehicle not publicly disclosed",
+            "investmentYear": 2024,
+            "stake": "Minority strategic investment; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        }
+      ],
+      "seedProof": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+        "dependencies": [
+          {
+            "path": "prisma/seed-data/companies.ts",
+            "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.ts",
+            "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+          },
+          {
+            "path": "prisma/seed-data/approved-portco-after-images.json",
+            "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+          },
+          {
+            "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+            "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+          },
+          {
+            "path": "prisma/seed-data/portco-types.ts",
+            "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+          },
+          {
+            "path": "prisma/entity-resolution.ts",
+            "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+          },
+          {
+            "path": "prisma/seed-runner.ts",
+            "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+          }
+        ],
+        "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+        "companies": [
+          {
+            "name": "Mission Clean Energy LLC",
+            "country": "United States",
+            "companySha256": "92f3078545f9452b1db7e30acebd18b6ca2aa423419943c5de3c082f484c1ec5",
+            "owners": [
+              {
+                "raw": {
+                  "investmentFirm": "Wafra",
+                  "ownershipVehicle": "Affiliate of funds managed by Wafra; exact vehicle not publicly disclosed",
+                  "vehicleName": "Affiliate of funds managed by Wafra; exact vehicle not publicly disclosed",
+                  "investmentYear": 2022,
+                  "stake": "Controlling interest; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Wafra",
+                "vehicleName": "Affiliate of funds managed by Wafra; exact vehicle not publicly disclosed",
+                "fundLookupName": "Affiliate of funds managed by Wafra; exact vehicle not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              },
+              {
+                "raw": {
+                  "investmentFirm": "Ørsted",
+                  "ownershipVehicle": "Investment vehicle not publicly disclosed",
+                  "vehicleName": "Investment vehicle not publicly disclosed",
+                  "investmentYear": 2024,
+                  "stake": "Minority strategic investment; exact percentage not publicly disclosed",
+                  "status": "Active",
+                  "transactionState": "CLOSED_ACTIVE"
+                },
+                "organizationName": "Ørsted",
+                "vehicleName": "Investment vehicle not publicly disclosed",
+                "fundLookupName": "Investment vehicle not publicly disclosed",
+                "transactionState": "CLOSED_ACTIVE"
+              }
+            ]
+          }
+        ],
+        "proofSha256": "1f58d189f462315473bde08f080ed5e57846d1ccc0add86d533848191d0f5a9a"
+      }
+    }
+  ]
+}
