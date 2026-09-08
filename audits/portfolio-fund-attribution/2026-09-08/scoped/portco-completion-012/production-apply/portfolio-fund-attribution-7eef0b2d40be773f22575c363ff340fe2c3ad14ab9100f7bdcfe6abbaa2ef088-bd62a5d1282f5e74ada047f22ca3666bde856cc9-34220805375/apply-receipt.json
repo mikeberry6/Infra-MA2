@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "7eef0b2d40be773f22575c363ff340fe2c3ad14ab9100f7bdcfe6abbaa2ef088",
+  "approvalSha256": "ccc0eb791626e65d177e3c994916383555ffaccd76aa4d7275b937022e02d935",
+  "environment": "production",
+  "pipelineRunId": "cmtsl76gz0000a64xau2ch7eb",
+  "mutationCount": 5,
+  "changed": 5,
+  "idempotent": false,
+  "beforeFingerprint": "9408379ac1d4ec72ebc0cbb74e8963e58b8f3b8c8b61165bb78f7fef7f5862a2",
+  "afterFingerprint": "8dec93f0945306488c7e30fd538035bd24f999177b843714c9a5e0a06b4a923f",
+  "rows": [
+    {
+      "recordId": "OFA-DB7DABFD82F7",
+      "ownershipPeriodId": "cmrxpk86q026givheoq8wg0qm",
+      "companyId": "cmrxpjlu70171ivheax0ogxib",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Northleaf NEIF",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.33, evergreen/permanent-capital vehicle, North America-relevant mandate; next candidate trails by 45.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CSV's June 28, 2019 release identifies infrastructure funds managed by Northleaf as the 100% buyer but does not name an exact fund. Northleaf NEIF was an unsupported model estimate and is removed; direct investment by managed funds is not a direct corporate program. Preserve the 2019 entry and genuinely undisclosed allocation."
+      }
+    },
+    {
+      "recordId": "OFA-A31F4316086F",
+      "ownershipPeriodId": "cmrxpk88n026kivhei801lcbr",
+      "companyId": "cmrxpjlw50175ivhez9ani7qd",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Northleaf NEIF",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; next candidate trails by 45.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Odfjell's June 7, 2019 closing release identifies funds managed by Northleaf as the buyer of 49%, without naming the investing funds. The Northleaf NEIF estimate is unsupported; NCP US Terminals LP remains the legal vehicle, not a substitute fund name. Exact fund allocation remains undisclosed."
+      }
+    },
+    {
+      "recordId": "OFA-B279DCE8DA89",
+      "ownershipPeriodId": "cmtizeehq0004282bgkp8kda2",
+      "companyId": "cmrxpjlw50175ivhez9ani7qd",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Odfjell's corporate terminals table directly reports its 51% ownership of both U.S. terminals. This is corporate ownership through the existing Odfjell Terminals Americas LLC vehicle, not an unresolved investment-fund allocation. Preserve the legal vehicle, entry year and stake without creating or linking a fund."
+      }
+    },
+    {
+      "recordId": "OFA-4E5BE0BF3D59",
+      "ownershipPeriodId": "cmtizepvq0022282b6vpwx4ba",
+      "companyId": "cmtizepat001r282b9z7zrd9h",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "NOVA's current team biographies expressly identify Harbor Logistics as a NOVA Fund I portfolio company. Replace unresolved attribution with this directly disclosed fund, retaining the audited December 2021 platform entry, controlling ownership with undisclosed exact stake and existing legal identity. No curated fund link is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-D681A8F7AF1F",
+      "ownershipPeriodId": "cmtj0jm8f000axx2be82y69im",
+      "companyId": "cmtj0jm5c0000xx2b23nagtjp",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed New York PSC petition, PDF pages 5-7, discloses NOVA Infrastructure Fund I's 71% economic participation in the acquisition complex alongside a blocker and GP structure. The Investco owns 100% of Xchange; that platform stake is not the fund's standalone percentage. Replace unresolved attribution with the disclosed Fund I, preserve the legal Investco vehicle and 2022 equity entry, and do not infer a curated fund link or direct Apollo ownership."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T11:29:20.863Z",
+  "receiptSha256": "6afc104e22362df65b7306767dd56c31c68529fc2a4c407e0d1e926f0dfb9137"
+}

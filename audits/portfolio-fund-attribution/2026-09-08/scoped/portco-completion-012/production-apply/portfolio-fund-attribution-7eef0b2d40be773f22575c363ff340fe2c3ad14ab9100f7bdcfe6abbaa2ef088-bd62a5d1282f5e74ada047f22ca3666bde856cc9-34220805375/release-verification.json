@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T11:29:23.460Z",
+  "manifestSha256": "7eef0b2d40be773f22575c363ff340fe2c3ad14ab9100f7bdcfe6abbaa2ef088",
+  "approvalSha256": "ccc0eb791626e65d177e3c994916383555ffaccd76aa4d7275b937022e02d935",
+  "receiptSha256": "6afc104e22362df65b7306767dd56c31c68529fc2a4c407e0d1e926f0dfb9137",
+  "mutationCount": 5,
+  "changed": 5,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-4E5BE0BF3D59",
+      "companyId": "cmtizepat001r282b9z7zrd9h",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmtizepat001r282b9z7zrd9h?verification=7eef0b2d40be773f22575c363ff340fe2c3ad14ab9100f7bdcfe6abbaa2ef088",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "NOVA's current team biographies expressly identify Harbor Logistics as a NOVA Fund I portfolio company. Replace unresolved attribution with this directly disclosed fund, retaining the audited December 2021 platform entry, controlling ownership with undisclosed exact stake and existing legal identity. No curated fund link is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-B279DCE8DA89",
+      "companyId": "cmrxpjlw50175ivhez9ani7qd",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjlw50175ivhez9ani7qd?verification=7eef0b2d40be773f22575c363ff340fe2c3ad14ab9100f7bdcfe6abbaa2ef088",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Odfjell's corporate terminals table directly reports its 51% ownership of both U.S. terminals. This is corporate ownership through the existing Odfjell Terminals Americas LLC vehicle, not an unresolved investment-fund allocation. Preserve the legal vehicle, entry year and stake without creating or linking a fund."
+      }
+    },
+    {
+      "recordId": "OFA-DB7DABFD82F7",
+      "companyId": "cmrxpjlu70171ivheax0ogxib",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjlu70171ivheax0ogxib?verification=7eef0b2d40be773f22575c363ff340fe2c3ad14ab9100f7bdcfe6abbaa2ef088",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CSV's June 28, 2019 release identifies infrastructure funds managed by Northleaf as the 100% buyer but does not name an exact fund. Northleaf NEIF was an unsupported model estimate and is removed; direct investment by managed funds is not a direct corporate program. Preserve the 2019 entry and genuinely undisclosed allocation."
+      }
+    }
+  ],
+  "passed": true
+}
