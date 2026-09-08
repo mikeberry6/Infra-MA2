@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T04:27:14.627Z",
+  "manifestSha256": "1db23d51f70b5f6a726ef8bd003e1518feb4595f51d84264047140b88dcfb028",
+  "approvalSha256": "2a72e34a50f4028521ab76bc020b4a835b1ebcbfe5ddb5c4b58a384f01b6b7dd",
+  "receiptSha256": "50061d92ba9f240bb192ca0e4b049c226824bff8702eee6b7d7872e272853c3f",
+  "mutationCount": 10,
+  "changed": 10,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-674978762296",
+      "companyId": "cmrxpj40p00fuivhezgldc4dl",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj40p00fuivhezgldc4dl?verification=1db23d51f70b5f6a726ef8bd003e1518feb4595f51d84264047140b88dcfb028",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": "3i NA Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "3i NA Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "3i Group's FY2026 results, pages 21-22, identify Amwaste among the North American Infrastructure Fund (NAIF) investments. This disclosed fund corresponds to the existing curated 3i NA Infrastructure Fund link; the old statement that no curated fund matched is incorrect. Preserve the separately verified company identity, vehicle, entry year and undisclosed exact stake."
+      }
+    },
+    {
+      "recordId": "OFA-D7AB4D5F917C",
+      "companyId": "cmsy7wza30000dx6h68hfhefh",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmsy7wza30000dx6h68hfhefh?verification=1db23d51f70b5f6a726ef8bd003e1518feb4595f51d84264047140b88dcfb028",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The Virginia Port Authority's Series 2025 final official statement identifies Public Sector Pension Investments (PSP) and USS as VIG's joint underlying owners. Classify PSP's directly held pension investment as DIRECT_PROGRAM without inventing a third-party fund or legal holding vehicle. PSP's exact percentage and entry date remain not publicly disclosed; the 2025 lease amendment is not a sale of terminal title."
+      }
+    },
+    {
+      "recordId": "OFA-6C517EC7BDAE",
+      "companyId": "cmsy7wza30000dx6h68hfhefh",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmsy7wza30000dx6h68hfhefh?verification=1db23d51f70b5f6a726ef8bd003e1518feb4595f51d84264047140b88dcfb028",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Astatine identifies Virginia International Gateway as a current managed investment, but the reviewed public evidence does not disclose the active fund, managed account, or holding vehicle. The separate Alinda Infrastructure Fund II investment was exited in 2019, so the current period is intentionally left unlinked rather than inferred to a later Astatine fund."
+      }
+    }
+  ],
+  "passed": true
+}
