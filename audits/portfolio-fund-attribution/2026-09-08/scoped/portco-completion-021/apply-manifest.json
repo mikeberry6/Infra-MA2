@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "3e191d918fb329b28d72e9ed851085c09c8fa63b5d6bb73593136ab145606a84",
+  "sourceSnapshotSha256": "c0067d114b1b2069f4ee7d110ecaebccb5a437380afa30f728d904d01be740ce",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 3,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 8,
+      "UNRESOLVED": 3
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 14,
+  "mutations": [
+    {
+      "recordId": "OFA-E3BF7EAB34AB",
+      "ownershipPeriodId": "cmtio9d5i001iwa2bf2eqlt3z",
+      "companyName": "TraPac, LLC",
+      "country": "United States",
+      "investmentFirm": "Ocean Network Express",
+      "currentVehicleName": "United Pacific Ports B (UK) Ltd.",
+      "databaseVehicleName": "United Pacific Ports B (UK) Ltd.",
+      "investmentYear": 2023,
+      "stake": "51%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ONE directly reports the completed acquisition of a 51% TraPac interest. This is corporate ownership through the existing audited subsidiary, not a separately named investment fund; preserve all identity, vehicle, stake and date fields."
+      },
+      "evidenceUrls": [
+        "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-36604DC793E537F8DF59D160",
+      "ownershipPeriodId": "cmtio9d74001jwa2bi979psv7",
+      "companyName": "TraPac, LLC",
+      "country": "United States",
+      "investmentFirm": "Mitsui O.S.K. Lines",
+      "currentVehicleName": "International Transportation, Inc. / TraPac Holdings, LLC",
+      "databaseVehicleName": "International Transportation, Inc. / TraPac Holdings, LLC",
+      "investmentYear": 1985,
+      "stake": "100% initially; 51% with Brookfield; 100% after the 2022 repurchase",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "MOL's direct release describes TraPac as its wholly owned subsidiary established in 1985 and the transfer of an indirect minority interest to Brookfield. Retain the complete audited former MOL period and its changing historical stake; this is corporate ownership, not a fund."
+      },
+      "evidenceUrls": [
+        "https://www.mol.co.jp/en/pr/2014/14002.html"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-5F806414847D2E0C42B59372",
+      "ownershipPeriodId": "cmtio9d8q001kwa2b4e5a8kqz",
+      "companyName": "TraPac, LLC",
+      "country": "United States",
+      "investmentFirm": "Brookfield Asset Management",
+      "currentVehicleName": "BIF II TP Aggregator (Delaware), L.P.",
+      "databaseVehicleName": "BIF II TP Aggregator (Delaware), L.P.",
+      "investmentYear": 2014,
+      "stake": "49% indirect interest",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed transfer notice, physical page 18 (notice page 3), explicitly states that BIF II TP Aggregator was established by Brookfield Infrastructure Fund II to invest in 49% of Tenant Holdco. Attribute the historical investment to that fund, not to the aggregator as a fund, while preserving the 2014-2022 ownership period and leaving the fund link unchanged."
+      },
+      "evidenceUrls": [
+        "https://cityclerk.lacity.org/onlinedocs/2013/13-1501-s1_rpt_pola_01-10-14.pdf",
+        "https://www.mol.co.jp/en/pr/2014/14002.html"
+      ]
+    },
+    {
+      "recordId": "OFA-A4BD3367A7D3",
+      "ownershipPeriodId": "cmtiqlf4x0008ro2bkoptf9q9",
+      "companyName": "Yusen Terminals LLC",
+      "country": "United States",
+      "investmentFirm": "Ocean Network Express",
+      "currentVehicleName": "Undisclosed ONE subsidiary / NYK Ports LLC",
+      "databaseVehicleName": "Undisclosed ONE subsidiary / NYK Ports LLC",
+      "investmentYear": 2023,
+      "stake": "100% through NYK Ports LLC",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Yusen's company-authored current profile expressly states that it is wholly owned by Ocean Network Express. Preserve the audited 2023 entry, current 100% interest and undisclosed intermediate subsidiary; this is corporate ownership rather than an investment-fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.linkedin.com/company/yusen-terminals",
+        "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam",
+        "https://www.gibsondunn.com/practice/transportation-and-space/"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-3BBBB9A1977755F10EE2E175",
+      "ownershipPeriodId": "cmtiqlf9n000aro2bpaovz751",
+      "companyName": "Yusen Terminals LLC",
+      "country": "United States",
+      "investmentFirm": "Nippon Yusen Kabushiki Kaisha",
+      "currentVehicleName": "NYK Group Americas / NYK Energy Transport (USA), Inc.",
+      "databaseVehicleName": "NYK Group Americas / NYK Energy Transport (USA), Inc.",
+      "investmentYear": 1991,
+      "stake": "100% before 2015; 51% from 2015 to 2023",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The direct city ownership report identifies NYK's historical corporate ownership and the sale of its remaining 51% interest to ONE. Preserve the original 1991-2023 NYK period and historical stake qualifications; no investment fund is identified for this corporate ownership."
+      },
+      "evidenceUrls": [
+        "https://cityclerk.lacity.org/onlinedocs/2014/14-0094-S2_misc_100_8-18-23.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-5F210724DDA7",
+      "ownershipPeriodId": "cmtitgcgp000o482bz1qvdnnu",
+      "companyName": "TowerPoint Infrastructure Partners",
+      "country": "United States",
+      "investmentFirm": "MEAG",
+      "currentVehicleName": "MR Highland LP / Munich Re account",
+      "databaseVehicleName": "MR Highland LP / Munich Re account",
+      "investmentYear": 2025,
+      "stake": "15.0%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "MEAG directly states in its 28 October 2025 TowerPoint announcement that it invested on behalf of Munich Re. This is a Munich Re insurance-account investment managed by MEAG, not a disclosed third-party investment fund. Preserve the existing MR Highland LP vehicle, stake and entry year; no fund link is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.meag.com/en/inform/34340.html"
+      ]
+    },
+    {
+      "recordId": "OFA-93B40FE54060",
+      "ownershipPeriodId": "cmrxpjstz01idivhe3h4tdzf7",
+      "companyName": "Centre de recherche du CHUM (CRCHUM)",
+      "country": "Canada",
+      "investmentFirm": "Axium Infrastructure",
+      "currentVehicleName": "Fiera Axium Recherche s.e.c. / Axium Recherche L.P.",
+      "databaseVehicleName": "Fiera Axium Recherche s.e.c. / Axium Recherche L.P.",
+      "investmentYear": 2010,
+      "stake": "60% at the 2010 close; current exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The ProjectCo annex identifies Fiera Axium Recherche as an equity holder, but lists Fiera Axium Infrastructure Canada Limited Partnership under loans. The lender name does not establish the equity investment fund. Preserve the 2010 60% historical stake and explicitly undisclosed current percentage; the exact current equity fund remains unresolved."
+      },
+      "evidenceUrls": [
+        "https://www.chumontreal.qc.ca/sites/default/files/inline-files/Annexe%2003%20-%20Renseignements%20sur%20ProjetCo.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-2826E091BB89",
+      "ownershipPeriodId": "cmrxpk7ar0251ivhe2d8g3bhi",
+      "companyName": "Centre de recherche du CHUM (CRCHUM)",
+      "country": "Canada",
+      "investmentFirm": "Meridiam",
+      "currentVehicleName": "Meridiam Infrastructure Canada Finance ULC / Accès Recherche Montréal L.P.",
+      "databaseVehicleName": "Meridiam Infrastructure Canada Finance ULC / Accès Recherche Montréal L.P.",
+      "investmentYear": 2010,
+      "stake": "40% at the 2010 close; acquired QIC's 19.6% in September 2023; current exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The ProjectCo annex identifies Meridiam Infrastructure Canada Finance ULC as an equity holder and lender, not evidence for an inferred Meridiam Infrastructure North America I fund. Counsel confirms the subsequent QIC equity acquisition but does not disclose its fund allocation. Preserve the initial 40% and later 19.6% acquisition qualifications; the exact current fund allocation remains unresolved."
+      },
+      "evidenceUrls": [
+        "https://www.chumontreal.qc.ca/sites/default/files/inline-files/Annexe%2003%20-%20Renseignements%20sur%20ProjetCo.pdf",
+        "https://www.gibsondunn.com/lawyer/pinkusiewicz-tomer/",
+        "https://www.meridiam.com/assets/montreal-university-hospital-research-center-crchum-canada/"
+      ]
+    },
+    {
+      "recordId": "OFA-07C4FDEBB1F8",
+      "ownershipPeriodId": "cmrxpk896026livhe2zo3fdby",
+      "companyName": "Pocahontas Parkway Operations, LLC",
+      "country": "United States",
+      "investmentFirm": "Northleaf",
+      "currentVehicleName": "PPH/PPO upstream investment vehicle; exact SPV not publicly disclosed",
+      "databaseVehicleName": "PPH/PPO upstream investment vehicle; exact SPV not publicly disclosed",
+      "investmentYear": 2017,
+      "stake": "Exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Northleaf's direct portfolio card identifies Pocahontas Parkway as an active 2017 investment with Globalvia but does not name the investment fund. Remove the unsupported Northleaf NEIF estimate without replacing it with the legal holding entity, inferring a residual stake or altering ownership."
+      },
+      "evidenceUrls": [
+        "https://www.northleafcapital.com/infrastructure-investments?page=1"
+      ]
+    },
+    {
+      "recordId": "OFA-AEFB783D3CFE",
+      "ownershipPeriodId": "cmtizeh78000b282byf6jl6gv",
+      "companyName": "Pocahontas Parkway Operations, LLC",
+      "country": "United States",
+      "investmentFirm": "Globalvia",
+      "currentVehicleName": "Pocahontas Parkway Holdings, LLC / Pocahontas Parkway Operations, LLC",
+      "databaseVehicleName": "Pocahontas Parkway Holdings, LLC / Pocahontas Parkway Operations, LLC",
+      "investmentYear": 2016,
+      "stake": "68.14%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Globalvia's direct concession page identifies Pocahontas Parkway Operations LLC and a 68.14% holding. This is corporate concession ownership, not a named investment fund. Preserve the existing company, vehicle, year and stake."
+      },
+      "evidenceUrls": [
+        "https://www.globalvia.com/en/inicio/movilidad/concesion/pocahontas-parkway/"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-68E1C98EF4109F70123CF764",
+      "ownershipPeriodId": "cmtizeha8000d282batv9vnh6",
+      "companyName": "Pocahontas Parkway Operations, LLC",
+      "country": "United States",
+      "investmentFirm": "Transurban",
+      "currentVehicleName": "T895 US Holdings / DRIVe Holdings LLC",
+      "databaseVehicleName": "T895 US Holdings / DRIVe Holdings LLC",
+      "investmentYear": 2006,
+      "stake": "100% initially; 75% after September 2007",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Transurban's 2008 directors' report describes its corporate investment and contribution of Pocahontas Parkway to the DRIVe co-investment vehicle. Preserve the historical period and qualified 100% then 75% stake; DRIVe is not treated as a separately disclosed fund for Transurban."
+      },
+      "evidenceUrls": [
+        "https://www.asx.com.au/asxpdf/20080827/pdf/31bxrl10fz2y5n.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-FDC242B44CE9C3B6AB15D326",
+      "ownershipPeriodId": "cmtizehd9000f282b3dhef67h",
+      "companyName": "Pocahontas Parkway Operations, LLC",
+      "country": "United States",
+      "investmentFirm": "CP2",
+      "currentVehicleName": "Capital Partners Global Infrastructure Fund / DRIVe Holdings LLC",
+      "databaseVehicleName": "Capital Partners Global Infrastructure Fund / DRIVe Holdings LLC",
+      "investmentYear": 2007,
+      "stake": "25%",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Capital Partners Global Infrastructure Fund, LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "The 2008 Transurban report explicitly identifies CP2 as formerly Capital Partners Global Infrastructure Fund, LLC and states its 25% investment in DRIVe, into which Pocahontas was contributed. This is qualified historical fund identification only; preserve the original 2007-2014 period, vehicle and indirect stake without any current fund link."
+      },
+      "evidenceUrls": [
+        "https://www.asx.com.au/asxpdf/20080827/pdf/31bxrl10fz2y5n.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-HIST-BE1FBF2A2582AC3E884755BC",
+      "ownershipPeriodId": "cmtizehh9000h282bcbqckmez",
+      "companyName": "Pocahontas Parkway Operations, LLC",
+      "country": "United States",
+      "investmentFirm": "CPP Investments",
+      "currentVehicleName": "Pocahontas Parkway Holdings, LLC",
+      "databaseVehicleName": "Pocahontas Parkway Holdings, LLC",
+      "investmentYear": 2015,
+      "stake": "24.5%",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Transaction counsel directly identifies CPPIB as a Pocahontas equity seller to Globalvia. Classify the existing CPP investment as a pension investment program rather than an undisclosed third-party fund, preserving the audited former period, vehicle and 24.5% stake."
+      },
+      "evidenceUrls": [
+        "https://www.sullcrom.com/Practices/Infrastructure/"
+      ]
+    },
+    {
+      "recordId": "OFA-C20D6B321841",
+      "ownershipPeriodId": "cmtizek9l000v282bjywsthpa",
+      "companyName": "Ascension FBO Network",
+      "country": "United States",
+      "investmentFirm": "NOVA Infrastructure",
+      "currentVehicleName": "NOVA Infrastructure Fund I / Hawthorne FBO Acquisition Co.",
+      "databaseVehicleName": "NOVA Infrastructure Fund I / Hawthorne FBO Acquisition Co.",
+      "investmentYear": 2022,
+      "stake": "Co-owner; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "NOVA's direct team biographies explicitly identify Ascension FBO Network as a Fund I portfolio company. Attribute the investment to NOVA Infrastructure Fund I, keeping Hawthorne FBO Acquisition Co. as the existing legal vehicle rather than part of the fund name. Preserve the 2022 entry and undisclosed co-owner percentage; no fund link is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.novainfrastructure.com/team",
+        "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction"
+      ]
+    }
+  ],
+  "manifestSha256": "9dd31c38d959a6914ca72bf7cb9fe43e58ae11388a9dbd75416a124844cbcae5"
+}

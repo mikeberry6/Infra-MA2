@@ -1,0 +1,215 @@
+{
+  "companyId": "cmrxpjkef014uivhe5e0g04g8",
+  "name": "TraPac, LLC",
+  "sequence": 332,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/research-decision.json",
+      "sha256": "b4be5f47a2f9174d95654134a4d1cf2b55e0b5d24e1a33c14a3b3e8dacbe8d69"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/source-verification.json",
+      "sha256": "35e7f497925577bb35cf17fbe90047bb2a41c30d2c30697393b1924b1c48b986"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "12f5a4d22d2e439065c2b97a103582da874f6f97786f14ca5f7cdd912c0d1276"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/chatgpt-response-validation.json",
+      "sha256": "143be17181279a44d312f4356b997280379abca2fcf7a0da020862690e850fc8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/chatgpt-attestation.json",
+      "sha256": "96ba34178d5140aeb2789b3df4ba7f74b30422e7a093d31de1444ed0671ffddd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/review.json",
+      "sha256": "fe72017090bf4cba8bf16cf6a2608282885ecc4d85f921237cf21a89ff76cbc6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0332-trapac-llc-v2/proposal.json",
+      "sha256": "e58922c7a54279f9d9ca441ad025ccef70d38f794ef4d65e5a8008696296a03c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0332-trapac-llc-v2.json",
+      "sha256": "7d61d6117e908e4064c123993caf251e9fac673102e7a5523d7efbceb12f80cd"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0329-0333-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "f6cd587ea352de81e6ccf558815f684aafd4c7d0aa6b8093f9f9e611dbf46ea7"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-011/completion-evidence.json",
+      "sha256": "22ab848c011dc8507d3626d3390e86b76b663516d511d189b45b825b55339ceb"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-011/completion-after.json",
+      "sha256": "4553ef049c027386914ec1063f4681b9ccf0cdb8a885563e7236fd4558b65c83"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/packet/review.json",
+      "sha256": "4cfd1387b527edf5200a01065ab94d46cba167b037546eb51984a52526e456a0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk6jz023xivhe3kortq8m",
+      "seedRecordId": "OFA-8033367B36F9",
+      "expectedSeedSha256": "bc01f7d1257d063ef4bdedd8f17bffc2942ae8e8beea88c411821b6124b0e127",
+      "expectedOwnerSha256": "f9f532b003e6de9abe44ae7824262a1ddc1fcf10e71939a54e1952df30698645",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Macquarie Infrastructure Partners VI",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Macquarie Asset Management | Fund: MIP VI | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+        "linkedFundName": "Macquarie Infrastructure Partners VI"
+      },
+      "productionChange": "NONE",
+      "reason": "Preserve the correct production MIP VI attribution, linked fund and rationale; the manager's direct MIP VI closing release expressly lists TraPac. Align seed only without equivalent-wording production changes.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mipvi.html",
+          "sha256": "5e8677f3e5eb2cb91380e96cce8872d0966cfb44da3743696e3bbcf14d74664d",
+          "url": "https://www.macquarie.com/us/en/about/news/2025/macquarie-asset-management-closes-macquarie-infrastructure-partners-vi.html",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtio9d5i001iwa2bf2eqlt3z",
+      "seedRecordId": "OFA-E3BF7EAB34AB",
+      "expectedSeedSha256": "1633bd12465046683012c5a7a1a1a97be0e788db699ed1b9cc27295b3cd4d16d",
+      "expectedOwnerSha256": "13026f435aca25995e6f27bf01fbbced4566b25bda3f124271f252ade7b4f3e1",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ONE directly reports the completed acquisition of a 51% TraPac interest. This is corporate ownership through the existing audited subsidiary, not a separately named investment fund; preserve all identity, vehicle, stake and date fields.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Resolve missing corporate-program attribution using ONE's direct closing release.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/terminals-one.html",
+          "sha256": "0461355871176fdeaa46b9f26728c25412e2cb98cc253aa4ef81d3d837661446",
+          "url": "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtio9d74001jwa2bi979psv7",
+      "seedRecordId": "OFA-HIST-36604DC793E537F8DF59D160",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "c18ed1a758cfc2de0a7d86d7845bb2eb3bd777496dbb2572a2bee5f15669f483",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "MOL's direct release describes TraPac as its wholly owned subsidiary established in 1985 and the transfer of an indirect minority interest to Brookfield. Retain the complete audited former MOL period and its changing historical stake; this is corporate ownership, not a fund.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Add only the missing historical corporate attribution overlay and correct its production metadata; no ownership period is created.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mol.html",
+          "sha256": "78eca24533c1f10c9ba49cb04f9f23bac32c4542406688986243fcc21187175c",
+          "url": "https://www.mol.co.jp/en/pr/2014/14002.html",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtio9d8q001kwa2b4e5a8kqz",
+      "seedRecordId": "OFA-HIST-5F806414847D2E0C42B59372",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "10c9eb1b69ea95f749c03d3fe8c2bd27d535be8a0fe7ba183d9a4a49dc7fb999",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed transfer notice, physical page 18 (notice page 3), explicitly states that BIF II TP Aggregator was established by Brookfield Infrastructure Fund II to invest in 49% of Tenant Holdco. Attribute the historical investment to that fund, not to the aggregator as a fund, while preserving the 2014-2022 ownership period and leaving the fund link unchanged.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace missing historical fund attribution with the explicit fund named in the filed transfer notice.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-city.pdf",
+          "sha256": "982fa7fcebf70d9ff1b839ab7b143afdb6ac3c39f2e7b39e278167c44778f1d5",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2013/13-1501-s1_rpt_pola_01-10-14.pdf",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mol.html",
+          "sha256": "78eca24533c1f10c9ba49cb04f9f23bac32c4542406688986243fcc21187175c",
+          "url": "https://www.mol.co.jp/en/pr/2014/14002.html",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "7eee91633edfdc07061addf47c9d34e3b3e4c7bde1b66a8f7342600e8073b98c",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk6jz023xivhe3kortq8m",
+      "sha256": "f9f532b003e6de9abe44ae7824262a1ddc1fcf10e71939a54e1952df30698645"
+    },
+    {
+      "ownerId": "cmtio9d5i001iwa2bf2eqlt3z",
+      "sha256": "13026f435aca25995e6f27bf01fbbced4566b25bda3f124271f252ade7b4f3e1"
+    },
+    {
+      "ownerId": "cmtio9d74001jwa2bi979psv7",
+      "sha256": "c18ed1a758cfc2de0a7d86d7845bb2eb3bd777496dbb2572a2bee5f15669f483"
+    },
+    {
+      "ownerId": "cmtio9d8q001kwa2b4e5a8kqz",
+      "sha256": "10c9eb1b69ea95f749c03d3fe8c2bd27d535be8a0fe7ba183d9a4a49dc7fb999"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0332-trapac-llc-v2/proposal.json",
+      "sha256": "e58922c7a54279f9d9ca441ad025ccef70d38f794ef4d65e5a8008696296a03c"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0332-trapac-llc-v2.json",
+      "sha256": "7d61d6117e908e4064c123993caf251e9fac673102e7a5523d7efbceb12f80cd"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0329-0333-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "f6cd587ea352de81e6ccf558815f684aafd4c7d0aa6b8093f9f9e611dbf46ea7",
+      "memberIndex": 3
+    },
+    "receiptSha256": "acd2ad85da2a63d6a717b5ad4622be3f3be7c3e61b56c5c713bcdb165c7fe7e2"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mipvi.html.capture.json",
+      "sha256": "4bf5816a0dd7c367e634a81f893838217e65e9ce7ad92029df931608b711182e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/terminals-one.html.capture.json",
+      "sha256": "195b370da8d0dcfa43357bc1ede9c332f6f0b714ba63192ba9295d2692690c30"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mol.html.capture.json",
+      "sha256": "59099fc09ca9308cc96ca3bf958fd82eccf49aca386c576b23b85ca9a76c722d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-city.pdf.capture.json",
+      "sha256": "a31d1aa7fb1fc3395ccceb9d3087103aa128c4b7f48a73ed310e3192d0ce2906"
+    }
+  ]
+}

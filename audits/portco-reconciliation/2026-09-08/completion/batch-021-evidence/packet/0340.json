@@ -1,0 +1,179 @@
+{
+  "companyId": "cmrxpjops01bpivhejgre011g",
+  "name": "TowerPoint Infrastructure Partners",
+  "sequence": 340,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0340-towerpoint-infrastructure-partners/attempt-2/research-decision.json",
+      "sha256": "5dc79595d7625d57d92b68d83cc2ed248425ef9923b6feab91934c6f07e1a266"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0340-towerpoint-infrastructure-partners/attempt-2/source-verification.json",
+      "sha256": "e0c91c6d53ffa283429ad5b33e8fe35477ba50069bb25d7ded2ea496cc4a6b70"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0340-towerpoint-infrastructure-partners/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "3848dc311fa096bbb55c13e365cae7234f5a73f49814552639ba86f229539208"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0340-towerpoint-infrastructure-partners/attempt-2/chatgpt-response-validation.json",
+      "sha256": "2fbcadf6113c2135d8ed875cdc02558c1f340c3e6a45c95cc745f4cdf2b8943c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0340-towerpoint-infrastructure-partners/attempt-2/chatgpt-attestation.json",
+      "sha256": "f12686b2d5e48cec61738fc6cb196a557582c0a0a0e547f4595fcbfe7f33f935"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/review.json",
+      "sha256": "fe72017090bf4cba8bf16cf6a2608282885ecc4d85f921237cf21a89ff76cbc6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0340-towerpoint-infrastructure-partners-v2/proposal.json",
+      "sha256": "cb71f6057b35e0c389b771274628fd2ddcbefb7b267905bcefbc08c6f5e6b000"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0340-towerpoint-infrastructure-partners-v2.json",
+      "sha256": "d4c7b7781462eb53618152b4a86cb453e701005b070f045ea5d8b94978222ae6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0339-0343-v2/production-apply/batch-apply-receipt.json",
+      "sha256": "62717c0e7e8e4ef79594f5e5ddef90ec60d6a9837992f49f41b93671f0ec059a"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-011/completion-evidence.json",
+      "sha256": "22ab848c011dc8507d3626d3390e86b76b663516d511d189b45b825b55339ceb"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-011/completion-after.json",
+      "sha256": "4553ef049c027386914ec1063f4681b9ccf0cdb8a885563e7236fd4558b65c83"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/packet/review.json",
+      "sha256": "4cfd1387b527edf5200a01065ab94d46cba167b037546eb51984a52526e456a0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpkbbz02bfivhear3bk2gt",
+      "seedRecordId": "OFA-EDEA05546B1A",
+      "expectedSeedSha256": "bcd09b39110db2884fd43de9b387b56af9633ec7bdc1c0ceaa9f215bb914d996",
+      "expectedOwnerSha256": "3a6cef10ffd79814657894ea1c4087c2f285262701f4155be5c0d6dec5c47326",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "UIF",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Ullico | Fund: UIF | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "Retain the already-correct production DISCLOSED/UIF attribution and complete rationale. The direct release explicitly defines UIF as Ullico Infrastructure Fund. Align seed only; do not replace the literal legal vehicles or rewrite equivalent production wording.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-ullico.html",
+          "sha256": "da09292ae4050b760df86d520278c1598426d3334136540e3857651770d3d6e2",
+          "url": "https://www.ullico.com/ullico-closes-investment-in-wireless-infrastructure-platform/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtitgcau000n482bcov54fnk",
+      "seedRecordId": "OFA-C8BA592A4CAB",
+      "expectedSeedSha256": "2e73f634b06db0c3e38e6bb5d8139a55e2749e561109470edff124d715d2f51d",
+      "expectedOwnerSha256": "7d30c5a414d7da74e75562d4a00e5a8b6c88b489d9e9c5adad7267c8165c51cd",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "The company recapitalization release identifies Meritage Group LP and its affiliated funds but does not name the particular investment fund. Preserve the legal-vehicle and ownership qualifications; do not classify an undisclosed affiliated fund as direct corporate capital or infer a named fund.",
+      "productionChange": "NONE",
+      "reason": "The direct recapitalization release identifies Meritage Group LP and affiliated funds, not a direct corporate program. Correct the seed classification only while preserving the exact production UNRESOLVED/null state.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meritage.html",
+          "sha256": "6cf0da748fb63f4aca941f942026168518cb5d30248a7ffd861db659f65a11f1",
+          "url": "https://towerpoint.com/meritage-group-and-towerpoint-capital/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtitgcgp000o482bz1qvdnnu",
+      "seedRecordId": "OFA-5F210724DDA7",
+      "expectedSeedSha256": "71fd70333901e78fcf6deb53d07e8de3a7548aaf6ff00d4db2dc6c413d157e08",
+      "expectedOwnerSha256": "f737e8279e68b0797037fa01c8ad6c7f441c684636e6c35c5a8416687f0d5515",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "MEAG directly states in its 28 October 2025 TowerPoint announcement that it invested on behalf of Munich Re. This is a Munich Re insurance-account investment managed by MEAG, not a disclosed third-party investment fund. Preserve the existing MR Highland LP vehicle, stake and entry year; no fund link is inferred.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Resolve the missing program classification using MEAG's explicit Munich Re account disclosure, without conflating the manager, the insurance investor or the legal holding vehicle.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meag.html",
+          "sha256": "29b4cf300e4d0597816bbc1890149542816474e34ac89df97ca096efbe1f2915",
+          "url": "https://www.meag.com/en/inform/34340.html",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "fa5dccad8bbdb1e56b12c45261977fe804de750926634754eb42605d0c167a17",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpkbbz02bfivhear3bk2gt",
+      "sha256": "3a6cef10ffd79814657894ea1c4087c2f285262701f4155be5c0d6dec5c47326"
+    },
+    {
+      "ownerId": "cmtitgcau000n482bcov54fnk",
+      "sha256": "7d30c5a414d7da74e75562d4a00e5a8b6c88b489d9e9c5adad7267c8165c51cd"
+    },
+    {
+      "ownerId": "cmtitgcgp000o482bz1qvdnnu",
+      "sha256": "f737e8279e68b0797037fa01c8ad6c7f441c684636e6c35c5a8416687f0d5515"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0340-towerpoint-infrastructure-partners-v2/proposal.json",
+      "sha256": "cb71f6057b35e0c389b771274628fd2ddcbefb7b267905bcefbc08c6f5e6b000"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0340-towerpoint-infrastructure-partners-v2.json",
+      "sha256": "d4c7b7781462eb53618152b4a86cb453e701005b070f045ea5d8b94978222ae6"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0339-0343-v2/production-apply/batch-apply-receipt.json",
+      "sha256": "62717c0e7e8e4ef79594f5e5ddef90ec60d6a9837992f49f41b93671f0ec059a",
+      "memberIndex": 1
+    },
+    "receiptSha256": "3ced1e3b8f4a17fe27b2d8d39ffe90b34ebc7826eae38ea7576a731678359d69"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-ullico.html.capture.json",
+      "sha256": "9a3262ba65650dadcf71ad5d0feafbd352645548cf12399096c0453722b543fa"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meritage.html.capture.json",
+      "sha256": "7de42f8e4fb28bc9ccf48b6b784dd5c29e7061cb74401baad75d543cc37abcdc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meag.html.capture.json",
+      "sha256": "9c39da5e22b8b555b2b544048a563d05a1b8e88bf4b3e62366bbb37fb38db146"
+    }
+  ]
+}

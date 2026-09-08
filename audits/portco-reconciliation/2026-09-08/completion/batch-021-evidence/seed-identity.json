@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+  "dependencies": [
+    {
+      "path": "prisma/seed-data/companies.ts",
+      "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.ts",
+      "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+      "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+    },
+    {
+      "path": "prisma/seed-data/portco-types.ts",
+      "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+    },
+    {
+      "path": "prisma/entity-resolution.ts",
+      "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+    },
+    {
+      "path": "prisma/seed-runner.ts",
+      "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+    }
+  ],
+  "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+  "companies": [
+    {
+      "name": "TraPac, LLC",
+      "country": "United States",
+      "companySha256": "f1848e8c30804ad704f33fab028339520f0305c96bda4bdfd97862524a019f9b",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Macquarie Asset Management",
+            "ownershipVehicle": "Macquarie Infrastructure Partners VI",
+            "fundName": "Macquarie Infrastructure Partners VI",
+            "vehicleName": "Skipjack Terminal Holdings, L.P. / Skipjack (ECI) Holdings, LLC",
+            "investmentYear": 2023,
+            "stake": "49%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Macquarie Asset Management",
+          "vehicleName": "Skipjack Terminal Holdings, L.P. / Skipjack (ECI) Holdings, LLC",
+          "fundLookupName": "Macquarie Infrastructure Partners VI",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Ocean Network Express",
+            "ownershipVehicle": "United Pacific Ports B (UK) Ltd.",
+            "vehicleName": "United Pacific Ports B (UK) Ltd.",
+            "investmentYear": 2023,
+            "stake": "51%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Ocean Network Express",
+          "vehicleName": "United Pacific Ports B (UK) Ltd.",
+          "fundLookupName": "United Pacific Ports B (UK) Ltd.",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Mitsui O.S.K. Lines",
+            "ownershipVehicle": "International Transportation, Inc. / TraPac Holdings, LLC",
+            "vehicleName": "International Transportation, Inc. / TraPac Holdings, LLC",
+            "investmentYear": 1985,
+            "exitYear": 2023,
+            "stake": "100% initially; 51% with Brookfield; 100% after the 2022 repurchase",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Mitsui O.S.K. Lines",
+          "vehicleName": "International Transportation, Inc. / TraPac Holdings, LLC",
+          "fundLookupName": "International Transportation, Inc. / TraPac Holdings, LLC",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Brookfield Asset Management",
+            "ownershipVehicle": "BIF II TP Aggregator (Delaware), L.P.",
+            "vehicleName": "BIF II TP Aggregator (Delaware), L.P.",
+            "investmentYear": 2014,
+            "exitYear": 2022,
+            "stake": "49% indirect interest",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Brookfield Asset Management",
+          "vehicleName": "BIF II TP Aggregator (Delaware), L.P.",
+          "fundLookupName": "BIF II TP Aggregator (Delaware), L.P.",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    {
+      "name": "Yusen Terminals LLC",
+      "country": "United States",
+      "companySha256": "b4813a470c558f494eabad6b00938563a71c0cc4c2d8cd5cd81550005497f106",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Macquarie Asset Management",
+            "ownershipVehicle": "Macquarie Infrastructure Partners III",
+            "fundName": "Macquarie Infrastructure Partners III",
+            "vehicleName": "MIP III Bluefin A HoldCo LLC / MIP III (ECI) AIV, L.P.",
+            "investmentYear": 2015,
+            "stake": "49% of NYK Ports LLC",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Macquarie Asset Management",
+          "vehicleName": "MIP III Bluefin A HoldCo LLC / MIP III (ECI) AIV, L.P.",
+          "fundLookupName": "Macquarie Infrastructure Partners III",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Ocean Network Express",
+            "ownershipVehicle": "Undisclosed ONE subsidiary / NYK Ports LLC",
+            "vehicleName": "Undisclosed ONE subsidiary / NYK Ports LLC",
+            "investmentYear": 2023,
+            "stake": "100% through NYK Ports LLC",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Ocean Network Express",
+          "vehicleName": "Undisclosed ONE subsidiary / NYK Ports LLC",
+          "fundLookupName": "Undisclosed ONE subsidiary / NYK Ports LLC",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Nippon Yusen Kabushiki Kaisha",
+            "ownershipVehicle": "NYK Group Americas / NYK Energy Transport (USA), Inc.",
+            "vehicleName": "NYK Group Americas / NYK Energy Transport (USA), Inc.",
+            "investmentYear": 1991,
+            "exitYear": 2023,
+            "stake": "100% before 2015; 51% from 2015 to 2023",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Nippon Yusen Kabushiki Kaisha",
+          "vehicleName": "NYK Group Americas / NYK Energy Transport (USA), Inc.",
+          "fundLookupName": "NYK Group Americas / NYK Energy Transport (USA), Inc.",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    {
+      "name": "TowerPoint Infrastructure Partners",
+      "country": "United States",
+      "companySha256": "7ac21c2ed7e13f744c5050bb9fc8f69a3a1a30558b104db7f8231488c579f876",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Ullico",
+            "ownershipVehicle": "UIF Tax-Exempt Fund, LP and UIF Taxable Fund, LP",
+            "vehicleName": "UIF Tax-Exempt Fund, LP and UIF Taxable Fund, LP",
+            "investmentYear": 2024,
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Ullico",
+          "vehicleName": "UIF Tax-Exempt Fund, LP and UIF Taxable Fund, LP",
+          "fundLookupName": "UIF Tax-Exempt Fund, LP and UIF Taxable Fund, LP",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Meritage Group",
+            "ownershipVehicle": "Affiliated funds; exact vehicle not publicly disclosed",
+            "vehicleName": "Affiliated funds; exact vehicle not publicly disclosed",
+            "investmentYear": 2024,
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Meritage Group",
+          "vehicleName": "Affiliated funds; exact vehicle not publicly disclosed",
+          "fundLookupName": "Affiliated funds; exact vehicle not publicly disclosed",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "MEAG",
+            "ownershipVehicle": "MR Highland LP / Munich Re account",
+            "vehicleName": "MR Highland LP / Munich Re account",
+            "investmentYear": 2025,
+            "stake": "15.0%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "MEAG",
+          "vehicleName": "MR Highland LP / Munich Re account",
+          "fundLookupName": "MR Highland LP / Munich Re account",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    {
+      "name": "Centre de recherche du CHUM (CRCHUM)",
+      "country": "Canada",
+      "companySha256": "4f5c26be182ec68c5960b528384a0780f9d0be1a3cdef4251b9abe9014d06b57",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Meridiam",
+            "ownershipVehicle": "Meridiam Infrastructure Canada Finance ULC / Accès Recherche Montréal L.P.",
+            "vehicleName": "Meridiam Infrastructure Canada Finance ULC / Accès Recherche Montréal L.P.",
+            "investmentYear": 2010,
+            "stake": "40% at the 2010 close; acquired QIC's 19.6% in September 2023; current exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Meridiam",
+          "vehicleName": "Meridiam Infrastructure Canada Finance ULC / Accès Recherche Montréal L.P.",
+          "fundLookupName": "Meridiam Infrastructure Canada Finance ULC / Accès Recherche Montréal L.P.",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Axium Infrastructure",
+            "ownershipVehicle": "Fiera Axium Recherche s.e.c. / Axium Recherche L.P.",
+            "vehicleName": "Fiera Axium Recherche s.e.c. / Axium Recherche L.P.",
+            "investmentYear": 2010,
+            "stake": "60% at the 2010 close; current exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Axium Infrastructure",
+          "vehicleName": "Fiera Axium Recherche s.e.c. / Axium Recherche L.P.",
+          "fundLookupName": "Fiera Axium Recherche s.e.c. / Axium Recherche L.P.",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "QIC",
+            "ownershipVehicle": "QIC CRCHUM Trust",
+            "vehicleName": "QIC CRCHUM Trust",
+            "investmentYear": 2012,
+            "exitYear": 2023,
+            "stake": "19.6%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "QIC",
+          "vehicleName": "QIC CRCHUM Trust",
+          "fundLookupName": "QIC CRCHUM Trust",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    {
+      "name": "Mercury Fiber",
+      "country": "United States",
+      "companySha256": "853cab07c9a62d24cb9ef676bc54263d9b476ac7a5147f6eb4c1753869331f26",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Northleaf",
+            "ownershipVehicle": "NCP Mercury AIV LP / Mercury TopCo, LLC",
+            "vehicleName": "NCP Mercury AIV LP / Mercury TopCo, LLC",
+            "investmentYear": 2022,
+            "stake": "Controlling interest; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Northleaf",
+          "vehicleName": "NCP Mercury AIV LP / Mercury TopCo, LLC",
+          "fundLookupName": "NCP Mercury AIV LP / Mercury TopCo, LLC",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    {
+      "name": "Pocahontas Parkway Operations, LLC",
+      "country": "United States",
+      "companySha256": "ae22dc93d97c75ae54ca9953b1a49ef1dcd5f9f94aea8ef1e1b7da20912ce32b",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Northleaf",
+            "ownershipVehicle": "PPH/PPO upstream investment vehicle; exact SPV not publicly disclosed",
+            "vehicleName": "PPH/PPO upstream investment vehicle; exact SPV not publicly disclosed",
+            "investmentYear": 2017,
+            "stake": "Exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Northleaf",
+          "vehicleName": "PPH/PPO upstream investment vehicle; exact SPV not publicly disclosed",
+          "fundLookupName": "PPH/PPO upstream investment vehicle; exact SPV not publicly disclosed",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Globalvia",
+            "ownershipVehicle": "Pocahontas Parkway Holdings, LLC / Pocahontas Parkway Operations, LLC",
+            "vehicleName": "Pocahontas Parkway Holdings, LLC / Pocahontas Parkway Operations, LLC",
+            "investmentYear": 2016,
+            "stake": "68.14%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Globalvia",
+          "vehicleName": "Pocahontas Parkway Holdings, LLC / Pocahontas Parkway Operations, LLC",
+          "fundLookupName": "Pocahontas Parkway Holdings, LLC / Pocahontas Parkway Operations, LLC",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Transurban",
+            "ownershipVehicle": "T895 US Holdings / DRIVe Holdings LLC",
+            "vehicleName": "T895 US Holdings / DRIVe Holdings LLC",
+            "investmentYear": 2006,
+            "exitYear": 2014,
+            "stake": "100% initially; 75% after September 2007",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Transurban",
+          "vehicleName": "T895 US Holdings / DRIVe Holdings LLC",
+          "fundLookupName": "T895 US Holdings / DRIVe Holdings LLC",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "CP2",
+            "ownershipVehicle": "Capital Partners Global Infrastructure Fund / DRIVe Holdings LLC",
+            "vehicleName": "Capital Partners Global Infrastructure Fund / DRIVe Holdings LLC",
+            "investmentYear": 2007,
+            "exitYear": 2014,
+            "stake": "25%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "CP2",
+          "vehicleName": "Capital Partners Global Infrastructure Fund / DRIVe Holdings LLC",
+          "fundLookupName": "Capital Partners Global Infrastructure Fund / DRIVe Holdings LLC",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Macquarie Asset Management",
+            "ownershipVehicle": "Pocahontas Parkway Holdings, LLC",
+            "vehicleName": "Pocahontas Parkway Holdings, LLC",
+            "investmentYear": 2015,
+            "exitYear": 2016,
+            "stake": "50%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Macquarie Asset Management",
+          "vehicleName": "Pocahontas Parkway Holdings, LLC",
+          "fundLookupName": "Pocahontas Parkway Holdings, LLC",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "CPP Investments",
+            "ownershipVehicle": "Pocahontas Parkway Holdings, LLC",
+            "vehicleName": "Pocahontas Parkway Holdings, LLC",
+            "investmentYear": 2015,
+            "exitYear": 2016,
+            "stake": "24.5%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "CPP Investments",
+          "vehicleName": "Pocahontas Parkway Holdings, LLC",
+          "fundLookupName": "Pocahontas Parkway Holdings, LLC",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Centerbridge Partners",
+            "ownershipVehicle": "Pocahontas Parkway Holdings, LLC",
+            "vehicleName": "Pocahontas Parkway Holdings, LLC",
+            "investmentYear": 2015,
+            "exitYear": 2016,
+            "stake": "Not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Centerbridge Partners",
+          "vehicleName": "Pocahontas Parkway Holdings, LLC",
+          "fundLookupName": "Pocahontas Parkway Holdings, LLC",
+          "transactionState": "REALIZED"
+        }
+      ]
+    },
+    {
+      "name": "Ascension FBO Network",
+      "country": "United States",
+      "companySha256": "3d08aba4f67e010ebd89ae66fe3a5cb3901ca0ddb70bbc46af10b6f3d8bcbe32",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "NOVA Infrastructure",
+            "ownershipVehicle": "NOVA Infrastructure Fund I / Hawthorne FBO Acquisition Co.",
+            "vehicleName": "NOVA Infrastructure Fund I / Hawthorne FBO Acquisition Co.",
+            "investmentYear": 2022,
+            "stake": "Co-owner; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "NOVA Infrastructure",
+          "vehicleName": "NOVA Infrastructure Fund I / Hawthorne FBO Acquisition Co.",
+          "fundLookupName": "NOVA Infrastructure Fund I / Hawthorne FBO Acquisition Co.",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Wafra",
+            "ownershipVehicle": "Hawthorne FBO Acquisition Co.; fund allocation not publicly disclosed",
+            "vehicleName": "Hawthorne FBO Acquisition Co.; fund allocation not publicly disclosed",
+            "investmentYear": 2022,
+            "stake": "Co-owner; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Wafra",
+          "vehicleName": "Hawthorne FBO Acquisition Co.; fund allocation not publicly disclosed",
+          "fundLookupName": "Hawthorne FBO Acquisition Co.; fund allocation not publicly disclosed",
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Moelis Capital Partners / NexPhase Capital",
+            "ownershipVehicle": "Hawthorne Global Aviation Services",
+            "vehicleName": "Hawthorne Global Aviation Services",
+            "investmentYear": 2011,
+            "exitYear": 2022,
+            "stake": "Control; exact percentage not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Moelis Capital Partners / NexPhase Capital",
+          "vehicleName": "Hawthorne Global Aviation Services",
+          "fundLookupName": "Hawthorne Global Aviation Services",
+          "transactionState": "REALIZED"
+        }
+      ]
+    }
+  ],
+  "proofSha256": "11dbac16848ec58a52525d8b5b8a92b50610dcdd26ed4d9d2e6ea63829080e42"
+}
