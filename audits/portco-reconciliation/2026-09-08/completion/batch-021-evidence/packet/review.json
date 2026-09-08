@@ -1,0 +1,534 @@
+{
+  "artifactType": "PORTCO_TEN_NAME_SOURCE_REVIEW",
+  "batchId": "portco-completion-021",
+  "reviewedAt": "2026-09-08T17:41:08.341Z",
+  "reviewer": "Main agent",
+  "phase": "PARKED_REVISIT",
+  "status": "REVIEWED_NOT_APPLIED",
+  "policy": "The original source task ledger remains terminal. No repeated ChatGPT research. Complete safe-company owner coverage and exact prior receipts must pass existing offline validators before the sole live snapshot. Supported metadata only; no inferred facts, ownership changes or partial completion.",
+  "safeSequences": [
+    332,
+    335,
+    340,
+    341,
+    354,
+    357,
+    358
+  ],
+  "parkedSequences": [
+    331,
+    343,
+    355
+  ],
+  "findings": [
+    {
+      "sequence": 331,
+      "classification": "PARKED",
+      "issue": "The stored current MAM vehicle includes Macquarie Strategic Opportunities Fund and the company is treated as closed in December 2025, but the reopened direct evidence does not establish that exact fund or independently prove the equity closing: MSOF Beacon is an acquisition LLC, the December SEC loan is debt, and MAM's announcement still describes an expected first-half-2026 close. Reconcile the explicit fund/legal-vehicle and transaction-state evidence through a supported canonical ownership workflow before metadata cleanup. Do not infer the fund from MSOF initials or a closing from loan funding, repeat an applied transaction, or partially correct the former TJC/PQ metadata.",
+      "owners": []
+    },
+    {
+      "sequence": 332,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmrxpk6jz023xivhe3kortq8m",
+          "reason": "Preserve the correct production MIP VI attribution, linked fund and rationale; the manager's direct MIP VI closing release expressly lists TraPac. Align seed only without equivalent-wording production changes.",
+          "rationale": "Existing correct production metadata preserved exactly; seed aligned only.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mipvi.html"
+        },
+        {
+          "ownerId": "cmtio9d5i001iwa2bf2eqlt3z",
+          "reason": "Resolve missing corporate-program attribution using ONE's direct closing release.",
+          "rationale": "ONE directly reports the completed acquisition of a 51% TraPac interest. This is corporate ownership through the existing audited subsidiary, not a separately named investment fund; preserve all identity, vehicle, stake and date fields.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/terminals-one.html"
+        },
+        {
+          "ownerId": "cmtio9d74001jwa2bi979psv7",
+          "reason": "Add only the missing historical corporate attribution overlay and correct its production metadata; no ownership period is created.",
+          "rationale": "MOL's direct release describes TraPac as its wholly owned subsidiary established in 1985 and the transfer of an indirect minority interest to Brookfield. Retain the complete audited former MOL period and its changing historical stake; this is corporate ownership, not a fund.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mol.html"
+        },
+        {
+          "ownerId": "cmtio9d8q001kwa2b4e5a8kqz",
+          "reason": "Replace missing historical fund attribution with the explicit fund named in the filed transfer notice.",
+          "rationale": "The filed transfer notice, physical page 18 (notice page 3), explicitly states that BIF II TP Aggregator was established by Brookfield Infrastructure Fund II to invest in 49% of Tenant Holdco. Attribute the historical investment to that fund, not to the aggregator as a fund, while preserving the 2014-2022 ownership period and leaving the fund link unchanged.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-city.pdf"
+        }
+      ]
+    },
+    {
+      "sequence": 335,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmrxpk6ln0240ivhev26gwa8k",
+          "reason": "Preserve correct MIP III attribution and fund link for the former 49% owner; insert only the proven missing historical seed attribution overlay. Counsel confirms the later Bluefin disposal; do not invent an exact exit date.",
+          "rationale": "Existing correct production metadata preserved exactly; seed aligned only.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/yusen-city.pdf"
+        },
+        {
+          "ownerId": "cmtiqlf4x0008ro2bkoptf9q9",
+          "reason": "Resolve missing ONE corporate-program attribution using the company's direct current ownership statement, not by extrapolating the 2023 51% purchase.",
+          "rationale": "Yusen's company-authored current profile expressly states that it is wholly owned by Ocean Network Express. Preserve the audited 2023 entry, current 100% interest and undisclosed intermediate subsidiary; this is corporate ownership rather than an investment-fund attribution.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/yusen-current-profile.html"
+        },
+        {
+          "ownerId": "cmtiqlf9n000aro2bpaovz751",
+          "reason": "Correct historical corporate attribution without modifying the ownership chain or dates.",
+          "rationale": "The direct city ownership report identifies NYK's historical corporate ownership and the sale of its remaining 51% interest to ONE. Preserve the original 1991-2023 NYK period and historical stake qualifications; no investment fund is identified for this corporate ownership.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/yusen-city.pdf"
+        }
+      ]
+    },
+    {
+      "sequence": 340,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmrxpkbbz02bfivhear3bk2gt",
+          "reason": "Retain the already-correct production DISCLOSED/UIF attribution and complete rationale. The direct release explicitly defines UIF as Ullico Infrastructure Fund. Align seed only; do not replace the literal legal vehicles or rewrite equivalent production wording.",
+          "rationale": "Matched supplemental ownership detail: Firm: Ullico | Fund: UIF | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-ullico.html"
+        },
+        {
+          "ownerId": "cmtitgcau000n482bcov54fnk",
+          "reason": "The direct recapitalization release identifies Meritage Group LP and affiliated funds, not a direct corporate program. Correct the seed classification only while preserving the exact production UNRESOLVED/null state.",
+          "rationale": "The company recapitalization release identifies Meritage Group LP and its affiliated funds but does not name the particular investment fund. Preserve the legal-vehicle and ownership qualifications; do not classify an undisclosed affiliated fund as direct corporate capital or infer a named fund.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meritage.html"
+        },
+        {
+          "ownerId": "cmtitgcgp000o482bz1qvdnnu",
+          "reason": "Resolve the missing program classification using MEAG's explicit Munich Re account disclosure, without conflating the manager, the insurance investor or the legal holding vehicle.",
+          "rationale": "MEAG directly states in its 28 October 2025 TowerPoint announcement that it invested on behalf of Munich Re. This is a Munich Re insurance-account investment managed by MEAG, not a disclosed third-party investment fund. Preserve the existing MR Highland LP vehicle, stake and entry year; no fund link is inferred.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meag.html"
+        }
+      ]
+    },
+    {
+      "sequence": 341,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmrxpjstz01idivhe3h4tdzf7",
+          "reason": "Remove the unsupported equity-fund assignment derived from a lender, without substituting the equity holding entity as a fund.",
+          "rationale": "The ProjectCo annex identifies Fiera Axium Recherche as an equity holder, but lists Fiera Axium Infrastructure Canada Limited Partnership under loans. The lender name does not establish the equity investment fund. Preserve the 2010 60% historical stake and explicitly undisclosed current percentage; the exact current equity fund remains unresolved.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/crchum-projectco.pdf"
+        },
+        {
+          "ownerId": "cmrxpk7ar0251ivhe2d8g3bhi",
+          "reason": "Remove the unsupported North America I estimate without inferring a direct corporate program or a current percentage.",
+          "rationale": "The ProjectCo annex identifies Meridiam Infrastructure Canada Finance ULC as an equity holder and lender, not evidence for an inferred Meridiam Infrastructure North America I fund. Counsel confirms the subsequent QIC equity acquisition but does not disclose its fund allocation. Preserve the initial 40% and later 19.6% acquisition qualifications; the exact current fund allocation remains unresolved.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-011-evidence/crchum-projectco.pdf"
+        },
+        {
+          "ownerId": "cmtitgk3h000x482bl02kirvc",
+          "reason": "Preserve genuine unresolved historical fund attribution; the nonempty seed rationale documents the exact exception without a wording-only production change.",
+          "rationale": "Counsel confirms Meridiam's acquisition of QIC's remaining equity in the Montreal Research Center Project. The exact investment fund behind the recorded QIC CRCHUM Trust is not disclosed by that evidence. Preserve the complete existing historical 19.6% period and its null production attribution metadata; do not treat the trust as a named fund.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/crchum-counsel.html"
+        }
+      ]
+    },
+    {
+      "sequence": 343,
+      "classification": "PARKED",
+      "issue": "The IFT filing distinguishes China-Mexico Fund LP and its feeder from CMF Investment Company II holding entities; the stored China-Mexico Fund II organization/vehicle wording is not the same disclosed identity. The filed shareholder Telefonia por Cable also differs from the stored Telefonia Digital label. Reconcile those organizations and literal vehicles through a supported identity/ownership workflow, preserving separately stated capital shares and fiduciary rights and the originally redacted closing date. Do not partially correct NHIP II/CFE attribution or infer individual beneficial interests while those ten-period identity issues remain.",
+      "owners": []
+    },
+    {
+      "sequence": 354,
+      "classification": "SEED_ONLY",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmtixlcpd000iyr2b1pmxxzq2",
+          "reason": "The seed incorrectly treats NCP Mercury AIV LP / Mercury TopCo LLC holding entities as a disclosed investment fund. Production already correctly records the exact fund as unresolved; preserve its complete state and null rationale without a database write.",
+          "rationale": "Northleaf directly discloses investment by funds managed by Northleaf, but does not identify the particular fund. NCP Mercury AIV LP and Mercury TopCo LLC are legal holding entities, not evidence naming the investment fund. Preserve the controlling-interest qualification and leave the exact fund and fund link unresolved.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/mercury-northleaf.html"
+        }
+      ]
+    },
+    {
+      "sequence": 355,
+      "classification": "PARKED",
+      "issue": "Northleaf's stored 50% stake remains expressly inferred from equal buyer contributions, not directly disclosed. The two GIF I periods also describe a 2023 manager acquisition as a realized/current ownership boundary; the current InfraBridge portfolio states a May 2016 asset investment but does not prove an equity transfer in 2023. Obtain direct stake and ownership-continuity evidence and, if needed, use a supported ownership/chronology correction workflow. Do not turn contribution economics into a verified stake, infer an equity sale from a manager change, or count partial metadata cleanup as a completed name.",
+      "owners": []
+    },
+    {
+      "sequence": 357,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmrxpk896026livhe2zo3fdby",
+          "reason": "Remove unsupported NEIF attribution using the actual Pocahontas card; its Active label was checked within the HTML card rather than borrowed from an adjacent investment.",
+          "rationale": "Northleaf's direct portfolio card identifies Pocahontas Parkway as an active 2017 investment with Globalvia but does not name the investment fund. Remove the unsupported Northleaf NEIF estimate without replacing it with the legal holding entity, inferring a residual stake or altering ownership.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-northleaf.html"
+        },
+        {
+          "ownerId": "cmtizeh78000b282byf6jl6gv",
+          "reason": "Resolve missing corporate-program metadata with direct current concession ownership evidence.",
+          "rationale": "Globalvia's direct concession page identifies Pocahontas Parkway Operations LLC and a 68.14% holding. This is corporate concession ownership, not a named investment fund. Preserve the existing company, vehicle, year and stake.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-current.html"
+        },
+        {
+          "ownerId": "cmtizeha8000d282batv9vnh6",
+          "reason": "Resolve historical corporate ownership attribution using the issuer's complete report page.",
+          "rationale": "Transurban's 2008 directors' report describes its corporate investment and contribution of Pocahontas Parkway to the DRIVe co-investment vehicle. Preserve the historical period and qualified 100% then 75% stake; DRIVe is not treated as a separately disclosed fund for Transurban.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-transurban.pdf"
+        },
+        {
+          "ownerId": "cmtizehd9000f282b3dhef67h",
+          "reason": "Replace missing historical fund metadata with the exact named historical fund; do not infer present ownership from the old report.",
+          "rationale": "The 2008 Transurban report explicitly identifies CP2 as formerly Capital Partners Global Infrastructure Fund, LLC and states its 25% investment in DRIVe, into which Pocahontas was contributed. This is qualified historical fund identification only; preserve the original 2007-2014 period, vehicle and indirect stake without any current fund link.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-transurban.pdf"
+        },
+        {
+          "ownerId": "cmtizehf8000g282b05yz217w",
+          "reason": "Preserve genuinely undisclosed historical fund allocation, using a seed-only explanatory rationale.",
+          "rationale": "Transaction counsel identifies Macquarie's 50% acquisition and subsequent sale with CPPIB and Centerbridge, but does not identify the exact investing fund. Preserve the former owner, exact stake and null production attribution; do not infer a fund or direct-balance-sheet status from the manager name.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-sullivan.html"
+        },
+        {
+          "ownerId": "cmtizehh9000h282bcbqckmez",
+          "reason": "Resolve historical CPP pension-program attribution without inferring residual seller interests.",
+          "rationale": "Transaction counsel directly identifies CPPIB as a Pocahontas equity seller to Globalvia. Classify the existing CPP investment as a pension investment program rather than an undisclosed third-party fund, preserving the audited former period, vehicle and 24.5% stake.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-sullivan.html"
+        },
+        {
+          "ownerId": "cmtizehkg000j282b1w9dv7ku",
+          "reason": "Preserve the genuinely unavailable historical fund and stake rather than substituting a company vehicle as the fund.",
+          "rationale": "Transaction counsel identifies Centerbridge Partners as an equity seller to Globalvia, but does not name its investing fund or individual percentage. Preserve the original historical ownership and null fund metadata, retaining the exact unknowns.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-sullivan.html"
+        }
+      ]
+    },
+    {
+      "sequence": 358,
+      "classification": "ATTRIBUTION_CORRECTION",
+      "issue": null,
+      "owners": [
+        {
+          "ownerId": "cmtizek9l000v282bjywsthpa",
+          "reason": "Resolve missing production fund attribution using already-published direct fund-specific evidence.",
+          "rationale": "NOVA's direct team biographies explicitly identify Ascension FBO Network as a Fund I portfolio company. Attribute the investment to NOVA Infrastructure Fund I, keeping Hawthorne FBO Acquisition Co. as the existing legal vehicle rather than part of the fund name. Preserve the 2022 entry and undisclosed co-owner percentage; no fund link is inferred.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-team.html"
+        },
+        {
+          "ownerId": "cmtizekbp000w282bl6f2snfz",
+          "reason": "Correct only the seed's false disclosed-fund interpretation; preserve the exact null production state.",
+          "rationale": "The transaction adviser confirms Wafra's co-acquisition with NOVA, but does not name Wafra's investing fund. Hawthorne FBO Acquisition Co. is an acquisition vehicle, not a disclosed fund. Preserve complete production UNRESOLVED/null metadata and the co-ownership qualification.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-blair.html"
+        },
+        {
+          "ownerId": "cmtizekeo000y282bjjt120a5",
+          "reason": "Add only the proven missing historical attribution overlay with a seed-only unresolved-fund qualification.",
+          "rationale": "The direct historical release identifies Moelis Capital Partners' investment in Hawthorne but does not name the specific investing fund. The transaction adviser subsequently identifies NexPhase as the seller to NOVA and Wafra. Preserve the original 2011-2022 period and exact null production attribution; no fund is inferred.",
+          "primary": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-nexphase.html"
+        }
+      ]
+    }
+  ],
+  "additionalReview": [
+    "Yusen's actual company-authored current LinkedIn profile was reopened successfully and expressly says wholly owned by ONE. This, with the separate Bluefin sale and 2023 closing evidence, resolves current ownership without inventing the later exit date.",
+    "All three CRCHUM ProjectCo annex pages were rendered and visually inspected. Section 5 names equity holders; section 6 separately names lenders. The lender's name is not an equity-fund disclosure. Current counsel evidence directly confirms Meridiam's acquisition of QIC's remaining equity, not its fund allocation.",
+    "The fresh QIC page is a script shell. The attempted QAO PDF is HTML, not a PDF. Neither is a primary source or release publication file. The exact historical QIC ownership remains bound to its original applied evidence/receipt and the direct counsel exit evidence; its particular investment fund remains genuinely undisclosed.",
+    "The Northleaf Pocahontas HTML card itself was inspected: its own status is Active, while the preceding Realized label belongs to another card. Do not use flattened adjacent text as an ownership status. Globalvia's page directly reports 68.14%.",
+    "The historical source pages already reviewed for TraPac, Yusen, Altan and Transurban are reused by immutable byte hashes; no new visual verification of production is claimed.",
+    "Potters is parked for unresolved fund/vehicle and closing evidence, Altan for inconsistent owner/fund identity labels, Millennium for inferred stake and ownership/manager-change chronology. Tooling compatibility does not resolve these facts."
+  ],
+  "unusableCaptures": [
+    "potters-unisuper.html",
+    "potters-unisuper-article.html",
+    "ascension-wafra.html",
+    "crchum-qic.html",
+    "crchum-qao.pdf"
+  ],
+  "publication": "Preserve original captures locally. Publish only referenced substantive evidence; secret scan all new publication files and record any explicit redactions. No redactions applied to date.",
+  "captureInventory": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/altan-2017.pdf",
+      "sha256": "9bd32e1554624230f3a06475c96a319f0c259da89ef85ad9e8c336c6bf63a3bd",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/altan-2017.pdf.capture.json",
+      "captureSha256": "138fbffee6454e792b8b134df0fd84609006fdb6ce67992b40ab1a70e8262200",
+      "status": 200,
+      "bytes": 608742
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/altan-2022.pdf",
+      "sha256": "c6e82e9b3469f556bd76779bfe875e025bcc258ee950c354d059036e4aae32c9",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/altan-2022.pdf.capture.json",
+      "captureSha256": "7c51a4b8e71ff222260b0ec08b70fa52dd5d1dc410e27b6934a46baee8fca46b",
+      "status": 200,
+      "bytes": 2398445
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/altan-2025.pdf",
+      "sha256": "81e28c0bc10b8675ffdd351d47279b0209843ef2282b0008ab67da178e3806a2",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/altan-2025.pdf.capture.json",
+      "captureSha256": "b9fa9852b209f1b621a66f09443a943ef625cb707cc06c51a58b2e0bea957b2c",
+      "status": 200,
+      "bytes": 6296369
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-blair.html",
+      "sha256": "945eb74ae3f93fa9bc05c32a5acb27feadb00aefeadbe5a8cd441ad5f091f561",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-blair.html.capture.json",
+      "captureSha256": "7290fd61179173f759fef57945da25a90a449ca549051774f7c0702838fcda63",
+      "status": 200,
+      "bytes": 62399
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-nexphase.html",
+      "sha256": "cccceb0f0bc0a5b3a1fee67f72a4a06aeb241024e83426f2d4bd6890d5cf28f9",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-nexphase.html.capture.json",
+      "captureSha256": "8dbadde7ab10a05794c76cc2c31e0030ca3177de97eeb8e8ccbd5a0d9aff39c1",
+      "status": 200,
+      "bytes": 53274
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-wafra.html",
+      "sha256": "e1af4676dffd9f5a217813667ec368efb5e8ccf257873ff58af56bc01b308941",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-wafra.html.capture.json",
+      "captureSha256": "8269c54f0bf0047859de7eea2b35a48869451d6e8bc6149da65cacac26aceed7",
+      "status": 403,
+      "bytes": 5555
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/crchum-counsel.html",
+      "sha256": "d6d859a2e9d3ca89d9d9b8d07781905a3896766f6191826688af6af6a228de56",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/crchum-counsel.html.capture.json",
+      "captureSha256": "179f131bde3a548fba5642fbc10d40a690f31ab85c1ad9ad5712a08e2df4f4c0",
+      "status": 200,
+      "bytes": 218276
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/crchum-qao.pdf",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/crchum-qao.pdf.capture.json",
+      "captureSha256": "1e94640938ccd5d3450521904d7c61ef636a85eef7b2b78074203d990a9769b2",
+      "status": 200,
+      "bytes": 3038
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/crchum-qic.html",
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/crchum-qic.html.capture.json",
+      "captureSha256": "0ee3071887bd020db032fa51508679ee3774afc8ca2777c085bf7669e7a90139",
+      "status": 200,
+      "bytes": 212
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/mercury-northleaf.html",
+      "sha256": "fc17f1f4902c2dd2ed82ae1ef514497b86e3d3e01c49b60f262dd361c40ea5fe",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/mercury-northleaf.html.capture.json",
+      "captureSha256": "085e40242c8d8989eee71c35ea7babf7b8c728a7b74643a442a6f99b9084a158",
+      "status": 200,
+      "bytes": 94584
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/millennium-fhwa.html",
+      "sha256": "dec5a299b374d87d1e59477bddea27f7749643b6822e0061c2e895d41e6e942c",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/millennium-fhwa.html.capture.json",
+      "captureSha256": "41cc8fd95d621a304ab85d02a22066502acdc53bb08440e36919d6b2bbfd53b5",
+      "status": 200,
+      "bytes": 23018
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/millennium-infrabridge.html",
+      "sha256": "82d0d0a888b8e609d846eed18b747fe5d6d2cf79ff2a91065b1ca8e4e8a15f7d",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/millennium-infrabridge.html.capture.json",
+      "captureSha256": "b27c1efc9896ef6d37214480f83bb88f612e98a98c2c0b16825224780aae5839",
+      "status": 200,
+      "bytes": 53184
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-current.html",
+      "sha256": "49ffd22347e0ef919e79d6cadc353994362a951843acd458b043d916083764cc",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-current.html.capture.json",
+      "captureSha256": "33c6e75ad8d9b3fee4d47ab174453d9d551f1aa03d41d80d9fdcf35b4062bd52",
+      "status": 200,
+      "bytes": 76316
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-globalvia.html",
+      "sha256": "66b25b6102e81c8f5fbd58b0c6571117b168cc34b426f837ac7dc3ba1b692536",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-globalvia.html.capture.json",
+      "captureSha256": "1319c74a849be4ed696f4f3d05f23f755ff24e166c084d8f04c1e0bf84b05681",
+      "status": 200,
+      "bytes": 73082
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-northleaf.html",
+      "sha256": "1288bf47b4ea964298b73b053692ee2adac1fd709ca524a5141d685c25a59bca",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-northleaf.html.capture.json",
+      "captureSha256": "124ac27113bf36c99d33160a6b82df869565eda2bbd40687249b0f268b13a6d7",
+      "status": 200,
+      "bytes": 159967
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-sullivan.html",
+      "sha256": "d41ba6d6b0c09bfd9a57c68b0bb3df745b5f382fc51443a0155721686716139d",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-sullivan.html.capture.json",
+      "captureSha256": "7ba3fe901d2ff3ae39a44691e4d231fd1c67e0006974aae31600c52986c09544",
+      "status": 200,
+      "bytes": 102867
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-transurban.pdf",
+      "sha256": "3c5eea25d05a9dfa17014ed5876db683f227929c4242d7c49ba7f7e139e8c1bc",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-transurban.pdf.capture.json",
+      "captureSha256": "c68ed04c1206cd83dec36bd2542d7d512f8830e4f7ee784079ed447a5b42f7db",
+      "status": 200,
+      "bytes": 1266118
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-adc.pdf",
+      "sha256": "61a17a09635b4fb360bba057bb92b88b42375eeb7158ce173bd91e75ce2fed52",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-adc.pdf.capture.json",
+      "captureSha256": "af623ae41dde9355531f22e79d5b971f2e6db6fbd9eccc1a53008d327ebfb3f0",
+      "status": 200,
+      "bytes": 259629
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-history.html",
+      "sha256": "7dfb20b27f922666bb110ec18f5304ec624d873fc41079ead34ae65df662cbfb",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-history.html.capture.json",
+      "captureSha256": "0768cd8672aeace0cc0127f4329e511674da10226ed0fadcd4f7a4041bd4c9b3",
+      "status": 200,
+      "bytes": 514582
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-macquarie.html",
+      "sha256": "b8e5fbba91df56e55c9bf37984a87a00efc14acc180414622a2d972258695ad7",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-macquarie.html.capture.json",
+      "captureSha256": "e97a56abb2c27cecd1e9b62ba24a938eea9476b07e5f04ca629b907d7e254bd9",
+      "status": 200,
+      "bytes": 99375
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-sec-2026.html",
+      "sha256": "945afb4a8357832ae5fc676489cc58b728156a0b7b8db6d857da0b81da6ec20c",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-sec-2026.html.capture.json",
+      "captureSha256": "009f42117a95b6b2a097076690bff5ad9acf37b0a683687d6b7909af2381ff29",
+      "status": 200,
+      "bytes": 6139534
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-sec-purchase.html",
+      "sha256": "9a189d8b331b0a70c7dd683e3c5add6393e6c59d005f972bee100c5656ff0af2",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-sec-purchase.html.capture.json",
+      "captureSha256": "e97a5add659edc84b2a7db749a82537b1972c5511919c3b221618b004a2237ef",
+      "status": 200,
+      "bytes": 623187
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-unisuper-article.html",
+      "sha256": "7bf98663cf44be38081762c4277e12fc040994e0d7b144aafd8855a7554f06e9",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-unisuper-article.html.capture.json",
+      "captureSha256": "c524c4e1978ead5058b0a2bee609d6ac33ea9f682f9fdd0a40838529a0025536",
+      "status": 200,
+      "bytes": 6183
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-unisuper.html",
+      "sha256": "3a5026eaf319e115b0b5a440cd8f1790311e10169b845ff0b6394d9bbeaba845",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/potters-unisuper.html.capture.json",
+      "captureSha256": "cda6987af7201f2a3912ddadc755f67f71dd4a56070e925dc49a1a2173cf105b",
+      "status": 200,
+      "bytes": 6183
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/terminals-one.html",
+      "sha256": "0461355871176fdeaa46b9f26728c25412e2cb98cc253aa4ef81d3d837661446",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/terminals-one.html.capture.json",
+      "captureSha256": "195b370da8d0dcfa43357bc1ede9c332f6f0b714ba63192ba9295d2692690c30",
+      "status": 200,
+      "bytes": 594053
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meag.html",
+      "sha256": "29b4cf300e4d0597816bbc1890149542816474e34ac89df97ca096efbe1f2915",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meag.html.capture.json",
+      "captureSha256": "9c39da5e22b8b555b2b544048a563d05a1b8e88bf4b3e62366bbb37fb38db146",
+      "status": 200,
+      "bytes": 162683
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meritage.html",
+      "sha256": "6cf0da748fb63f4aca941f942026168518cb5d30248a7ffd861db659f65a11f1",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-meritage.html.capture.json",
+      "captureSha256": "7de42f8e4fb28bc9ccf48b6b784dd5c29e7061cb74401baad75d543cc37abcdc",
+      "status": 200,
+      "bytes": 2116884
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-ullico.html",
+      "sha256": "da09292ae4050b760df86d520278c1598426d3334136540e3857651770d3d6e2",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/towerpoint-ullico.html.capture.json",
+      "captureSha256": "9a3262ba65650dadcf71ad5d0feafbd352645548cf12399096c0453722b543fa",
+      "status": 200,
+      "bytes": 65184
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-city.pdf",
+      "sha256": "982fa7fcebf70d9ff1b839ab7b143afdb6ac3c39f2e7b39e278167c44778f1d5",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-city.pdf.capture.json",
+      "captureSha256": "a31d1aa7fb1fc3395ccceb9d3087103aa128c4b7f48a73ed310e3192d0ce2906",
+      "status": 200,
+      "bytes": 1611469
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-macquarie.html",
+      "sha256": "61b99b08f4810603c5dda1053516e44d890422767553c38ef0c74ec74dc278a2",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-macquarie.html.capture.json",
+      "captureSha256": "fc79e08bfea341fe69c4aed07efeb45880783b0e2ae9e10b72bb3f2c967822a2",
+      "status": 200,
+      "bytes": 101390
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mipvi.html",
+      "sha256": "5e8677f3e5eb2cb91380e96cce8872d0966cfb44da3743696e3bbcf14d74664d",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mipvi.html.capture.json",
+      "captureSha256": "4bf5816a0dd7c367e634a81f893838217e65e9ce7ad92029df931608b711182e",
+      "status": 200,
+      "bytes": 96807
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mol.html",
+      "sha256": "78eca24533c1f10c9ba49cb04f9f23bac32c4542406688986243fcc21187175c",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/trapac-mol.html.capture.json",
+      "captureSha256": "59099fc09ca9308cc96ca3bf958fd82eccf49aca386c576b23b85ca9a76c722d",
+      "status": 200,
+      "bytes": 23846
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/yusen-city.pdf",
+      "sha256": "98ceac113629dd2dab37d1a5fe802ee4439555958a8ded19ede69c03b0dcb0a2",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/yusen-city.pdf.capture.json",
+      "captureSha256": "07b4957ef63d4f16aaec43168c8b2c7029a34a70bbe2b296f2027fc0c886d6ea",
+      "status": 200,
+      "bytes": 568282
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/yusen-current-profile.html",
+      "sha256": "00a0f00c1d6f278c241e147b8e4b5d81db76e8f9a16e881e6f26abd15c9046c5",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/yusen-current-profile.html.capture.json",
+      "captureSha256": "29194b33fa7c7cf6c263d04d39151dd6be6d9450186d52446268aa7c6444df30",
+      "status": 200,
+      "bytes": 374546
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/yusen-gibson.html",
+      "sha256": "79784fe313ebf00c30f60577af2c1fae15cbabb22fd2b2861fa36eead72a1bfb",
+      "capturePath": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/yusen-gibson.html.capture.json",
+      "captureSha256": "6dbdf1e47ee94ffb68c72022034dce6c3dba3ff8cd17deef55a3b3d8e4e7d729",
+      "status": 200,
+      "bytes": 196676
+    }
+  ]
+}

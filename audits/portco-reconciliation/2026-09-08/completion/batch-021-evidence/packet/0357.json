@@ -1,0 +1,304 @@
+{
+  "companyId": "cmrxpjlwk0176ivhe4a6yfbqj",
+  "name": "Pocahontas Parkway Operations, LLC",
+  "sequence": 357,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/research-decision.json",
+      "sha256": "8b2a2b454cf62b184bc848d199e6b348609358c38006994c77cc7cd9ef0e65ce"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/source-verification.json",
+      "sha256": "b3e2dba737f0762314033bae7d252e203859b94ecbb82f1b32def5418615eba7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "d69bf0138eb989f8b4e8aaa348ddc1fe26382e3db32dd3c23a7b7b2ddfd3f1bf"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/chatgpt-response-validation.json",
+      "sha256": "20f346a133c57ba116f11235b6a9c88b9907d758670f1b5812a36c5fc0128547"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/chatgpt-attestation.json",
+      "sha256": "d69762a47899c56090f631adc0a685629b6eef27759c936c5aef0d6b2a6e3a4b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/review.json",
+      "sha256": "723f925a5c4cabb15df9f0191838d9e90d314c729d7dc92477c6703b124391b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/source-config.json",
+      "sha256": "cca6f03d91245229d047357afb58401f64c495b03cf38dc2f202a13cd1f96c01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/fund-source-config.json",
+      "sha256": "eda2a00195a46070eea58ee2dca370ec5913700b74d04ae684cbf2a99dd0a288"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/targeted-source-config.json",
+      "sha256": "659064eb48c369a149520541cf7eb9fea7e0af96fae8561c5b41c8a64cb73394"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0357-pocahontas-parkway-v5/proposal.json",
+      "sha256": "ee935714b34941429b995eaf59d84ccb884f7f2515d572f7f1fd139341773b63"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0357-pocahontas-parkway-v5.json",
+      "sha256": "91981a37490cf0f2b85d187cc30b6443df9b1f689839510ae2f040f8852ff4e6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0356-0360-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "c8ae512aa0fe9c8488cc42eaba01a055129b77fd45fe7208a5a773ba990fe011"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-012/completion-evidence.json",
+      "sha256": "24cd9c7e1af93dadfd301c1daa7cf9cf90adb50d71ba89f97a58d6a3357705c1"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-012/completion-after.json",
+      "sha256": "150b141cc2c5f2370a1651c98b930b2cf0cd269f9d153f1d9940e8a291a5160f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/packet/review.json",
+      "sha256": "4cfd1387b527edf5200a01065ab94d46cba167b037546eb51984a52526e456a0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk896026livhe2zo3fdby",
+      "seedRecordId": "OFA-07C4FDEBB1F8",
+      "expectedSeedSha256": "0b3a787c8576c854e0d5246a93f0805dcc7cf391e37403e3fb1c346c72890e74",
+      "expectedOwnerSha256": "0c15a5da61930a50d1c9224cf8ddf4298530c9ce0cf8dea40dc88eb69383412a",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Northleaf's direct portfolio card identifies Pocahontas Parkway as an active 2017 investment with Globalvia but does not name the investment fund. Remove the unsupported Northleaf NEIF estimate without replacing it with the legal holding entity, inferring a residual stake or altering ownership.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove unsupported NEIF attribution using the actual Pocahontas card; its Active label was checked within the HTML card rather than borrowed from an adjacent investment.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-northleaf.html",
+          "sha256": "1288bf47b4ea964298b73b053692ee2adac1fd709ca524a5141d685c25a59bca",
+          "url": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtizeh78000b282byf6jl6gv",
+      "seedRecordId": "OFA-AEFB783D3CFE",
+      "expectedSeedSha256": "d0807914fef7d3e7e7076623779f8214811192cd3574dc79a81846b721cc923d",
+      "expectedOwnerSha256": "8f2ac34e0e97e9537831599bc5dc4e4725573c4459077d543e65a524420121bd",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Globalvia's direct concession page identifies Pocahontas Parkway Operations LLC and a 68.14% holding. This is corporate concession ownership, not a named investment fund. Preserve the existing company, vehicle, year and stake.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Resolve missing corporate-program metadata with direct current concession ownership evidence.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-current.html",
+          "sha256": "49ffd22347e0ef919e79d6cadc353994362a951843acd458b043d916083764cc",
+          "url": "https://www.globalvia.com/en/inicio/movilidad/concesion/pocahontas-parkway/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtizeha8000d282batv9vnh6",
+      "seedRecordId": "OFA-HIST-68E1C98EF4109F70123CF764",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "4407305d22f104764a0496507eea9ef657dae26b91f7808213435d06cbf4b854",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Transurban's 2008 directors' report describes its corporate investment and contribution of Pocahontas Parkway to the DRIVe co-investment vehicle. Preserve the historical period and qualified 100% then 75% stake; DRIVe is not treated as a separately disclosed fund for Transurban.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Resolve historical corporate ownership attribution using the issuer's complete report page.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-transurban.pdf",
+          "sha256": "3c5eea25d05a9dfa17014ed5876db683f227929c4242d7c49ba7f7e139e8c1bc",
+          "url": "https://www.asx.com.au/asxpdf/20080827/pdf/31bxrl10fz2y5n.pdf",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtizehd9000f282b3dhef67h",
+      "seedRecordId": "OFA-HIST-FDC242B44CE9C3B6AB15D326",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "2733ae7bf901c6c3d702fd807dd7f2631b1b3f44ec21f0e9055c5704f89b1b26",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Capital Partners Global Infrastructure Fund, LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "The 2008 Transurban report explicitly identifies CP2 as formerly Capital Partners Global Infrastructure Fund, LLC and states its 25% investment in DRIVe, into which Pocahontas was contributed. This is qualified historical fund identification only; preserve the original 2007-2014 period, vehicle and indirect stake without any current fund link.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace missing historical fund metadata with the exact named historical fund; do not infer present ownership from the old report.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-transurban.pdf",
+          "sha256": "3c5eea25d05a9dfa17014ed5876db683f227929c4242d7c49ba7f7e139e8c1bc",
+          "url": "https://www.asx.com.au/asxpdf/20080827/pdf/31bxrl10fz2y5n.pdf",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtizehf8000g282b05yz217w",
+      "seedRecordId": "OFA-HIST-CBBAE02E71299C7E73A276FC",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "b05b83c1055b079a27edb01c8ae39facb308cb721403b4a530757d241b523bbc",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "Transaction counsel identifies Macquarie's 50% acquisition and subsequent sale with CPPIB and Centerbridge, but does not identify the exact investing fund. Preserve the former owner, exact stake and null production attribution; do not infer a fund or direct-balance-sheet status from the manager name.",
+      "productionChange": "NONE",
+      "reason": "Preserve genuinely undisclosed historical fund allocation, using a seed-only explanatory rationale.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-sullivan.html",
+          "sha256": "d41ba6d6b0c09bfd9a57c68b0bb3df745b5f382fc51443a0155721686716139d",
+          "url": "https://www.sullcrom.com/Practices/Infrastructure/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtizehh9000h282bcbqckmez",
+      "seedRecordId": "OFA-HIST-BE1FBF2A2582AC3E884755BC",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "6c9d6e28f9fa0c038af309aeb2a509e4477db5d2a8595db131b813a0b4eef7bc",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Transaction counsel directly identifies CPPIB as a Pocahontas equity seller to Globalvia. Classify the existing CPP investment as a pension investment program rather than an undisclosed third-party fund, preserving the audited former period, vehicle and 24.5% stake.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Resolve historical CPP pension-program attribution without inferring residual seller interests.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-sullivan.html",
+          "sha256": "d41ba6d6b0c09bfd9a57c68b0bb3df745b5f382fc51443a0155721686716139d",
+          "url": "https://www.sullcrom.com/Practices/Infrastructure/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtizehkg000j282b1w9dv7ku",
+      "seedRecordId": "OFA-HIST-EAB00B5FCF2F5983EB847EF4",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "88af67f4c861dd6cbbb3ec5855b53f55374884fbefb205dbec119530011490b8",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "Transaction counsel identifies Centerbridge Partners as an equity seller to Globalvia, but does not name its investing fund or individual percentage. Preserve the original historical ownership and null fund metadata, retaining the exact unknowns.",
+      "productionChange": "NONE",
+      "reason": "Preserve the genuinely unavailable historical fund and stake rather than substituting a company vehicle as the fund.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-sullivan.html",
+          "sha256": "d41ba6d6b0c09bfd9a57c68b0bb3df745b5f382fc51443a0155721686716139d",
+          "url": "https://www.sullcrom.com/Practices/Infrastructure/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "c3d38d75e0b954f129df2de981841be251fd220abeaa810d205dfe991da831f3",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk896026livhe2zo3fdby",
+      "sha256": "0c15a5da61930a50d1c9224cf8ddf4298530c9ce0cf8dea40dc88eb69383412a"
+    },
+    {
+      "ownerId": "cmtizeh78000b282byf6jl6gv",
+      "sha256": "8f2ac34e0e97e9537831599bc5dc4e4725573c4459077d543e65a524420121bd"
+    },
+    {
+      "ownerId": "cmtizeha8000d282batv9vnh6",
+      "sha256": "4407305d22f104764a0496507eea9ef657dae26b91f7808213435d06cbf4b854"
+    },
+    {
+      "ownerId": "cmtizehd9000f282b3dhef67h",
+      "sha256": "2733ae7bf901c6c3d702fd807dd7f2631b1b3f44ec21f0e9055c5704f89b1b26"
+    },
+    {
+      "ownerId": "cmtizehf8000g282b05yz217w",
+      "sha256": "b05b83c1055b079a27edb01c8ae39facb308cb721403b4a530757d241b523bbc"
+    },
+    {
+      "ownerId": "cmtizehh9000h282bcbqckmez",
+      "sha256": "6c9d6e28f9fa0c038af309aeb2a509e4477db5d2a8595db131b813a0b4eef7bc"
+    },
+    {
+      "ownerId": "cmtizehkg000j282b1w9dv7ku",
+      "sha256": "88af67f4c861dd6cbbb3ec5855b53f55374884fbefb205dbec119530011490b8"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0357-pocahontas-parkway-v5/proposal.json",
+      "sha256": "ee935714b34941429b995eaf59d84ccb884f7f2515d572f7f1fd139341773b63"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0357-pocahontas-parkway-v5.json",
+      "sha256": "91981a37490cf0f2b85d187cc30b6443df9b1f689839510ae2f040f8852ff4e6"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0356-0360-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "c8ae512aa0fe9c8488cc42eaba01a055129b77fd45fe7208a5a773ba990fe011",
+      "memberIndex": 1
+    },
+    "receiptSha256": "937b1b83a0daa673a15e4fcb4398e58457986096bf81e7d8daadf0b3310173f4"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-northleaf.html.capture.json",
+      "sha256": "124ac27113bf36c99d33160a6b82df869565eda2bbd40687249b0f268b13a6d7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-current.html.capture.json",
+      "sha256": "33c6e75ad8d9b3fee4d47ab174453d9d551f1aa03d41d80d9fdcf35b4062bd52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-transurban.pdf.capture.json",
+      "sha256": "c68ed04c1206cd83dec36bd2542d7d512f8830e4f7ee784079ed447a5b42f7db"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/pocahontas-sullivan.html.capture.json",
+      "sha256": "7ba3fe901d2ff3ae39a44691e4d231fd1c67e0006974aae31600c52986c09544"
+    }
+  ]
+}

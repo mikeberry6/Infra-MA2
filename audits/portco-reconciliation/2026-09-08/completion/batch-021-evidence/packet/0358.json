@@ -1,0 +1,204 @@
+{
+  "companyId": "cmtizejrg000m282bnd5tc4fb",
+  "name": "Ascension FBO Network",
+  "sequence": 358,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/research-decision.json",
+      "sha256": "018cb452bbe45e4c80d1e996d7d393b20d06786c6fb1c4828748b2db556e19b6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/source-verification.json",
+      "sha256": "f715e409418f9513e241ae7347b64c9dda899ccdfb1c51060f7e3212d742197f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b3a0c8c9e039b1253cc17c9df72b307b2fea82f06ac5af8de3c1f60619846861"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/chatgpt-response-validation.json",
+      "sha256": "6ffa661a7f687e4946e3b308c0443cf24dd2c81fc878aab6f7e656333c6a553d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/chatgpt-attestation.json",
+      "sha256": "1265576c6f887ff7a277e0c4647c0b7aefc467f8d34cf4e63463ce63846d3f66"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/review.json",
+      "sha256": "723f925a5c4cabb15df9f0191838d9e90d314c729d7dc92477c6703b124391b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/source-config.json",
+      "sha256": "cca6f03d91245229d047357afb58401f64c495b03cf38dc2f202a13cd1f96c01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/fund-source-config.json",
+      "sha256": "eda2a00195a46070eea58ee2dca370ec5913700b74d04ae684cbf2a99dd0a288"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/targeted-source-config.json",
+      "sha256": "659064eb48c369a149520541cf7eb9fea7e0af96fae8561c5b41c8a64cb73394"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0358-ascension-fbo-network-v1/proposal.json",
+      "sha256": "a45809eb038e53f143531859abdacbf698519bdb88eea5e3c52f5c28c8784318"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0358-ascension-fbo-network-v1.json",
+      "sha256": "dead74221518292dc3abd7c870eaa4418bd49b49633d6f7fb9210920e5327ce7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0356-0360-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "c8ae512aa0fe9c8488cc42eaba01a055129b77fd45fe7208a5a773ba990fe011"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-012/completion-evidence.json",
+      "sha256": "24cd9c7e1af93dadfd301c1daa7cf9cf90adb50d71ba89f97a58d6a3357705c1"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-012/completion-after.json",
+      "sha256": "150b141cc2c5f2370a1651c98b930b2cf0cd269f9d153f1d9940e8a291a5160f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/packet/review.json",
+      "sha256": "4cfd1387b527edf5200a01065ab94d46cba167b037546eb51984a52526e456a0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtizek9l000v282bjywsthpa",
+      "seedRecordId": "OFA-C20D6B321841",
+      "expectedSeedSha256": "3688acc882c55e72f2df1d98957c85f72f54c5be4311386b49df3f975895c10a",
+      "expectedOwnerSha256": "fecdc73fed393ca570091ceba272ce7a1cf1fbafd07427d2de2720e25065ffda",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NOVA Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "NOVA's direct team biographies explicitly identify Ascension FBO Network as a Fund I portfolio company. Attribute the investment to NOVA Infrastructure Fund I, keeping Hawthorne FBO Acquisition Co. as the existing legal vehicle rather than part of the fund name. Preserve the 2022 entry and undisclosed co-owner percentage; no fund link is inferred.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Resolve missing production fund attribution using already-published direct fund-specific evidence.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-team.html",
+          "sha256": "dbbf4d0fbe4b05d7a0861721e5414371f47cdd7d8e37950a77fb8df0c999bc75",
+          "url": "https://www.novainfrastructure.com/team",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-blair.html",
+          "sha256": "945eb74ae3f93fa9bc05c32a5acb27feadb00aefeadbe5a8cd441ad5f091f561",
+          "url": "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtizekbp000w282bl6f2snfz",
+      "seedRecordId": "OFA-F9F0425B6A0C",
+      "expectedSeedSha256": "17792c53b2f4b8121d67fa74574a0656d4d9db8a632c57e2681410dafbb49c31",
+      "expectedOwnerSha256": "7846049197d282c9aef2c1ce05e6d8afc3f452df36705f2917547e7a9d8dbce0",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "The transaction adviser confirms Wafra's co-acquisition with NOVA, but does not name Wafra's investing fund. Hawthorne FBO Acquisition Co. is an acquisition vehicle, not a disclosed fund. Preserve complete production UNRESOLVED/null metadata and the co-ownership qualification.",
+      "productionChange": "NONE",
+      "reason": "Correct only the seed's false disclosed-fund interpretation; preserve the exact null production state.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-blair.html",
+          "sha256": "945eb74ae3f93fa9bc05c32a5acb27feadb00aefeadbe5a8cd441ad5f091f561",
+          "url": "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtizekeo000y282bjjt120a5",
+      "seedRecordId": "OFA-HIST-B65B8D0259DE7D4FE6A13F87",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "4c971b2e7b48aab603e11be90d8b4af969013a3f97314142fe7cf0c4d0c1b1c9",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "The direct historical release identifies Moelis Capital Partners' investment in Hawthorne but does not name the specific investing fund. The transaction adviser subsequently identifies NexPhase as the seller to NOVA and Wafra. Preserve the original 2011-2022 period and exact null production attribution; no fund is inferred.",
+      "productionChange": "NONE",
+      "reason": "Add only the proven missing historical attribution overlay with a seed-only unresolved-fund qualification.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-nexphase.html",
+          "sha256": "cccceb0f0bc0a5b3a1fee67f72a4a06aeb241024e83426f2d4bd6890d5cf28f9",
+          "url": "https://www.nexphase.com/hawthorne-global-aviation-services-acquires-excelaire-llc-a-new-york-based-fbo-aircraft-charter-management-company/",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-blair.html",
+          "sha256": "945eb74ae3f93fa9bc05c32a5acb27feadb00aefeadbe5a8cd441ad5f091f561",
+          "url": "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction",
+          "primary": false
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "95ceb2fa8e6d1ddf40af2a9ad6bfb1eba7b712b0e490350a8d34280988a8eba9",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtizek9l000v282bjywsthpa",
+      "sha256": "fecdc73fed393ca570091ceba272ce7a1cf1fbafd07427d2de2720e25065ffda"
+    },
+    {
+      "ownerId": "cmtizekbp000w282bl6f2snfz",
+      "sha256": "7846049197d282c9aef2c1ce05e6d8afc3f452df36705f2917547e7a9d8dbce0"
+    },
+    {
+      "ownerId": "cmtizekeo000y282bjjt120a5",
+      "sha256": "4c971b2e7b48aab603e11be90d8b4af969013a3f97314142fe7cf0c4d0c1b1c9"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0358-ascension-fbo-network-v1/proposal.json",
+      "sha256": "a45809eb038e53f143531859abdacbf698519bdb88eea5e3c52f5c28c8784318"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0358-ascension-fbo-network-v1.json",
+      "sha256": "dead74221518292dc3abd7c870eaa4418bd49b49633d6f7fb9210920e5327ce7"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0356-0360-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "c8ae512aa0fe9c8488cc42eaba01a055129b77fd45fe7208a5a773ba990fe011",
+      "memberIndex": 2
+    },
+    "receiptSha256": "510d2e8c8c0d06ca82c1e83c11cb2ab40ba91fdb96bdf6e1650c7097c68a7484"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/sources/nova-team.html.capture.json",
+      "sha256": "517f4876180849b26796fae3b1f9d189603bf0e0fbd203f2316714e75b48b5b8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-blair.html.capture.json",
+      "sha256": "7290fd61179173f759fef57945da25a90a449ca549051774f7c0702838fcda63"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/ascension-nexphase.html.capture.json",
+      "sha256": "8dbadde7ab10a05794c76cc2c31e0030ca3177de97eeb8e8ccbd5a0d9aff39c1"
+    }
+  ]
+}

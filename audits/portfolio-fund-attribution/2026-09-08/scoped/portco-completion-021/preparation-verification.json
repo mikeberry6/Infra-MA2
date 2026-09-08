@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_PREPARATION_CHECKS",
+  "batchId": "portco-completion-021",
+  "checkedAt": "2026-09-08T18:02:44Z",
+  "baseCommit": "0a6b306bb4ecc8d875a274f6af0840a779bc9fd6",
+  "manifestSha": "9dd31c38d959a6914ca72bf7cb9fe43e58ae11388a9dbd75416a124844cbcae5",
+  "batchSha": "3e191d918fb329b28d72e9ed851085c09c8fa63b5d6bb73593136ab145606a84",
+  "snapshotSha": "d35da4c96782e49da806b867082cf6ab5da696d02741d9ac924fc8fa393a0b6a",
+  "capturedAt": "2026-09-08T17:57:29.518Z",
+  "companies": 10,
+  "owners": 42,
+  "mutations": 14,
+  "active": {
+    "batchId": "portco-completion-021",
+    "batchSha256": "3e191d918fb329b28d72e9ed851085c09c8fa63b5d6bb73593136ab145606a84",
+    "state": "PREPARING",
+    "releaseSha": null,
+    "failure": null
+  },
+  "offline": {
+    "names": 10,
+    "boundFiles": 2503,
+    "passed": true,
+    "databaseReads": 0,
+    "databaseWrites": 0
+  },
+  "readOnlyCapture": {
+    "companies": 10,
+    "owners": 42,
+    "passed": true,
+    "databaseWrites": 0
+  },
+  "tests": {
+    "command": "npm test -- --reporter=dot",
+    "files": 208,
+    "tests": 3824,
+    "passed": true
+  },
+  "typecheck": {
+    "command": "npx tsc -p scripts/portco-completion/tsconfig.json",
+    "passed": true
+  },
+  "seedValidation": {
+    "command": "npm run db:seed:validate",
+    "errors": 0,
+    "warnings": 54,
+    "passed": true
+  },
+  "publication": {
+    "allowlistFiles": 87,
+    "secretFindings": 0,
+    "redactions": 0
+  },
+  "lint": {
+    "command": "npx eslint scripts/portfolio-fund-attribution/seed-manifest.test.ts",
+    "passed": true
+  },
+  "notes": [
+    "Initial targeted tests detected only stale seed inventory counts; exact total, historical and unresolved assertions updated while preserving all ownership matching checks.",
+    "All preparation is pre-apply. No new name is fully verified; production writes require exact protected canonical release and immutable post-apply verification."
+  ]
+}

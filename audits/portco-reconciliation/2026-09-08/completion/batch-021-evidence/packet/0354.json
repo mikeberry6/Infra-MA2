@@ -1,0 +1,129 @@
+{
+  "companyId": "cmtixlc8x0009yr2b5s2xj4t1",
+  "name": "Mercury Fiber",
+  "sequence": 354,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0354-mercury-broadband/attempt-1/research-decision.json",
+      "sha256": "045d80536144a1b374c72a4fd3c1bef2e05ee1449605a15888dafed5427d4312"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0354-mercury-broadband/attempt-1/source-verification.json",
+      "sha256": "0a12c31e9b306316bbcd4a270ab5ceb3a91732a8f8d3f679e94d9104b06a03b8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0354-mercury-broadband/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "37f615874943924fe0d2129f20e8e086c2998f8c1b2cf66dbcb038ff64e12fea"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0354-mercury-broadband/attempt-1/chatgpt-response-validation.json",
+      "sha256": "35ee80249e19cc7036ef0e837faf79fed961d05a9f07382fab0dcf32135d859c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0354-mercury-broadband/attempt-1/chatgpt-attestation.json",
+      "sha256": "4939220933d3b7c7003fd84139d0f6dc8869390316a58fdfb601607b98c06514"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/review.json",
+      "sha256": "723f925a5c4cabb15df9f0191838d9e90d314c729d7dc92477c6703b124391b2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/source-config.json",
+      "sha256": "cca6f03d91245229d047357afb58401f64c495b03cf38dc2f202a13cd1f96c01"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/fund-source-config.json",
+      "sha256": "eda2a00195a46070eea58ee2dca370ec5913700b74d04ae684cbf2a99dd0a288"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-012-evidence/targeted-source-config.json",
+      "sha256": "659064eb48c369a149520541cf7eb9fea7e0af96fae8561c5b41c8a64cb73394"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0354-mercury-broadband-v4/proposal.json",
+      "sha256": "ac7da7facac91a92bc661f66a691fb8a1931a898cf7b6f99bebf04348c32470b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0354-mercury-broadband-v4.json",
+      "sha256": "fa15abf84e076f3a582be11a3d904e88013085b8beb878f61ab46b902fc2f242"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0351-0355-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "d10c4cf17216695f031aaf71c0626b0efcc0b86a0fcb945246e908b54975c0bf"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-012/completion-evidence.json",
+      "sha256": "24cd9c7e1af93dadfd301c1daa7cf9cf90adb50d71ba89f97a58d6a3357705c1"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-012/completion-after.json",
+      "sha256": "150b141cc2c5f2370a1651c98b930b2cf0cd269f9d153f1d9940e8a291a5160f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/packet/review.json",
+      "sha256": "4cfd1387b527edf5200a01065ab94d46cba167b037546eb51984a52526e456a0"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmtixlcpd000iyr2b1pmxxzq2",
+      "seedRecordId": "OFA-D01A4E3D03B9",
+      "expectedSeedSha256": "919df95b4ad5ac4ec080ff6559bd1475915c42467b63f045c73bff7fc627c95e",
+      "expectedOwnerSha256": "c64aee795194926251adb8019f96eaa18ab8f84425df648308f44e9d7592c3f5",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null,
+        "linkedFundName": null
+      },
+      "seedOnlyRationale": "Northleaf directly discloses investment by funds managed by Northleaf, but does not identify the particular fund. NCP Mercury AIV LP and Mercury TopCo LLC are legal holding entities, not evidence naming the investment fund. Preserve the controlling-interest qualification and leave the exact fund and fund link unresolved.",
+      "productionChange": "NONE",
+      "reason": "The seed incorrectly treats NCP Mercury AIV LP / Mercury TopCo LLC holding entities as a disclosed investment fund. Production already correctly records the exact fund as unresolved; preserve its complete state and null rationale without a database write.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/mercury-northleaf.html",
+          "sha256": "fc17f1f4902c2dd2ed82ae1ef514497b86e3d3e01c49b60f262dd361c40ea5fe",
+          "url": "https://www.northleafcapital.com/news/mercury-broadband-and-northleaf-announce-strategic-partnership-facilitate-companys-rural",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "1c2c1636afc216211301182cdfd02d45da4040a5f88ea71c2ed1073c7e21b68a",
+  "expectedOwners": [
+    {
+      "ownerId": "cmtixlcpd000iyr2b1pmxxzq2",
+      "sha256": "c64aee795194926251adb8019f96eaa18ab8f84425df648308f44e9d7592c3f5"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0354-mercury-broadband-v4/proposal.json",
+      "sha256": "ac7da7facac91a92bc661f66a691fb8a1931a898cf7b6f99bebf04348c32470b"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0354-mercury-broadband-v4.json",
+      "sha256": "fa15abf84e076f3a582be11a3d904e88013085b8beb878f61ab46b902fc2f242"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0351-0355-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "d10c4cf17216695f031aaf71c0626b0efcc0b86a0fcb945246e908b54975c0bf",
+      "memberIndex": 3
+    },
+    "receiptSha256": "21b2f32bc1efbf5d8a3bc8ceb70d5ff2e4fac73fc5369395ede06c446b900064"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-021-evidence/sources/mercury-northleaf.html.capture.json",
+      "sha256": "085e40242c8d8989eee71c35ea7babf7b8c728a7b74643a442a6f99b9084a158"
+    }
+  ]
+}
