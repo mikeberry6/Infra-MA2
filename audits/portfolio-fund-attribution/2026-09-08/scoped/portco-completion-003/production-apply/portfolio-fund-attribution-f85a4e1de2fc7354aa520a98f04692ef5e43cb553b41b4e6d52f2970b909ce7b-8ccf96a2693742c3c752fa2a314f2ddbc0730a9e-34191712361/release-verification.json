@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T05:44:57.759Z",
+  "manifestSha256": "f85a4e1de2fc7354aa520a98f04692ef5e43cb553b41b4e6d52f2970b909ce7b",
+  "approvalSha256": "2c05c8c3b3b043d779ff15141dc5025b4a1d06907c304b47c6d587bae6c12c6d",
+  "receiptSha256": "e3e8e33b3ce077d0584a145d0abad63331b5f569c5069d6d83779072bfaaec2c",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-29A3F2378B92",
+      "companyId": "cmrxpjgi100ypivhehaw4at9a",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjgi100ypivhehaw4at9a?verification=f85a4e1de2fc7354aa520a98f04692ef5e43cb553b41b4e6d52f2970b909ce7b",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CPP Investment Board Private Holdings (6) Inc.",
+        "attributionConfidence": null,
+        "attributionRationale": "The July 10, 2024 ALLETE definitive merger proxy expressly names CPP Investment Board Private Holdings (6) Inc. as the CPP-affiliated sponsor investment vehicle. Use DISCLOSED for this named legal vehicle, not the generic Real Assets (Infrastructure) strategy or an invented distinct pension fund allocation. Preserve the already-applied 40% indirect interest, 2025 entry and null curated-fund link. Current browser-rendered proxy text is bound separately from the raw HTTP 403 denial."
+      }
+    },
+    {
+      "recordId": "OFA-24FDA731AE8E",
+      "companyId": "cmrxpj90b00naivhedtmfwflb",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj90b00naivhedtmfwflb?verification=f85a4e1de2fc7354aa520a98f04692ef5e43cb553b41b4e6d52f2970b909ce7b",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GRP III Norse Holdings LP (entry vehicle)",
+        "attributionConfidence": null,
+        "attributionRationale": "Transaction counsel directly identifies GRP III Norse Holdings LP, a BlackRock subsidiary, as the buyer of 100% of National Renewable Solutions. This supports the named entry vehicle, not an expanded flagship fund name or the current legal holding chain. Preserve the 2021 entry and undisclosed current percentage. Do not expand GRP III into a full fund name or restore Global Energy & Power Infrastructure Fund III; the curated Global Renewable Power Fund III link requires a separately compatible removal alongside this metadata decision."
+      }
+    }
+  ],
+  "passed": true
+}

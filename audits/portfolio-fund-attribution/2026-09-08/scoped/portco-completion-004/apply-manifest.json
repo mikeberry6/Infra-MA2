@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "c8efc541bc0e2789391f9e1d091ddb13ac08cc5e3b092ac449fcc28e5e96d6d5",
+  "sourceSnapshotSha256": "181f0e368e58a252a751fa2481ae5463d01034b5c9df04bab276a7f365df82d9",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 2,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 3,
+  "mutations": [
+    {
+      "recordId": "OFA-C2898B1C751B",
+      "ownershipPeriodId": "cmrxpk2dz01xfivhe6czef2co",
+      "companyName": "Rio Grande LNG",
+      "country": "United States",
+      "investmentFirm": "GIC",
+      "currentVehicleName": "Devonshire Investment Pte. Ltd.",
+      "databaseVehicleName": "Devonshire Investment Pte. Ltd.",
+      "investmentYear": 2023,
+      "stake": "Phase 1 minimum 9.85%; Train 4 7.9%; Train 5 included in 13.2% combined GIC/Mubadala interest",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The existing 2023 DOE-filed ownership notice identifies Devonshire as GIC's investment holding affiliate and GIC as manager of Singapore's foreign reserves. This supports sovereign-program attribution, not an inferred GIC Infrastructure fund. The separately verified Devonshire vehicle and all exact stake exceptions are preserved."
+      },
+      "evidenceUrls": [
+        "https://www.energy.gov/sites/default/files/2023-08/15-190-LNG_RGLNG%20Statement%20and%20Notice%20of%20Change%20in%20Control%20(Aug.%2016%202023).pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-EB6D1D2A0963",
+      "ownershipPeriodId": "cmrxpk2f101xhivhej18k131a",
+      "companyName": "Rio Grande LNG",
+      "country": "United States",
+      "investmentFirm": "GIP",
+      "currentVehicleName": "GIP V Velocity Acquisition Partners, L.P.; GIM Participation Velocity, L.P.; GIP V Velocity Aggregator, L.P.; Train 4 and Train 5 analogues",
+      "databaseVehicleName": "GIP V Velocity Acquisition Partners, L.P.; GIM Participation Velocity, L.P.; GIP V Velocity Aggregator, L.P.; Train 4 and Train 5 analogues",
+      "investmentYear": 2023,
+      "stake": "Phase 1 minimum 46.12% and Trains 4/5 36.9% at entry; current residual not publicly disclosed after XRG partial sell-downs",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The existing DOE change-in-control response identifies GIP-managed Velocity acquisition and aggregator partnerships, not a separately disclosed underlying infrastructure fund. GIP V is not inferred from the SPV prefix and BlackRock GEPIF III is unsupported by the existing canonical research. Preserve the verified legal vehicles, entry economics and unavailable post-XRG residual interests."
+      },
+      "evidenceUrls": [
+        "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-20166140109D",
+      "ownershipPeriodId": "cmrxpk2ef01xgivhe1pzzw4h7",
+      "companyName": "Rio Grande LNG",
+      "country": "United States",
+      "investmentFirm": "Mubadala",
+      "currentVehicleName": "MIC TI Holding Company 2 RSC Limited",
+      "databaseVehicleName": "MIC TI Holding Company 2 RSC Limited",
+      "investmentYear": 2023,
+      "stake": "Phase 1 minimum 6.57%; Train 4 5.2%; Train 5 included in 13.2% combined GIC/Mubadala interest",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The existing 2023 DOE-filed ownership notice identifies MIC as an indirect wholly owned subsidiary of Mubadala, a sovereign investor managing capital for the Government of Abu Dhabi. This supports direct sovereign-program attribution, not a distinct MIC TI Holding LLC fund. Preserve the separately verified MIC TI Holding Company 2 RSC Limited legal vehicle and all exact project-stake exceptions."
+      },
+      "evidenceUrls": [
+        "https://www.energy.gov/sites/default/files/2023-08/15-190-LNG_RGLNG%20Statement%20and%20Notice%20of%20Change%20in%20Control%20(Aug.%2016%202023).pdf"
+      ]
+    }
+  ],
+  "manifestSha256": "95148d62f20baace326bf27615c6bb1df22a36168a24b0f3abb2e57594e075a1"
+}
