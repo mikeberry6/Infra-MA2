@@ -1,0 +1,121 @@
+{
+  "companyId": "cmrxpjbnh00rcivheoc17wxk3",
+  "name": "Renewa",
+  "sequence": 172,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/research-decision.json",
+      "sha256": "b11b42e7aa31416a3d64dc164b73fbc50ff6ef91a9cbbc7b7846696bf67b7a68"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/source-verification.json",
+      "sha256": "94fd6b0a1699d39b6f8b127e2f770ea86703d4288531dc547e036816f90cbc65"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "f4baedb497efb4dbf0d0bf5bad05cf3c45e5f1cc764c1b4c7bcd718fa4400928"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/chatgpt-response-validation.json",
+      "sha256": "384aa74d8625a3572c1f3218098f29ee85bf1f9ddfba52d1ab12de923821a593"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/chatgpt-attestation.json",
+      "sha256": "2cd8bb07147d673371dba942211075f81f0a40b519223be6190995e82d708dd1"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjwxu01p2ivhet3z3ze2b",
+      "seedRecordId": "OFA-3CD0DD9A5E61",
+      "expectedSeedSha256": "19d847b4c4b510fedeeb40ad7ea4e293a8a81663e3117e099249db2c0bc87946",
+      "expectedOwnerSha256": "42cf8e837367e040730821fd6ece0cb9b73a7ff12d01c7b64ad9c749e6451d12",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's July 15, 2025 announcement expressly identifies its US$200 million primary equity commitment in Renewa through its Sustainable Land Management initiative within its Infrastructure portfolio. This is a disclosed direct program, not an inferred CDPQ Infrastructure fund.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Replace the contradicted INFERRED/LOW CDPQ Infrastructure assignment with the issuer's explicit direct-program attribution; preserve the initiative as the canonical vehicle and do not invent a percentage.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/renewa-lacaisse.html",
+          "sha256": "797b632ddfc82d0de4af8ed18db65f3ef40f5dfe0d4a1ce0a8aa18ab052dc0f9",
+          "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmrxpjwyh01p3ivheanfbimsd",
+      "seedRecordId": "OFA-B4D1519E0475",
+      "expectedSeedSha256": "3962f99cb003a193387ca31ffda56adea541a35a41fae1cc36c2a5524f91f91f",
+      "expectedOwnerSha256": "b0ba310604177793df9eb339c1129d0b7457e424532e1b483b833a6b7c5e0726",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The July 15, 2025 joint announcement states that QIC-managed funds acquired Renewa in 2022, but does not name those funds. Preserve the managed-fund relationship without inventing a fund name or treating nondisclosure as direct-program evidence.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Correct unsupported DIRECT_PROGRAM classification: direct primary evidence says QIC-managed funds, whose exact names remain undisclosed. Preserve QIC identity, existing managed-client vehicle wording, dates, unknown stake and former EnCap owner.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/renewa-lacaisse.html",
+          "sha256": "797b632ddfc82d0de4af8ed18db65f3ef40f5dfe0d4a1ce0a8aa18ab052dc0f9",
+          "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmt69fjxx00083byyxlux4yi5"
+  ],
+  "issue": null,
+  "expectedImageSemanticSha256": "94c9f7c1ad933b359c0f34bec7571d4558472459745e838549cd528c1f6c8033",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjwxu01p2ivhet3z3ze2b",
+      "sha256": "42cf8e837367e040730821fd6ece0cb9b73a7ff12d01c7b64ad9c749e6451d12"
+    },
+    {
+      "ownerId": "cmrxpjwyh01p3ivheanfbimsd",
+      "sha256": "b0ba310604177793df9eb339c1129d0b7457e424532e1b483b833a6b7c5e0726"
+    },
+    {
+      "ownerId": "cmt69fjxx00083byyxlux4yi5",
+      "sha256": "1f5e64d812c23cd021ac760f44f70e9fa7e950e5317c74cbda34f8e66a97d15e"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0172-renewa-v3/proposal.json",
+      "sha256": "22a596ebce3407c7f1640a1121648325496b5bc75adf7c64b4c3ecec32899bec"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0172-renewa-v3.json",
+      "sha256": "5921d30c48807fd03e3a9e72365a2ac40db332138ad087fb914f2f56efbe779c"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v7/production-apply/batch-apply-receipt.json",
+      "sha256": "7352c94e46e3609069f5e38313043845ac1ea9bab5cc6460d7a44ad440b831c2",
+      "memberIndex": 0
+    },
+    "receiptSha256": "1fbb5207e5c6312abb6d4f669da5d2fc6b16ed94fce74753d549f720ac98c1aa"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/renewa-lacaisse.html.capture.json",
+      "sha256": "ef88518b010393abbe7e8c6df63013323afcd0fe5a2ad9038ee08150e99154d9"
+    }
+  ]
+}

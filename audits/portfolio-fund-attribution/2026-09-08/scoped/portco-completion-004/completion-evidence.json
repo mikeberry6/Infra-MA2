@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_EVIDENCE",
+  "batchId": "portco-completion-004",
+  "batchSha256": "c8efc541bc0e2789391f9e1d091ddb13ac08cc5e3b092ac449fcc28e5e96d6d5",
+  "verifiedAt": "2026-09-08T06:15:55.334Z",
+  "release": {
+    "mergeSha": "034b39ff0acbe413c1f2aea58196a32ba62e612d",
+    "canonicalSha": "034b39ff0acbe413c1f2aea58196a32ba62e612d",
+    "headSha": "034b39ff0acbe413c1f2aea58196a32ba62e612d",
+    "gitRef": "main",
+    "gitProvider": "github",
+    "canonicalUrl": "https://infra-ma-2.vercel.app",
+    "ready": true,
+    "requiredChecksPassed": true,
+    "evidence": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-004/canonical-release.json",
+      "sha256": "c78e4b1d5366c0637e9cd00ac912b5f08176a9cf8dfa3592fa43dd4ccba15aca"
+    }
+  },
+  "receipt": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-004/receipt-verification.json",
+    "sha256": "9a5beac3c78c652852990b5eddc020ddfc715d2140abe2c403a57579e8bbd177"
+  },
+  "snapshotSha256": "5ddd0aad24b6240e88b1565b2c232c6b96742271bf81832192826714f8f9f369",
+  "seedManifestSha256": "591c292c5ef5b7715f3c9fc08310a7643d2530c9e54ee2ed040697b2632c3a3c",
+  "proof": [
+    {
+      "companyId": "cmrxpjgli00yvivheorrptcgd",
+      "checks": {
+        "api": true,
+        "redirects": true,
+        "ownership": true,
+        "citations": true,
+        "renderedCard": true,
+        "afterImages": true,
+        "seedAlignment": true
+      },
+      "evidence": [
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-004/completion-after.json",
+          "sha256": "5eac6260a80d56180c750ac59c01764b3f93b3ea218c217fd2c1bb9371c626bc"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-004/live-verification.json",
+          "sha256": "accebbe57bc69c878469cbc345536ca63e462332729d16b43c671cad81b35d9d"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-004/rendered-0151.png",
+          "sha256": "b0c128aea92a1f97e239b26034e905ad0f5a50fdbf4bfd97f54d808b9b6c08c7"
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpjgmk00yxivhegkkxve01",
+      "checks": {
+        "api": true,
+        "redirects": true,
+        "ownership": true,
+        "citations": true,
+        "renderedCard": true,
+        "afterImages": true,
+        "seedAlignment": true
+      },
+      "evidence": [
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-004/completion-after.json",
+          "sha256": "5eac6260a80d56180c750ac59c01764b3f93b3ea218c217fd2c1bb9371c626bc"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-004/live-verification.json",
+          "sha256": "accebbe57bc69c878469cbc345536ca63e462332729d16b43c671cad81b35d9d"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-004/rendered-0154.png",
+          "sha256": "bedfb7e597512668e77f8bac66d65808ce2bdb5516e86d3d6573336b8bce3b84"
+        }
+      ]
+    }
+  ],
+  "renderedReview": "Both affected company screenshots individually inspected by the main agent. The full Rio Grande ownership panel shows all six owners, preserved legal vehicles and stakes, GIC and Mubadala direct/program attribution and GIP fund attribution pending. AES retains Public Market ownership and explicitly pending consortium buyers. Attribution labels and qualified unknowns match the reviewed decisions. No unrelated UI or canonical text changes.",
+  "parked": [
+    {
+      "companyId": "cmrxpj90w00nbivhe1yvbf58m",
+      "issue": "Historical TC seller legal form: The order identifies TC Pipelines, LP, a Delaware limited partnership; the canonical historical vehicle and physical rationale say TC Pipelines, Inc. Preserve the frozen historical owner during this audit and address the exact legal-form discrepancy only through a separately compatible canonical/attribution correction. Do not silently alter the TC Energy manager identity, 61.7% pre-close stake, unknown entry date or realized2024 state. Lower-tier Beehive structure: The order names Beehive Loop Acquisition Co LLC and footnote1 explicitly references four separate Beehive LLCs and an ownership diagram in HearingExhibit3 at3. The full diagram is not included in the captured order. Preserve the canonical compact vehicle label; do not invent the full lower-tier chain or repeat the historical research's unqualified assertion that no lower-tier disclosure exists. Seed evidence URLs: Both current seed records lack the direct NH PUC order in evidenceUrls. A separate protected persistence proposal should add that exact cited URL with the hash-bound rendered proof; existing seed URLs remain historical evidence, not named-fund authority. Preserve every owner and complete before-image. This requires separately supported compatible canonical work, not a partial attribution-only company completion. Do not infer missing facts, reopen terminal tasks, or repeat original transactions."
+    },
+    {
+      "companyId": "cmrxpjgkv00yuivhek3goid87",
+      "issue": "Class B and tax equity scope: South Fork compact50% stake language requires a separate sourced Class B/control-versus-total-economics qualification; passive Class A exposure is not proven to have ended by the historical GIP closing. Designated closing affiliate: Exact named closing affiliate is not established by the May2024 ruling; canonical buyer wording must retain designated-affiliates limitation. Seed evidence URLs: Both active seed records lack the direct NYPSC ruling URL. 2019 partnership citation: Newly available2019issuerPDF can support the partnership/entry citation through separately compatible canonical evidence maintenance; existing source dates and capacities remain frozen. Exact canonical event dates: Canonical March13 first-power and exact September30 closing are preserved receipt-backed values, not freshly proven by blocked sources or NYPSC approval; no event-date mutation in this audit. Preserve every owner and complete before-image. This requires separately supported compatible canonical work, not a partial attribution-only company completion. Do not infer missing facts, reopen terminal tasks, or repeat original transactions."
+    },
+    {
+      "companyId": "cmrxpjgly00ywivhe8rs5yjnm",
+      "issue": "Fund-to-platform mapping and current intermediate holder: The public COFECE excerpt names legal parties and targets, not Saavi. Canonical research associates that concentration with Saavi, but the mapping is not independently established by the PDF alone. Retained DISCLOSED/Fund I metadata is preserved, not freshly certified as a complete current holding chain. Do not infer a shareholder or expand to a different fund. Source persistence and filing label: Seed evidence lacks the direct COFECE URL. The canonical citation calls this a resolution; it is a public stenographic session transcript recording authorization. Separately persist the precise document label/source and qualifications without changing the existing application primary. Entry-date precision: The GIP web header is August 20, 2021; its body is datelined August 19 and says Actis has sold 100%. Preserve canonical August 20 without claiming that source proves the precise legal closing date. The 2020 term loan is debt, not equity entry. Conditional transaction and scale: The April 2026 issuer release anticipates second-half 2026 closing; canonical expectedClosing remains null. Its 70%/30% and combined 4510 MW/5000 MW pipeline are conditional combined-platform facts, not present Saavi equity or capacity. Different current GIP/company capacity measures must not be silently reconciled as ownership evidence. Historical Actis: Preserve 2018-2021 realized Actis, null vehicle/fund/confidence and UNRESOLVED metadata; it belongs to neither attribution receipt. No missing managed fund is inferred and historical metadata is not adjudicated outside the active-owner603 here. Preserve every owner and complete before-image. This requires separately supported compatible canonical work, not a partial attribution-only company completion. Do not infer missing facts, reopen terminal tasks, or repeat original transactions."
+    },
+    {
+      "companyId": "cmrxpj91y00ndivhejiuocayx",
+      "issue": "Fund label semantics: Diversified Infrastructure is a managing-business description, not the legal fund name. Preserve the existing descriptive DISCLOSED label without certifying a specifically named legal fund; no GIP mapping or inferred percentage. Source persistence and prior reopen limitation: The current issuer filing and counsel identity page require compatible canonical/seed citation persistence or an exact exception. The old filing raw403 is not evidence. Current fresh reopening does not prove undocumented historical release-stage reopening. Groundbreaking and exact entry date: The legacy groundbreaking URL remains a news-index redirect; the current project page does not establish April28,2023. Preserve that receipt-backed milestone with an exact source limitation pending compatible resolution. The November7,2023 JV release reports signing, not exact legal closing. Control and operational semantics: VIE consolidation/HLBV do not establish numerical economic or voting percentages. Preferential distributions preclude inferring pro-rata ownership from invested capital. Funding, construction and permits do not establish commercial operations. Preserve canonical ownership and lifecycle at its August23 cutoff. Preserve every owner and complete before-image. This requires separately supported compatible canonical work, not a partial attribution-only company completion. Do not infer missing facts, reopen terminal tasks, or repeat original transactions."
+    },
+    {
+      "companyId": "cmrxpj4e100geivhe4lo6qn4w",
+      "issue": "Canonical closing vehicle: Existing accepted research already contains this filing-supported closing vehicle; its later canonical proposal retained n.a. Do not silently change owner identity, organization or vehicle through an attribution-only apply. No current legal-entity continuity beyond the existing research cutoff is claimed. Current vehicle: n.a.; source-disclosed closing vehicle: KKR-Keats Pipeline Investors II (Canada) Ltd. Preserve every owner and complete before-image. This requires separately supported compatible canonical work, not a partial attribution-only company completion. Do not infer missing facts, reopen terminal tasks, or repeat original transactions."
+    }
+  ]
+}

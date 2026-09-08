@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-08T06:14:14.842Z",
+  "manifestSha256": "95148d62f20baace326bf27615c6bb1df22a36168a24b0f3abb2e57594e075a1",
+  "approvalSha256": "dce26c41d4804a1045672eca667f177b2e5a70f28651a104ee33289a70a042e2",
+  "receiptSha256": "81fe9e0d87826f57ea2ba9f0f6773562da5fe840a4f08c7fecf96d421e06d742",
+  "mutationCount": 3,
+  "changed": 3,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-C2898B1C751B",
+      "companyId": "cmrxpjgli00yvivheorrptcgd",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjgli00yvivheorrptcgd?verification=95148d62f20baace326bf27615c6bb1df22a36168a24b0f3abb2e57594e075a1",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The existing 2023 DOE-filed ownership notice identifies Devonshire as GIC's investment holding affiliate and GIC as manager of Singapore's foreign reserves. This supports sovereign-program attribution, not an inferred GIC Infrastructure fund. The separately verified Devonshire vehicle and all exact stake exceptions are preserved."
+      }
+    },
+    {
+      "recordId": "OFA-EB6D1D2A0963",
+      "companyId": "cmrxpjgli00yvivheorrptcgd",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjgli00yvivheorrptcgd?verification=95148d62f20baace326bf27615c6bb1df22a36168a24b0f3abb2e57594e075a1",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The existing DOE change-in-control response identifies GIP-managed Velocity acquisition and aggregator partnerships, not a separately disclosed underlying infrastructure fund. GIP V is not inferred from the SPV prefix and BlackRock GEPIF III is unsupported by the existing canonical research. Preserve the verified legal vehicles, entry economics and unavailable post-XRG residual interests."
+      }
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "95148d62f20baace326bf27615c6bb1df22a36168a24b0f3abb2e57594e075a1",
+  "approvalSha256": "dce26c41d4804a1045672eca667f177b2e5a70f28651a104ee33289a70a042e2",
+  "environment": "production",
+  "pipelineRunId": "cmts9xx3z0000g34xitbp2rhw",
+  "mutationCount": 3,
+  "changed": 3,
+  "idempotent": false,
+  "beforeFingerprint": "8c85f38bf47f884eb757d82dbd8d16c652480a4a39773c32ec96cc3d13cd18e0",
+  "afterFingerprint": "a03e8ba5a8fdc9d5f888da0889b8191d3930f17fbfe70c7a60c099773c5efd8e",
+  "rows": [
+    {
+      "recordId": "OFA-C2898B1C751B",
+      "ownershipPeriodId": "cmrxpk2dz01xfivhe6czef2co",
+      "companyId": "cmrxpjgli00yvivheorrptcgd",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "GIC Infrastructure",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The existing 2023 DOE-filed ownership notice identifies Devonshire as GIC's investment holding affiliate and GIC as manager of Singapore's foreign reserves. This supports sovereign-program attribution, not an inferred GIC Infrastructure fund. The separately verified Devonshire vehicle and all exact stake exceptions are preserved."
+      }
+    },
+    {
+      "recordId": "OFA-EB6D1D2A0963",
+      "ownershipPeriodId": "cmrxpk2f101xhivhej18k131a",
+      "companyId": "cmrxpjgli00yvivheorrptcgd",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2020 is 3 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The existing DOE change-in-control response identifies GIP-managed Velocity acquisition and aggregator partnerships, not a separately disclosed underlying infrastructure fund. GIP V is not inferred from the SPV prefix and BlackRock GEPIF III is unsupported by the existing canonical research. Preserve the verified legal vehicles, entry economics and unavailable post-XRG residual interests."
+      }
+    },
+    {
+      "recordId": "OFA-20166140109D",
+      "ownershipPeriodId": "cmrxpk2ef01xgivhe1pzzw4h7",
+      "companyId": "cmrxpjgli00yvivheorrptcgd",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MIC TI Holding LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Mubadala Investment Company | Fund: MIC TI Holding LLC | Ownership Interest: 6.57% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The existing 2023 DOE-filed ownership notice identifies MIC as an indirect wholly owned subsidiary of Mubadala, a sovereign investor managing capital for the Government of Abu Dhabi. This supports direct sovereign-program attribution, not a distinct MIC TI Holding LLC fund. Preserve the separately verified MIC TI Holding Company 2 RSC Limited legal vehicle and all exact project-stake exceptions."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-08T06:14:12.458Z",
+  "receiptSha256": "81fe9e0d87826f57ea2ba9f0f6773562da5fe840a4f08c7fecf96d421e06d742"
+}

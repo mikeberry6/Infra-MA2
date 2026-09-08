@@ -1,0 +1,125 @@
+{
+  "companyId": "cmrxpjgn500yyivhe7tr8lc9h",
+  "name": "Vanguard Renewables",
+  "sequence": 155,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/research-decision.json",
+      "sha256": "433170589bc6a52bfc310a8f8462c66d41317522aa08cb1a5b7ff3cd911a52ac"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/source-verification.json",
+      "sha256": "66a167d03e6532911e8baae504a576e6ff515056a8a564156478a37bf710cba8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "0c914d69cbc069077e10a5111de9c16be7fc4bebfee828262082ecad0b06bd4d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/chatgpt-response-validation.json",
+      "sha256": "f79bc1263205c3499eda6fd765a6bbf60ee499acbeccca5892359c4bd837a36a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0155-vanguard-renewables/attempt-1/chatgpt-attestation.json",
+      "sha256": "b391dee52e1c8e0cf500554f1091398c945575a680a4317e476452131c83d8fd"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk2hr01xmivhevyothznb",
+      "seedRecordId": "OFA-A08891398105",
+      "expectedSeedSha256": "34d25846f06c8760a0cf5dc2003555e92b4662c34e40e3a6200eebbe89bcf501",
+      "expectedOwnerSha256": "7e45f3c321cb8d82db2aed9abb23b90d5f5cbebac559757712a011906e5d4f5b",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "BlackRock's October 24, 2022 release explicitly lists Vanguard Renewables among Global Energy & Power Infrastructure Fund III investments. Preserve the existing GEPIF III link; the fund is disclosed, not estimated.",
+        "linkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III"
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Direct issuer release identifies Vanguard in the GEPIF III portfolio; the current INFERRED/LOW label and statement that public disclosure does not identify a fund are contradicted. Preserve manager, fund link, legal vehicle, majority stake qualification, dates and pending CMA CGM transaction.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/blackrock-gepif-iii.html",
+          "sha256": "b5a7f3ecfe05dd28fb6cd206339fcb51066c2e3b8e4ab578940452ee36da686a",
+          "url": "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmt5w9kcr0016wyyy0oyf3sff",
+      "seedRecordId": "OFA-7EA870636697",
+      "expectedSeedSha256": "e50b2d7dff65499945c47b3252590db240eb08333c5940ae3200b47f1f6f2530",
+      "expectedOwnerSha256": "7c91183259b5447b2e5f13e55ef84359771fbac72c4916864a229518865cf857",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ingka's official disclosure supports a direct minority investment through its circular-investments portfolio; no separate managed infrastructure fund is disclosed.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "Ingka's direct minority investment and circular-investments portfolio are explicitly supported. Preserve production wording exactly; align equivalent seed wording and bind the single relevant primary without changing economics. Former Vision Ridge ownership remains preserved under the completed original research and receipt.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/ingka-vanguard.html",
+          "sha256": "6d410c39bde6ac66f0efd0e0c65661eb3dbc2078005dd0cf21424dbb0edfc116",
+          "url": "https://www.ingka.com/newsroom/turning-meatball-scraps-into-renewable-gas-ikea-u-s-and-vanguard-renewables-tackle-food-waste/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmrxpk2h701xlivhe02mz7fdk"
+  ],
+  "issue": null,
+  "expectedImageSemanticSha256": "b5ac415088dc9a9f8ff4b1c5a30440159dc7f1f058708d4eaa5a88c7855385a0",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk2h701xlivhe02mz7fdk",
+      "sha256": "e2478e30275ed087f6507cf31c2da687f8113ed434a038bb7e08a17206f5740d"
+    },
+    {
+      "ownerId": "cmrxpk2hr01xmivhevyothznb",
+      "sha256": "7e45f3c321cb8d82db2aed9abb23b90d5f5cbebac559757712a011906e5d4f5b"
+    },
+    {
+      "ownerId": "cmt5w9kcr0016wyyy0oyf3sff",
+      "sha256": "7c91183259b5447b2e5f13e55ef84359771fbac72c4916864a229518865cf857"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0155-vanguard-renewables-v1/proposal.json",
+      "sha256": "253ccf3c3013a9489e266bce206c8a7b3d8dbc691524b0572c7fcafc4f3fcb07"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0155-vanguard-renewables-v1.json",
+      "sha256": "0ed0994959ecc15c46165fc259bdeaae7a791ee19a492b5592348d79e878baf1"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0152-0156-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "f16f006d3c9236ab4f90d452d2e4e8e634c1ee358315c674770867f4e3d64a1a",
+      "memberIndex": 3
+    },
+    "receiptSha256": "3f6ff75ae5738e236a72ce2915183acf6b2569ce59c2751fd8bf64c5d13676b6"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/blackrock-gepif-iii.html.capture.json",
+      "sha256": "72bf25974e4c0855973c60fedc0d3372a2e792e9e28dc64636b3cbb6e5b47423"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/ingka-vanguard.html.capture.json",
+      "sha256": "bc56cf99d7c6a3709d2f59110f394912a88aac3adc7b634eccf79996bc0db61e"
+    }
+  ]
+}

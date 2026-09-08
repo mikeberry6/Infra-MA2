@@ -1,0 +1,88 @@
+{
+  "companyId": "cmrxpjakf00ppivhe197wcvey",
+  "name": "Copia Power",
+  "sequence": 164,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/research-decision.json",
+      "sha256": "44a1ddd6866745371842049897e90b94c468d7a1bfd20e10dc05f5c14f31910a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/source-verification.json",
+      "sha256": "28219e18401556918b63e34c183c16d9c488e59c1b71cbe8f49ed548469d84c2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "3c994723c8043d4a063de35b278e6ce6d0f85b0e14dbd289b73d2a91a04f3096"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/chatgpt-response-validation.json",
+      "sha256": "7a19fd59605c0fc1dcb9804603e1c4fe11a7f5548ff513d5ab5da11a12dad9fe"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0164-copia-power/attempt-1/chatgpt-attestation.json",
+      "sha256": "80d3a938e3e22191b36d7b3ac39ddde64c4220b76a37a2c9aedbe91de073a305"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjvxx01neivheya8o7kr4",
+      "seedRecordId": "OFA-E700A66E38ED",
+      "expectedSeedSha256": "f0377f97a8521a68d64e67cfa747044ae63d30604bb2b766d197f258526dc2f0",
+      "expectedOwnerSha256": "6c5e8c7c9b50d00cd85e9cbaa2638dbc10cd587a9efba28a1a8e46ae5b411ee6",
+      "desired": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Public materials identify Carlyle as Copia Power's owner but do not disclose the specific Carlyle fund or acquisition vehicle. The signed sale to EQT Infrastructure VII remained pending as of August 19, 2026.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "EQT's signed acquisition announcement identifies Carlyle as seller without naming its fund. Preserve the existing unresolved Carlyle fund and dated pending-sale qualification; do not transfer EQT Infrastructure VII to the seller or infer a closing. Align equivalent seed rationale only; no new research or economics changes.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/copia-buyer.html",
+          "sha256": "dc160bedf86676d22f28c5e563c7ceadc2f8fa0f88fca97136c0eca106e4591b",
+          "url": "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "eca23e51bf6e25c8c6458f95d9edc94d22e8cd6fb55a8d1f193e67d1992e0a56",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjvxx01neivheya8o7kr4",
+      "sha256": "6c5e8c7c9b50d00cd85e9cbaa2638dbc10cd587a9efba28a1a8e46ae5b411ee6"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0164-copia-power-v2/proposal.json",
+      "sha256": "264c53c8f3d82510fdf7f2491e8a0280f1416787b31069ec6ae43573443f6df0"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0164-copia-power-v2.json",
+      "sha256": "2161ce07b3a00c4606b29db8a460ff4867b98797441c2244074f422fa0ffc8cc"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0162-0166-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "a9768f5340ce906843cb282438dbc057bde2a29832289583143427af07c75af0",
+      "memberIndex": 2
+    },
+    "receiptSha256": "194620fa87010d7f895ba52e81828c5140b8dbcda87f4e8a05c068d243c2e9c1"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/copia-buyer.html.capture.json",
+      "sha256": "e3ac6c8ec62d6ebe20ddf3e40bc9ca36c8e6cd4339f50f1fdd274fe784e5566f"
+    }
+  ]
+}

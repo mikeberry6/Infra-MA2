@@ -1,0 +1,125 @@
+{
+  "companyId": "cmrxpj92i00neivheuthp9gpg",
+  "name": "Vopak Industrial Infrastructure Americas",
+  "sequence": 156,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/research-decision.json",
+      "sha256": "5a774b5070b327cc3f5bce5cad4442e6112351126c63dd260ac8da4d8b48952d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/source-verification.json",
+      "sha256": "fa4007eaaf7e3cf7f641199b032bc8f27fc048a2d566d98c30f2e2280ce83ceb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "2248c9696a22c0cb70c072518aea2d41d18da886e252df22fed70812e6aee74b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/chatgpt-response-validation.json",
+      "sha256": "3dd5bd525ded4cc085f1f07782db5856b96f4403450ed68a2dcca4c57f6833f5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0156-vopak-industrial-infrastructure-americas/attempt-1/chatgpt-attestation.json",
+      "sha256": "98d6217359dcadf886329e50c30d7cb76588d24132fe77b578a9436ef7097d61"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjudc01kvivhe8vpflp22",
+      "seedRecordId": "OFA-329762E936A1",
+      "expectedSeedSha256": "23874c68f391d445931415a2997b5b79d8a4485f2229bba7c271fec591f61396",
+      "expectedOwnerSha256": "6abf93f1791a40223ae4c7e455645683e2b51741698d8e7a47a56b21ee0babb8",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "Official Vopak transaction materials disclose BlackRock's Global Energy & Power Infrastructure Fund as the 50% investor; the ownership period is linked to the exact curated GEPIF III fund record.",
+        "linkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III"
+      },
+      "productionChange": "NONE",
+      "reason": "Preserve the supported production GEPIF III attribution and rationale. BlackRock's October 2022 GEPIF III portfolio list links Vopak to the Dow Gulf Coast terminals acquisition; Vopak's closing identifies the VIIA joint venture. Seed rationale is equivalent, not a production defect. The older EUR-Lex URL is currently blocked and is not used as evidence.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/blackrock-gepif-iii.html",
+          "sha256": "b5a7f3ecfe05dd28fb6cd206339fcb51066c2e3b8e4ab578940452ee36da686a",
+          "url": "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close",
+          "primary": true
+        },
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vopak-closing.html",
+          "sha256": "e9244820c9eaa365f8bc4ca65222c2e751e750514c0d07641d3069853d06fc3b",
+          "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-successfully-completed-acquisition-three-industrial",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "ownerId": "cmt5w9qk5001mwyyybcywef64",
+      "seedRecordId": "OFA-2DF4FB4D3B1B",
+      "expectedSeedSha256": "f9e3c8d57535fa7daecd8a50f81785270fb23198fb50a9f08eb50dd9402b4333",
+      "expectedOwnerSha256": "1da5fcc042baf39dcab6f524aa257e208259c3b805f92d8979ffc73729b734ee",
+      "desired": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Royal Vopak directly retains 50% of the industrial-terminal platform as corporate ownership; no managed infrastructure fund is involved.",
+        "linkedFundName": null
+      },
+      "productionChange": "NONE",
+      "reason": "Vopak's December 2, 2020 closing expressly identifies the 50/50 Royal Vopak/GEPIF joint venture and VIIA identity. Preserve corporate direct/program ownership and production wording; align only equivalent seed rationale and evidence bindings.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vopak-closing.html",
+          "sha256": "e9244820c9eaa365f8bc4ca65222c2e751e750514c0d07641d3069853d06fc3b",
+          "url": "https://www.vopak.com/newsroom/news/vopak-and-blackrocks-gepif-successfully-completed-acquisition-three-industrial",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "e19b3f37aa4cb715b91a5261e4b39250f79fd2206b8cc8f366f2be1a59fd8d0e",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjudc01kvivhe8vpflp22",
+      "sha256": "6abf93f1791a40223ae4c7e455645683e2b51741698d8e7a47a56b21ee0babb8"
+    },
+    {
+      "ownerId": "cmt5w9qk5001mwyyybcywef64",
+      "sha256": "1da5fcc042baf39dcab6f524aa257e208259c3b805f92d8979ffc73729b734ee"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0156-vopak-industrial-infrastructure-americas-v1/proposal.json",
+      "sha256": "666935cdecedd24633d27d4a059a3cec2f72f0499d9e78fe8cdd6949a374db7b"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0156-vopak-industrial-infrastructure-americas-v1.json",
+      "sha256": "864254ee13845f2186bc21958390ce271fe696fd0fdc6e603a384389317999dc"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0152-0156-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "f16f006d3c9236ab4f90d452d2e4e8e634c1ee358315c674770867f4e3d64a1a",
+      "memberIndex": 4
+    },
+    "receiptSha256": "d92ac15a1f3211f6ee97f7eb4b2df25d59b73d95c7139adbf6446f09e8222de9"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/blackrock-gepif-iii.html.capture.json",
+      "sha256": "72bf25974e4c0855973c60fedc0d3372a2e792e9e28dc64636b3cbb6e5b47423"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-005-evidence/vopak-closing.html.capture.json",
+      "sha256": "822b1a16a9cafae1cd68550888cb170c9e41abb3753a7a37dce31dbcff509e00"
+    }
+  ]
+}
