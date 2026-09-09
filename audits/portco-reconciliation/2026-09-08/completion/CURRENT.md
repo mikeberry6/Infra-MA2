@@ -10,9 +10,9 @@ Batch029 completed locally (KAPS remains parked), zero seed/database writes and 
 
 ## Next unfinished step
 
-Branch `codex/portco-baseline-provenance` carries029 bookkeeping and pure identity validator `58f909ee`. Baseline admission, CLI candidate preparation and replay are locally integrated: 93 tests across six targeted suites, strict typecheck and ESLint passed; logs `/private/tmp/portco-baseline-admission-{tests,typecheck,eslint}.log`. Decision-record provenance integration remains unfinished; do not admit names, publish, or activate a bundle yet.
+Branch `codex/portco-baseline-provenance` carries029 bookkeeping, baseline admission/replay and separate baseline decision-record provenance. All ten completion-tool suites passed (141 tests), strict typecheck and ESLint passed; logs `/private/tmp/portco-baseline-records-{tests,typecheck,eslint}.log`. No030 release is active.
 
-Read `closeout-v1/baseline-admission-notes.md` for this gate. Add explicit baseline provenance without weakening the existing receipt-required path; require full current owner/images and sources, not identity-only baseline datasets. Assemble the earliest ten safe decisions in original source order before authoritative admission. Keep unsupported issues parked.
+Next: assemble the first ten sourced decisions using `preparation/baseline-030/REVIEW.md`. Its sealed admission and exclusive candidate are ready, but authoritative progress remains unchanged. Validate the complete decisions against the candidate before promotion; then capture one fresh target-pinned snapshot and run final-content/protected release gates. Historical identity and synthetic tests do not prove ownership. Keep exact unsupported issues parked. Implementation detail and negative findings: `closeout-v1/baseline-admission-notes.md`.
 
 ## On-demand detail
 

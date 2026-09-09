@@ -13,6 +13,7 @@ import {
 const text = z.string().trim().min(1);
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
 const commit = z.string().regex(/^[a-f0-9]{40}$/);
+export const PRODUCTION_FINGERPRINT = "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929";
 export const fileSchema = z.strictObject({ path: text, sha256: hash });
 const stateSchema = attributionMutationSchema.shape.set.extend({ linkedFundName: text.nullable(), attributionRationale: z.string().nullable() });
 const desiredSchema = stateSchema.extend({ attributionRationale: text.nullable() });

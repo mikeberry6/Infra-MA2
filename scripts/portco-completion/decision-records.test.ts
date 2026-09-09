@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { bindDecisionRecords, validateDecisionRecords, type DecisionRecord } from "./decision-records";
+import { bindDecisionRecords, validateDecisionRecords, type AppliedDecisionRecord as DecisionRecord } from "./decision-records";
 import { seal, verifyProgress, verifySnapshot } from "./batch";
 import { bytesHash } from "./files";
 import { semanticCompanyImageSha256 } from "../portco-reconciliation/apply-plan";
