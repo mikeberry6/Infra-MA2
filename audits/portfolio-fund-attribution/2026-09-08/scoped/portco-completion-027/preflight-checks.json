@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_PREFLIGHT",
+  "checkedAt": "2026-09-09T00:05:56.265Z",
+  "batchSha256": "7a14a63aaeb6a425ad2e13cac4835b02afff657eb320bd671614a1ad95307497",
+  "passed": true,
+  "databaseWrites": 0,
+  "selectedNames": 7,
+  "mutatingNames": 1,
+  "parked": 6,
+  "mutations": 2,
+  "seedRows": 1433,
+  "checks": {
+    "offlinePriorReleaseReplay": 26,
+    "freshTargetPinnedSnapshot": true,
+    "completeRecompile": true,
+    "sourcePublicationScan": true,
+    "typecheck": true,
+    "scopedEslint": true,
+    "seedValidation": true,
+    "protectedApplyValidateOnly": true,
+    "fullRegression": {
+      "files": 211,
+      "tests": 3848
+    }
+  },
+  "files": [
+    {
+      "path": "scripts/portco-completion/attribution-image-lineage.ts",
+      "sha256": "73e40c8b58a3b9aeee5343d24401ca7c198067864b5ef11c310bdc47540f89a4"
+    },
+    {
+      "path": "scripts/portco-completion/attribution-image-lineage.test.ts",
+      "sha256": "60e728463563deaf09876a2626f5afecb8c8c4651bde80f86395e24522b9663e"
+    },
+    {
+      "path": "scripts/portco-completion/batch.ts",
+      "sha256": "f88987bebcfb013f3356932131b014c334fb3070dc5b59b220508c1015599762"
+    },
+    {
+      "path": "scripts/portco-completion/batch.test.ts",
+      "sha256": "c54ed74414a561c2b13cb362538ed5d818027cb1c5fbc1ea6bdc26a4831940e1"
+    },
+    {
+      "path": "scripts/portco-completion/decision-records.ts",
+      "sha256": "e63477d4b8da5ffa21dd67359a798740fbcd8ab7da815eafe7508e5eab87e349"
+    },
+    {
+      "path": "scripts/portco-reconciliation/ownership-manager.ts",
+      "sha256": "f84e01d2cb48242c557c26f77d2dfa9e75d42fa261e871ae0c9fb6728703eb40"
+    },
+    {
+      "path": "scripts/portco-reconciliation/prisma-company-image.ts",
+      "sha256": "06bf9e99bcd06de2f566fec580d279992b66abeac498f1be754bd97dfb55e3a5"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/seed-manifest.test.ts",
+      "sha256": "50b9348980627009f39d229312944c65842bd6858275a651702bf4f19a17a117"
+    }
+  ],
+  "logs": [
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/regression.log",
+      "sha256": "7dce078cff544b35cb1414e824ad4a0b437d2abc2c460ed2c6d404f1558727e8"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/regression-final.log",
+      "sha256": "fa0806fdf985ed40274f8ce28010dd2961aab072cdf39c0062c7314601626cb1"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/seed-validation.log",
+      "sha256": "6effdd225b439eba6bdf8811a2fac9c4c4fd7a8100dece5a0fbff1d0b427cd2e"
+    }
+  ],
+  "applyManifest": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/apply-manifest.json",
+    "sha256": "24a7390920833cda8a052691f4e321ec4b3ca5b0f85aa0192f2220d6e4ddebaa"
+  },
+  "approval": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/approval.json",
+    "sha256": "492992b1a8d5144ca04cbf905a4bd665539fd14c1fd725e254048bc29465270b"
+  }
+}

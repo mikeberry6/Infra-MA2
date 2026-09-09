@@ -1,0 +1,139 @@
+{
+  "companyId": "cmrxpj67x00izivheqinytkio",
+  "name": "Catalyst Old River Hydroelectric Limited Partnership",
+  "sequence": 65,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "expectedImageSemanticSha256": "f2ee1eb1fbac093402d1b4f8c2e02cb4c0fd9888ca0e32dea142389d955f3502",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjr9601fuivhem1seogi3",
+      "sha256": "ff688c82437556ad041ac5f8898e73acdc9be0bac50bdd7973dee90072497b8d"
+    },
+    {
+      "ownerId": "cmsqvuood0008jh4s8cb50wqg",
+      "sha256": "875f10caf9a79a50619e64b1228c14e9eb13bc436bda34d444633122a244dba3"
+    },
+    {
+      "ownerId": "cmsqvuopl0009jh4s1ezj3kcl",
+      "sha256": "d45aaae4bd09dc29a8513ba98b2a8f7199010a55225986cabb14b7a42dae1088"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-027-evidence/review.json",
+      "sha256": "c1037a21636ba4d50ead13464a51fc3620a3e4192f3a46f3f3a73cfae92ebe02"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjr9601fuivhem1seogi3",
+      "seedRecordId": "OFA-HIST-2D0765F59E4EC81193C2EDBB",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "ff688c82437556ad041ac5f8898e73acdc9be0bac50bdd7973dee90072497b8d",
+      "desired": {
+        "linkedFundName": "ArcLight Energy Partners Fund V, L.P.",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ArcLight Energy Partners Fund V, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "ArcLight identifies Fund V as the prior holder: its continuation fund acquired the 25% Sidney Murray interest from Fund V in July 2021; Fund V first invested in 2011."
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "The existing former owner has an explicitly disclosed Fund V vehicle but unresolved production attribution and no seed overlay. Correct only its attribution and link to the existing exact fund.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-027-evidence/catalyst-arclight.html",
+          "sha256": "5f9513c39274fbb4b6e3f7cb58b8e0cd59f6dba2df9b5160705c0dbaab72e507",
+          "url": "https://www.prnewswire.com/news-releases/arclight-announces-successful-closing-of-renewable-infrastructure-continuation-fund-301328260.html",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmsqvuopl0009jh4s1ezj3kcl",
+      "seedRecordId": "OFA-B1AF791BA08E",
+      "expectedSeedSha256": "efcf3aefee66baa898b7c237d1a0a74c1417c73d4907a1d9a9c273cf825c4bf3",
+      "expectedOwnerSha256": "d45aaae4bd09dc29a8513ba98b2a8f7199010a55225986cabb14b7a42dae1088",
+      "desired": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Prudential identifies the managing-member investment as indirectly owned by Brookfield Renewable Partners, a publicly traded renewable platform. No distinct private fund is disclosed; the Brookfield BII estimate is unsupported."
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Remove the unsupported inferred Brookfield BII fund link while preserving the same existing Brookfield organization, economic interest, vehicle and chronology.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-027-evidence/catalyst-prudential.html",
+          "sha256": "deb9015b8491241f1f88233fc9bcf9df8bc9be534e977d36ab8bfa7c9a9b8fc4",
+          "url": "https://www.prudentialprivatecapital.com/perspectives/prudential-private-capital-invests-60m-in-catalyst-vidalia-holding-corporation",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [
+    "cmsqvuood0008jh4s8cb50wqg"
+  ],
+  "issue": null,
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0065-catalyst-old-river-hydroelectric-v2/proposal.json",
+      "sha256": "5db3d8fd45f285545974ff289c0b467aefbe1e10c8ff676b6e815e690643ecdd"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0065-catalyst-old-river-hydroelectric-v2.json",
+      "sha256": "53b1b4099c192069d4fd86bb3282f11cc927bfa76da3d07508f7975244c61ea2"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0065-catalyst-old-river-hydroelectric/attempt-3/production-apply/apply-receipt.json",
+      "sha256": "00963bd388e2f09845ed02b0936c8288c7a91233e469e5a7b1613906733a5826",
+      "memberIndex": null
+    },
+    "receiptSha256": "19050bac654cae551af92755dc73a9f3cfc324eae208188deaac4d5e0b0082c9"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-027-evidence/catalyst-prudential.capture.json",
+      "sha256": "e678cd884b4b1156dfb9f87fb84a0736a5e29b52d3a6d8084bcc4540c45419c5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-027-evidence/catalyst-arclight.capture.json",
+      "sha256": "b0546041a6a93ca0fa7da1f15d4259ff6ff343faacb28080b845bfe2f03109dd"
+    }
+  ],
+  "attributionImageLineage": {
+    "snapshot": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-026/completion-after.json",
+      "sha256": "8e3337f47f50cb129b2854e92e2f46b1acb495701506c5d3fac130132ade78c6"
+    },
+    "chains": [
+      {
+        "manifest": {
+          "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+          "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+        },
+        "approval": {
+          "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+          "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+        },
+        "receipt": {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+          "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+        }
+      }
+    ]
+  }
+}

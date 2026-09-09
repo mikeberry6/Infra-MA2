@@ -156,6 +156,33 @@ describe("evaluated historical seed owner proof", () => {
   });
 });
 describe("shared ten-name compiler", () => {
+  it("unlinks a fund-manager alias only with a complete evaluated organization identity proof", () => {
+    const f=fixture(["ATTRIBUTION_CORRECTION"]), s=structuredClone(f.snapshot);
+    s.companies[0].image.ownershipPeriods[0].organizationName="Manager Legal Name";
+    const snapshot=verifySnapshot(reseal(s,"snapshotSha256"));
+    const raw:PortCoOwner={investmentFirm:"Manager Legal Name",ownershipVehicle:"Vehicle",investmentYear:2020,status:"Active"};
+    const company:PortCo={name:"Name 0",country:"United States",countryTags:["United States"],sector:"Power & ET",subsector:"Power",region:"North America",
+      description:"Company",status:"Active",investmentFirm:raw.investmentFirm,ownershipVehicle:"Vehicle",owners:[raw]};
+    const proof=buildSeedIdentity({companies:[company],selected:[company],dependencies:SEED_IDENTITY_INPUTS.map(path=>({path,sha256:H})),
+      resolveOrganization:name=>name,resolveOwnership:o=>({vehicleName:o.ownershipVehicle,fundLookupName:o.ownershipVehicle,transactionState:"CLOSED_ACTIVE"})});
+    const {manifestSha256:_seedHash,...seedBefore}=f.seed;
+    const seedContent={...seedBefore,records:f.seed.records.map((r,i)=>i===0?{...r,investmentFirm:raw.investmentFirm}:r)};
+    const seed=verifySeedManifest({...seedContent,manifestSha256:canonicalSha256(seedContent)});
+    const b=structuredClone(f.batch);
+    b.snapshotSha256=snapshot.snapshotSha256;b.seedManifestSha256=seed.manifestSha256;
+    b.decisions[0].expectedCompanySha256=sha256Canonical(snapshot.companies[0]);
+    b.decisions[0].owners[0].expectedSeedSha256=sha256Canonical(seed.records[0]);
+    b.decisions[0].owners[0].desired={fundAttribution:"DIRECT_PROGRAM",linkedFundName:null,attributedFundName:null,attributionConfidence:null,attributionRationale:"Direct organization investment, not the linked fund."};
+    expect(()=>compileBatch({...f,snapshot,seed,batch:verifyBatch(reseal(b,"batchSha256"))})).toThrow(/alter owner/);
+    b.seedIdentity=proof;b.dependencies.push(...proof.dependencies);
+    const files=new Map([...f.files,...proof.dependencies.map(d=>[d.path,d.sha256] as const)]);
+    const compiled=compileBatch({...f,snapshot,seed,files,batch:verifyBatch(reseal(b,"batchSha256"))});
+    expect(compiled.projected[0].owners[0].organizationId).toBe("org");
+    expect(compiled.projected[0].image.ownershipPeriods[0]).toEqual({...snapshot.companies[0].image.ownershipPeriods[0],fundName:null,managerName:raw.investmentFirm});
+    const changed=structuredClone(proof);changed.companies[0].owners[0].organizationName="Conflicting owner";
+    b.seedIdentity=changed;
+    expect(()=>compileBatch({...f,snapshot,seed,files,batch:verifyBatch(reseal(b,"batchSha256"))})).toThrow();
+  });
   it("compiles a mixed ten-name batch without changing parked/unrelated records", () => {
     const f = fixture(), result = compileBatch(f);
     expect(result.manifest?.mutations).toHaveLength(1);

@@ -1,0 +1,75 @@
+{
+  "companyId": "cmrxpjfj100xeivhebd0fzcqi",
+  "name": "Prince George's County Blueprint Schools Program (Phase One)",
+  "sequence": 252,
+  "classification": "PARKED",
+  "expectedImageSemanticSha256": "d3e57fd6b1e3b7f7410c5153397698f00b7ed7a183e78e394c28adca2ac120ee",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk18101voivhepfzndjpj",
+      "sha256": "08e84733c19028c4af32410f06df7148b901b140ca3f3b32e4351b161651eed8"
+    },
+    {
+      "ownerId": "cmtem9vz6001iyr2bf2ngjgq3",
+      "sha256": "66a42553855db04db883dd3f6c9217f80816260d3d64dbee3b67436680dee072"
+    },
+    {
+      "ownerId": "cmtem9w32001jyr2bij3e7hze",
+      "sha256": "277b6316ee5f42d84f3c1fe0781c2ca8e431895a144e501ca015e20d03ebcee9"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0252-prince-george-s-county-blueprint-schools-program-phase-one/attempt-1/research-decision.json",
+      "sha256": "13631f9c6b517b15f1cf4fa5fbf156c0e7ae4ed66db417345a77536d94d609aa"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0252-prince-george-s-county-blueprint-schools-program-phase-one/attempt-1/application-research-decision.json",
+      "sha256": "3d834c3b0e6c5461d1b542113f0a1dae83aa742f77fb74ac509f92d8aa504d71"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0252-prince-george-s-county-blueprint-schools-program-phase-one/attempt-1/source-verification.json",
+      "sha256": "90682149c1c730c9d11ee85cc1c7f237a3af0c6a9b76a3f844b331f902f659a5"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-027-evidence/review.json",
+      "sha256": "c1037a21636ba4d50ead13464a51fc3620a3e4192f3a46f3f3a73cfae92ebe02"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpk18101voivhepfzndjpj",
+    "cmtem9vz6001iyr2bf2ngjgq3",
+    "cmtem9w32001jyr2bij3e7hze"
+  ],
+  "issue": "The current BBGI owner's null production vehicle does not exactly match the evaluated seed's persisted vehicle fallback. Complete-company identity proof is required before aligning the former Fengate metadata. Resolve that representation without rewriting canonical vehicle text, and preserve former Gilbane/Fengate and current BBGI owners unchanged. Seed-runner inspection proves this fallback is written to ownershipPeriod.vehicleName; this requires a separately supported null-preserving seed persistence change, not a looser metadata identity assertion.",
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0252-prince-george-s-county-blueprint-schools-program-phase-one-v1/proposal.json",
+      "sha256": "1b0571227907093c177c47c8a67fb139753f8853b24dfe042cef2fdfcbc55ec3"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0252-prince-george-s-county-blueprint-schools-program-phase-one-v1.json",
+      "sha256": "adcbd73014797f5bff274ea24a6a6df7cbbc1ee723a529c308a0f3ccda5ed510"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "98e7f515014bf5a4d9de8cdcc2ef12e8589146ad2bb1e10d886ff948c80797a8",
+      "memberIndex": 3
+    },
+    "receiptSha256": "c3e8f1c7d1756bcf4c34b9e7dccb62ecc4272e6978018c6824088788982fd4e2"
+  },
+  "sourceCaptures": []
+}

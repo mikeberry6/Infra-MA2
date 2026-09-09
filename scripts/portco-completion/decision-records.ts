@@ -5,6 +5,7 @@ import { sha256Canonical } from "../portco-reconciliation/hash";
 import { semanticCompanyImageSha256 } from "../portco-reconciliation/apply-plan";
 import { verifyProposal, verifyApproval, verifyApplyReceipt } from "../portco-reconciliation/artifacts";
 import { companyImageSchema } from "../portco-reconciliation/schema";
+import { attributionImageLineageSchema, attributionImageLineageFiles, verifyAttributionImageLineage } from "./attribution-image-lineage";
 
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
 export const decisionRecordSchema = decisionSchema.omit({ expectedCompanySha256: true }).extend({
@@ -12,6 +13,7 @@ export const decisionRecordSchema = decisionSchema.omit({ expectedCompanySha256:
   // A parked drift retains both the original applied image and an exact observed image.
   // Never accepted for a no-op, seed alignment or production mutation.
   parkedObservedImage: fileSchema.optional(),
+  attributionImageLineage: attributionImageLineageSchema.optional(),
   // Includes preserved/former owners, not just the rows being corrected.
   expectedOwners: z.array(z.strictObject({ ownerId: z.string().min(1), sha256: digest })).min(1),
   originalApply: z.strictObject({ proposal: fileSchema, approval: fileSchema,
@@ -38,7 +40,12 @@ export function validateDecisionRecords(input: { progress: unknown; records: unk
     if (!proposal.afterImage || receipt.companyId !== r.companyId || receipt.taskIndex !== r.sequence
       // The receipt retains the source task's label; the approved after-image is canonical.
       || proposal.afterImage.name !== r.name || receipt.receiptSha256 !== r.originalApply.receiptSha256) throw Error("Original applied identity/semantic image binding differs");
-    if (r.parkedObservedImage) {
+    if (r.parkedObservedImage && r.attributionImageLineage) throw Error("Ambiguous observed image binding");
+    if (r.attributionImageLineage) {
+      verifyAttributionImageLineage({ value: r.attributionImageLineage, companyId: r.companyId,
+        originalImage: proposal.afterImage, originalAppliedAt: receipt.appliedAt,
+        expectedSemanticSha256: r.expectedImageSemanticSha256, expectedOwners: r.expectedOwners, read: input.read });
+    } else if (r.parkedObservedImage) {
       if (r.classification !== "PARKED" || r.owners.length || !r.issue) throw Error("Observed drift is allowed only for a zero-mutation parked issue");
       const observed = companyImageSchema.parse(input.read(r.parkedObservedImage));
       if (observed.id !== r.companyId || observed.name !== r.name || semanticCompanyImageSha256(observed) !== r.expectedImageSemanticSha256
@@ -74,10 +81,11 @@ export function bindDecisionRecords(records: DecisionRecord[], snapshotInput: un
     if (company.image.name !== r.name || semanticCompanyImageSha256(company.image) !== r.expectedImageSemanticSha256) throw Error(`Changed canonical dependency: ${r.name}; preserve snapshot and review`);
     const observed = company.owners.map(o => ({ ownerId: o.id, sha256: sha256Canonical(o) })).sort((a,b) => a.ownerId.localeCompare(b.ownerId));
     if (!same(observed, [...r.expectedOwners].sort((a,b) => a.ownerId.localeCompare(b.ownerId)))) throw Error(`Changed complete owner dependency: ${r.name}`);
-    const { expectedImageSemanticSha256: _image, expectedOwners: _owners, originalApply, sourceCaptures, parkedObservedImage, ...decision } = r;
+    const { expectedImageSemanticSha256: _image, expectedOwners: _owners, originalApply, sourceCaptures, parkedObservedImage, attributionImageLineage, ...decision } = r;
     return decisionSchema.parse({ ...decision, expectedCompanySha256: sha256Canonical(company),
       evidence: [...decision.evidence, originalApply.proposal, originalApply.approval,
         { path: originalApply.receipt.path, sha256: originalApply.receipt.sha256 }, ...sourceCaptures,
-        ...(parkedObservedImage ? [parkedObservedImage] : [])] });
+        ...(parkedObservedImage ? [parkedObservedImage] : []),
+        ...(attributionImageLineage ? attributionImageLineageFiles(attributionImageLineage) : [])] });
   });
 }

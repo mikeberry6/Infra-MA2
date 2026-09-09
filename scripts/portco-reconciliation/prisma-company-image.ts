@@ -1,6 +1,7 @@
 import { snapshotCompanySha256 } from "./artifacts";
 import { companyImageSchema, type CompanyImage, type SnapshotCompany } from "./schema";
 import { seedKey } from "./snapshot";
+import { ownershipManagerName } from "./ownership-manager";
 
 export const PRISMA_COMPANY_IMAGE_INCLUDE = {
   _count: {
@@ -199,8 +200,7 @@ export function prismaCompanyRowToImage(row: RawPrismaCompanyImageRow): CompanyI
     headquarters: row.headquarters,
     lastVerifiedAt: row.lastVerifiedAt === null ? null : iso(row.lastVerifiedAt),
     ownershipPeriods: row.ownershipPeriods.map((ownership) => {
-      const managerName = ownership.fund?.manager.name ?? ownership.organization?.name;
-      if (!managerName) throw new Error(`Ownership period ${ownership.id} lacks a resolvable manager`);
+      const managerName = ownershipManagerName(ownership.fund?.manager.name, ownership.organization?.name, ownership.id);
       return {
         id: ownership.id,
         managerName,

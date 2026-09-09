@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_DECISION_REVIEW",
+  "reviewedAt": "2026-09-08T23:58:02.667Z",
+  "phase": "PARKED_REVISIT",
+  "selected": [
+    65,
+    139,
+    161,
+    198,
+    252,
+    254,
+    257
+  ],
+  "databaseReads": 0,
+  "databaseWrites": 0,
+  "priorSnapshot": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-026/completion-after.json",
+    "sha256": "8e3337f47f50cb129b2854e92e2f46b1acb495701506c5d3fac130132ade78c6"
+  },
+  "lineage": {
+    "snapshot": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-026/completion-after.json",
+      "sha256": "8e3337f47f50cb129b2854e92e2f46b1acb495701506c5d3fac130132ade78c6"
+    },
+    "chains": [
+      {
+        "manifest": {
+          "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+          "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+        },
+        "approval": {
+          "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+          "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+        },
+        "receipt": {
+          "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+          "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+        }
+      }
+    ]
+  },
+  "findings": [
+    {
+      "sequence": 65,
+      "result": "SUPPORTED_ATTRIBUTION_CORRECTION",
+      "restoredImageSha256": "c1d9f27529465731bea1692a1d013334612c8bd62e4d6328f6fcfa6c2ee0b45e",
+      "conclusion": "Exact original canonical semantics are restored by reversing the two immutable attribution rows, including the actual loader fund-manager/organization fallback. Every existing owner has an exact evaluated seed counterpart. The sponsor primary identifies former Fund V and the current continuation SPV; the lender primary identifies the managing side as Brookfield Renewable Partners, a listed platform, not Brookfield BII. Disclose and link the existing former Fund V; unlink the unsupported BII estimate and classify that existing Brookfield owner DIRECT_PROGRAM. Preserve all ownership identities, stakes, dates, organization IDs/names, company text and the current ArcLight SPV state. A changed derived manager label after unlink is not an organization rename."
+    },
+    {
+      "sequence": 139,
+      "result": "PARKED",
+      "conclusion": "Correct attempt-1 source-verification was inspected. It lists BRITE secondary reporting and manager/successor/SEC sources, not direct captured Climate Infrastructure attribution evidence. No substantive new primary proof of the exact historical program was found; the prior direct announcement is HTTP404. Preserve the already-applied attribution transaction."
+    },
+    {
+      "sequence": 161,
+      "result": "PARKED",
+      "conclusion": "The seed runner uses its non-null vehicle fallback in the actual ownershipPeriod.create data, not only UI display. A null production vehicle therefore remains a real persistence mismatch; do not relax exact identity proof or rewrite production merely for parity."
+    },
+    {
+      "sequence": 198,
+      "result": "PARKED",
+      "conclusion": "The seed runner uses its non-null vehicle fallback in the actual ownershipPeriod.create data, not only UI display. A null production vehicle therefore remains a real persistence mismatch; do not relax exact identity proof or rewrite production merely for parity."
+    },
+    {
+      "sequence": 252,
+      "result": "PARKED",
+      "conclusion": "The seed runner uses its non-null vehicle fallback in the actual ownershipPeriod.create data, not only UI display. A null production vehicle therefore remains a real persistence mismatch; do not relax exact identity proof or rewrite production merely for parity."
+    },
+    {
+      "sequence": 254,
+      "result": "PARKED",
+      "conclusion": "The accepted research distinguishes Generate's historical project-specific WEPA participation from Pennybacker's corporate acquisition. The existing former Generate company-owner representation and generic Joint SPV attribution require structural/vehicle adjudication outside this metadata-only batch. The retrieved Mintz page describes an unnamed financing partner and does not establish an exact Generate vehicle; the company release names only Pennybacker-affiliated funds, not an exact fund. Do not infer owner structure or promote generic descriptions to disclosed fund identities."
+    },
+    {
+      "sequence": 257,
+      "result": "PARKED",
+      "conclusion": "The accepted attempt-2 research identifies historical HOOPP preferred equity and a separate exact HESTA exception, while the current applied company image contains only Generate's former owner. Resolving the missing owner/vehicle representation requires supported structural work, not an attribution-only patch. Preserve all prior transactions, the Realized platform, cancelled equity and separate successor boundaries; do not infer HESTA ownership."
+    }
+  ],
+  "checks": {
+    "completeSeedOwners": 3,
+    "receiptProjection": true,
+    "sourceByteSecretFindings": 0,
+    "fullSeedExecution": false,
+    "repeatedChatGPT": false
+  },
+  "supporting": [
+    {
+      "path": "scripts/portco-reconciliation/ownership-manager.ts",
+      "sha256": "f84e01d2cb48242c557c26f77d2dfa9e75d42fa261e871ae0c9fb6728703eb40"
+    },
+    {
+      "path": "scripts/portco-reconciliation/prisma-company-image.ts",
+      "sha256": "06bf9e99bcd06de2f566fec580d279992b66abeac498f1be754bd97dfb55e3a5"
+    },
+    {
+      "path": "prisma/seed-runner.ts",
+      "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0139-electrada/attempt-1/source-verification.json",
+      "sha256": "7af00eb76cb57ee4bf794c7a63d412398de87b5c03a01a888e2795746c1d6f7c"
+    }
+  ]
+}

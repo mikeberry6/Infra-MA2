@@ -1,0 +1,70 @@
+{
+  "companyId": "cmrxpj8vz00n2ivhe9ik74yeq",
+  "name": "Electrada",
+  "sequence": 139,
+  "classification": "PARKED",
+  "expectedImageSemanticSha256": "a06b46fddc65ddabde3c6421eb4d518050bc51f78dd99e5c4d7faf8bdbd9f8ea",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpju4l01kiivheyfgagvuj",
+      "sha256": "47409282802766f10670af93dd5a6abeaccc4c56feceaed3a1264c0ae64fa7d1"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0139-electrada/attempt-1/research-decision.json",
+      "sha256": "b8c6baeb4f889790e0d1c55025156fffb85ed038dd7194aef693eea79d838248"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0139-electrada/attempt-1/source-verification.json",
+      "sha256": "7af00eb76cb57ee4bf794c7a63d412398de87b5c03a01a888e2795746c1d6f7c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-027-evidence/review.json",
+      "sha256": "c1037a21636ba4d50ead13464a51fc3620a3e4192f3a46f3f3a73cfae92ebe02"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpju4l01kiivheyfgagvuj"
+  ],
+  "issue": "Missing reusable primary evidence bytes for the historical BlackRock Climate Infrastructure attribution: the original Electrada announcement now returns HTTP404. BRITE's reachable article is secondary reporting and does not independently establish the exact Climate Infrastructure program. Recover direct evidence before adding the historical seed overlay; never repeat the existing successful attribution repair.",
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0139-electrada-v3/proposal.json",
+      "sha256": "2d9427060a094eee7b000daedaf033ccef9c368b71df2a2cc14ec94bacb53095"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0139-electrada-v3.json",
+      "sha256": "9f4a5d0cc031ee7327a4da05820dfe1993f849c47c2f369d4e2e0618612ab7fd"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "6f7afe4b7b39808b0d75156a0224cebbd64e5518d1a891116cad44850cf2d1e4",
+      "memberIndex": 3
+    },
+    "receiptSha256": "a406eedf3e9d768d443d011b63686e9187bb5a81b27d54af109602808cc3d5bc"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/electrada-investment.capture.json",
+      "sha256": "68834295885e7dff6d2e6f51ab2b1db62d7102963a1f3bfa5b2214f8dedecc6d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/electrada-brite.capture.json",
+      "sha256": "8838fd867889cbfa6e8c0072f384a15fd499cfa100f012e137442facd0e1d735"
+    }
+  ]
+}
