@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_EVALUATED_SEED_IDENTITY",
+  "dependencies": [
+    {
+      "path": "prisma/seed-data/companies.ts",
+      "sha256": "29acd97d7ccaa9e04e2c756f267e586b89d8af59687f852e532a077a14defc20"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.ts",
+      "sha256": "be5c5e50eef7739b1275b7e497646ae70868dd0688ee2a5faee94ffb8534b51f"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+      "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+    },
+    {
+      "path": "prisma/seed-data/portco-types.ts",
+      "sha256": "4ea749aecbed0d7ca340fcd16b5777b645526f0c354e1ea563a148f38be39507"
+    },
+    {
+      "path": "prisma/entity-resolution.ts",
+      "sha256": "6162471343aa04a4cb2972a4f29d8c26e0cc083acca6f5e3c5b5ae277055941a"
+    },
+    {
+      "path": "prisma/seed-runner.ts",
+      "sha256": "1ef38fa19cde4a97b0f7fa6eb5d2c385be176ee491e857dc5a86e58ab6c31e14"
+    }
+  ],
+  "evaluatedCompaniesSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+  "companies": [
+    {
+      "name": "Bayonne Energy Center",
+      "country": "United States",
+      "companySha256": "b23adff2df911775938069d91ecd8e92c59fe00cbe97bf71a69eee1de7f91868",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Morgan Stanley Infrastructure Partners",
+            "ownershipVehicle": "North Haven Infrastructure Partners II (NHIP II)",
+            "fundName": "North Haven Infrastructure Partners II (NHIP II)",
+            "vehicleName": "NHIP II Bayonne Holdings LLC",
+            "investmentYear": 2018,
+            "exitYear": 2026,
+            "stake": "100% collectively",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Morgan Stanley Infrastructure Partners",
+          "vehicleName": "NHIP II Bayonne Holdings LLC",
+          "fundLookupName": "North Haven Infrastructure Partners II (NHIP II)",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Elliott Investment Management",
+            "ownershipVehicle": "Tunnel Energy Investor LLC (formerly Jupiter Energy Investor LLC)",
+            "vehicleName": "Tunnel Energy Investor LLC (formerly Jupiter Energy Investor LLC)",
+            "investmentYear": 2026,
+            "stake": "100% indirect",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Elliott Investment Management",
+          "vehicleName": "Tunnel Energy Investor LLC (formerly Jupiter Energy Investor LLC)",
+          "fundLookupName": "Tunnel Energy Investor LLC (formerly Jupiter Energy Investor LLC)",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    },
+    {
+      "name": "KAPS",
+      "country": "Canada",
+      "companySha256": "d36b49c3da081796291ac16b4d370fb0ab271dcd8a60df717af011a85380c9f3",
+      "owners": [
+        {
+          "raw": {
+            "investmentFirm": "Stonepeak",
+            "ownershipVehicle": "Kentucky Middle Holdings, LP / Kentucky MidCo, Ltd.",
+            "vehicleName": "Kentucky Middle Holdings, LP / Kentucky MidCo, Ltd.",
+            "investmentYear": 2023,
+            "exitYear": 2026,
+            "stake": "50%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          "organizationName": "Stonepeak",
+          "vehicleName": "Kentucky Middle Holdings, LP / Kentucky MidCo, Ltd.",
+          "fundLookupName": "Kentucky Middle Holdings, LP / Kentucky MidCo, Ltd.",
+          "transactionState": "REALIZED"
+        },
+        {
+          "raw": {
+            "investmentFirm": "Keyera Corp.",
+            "ownershipVehicle": "Keyera Corp.",
+            "investmentYear": 2019,
+            "stake": "100%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          "organizationName": "Keyera Corp.",
+          "vehicleName": "Keyera Corp.",
+          "fundLookupName": "Keyera Corp.",
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ]
+    }
+  ],
+  "proofSha256": "c37b65f527ed213e0f3ed7d0962da867c37411f697f8fe7f1f29d220fb641e12"
+}

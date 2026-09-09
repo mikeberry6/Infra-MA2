@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_EVIDENCE",
+  "batchId": "portco-completion-027",
+  "batchSha256": "7a14a63aaeb6a425ad2e13cac4835b02afff657eb320bd671614a1ad95307497",
+  "verifiedAt": "2026-09-09T00:28:56.132Z",
+  "release": {
+    "mergeSha": "b0eea0fec02c7503e24a39deb9280b0789dd6762",
+    "canonicalSha": "b0eea0fec02c7503e24a39deb9280b0789dd6762",
+    "headSha": "b0eea0fec02c7503e24a39deb9280b0789dd6762",
+    "gitRef": "main",
+    "gitProvider": "github",
+    "canonicalUrl": "https://infra-ma-2.vercel.app",
+    "ready": true,
+    "requiredChecksPassed": true,
+    "evidence": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/canonical-release.json",
+      "sha256": "cd76b3612b488a6885fd22f8a20828a76d34585d8c0c7a78b47bc87e2270def7"
+    }
+  },
+  "receipt": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/receipt-verification.json",
+    "sha256": "52c4ee1c5786fdee08416ac2d57838ecb2321388ab1f16a7282c2fd0447da8bc"
+  },
+  "databaseApplyRequired": true,
+  "publishedSeedProof": {
+    "releaseSha": "b0eea0fec02c7503e24a39deb9280b0789dd6762",
+    "path": "prisma/seed-data/ownership-attributions.manifest.json",
+    "byteSha256": "c65156c2da45d37a997054e97ec36c85a2c456148c49f9215940190548be8bcc",
+    "manifestSha256": "7ebf41957a3c115b26c840ec94e5bee46211fa5140f3b093f194c793c4041d98",
+    "exact": true
+  },
+  "snapshotSha256": "fe33bb69b7f06e336cf3e67670e2459105c7f58fad1752fe955a472121f61009",
+  "seedManifestSha256": "7ebf41957a3c115b26c840ec94e5bee46211fa5140f3b093f194c793c4041d98",
+  "proof": [
+    {
+      "companyId": "cmrxpj67x00izivheqinytkio",
+      "checks": {
+        "api": true,
+        "redirects": true,
+        "ownership": true,
+        "citations": true,
+        "renderedCard": true,
+        "afterImages": true,
+        "seedAlignment": true
+      },
+      "evidence": [
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/completion-after.json",
+          "sha256": "feae38ccc463591a102c99940d038c5d22bc220a026180480314b102049d00be"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/live-verification.json",
+          "sha256": "322189a93d36c7d3c7a2afec426550bde344dc3651f54319b9057258ecda2a58"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/rendered-0065.png",
+          "sha256": "7a424f273a0e931513f8ed717f054bfcb5536b9b8d4df8dc49c6fdd860e48ac6"
+        }
+      ]
+    }
+  ],
+  "renderedReview": "Individually inspected canonical rendered-0065.png with prior owners expanded. Catalyst shows current ArcLight Renewable Infrastructure Fund SM SPV, L.P. (2021-present, 25% economic/non-managing), Brookfield Asset Management direct/program investment through the unchanged Brookfield Renewable Partners affiliates vehicle (75% economic/managing), and former ArcLight Energy Partners Fund V, L.P. (2011-2021, 25% at transfer, earlier stakes undisclosed). No Brookfield BII, Estimated or Low confidence label remains. Company overview, milestones, citations, ownership layout and preserved exact exceptions remain visible. Complete automated API and owner comparisons passed separately.",
+  "renderedReviewFile": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/rendered-review.json",
+    "sha256": "d992c62cda8d856998a197b486e2168fe290e41409e28fd31637442093bf9a2f"
+  },
+  "parked": [
+    {
+      "companyId": "cmrxpj8vz00n2ivhe9ik74yeq",
+      "issue": "Missing reusable primary evidence bytes for the historical BlackRock Climate Infrastructure attribution: the original Electrada announcement now returns HTTP404. BRITE's reachable article is secondary reporting and does not independently establish the exact Climate Infrastructure program. Recover direct evidence before adding the historical seed overlay; never repeat the existing successful attribution repair."
+    },
+    {
+      "companyId": "cmrxpj9mq00o7ivheg939dp9z",
+      "issue": "The public-market owner's null production vehicle does not exactly match the evaluated seed's persisted vehicle fallback. The strict historical-overlay identity gate therefore cannot attest the complete company. Resolve this representation through an explicit seed projection proof, preserving literal null production vehicle, and recover required historical filing bytes before alignment. Do not replay the completed Blackstone attribution repair. Seed-runner inspection proves this fallback is written to ownershipPeriod.vehicleName; this requires a separately supported null-preserving seed persistence change, not a looser metadata identity assertion."
+    },
+    {
+      "companyId": "cmrxpjevf00wbivheu50etwdq",
+      "issue": "The current John Laing owner's null production vehicle does not exactly match the evaluated seed's persisted vehicle fallback, blocking complete-company historical-overlay identity proof. Preserve the completed John Laing repair and former DIF Infrastructure V owner; resolve the seed representation explicitly before adding the former-owner overlay. Seed-runner inspection proves this fallback is written to ownershipPeriod.vehicleName; this requires a separately supported null-preserving seed persistence change, not a looser metadata identity assertion."
+    },
+    {
+      "companyId": "cmrxpjfj100xeivhebd0fzcqi",
+      "issue": "The current BBGI owner's null production vehicle does not exactly match the evaluated seed's persisted vehicle fallback. Complete-company identity proof is required before aligning the former Fengate metadata. Resolve that representation without rewriting canonical vehicle text, and preserve former Gilbane/Fengate and current BBGI owners unchanged. Seed-runner inspection proves this fallback is written to ownershipPeriod.vehicleName; this requires a separately supported null-preserving seed persistence change, not a looser metadata identity assertion."
+    },
+    {
+      "companyId": "cmrxpjfxp00xxivhe1mkhiraq",
+      "issue": "The accepted research distinguishes Generate's historical project-specific WEPA participation from Pennybacker's corporate acquisition. The existing former Generate company-owner representation and generic Joint SPV attribution require structural/vehicle adjudication outside this metadata-only batch. The retrieved Mintz page describes an unnamed financing partner and does not establish an exact Generate vehicle; the company release names only Pennybacker-affiliated funds, not an exact fund. Do not infer owner structure or promote generic descriptions to disclosed fund identities."
+    },
+    {
+      "companyId": "cmrxpjg4f00y5ivhep8jj6phn",
+      "issue": "The accepted attempt-2 research identifies historical HOOPP preferred equity and a separate exact HESTA exception, while the current applied company image contains only Generate's former owner. Resolving the missing owner/vehicle representation requires supported structural work, not an attribution-only patch. Preserve all prior transactions, the Realized platform, cancelled equity and separate successor boundaries; do not infer HESTA ownership."
+    }
+  ]
+}

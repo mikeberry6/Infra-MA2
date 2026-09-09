@@ -1,0 +1,15 @@
+{
+  "batchId": "portco-completion-027",
+  "releaseSha": "b0eea0fec02c7503e24a39deb9280b0789dd6762",
+  "state": "DISPATCHED",
+  "priorRejectedRunId": 34294812348,
+  "retryManifestPath": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-027/apply-manifest.json",
+  "retryReason": "First dispatch supplied manifest.json instead of apply-manifest.json. Run failed in input-shape validation; checkout, dry run, database apply and all public verification steps were skipped. No transaction occurred. Evidence: dispatch-preflight-failure.json. Retry only the corrected input under the unchanged release and approval hashes.",
+  "workflowRunId": 34294944355,
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/34294944355",
+  "manifestSha256": "55e6d8a435062313ed5d529fbb4263add7d05562618d690b839e4d9de1498682",
+  "approvalSha256": "21ed2eec6fc7adc264ced38784cd94b1f5e4d7c05b642872d9ebcba39cba11b8",
+  "pullRequestNumber": 986,
+  "intentRecordedAt": "2026-09-09T00:22:49.789Z",
+  "authorization": "Standing user-authorized ten-name completion policy. Exact protected-main release, passing main CI and canonical Git-integrated deployment verified. Dispatch once only after persisting APPLYING; recover matching run if response is uncertain."
+}

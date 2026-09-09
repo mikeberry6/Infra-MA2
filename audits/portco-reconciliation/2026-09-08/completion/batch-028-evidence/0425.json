@@ -1,0 +1,74 @@
+{
+  "companyId": "cmrxpjnk0019uivhefy3ycv3y",
+  "name": "KAPS",
+  "sequence": 425,
+  "classification": "PARKED",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/research-decision.json",
+      "sha256": "d01f85eb960f493b8d2faaed66b37e775d275e45036820e683ff1c3ad61d2a49"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/source-verification.json",
+      "sha256": "33808ded615ebc3531a0bc7156fdcc8d56efd5907e06bd18db9a180b9278acd7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "ee7202f6cce9514a8ed2023f75db2e4a2b38519cc0f58a04ad2a3902131a129d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/chatgpt-response-validation.json",
+      "sha256": "2e656c0cf588d4fa4d3d84df4b52d67c821fd61b8b8f3a3541d712c81403e3b9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/chatgpt-attestation.json",
+      "sha256": "e024ab66724c121a4550a6f5dc651f7433e72867ae358d4fbe3425820292ced4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/review.json",
+      "sha256": "f67a812753fcc106a0d92c36b00fcd03d4de43240e906b65e513eaee4a6dc322"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/seed-identity-diagnostic.json",
+      "sha256": "2dd99db7775a1dfa0d5b2644b7d2bb467616f00c7034c665530dde9fb07f01b8"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpka4r029hivhet9r7jm95",
+    "cmtjlfkeg0004zl2b0wsxi9r6"
+  ],
+  "issue": "Production Keyera ownership vehicle is null, while the evaluated seed resolver persists Keyera Corp. from ownershipVehicle. This is a persistence mismatch, not equivalent displayed wording. Require a separately supported null-preserving seed persistence correction before historical metadata alignment; do not weaken the full-company identity gate or invent the exact Keyera title affiliate. Preserve the former Stonepeak fund-unavailable exception and all completed ownership transactions.",
+  "expectedImageSemanticSha256": "f9574d792218e1dbec3464e554cf7a08df53136ccf42dd08a50b6a658f67f3da",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpka4r029hivhet9r7jm95",
+      "sha256": "35524c65b244918e24c7dc013a748a3c3c8f93ee186a4f55f8827ee3e0b8142c"
+    },
+    {
+      "ownerId": "cmtjlfkeg0004zl2b0wsxi9r6",
+      "sha256": "3a9cb6e3468c4f59265fee03f92855838530d01af55fcc984c67e10b5566b418"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/proposal-v1.json",
+      "sha256": "45aadd268ea8c7047750429a475a31100b8eed45e263732c4ad0765716f84239"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0425-kaps-v1.json",
+      "sha256": "7e7d18e805679a6538cde242c666a5acbfaca31b07918f3ff38b40814986521c"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0424-0428-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "bcc229b2c8e1f018c7cd0e3a48f38cbfb38ad1791f6a6fd3501c2a001f2aee9c",
+      "memberIndex": 1
+    },
+    "receiptSha256": "7eac948959e395572412567cb30046c78361a18ce17cee4f083874d77cd93444"
+  },
+  "sourceCaptures": []
+}

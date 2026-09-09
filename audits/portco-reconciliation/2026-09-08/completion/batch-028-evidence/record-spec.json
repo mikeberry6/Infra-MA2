@@ -1,0 +1,44 @@
+[
+  {
+    "sequence": 344,
+    "output": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/0344.json",
+    "classification": "ATTRIBUTION_CORRECTION",
+    "extraEvidence": ["audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/review.json"],
+    "owners": [
+      {
+        "ownerId": "cmrxpk7rg025sivhe9dxk8h02",
+        "seedRecordId": "OFA-HIST-4761B53F9DECC2385F906108",
+        "set": {
+          "linkedFundName": null,
+          "fundAttribution": "DISCLOSED",
+          "attributedFundName": "North Haven Infrastructure Partners II US Investments L.P. and co-investment entities",
+          "attributionConfidence": null,
+          "attributionRationale": "The filed 2026 NYPSC Bayonne petition, printed pages 6-7, identifies the seller under North Haven Infrastructure Partners II US Investments L.P. and co-investment entities, with the investment partnership approximately 60% held by II-AIV I and 40% by II. Replace the single-fund estimate with the disclosed collective attribution and no exclusive fund link; preserve NHIP II Bayonne Holdings LLC, the collective 100% stake and 2018-2026 ownership period."
+        },
+        "reason": "Direct filed ownership-chain disclosure replaces an unsupported single-fund inference without changing the existing owner or allocating collective economics.",
+        "sources": [{"path": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/sources/bayonne-2026-petition.pdf", "primary": true}]
+      },
+      {
+        "ownerId": "cmtiv3g8y0004272bpabv0bxy",
+        "seedRecordId": "OFA-131B94987056",
+        "set": {
+          "linkedFundName": null,
+          "fundAttribution": "DISCLOSED",
+          "attributedFundName": "Elliott Associates, L.P. and Elliott International, L.P.",
+          "attributionConfidence": null,
+          "attributionRationale": "The filed 2026 NYPSC Bayonne petition, printed page 8, identifies Elliott Associates, L.P. and Elliott International, L.P. as the buyer parent's 32% and 68% owners. Disclose both funds rather than claiming no separate Elliott fund is identified. Preserve the existing Tunnel Energy Investor vehicle, collective 100% indirect stake and separately evidenced July 2026 closing; do not split periods or create fund links."
+        },
+        "reason": "The exact cited regulator petition names the funds, contradicting the existing direct/program rationale that no separate fund was identified.",
+        "sources": [{"path": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/sources/bayonne-2026-petition.pdf", "primary": true}]
+      }
+    ]
+  },
+  {
+    "sequence": 425,
+    "output": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/0425.json",
+    "classification": "PARKED",
+    "owners": [],
+    "issue": "Production Keyera ownership vehicle is null, while the evaluated seed resolver persists Keyera Corp. from ownershipVehicle. This is a persistence mismatch, not equivalent displayed wording. Require a separately supported null-preserving seed persistence correction before historical metadata alignment; do not weaken the full-company identity gate or invent the exact Keyera title affiliate. Preserve the former Stonepeak fund-unavailable exception and all completed ownership transactions.",
+    "extraEvidence": ["audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/review.json", "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/seed-identity-diagnostic.json"]
+  }
+]
