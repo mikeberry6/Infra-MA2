@@ -2759,12 +2759,9 @@
           "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
         }
       ],
-      "status": "VERIFIED",
+      "status": "REMAINING",
       "issue": null,
-      "completion": {
-        "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/completion-evidence.json",
-        "sha256": "f3453f0a0a9c45fb7ca3ff33a64ae05e6006b96f1112d98c4b99d819a5cf0149"
-      }
+      "completion": null
     },
     {
       "companyId": "cmrxpjnk0019uivhefy3ycv3y",
@@ -2776,8 +2773,8 @@
           "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
         }
       ],
-      "status": "PARKED",
-      "issue": "Production Keyera ownership vehicle is null, while the evaluated seed resolver persists Keyera Corp. from ownershipVehicle. This is a persistence mismatch, not equivalent displayed wording. Require a separately supported null-preserving seed persistence correction before historical metadata alignment; do not weaken the full-company identity gate or invent the exact Keyera title affiliate. Preserve the former Stonepeak fund-unavailable exception and all completed ownership transactions.",
+      "status": "REMAINING",
+      "issue": null,
       "completion": null
     }
   ],
@@ -2939,7 +2936,13 @@
       "extensionSha256": "52861224cacf8299de5180613ae0ef7abc182fcfbd221fbada24ef24241fb100"
     }
   ],
-  "active": null,
+  "active": {
+    "batchId": "portco-completion-028",
+    "batchSha256": "a3d3e58d75ffda4c0449baaa0dc91996ba0c7e836eb6382d2ab5bf206064797b",
+    "state": "RELEASED",
+    "releaseSha": "9dcdd0274c9214a407b9a9d3daa66e60599346c8",
+    "failure": null
+  },
   "completedBatchIds": [
     "portco-completion-001",
     "portco-completion-002",
@@ -2967,8 +2970,7 @@
     "portco-completion-024",
     "portco-completion-025",
     "portco-completion-026",
-    "portco-completion-027",
-    "portco-completion-028"
+    "portco-completion-027"
   ],
   "consumedReceiptHashes": [
     "50061d92ba9f240bb192ca0e4b049c226824bff8702eee6b7d7872e272853c3f",
@@ -2995,8 +2997,7 @@
     "49a2446abfdb85d9bff9cc294a634f97573f624c91356a6a4cfc5edb296d5290",
     "0a75fd3843d4c75f56b763736bed0a5df22c289249d3fb2806b48acb76bb8788",
     "e8180ce7ce553873736158e67fb5bd5a213345c956a9ab87a7e9166d258eb712",
-    "a271ccc414d3a17639e660f61114eac3b7488126b61235d9c0a4386c494c86a8",
-    "83435a6cf1beab37e78eba44ae84691345087c2af3569d7aa4fd86f4271a7344"
+    "a271ccc414d3a17639e660f61114eac3b7488126b61235d9c0a4386c494c86a8"
   ],
-  "progressSha256": "9fcf24cac1ebbdb1924ffc6107f98de554fba77937cbf21931359a344cffed63"
+  "progressSha256": "063d2d380bc388548492c3fec69f9e7d8e9364df753aaea02516379033d6da11"
 }

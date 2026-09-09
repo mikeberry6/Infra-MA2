@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_GLOBAL_TERMINAL_SCOPE_BINDINGS",
+  "verifiedAt": "2026-09-09T00:56:47.746Z",
+  "databaseReads": 0,
+  "databaseWrites": 0,
+  "sourceTaskChanges": 0,
+  "registerChanges": 0,
+  "counts": {
+    "companies": 63,
+    "evidencedExceptions": 4,
+    "unresolvedScope": 59
+  },
+  "inputs": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/proposal-index.json",
+      "sha256": "8aaee9dbeb89bd2fedb47f3a80e1481d8a7050a06102b1c6002ee74e8f4c4e92"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-triage.json",
+      "sha256": "d8d2b118ac2db6a044690b92fba39c2f91d338e3040c948b98598a6f893dc9d2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/terminal-decision-deferred-v1.json",
+      "sha256": "a2b2987b084389731d66934c4b2ac3de825b1dfe1d3f4a8b130c4c08d13a7d4c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/locked-deferred-v2-task-snapshot.json",
+      "sha256": "68673e1d397d9f3359618d3633a9d15de2fcdf9007c9e822a78f1e263799689a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/locked-deferred-v2-context.json",
+      "sha256": "9f20b0cd90be474e607d2929643492d6769bedbe7b4dd9c33bba06bace981c80"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/application-research-decision.json",
+      "sha256": "9ef30e9fc9b1282366dbc03c612421613d44fc24fbde08b43e693330b2577f89"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/source-verification.json",
+      "sha256": "7dd93ee51b99678e33f340dfad9c33f97ccb5ea42397e838dfed39475005e9a2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/terminal-decision-deferred-v1.json",
+      "sha256": "15986e6dbfe551f79c71cf6d3569024204c36aca710e04a0fd245571a06336c8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/locked-deferred-v1-task-snapshot.json",
+      "sha256": "de9e9092f8a18f63a759802c0414d1d7a13594481b0690cc47859bd63ed8ee5d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/locked-deferred-v1-context.json",
+      "sha256": "09166b96af410e3019517e3857f2b91e5706f87215f705c9a751a867e88f6110"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/application-research-decision.json",
+      "sha256": "9b8f42f27dea43a2585a82c2410c82a39fb02946ca6fbd20bc8c924ceea33557"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/source-verification.json",
+      "sha256": "1c0b2cbc7ce14dab21d23014088b57ba3237d8606b81fd55bb58f329bf024784"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/terminal-decision-deferred-v1.json",
+      "sha256": "48a73f09cdc059efd918982654a747e087ba801b8aa2a09dcc057a0e1720ab9e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/locked-deferred-v1-task-snapshot.json",
+      "sha256": "f76b12f75d14c75b37213f814215fbe950c41d6d2880d989f28d2583a7fc73fe"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/locked-deferred-v1-context.json",
+      "sha256": "c2020b92424b3c55ecfb107ef4cf428054518e6f50ab32d4686b188cacf507f6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/application-research-decision.json",
+      "sha256": "7376afdcc18ff039767ba9719277caa882c5e260153114cedea03c1a695c4df6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/source-verification.json",
+      "sha256": "7611148ee87b00ee441ec93f6285deca218b6295bbbdfeca6ac1511fcfaa3288"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/terminal-decision-deferred-v1.json",
+      "sha256": "b5803c92a21c3c809b73dbc62b2e19b210145396aad07d3ef8a27acebcc9cfaa"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/locked-deferred-v1-task-snapshot.json",
+      "sha256": "8f867272fb862043514aa4257a0711df7f646c08c8e9ab5004dcae11da9cd45e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/locked-deferred-v1-context.json",
+      "sha256": "acb53d753e86035b16f77c9bfd02cc234971a688f218d889cc93d5703deaaf80"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/application-research-decision-v3.json",
+      "sha256": "875f4b51396d6b57f7ff9daaf694d3b5ad36c7c81fd59e555352a76c2a472174"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/source-verification-v2.json",
+      "sha256": "1aa9fc805fc07941838dce551d2e9af0c235b799ffa65d17fb59bfaf7b64876a"
+    }
+  ],
+  "companies": [
+    {
+      "companyId": "cmrxpjbeg00r0ivhexajc8rv7",
+      "name": "A25 Concession",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbf200r1ivhenqhkgvg1",
+      "name": "AES Indiana",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbfm00r2ivhedejq6vo0",
+      "name": "AES Ohio",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpj4to00gtivhe5o1os28c",
+      "name": "Alberta Schools Alternative Procurement I",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjiko011xivhebv11f7bv",
+      "name": "Aleatica, S.A.B. de C.V.",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpj47700g6ivheh80125ia",
+      "name": "Arevon Energy, Inc.",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjc1900rxivhex2yldcu1",
+      "name": "Buffalo Plains Wind Farm",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjdra00umivhedgzd66w4",
+      "name": "Captis Energy",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjf5c00wtivhebt9v2dff",
+      "name": "Central Utility Block (Heartland Petrochemical Complex)",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpj47q00g7ivhe2d22x3iq",
+      "name": "Chicago Parking Meters, LLC",
+      "classification": "EXISTING_EXACT_DEFERRED_EXCEPTION",
+      "taskId": "ledger:0345:chicago-parking-meters:1a7d998e",
+      "sequence": 345,
+      "decisionSha256": "c7851206d5922964d4aa8b9ac526f98040eb6672be7edc57eaa817d894791381",
+      "targetResolution": {
+        "method": "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY",
+        "targetCompanyId": "cmrxpj47q00g7ivhe2d22x3iq",
+        "linkedQueueTaskId": null
+      },
+      "contextSha256": "11a894637941c7d57c98a3496de129c4c4677ac80dd4779e14724f6241517e8f",
+      "sourceQueueEntrySha256": "71143892563b0ca0149a48296fcff942038aa346eef0b0eb9034e9ee07140d55",
+      "targetCompanyImageSha256": "ef5124e3d038ffab16dcbbc4169b30895f486489209640eac99b2dd02513570c",
+      "exception": "Direct evidence resolves Chicago Parking Meters, Chicago Parking Meters, LLC and CPM to the existing production concessionaire and ParkChicago to its brand. The filed 2026 proposal identifies a contemplated Stonepeak acquisition and a proposal-date holder snapshot, but no direct cutoff source establishes an executed purchase agreement, final City action, executed consent, legal closing, current complete member register, retained or rolled interests, or Stonepeak as current owner. Preserve the approved MSIP, Allianz and ADIA display without treating it as new legal ownership evidence and make no database, seed or display change.",
+      "decidedAt": "2026-09-05T05:06:04.000Z",
+      "policy": "Identity is evidence-bound; ownership gap remains unresolved. No mutation, task reopening, new research or verified-name increment."
+    },
+    {
+      "companyId": "cmrxpjd9j00tuivhettvdurgk",
+      "name": "ConGlobal",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjdrr00univhe6utkjs4n",
+      "name": "Conterra Networks",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjdsd00uoivhe5wiqp848",
+      "name": "Desert Sky Energy",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbgo00r4ivhexcz53r7l",
+      "name": "DP World Canada",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjf8l00wvivhe9di0ym1s",
+      "name": "Edmonton Valley Line LRT Southeast",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbh700r5ivhetsvem8vl",
+      "name": "Enel Green Power Mexico",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjda000tvivhek380dt35",
+      "name": "Expedient",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjdak00twivheazjbfqum",
+      "name": "Extenet (formerly ExteNet Systems)",
+      "classification": "EXISTING_EXACT_DEFERRED_EXCEPTION",
+      "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "sequence": 213,
+      "decisionSha256": "9d2ee05085dbcdeab654e7f313d80b8479d194a5cb604eb5e167e86cfa5ffb21",
+      "targetResolution": {
+        "method": "IMMUTABLE_QUEUE_TARGET",
+        "targetCompanyId": "cmrxpjdak00twivheazjbfqum",
+        "linkedQueueTaskId": null
+      },
+      "contextSha256": "74e878cb4b03619877dcf410c9103ea3328f26bc25244ea857bf44bcc77136e5",
+      "sourceQueueEntrySha256": "768b5d3cfeb382a90c7e1864b1b0295c4ed687793e89c105390f88c9cbe746c8",
+      "targetCompanyImageSha256": "9cd838b45c4e39d13bd86b249456be8b8c94bdb826e4d5b7d332caef7d41c8c6",
+      "exception": "Direct evidence resolves one continuing Extenet platform, active operations and the February 13, 2025 42% Stonepeak / 32% KH Killington / 26% Other Members cap table. It does not establish the September 4, 2026 owner set, stakes and vehicles, bridge JH Killington to KH Killington, or resolve Northleaf's, DigitalBridge's and Manulife's cutoff positions or the outcome of the reported outdoor DAS and small-cell sale process.",
+      "decidedAt": "2026-09-04T06:29:30.000Z",
+      "policy": "Identity is evidence-bound; ownership gap remains unresolved. No mutation, task reopening, new research or verified-name increment."
+    },
+    {
+      "companyId": "cmrxpjc3c00s1ivheh0230va5",
+      "name": "Fighting Jays Solar",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpj48b00g8ivhectbglmuo",
+      "name": "FirstEnergy Transmission, LLC",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjhon010jivheqq1c1oke",
+      "name": "Fort Detrick Energy Production Facility",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjf9n00wxivhedu5fmw6t",
+      "name": "Fort St. James Green Energy Project",
+      "classification": "EXISTING_EXACT_DEFERRED_EXCEPTION",
+      "taskId": "ledger:0247:fort-st-james-green-energy-project:dbc63243",
+      "sequence": 247,
+      "decisionSha256": "7b52010e2d9bedc914239de7f3c396df04393046e79d85cf50084e9d1a4afd1b",
+      "targetResolution": {
+        "method": "IMMUTABLE_QUEUE_TARGET",
+        "targetCompanyId": "cmrxpjf9n00wxivhedu5fmw6t",
+        "linkedQueueTaskId": null
+      },
+      "contextSha256": "18e747d1f6bdeec1e1e83496aa7f83b04517b28e73ae95583fd77b981cf40248",
+      "sourceQueueEntrySha256": "40f6a7abf1f918577505fc3c4b768e01161ad7ac3e1e558fa50468f5649c4742",
+      "targetCompanyImageSha256": "59161f423221d5e91b611670fb20557192c98135ccf365e2a41a224fd780764f",
+      "exception": "Direct evidence verifies BioNorth's 2021 acquisition, the current named parties, and separate 40% disclosures for Nak'azdli and Arrow at different partnership levels, but it does not bridge those levels, allocate the residual 20%, or directly map a Nexus PMG holder and stake. The stale Fengate attribution cannot be replaced without an inferred cap table.",
+      "decidedAt": "2026-09-04T15:12:40.000Z",
+      "policy": "Identity is evidence-bound; ownership gap remains unresolved. No mutation, task reopening, new research or verified-name increment."
+    },
+    {
+      "companyId": "cmrxpjfa900wyivheqr821jt0",
+      "name": "Freeport Energy Center",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjfar00wzivheujr4fq1n",
+      "name": "Freeport Power Limited",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjosv01bvivhe6x3dbw22",
+      "name": "Guzman Energy",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjkmo0155ivhejm9uec3n",
+      "name": "Hunt Energy Network, LLC",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbib00r7ivhewg54x0oj",
+      "name": "ICA Operadora de Vías Terrestres, S.A.P.I. de C.V.",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbiv00r8ivhe7ydq2fty",
+      "name": "Indiana Toll Road",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjblv00r9ivhepi9anjoz",
+      "name": "Innergex Renewable Energy",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpj8lj00mnivhecvfdxmtv",
+      "name": "InTransit BC",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbmd00raivhe0z1866id",
+      "name": "Invenergy Renewables LLC",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpj5rl00i9ivhelzcaiyyj",
+      "name": "IonicBlue",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjkn70156ivhejtldxot6",
+      "name": "J-POWER USA Generation, L.P.",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjfdj00x4ivheestkwqla",
+      "name": "Jim Pattison Outpatient Care and Surgery Centre",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjfe300x5ivhe0dn9ajx6",
+      "name": "Lambton College Residence",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpj65s00ivivhekk7buvw1",
+      "name": "Lincoln Terminal Holdings",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjeo200w1ivhe76qz7i0k",
+      "name": "Lumos Fiber",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjff600x7ivheocc0bl0u",
+      "name": "Merritt Biomass Plant",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjisp012civhep58w70qr",
+      "name": "Millennium Garages",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjffr00x8ivhe354l7jdk",
+      "name": "Morris Cogeneration Facility",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpj6t100jtivhegccczk0y",
+      "name": "MXT Holdings",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjfhb00xbivhe8zn3sgld",
+      "name": "Oakville Trafalgar Memorial Hospital",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbmy00rbivhehh6cicf4",
+      "name": "Plenary Americas",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjfhv00xcivhenpa3gni7",
+      "name": "PowerFin Partners Texas Solar Portfolio",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjmyb018uivheyba3ewkn",
+      "name": "Prospect Lake Clean Water Center",
+      "classification": "EXISTING_EXACT_DEFERRED_EXCEPTION",
+      "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+      "sequence": 409,
+      "decisionSha256": "19d4fb43af031ae9ff8116981b649fd3ed7c288d8247c413614453253e92c2c1",
+      "targetResolution": {
+        "method": "IMMUTABLE_QUEUE_TARGET",
+        "targetCompanyId": "cmrxpjmyb018uivheyba3ewkn",
+        "linkedQueueTaskId": null
+      },
+      "contextSha256": "e7c5eb0bac29bf5fc26a32227c0e612e943e7b9ffdb36ea9bf00c25b2f1d8d70",
+      "sourceQueueEntrySha256": "2853c8d0e28d3a0ad3e5f4407da78551d6095f70f3fb7f65faf52b3aea3adf66",
+      "targetCompanyImageSha256": "1020ac9e0be88e2659a8adaf4c94c1857ba4a1d743adc485fdafbe716cdc97c2",
+      "exception": "Identity, historic contractual interests and the current general-partner chain are verified; the July 2026 filing has been visually read and concerns the existing GP detail/address. The complete cutoff-current direct-holder register and exact equity interests remain unavailable, so no ownership mutation is supported.",
+      "decidedAt": "2026-09-05T20:36:54.121Z",
+      "policy": "Identity is evidence-bound; ownership gap remains unresolved. No mutation, task reopening, new research or verified-name increment."
+    },
+    {
+      "companyId": "cmrxpjfjj00xfivhe0e0iuklw",
+      "name": "Providence Care Hospital",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjdsv00upivhenx60t7fz",
+      "name": "Public Infrastructure Partnership",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjdte00uqivhe6a6jxd0v",
+      "name": "PureSky Energy",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjiim011tivhemt7m9kp4",
+      "name": "QSL International Ltd.",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbo200rdivhepvecb6f4",
+      "name": "Réseau express métropolitain",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjfk300xgivhe01tzwcet",
+      "name": "Saskatoon Civic Operations Centre",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjclz00svivhen9hcoprt",
+      "name": "Sempra Infrastructure Partners, LP",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbok00reivhetjuixnom",
+      "name": "Southern Star Central Gas Pipeline",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbp500rfivhebgr2avam",
+      "name": "Student Transportation of America and Canada",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjfn400xhivhe2vjqgu7a",
+      "name": "Sunningdale Solar Project",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpje6900v9ivhemqf7i4b2",
+      "name": "SunShare, LLC",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjbpq00rgivhedjou7u6e",
+      "name": "SunZia Wind and Transmission",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjfqc00xiivhe70ut2i58",
+      "name": "Surrey Memorial Hospital Critical Care Tower",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjfr700xkivhepyrxxkvd",
+      "name": "The Peter Gilgan Mississauga Hospital and Shah Family Hospital for Women and Children",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpj63100iqivheckl3915o",
+      "name": "US Wind",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjdty00urivheqf6ca4v0",
+      "name": "West Coast Hydro",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjafz00phivhe43iiqdy2",
+      "name": "Westinghouse Electric Company",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    },
+    {
+      "companyId": "cmrxpjdui00usivhespx7r91z",
+      "name": "Woodford Social Infrastructure",
+      "classification": "UNRESOLVED_SCOPE",
+      "reason": "No proven terminal binding yet; not an exclusion or verified outcome."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "9553ce087f51ea012f20d69c6697611e88d581c2061b679bfd144ae5ae3bfc03",
+  "approvalSha256": "0aa3a05faf58ee8e7cfb3b632e1f0798dbb3d1c27085f8c3aa05f83122f2b441",
+  "environment": "production",
+  "pipelineRunId": "cmtte89d90000fv42umbbhbg4",
+  "mutationCount": 2,
+  "changed": 2,
+  "idempotent": false,
+  "beforeFingerprint": "ee20cef93be646b0e21feb558a478697c0916fb963e19cfc5a2047ef7c04b2de",
+  "afterFingerprint": "149f9cdc414d91c9be53a12cb286cd020251dd312d06c9bbb37e9b88bde64efd",
+  "rows": [
+    {
+      "recordId": "OFA-HIST-4761B53F9DECC2385F906108",
+      "ownershipPeriodId": "cmrxpk7rg025sivhe9dxk8h02",
+      "companyId": "cmrxpjlhd016hivheffuojgmg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "North Haven Infrastructure Partners II (NHIP II)",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "North Haven Infrastructure Partners II (NHIP II)",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2015 is 3 years before investment, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 17.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "North Haven Infrastructure Partners II US Investments L.P. and co-investment entities",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed 2026 NYPSC Bayonne petition, printed pages 6-7, identifies the seller under North Haven Infrastructure Partners II US Investments L.P. and co-investment entities, with the investment partnership approximately 60% held by II-AIV I and 40% by II. Replace the single-fund estimate with the disclosed collective attribution and no exclusive fund link; preserve NHIP II Bayonne Holdings LLC, the collective 100% stake and 2018-2026 ownership period."
+      }
+    },
+    {
+      "recordId": "OFA-131B94987056",
+      "ownershipPeriodId": "cmtiv3g8y0004272bpabv0bxy",
+      "companyId": "cmrxpjlhd016hivheffuojgmg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The regulatory closing record establishes Elliott-managed ownership through Tunnel Energy Investor but does not identify a separate Elliott fund, so no fund is inferred."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Elliott Associates, L.P. and Elliott International, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed 2026 NYPSC Bayonne petition, printed page 8, identifies Elliott Associates, L.P. and Elliott International, L.P. as the buyer parent's 32% and 68% owners. Disclose both funds rather than claiming no separate Elliott fund is identified. Preserve the existing Tunnel Energy Investor vehicle, collective 100% indirect stake and separately evidenced July 2026 closing; do not split periods or create fund links."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-09T01:01:57.909Z",
+  "receiptSha256": "83435a6cf1beab37e78eba44ae84691345087c2af3569d7aa4fd86f4271a7344"
+}
