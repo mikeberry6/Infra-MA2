@@ -251,7 +251,10 @@ export function attributionSnapshot(snapshot: Snapshot, asOfDate: string) {
   return verifyProductionSnapshot({ ...content, capturedAt: snapshot.capturedAt, snapshotSha256: canonicalSha256(content) });
 }
 
+export const baselineOrderSchema = z.tuple([z.number().int().min(0).max(1), z.number().int().nonnegative(), z.number().int().nonnegative()]);
+const baselineIdentitySchema = z.strictObject({ admissionSha256: hash, identitySha256: hash, order: baselineOrderSchema });
 const progressNameSchema = z.strictObject({ companyId: text, name: text, sequence: z.number().int().positive(),
+  baseline: baselineIdentitySchema.optional(),
   reviewedEvidence: z.array(fileSchema), status: z.enum(["REMAINING", "PARKED", "VERIFIED"]),
   parkedReview: z.strictObject({ priorIssue: text, batchId: text, completion: fileSchema }).optional(),
   issue: text.nullable(), completion: fileSchema.nullable() });
@@ -264,10 +267,17 @@ export const inventoryExtensionSchema = z.strictObject({ schemaVersion: z.litera
   seedManifestSha256: hash, sourceManifest: fileSchema, sourceLedger: fileSchema, scope: fileSchema,
   additions: z.array(z.strictObject({ companyId: text, name: text, sequence: z.number().int().positive() })).min(1).max(10),
   extensionSha256: hash });
+export const baselineInputsSchema = z.strictObject({ sourceManifest: fileSchema, sourceLedger: fileSchema,
+  originalLedger: fileSchema, productionDataset: fileSchema, seedDataset: fileSchema, diagnostic: fileSchema, scope: fileSchema });
+export const baselineAdmissionSchema = baselineInputsSchema.extend({ schemaVersion: z.literal(1),
+  artifactType: z.literal("PORTCO_BASELINE_ADMISSION"), beforeProgressSha256: hash, seedManifestSha256: hash,
+  additions: z.array(z.strictObject({ companyId: text, name: text, sequence: z.number().int().positive(),
+    order: baselineOrderSchema, identitySha256: hash })).min(1).max(10), admissionSha256: hash });
 export const progressSchema = z.strictObject({ schemaVersion: z.literal(1), artifactType: z.literal("PORTCO_COMPLETION_PROGRESS"),
   universe: fileSchema, names: z.array(progressNameSchema).min(1),
   recheckHistory: z.array(progressRecheckSchema).optional(),
   inventoryExtensionHistory: z.array(inventoryExtensionSchema).optional(),
+  baselineAdmissionHistory: z.array(baselineAdmissionSchema).optional(),
   active: z.strictObject({ batchId: text, batchSha256: hash,
     state: z.enum(["PREPARING", "RELEASED", "APPLYING", "VERIFYING", "VERIFYING_FAILED"]),
     releaseSha: commit.nullable(), failure: text.nullable() }).nullable(),
@@ -280,6 +290,17 @@ export function verifyProgress(value: unknown) {
   unique((p.recheckHistory ?? []).map(r => r.recheckSha256), "completion recheck");
   unique((p.inventoryExtensionHistory ?? []).map(r => r.extensionSha256), "inventory extension");
   unique((p.inventoryExtensionHistory ?? []).flatMap(r => r.additions.map(n => n.companyId)), "extended company");
+  unique((p.baselineAdmissionHistory ?? []).map(r => r.admissionSha256), "baseline admission");
+  unique((p.baselineAdmissionHistory ?? []).flatMap(r => r.additions.map(n => n.companyId)), "baseline company");
+  for (const admission of p.baselineAdmissionHistory ?? []) {
+    verifyHash(admission, "admissionSha256");
+    for (const added of admission.additions) {
+      const current = p.names.find(n => n.companyId === added.companyId);
+      if (!current || current.name !== added.name || current.sequence !== added.sequence
+        || !equal(current.baseline, { admissionSha256: admission.admissionSha256, identitySha256: added.identitySha256, order: added.order })
+        || (p.inventoryExtensionHistory ?? []).some(e => e.additions.some(n => n.companyId === added.companyId))) throw Error("Invalid baseline admission identity");
+    }
+  }
   for (const extension of p.inventoryExtensionHistory ?? []) {
     verifyHash(extension, "extensionSha256");
     for (const added of extension.additions) {
@@ -294,6 +315,8 @@ export function verifyProgress(value: unknown) {
       || !p.names.some(n => n.companyId === c.prior.companyId))) throw Error("Invalid prior recheck completion");
   }
   for (const n of p.names) {
+    if (n.baseline && !(p.baselineAdmissionHistory ?? []).some(a => a.admissionSha256 === n.baseline!.admissionSha256
+      && a.additions.some(r => r.companyId === n.companyId))) throw Error("Missing baseline admission lineage");
     if ((n.status === "PARKED") !== (n.issue !== null) || (n.status === "VERIFIED") !== (n.completion !== null)) throw Error("Incorrect name status evidence");
     if (n.parkedReview && (n.status === "REMAINING" || !p.completedBatchIds.includes(n.parkedReview.batchId)
       || (n.status === "VERIFIED" && !equal(n.completion, n.parkedReview.completion)))) throw Error("Incorrect parked-review completion lineage");
