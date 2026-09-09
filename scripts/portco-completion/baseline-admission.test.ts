@@ -121,7 +121,9 @@ describe("explicit baseline admission without synthetic receipts", () => {
     expect(sizes).toEqual([10,10,10,10,10,9]);
     expect(admitted).toEqual(f.candidates.map(c => c.companyId));
     expect(new Set(admitted).size).toBe(59);
-  });
+  // Six admissions replay the full evidence chain; shared CI runners need
+  // more than the default five seconds. Preserve every traversal assertion.
+  }, 30_000);
 });
 
 function recordFixture() {
