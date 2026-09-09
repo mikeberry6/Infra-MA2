@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_EVIDENCE",
+  "batchId": "portco-completion-028",
+  "batchSha256": "a3d3e58d75ffda4c0449baaa0dc91996ba0c7e836eb6382d2ab5bf206064797b",
+  "verifiedAt": "2026-09-09T01:05:52.825Z",
+  "release": {
+    "mergeSha": "9dcdd0274c9214a407b9a9d3daa66e60599346c8",
+    "canonicalSha": "9dcdd0274c9214a407b9a9d3daa66e60599346c8",
+    "headSha": "9dcdd0274c9214a407b9a9d3daa66e60599346c8",
+    "gitRef": "main",
+    "gitProvider": "github",
+    "canonicalUrl": "https://infra-ma-2.vercel.app",
+    "ready": true,
+    "requiredChecksPassed": true,
+    "evidence": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/canonical-release.json",
+      "sha256": "ad6001ff7b6f526f09fa64ac2e07479edaeeecdd79b85a560f8926f23918644e"
+    }
+  },
+  "receipt": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/receipt-verification.json",
+    "sha256": "bbe6890a17a8a74292bb44a287d290b18481b58410101ceaec44a6cdbcf24664"
+  },
+  "databaseApplyRequired": true,
+  "publishedSeedProof": {
+    "releaseSha": "9dcdd0274c9214a407b9a9d3daa66e60599346c8",
+    "path": "prisma/seed-data/ownership-attributions.manifest.json",
+    "byteSha256": "00f6d3d5e7c9c88d17d6b1fa97865a668fc12bdcb6b2f4c63fd8fce80c407110",
+    "manifestSha256": "d4bd018e0c56ed4fc57db203c2c2732b1a3d73bbff48967b72506a0320c55781",
+    "exact": true
+  },
+  "snapshotSha256": "0ad26ccb0ebf5a35883df09fd0ce70336f8eb8cdb96a9ab8719dbb0719825b5e",
+  "seedManifestSha256": "d4bd018e0c56ed4fc57db203c2c2732b1a3d73bbff48967b72506a0320c55781",
+  "proof": [
+    {
+      "companyId": "cmrxpjlhd016hivheffuojgmg",
+      "checks": {
+        "api": true,
+        "redirects": true,
+        "ownership": true,
+        "citations": true,
+        "renderedCard": true,
+        "afterImages": true,
+        "seedAlignment": true
+      },
+      "evidence": [
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/completion-after.json",
+          "sha256": "d7d248a20d117050aa151897e5307081f7c7aae3f7941205de11df4f726f81c6"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/live-verification.json",
+          "sha256": "c66f26ca6b1ac7abf0be6df0a9d6c01f36d8ddc52be3b0d59a9ec043bdee6305"
+        },
+        {
+          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/rendered-0344.png",
+          "sha256": "8d85936050e0b3f445d63da308ba74a51c4201e85a714b2b5c0331229d031c14"
+        }
+      ]
+    }
+  ],
+  "renderedReview": "Individually inspected rendered-0344.png. Bayonne shows Elliott Associates, L.P. and Elliott International, L.P. under current Elliott ownership, Tunnel Energy Investor LLC (formerly Jupiter Energy Investor LLC), 100% indirect and 2026-Present. Expanded prior Morgan Stanley ownership shows North Haven Infrastructure Partners II US Investments L.P. and co-investment entities, NHIP II Bayonne Holdings LLC, 100% collectively and 2018-2026. No estimated/confidence label is displayed. Business overview, timeline and ownership sources remain rendered. Complete API and after-image checks separately bind unchanged identities, citations and redirects. KAPS is parked and is not counted verified.",
+  "renderedReviewFile": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/rendered-review.json",
+    "sha256": "494da949bb4ef479680d19464a18b30d37afb9c26e5c475e914b6907fea8a52b"
+  },
+  "parked": [
+    {
+      "companyId": "cmrxpjnk0019uivhefy3ycv3y",
+      "issue": "Production Keyera ownership vehicle is null, while the evaluated seed resolver persists Keyera Corp. from ownershipVehicle. This is a persistence mismatch, not equivalent displayed wording. Require a separately supported null-preserving seed persistence correction before historical metadata alignment; do not weaken the full-company identity gate or invent the exact Keyera title affiliate. Preserve the former Stonepeak fund-unavailable exception and all completed ownership transactions."
+    }
+  ]
+}
