@@ -1,0 +1,94 @@
+{
+  "companyId": "cmrxpj63100iqivheckl3915o",
+  "name": "US Wind",
+  "sequence": 557,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/independent-review.json",
+      "sha256": "767bd7bfa036c64b2b07b69ad703b80ab8f602370293b975f1321bbbd162046a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-decisions-download.json",
+      "sha256": "d16658ca817d6010a71bc39456be1d0a2078b70f75cd8fb070cbb23ba9e5afd0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/observed-baseline-derivation.json",
+      "sha256": "25fcb40f2e61b1dde628e95725cc486ff48a9228430bc5e326d2fc0aaa7e8fe7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-pro-1/08-apollo-ii.html",
+      "sha256": "15cc5e2bc34686defe4ba4e5e4617ae104bf14a0eb81cd43969ead236ac43a9b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-1/12-us-wind.html",
+      "sha256": "3ff1f4784a3bfbb48c2f5101abe5c038abec44dcb379ebf85da73bf08432076c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-web-attestation.json",
+      "sha256": "562133cc07b3227c7e82e741e6536db6517134680f87cbe2058d051d0f97096b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-original-submitted-prompt.txt",
+      "sha256": "10035db863333e9747ce348d3866927951d7c9cc1d73b555b32ce9febb76c985"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/catalog-order-rebind-review.json",
+      "sha256": "3bf3bdebb64284474beba3e8e5d6733eeea496e335105e38a6da424d9fd6e6e3"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjr4j01flivhexnkeccax",
+      "seedRecordId": "OFA-74252F02FCF9",
+      "expectedSeedSha256": "d53e8e786f1df3e448477c9119ba430fb1a6e5ea4af31667a20878de434e5948",
+      "expectedOwnerSha256": "b693266cb8873ee2f6962cb8c681a20fcfea5faaa62a85803fc4ae2ea88cc65d",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Apollo Infrastructure Opportunities Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Apollo Global Management | Fund: Apollo Infrastructure Opps. Fund II | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry.",
+        "linkedFundName": "Apollo Infrastructure Opportunities Fund II"
+      },
+      "productionChange": "NONE",
+      "reason": "Apollo's January 6, 2022 release explicitly includes U.S. Wind as an AIOF II investment. Production already has the correct published Fund II link and disclosed attribution; seed uses an abbreviation and lacks the link. Retain exact production attribution and rationale; seed alignment only.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-pro-1/08-apollo-ii.html",
+          "sha256": "15cc5e2bc34686defe4ba4e5e4617ae104bf14a0eb81cd43969ead236ac43a9b",
+          "url": "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "711ca473f1538f4c0d7d9c67df3b9b644f57dc93c0c786505e4704b4e313f2de",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjr4j01flivhexnkeccax",
+      "sha256": "b693266cb8873ee2f6962cb8c681a20fcfea5faaa62a85803fc4ae2ea88cc65d"
+    }
+  ],
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-pro-1/apollo-ii-capture.json",
+      "sha256": "a741e5c46b7c6d47c06834aeb136c826de82fe8e4f812eb2f4269ebeec94cbab"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-1/us-wind-capture.json",
+      "sha256": "41c7cb63e29e007dfd725337220048612bae1595aa2817285ba2ef66398918ef"
+    }
+  ],
+  "originalBaseline": {
+    "admission": {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/baseline-admission.json",
+      "sha256": "7bcee984849e13071305c197fae39c9fe6dfdd5925f435fbc9f132537833dc4f"
+    },
+    "observedSnapshot": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/completion-before.json",
+      "sha256": "bc4a321eee5576b65e3c03bdb049ec65a6582f0c26d213f63c078d2b2f1322e9"
+    }
+  }
+}

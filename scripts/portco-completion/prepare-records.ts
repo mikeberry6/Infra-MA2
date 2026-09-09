@@ -46,6 +46,7 @@ async function main() {
   if (progress.completedBatchIds.length) completedSeedLineage({ releases: config.completedReleases, progress, seed, readBytes: bytes });
   else if (config.completedReleases.length) throw Error("Unexpected completion lineage");
   const records = validateDecisionRecords({ progress, phase: config.phase, records: config.records.map(r => json(r.path, r.sha256)),
+    readBytes: bytes,
     read: ref => ref.path.endsWith(".json") ? json(ref.path, ref.sha256) : bytes(ref.path, ref.sha256) });
   const seedIdentity = config.seedIdentity ? seedIdentitySchema.parse(json(config.seedIdentity.path, config.seedIdentity.sha256)) : undefined;
   if (seedIdentity) {
@@ -54,6 +55,9 @@ async function main() {
   }
   if (records.some(r => r.owners.some(o => o.expectedSeedSha256 === null)) && !seedIdentity) throw Error("Absent overlay requires evaluated seed proof before capture");
   for (const record of records) {
+    // Baseline ordering slots are not execution task numbers. Their separately validated
+    // admission history is replayed above; legacy names still require the original receipt.
+    if ("originalBaseline" in record) continue;
     const task = execution.tasks.find(t => t.sequence === record.sequence);
     const receipt = task?.artifacts.applyReceipt;
     if (!task || task.status !== "COMPLETED" || receipt?.sha256 !== record.originalApply.receiptSha256) throw Error("Original task receipt differs from terminal manifest");
@@ -69,7 +73,7 @@ async function main() {
   if (!reuse) { write("completion-before.json", snapshot); write("completion-seed-before.json", seed); }
   else if (verifySeedManifest(json(join(output, "completion-seed-before.json"))).manifestSha256 !== seed.manifestSha256) throw Error("Frozen seed changed");
   bytes(join(output, "completion-seed-before.json"));
-  const decisions = bindDecisionRecords(records, snapshot);
+  const decisions = bindDecisionRecords(records, snapshot, ref => json(ref.path, ref.sha256));
   const batch = verifyBatch(seal({ schemaVersion: 1, artifactType: "PORTCO_COMPLETION_BATCH", batchId: config.batchId,
     ...(config.phase ? { phase: config.phase } : {}),
     ...(seedIdentity ? { seedIdentity } : {}),

@@ -1,0 +1,32 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/apply-manifest.json --manifest-sha256=7167653f172935bfa2ecce513de9d966aca322c4dbf28993a16aaba8bb6a8eec --production-snapshot=audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/approval.json --approval-sha256=df67156ae87a37de167cff79dd6f8e199dc2ace0d190833904dbb2274483400b --validate-only=true
+
+{
+  "mode": "VALIDATE_ONLY",
+  "databaseWrites": false,
+  "manifestSha256": "7167653f172935bfa2ecce513de9d966aca322c4dbf28993a16aaba8bb6a8eec",
+  "approvalSha256": "df67156ae87a37de167cff79dd6f8e199dc2ace0d190833904dbb2274483400b",
+  "mutationCount": 1,
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 1
+  }
+}

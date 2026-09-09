@@ -7,6 +7,7 @@ import { verifySeedManifest } from "../portfolio-fund-attribution/schema";
 import { sha256Canonical } from "../portco-reconciliation/hash";
 import { checkActualSeedIdentity } from "./seed-identity-files";
 import { extendInventory } from "./inventory-extension";
+import { admitBaselines } from "./baseline-admission";
 
 export const completedReleaseSchema = z.strictObject({ directory: z.string().min(1), receiptPath: z.string().min(1).nullable() });
 type Seed = ReturnType<typeof verifySeedManifest>;
@@ -18,6 +19,12 @@ export function replayProgressRechecks(start: Progress, target: Progress, seedMa
   while (current.progressSha256 !== end.progressSha256) {
     const requests = (end.recheckHistory ?? []).filter(r => r.beforeProgressSha256 === current.progressSha256);
     const extensions = (end.inventoryExtensionHistory ?? []).filter(r => r.beforeProgressSha256 === current.progressSha256);
+    const baselines = (end.baselineAdmissionHistory ?? []).filter(r => r.beforeProgressSha256 === current.progressSha256);
+    if (baselines.length) {
+      if (baselines.length !== 1 || requests.length || extensions.length) throw Error("Ambiguous baseline admission lineage");
+      current = admitBaselines(current, baselines[0], seedManifestSha256, readBytes);
+      continue;
+    }
     if (extensions.length) {
       if (extensions.length !== 1 || requests.length) throw Error("Ambiguous inventory extension lineage");
       current = extendInventory(current, extensions[0], seedManifestSha256, readBytes);

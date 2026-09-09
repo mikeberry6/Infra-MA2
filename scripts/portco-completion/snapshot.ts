@@ -3,9 +3,9 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient, type Prisma } from "../../src/generated/prisma/client";
 import { loadPrismaCompanyImage } from "../portco-reconciliation/prisma-company-image";
 import { databaseTargetIdentity } from "../portco-reconciliation/snapshot";
-import { seal, verifySnapshot } from "./batch";
+import { PRODUCTION_FINGERPRINT, seal, verifySnapshot } from "./batch";
 
-export const PRODUCTION_FINGERPRINT = "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929";
+export { PRODUCTION_FINGERPRINT } from "./batch";
 export async function observePublishedFundNames(tx: Prisma.TransactionClient) {
   return (await tx.fund.findMany({ where: { status: "PUBLISHED" }, select: { fundName: true },
     orderBy: { fundName: "asc" } })).map(f => f.fundName);

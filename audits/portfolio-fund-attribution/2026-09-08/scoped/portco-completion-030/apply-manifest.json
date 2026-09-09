@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-09",
+  "ledgerSha256": "b4b8d66a5f11f2a4f8ed0774d20c08830442da662c640dad163319034e330961",
+  "sourceSnapshotSha256": "5dbc7a75397ff283fca9222967ea7ac91a1106f5b136c4e0a841868469514d75",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 1
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-963B022CB2B3",
+      "ownershipPeriodId": "cmrxpjzhc01swivhet01y71pl",
+      "companyName": "Conterra Networks",
+      "country": "United States",
+      "investmentFirm": "APG Asset Management",
+      "currentVehicleName": "n.a.",
+      "databaseVehicleName": "n.a.",
+      "investmentYear": 2021,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "APG Direct Infrastructure Pool"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "APG Infrastructure Pool 2020-2021",
+        "attributionConfidence": null,
+        "attributionRationale": "FCC DA21-541, page 4, identifies APG Infrastructure Pool 2020-2021 as the sole member and economic owner of Draden Investors LLC (APG US), with depositary legal authority separately described. Conterra announced consummation on June 30, 2021. This is historical fund attribution through the disclosed holding chain, not a claim that the pool directly owns each operating subsidiary or a current exact stake. The observed published fund catalog has no exact matching pool; remove the unsupported generic APG Direct Infrastructure Pool link without creating a fund or changing ownership identity."
+      },
+      "evidenceUrls": [
+        "https://docs.fcc.gov/public/attachments/DA-21-541A1.pdf",
+        "https://www.prnewswire.com/news-releases/apg-and-fiera-infrastructure-complete-purchase-of-conterra-networks-301323439.html"
+      ]
+    }
+  ],
+  "manifestSha256": "7167653f172935bfa2ecce513de9d966aca322c4dbf28993a16aaba8bb6a8eec"
+}

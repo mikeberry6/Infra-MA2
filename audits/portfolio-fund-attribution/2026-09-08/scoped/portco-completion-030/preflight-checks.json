@@ -1,0 +1,33 @@
+{
+  "artifactType": "PORTCO_COMPLETION_PREFLIGHT",
+  "batchSha256": "b4b8d66a5f11f2a4f8ed0774d20c08830442da662c640dad163319034e330961",
+  "fullRegression": {
+    "files": 213,
+    "tests": 3869,
+    "passed": true,
+    "log": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/portco-completion030-regression-final.log"
+  },
+  "seedValidation": {
+    "passed": true,
+    "log": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/portco-completion030-seed-validation.log"
+  },
+  "typecheck": {
+    "passed": true,
+    "log": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/portco-completion030-typecheck.log"
+  },
+  "eslint": {
+    "passed": true,
+    "log": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/portco-completion030-eslint.log"
+  },
+  "applyArtifactValidation": {
+    "passed": true,
+    "databaseWrites": 0,
+    "log": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/portco-completion030-apply-validation.log"
+  },
+  "remaining": [
+    "Protected PR checks",
+    "Exact canonical merge SHA",
+    "Protected production approval/atomic apply",
+    "Immutable receipt and full post-apply verification"
+  ]
+}

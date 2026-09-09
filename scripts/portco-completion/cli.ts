@@ -8,6 +8,7 @@ import { executionTerminalStatuses, verifyExecutionManifest } from "../portco-re
 import { verifyBatchExecutionLedger } from "../portco-reconciliation/batch-control";
 import { readFileSync } from "node:fs";
 import { extendInventory } from "./inventory-extension";
+import { admitBaselines } from "./baseline-admission";
 
 const ROOT = "/Users/mikeberry6/Infra-MA2-portco-ipx-attribution-repair";
 const json = async (path: string) => JSON.parse(await readFile(resolve(path), "utf8"));
@@ -25,13 +26,13 @@ async function main() {
       nextParked: progress.active || summary.remaining ? [] : nextNames(progress, true).map(n => ({ name: n.name, sequence: n.sequence })),
     }, null, 2)); return;
   }
-  if (command === "prepare-extension") {
+  if (command === "prepare-extension" || command === "prepare-baseline-admission") {
     const request = await json(get("request")), seed = verifySeedManifest(await json(get("seed")));
-    const candidate = extendInventory(progress, request, seed.manifestSha256,
+    const candidate = (command === "prepare-extension" ? extendInventory : admitBaselines)(progress, request, seed.manifestSha256,
       path => readFileSync(localFile(ROOT, path)));
     const output = resolve(get("output"));
     await mkdir(output);
-    for (const [name, value] of Object.entries({ "extension-request.json": request, "progress-before.json": progress,
+    for (const [name, value] of Object.entries({ [command === "prepare-extension" ? "extension-request.json" : "baseline-admission.json"]: request, "progress-before.json": progress,
       "progress-extended.json": candidate })) await writeFile(resolve(output, name), `${JSON.stringify(value, null, 2)}\n`, { flag: "wx" });
     console.log(JSON.stringify({ output, ...counts(candidate), authoritativeRegisterChanged: false, databaseReads: 0, databaseWrites: 0 })); return;
   }
