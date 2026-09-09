@@ -16,7 +16,7 @@ Prior028 transaction34297366955 succeeded, receiptSHA83435a6cf1beab37e78eba44ae8
 
 ## Next bounded action
 
-After preserving completion, start a scoped baseline-work branch from fresh origin/main and carry completion. No030 bundle exists yet. Follow closeout-v1/baseline-admission-notes.md: integrate explicit baseline-only provenance/admission into the shared checker without weakening the existing receipt-required path or manually editing the register. Bind full current observed owner/images and sources; baseline datasets alone have only identity/relation counts.
+Branch codex/portco-baseline-provenance now starts from fresh origin/main53a58387 and carries029 completion asf087b4a717795de8bdd7de844b70705540e5ce96 (original local completion bf90ecf7). No030 bundle exists yet. Follow closeout-v1/baseline-admission-notes.md: integrate explicit baseline-only provenance/admission into the shared checker without weakening the existing receipt-required path or manually editing the register. Bind full current observed owner/images and sources; baseline datasets alone have only identity/relation counts.
 
 New local scripts/portco-completion/baseline-provenance.ts and .test.ts are a PURE identity validator, not yet published or integrated with admission. Eight targeted tests, final strict typecheck and ESLint pass. They reproduce original source order and return ownershipVerified:false, metadataVerified:false, writeAuthorized:false. Logs: /private/tmp/portco-baseline-provenance-{tests,typecheck,eslint}.log. Preserve these files.
 
