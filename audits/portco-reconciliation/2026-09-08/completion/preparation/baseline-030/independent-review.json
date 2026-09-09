@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BASELINE_RESEARCH_REVIEW",
+  "status": "PREPARATION_ONLY",
+  "writeAuthority": false,
+  "proPacket": {
+    "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-decisions-download.json",
+    "sha256": "d16658ca817d6010a71bc39456be1d0a2078b70f75cd8fb070cbb23ba9e5afd0"
+  },
+  "comparison": {
+    "production": "Historical /tmp/portco-closeout-20260908/production.json; not fresh production proof",
+    "seed": "prisma/seed-data/ownership-attributions.manifest.json",
+    "seedManifestSha256": "d4bd018e0c56ed4fc57db203c2c2732b1a3d73bbff48967b72506a0320c55781",
+    "freshSnapshotRequired": true
+  },
+  "names": [
+    {
+      "name": "Arevon Energy, Inc.",
+      "companyId": "cmrxpj47700g6ivheh80125ia",
+      "candidateDisposition": "PARKED",
+      "finding": "The company report page 34 names APG, CalSTRS and a wholly owned ADIA subsidiary. Managed energy-asset funds listed in the adjacent reporting-scope row are not proof that those funds own Arevon Energy, Inc. The report itself has inconsistent reporting-period/publication-date text; no exact publication date is inferred.",
+      "requiredWork": "Resolve missing CalSTRS owner representation and precise legal-owner/vehicle scope without equating Arevon Energy JV V with Arevon Energy, Inc. Existing inferred direct-program links are not verified. Ownership-structure changes are outside this attribution-only release.",
+      "sources": ["sources-pro-1/01-arevon-report.pdf", "sources-pro-support-1/02-pro-support-02.pdf"],
+      "sourceReview": "Company report page 34 visually verified; APG support remains subject to exact-entity qualification."
+    },
+    {
+      "name": "FirstEnergy Transmission, LLC",
+      "companyId": "cmrxpj48b00g8ivhectbglmuo",
+      "candidateDisposition": "PARKED",
+      "finding": "The independently retrieved 2026 DPS report Table 3 gives ADIA 10% only as passive indirect economic look-through exposure through an intermediate unrelated vehicle. Pro's inability to retrieve the document is not a missing-evidence exception.",
+      "requiredWork": "Resolve the intermediate vehicle and representation of indirect exposure; do not add the look-through percentage to direct shareholder stakes or certify a generic ADIA fund. Preserve Brookfield facts while parked.",
+      "sources": ["sources-1/04-firstenergy-dps.pdf", "sources-pro-1/02-fet-sec.html"],
+      "sourceReview": "DPS pages 1-2 visually verified in prior saved check; SEC source binding remains to be incorporated."
+    },
+    {
+      "name": "Sempra Infrastructure Partners, LP",
+      "companyId": "cmrxpjclz00svivhen9hcoprt",
+      "candidateDisposition": "PARKED",
+      "finding": "NYC pension packet PDF page 168 (printed 166, monitoring page 7) assigns historical Sempra Global, LP exposure to KKR Global Infrastructure Investors III L.P. KKR's August 3, 2026 Fund V release lists Sempra among committed investments, not proof of closing. Sempra presentation page 24, Slide 4 endnote 7 states CPP will participate indirectly with KKR; page 27 identifies Black Silverback ZC 2022 LP, assignee of Black River B 2017 Inc., as ADIA affiliate.",
+      "requiredWork": "Establish the later closing and reconcile CPP transaction state/indirect ownership and multiple KKR vintages before certifying all existing active owners. Historical and committed investments cannot be collapsed into one current-fund assignment. Legal vehicles and ownership/transaction-state corrections exceed the metadata-only route. Retain all four proposed corrections as backlog, not done.",
+      "sources": ["sources-pro-1/03-sempra-kkr-iii.pdf", "sources-pro-1/04-sempra-kkr-v.pdf", "sources-pro-1/05-sempra-presentation.pdf"],
+      "sourceReview": "All stated pages and their headings/footnotes visually verified. Historical company-name crosswalk is not yet independently bound."
+    },
+    {
+      "name": "Alberta Schools Alternative Procurement I",
+      "companyId": "cmrxpj4to00gtivhe5o1os28c",
+      "candidateDisposition": "SEED_ALIGNMENT",
+      "finding": "Issuer RNS supports INPP ownership. Production already has the published International Public Partnerships (INPP) link and disclosed attribution. Seed is unlinked and uses an equivalent shorter attribution name.",
+      "requiredWork": "Preserve production exactly and bind compatible seed alignment to existing fund cmrxpj0rn00azivhe0hnq7v4w, subject to full owner/seed identity and fresh-state checks. Do not infer changes to year or stake.",
+      "sources": ["sources-pro-1/06-alberta-rns.html"]
+    },
+    {
+      "name": "Conterra Networks",
+      "companyId": "cmrxpjdrr00univhe6utkjs4n",
+      "candidateDisposition": "SUPPORTED_CORRECTION",
+      "finding": "Fiera's page expressly lists EICLP & EISCSp, initial investment 2019, unrealized. The existing combined fund is already linked in production. FCC page 4 identifies APG Infrastructure Pool 2020-2021 through Draden Investors LLC with depositary legal-authority qualification. The company-issued June 30, 2021 release confirms consummation but not unchanged final percentages.",
+      "requiredWork": "Retain the supported combined EIC fund link and align seed; do not split or rename the organization. Evaluate replacing APG's inferred generic pool metadata with disclosed historical APG Infrastructure Pool 2020-2021 attribution, unlinked because that exact pool is absent from the observed published catalog. Keep literal vehicle, owner identity, chronology and stakes unchanged. Compiler must validate unlink-derived label and seed identity; no fund creation or inferred equivalence.",
+      "sources": ["sources-1/09-conterra.html", "sources-pro-1/07-conterra-fcc.pdf", "sources-pro-support-1/14-pro-support-14.html"]
+    },
+    {
+      "name": "IonicBlue",
+      "companyId": "cmrxpj5rl00i9ivhelzcaiyyj",
+      "candidateDisposition": "SEED_ALIGNMENT",
+      "finding": "Apollo's January 6, 2022 fund-closing release explicitly includes Ionic Blue in AIOF II's investment list. Production already has the correct published Apollo Infrastructure Opportunities Fund II link and disclosed attribution; Pro's recommendation does not establish a substantive production defect.",
+      "requiredWork": "Align seed's abbreviated attribution and absent link to unchanged production fund cmrxpj0we00b8ivhewj0cq04p after full identity/fresh-state checks. Do not infer JV percentages or rewrite equivalent rationale.",
+      "sources": ["sources-pro-1/08-apollo-ii.html"]
+    },
+    {
+      "name": "US Wind",
+      "companyId": "cmrxpj63100iqivheckl3915o",
+      "candidateDisposition": "SEED_ALIGNMENT",
+      "finding": "Apollo's January 6, 2022 release explicitly includes U.S. Wind as an AIOF II investment. Production already has the correct published Fund II link and disclosed attribution; seed uses an abbreviation and lacks the link.",
+      "requiredWork": "Align seed to unchanged production fund cmrxpj0we00b8ivhewj0cq04p after full identity/fresh-state checks. Preserve structured debt/equity financing qualifications; no inferred common-equity percentage.",
+      "sources": ["sources-pro-1/08-apollo-ii.html", "sources-1/12-us-wind.html"]
+    },
+    {
+      "name": "Lincoln Terminal Holdings",
+      "companyId": "cmrxpj65s00ivivhekk7buvw1",
+      "candidateDisposition": "SEED_ALIGNMENT",
+      "finding": "ARA's May 2025 release identifies Ara Infrastructure Fund I and Lincoln among its portfolio companies, with associated co-investment vehicles also mentioned. Production already links to Ara Infrastructure Fund I, not a private-equity Ara Fund I. Seed is unlinked.",
+      "requiredWork": "Align seed to existing fund cmrxpj12v00bfivheaxln1619 without production rewrite, subject to full identity/fresh-state checks. Do not imply exclusive allocation or invent co-investment stakes.",
+      "sources": ["sources-pro-1/09-ara-infra-i.html"]
+    },
+    {
+      "name": "MXT Holdings",
+      "companyId": "cmrxpj6t100jtivhegccczk0y",
+      "candidateDisposition": "PARKED",
+      "finding": "Ardian's July 2023 release explicitly assigns the announced investment to AAIF V; the company's subsequent article reports implemented 50% control. Production already has the equivalent canonical fund name and link. Seed lacks the link.",
+      "requiredWork": "The company directly reports 50% control while production and seed retain a null stake. This known ownership gap cannot be certified away by fund-link alignment. Park with zero patches for supported ownership-field correction outside the metadata-only route; retain the already-resolved AAIF V alignment and source evidence for that follow-up. Exact legal closing date remains unproven and must not be inferred.",
+      "sources": ["sources-1/14-mxt.html", "sources-pro-support-1/21-pro-support-21.html"]
+    },
+    {
+      "name": "InTransit BC",
+      "companyId": "cmrxpj8lj00mnivhecvfdxmtv",
+      "candidateDisposition": "PARKED",
+      "finding": "BCI's financial statements identify Bolsena Fund: page 21 is 2022 with 28.4%; page 22 is comparative 2021 with 28.7%. The holdings are through intermediaries, not current BCI-wide direct ownership. The stored 28.7% cannot be certified as a current percentage from this evidence.",
+      "requiredWork": "Resolve current fund-specific ownership percentage and indirect representation plus CDPQ vehicle qualification. Percentage/ownership-structure changes are outside the attribution-only release; do not mark complete after merely changing fund labels.",
+      "sources": ["sources-1/15-intransit-bci.pdf", "sources-pro-1/10-cdpq-program.html"]
+    }
+  ],
+  "remainingGates": [
+    "Verify all relative source references against capture indexes and exact bytes",
+    "Archive exact submitted Pro prompt and check packaged response equivalence",
+    "Complete source-bound decision records with every owner and baseline provenance",
+    "Publication secret scan and explicit redaction records where necessary",
+    "Offline validation followed by one fresh target-pinned snapshot",
+    "Compile, protected release, exact canonical SHA, atomic supported apply if any, receipts and complete post-release verification"
+  ]
+}

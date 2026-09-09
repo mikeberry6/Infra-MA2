@@ -1,0 +1,72 @@
+{
+  "companyId": "cmrxpj6t100jtivhegccczk0y",
+  "name": "MXT Holdings",
+  "sequence": 598,
+  "classification": "PARKED",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/independent-review.json",
+      "sha256": "767bd7bfa036c64b2b07b69ad703b80ab8f602370293b975f1321bbbd162046a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-decisions-download.json",
+      "sha256": "d16658ca817d6010a71bc39456be1d0a2078b70f75cd8fb070cbb23ba9e5afd0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/observed-baseline-derivation.json",
+      "sha256": "25fcb40f2e61b1dde628e95725cc486ff48a9228430bc5e326d2fc0aaa7e8fe7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-1/14-mxt.html",
+      "sha256": "131abb95f006dbef2a85b80e419c88a3ad504048a7f30fb727032cacf23e663d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-pro-support-1/21-pro-support-21.html",
+      "sha256": "f918158a3d348b9cc9e9ebda08f3df77c4e332cadcdef67ec0fd197bcae127f3"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-web-attestation.json",
+      "sha256": "562133cc07b3227c7e82e741e6536db6517134680f87cbe2058d051d0f97096b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-original-submitted-prompt.txt",
+      "sha256": "10035db863333e9747ce348d3866927951d7c9cc1d73b555b32ce9febb76c985"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/catalog-order-rebind-review.json",
+      "sha256": "3bf3bdebb64284474beba3e8e5d6733eeea496e335105e38a6da424d9fd6e6e3"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpjrur01gqivhe7dy96lk0"
+  ],
+  "issue": "Ardian's July 2023 release explicitly assigns the announced investment to AAIF V; the company's subsequent article reports implemented 50% control. Production already has the equivalent canonical fund name and link. Seed lacks the link. Required work: The company directly reports 50% control while production and seed retain a null stake. This known ownership gap cannot be certified away by fund-link alignment. Park with zero patches for supported ownership-field correction outside the metadata-only route; retain the already-resolved AAIF V alignment and source evidence for that follow-up. Exact legal closing date remains unproven and must not be inferred.",
+  "expectedImageSemanticSha256": "99da8a0833561a6bd8bab019d152f2c49b92e3c469b4ea819b88aedf788f7eb1",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjrur01gqivhe7dy96lk0",
+      "sha256": "e0097935b9ed34461c2e85353b86fba79805aec1293389757641a99e2ffe9739"
+    }
+  ],
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-1/mxt-capture.json",
+      "sha256": "980dc61503f1027ed15d7e7839d719c0c961187486d7c35f044cd62cc76cc444"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-pro-support-1/pro-support-21-capture.json",
+      "sha256": "1ad03b73e1196e3696053dd0c0f182143439f4c59620c8e0a6af6e560c3cb0bd"
+    }
+  ],
+  "originalBaseline": {
+    "admission": {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/baseline-admission.json",
+      "sha256": "7bcee984849e13071305c197fae39c9fe6dfdd5925f435fbc9f132537833dc4f"
+    },
+    "observedSnapshot": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/completion-before.json",
+      "sha256": "bc4a321eee5576b65e3c03bdb049ec65a6582f0c26d213f63c078d2b2f1322e9"
+    }
+  }
+}

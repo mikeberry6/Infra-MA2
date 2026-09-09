@@ -1,0 +1,23 @@
+{
+  "artifactType": "PORTCO_BASELINE_CATALOG_ORDER_REBIND",
+  "checkedAt": "2026-09-09T03:15:43.447Z",
+  "oldObservation": {
+    "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/observed-baseline-snapshot.json",
+    "sha256": "fa1127041231df9986f998e58019889c7191cbc2bc7a2f23000f5441caea4578"
+  },
+  "frozenFreshObservation": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/completion-before.json",
+    "sha256": "bc4a321eee5576b65e3c03bdb049ec65a6582f0c26d213f63c078d2b2f1322e9"
+  },
+  "frozenSnapshotSha256": "3beb79631d59668c6f8f573e10109b98d5e6c52150e66b9eee5d59aa38decef6",
+  "findings": {
+    "completeCompanyOwnerRedirectImagesEqual": true,
+    "completeFundDependenciesEqual": true,
+    "targetEqual": true,
+    "publishedFundMultisetEqual": true,
+    "onlyCatalogArrayOrderDiffers": true
+  },
+  "cause": "Historical derivation sorted with JavaScript localeCompare; fresh capture uses database fundName ascending collation.",
+  "action": "Bind records to the existing genuine frozen fresh capture. Retain historical derivation and rejected comparison evidence. Reuse the same snapshot SHA for preparation; no second capture, no validator weakening, no production writes.",
+  "transactionOutcome": "READ_ONLY_CAPTURE_ONLY; no attribution transaction dispatched"
+}

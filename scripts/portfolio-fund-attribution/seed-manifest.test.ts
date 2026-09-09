@@ -71,9 +71,20 @@ describe("portfolio fund attribution seed manifest", () => {
     const inferred = manifest.records.filter((record) => record.fundAttribution === "INFERRED");
     expect(manifest.policy.fundCreates).toBe(0);
     expect(manifest.policy.fundUpdates).toBe(0);
-    // Batch 027 removes Catalyst's unsupported BII estimate; all remaining estimates stay explicit.
-    expect(manifest.policy.inferredAssignments).toBe(447);
-    expect(inferred).toHaveLength(447);
+    // Batch 030 replaces Conterra's generic APG estimate with the disclosed historical pool.
+    // All remaining estimates stay explicit; no fund is created for the newly evidenced name.
+    expect(manifest.policy.inferredAssignments).toBe(446);
+    expect(inferred).toHaveLength(446);
+    expect(manifest.records.find(record => record.recordId === "OFA-963B022CB2B3")).toMatchObject({
+      companyName: "Conterra Networks",
+      currentVehicleName: "n.a.",
+      investmentYear: 2021,
+      stake: null,
+      fundAttribution: "DISCLOSED",
+      attributedFundName: "APG Infrastructure Pool 2020-2021",
+      targetLinkedFundName: null,
+      attributionConfidence: null,
+    });
     // Batch 010 resolves Helix's directly evidenced KKR corporate-subsidiary attribution.
     // Batch 012 removes unsupported Northleaf estimates for CSV and Odfjell without inventing funds.
     // Batch 015 removes Crosstimbers' holding-vehicle-as-fund seed attribution without changing production.

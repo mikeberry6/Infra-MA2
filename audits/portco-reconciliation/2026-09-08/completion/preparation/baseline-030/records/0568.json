@@ -1,0 +1,86 @@
+{
+  "companyId": "cmrxpj65s00ivivhekk7buvw1",
+  "name": "Lincoln Terminal Holdings",
+  "sequence": 568,
+  "classification": "SEED_ONLY",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/independent-review.json",
+      "sha256": "767bd7bfa036c64b2b07b69ad703b80ab8f602370293b975f1321bbbd162046a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-decisions-download.json",
+      "sha256": "d16658ca817d6010a71bc39456be1d0a2078b70f75cd8fb070cbb23ba9e5afd0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/observed-baseline-derivation.json",
+      "sha256": "25fcb40f2e61b1dde628e95725cc486ff48a9228430bc5e326d2fc0aaa7e8fe7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-pro-1/09-ara-infra-i.html",
+      "sha256": "3cb06fc14ce81d11c5843e399d8e7b1ef109ca6ac45c8b520b469c48847b17f9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-web-attestation.json",
+      "sha256": "562133cc07b3227c7e82e741e6536db6517134680f87cbe2058d051d0f97096b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/pro-original-submitted-prompt.txt",
+      "sha256": "10035db863333e9747ce348d3866927951d7c9cc1d73b555b32ce9febb76c985"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/catalog-order-rebind-review.json",
+      "sha256": "3bf3bdebb64284474beba3e8e5d6733eeea496e335105e38a6da424d9fd6e6e3"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpjr7101fqivhegkrripf5",
+      "seedRecordId": "OFA-87D6FAB2B147",
+      "expectedSeedSha256": "54972ccd6137edb16fe5fcecc56c879f7772d268bcd33d9575f26e16b86d64fd",
+      "expectedOwnerSha256": "006bb2b58214972b15f9a717f88c7f353e1efb6fb02a79ff38a17e9ad734c8d2",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Ara Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Ara Partners | Fund: Ara Infrastructure Fund I | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry.",
+        "linkedFundName": "Ara Infrastructure Fund I"
+      },
+      "productionChange": "NONE",
+      "reason": "ARA's May 2025 release identifies Ara Infrastructure Fund I and Lincoln among its portfolio companies, with associated co-investment vehicles also mentioned. Production already links to Ara Infrastructure Fund I, not a private-equity Ara Fund I. Seed is unlinked. Retain exact production attribution and rationale; seed alignment only.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-pro-1/09-ara-infra-i.html",
+          "sha256": "3cb06fc14ce81d11c5843e399d8e7b1ef109ca6ac45c8b520b469c48847b17f9",
+          "url": "https://www.arapartners.com/news/ara-partners-reaches-final-close-for-inaugural-infrastructure-fund-surpassing-target/",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "65b5f18bcc8be7082ba5ee9d022a8c82694cf9ae88e4ea0eb2915839ac47459d",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpjr7101fqivhegkrripf5",
+      "sha256": "006bb2b58214972b15f9a717f88c7f353e1efb6fb02a79ff38a17e9ad734c8d2"
+    }
+  ],
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/sources-pro-1/ara-infra-i-capture.json",
+      "sha256": "6fb5af7078f7fb05f42abaf4ae3b98ecb55d0f3c121b50ba866547411db5c577"
+    }
+  ],
+  "originalBaseline": {
+    "admission": {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/baseline-admission.json",
+      "sha256": "7bcee984849e13071305c197fae39c9fe6dfdd5925f435fbc9f132537833dc4f"
+    },
+    "observedSnapshot": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-030/completion-before.json",
+      "sha256": "bc4a321eee5576b65e3c03bdb049ec65a6582f0c26d213f63c078d2b2f1322e9"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "artifactType": "PORTCO_BASELINE_OFFLINE_PREPARATION_CHECK",
+  "checkedAt": "2026-09-09T03:06:03.458Z",
+  "checks": {
+    "strictRecordSchema": true,
+    "fullBaselineIdentityAndSourceBindings": true,
+    "completeOwnerCoverage": true,
+    "historicalSnapshotTrialCompilation": true,
+    "generatedPublicationScan": true
+  },
+  "counts": {
+    "records": 10,
+    "ownerDecisions": 6,
+    "parked": 5,
+    "projectedAttributionMutations": 1,
+    "seedRecordCount": 1434,
+    "scannedGeneratedFiles": 14
+  },
+  "limitations": [
+    "Historical observation only; no fresh production verification",
+    "Full prior-release replay and exact Pro prompt archive remain pending",
+    "No active batch, authoritative progress change, release approval or database write"
+  ],
+  "files": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0507.json",
+      "sha256": "5132230d17e3870d2fb779d6aecdf65d7dc8cfa6473fae5c18d9ccf35c57c2e8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0509.json",
+      "sha256": "faff072ab0c0f1344dc6268df1c0de6d40d9f6eea18027d87f529b14ded1e320"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0511.json",
+      "sha256": "e041c649ef3595fda310a11c4f697eb56239292d65cbe3c0927d658650974e8c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0521.json",
+      "sha256": "12fafc495919829036855398ae8620e2b00d08253f905d82cee5c1d0dddf7be8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0535.json",
+      "sha256": "57e32fc087c4644273961a797f2295277359b692dcf1708f7a202a121a8f5f85"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0551.json",
+      "sha256": "42b854286d9dea2828fb16062425c315bda2c5f3db93a13a68188267beb4be91"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0557.json",
+      "sha256": "2a99c09677ac2ca988d8c525c5319f0f2bef7176f78cfe0605194d29cb10798f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0568.json",
+      "sha256": "ba28dfd298715e24cbf862a05ac6565ef4b214d8faea6f490b12f62f1901877a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0598.json",
+      "sha256": "5ec78fadc9cce478cd92c217ec5a9151b8c0935812481d66f358234699f9d8c0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records/0711.json",
+      "sha256": "087783435df625ff9d700862ad09802486e75d2a6af3fcb33e733034114234e1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/observed-baseline-snapshot.json",
+      "sha256": "fa1127041231df9986f998e58019889c7191cbc2bc7a2f23000f5441caea4578"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/observed-baseline-derivation.json",
+      "sha256": "25fcb40f2e61b1dde628e95725cc486ff48a9228430bc5e326d2fc0aaa7e8fe7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/seed-identity.json",
+      "sha256": "5fb5c925792756994f12d4758060fe251cd9ad89e4fae903aef58e1c7d463f55"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/preparation/baseline-030/records-index.json",
+      "sha256": "57097ae22a21e58f77c6ea075ba05099a8712e73915d3302eacfdef78a85f9e0"
+    }
+  ],
+  "validators": [
+    {
+      "path": "scripts/portco-completion/decision-records.ts",
+      "sha256": "927ca1edf3bea238bdf5f86665e171f55748df346c44a91929bd26aa278b0ec8"
+    },
+    {
+      "path": "scripts/portco-completion/batch.ts",
+      "sha256": "dc7666258e1e294f71e721b0b18d5e245b83e952cd960db1e3cd54487f365e3a"
+    },
+    {
+      "path": "scripts/portco-completion/files.ts",
+      "sha256": "0452792347e7198ce48fb449b2a79532a5a4f1623c56e91fb86b13400eaee879"
+    },
+    {
+      "path": "scripts/portco-completion/seed-identity.ts",
+      "sha256": "6a7bf7a926a75eaf7ab2feeaa364247c1b76710ac7f629bd75c5370022dcca0b"
+    }
+  ]
+}
