@@ -1,0 +1,70 @@
+{
+  "companyId": "cmrxpjevf00wbivheu50etwdq",
+  "name": "American Roads",
+  "sequence": 198,
+  "classification": "PARKED",
+  "expectedImageSemanticSha256": "99f0d5ddebd91c3162eed3050d31ff4100d70e0937ee06b64a07891a8e59df84",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk0ij01ukivhe1egc0mxo",
+      "sha256": "4eb6ee9d74f829b5ac00cce67a48984ed54374662b4c9e88981636bfacab0e35"
+    },
+    {
+      "ownerId": "cmt6nud7w000650yykdrdss4i",
+      "sha256": "0a941022a1e17c0f57a3ebe922dbaddd5eebe5409a6d829881a3db6d81d2bd8b"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-026-evidence/decisions-review.json",
+      "sha256": "6c16e2f43d1fb1bb562b7789097c024078dfe04f34814d41765d0284f60c0905"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/source-scope-diagnostic.json",
+      "sha256": "30fdd75546be750c4e21ddabb8a9fc47453bbb3769025d68fdd9c948dfec0211"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/closeout-v1/production.json.gz",
+      "sha256": "ebdaa953a96ad23755fcc374a9e11c7c14f92199529929463c1026b33883e0c7"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0198-american-roads/attempt-1/research-decision.json",
+      "sha256": "092d0dc1203f98a53b15498b170acd8ab0141ae3e0d41848b05a4088f53b4408"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0198-american-roads/attempt-1/application-research-decision.json",
+      "sha256": "d52bc7fc5b68df7659e5dc01b370b251d99a9c65e8ef2eb8f946e65e85faf6a1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0198-american-roads/attempt-1/source-verification.json",
+      "sha256": "7e4ca7a9c48319eacb8faf767bb660c58575eeffa642623e5612942e294f2ded"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-027-evidence/review.json",
+      "sha256": "c1037a21636ba4d50ead13464a51fc3620a3e4192f3a46f3f3a73cfae92ebe02"
+    }
+  ],
+  "owners": [],
+  "preservedOwnerIds": [
+    "cmrxpk0ij01ukivhe1egc0mxo",
+    "cmt6nud7w000650yykdrdss4i"
+  ],
+  "issue": "The current John Laing owner's null production vehicle does not exactly match the evaluated seed's persisted vehicle fallback, blocking complete-company historical-overlay identity proof. Preserve the completed John Laing repair and former DIF Infrastructure V owner; resolve the seed representation explicitly before adding the former-owner overlay. Seed-runner inspection proves this fallback is written to ownershipPeriod.vehicleName; this requires a separately supported null-preserving seed persistence change, not a looser metadata identity assertion.",
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0198-american-roads-v1/proposal.json",
+      "sha256": "4fb2b395812099fe5528432881420a73ba30be185cddd062ef0b213b3761c709"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0198-american-roads-v1.json",
+      "sha256": "affa1f889493ed8ef6134161993da3ca0bb7faade6fef28092751b8f89ee6c9c"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0198-0202-v1/production-apply/batch-apply-receipt.json",
+      "sha256": "8f022266a54db1e17103a7d05389cfd2b9d3cd7b3a279ca8077bc0e6140b7026",
+      "memberIndex": 0
+    },
+    "receiptSha256": "b6ec14faf7e37dbc6fd7845434f6d2163ee460b24c015d32b9c558052ab40fde"
+  },
+  "sourceCaptures": []
+}

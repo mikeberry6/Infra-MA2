@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-08",
+  "ledgerSha256": "7a14a63aaeb6a425ad2e13cac4835b02afff657eb320bd671614a1ad95307497",
+  "sourceSnapshotSha256": "4f4bca080539755dab747cffea5fcf479919fd2a83600a94e80921a42d0298fc",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 1,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 2
+  },
+  "expectedMutationCount": 2,
+  "mutations": [
+    {
+      "recordId": "OFA-HIST-2D0765F59E4EC81193C2EDBB",
+      "ownershipPeriodId": "cmrxpjr9601fuivhem1seogi3",
+      "companyName": "Catalyst Old River Hydroelectric Limited Partnership",
+      "country": "United States",
+      "investmentFirm": "ArcLight Capital Partners",
+      "currentVehicleName": "ArcLight Energy Partners Fund V, L.P.",
+      "databaseVehicleName": "ArcLight Energy Partners Fund V, L.P.",
+      "investmentYear": 2011,
+      "stake": "25% at transfer; initial and interim percentages not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": "ArcLight Energy Partners Fund V, L.P.",
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ArcLight Energy Partners Fund V, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "ArcLight identifies Fund V as the prior holder: its continuation fund acquired the 25% Sidney Murray interest from Fund V in July 2021; Fund V first invested in 2011."
+      },
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/arclight-announces-successful-closing-of-renewable-infrastructure-continuation-fund-301328260.html"
+      ]
+    },
+    {
+      "recordId": "OFA-B1AF791BA08E",
+      "ownershipPeriodId": "cmsqvuopl0009jh4s1ezj3kcl",
+      "companyName": "Catalyst Old River Hydroelectric Limited Partnership",
+      "country": "United States",
+      "investmentFirm": "Brookfield",
+      "currentVehicleName": "Brookfield Renewable Partners affiliates (exact fund not publicly disclosed)",
+      "databaseVehicleName": "Brookfield Renewable Partners affiliates (exact fund not publicly disclosed)",
+      "investmentYear": null,
+      "stake": "75% economic interest; managing/controlling position",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "Brookfield BII"
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Prudential identifies the managing-member investment as indirectly owned by Brookfield Renewable Partners, a publicly traded renewable platform. No distinct private fund is disclosed; the Brookfield BII estimate is unsupported."
+      },
+      "evidenceUrls": [
+        "https://www.prudentialprivatecapital.com/perspectives/prudential-private-capital-invests-60m-in-catalyst-vidalia-holding-corporation"
+      ]
+    }
+  ],
+  "manifestSha256": "55e6d8a435062313ed5d529fbb4263add7d05562618d690b839e4d9de1498682"
+}

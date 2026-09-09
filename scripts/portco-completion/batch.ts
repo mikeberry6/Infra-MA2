@@ -2,6 +2,7 @@
 import { z } from "zod";
 import { sha256Canonical } from "../portco-reconciliation/hash";
 import { companyImageSchema } from "../portco-reconciliation/schema";
+import { ownershipManagerName } from "../portco-reconciliation/ownership-manager";
 import { verifyAttributionChain } from "../portco-reconciliation/attribution-chronology";
 import { seedIdentitySchema, verifySeedIdentity, proveSeedOwner, seedOverlayKey, insertedOverlayId, assertEffectiveSeedState } from "./seed-identity";
 import {
@@ -174,8 +175,13 @@ export function compileBatch(input: { batch: unknown; snapshot: unknown; seed: u
       const desired = patch.desired;
       const target = desired.linkedFundName === null ? null : snapshot.funds.find(f => f.fundName === desired.linkedFundName);
       if (desired.linkedFundName && !target) throw Error("Existing target fund required");
-      // Changing links must never implicitly change the displayed manager or lose an owner.
-      if (owner.fundId !== (target?.id ?? null) && (target?.managerName ?? core.organizationName) !== core.managerName) throw Error("Fund change would alter owner; park instead");
+      // A proven unlink may expose the existing organization's literal name instead
+      // of a fund-manager alias. No organization ID/name or ownership field changes.
+      // New fund links and unproven aliases retain the existing fail-closed guard.
+      const provenOrganizationUnlink = desired.linkedFundName === null && proven && owner.organizationId
+        && core.organizationName === proven.key.investmentFirm;
+      if (owner.fundId !== (target?.id ?? null) && (target?.managerName ?? core.organizationName) !== core.managerName
+        && !provenOrganizationUnlink) throw Error("Fund change would alter owner; park instead");
       const differs = !equal(owner.state, desired);
       if (differs !== (patch.productionChange === "SUBSTANTIVE_ATTRIBUTION")) throw Error("No-op/wording-only production write forbidden");
       if (differs && desired.attributionRationale === null) throw Error("Production correction requires a substantive rationale");
@@ -199,7 +205,9 @@ export function compileBatch(input: { batch: unknown; snapshot: unknown; seed: u
         const projectedCompany = projected.find(c => c.image.id === d.companyId)!;
         const projectedOwner = projectedCompany.owners.find(o => o.id === owner.id)!;
         projectedOwner.state = desired; projectedOwner.fundId = target?.id ?? null;
-        projectedCompany.image.ownershipPeriods.find(o => o.id === owner.id)!.fundName = linkedFundName;
+        const projectedCore = projectedCompany.image.ownershipPeriods.find(o => o.id === owner.id)!;
+        projectedCore.fundName = linkedFundName;
+        if (linkedFundName !== core.fundName) projectedCore.managerName = ownershipManagerName(target?.managerName, core.organizationName, owner.id);
       }
     }
     const classification = changes ? "ATTRIBUTION_CORRECTION" : seedChanges ? "SEED_ONLY" : "NO_CHANGE";

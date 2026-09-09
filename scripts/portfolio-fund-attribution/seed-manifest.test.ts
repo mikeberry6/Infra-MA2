@@ -52,9 +52,9 @@ describe("portfolio fund attribution seed manifest", () => {
     const ownerKeys = owners.map(ownerKey);
     const manifestKeys = manifest.records.map(ownerKey);
 
-    // All 1,393 active owners remain covered. Batches 019–026 add thirty-nine proven former-owner
+    // All 1,393 active owners remain covered. Batches 019–027 add forty proven former-owner
     // metadata overlays, not owners; every added key must exist in evaluated seed.
-    expect(manifest.records).toHaveLength(1_432);
+    expect(manifest.records).toHaveLength(1_433);
     expect(owners).toHaveLength(1_393);
     expect(new Set(ownerKeys)).toHaveProperty("size", ownerKeys.length);
     expect(new Set(manifestKeys)).toHaveProperty("size", manifestKeys.length);
@@ -62,7 +62,7 @@ describe("portfolio fund attribution seed manifest", () => {
     expect(manifestKeys.filter(key => activeKeys.has(key)).sort()).toEqual([...ownerKeys].sort());
     expect(manifestKeys.every(key => allKeys.has(key))).toBe(true);
     const historical = manifest.records.filter(record => !activeKeys.has(ownerKey(record)));
-    expect(historical).toHaveLength(39);
+    expect(historical).toHaveLength(40);
     expect(historical.every(record => record.recordId.startsWith("OFA-HIST-") && record.fundAttribution !== "INFERRED")).toBe(true);
   });
 
@@ -71,9 +71,9 @@ describe("portfolio fund attribution seed manifest", () => {
     const inferred = manifest.records.filter((record) => record.fundAttribution === "INFERRED");
     expect(manifest.policy.fundCreates).toBe(0);
     expect(manifest.policy.fundUpdates).toBe(0);
-    // Batch 006 preserves 448 estimates and records IENTC's partially disclosed multi-fund boundary.
-    expect(manifest.policy.inferredAssignments).toBe(448);
-    expect(inferred).toHaveLength(448);
+    // Batch 027 removes Catalyst's unsupported BII estimate; all remaining estimates stay explicit.
+    expect(manifest.policy.inferredAssignments).toBe(447);
+    expect(inferred).toHaveLength(447);
     // Batch 010 resolves Helix's directly evidenced KKR corporate-subsidiary attribution.
     // Batch 012 removes unsupported Northleaf estimates for CSV and Odfjell without inventing funds.
     // Batch 015 removes Crosstimbers' holding-vehicle-as-fund seed attribution without changing production.
