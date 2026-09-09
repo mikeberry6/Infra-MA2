@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Recycling businesses by material stream",
+    description:
+      "28 recycling businesses across 10 material streams, with sponsor details and operating summaries. Copy into Outlook in 10pt Arial.",
+    href: "/one-off-requests/recycling-businesses-by-material-stream-outlook.html",
+    format: "Outlook HTML",
+    date: "Sep 2026",
+  },
+  {
     title: "Slide format",
     description:
       "Editable Rio Tinto slide format with initials-only text, accompanied by the complete source copy on the webpage.",
