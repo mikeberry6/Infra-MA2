@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "batchId": "portco-completion-028",
+  "batchSha256": "a3d3e58d75ffda4c0449baaa0dc91996ba0c7e836eb6382d2ab5bf206064797b",
+  "verifiedAt": "2026-09-09T00:45:10.990Z",
+  "snapshotSha256": "715ac32a79554f95437964ac6429da8a53ee1020797bf94d131daf13280c3419",
+  "manifestSha256": "9553ce087f51ea012f20d69c6697611e88d581c2061b679bfd144ae5ae3bfc03",
+  "approvalSha256": "0aa3a05faf58ee8e7cfb3b632e1f0798dbb3d1c27085f8c3aa05f83122f2b441",
+  "seedManifestSha256": "d4bd018e0c56ed4fc57db203c2c2732b1a3d73bbff48967b72506a0320c55781",
+  "offline": {
+    "completedReleases": 27,
+    "boundFiles": 3322,
+    "passed": true
+  },
+  "snapshot": {
+    "companies": 2,
+    "owners": 4,
+    "readOnlyTransactions": 1
+  },
+  "fullRegression": {
+    "files": 211,
+    "tests": 3848,
+    "passed": true
+  },
+  "strictTypecheck": true,
+  "eslint": true,
+  "seedValidation": {
+    "errors": 0,
+    "warnings": 54
+  },
+  "applyValidateOnly": true,
+  "completeRecompilePassed": true,
+  "databaseWrites": 0,
+  "logs": [
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/regression.log",
+      "sha256": "4c11df71e7ff53d2b53e819d1f5e814ff9993caf690811ac5df5e0c6a3c86bd0"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/eslint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/seed-validation.log",
+      "sha256": "277bfda16291b13fd00f2f819761dfc8e1114b4642e2376050f96ee0d86760ea"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-028/apply-validation.log",
+      "sha256": "46dcc0d6906f29cfc236daa3e2c2fa826bb9401c25608ab7187237e91eca5495"
+    }
+  ],
+  "checkerFiles": [
+    {
+      "path": "scripts/portco-completion/batch.ts",
+      "sha256": "f88987bebcfb013f3356932131b014c334fb3070dc5b59b220508c1015599762"
+    },
+    {
+      "path": "scripts/portco-completion/decision-records.ts",
+      "sha256": "e63477d4b8da5ffa21dd67359a798740fbcd8ab7da815eafe7508e5eab87e349"
+    },
+    {
+      "path": "scripts/portco-completion/prepare-records.ts",
+      "sha256": "08171142184c4b1afd17b6ef9a1b21ff3795aef3c755528b00fc14fbfb2f8944"
+    },
+    {
+      "path": "scripts/portco-completion/seed-identity.ts",
+      "sha256": "6a7bf7a926a75eaf7ab2feeaa364247c1b76710ac7f629bd75c5370022dcca0b"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/seed-manifest.test.ts",
+      "sha256": "bdcd53b426eb0b89f8e9bcc399c165bf3f8582d5308456be0e9930d7e55e2c3c"
+    }
+  ]
+}

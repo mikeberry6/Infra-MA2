@@ -1,0 +1,119 @@
+{
+  "companyId": "cmrxpjlhd016hivheffuojgmg",
+  "name": "Bayonne Energy Center",
+  "sequence": 344,
+  "classification": "ATTRIBUTION_CORRECTION",
+  "evidence": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/research-decision.json",
+      "sha256": "59920508f71ec77270f21db36dd891e6d8f139b30495eff735f58fa292eae0d6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/source-verification.json",
+      "sha256": "d2935e0fe4498dcf735573b66ba9343f8d30f20d09437ba6edca3af1da7340cc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "191bb36865a33dfdd9433f1e0acf4cfaabee1f9bc8cf7b4c0df14017e5249c95"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/chatgpt-response-validation.json",
+      "sha256": "1251f6a8350658530a76f50b67b22003230fffc2d833509a094c113b5fa7d6b9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/chatgpt-attestation.json",
+      "sha256": "4306e2b9941ecffc7a44c1289b26cec3b48cb5b1d69e20d346a01b37db6851b8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/review.json",
+      "sha256": "f67a812753fcc106a0d92c36b00fcd03d4de43240e906b65e513eaee4a6dc322"
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "cmrxpk7rg025sivhe9dxk8h02",
+      "seedRecordId": "OFA-HIST-4761B53F9DECC2385F906108",
+      "expectedSeedSha256": null,
+      "expectedOwnerSha256": "95db0e5cf9554df8b2887a071249a04f66281e4cd0a505b1c3ae6e16f4d04fa0",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "North Haven Infrastructure Partners II US Investments L.P. and co-investment entities",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed 2026 NYPSC Bayonne petition, printed pages 6-7, identifies the seller under North Haven Infrastructure Partners II US Investments L.P. and co-investment entities, with the investment partnership approximately 60% held by II-AIV I and 40% by II. Replace the single-fund estimate with the disclosed collective attribution and no exclusive fund link; preserve NHIP II Bayonne Holdings LLC, the collective 100% stake and 2018-2026 ownership period.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "Direct filed ownership-chain disclosure replaces an unsupported single-fund inference without changing the existing owner or allocating collective economics.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/sources/bayonne-2026-petition.pdf",
+          "sha256": "d0ae40646d064cd55a47781dc4b37e4ba3619ef0e98e350cbe3654b0f9f01ca7",
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "ownerId": "cmtiv3g8y0004272bpabv0bxy",
+      "seedRecordId": "OFA-131B94987056",
+      "expectedSeedSha256": "b586644889f68f14dd48b39c7871588ba6c98f75efd110e37d301767f0c36ab3",
+      "expectedOwnerSha256": "dab52d08f62499d5f882c4f934f8f0d9909ca9155555c5ca08e2302aad156f01",
+      "desired": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Elliott Associates, L.P. and Elliott International, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed 2026 NYPSC Bayonne petition, printed page 8, identifies Elliott Associates, L.P. and Elliott International, L.P. as the buyer parent's 32% and 68% owners. Disclose both funds rather than claiming no separate Elliott fund is identified. Preserve the existing Tunnel Energy Investor vehicle, collective 100% indirect stake and separately evidenced July 2026 closing; do not split periods or create fund links.",
+        "linkedFundName": null
+      },
+      "productionChange": "SUBSTANTIVE_ATTRIBUTION",
+      "reason": "The exact cited regulator petition names the funds, contradicting the existing direct/program rationale that no separate fund was identified.",
+      "sources": [
+        {
+          "path": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/sources/bayonne-2026-petition.pdf",
+          "sha256": "d0ae40646d064cd55a47781dc4b37e4ba3619ef0e98e350cbe3654b0f9f01ca7",
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "preservedOwnerIds": [],
+  "issue": null,
+  "expectedImageSemanticSha256": "387b22c14b13cace02cf337b402fdf47b69e7013fcd35bc487a4837f9bc9e5d7",
+  "expectedOwners": [
+    {
+      "ownerId": "cmrxpk7rg025sivhe9dxk8h02",
+      "sha256": "95db0e5cf9554df8b2887a071249a04f66281e4cd0a505b1c3ae6e16f4d04fa0"
+    },
+    {
+      "ownerId": "cmtiv3g8y0004272bpabv0bxy",
+      "sha256": "dab52d08f62499d5f882c4f934f8f0d9909ca9155555c5ca08e2302aad156f01"
+    }
+  ],
+  "originalApply": {
+    "proposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0344-bayonne-energy-center-v1/proposal.json",
+      "sha256": "02ecfb4af588a438e1f629820e06a68d3cd41c6b4d7139e308b3eb812d36f150"
+    },
+    "approval": {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0344-bayonne-energy-center-v1.json",
+      "sha256": "ec658cc5c6d6a44d48163e7427b72ed5a806c2c000e70f05e142d83b1c4227a9"
+    },
+    "receipt": {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0344-0350-v1/production-apply/portco-batch-production-c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b-83ca7484583272ea7c9872f73640c3a52e4373f1-33529764383/batch-apply-receipt.json",
+      "sha256": "91a6d3b83cc7d85849f8bd033ca9bfbd99ce07a89da1dad8f4b4efb3a3a7ddff",
+      "memberIndex": 0
+    },
+    "receiptSha256": "dd45a8cf9d7beb295469d199c06cc60f5f5b0b05db75b49a4658dc7eb13c6251"
+  },
+  "sourceCaptures": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-08/completion/batch-028-evidence/sources/bayonne-2026-petition.pdf.capture.json",
+      "sha256": "cca75a2a9f78da0283d083f1629b9dfbd44a70e104ee55973dc22336a71b12aa"
+    }
+  ]
+}
