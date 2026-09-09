@@ -2777,14 +2777,6 @@
         }
       ],
       "status": "PARKED",
-      "parkedReview": {
-        "priorIssue": "Production Keyera ownership vehicle is null, while the evaluated seed resolver persists Keyera Corp. from ownershipVehicle. This is a persistence mismatch, not equivalent displayed wording. Require a separately supported null-preserving seed persistence correction before historical metadata alignment; do not weaken the full-company identity gate or invent the exact Keyera title affiliate. Preserve the former Stonepeak fund-unavailable exception and all completed ownership transactions.",
-        "batchId": "portco-completion-029",
-        "completion": {
-          "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-029/completion-evidence.json",
-          "sha256": "9e341094dce3c89158fc559939d81f51915f55928e93d3522e9d68864e7f3544"
-        }
-      },
       "issue": "Production Keyera ownership vehicle is null, while the evaluated seed resolver persists Keyera Corp. from ownershipVehicle. This is a persistence mismatch, not equivalent displayed wording. Require a separately supported null-preserving seed persistence correction before historical metadata alignment; do not weaken the full-company identity gate or invent the exact Keyera title affiliate. Preserve the former Stonepeak fund-unavailable exception and all completed ownership transactions.",
       "completion": null
     }
@@ -2947,7 +2939,13 @@
       "extensionSha256": "52861224cacf8299de5180613ae0ef7abc182fcfbd221fbada24ef24241fb100"
     }
   ],
-  "active": null,
+  "active": {
+    "batchId": "portco-completion-029",
+    "batchSha256": "0d7b2cd728605409fd728c0869669248f8a0b714cb5c3b7cd622c08856f3842e",
+    "state": "RELEASED",
+    "releaseSha": "53a5838739d48d6dec6bc2693c522efc93b6efd5",
+    "failure": null
+  },
   "completedBatchIds": [
     "portco-completion-001",
     "portco-completion-002",
@@ -2976,8 +2974,7 @@
     "portco-completion-025",
     "portco-completion-026",
     "portco-completion-027",
-    "portco-completion-028",
-    "portco-completion-029"
+    "portco-completion-028"
   ],
   "consumedReceiptHashes": [
     "50061d92ba9f240bb192ca0e4b049c226824bff8702eee6b7d7872e272853c3f",
@@ -3007,5 +3004,5 @@
     "a271ccc414d3a17639e660f61114eac3b7488126b61235d9c0a4386c494c86a8",
     "83435a6cf1beab37e78eba44ae84691345087c2af3569d7aa4fd86f4271a7344"
   ],
-  "progressSha256": "74a80566e1342a740d936391951f6d0dae5ad9819d15de09106db8797596449b"
+  "progressSha256": "5ca4e1cbe2ae32be882d696e30c29de41b52c5ccc0aaaeaeb3adad2bd0370fae"
 }

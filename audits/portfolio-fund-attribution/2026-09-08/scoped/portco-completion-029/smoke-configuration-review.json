@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "releaseSha": "53a5838739d48d6dec6bc2693c522efc93b6efd5",
+  "passed": true,
+  "reason": "The first supplemental invocation used script defaults instead of the documented production configuration. The published root intentionally redirects to /tracker; operations.md and the release workflow specify --skip-health --allow-legacy-root. The documented configuration passes all ten route/export checks; exact deployed SHA is independently verified in canonical-release.json. No code, route, health endpoint or verification implementation was changed.",
+  "initialDefaultResult": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-029/canonical-smoke.json",
+    "sha256": "9b33534e3d1a952501dd3daffb1afe1fc6456c899a812dd3e683ec21409552f9"
+  },
+  "configuredResult": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-029/canonical-configured-smoke.json",
+    "sha256": "8d773bc0a48d3e3bbfa17c2efdfaa95c606d5be323e32b6f7adb7ddcf570c8f3"
+  },
+  "exactDeployment": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-029/canonical-release.json",
+    "sha256": "9b68803b31dc8c1171599f7f5d902e28d7b537c5a1ee5e10ade50ce7904dfec0"
+  },
+  "publishedConfiguration": [
+    {
+      "path": "docs/operations.md",
+      "sha256": "aa148ab4fdcd95168733cd550a895ecc769fe0cf74699b2240271cf8b1fa4e3b"
+    },
+    {
+      "path": "scripts/release-smoke.mjs",
+      "sha256": "02084bf67f14840c4decc594ffb6358047b0a60f4cfa0da1dae84520cdb247e8"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "sha256": "041e03236d30fc7afab9654f1fb0c1ced940d59096766bfecc5d1e7c1868dfeb"
+    },
+    {
+      "path": ".github/workflows/release-production.yml",
+      "sha256": "bd7354d02ac5ec1a116d3ff9b6883293a11afd109f305164faff7d0cafcba6cb"
+    }
+  ],
+  "databaseWrites": 0
+}

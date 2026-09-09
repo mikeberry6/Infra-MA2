@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_COMPLETION_EVIDENCE",
+  "batchId": "portco-completion-029",
+  "batchSha256": "0d7b2cd728605409fd728c0869669248f8a0b714cb5c3b7cd622c08856f3842e",
+  "verifiedAt": "2026-09-09T01:32:11.291Z",
+  "release": {
+    "mergeSha": "53a5838739d48d6dec6bc2693c522efc93b6efd5",
+    "canonicalSha": "53a5838739d48d6dec6bc2693c522efc93b6efd5",
+    "headSha": "53a5838739d48d6dec6bc2693c522efc93b6efd5",
+    "gitRef": "main",
+    "gitProvider": "github",
+    "canonicalUrl": "https://infra-ma-2.vercel.app",
+    "ready": true,
+    "requiredChecksPassed": true,
+    "evidence": {
+      "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-029/canonical-release.json",
+      "sha256": "9b68803b31dc8c1171599f7f5d902e28d7b537c5a1ee5e10ade50ce7904dfec0"
+    }
+  },
+  "receipt": null,
+  "databaseApplyRequired": false,
+  "publishedSeedProof": {
+    "releaseSha": "53a5838739d48d6dec6bc2693c522efc93b6efd5",
+    "path": "prisma/seed-data/ownership-attributions.manifest.json",
+    "byteSha256": "00f6d3d5e7c9c88d17d6b1fa97865a668fc12bdcb6b2f4c63fd8fce80c407110",
+    "manifestSha256": "d4bd018e0c56ed4fc57db203c2c2732b1a3d73bbff48967b72506a0320c55781",
+    "exact": true
+  },
+  "snapshotSha256": "e7a2a940d021170ecfd8f3c6d07b5e1b0998c6e706b4bdb9c4dda83463fbc21b",
+  "seedManifestSha256": "d4bd018e0c56ed4fc57db203c2c2732b1a3d73bbff48967b72506a0320c55781",
+  "proof": [],
+  "renderedReview": "All members are PARKED and the exact compiled batch has zero seed and database mutations. There are no safe/changed cards to approve; this empty review makes no rendered-card or ownership-verification claim for KAPS. Complete read-only company/owner/fund/redirect after-images separately match the frozen projected state. The precise KAPS null-vehicle persistence mismatch and unavailable-fact exceptions remain unresolved and excluded from fully verified counts.",
+  "renderedReviewFile": {
+    "path": "audits/portfolio-fund-attribution/2026-09-08/scoped/portco-completion-029/rendered-review.json",
+    "sha256": "bafbd210711f0628f84a788549f23e6ec90a0bce8ae6766d4391eda69071739c"
+  },
+  "parked": [
+    {
+      "companyId": "cmrxpjnk0019uivhefy3ycv3y",
+      "issue": "Production Keyera ownership vehicle is null, while the evaluated seed resolver persists Keyera Corp. from ownershipVehicle. This is a persistence mismatch, not equivalent displayed wording. Require a separately supported null-preserving seed persistence correction before historical metadata alignment; do not weaken the full-company identity gate or invent the exact Keyera title affiliate. Preserve the former Stonepeak fund-unavailable exception and all completed ownership transactions."
+    }
+  ]
+}
