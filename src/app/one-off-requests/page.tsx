@@ -11,7 +11,7 @@ const ONE_OFF_REQUESTS = [
   {
     title: "Recycling businesses by material stream",
     description:
-      "28 recycling businesses across 10 material streams, with sponsor details and operating summaries. Copy into Outlook in 10pt Arial.",
+      "33 recycling businesses across 10 material streams, with sector economics, sponsor details and expanded operating profiles. Copy into Outlook in 10pt Arial.",
     href: "/one-off-requests/recycling-businesses-by-material-stream-outlook.html",
     format: "Outlook HTML",
     date: "Sep 2026",
