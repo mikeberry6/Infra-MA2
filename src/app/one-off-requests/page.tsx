@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
-    title: "Recycling businesses by material stream",
+    title: "CRA growth questions",
     description:
-      "33 recycling businesses across 10 material streams, with sector economics, sponsor details and expanded operating profiles. Copy into Outlook in 10pt Arial.",
+      "60 due-diligence questions across six CRA growth areas, with priority questions bolded. Copy into Outlook in 10pt Arial.",
     href: "/one-off-requests/recycling-businesses-by-material-stream-outlook.html",
     format: "Outlook HTML",
     date: "Sep 2026",
