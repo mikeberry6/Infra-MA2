@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Rio Tinto Infrastructure Monetization",
+    description:
+      "Pilbara and Canadian power infrastructure monetization note covering scope, rationale, the proposed minority structure, and the process outlook.",
+    href: "/one-off-requests/rio-tinto-infrastructure-monetization.html",
+    format: "Outlook HTML",
+    date: "Sep 2026",
+  },
+  {
     title: "CRA growth questions",
     description:
       "60 due-diligence questions across six CRA growth areas, with priority questions bolded. Copy into Outlook in 10pt Arial.",
