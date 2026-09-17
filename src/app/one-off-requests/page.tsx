@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Formatted Slides",
+    description:
+      "Three-slide Rio Tinto PowerPoint covering Pilbara Power, Canada Power, and BC Works, with asset profiles and maps.",
+    href: "/one-off-requests/formatted-slides.pptx",
+    format: "PowerPoint",
+    date: "Sep 2026",
+    download: true,
+  },
+  {
     title: "Rio Tinto Infrastructure Monetization",
     description:
       "Pilbara and Canadian power infrastructure monetization note covering scope, rationale, the proposed minority structure, and the process outlook.",
