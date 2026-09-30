@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Divider format",
+    description:
+      "Editable section divider with the Guggenheim logo and three fillable text fields retaining the initials P, F, and S.",
+    href: "/one-off-requests/divider format.pdf",
+    format: "Editable PDF",
+    date: "Sep 2026",
+    download: true,
+  },
+  {
     title: "Formatted Slides",
     description:
       "Three-slide Rio Tinto PowerPoint covering Pilbara Power, Canada Power, and BC Works, with asset profiles and maps.",
