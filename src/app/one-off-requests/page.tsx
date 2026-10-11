@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Three-calendar slide",
+    description:
+      "Editable October 2026 slide with three milestone calendars and initials-only text outside the calendars.",
+    href: "/one-off-requests/three-calendar-slide.pptx",
+    format: "PowerPoint",
+    date: "Oct 2026",
+    download: true,
+  },
+  {
     title: "Divider format",
     description:
       "Editable section divider with the Guggenheim logo and three fillable text fields retaining the initials P, F, and S.",
@@ -295,7 +304,7 @@ export default function OneOffRequestsPage() {
           },
           {
             label: "Latest",
-            value: "Sep 2026",
+            value: "Oct 2026",
             detail: "Most recent one-off",
             color: "#B4A87D",
           },
