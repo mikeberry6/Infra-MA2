@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
-    title: "Three-calendar slide",
+    title: "Calendar format",
     description:
       "Editable October 2026 slide with three milestone calendars and initials-only text outside the calendars.",
-    href: "/one-off-requests/three-calendar-slide.pptx",
+    href: "/one-off-requests/calendar format.pptx",
     format: "PowerPoint",
     date: "Oct 2026",
     download: true,
