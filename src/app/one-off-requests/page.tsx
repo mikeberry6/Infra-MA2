@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Agenda format",
+    description:
+      "Editable Word agenda with initials-only text and the weekly briefing color palette.",
+    href: "/one-off-requests/agenda format.docx",
+    format: "Word",
+    date: "Oct 2026",
+    download: true,
+  },
+  {
     title: "Calendar format",
     description:
       "Editable October 2026 slide with three milestone calendars and initials-only text outside the calendars.",
