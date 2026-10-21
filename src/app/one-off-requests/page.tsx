@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Planning format",
+    description:
+      "Editable portrait planning-responsibilities table with first-letter-only placeholders, true PowerPoint bullets, and space for a title and margins.",
+    href: "/one-off-requests/Planning format.pptx",
+    format: "PowerPoint",
+    date: "Oct 2026",
+    download: true,
+  },
+  {
     title: "Agenda format",
     description:
       "Editable Word agenda with initials-only text and the weekly briefing color palette.",
