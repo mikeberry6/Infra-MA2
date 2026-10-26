@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Table format",
+    description:
+      "Editable sell-side process status table with first-letter-only placeholders, Merriweather Black headers, and Roboto body text.",
+    href: "/one-off-requests/table-format.pptx",
+    format: "PowerPoint",
+    date: "Oct 2026",
+    download: true,
+  },
+  {
     title: "Planning format",
     description:
       "Editable portrait planning-responsibilities table with first-letter-only placeholders, true PowerPoint bullets, and space for a title and margins.",
