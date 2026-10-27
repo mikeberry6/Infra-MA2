@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Table format — Word",
+    description:
+      "Editable Word table with initials-only headers, bullet-and-bracket placeholders, and the weekly briefing color palette.",
+    href: "/one-off-requests/table-format.docx",
+    format: "Word",
+    date: "Oct 2026",
+    download: true,
+  },
+  {
     title: "Table format",
     description:
       "Editable sell-side process status table with first-letter-only placeholders, Merriweather Black headers, and Roboto body text.",
