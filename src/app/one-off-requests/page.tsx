@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "North American waste portfolio companies",
+    description:
+      "Infrastructure firms and their North American waste portfolio companies, with investment years and one-click Outlook copying.",
+    href: "/one-off-requests/north-american-waste-portfolio-companies.html",
+    format: "Outlook HTML",
+    date: "Oct 2026",
+  },
+  {
     title: "Table format — Word",
     description:
       "Editable Word table with initials-only headers, bullet-and-bracket placeholders, and the weekly briefing color palette.",
