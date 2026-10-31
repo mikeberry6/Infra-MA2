@@ -202,7 +202,7 @@ describe("weekly briefing archive", () => {
 
   it("sorts the current archive newest first", async () => {
     const editions = await listWeeklyBriefingEditions();
-    expect(editions[0]).toBe("2026-10-24");
+    expect(editions[0]).toBe("2026-10-30");
     expect(editions).toContain("2026-02-14");
   });
 });
