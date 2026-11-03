@@ -15,6 +15,7 @@ export interface BriefingReference {
 
 export interface DealView {
   briefings?: BriefingReference[];
+  legacyIdAliases?: string[];
   id: string;
   legacyId: string;
   title: string;

@@ -1046,7 +1046,7 @@ export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: De
       setSelectedDeal(null);
       return;
     }
-    const match = deals.find((d) => d.legacyId === focusId);
+    const match = deals.find((d) => d.legacyId === focusId || d.legacyIdAliases?.includes(focusId));
     setSelectedDeal(match ?? null);
     if (!match) writeQueryParam("focus", null, "replace");
   }, [focusId, deals, writeQueryParam]);

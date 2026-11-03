@@ -1,7 +1,7 @@
 import { normalizeFundName } from "../../src/lib/fund-name-utils";
 import type { Prisma, PrismaClient } from "../../src/generated/prisma/client";
 import { classifyDealImport, commitDealImport, prepareDealRows } from "../../src/modules/imports/deals";
-import { digest, sourceKey } from "./archive";
+import { digest, sourceKey, normalizeName } from "./archive";
 import { validateApprovedProposal, type Proposal, type SnapshotDeal } from "./domain";
 
 type Client = Prisma.TransactionClient;
@@ -35,6 +35,19 @@ export async function applyProposal(client: PrismaClient, input: unknown, expect
     if (prior) return { manifestHash, alreadyApplied: true, issueCount: proposal.issues.length, cardCount: proposal.decisions.length };
     const current = await snapshot(tx);
     if (current.hash !== proposal.snapshotHash) throw new Error("Database snapshot is stale; regenerate preview and review changes");
+    for (const merge of proposal.duplicates) {
+      const duplicate = current.records.find(d => d.legacyId === merge.duplicateId && d.status === "PUBLISHED");
+      const canonical = current.records.find(d => d.legacyId === merge.canonicalId && d.status === "PUBLISHED");
+      if (!duplicate || !canonical || normalizeName(duplicate.target) !== normalizeName(canonical.target)) throw new Error("Duplicate merge requires two existing published records for the same asset");
+      const citations = await tx.citation.findMany({ where: { dealId: duplicate.id } });
+      for (const citation of citations) {
+        if (!(await tx.citation.findFirst({ where: { dealId: canonical.id, sourceId: citation.sourceId } }))) await tx.citation.create({ data: { dealId: canonical.id, sourceId: citation.sourceId, isPrimary: citation.isPrimary, purpose: citation.purpose, evidenceLabel: citation.evidenceLabel } });
+      }
+      await tx.briefingDeal.updateMany({ where: { dealId: duplicate.id }, data: { dealId: canonical.id } });
+      await tx.newsMention.updateMany({ where: { dealId: duplicate.id }, data: { dealId: canonical.id } });
+      await tx.deal.update({ where: { id: duplicate.id }, data: { status: "ARCHIVED" } });
+      await tx.auditEvent.create({ data: { entityType: "BriefingDuplicateMerge", entityId: merge.duplicateId, action: "MERGE", metadata: { canonicalLegacyId: merge.canonicalId, evidence: merge.evidence, sourceUrl: merge.sourceUrl, duplicateBefore: JSON.parse(JSON.stringify(duplicate)) } } });
+    }
     const citationsToAdd: Proposal["decisions"] = [];
     const creates = new Map<string, NonNullable<Proposal["decisions"][number]["data"]>>();
     for (const row of proposal.decisions) {

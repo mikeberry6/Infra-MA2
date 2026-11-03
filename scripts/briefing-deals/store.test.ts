@@ -105,6 +105,19 @@ describe("reviewed transactional import on isolated Postgres", () => {
     await applyProposal(client, input, digest(input));
     expect(await client.citation.count({ where: { deal: { legacyId: "SYNTHETIC-1" } } })).toBe(2);
   });
+  it("archives a reviewed duplicate while preserving the canonical deal and old identity", async () => {
+    const original = await client.deal.findUniqueOrThrow({ where: { legacyId: "SYNTHETIC-1" } });
+    const { id: _id, legacyId: _legacyId, createdAt: _createdAt, updatedAt: _updatedAt, ...data } = original;
+    await client.deal.create({ data: { ...data, legacyId: "DUPLICATE-1" } });
+    const state = await snapshot(client);
+    const input = buildProposal([{ ...issue, edition: "2026-11-27" }], state.records, state.hash);
+    input.decisions[0] = { ...input.decisions[0], action: "MATCH", canonicalId: "SYNTHETIC-1", approved: true, reviewer: "Synthetic owner", evidence: "Same announcement", verifiedAnnouncementDate: "2026-10-29", verificationSourceUrl: "https://example.test/transaction", data: null };
+    input.duplicates = [{ duplicateId: "DUPLICATE-1", canonicalId: "SYNTHETIC-1", evidence: "Same acquisition, later closing update", sourceUrl: "https://example.test/transaction" }];
+    await applyProposal(client, input, digest(input));
+    expect((await client.deal.findUniqueOrThrow({ where: { legacyId: "DUPLICATE-1" } })).status).toBe("ARCHIVED");
+    expect((await client.deal.findUniqueOrThrow({ where: { legacyId: "SYNTHETIC-1" } })).description).toBe("Richer updated record");
+    expect((await client.auditEvent.findFirstOrThrow({ where: { entityId: "DUPLICATE-1", action: "MERGE" } })).metadata).toMatchObject({ canonicalLegacyId: "SYNTHETIC-1" });
+  });
   it("rejects changed approval hashes", async () => {
     const input = await proposal("SYNTHETIC-4");
     await expect(applyProposal(client, input, "wrong")).rejects.toThrow("hash");

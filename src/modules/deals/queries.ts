@@ -27,6 +27,7 @@ function toDealView(
     citations: { source: { label: string; url: string } }[];
   },
   briefings: BriefingReference[] = [],
+  legacyIdAliases: string[] = [],
 ): DealView {
   const buyers = uniqueNames(deal.participants
     .filter((p) => p.role === "BUYER")
@@ -51,6 +52,7 @@ function toDealView(
 
   return {
     briefings,
+    legacyIdAliases,
     id: deal.legacyId,
     legacyId: deal.legacyId,
     title: deal.title,
@@ -100,7 +102,8 @@ async function getAllDealsRaw(): Promise<DealView[]> {
     orderBy: { date: "desc" },
   });
   const references = await getBriefingReferences(deals.map(d => d.id));
-  return deals.map(deal => toDealView(deal, references.get(deal.id) ?? []));
+  const aliases = await getMergedDealAliases();
+  return deals.map(deal => toDealView(deal, references.get(deal.id) ?? [], aliases.get(deal.legacyId) ?? []));
 }
 
 const getAllDealsCached = unstable_cache(
@@ -114,13 +117,15 @@ export async function getAllDeals(): Promise<DealView[]> {
 }
 
 export async function getDealById(legacyId: string): Promise<DealView | null> {
+  const aliases = await getMergedDealAliases();
+  const canonicalId = [...aliases].find(([, ids]) => ids.includes(legacyId))?.[0] ?? legacyId;
   const deal = await prisma.deal.findUnique({
-    where: { legacyId },
+    where: { legacyId: canonicalId },
     include: DEAL_INCLUDE,
   });
   if (!deal) return null;
   const references = await getBriefingReferences([deal.id]);
-  return toDealView(deal, references.get(deal.id) ?? []);
+  return toDealView(deal, references.get(deal.id) ?? [], aliases.get(deal.legacyId) ?? []);
 }
 
 export async function getWeeklyDeals(anchorDate: Date): Promise<DealView[]> {
@@ -134,7 +139,8 @@ export async function getWeeklyDeals(anchorDate: Date): Promise<DealView[]> {
     orderBy: { date: "desc" },
   });
   const references = await getBriefingReferences(deals.map(d => d.id));
-  return deals.map(deal => toDealView(deal, references.get(deal.id) ?? []));
+  const aliases = await getMergedDealAliases();
+  return deals.map(deal => toDealView(deal, references.get(deal.id) ?? [], aliases.get(deal.legacyId) ?? []));
 }
 
 export async function getLatestDealDate(): Promise<Date> {
@@ -177,4 +183,20 @@ export async function getBriefingIssues() {
     select: { edition: true, archivePath: true },
     orderBy: { edition: "desc" },
   });
+}
+
+async function getMergedDealAliases() {
+  const rows = await prisma.auditEvent.findMany({
+    where: { entityType: "BriefingDuplicateMerge", action: "MERGE" },
+    select: { entityId: true, metadata: true },
+  });
+  const aliases = new Map<string, string[]>();
+  for (const row of rows) {
+    const metadata = row.metadata as { canonicalLegacyId?: unknown } | null;
+    if (!row.entityId || typeof metadata?.canonicalLegacyId !== "string") continue;
+    const ids = aliases.get(metadata.canonicalLegacyId) ?? [];
+    if (!ids.includes(row.entityId)) ids.push(row.entityId);
+    aliases.set(metadata.canonicalLegacyId, ids);
+  }
+  return aliases;
 }
