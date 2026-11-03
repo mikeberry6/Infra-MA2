@@ -40,8 +40,13 @@ export async function applyProposal(client: PrismaClient, input: unknown, expect
       const canonical = current.records.find(d => d.legacyId === merge.canonicalId && d.status === "PUBLISHED");
       if (!duplicate || !canonical || normalizeName(duplicate.target) !== normalizeName(canonical.target)) throw new Error("Duplicate merge requires two existing published records for the same asset");
       const citations = await tx.citation.findMany({ where: { dealId: duplicate.id } });
+      let hasPrimary = Boolean(await tx.citation.findFirst({ where: { dealId: canonical.id, isPrimary: true }, select: { id: true } }));
       for (const citation of citations) {
-        if (!(await tx.citation.findFirst({ where: { dealId: canonical.id, sourceId: citation.sourceId } }))) await tx.citation.create({ data: { dealId: canonical.id, sourceId: citation.sourceId, isPrimary: citation.isPrimary, purpose: citation.purpose, evidenceLabel: citation.evidenceLabel } });
+        if (!(await tx.citation.findFirst({ where: { dealId: canonical.id, sourceId: citation.sourceId } }))) {
+          const isPrimary = citation.isPrimary && !hasPrimary;
+          await tx.citation.create({ data: { dealId: canonical.id, sourceId: citation.sourceId, isPrimary, purpose: citation.purpose, evidenceLabel: citation.evidenceLabel } });
+          if (isPrimary) hasPrimary = true;
+        }
       }
       await tx.briefingDeal.updateMany({ where: { dealId: duplicate.id }, data: { dealId: canonical.id } });
       await tx.newsMention.updateMany({ where: { dealId: duplicate.id }, data: { dealId: canonical.id } });
