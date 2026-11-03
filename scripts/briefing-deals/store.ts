@@ -1,6 +1,6 @@
 import type { Prisma, PrismaClient } from "../../src/generated/prisma/client";
 import { classifyDealImport, commitDealImport, prepareDealRows } from "../../src/modules/imports/deals";
-import { digest } from "./archive";
+import { digest, sourceKey } from "./archive";
 import { validateApprovedProposal, type Proposal, type SnapshotDeal } from "./domain";
 
 type Client = Prisma.TransactionClient;
@@ -37,7 +37,9 @@ export async function applyProposal(client: PrismaClient, input: unknown, expect
     const creates = new Map<string, NonNullable<Proposal["decisions"][number]["data"]>>();
     for (const row of proposal.decisions) {
       if (row.action === "MATCH") {
-        if (!current.records.some(d => d.legacyId === row.canonicalId && d.status === "PUBLISHED")) throw new Error(`Missing or unpublished match: ${row.canonicalId}`);
+        const match = current.records.find(d => d.legacyId === row.canonicalId && d.status === "PUBLISHED");
+        if (!match) throw new Error(`Missing or unpublished match: ${row.canonicalId}`);
+        if (match.date.slice(0,10) !== row.verifiedAnnouncementDate || !match.sources.some(s => sourceKey(s) === sourceKey(row.verificationSourceUrl!))) throw new Error(`Matched deal date or source conflicts with verified evidence; correct the individual record and regenerate preview: ${row.canonicalId}`);
       } else {
         const data = { ...row.data!, id: row.canonicalId };
         if (creates.has(row.canonicalId) && digest(creates.get(row.canonicalId)) !== digest(data)) throw new Error(`Conflicting creates: ${row.canonicalId}`);

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { digest, issueSchema, normalizeName, sourceKey, type Issue, type Card } from "./archive";
+import { digest, editionSchema, issueSchema, normalizeName, sourceKey, type Issue, type Card } from "./archive";
 import { prepareDealRows } from "../../src/modules/imports/deals";
 
 export interface SnapshotDeal {
@@ -8,7 +8,7 @@ export interface SnapshotDeal {
 }
 export const decisionSchema = z.object({
   edition: z.string(), cardKey: z.string(), action: z.enum(["MATCH", "CREATE", "BLOCK"]),
-  canonicalId: z.string(), approved: z.boolean(), reviewer: z.string(), evidence: z.string(),
+  canonicalId: z.string(), verifiedAnnouncementDate: editionSchema.nullable(), verificationSourceUrl: z.url().nullable(), approved: z.boolean(), reviewer: z.string(), evidence: z.string(),
   data: z.record(z.string(), z.unknown()).nullable(),
 }).strict();
 export const proposalSchema = z.object({
@@ -31,6 +31,7 @@ export function buildProposal(issues: Issue[], deals: SnapshotDeal[], snapshotHa
     const matches = candidateIds(card, deals);
     return { edition: issue.edition, cardKey: card.key, action: matches.length === 1 ? "MATCH" as const : "BLOCK" as const,
       canonicalId: matches.length === 1 ? matches[0] : `WB-${digest({ source: card.sourceUrl, target: normalizeName(card.target), date: card.announcementDate }).slice(0,24)}`,
+      verifiedAnnouncementDate: card.announcementDate, verificationSourceUrl: card.sourceUrl || null,
       approved: false, reviewer: "", evidence: "", data: null };
   })) };
 }
@@ -45,11 +46,13 @@ export function validateApprovedProposal(input: unknown) {
     if (!expected.has(key) || seen.has(key)) throw new Error(`Unexpected or duplicate decision: ${key}`);
     seen.add(key);
     if (!row.approved || !row.reviewer.trim() || !row.evidence.trim() || row.action === "BLOCK" || !row.canonicalId.trim()) throw new Error(`Unreviewed decision: ${key}`);
+    if (!row.verifiedAnnouncementDate || !row.verificationSourceUrl || !sourceKey(row.verificationSourceUrl)) throw new Error(`Missing verified announcement date or source: ${key}`);
     if (row.action === "CREATE") {
       const card = proposal.issues.find(i => i.edition === row.edition)!.cards.find(c => c.key === row.cardKey)!;
       const prepared = prepareDealRows([{ ...row.data, id: row.canonicalId }]);
       if (prepared.errors.length || prepared.prepared.length !== 1) throw new Error(`Invalid deal data: ${key}: ${prepared.errors.map(e => e.message).join(", ")}`);
       if (!sourceKey(String(row.data?.sourceUrl ?? "")) || !row.data?.date || !row.data?.status) throw new Error(`Missing verified source, date or status: ${key}`);
+      if (prepared.prepared[0].date.slice(0,10) !== row.verifiedAnnouncementDate || sourceKey(String(row.data?.sourceUrl)) !== sourceKey(row.verificationSourceUrl)) throw new Error(`Deal date or source differs from verified evidence: ${key}`);
       if (normalizeName(String(row.data?.target)) !== normalizeName(card.target)) throw new Error(`Target differs from published card: ${key}`);
     }
   }

@@ -15,7 +15,7 @@ const issue = { ...loadIssues(process.cwd(), "2026-10-30")[0], cards: [loadIssue
 async function proposal(id: string): Promise<Proposal> {
   const state = await snapshot(client);
   const result = buildProposal([issue], state.records, state.hash);
-  result.decisions[0] = { ...result.decisions[0], canonicalId: id, action: "CREATE", approved: true, reviewer: "Synthetic integration test", evidence: "Synthetic fixture only", data: {
+  result.decisions[0] = { ...result.decisions[0], canonicalId: id, action: "CREATE", verifiedAnnouncementDate: "2026-10-29", verificationSourceUrl: "https://example.test/transaction", approved: true, reviewer: "Synthetic integration test", evidence: "Synthetic fixture only", data: {
     target: issue.cards[0].target, title: issue.cards[0].title, buyer: "Synthetic Fund", seller: "N/A", sector: "Power & ET", subsector: "Power", region: "North America", category: ["Joint Venture"], date: "2026-10-29", description: "Synthetic test transaction", targetDescription: "Synthetic platform", country: "United States", status: "Announced", sourceUrl: "https://example.test/transaction", sourceName: "Fixture",
   } };
   return result;
@@ -48,6 +48,16 @@ describe("reviewed transactional import on isolated Postgres", () => {
     await expect(applyProposal(client, input, digest(input))).rejects.toThrow("stale");
     expect(await client.deal.count()).toBe(1);
   });
+  it("blocks a match whose existing date or source disagrees with verified evidence", async () => {
+    const input = await proposal("SYNTHETIC-1");
+    input.decisions[0].action = "MATCH";
+    input.decisions[0].verifiedAnnouncementDate = "2026-10-28";
+    await expect(applyProposal(client, input, digest(input))).rejects.toThrow("conflicts with verified evidence");
+    input.decisions[0].verifiedAnnouncementDate = "2026-10-29";
+    input.decisions[0].verificationSourceUrl = "https://example.test/other";
+    await expect(applyProposal(client, input, digest(input))).rejects.toThrow("conflicts with verified evidence");
+    expect(await client.deal.count()).toBe(1);
+  });
   it("rolls back creates when a later membership write fails", async () => {
     const input = await proposal("SYNTHETIC-3");
     await db.exec(`CREATE FUNCTION reject_briefing_membership() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN RAISE EXCEPTION 'synthetic membership failure'; END $$; CREATE TRIGGER reject_briefing_membership BEFORE INSERT ON "BriefingDeal" FOR EACH ROW EXECUTE FUNCTION reject_briefing_membership();`);
@@ -61,7 +71,7 @@ describe("reviewed transactional import on isolated Postgres", () => {
     const state = await snapshot(client);
     const secondIssue = { ...issue, edition: "2026-11-06" };
     const input = buildProposal([secondIssue], state.records, state.hash);
-    input.decisions[0] = { ...input.decisions[0], action: "MATCH", approved: true, canonicalId: "SYNTHETIC-1", reviewer: "Synthetic test", evidence: "Same transaction" };
+    input.decisions[0] = { ...input.decisions[0], action: "MATCH", verifiedAnnouncementDate: "2026-10-29", verificationSourceUrl: "https://example.test/transaction", approved: true, canonicalId: "SYNTHETIC-1", reviewer: "Synthetic test", evidence: "Same transaction" };
     await applyProposal(client, input, digest(input));
     expect(await client.deal.count()).toBe(1);
     expect(await client.briefingDeal.count()).toBe(2);

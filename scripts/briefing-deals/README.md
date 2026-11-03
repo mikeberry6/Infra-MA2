@@ -12,7 +12,7 @@ Use Node 24 and npm 11. Run `npm run briefings:preview -- --env PATH --output tm
 
 The proposal binds every card to its immutable archive content and database host/name. The companion report lists candidate IDs, their dates, sources and parties. A shared source URL is not sufficient evidence of transaction identity. All decisions start unapproved. A missing source, date, geography, category, status, or uncertain transaction identity requires research. Run `npm run briefings:sources` to capture primary-source metadata; metadata publication dates remain suggestions requiring verification of the actual announcement.
 
-For every row set `approved: true`, `reviewer`, and a substantive `evidence` note only after user review. Choose:
+For every row set `approved: true`, `reviewer`, a substantive `evidence` note, `verifiedAnnouncementDate` (YYYY-MM-DD) and `verificationSourceUrl` only after user review. MATCH dates and sources must agree with the existing record; CREATE fields must agree with the verified evidence. Missing verification blocks publication. Choose:
 
 - `MATCH`: set `canonicalId` to an existing published deal's legacy ID. Its richer fields remain untouched; conflicts requiring data edits must be resolved through the existing individual admin edit workflow and the preview regenerated.
 - `CREATE`: set a stable canonical legacy ID and supply `data` following the existing deal import contract (title, target, buyer/seller, sector, subsector, region, category array, verified announcement date, overview, country, status and primary source). Preserve disclosed economics in their correct fields; prospective project scale is not enterprise value. Normalize fund names using the site's canonical aliases and update corporate exclusions when appropriate.

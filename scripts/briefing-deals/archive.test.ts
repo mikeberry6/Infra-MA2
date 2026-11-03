@@ -41,10 +41,11 @@ describe("review gates", () => {
   });
   it("rejects missing or repeated decisions and incomplete creates", () => {
     const proposal = buildProposal([{ ...issues[0], cards: [issues[0].cards[0]] }], [], "snapshot");
-    proposal.decisions[0] = { ...proposal.decisions[0], action: "MATCH", approved: true, reviewer: "User", evidence: "Reviewed source" };
+    proposal.decisions[0] = { ...proposal.decisions[0], action: "MATCH", verifiedAnnouncementDate: "2026-02-13", verificationSourceUrl: "https://example.test/source", approved: true, reviewer: "User", evidence: "Reviewed source" };
     expect(validateApprovedProposal(proposal)).toEqual(proposal);
     expect(() => validateApprovedProposal({ ...proposal, decisions: [] })).toThrow("Every card");
     expect(() => validateApprovedProposal({ ...proposal, decisions: [...proposal.decisions, ...proposal.decisions] })).toThrow("duplicate");
+    expect(() => validateApprovedProposal({ ...proposal, decisions: [{ ...proposal.decisions[0], verifiedAnnouncementDate: null }] })).toThrow("Missing verified announcement");
     proposal.decisions[0].action = "CREATE";
     expect(() => validateApprovedProposal(proposal)).toThrow("Invalid deal data");
   });
