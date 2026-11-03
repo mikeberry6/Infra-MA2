@@ -1,0 +1,92 @@
+name: Reviewed Briefing Deal Import
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [preview, apply]
+        default: preview
+        required: true
+      edition:
+        description: Optional YYYY-MM-DD edition (blank previews all issues)
+        type: string
+      manifest_path:
+        description: Committed individually reviewed proposal path (apply only)
+        type: string
+      manifest_hash:
+        description: Canonical manifest hash from briefings:validate (apply only)
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: briefing-deal-import
+  cancel-in-progress: false
+jobs:
+  preview:
+    if: inputs.mode == 'preview' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+      EDITION: ${{ inputs.edition }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Require protected main and production read target
+        run: |
+          test "$GITHUB_REF" = refs/heads/main
+          node --experimental-strip-types scripts/assert-database-target.ts
+      - name: Capture read-only production comparison
+        run: |
+          args=()
+          if [ -n "$EDITION" ]; then args+=(--edition "$EDITION"); fi
+          npm run briefings:preview -- --transport http --output tmp/briefing-deals/production-review.json "${args[@]}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: briefing-deal-production-review
+          path: tmp/briefing-deals/production-review*
+  apply:
+    if: inputs.mode == 'apply' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      FUND_REFRESH_REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
+      MANIFEST_PATH: ${{ inputs.manifest_path }}
+      MANIFEST_HASH: ${{ inputs.manifest_hash }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Bind approved manifest to protected main and production
+        run: |
+          test "$GITHUB_REF" = refs/heads/main
+          node --experimental-strip-types scripts/assert-database-target.ts
+          [[ "$MANIFEST_HASH" =~ ^[a-f0-9]{64}$ ]]
+          [[ "$MANIFEST_PATH" =~ ^audits/briefing-deals/[a-zA-Z0-9._/-]+\.json$ ]]
+          case "$MANIFEST_PATH" in *..*) exit 1;; esac
+          git ls-files --error-unmatch -- "$MANIFEST_PATH"
+          npm run briefings:validate -- --manifest "$MANIFEST_PATH"
+      - name: Apply individually reviewed decisions (schema must be staged)
+        run: npm run briefings:apply -- --target production --confirmation APPLY-REVIEWED-BRIEFINGS --manifest "$MANIFEST_PATH" --expected-hash "$MANIFEST_HASH" --output tmp/briefing-deals/receipt.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: briefing-deal-import-receipt
+          path: tmp/briefing-deals/receipt.json
+          if-no-files-found: ignore

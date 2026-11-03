@@ -1,0 +1,16 @@
+import type { Proposal, SnapshotDeal } from "./domain";
+import type { Card } from "./archive";
+export interface ReviewReport {
+  target: { host: string; database: string };
+  snapshotHash: string;
+  databaseDealCount: number;
+  issues: { edition: string; cards: number; previousCards: number }[];
+  rows: (Card & { edition: string; candidates: string[]; candidateRecords: SnapshotDeal[]; reviewNeeded: (string | false)[] })[];
+}
+const escape = (value: unknown) => String(value ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+export function renderReviewReport(report: ReviewReport, proposal: Proposal): string {
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Weekly deal import review</title><style>body{font:15px system-ui;margin:24px;max-width:1100px;color:#222}article{border:1px solid #ddd;border-radius:8px;padding:20px;margin:16px 0}h2{margin:0 0 8px;color:#442142;font-size:19px}.meta{color:#555}code{overflow-wrap:anywhere}a{color:#442142}input{font:inherit;padding:8px;width:min(100%,500px)}</style></head><body><h1>Weekly deal import review</h1><p>${report.issues.length} issues · ${report.rows.length} published card appearances · ${report.databaseDealCount} existing database deals.</p><p>Comparison target: <code>${escape(report.target.host)}/${escape(report.target.database)}</code>. These are proposals; no row is approved. Source dates must be verified against the transaction announcement. Matches preserve existing database fields.</p><label>Find an issue, company, fund or candidate <input id="find" type="search"></label>${report.rows.map(row => {
+    const decision = proposal.decisions.find(d => d.edition === row.edition && d.cardKey === row.key)!;
+    return `<article><h2>${escape(row.edition)} · ${escape(row.title)}</h2><p class="meta">${escape(row.metadata)}</p><p>${escape(row.description)}</p><p>Announcement date in card: ${escape(row.announcementDate || "Unresolved")} · Source: ${row.sourceUrl ? `<a href="${escape(row.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open cited source</a>` : "Missing source; recovery required"}</p><p>Proposed action: <strong>${escape(decision.action)}</strong> · Canonical ID: <code>${escape(decision.canonicalId)}</code></p>${row.candidateRecords.map(candidate => `<p>Candidate <code>${escape(candidate.legacyId)}</code> · ${escape(candidate.target)} · ${escape(candidate.date.slice(0,10))}<br>Buyer: ${escape(candidate.buyers.join(" / "))} · Seller: ${escape(candidate.sellers.join(" / "))}</p>`).join("")}<p class="meta">${row.reviewNeeded.map(escape).join(" · ")}</p><p>Review key: <code>${escape(row.edition)}/${escape(row.key)}</code></p></article>`;
+  }).join("")}<script>document.getElementById('find').addEventListener('input',function(){const q=this.value.toLowerCase();document.querySelectorAll('article').forEach(row=>row.hidden=!row.textContent.toLowerCase().includes(q))});</script></body></html>`;
+}

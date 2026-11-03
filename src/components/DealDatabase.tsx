@@ -903,6 +903,15 @@ function DealDrawer({
           )}
 
           {/* Source link */}
+          {!!deal.briefings?.length && (
+            <section aria-label="Weekly briefings" className="space-y-2">
+              <h3 className="type-meta font-medium">Featured in weekly briefings</h3>
+              {deal.briefings.map(issue => <a key={issue.edition}
+                className="block type-meta underline"
+                href={withBasePath(`/weekly-briefing?edition=${issue.edition}`)}>{issue.edition}</a>)}
+            </section>
+          )}
+
           {deal.sourceUrl && (
             <div className="border-t border-[var(--border)] pt-6">
               <div className="surface px-4 py-3">
@@ -926,7 +935,8 @@ function DealDrawer({
 }
 
 // ─── Main Component ─────────────────────────────────────────
-export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
+export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: DealView[]; counts: DatabaseCounts; briefingIssues?: { edition: string; archivePath: string }[] }) {
+  const [briefing, setBriefing] = useUrlQueryState("briefing", "", { resetPage: true });
   const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
@@ -942,7 +952,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
 
   const clearAllFilters = useCallback(() => {
     writeQueryParams(
-      { q: null, sector: null, region: null, category: null },
+      { q: null, sector: null, region: null, category: null, briefing: null },
       { history: "push", resetPage: true },
     );
   }, [writeQueryParams]);
@@ -959,6 +969,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
 
   const filteredDeals = useMemo(() => {
     return deals.filter((deal) => {
+      if (briefing && !deal.briefings?.some(issue => issue.edition === briefing)) return false;
       if (debouncedSearch) {
         const q = debouncedSearch.toLowerCase();
         const match =
@@ -986,13 +997,13 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
 
       return true;
     });
-  }, [deals, debouncedSearch, activeSectors, activeRegions, activeCategories]);
+  }, [deals, debouncedSearch, activeSectors, activeRegions, activeCategories, briefing]);
 
   const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
     const topSector = mostCommonLabel(filteredDeals.map((deal) => deal.sector));
     const topRegion = mostCommonLabel(filteredDeals.map((deal) => deal.region));
     const topCategory = mostCommonLabel(filteredDeals.flatMap((deal) => deal.category));
-    const filterCount = activeSectors.size + activeRegions.size + activeCategories.size + (debouncedSearch ? 1 : 0);
+    const filterCount = activeSectors.size + activeRegions.size + activeCategories.size + (debouncedSearch ? 1 : 0) + (briefing ? 1 : 0);
 
     return [
       {
@@ -1020,7 +1031,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
         color: topRegion ? getRegionColor(topRegion.label) : "var(--text-tertiary)",
       },
     ];
-  }, [filteredDeals, deals, activeSectors, activeRegions, activeCategories, debouncedSearch]);
+  }, [filteredDeals, deals, activeSectors, activeRegions, activeCategories, debouncedSearch, briefing]);
 
   // Close drawer if selected deal is filtered out
   useEffect(() => {
@@ -1055,6 +1066,16 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
         }
       />
 
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <label htmlFor="briefing-filter" className="type-meta font-medium">Weekly briefing</label>
+        <select id="briefing-filter" value={briefing} onChange={e => setBriefing(e.target.value)}
+          className="min-w-0 max-w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2 type-meta focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]">
+          <option value="">All deals</option>
+          {briefing && !briefingIssues.some(issue => issue.edition === briefing) && <option value={briefing}>Unavailable issue: {briefing}</option>}
+          {briefingIssues.map(issue => <option key={issue.edition} value={issue.edition}>{issue.edition}</option>)}
+        </select>
+        {briefing && <button onClick={clearAllFilters} className="type-meta underline">Clear filters</button>}
+      </div>
       <FilterBar
         search={search}
         onSearchChange={setSearch}
@@ -1081,7 +1102,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
           <div className="flex flex-wrap items-center justify-end gap-1">
             {canExport && (
               <a
-                href={withBasePath("/api/exports/deals")}
+                href={withBasePath(`/api/exports/deals${briefing ? `?briefing=${encodeURIComponent(briefing)}` : ""}`)}
                 download
                 className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >

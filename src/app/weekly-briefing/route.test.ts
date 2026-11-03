@@ -2,6 +2,7 @@ import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const archive = vi.hoisted(() => ({
   listWeeklyBriefingEditions: vi.fn(),
+  loadWeeklyBriefingDocument: vi.fn(),
 }));
 const approvals = vi.hoisted(() => ({
   readApprovedWeeklyBriefingIndex: vi.fn(),
@@ -33,6 +34,7 @@ const legacyIndex = {
 describe("weekly briefing route", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    archive.loadWeeklyBriefingDocument.mockResolvedValue({ bodyMarkup: "<p>Briefing content</p>", headStyles: "<style>p{color:purple}</style>" });
     process.env.NEXT_PUBLIC_BASE_PATH = "/Infra-MA2";
     archive.listWeeklyBriefingEditions.mockResolvedValue([
       "2026-08-07",
@@ -58,9 +60,9 @@ describe("weekly briefing route", () => {
       new Request("https://example.com/Infra-MA2/weekly-briefing"),
     );
 
-    expect(response.status).toBe(307);
-    expect(response.headers.get("location")).toBe(
-      "https://example.com/Infra-MA2/email-format/2026-07-31.html",
+    expect(response.status).toBe(200);
+    expect(await response.text()).toContain(
+      "/Infra-MA2/email-format/2026-07-31.html",
     );
     expect(approvals.resolveLatestApprovedWeeklyBriefingEdition).toHaveBeenCalledWith({
       index: legacyIndex,
@@ -77,21 +79,31 @@ describe("weekly briefing route", () => {
       new Request("https://example.com/Infra-MA2/weekly-briefing"),
     );
 
-    expect(response.headers.get("location")).toBe(
-      "https://example.com/Infra-MA2/email-format/2026-08-07.html",
+    expect(await response.text()).toContain(
+      "/Infra-MA2/email-format/2026-08-07.html",
     );
   });
 
-  it("redirects an explicitly requested archived edition to its raw email", async () => {
+  it("frames an explicitly requested archive without modifying the email", async () => {
     const response = await GET(
       new Request(
         "https://example.com/Infra-MA2/weekly-briefing?edition=2026-07-24",
       ),
     );
 
-    expect(response.headers.get("location")).toBe(
-      "https://example.com/Infra-MA2/email-format/2026-07-24.html",
+    expect(await response.text()).toContain(
+      "/Infra-MA2/email-format/2026-07-24.html",
     );
+  });
+
+  it("links to issue-filtered deals through the configured base path", async () => {
+    const response = await GET(new Request("https://example.com/Infra-MA2/weekly-briefing?edition=2026-07-24"));
+    const html = await response.text();
+    expect(html).toContain('href="/Infra-MA2/tracker?briefing=2026-07-24"');
+    expect(html).toContain("View these deals");
+    expect(html).toContain("srcdoc=");
+    expect(html).toContain("Briefing content");
+    expect(html).toContain('sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"');
   });
 
   it("returns 404 for an unknown edition", async () => {
