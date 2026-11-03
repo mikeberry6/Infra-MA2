@@ -48,11 +48,13 @@ export async function applyProposal(client: PrismaClient, input: unknown, expect
       await tx.deal.update({ where: { id: duplicate.id }, data: { status: "ARCHIVED" } });
       await tx.auditEvent.create({ data: { entityType: "BriefingDuplicateMerge", entityId: merge.duplicateId, action: "MERGE", metadata: { canonicalLegacyId: merge.canonicalId, evidence: merge.evidence, sourceUrl: merge.sourceUrl, duplicateBefore: JSON.parse(JSON.stringify(duplicate)) } } });
     }
+    const existingToPublish: string[] = [];
     const citationsToAdd: Proposal["decisions"] = [];
     const creates = new Map<string, NonNullable<Proposal["decisions"][number]["data"]>>();
     for (const row of proposal.decisions) {
       if (row.action === "MATCH") {
-        const match = current.records.find(d => d.legacyId === row.canonicalId && d.status === "PUBLISHED");
+        const match = current.records.find(d => d.legacyId === row.canonicalId && (d.status === "PUBLISHED" || (row.data?.publishExisting === true && ["DRAFT", "IN_REVIEW"].includes(d.status))));
+        if (match && match.status !== "PUBLISHED") existingToPublish.push(match.id);
         if (!match) throw new Error(`Missing or unpublished match: ${row.canonicalId}`);
         if (match.date.slice(0,10) !== row.verifiedAnnouncementDate) throw new Error(`Matched deal date or source conflicts with verified evidence; correct the individual record and regenerate preview: ${row.canonicalId}`);
         if (!match.sources.some(s => sourceKey(s) === sourceKey(row.verificationSourceUrl!))) {
@@ -70,6 +72,7 @@ export async function applyProposal(client: PrismaClient, input: unknown, expect
       const source = await tx.source.upsert({ where: { url: row.verificationSourceUrl! }, update: {}, create: { url: row.verificationSourceUrl!, label: String(row.data?.sourceName || "Primary transaction announcement"), type: "ARTICLE" } });
       if (!(await tx.citation.findFirst({ where: { dealId: deal.id, sourceId: source.id } }))) await tx.citation.create({ data: { dealId: deal.id, sourceId: source.id, isPrimary: deal.sources.length === 0 } });
     }
+    if (existingToPublish.length) await tx.deal.updateMany({ where: { id: { in: existingToPublish }, status: { in: ["DRAFT", "IN_REVIEW"] } }, data: { status: "PUBLISHED" } });
     const canonicalParty = (name: string) => {
       const via = name.match(/\s*\(via\s+[^)]+\)\s*$/)?.[0] ?? "";
       return `${normalizeFundName(name)}${via}`;

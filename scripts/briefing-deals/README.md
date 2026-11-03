@@ -14,7 +14,7 @@ The proposal binds every card to its immutable archive content and database host
 
 For every row set `approved: true`, `reviewer`, a substantive `evidence` note, `verifiedAnnouncementDate` (YYYY-MM-DD) and `verificationSourceUrl` only after user review. MATCH dates and sources must agree with the existing record; CREATE fields must agree with the verified evidence. Missing verification blocks publication. Choose:
 
-- `MATCH`: set `canonicalId` to an existing published deal's legacy ID. Its richer fields remain untouched; conflicts requiring data edits must be resolved through the existing individual admin edit workflow and the preview regenerated.
+- `MATCH`: set `canonicalId` to an existing deal's legacy ID. Explicit `data.addCitation: true` appends a researched missing citation; `data.publishExisting: true` publishes an approved existing DRAFT/IN_REVIEW record instead of duplicating it. Its richer fields remain untouched; conflicts requiring data edits must be resolved through the existing individual admin edit workflow and the preview regenerated.
 - `CREATE`: set a stable canonical legacy ID and supply `data` following the existing deal import contract (title, target, buyer/seller, sector, subsector, region, category array, verified announcement date, overview, country, status and primary source). Preserve disclosed economics in their correct fields; prospective project scale is not enterprise value. Normalize fund names using the site's canonical aliases and update corporate exclusions when appropriate.
 - `BLOCK`: unresolved. The entire selected issue cannot apply until every row is reviewed. Scope to another complete issue to proceed independently.
 

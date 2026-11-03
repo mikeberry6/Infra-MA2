@@ -118,6 +118,17 @@ describe("reviewed transactional import on isolated Postgres", () => {
     expect((await client.deal.findUniqueOrThrow({ where: { legacyId: "SYNTHETIC-1" } })).description).toBe("Richer updated record");
     expect((await client.auditEvent.findFirstOrThrow({ where: { entityId: "DUPLICATE-1", action: "MERGE" } })).metadata).toMatchObject({ canonicalLegacyId: "SYNTHETIC-1" });
   });
+  it("publishes an explicitly approved existing draft without creating another record", async () => {
+    const original = await client.deal.findUniqueOrThrow({ where: { legacyId: "SYNTHETIC-1" } });
+    const { id: _id, legacyId: _legacyId, createdAt: _createdAt, updatedAt: _updatedAt, ...data } = original;
+    await client.deal.create({ data: { ...data, legacyId: "EXISTING-DRAFT", status: "DRAFT" } });
+    const state = await snapshot(client);
+    const input = buildProposal([{ ...issue, edition: "2026-12-04" }], state.records, state.hash);
+    input.decisions[0] = { ...input.decisions[0], action: "MATCH", canonicalId: "EXISTING-DRAFT", approved: true, reviewer: "Synthetic owner", evidence: "Approved published card; restore source and publish existing draft", verifiedAnnouncementDate: "2026-10-29", verificationSourceUrl: "https://example.test/draft-source", data: { addCitation: true, publishExisting: true } };
+    await applyProposal(client, input, digest(input));
+    expect((await client.deal.findUniqueOrThrow({ where: { legacyId: "EXISTING-DRAFT" } })).status).toBe("PUBLISHED");
+    expect(await client.deal.count({ where: { legacyId: "EXISTING-DRAFT" } })).toBe(1);
+  });
   it("rejects changed approval hashes", async () => {
     const input = await proposal("SYNTHETIC-4");
     await expect(applyProposal(client, input, "wrong")).rejects.toThrow("hash");
