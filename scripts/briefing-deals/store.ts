@@ -1,3 +1,4 @@
+import { normalizeFundName } from "../../src/lib/fund-name-utils";
 import type { Prisma, PrismaClient } from "../../src/generated/prisma/client";
 import { classifyDealImport, commitDealImport, prepareDealRows } from "../../src/modules/imports/deals";
 import { digest, sourceKey } from "./archive";
@@ -46,7 +47,15 @@ export async function applyProposal(client: PrismaClient, input: unknown, expect
         creates.set(row.canonicalId, data);
       }
     }
+    const canonicalParty = (name: string) => {
+      const via = name.match(/\s*\(via\s+[^)]+\)\s*$/)?.[0] ?? "";
+      return `${normalizeFundName(name)}${via}`;
+    };
     const prepared = prepareDealRows([...creates.values()]);
+    for (const row of prepared.prepared) {
+      row.buyers = row.buyers.map(canonicalParty);
+      row.sellers = row.sellers.map(canonicalParty);
+    }
     if (prepared.errors.length) throw new Error("Invalid reviewed create data");
     const classification = await classifyDealImport(tx, prepared);
     if ([...classification.actions.values()].some(a => a !== "create")) throw new Error("CREATE identity already exists; review as MATCH");

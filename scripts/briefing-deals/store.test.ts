@@ -77,6 +77,18 @@ describe("reviewed transactional import on isolated Postgres", () => {
     expect(await client.briefingDeal.count()).toBe(2);
     expect((await client.deal.findUniqueOrThrow({ where: { legacyId: "SYNTHETIC-1" } })).description).toBe("Richer updated record");
   });
+  it("keeps buyer/seller roles and closed status while normalizing fund aliases", async () => {
+    const state = await snapshot(client);
+    const thirdIssue = { ...issue, edition: "2026-11-13" };
+    const input = buildProposal([thirdIssue], state.records, state.hash);
+    const fixture = await proposal("SYNTHETIC-CLOSED");
+    input.decisions[0] = { ...fixture.decisions[0], edition: thirdIssue.edition, data: { ...fixture.decisions[0].data!, buyer: "GSAM (via Platform)", seller: "CVC (CVC DIF)", status: "Closed" } };
+    await applyProposal(client, input, digest(input));
+    const deal = await client.deal.findUniqueOrThrow({ where: { legacyId: "SYNTHETIC-CLOSED" }, include: { participants: true } });
+    expect(deal.dealStatus).toBe("CLOSED");
+    expect(deal.participants.find(p => p.role === "BUYER")?.displayName).toBe("Goldman Sachs Asset Management (via Platform)");
+    expect(deal.participants.find(p => p.role === "SELLER")?.displayName).toBe("CVC DIF");
+  });
   it("rejects changed approval hashes", async () => {
     const input = await proposal("SYNTHETIC-4");
     await expect(applyProposal(client, input, "wrong")).rejects.toThrow("hash");
