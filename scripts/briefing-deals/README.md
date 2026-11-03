@@ -22,7 +22,7 @@ Repeated appearances use the same canonical ID. Use one `CREATE` payload consist
 
 ## Apply and release
 
-The new migration creates only `BriefingIssue`, `BriefingDeal`, their foreign keys, and indexes. Validate it in an isolated database before requesting the protected production schema/data approval required by AGENTS.md. The application detects whether the additive tables exist and preserves the current deal view until they do. Stage the migration before applying briefing memberships. Do not run a full seed or the code-only promotion workflow.
+The new migration creates only `BriefingIssue`, `BriefingDeal`, their foreign keys, and indexes. Validate it in an isolated database before requesting the protected production schema/data approval required by AGENTS.md. The application detects whether the additive tables exist and preserves the current deal view until they do. The protected apply job stages only this approved migration and records its checksum, without running unrelated pending migrations or cutovers. Do not run a full seed or the code-only promotion workflow.
 
 Local apply requires `--target local` and localhost. Production apply requires the protected production job/approved operator environment, `EXPECTED_DATABASE_HOST`, `EXPECTED_DATABASE_NAME`, `FUND_REFRESH_REVALIDATE_TOKEN`, and the exact confirmation:
 
@@ -36,4 +36,4 @@ Release code through a scoped PR with the required build and Vercel automatic de
 
 ## Current review status
 
-The initial comparison is explicitly against the locally configured database, not the protected production target. All 465 card appearances remain unapproved. Production matching must be refreshed using the production database before approval or apply. No production schema or records have been changed by this implementation. The `Reviewed Briefing Deal Import` workflow supports a read-only production preview on protected main, so production matching does not require downloading database credentials. Its apply job uses the protected production environment.
+The initial comparison is explicitly against the locally configured database, not the protected production target. On November 3, the owner explicitly approved all published briefings for production backfill and duplicate reconciliation; the approval is recorded in audits/briefing-deals/owner-approval-2026-11-03.json. Production matching must be refreshed using the production database before approval or apply. No production schema or records have been changed by this implementation. The `Reviewed Briefing Deal Import` workflow supports a read-only production preview on protected main, so production matching does not require downloading database credentials. Its apply job uses the protected production environment.

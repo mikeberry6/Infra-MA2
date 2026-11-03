@@ -1,4 +1,6 @@
 // @vitest-environment node
+import { createHash } from "node:crypto";
+import { stageBriefingSchema } from "./stage-schema-store";
 import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { beforeAll, afterAll, describe, it, expect } from "vitest";
@@ -26,10 +28,17 @@ beforeAll(async () => {
   await db.exec(schemaSql);
   // Exercise the additive migration against an existing schema without its new tables.
   await db.exec('DROP TABLE "BriefingDeal"; DROP TABLE "BriefingIssue";');
-  await db.exec(readFileSync("prisma/migrations/20261103160000_briefing_deal_membership/migration.sql", "utf8"));
+  await db.exec(`CREATE TABLE "_prisma_migrations" (id TEXT PRIMARY KEY, checksum TEXT NOT NULL, finished_at TIMESTAMPTZ, migration_name TEXT NOT NULL, started_at TIMESTAMPTZ, rolled_back_at TIMESTAMPTZ, applied_steps_count INTEGER);`);
   server = new PGLiteSocketServer({ db, port: 0, host: "127.0.0.1" });
   await server.start();
   client = new PrismaClient({ adapter: new PrismaPg({ connectionString: `postgresql://postgres:postgres@${server.getServerConn()}/postgres`, max: 1 }) });
+  const sql = readFileSync("prisma/migrations/20261103160000_briefing_deal_membership/migration.sql", "utf8");
+  const checksum = createHash("sha256").update(sql).digest("hex");
+  await stageBriefingSchema(client, sql, checksum);
+  await stageBriefingSchema(client, sql, checksum);
+  expect((await db.query('SELECT * FROM "_prisma_migrations"')).rows).toHaveLength(1);
+  await expect(stageBriefingSchema(client, sql, "wrong")).rejects.toThrow("conflicts");
+  await client.auditEvent.deleteMany(); // schema approval receipt is separate from import receipt assertions
 }, 60000);
 afterAll(async () => { await client?.$disconnect(); await server?.stop(); await db?.close(); });
 describe("reviewed transactional import on isolated Postgres", () => {
@@ -88,6 +97,13 @@ describe("reviewed transactional import on isolated Postgres", () => {
     expect(deal.dealStatus).toBe("CLOSED");
     expect(deal.participants.find(p => p.role === "BUYER")?.displayName).toBe("Goldman Sachs Asset Management (via Platform)");
     expect(deal.participants.find(p => p.role === "SELLER")?.displayName).toBe("CVC DIF");
+  });
+  it("appends an explicitly approved citation without replacing existing sources", async () => {
+    const state = await snapshot(client);
+    const input = buildProposal([{ ...issue, edition: "2026-11-20" }], state.records, state.hash);
+    input.decisions[0] = { ...input.decisions[0], canonicalId: "SYNTHETIC-1", action: "MATCH", approved: true, reviewer: "Synthetic owner", evidence: "Approved additional primary source", verifiedAnnouncementDate: "2026-10-29", verificationSourceUrl: "https://example.test/additional", data: { addCitation: true } };
+    await applyProposal(client, input, digest(input));
+    expect(await client.citation.count({ where: { deal: { legacyId: "SYNTHETIC-1" } } })).toBe(2);
   });
   it("rejects changed approval hashes", async () => {
     const input = await proposal("SYNTHETIC-4");

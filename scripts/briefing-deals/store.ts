@@ -35,17 +35,27 @@ export async function applyProposal(client: PrismaClient, input: unknown, expect
     if (prior) return { manifestHash, alreadyApplied: true, issueCount: proposal.issues.length, cardCount: proposal.decisions.length };
     const current = await snapshot(tx);
     if (current.hash !== proposal.snapshotHash) throw new Error("Database snapshot is stale; regenerate preview and review changes");
+    const citationsToAdd: Proposal["decisions"] = [];
     const creates = new Map<string, NonNullable<Proposal["decisions"][number]["data"]>>();
     for (const row of proposal.decisions) {
       if (row.action === "MATCH") {
         const match = current.records.find(d => d.legacyId === row.canonicalId && d.status === "PUBLISHED");
         if (!match) throw new Error(`Missing or unpublished match: ${row.canonicalId}`);
-        if (match.date.slice(0,10) !== row.verifiedAnnouncementDate || !match.sources.some(s => sourceKey(s) === sourceKey(row.verificationSourceUrl!))) throw new Error(`Matched deal date or source conflicts with verified evidence; correct the individual record and regenerate preview: ${row.canonicalId}`);
+        if (match.date.slice(0,10) !== row.verifiedAnnouncementDate) throw new Error(`Matched deal date or source conflicts with verified evidence; correct the individual record and regenerate preview: ${row.canonicalId}`);
+        if (!match.sources.some(s => sourceKey(s) === sourceKey(row.verificationSourceUrl!))) {
+          if (row.data?.addCitation !== true) throw new Error(`Matched deal date or source conflicts with verified evidence; explicit citation addition required: ${row.canonicalId}`);
+          citationsToAdd.push(row);
+        }
       } else {
         const data = { ...row.data!, id: row.canonicalId };
         if (creates.has(row.canonicalId) && digest(creates.get(row.canonicalId)) !== digest(data)) throw new Error(`Conflicting creates: ${row.canonicalId}`);
         creates.set(row.canonicalId, data);
       }
+    }
+    for (const row of citationsToAdd) {
+      const deal = current.records.find(d => d.legacyId === row.canonicalId)!;
+      const source = await tx.source.upsert({ where: { url: row.verificationSourceUrl! }, update: {}, create: { url: row.verificationSourceUrl!, label: String(row.data?.sourceName || "Primary transaction announcement"), type: "ARTICLE" } });
+      if (!(await tx.citation.findFirst({ where: { dealId: deal.id, sourceId: source.id } }))) await tx.citation.create({ data: { dealId: deal.id, sourceId: source.id, isPrimary: deal.sources.length === 0 } });
     }
     const canonicalParty = (name: string) => {
       const via = name.match(/\s*\(via\s+[^)]+\)\s*$/)?.[0] ?? "";
@@ -61,19 +71,22 @@ export async function applyProposal(client: PrismaClient, input: unknown, expect
     if ([...classification.actions.values()].some(a => a !== "create")) throw new Error("CREATE identity already exists; review as MATCH");
     await commitDealImport(tx, classification);
     if (creates.size) await tx.deal.updateMany({ where: { legacyId: { in: [...creates.keys()] }, status: "DRAFT" }, data: { status: "PUBLISHED" } });
+    const canonicalDeals = await tx.deal.findMany({ where: { legacyId: { in: [...new Set(proposal.decisions.map(r => r.canonicalId))] } }, select: { id: true, legacyId: true } });
+    const canonicalIds = new Map(canonicalDeals.map(d => [d.legacyId, d.id]));
     for (const issue of proposal.issues) {
       const { cards: _cards, ...data } = issue;
       await tx.briefingIssue.upsert({ where: { edition: issue.edition }, create: {
         ...data, coverageStart: new Date(`${data.coverageStart}T00:00:00Z`), coverageEnd: new Date(`${data.coverageEnd}T00:00:00Z`),
       }, update: { ...data, coverageStart: new Date(`${data.coverageStart}T00:00:00Z`), coverageEnd: new Date(`${data.coverageEnd}T00:00:00Z`) } });
       await tx.briefingDeal.deleteMany({ where: { issueEdition: issue.edition } });
-      for (const card of issue.cards) {
+      await tx.briefingDeal.createMany({ data: issue.cards.map(card => {
         const decision = proposal.decisions.find(r => r.edition === issue.edition && r.cardKey === card.key)!;
-        const deal = await tx.deal.findUniqueOrThrow({ where: { legacyId: decision.canonicalId }, select: { id: true } });
-        await tx.briefingDeal.create({ data: { issueEdition: issue.edition, cardKey: card.key, position: card.position, dealId: deal.id } });
-      }
+        const dealId = canonicalIds.get(decision.canonicalId);
+        if (!dealId) throw new Error(`Missing canonical deal: ${decision.canonicalId}`);
+        return { issueEdition: issue.edition, cardKey: card.key, position: card.position, dealId };
+      }) });
     }
     await tx.auditEvent.create({ data: { id: auditId, entityType: "BriefingImport", action: "APPLY", metadata: JSON.parse(JSON.stringify(proposal)) as Prisma.InputJsonValue } });
     return { manifestHash, alreadyApplied: false, issueCount: proposal.issues.length, cardCount: proposal.decisions.length };
-  }, { isolationLevel: "Serializable", timeout: 120000, maxWait: 15000 });
+  }, { isolationLevel: "Serializable", timeout: 300000, maxWait: 30000 });
 }

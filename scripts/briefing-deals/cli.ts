@@ -42,7 +42,7 @@ async function main() {
       const state = option("transport") === "http" ? await snapshot(client) : await client.$transaction(tx => snapshot(tx), { isolationLevel: "RepeatableRead", maxWait: 30000, timeout: 60000 });
       const proposal = buildProposal(issues, state.records, state.hash, { host: target.hostname, database: target.pathname.slice(1) });
       save(output, proposal);
-      const report: ReviewReport = { target: proposal.target, snapshotHash: state.hash, databaseDealCount: state.records.length,
+      const report: ReviewReport = { target: proposal.target, records: state.records, snapshotHash: state.hash, databaseDealCount: state.records.length,
         issues: issues.map(i => {
           const previous = state.issues.find(p => p.edition === i.edition)?.deals ?? [];
           return { edition: i.edition, cards: i.cards.length, previousCards: previous.length,

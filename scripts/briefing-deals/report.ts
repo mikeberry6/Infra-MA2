@@ -3,6 +3,7 @@ import type { Card } from "./archive";
 export interface ReviewReport {
   target: { host: string; database: string };
   snapshotHash: string;
+  records: SnapshotDeal[];
   databaseDealCount: number;
   issues: { edition: string; cards: number; previousCards: number; existingMemberships: { cardKey: string; canonicalId: string; position: number }[]; removedCardKeys: string[] }[];
   rows: (Card & { edition: string; candidates: string[]; candidateRecords: SnapshotDeal[]; reviewNeeded: (string | false)[] })[];
