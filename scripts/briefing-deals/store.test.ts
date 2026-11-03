@@ -26,6 +26,9 @@ beforeAll(async () => {
   db = await PGlite.create();
   const schemaSql = execFileSync(process.execPath, ["node_modules/prisma/build/index.js", "migrate", "diff", "--from-empty", "--to-schema", "prisma/schema.prisma", "--script"], { encoding: "utf8" });
   await db.exec(schemaSql);
+  // Prisma schema diffs omit these production partial indexes; replay the migration's index statements.
+  const citationMigration = readFileSync("prisma/migrations/20260722033000_primary_citations/migration.sql", "utf8");
+  for (const statement of citationMigration.split(";").filter(s => s.includes("CREATE UNIQUE INDEX"))) await db.exec(statement);
   // Exercise the additive migration against an existing schema without its new tables.
   await db.exec('DROP TABLE "BriefingDeal"; DROP TABLE "BriefingIssue";');
   await db.exec(`CREATE TABLE "_prisma_migrations" (id TEXT PRIMARY KEY, checksum TEXT NOT NULL, finished_at TIMESTAMPTZ, migration_name TEXT NOT NULL, started_at TIMESTAMPTZ, rolled_back_at TIMESTAMPTZ, applied_steps_count INTEGER);`);
@@ -108,13 +111,20 @@ describe("reviewed transactional import on isolated Postgres", () => {
   it("archives a reviewed duplicate while preserving the canonical deal and old identity", async () => {
     const original = await client.deal.findUniqueOrThrow({ where: { legacyId: "SYNTHETIC-1" } });
     const { id: _id, legacyId: _legacyId, createdAt: _createdAt, updatedAt: _updatedAt, ...data } = original;
-    await client.deal.create({ data: { ...data, legacyId: "DUPLICATE-1" } });
+    const duplicate = await client.deal.create({ data: { ...data, legacyId: "DUPLICATE-1" } });
+    await client.citation.updateMany({ where: { dealId: original.id }, data: { isPrimary: false } });
+    const canonicalCitation = await client.citation.findFirstOrThrow({ where: { dealId: original.id } });
+    await client.citation.update({ where: { id: canonicalCitation.id }, data: { isPrimary: true } });
+    const duplicateSource = await client.source.create({ data: { url: "https://example.test/duplicate-closing", label: "Closing announcement" } });
+    await client.citation.create({ data: { dealId: duplicate.id, sourceId: duplicateSource.id, isPrimary: true } });
     const state = await snapshot(client);
     const input = buildProposal([{ ...issue, edition: "2026-11-27" }], state.records, state.hash);
     input.decisions[0] = { ...input.decisions[0], action: "MATCH", canonicalId: "SYNTHETIC-1", approved: true, reviewer: "Synthetic owner", evidence: "Same announcement", verifiedAnnouncementDate: "2026-10-29", verificationSourceUrl: "https://example.test/transaction", data: null };
     input.duplicates = [{ duplicateId: "DUPLICATE-1", canonicalId: "SYNTHETIC-1", evidence: "Same acquisition, later closing update", sourceUrl: "https://example.test/transaction" }];
     await applyProposal(client, input, digest(input));
     expect((await client.deal.findUniqueOrThrow({ where: { legacyId: "DUPLICATE-1" } })).status).toBe("ARCHIVED");
+    expect(await client.citation.count({ where: { dealId: original.id, isPrimary: true } })).toBe(1);
+    expect((await client.citation.findFirstOrThrow({ where: { dealId: original.id, sourceId: duplicateSource.id } })).isPrimary).toBe(false);
     expect((await client.deal.findUniqueOrThrow({ where: { legacyId: "SYNTHETIC-1" } })).description).toBe("Richer updated record");
     expect((await client.auditEvent.findFirstOrThrow({ where: { entityId: "DUPLICATE-1", action: "MERGE" } })).metadata).toMatchObject({ canonicalLegacyId: "SYNTHETIC-1" });
   });
