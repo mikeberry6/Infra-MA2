@@ -13,6 +13,15 @@ import { useScrolledPast } from "@/hooks/useScrolledPast";
 // in src/lib/fund-name-utils.ts. When you add an alias there, also add a
 // short-name entry here for the alias *target* if needed.
 const BUYER_SHORT_NAMES: Record<string, string> = {
+  "Ontario Teachers' Pension Plan": "OTPP",
+  "Harbert Management Corporation": "Harbert",
+  "Nature Infrastructure Capital": "Nature Infra",
+  "Terramont Infrastructure Partners": "Terramont Infra",
+  "ABN AMRO Sustainable Impact Fund": "ABN AMRO SIF",
+  "TD Asset Management": "TD AM",
+  "MM Capital Partners": "MM Capital",
+  "Keppel Infrastructure Trust": "Keppel Infra Trust",
+  "Kuwait Investment Authority": "KIA",
   "Antin Infrastructure Partners": "Antin Infra",
   "Apollo Global Management": "Apollo",
   "Igneo Infrastructure Partners": "Igneo Infra",
@@ -1046,7 +1055,7 @@ export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: De
       setSelectedDeal(null);
       return;
     }
-    const match = deals.find((d) => d.legacyId === focusId);
+    const match = deals.find((d) => d.legacyId === focusId || d.legacyIdAliases?.includes(focusId));
     setSelectedDeal(match ?? null);
     if (!match) writeQueryParam("focus", null, "replace");
   }, [focusId, deals, writeQueryParam]);

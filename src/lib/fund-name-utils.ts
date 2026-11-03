@@ -11,6 +11,21 @@
 
 /** Maps a variant fund/buyer name to its canonical name for ranking dedup. */
 export const FUND_NAME_ALIASES: Record<string, string> = {
+  "Ontario Teachers": "Ontario Teachers' Pension Plan",
+  "Ontario Teachers Pension Plan": "Ontario Teachers' Pension Plan",
+  "Macquarie AM": "Macquarie Asset Management",
+  Brookfield: "Brookfield Asset Management",
+  Antin: "Antin Infrastructure Partners",
+  Igneo: "Igneo Infrastructure Partners",
+  "Igneo Infra": "Igneo Infrastructure Partners",
+  MSIP: "Morgan Stanley Infrastructure Partners",
+  "Morgan Stanley Infrastructure": "Morgan Stanley Infrastructure Partners",
+  "Swiss Life": "Swiss Life Asset Managers",
+  ArcLight: "ArcLight Capital",
+  "ArcLight Capital Partners": "ArcLight Capital",
+  Ancala: "Ancala Partners",
+  Fengate: "Fengate Asset Management",
+  "Foresight Environmental Infrastructure": "Foresight",
   GSAM: "Goldman Sachs Asset Management",
   CIP: "Copenhagen Infrastructure Partners",
   "CVC (CVC DIF)": "CVC DIF",

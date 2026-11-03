@@ -82,7 +82,14 @@ jobs:
           case "$MANIFEST_PATH" in *..*) exit 1;; esac
           git ls-files --error-unmatch -- "$MANIFEST_PATH"
           npm run briefings:validate -- --manifest "$MANIFEST_PATH"
-      - name: Apply individually reviewed decisions (schema must be staged)
+      - name: Stage only the approved additive briefing schema
+        env:
+          DATABASE_URL: ${{ secrets.PRODUCTION_MIGRATION_DATABASE_URL }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          BRIEFING_SCHEMA_CONFIRMATION: STAGE-REVIEWED-BRIEFINGS
+          BRIEFING_MIGRATION_SHA256: 91e671333dbc6abfa7d1d0ec67ca929415391ec82be03a49ce2cc5ba0216df4f
+        run: npx tsx scripts/briefing-deals/stage-schema.ts
+      - name: Apply reviewed briefing decisions
         run: npm run briefings:apply -- --target production --confirmation APPLY-REVIEWED-BRIEFINGS --manifest "$MANIFEST_PATH" --expected-hash "$MANIFEST_HASH" --output tmp/briefing-deals/receipt.json
       - uses: actions/upload-artifact@v4
         if: always()

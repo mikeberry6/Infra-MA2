@@ -14,6 +14,7 @@ export const decisionSchema = z.object({
 export const proposalSchema = z.object({
   version: z.literal(1), target: z.object({ host: z.string(), database: z.string() }).strict(), snapshotHash: z.string(), issues: z.array(issueSchema),
   decisions: z.array(decisionSchema),
+  duplicates: z.array(z.object({ duplicateId: z.string(), canonicalId: z.string(), evidence: z.string().min(1), sourceUrl: z.url() }).strict()).default([]),
 }).strict();
 export type Proposal = z.infer<typeof proposalSchema>;
 export type Decision = z.infer<typeof decisionSchema>;
@@ -33,7 +34,7 @@ export function buildProposal(issues: Issue[], deals: SnapshotDeal[], snapshotHa
       canonicalId: matches.length === 1 ? matches[0] : `WB-${digest({ source: card.sourceUrl, target: normalizeName(card.target), date: card.announcementDate }).slice(0,24)}`,
       verifiedAnnouncementDate: card.announcementDate, verificationSourceUrl: card.sourceUrl || null,
       approved: false, reviewer: "", evidence: "", data: null };
-  })) };
+  })), duplicates: [] };
 }
 export function validateApprovedProposal(input: unknown) {
   const proposal = proposalSchema.parse(input);
@@ -57,5 +58,11 @@ export function validateApprovedProposal(input: unknown) {
     }
   }
   if (seen.size !== expected.size) throw new Error("Every card requires a review decision");
+  const duplicates = new Set<string>();
+  for (const row of proposal.duplicates) {
+    if (row.duplicateId === row.canonicalId || duplicates.has(row.duplicateId) || proposal.decisions.some(d => d.canonicalId === row.duplicateId)) throw new Error("Duplicate merge conflicts with an approved canonical identity");
+    duplicates.add(row.duplicateId);
+  }
+  if (proposal.duplicates.some(row => duplicates.has(row.canonicalId))) throw new Error("Duplicate merge chains are forbidden");
   return proposal;
 }
