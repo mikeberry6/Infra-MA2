@@ -19,7 +19,8 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const wantsJson = searchParams.get("format") === "json";
 
-    const deals = await getAllDeals();
+    const briefing = searchParams.get("briefing");
+    const deals = (await getAllDeals()).filter(deal => !briefing || deal.briefings?.some(issue => issue.edition === briefing));
     const rows = deals.map((deal) => ({
       legacyId: deal.legacyId,
       title: deal.title,

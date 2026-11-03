@@ -7363,21 +7363,8 @@ const baseDeals: Deal[] = [
   },
 ];
 
-const WEEKLY_BRIEFING_MERGE_START = new Date("2026-05-08T00:00:00Z").getTime();
-const baseDealSourceUrls = new Set(baseDeals.map((deal) => deal.sourceUrl).filter(Boolean));
-
-function isKnownWeeklyDuplicate(deal: Deal): boolean {
-  return deal.target === "Axius Water" && deal.date.startsWith("2026-05-08");
-}
-
-export const deals: Deal[] = [
-  ...baseDeals,
-  ...weeklyBriefingDeals.filter((deal) => {
-    if (new Date(deal.date).getTime() < WEEKLY_BRIEFING_MERGE_START) return false;
-    if (isKnownWeeklyDuplicate(deal)) return false;
-    return !baseDealSourceUrls.has(deal.sourceUrl);
-  }),
-];
+// Reviewed canonical IDs are preserved even if an archived issue is reordered.
+export const deals: Deal[] = [...baseDeals, ...weeklyBriefingDeals];
 
 // Helper to get sector color
 export function getSectorColor(sector: string): string {

@@ -114,7 +114,12 @@
     "weekly:activity:advance": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts advance",
     "weekly:activity:migrate-v2": "npx tsx scripts/weekly-briefing-activity/workflow-migrate-v2.ts",
     "typecheck:weekly-activity": "tsc -p scripts/weekly-briefing-activity/tsconfig.json",
-    "test:weekly-activity": "vitest run scripts/weekly-briefing-activity/*.test.ts src/app/weekly-briefing/*.test.ts"
+    "test:weekly-activity": "vitest run scripts/weekly-briefing-activity/*.test.ts src/app/weekly-briefing/*.test.ts",
+    "briefings:inventory": "tsx scripts/briefing-deals/cli.ts inventory",
+    "briefings:preview": "tsx scripts/briefing-deals/cli.ts preview",
+    "briefings:apply": "tsx scripts/briefing-deals/cli.ts apply",
+    "briefings:validate": "tsx scripts/briefing-deals/cli.ts validate",
+    "briefings:sources": "tsx scripts/briefing-deals/sources.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
@@ -122,6 +127,7 @@
     "@prisma/adapter-pg": "7.9.1",
     "@prisma/client": "7.9.1",
     "bcryptjs": "^3.0.3",
+    "linkedom": "^0.18.15",
     "lucide-react": "0.453.0",
     "next": "15.5.22",
     "next-auth": "4.24.15",
@@ -131,6 +137,8 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.4.3",
+    "@electric-sql/pglite-socket": "^0.1.3",
     "@playwright/test": "1.61.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -145,9 +153,9 @@
     "@vitest/ui": "^4.1.5",
     "autoprefixer": "10.4.19",
     "dotenv": "^17.4.1",
-    "exceljs": "^4.4.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.5.22",
+    "exceljs": "^4.4.0",
     "jsdom": "^29.0.2",
     "postcss": "8.5.23",
     "prisma": "7.9.1",

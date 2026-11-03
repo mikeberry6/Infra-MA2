@@ -7,6 +7,7 @@ const DEFAULT_ARCHIVE_DIR = path.join(process.cwd(), "public", "email-format");
 export interface WeeklyBriefingDocument {
   edition: string;
   bodyMarkup: string;
+  headStyles: string;
   sourceHref: string;
 }
 export function isWeeklyBriefingEdition(value: string): boolean {
@@ -70,6 +71,7 @@ export async function loadWeeklyBriefingDocument({
 
   return {
     edition,
+    headStyles: (documentMarkup.match(/<style\b[^>]*>[\s\S]*?<\/style>/gi) ?? []).join("\n"),
     bodyMarkup: rewriteBriefingArchiveLinks(
       extractBodyMarkup(documentMarkup),
       prefix,

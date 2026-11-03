@@ -177,3 +177,16 @@ describe("export/import contract round trips", () => {
     await parseCsvExport(handler, entity);
   });
 });
+
+it("exports only the selected briefing while preserving column contracts", async () => {
+  mocks.canExportData.mockResolvedValue(true);
+  mocks.getAllDeals.mockResolvedValue([
+    { ...deal, briefings: [{ edition: "2026-07-31", archivePath: "/email-format/2026-07-31.html" }] },
+    { ...deal, legacyId: "other", briefings: [] },
+  ]);
+  const response = await exportDeals(new Request("https://example.test/api/exports/deals?briefing=2026-07-31&format=json") as never);
+  const body = await response.json();
+  expect(body.count).toBe(1);
+  expect(body.data[0].legacyId).toBe(deal.legacyId);
+  expect(body.data[0]).not.toHaveProperty("briefings");
+});

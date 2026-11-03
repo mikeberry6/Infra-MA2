@@ -75,6 +75,7 @@ const nextConfig = {
   outputFileTracingRoot: path.join(__dirname),
   outputFileTracingIncludes: {
     "/weekly-briefing": [
+      "./public/email-format/*.html",
       "./audits/weekly-briefing-activity/**/*",
       "./audits/deal-portco-flowthrough-2026-05-05.md",
     ],

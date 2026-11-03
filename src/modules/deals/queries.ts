@@ -7,7 +7,7 @@ import {
   DEAL_CATEGORY_DISPLAY,
   DEAL_STATUS_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { DealView } from "@/modules/shared/types";
+import type { DealView, BriefingReference } from "@/modules/shared/types";
 import type { Deal as DbDeal, DealParticipant } from "@/generated/prisma/client";
 
 function uniqueNames(names: string[]): string[] {
@@ -26,6 +26,7 @@ function toDealView(
     participants: (DealParticipant & { organization: { name: string } })[];
     citations: { source: { label: string; url: string } }[];
   },
+  briefings: BriefingReference[] = [],
 ): DealView {
   const buyers = uniqueNames(deal.participants
     .filter((p) => p.role === "BUYER")
@@ -49,6 +50,7 @@ function toDealView(
   const firstCitation = deal.citations[0];
 
   return {
+    briefings,
     id: deal.legacyId,
     legacyId: deal.legacyId,
     title: deal.title,
@@ -97,7 +99,8 @@ async function getAllDealsRaw(): Promise<DealView[]> {
     include: DEAL_INCLUDE,
     orderBy: { date: "desc" },
   });
-  return deals.map(toDealView);
+  const references = await getBriefingReferences(deals.map(d => d.id));
+  return deals.map(deal => toDealView(deal, references.get(deal.id) ?? []));
 }
 
 const getAllDealsCached = unstable_cache(
@@ -115,7 +118,9 @@ export async function getDealById(legacyId: string): Promise<DealView | null> {
     where: { legacyId },
     include: DEAL_INCLUDE,
   });
-  return deal ? toDealView(deal) : null;
+  if (!deal) return null;
+  const references = await getBriefingReferences([deal.id]);
+  return toDealView(deal, references.get(deal.id) ?? []);
 }
 
 export async function getWeeklyDeals(anchorDate: Date): Promise<DealView[]> {
@@ -128,7 +133,8 @@ export async function getWeeklyDeals(anchorDate: Date): Promise<DealView[]> {
     include: DEAL_INCLUDE,
     orderBy: { date: "desc" },
   });
-  return deals.map(toDealView);
+  const references = await getBriefingReferences(deals.map(d => d.id));
+  return deals.map(deal => toDealView(deal, references.get(deal.id) ?? []));
 }
 
 export async function getLatestDealDate(): Promise<Date> {
@@ -142,4 +148,33 @@ export async function getLatestDealDate(): Promise<Date> {
 
 export async function getDealCount(): Promise<number> {
   return prisma.deal.count({ where: { status: "PUBLISHED" } });
+}
+
+async function briefingSchemaReady(): Promise<boolean> {
+  const rows = await prisma.$queryRaw<Array<{ ready: boolean }>>`SELECT to_regclass('public."BriefingIssue"') IS NOT NULL AND to_regclass('public."BriefingDeal"') IS NOT NULL AS ready`;
+  return rows[0]?.ready === true;
+}
+
+async function getBriefingReferences(dealIds: string[]) {
+  const result = new Map<string, BriefingReference[]>();
+  if (!dealIds.length || !(await briefingSchemaReady())) return result;
+  const appearances = await prisma.briefingDeal.findMany({
+    where: { dealId: { in: dealIds } },
+    select: { dealId: true, issue: { select: { edition: true, archivePath: true } } },
+    orderBy: { issueEdition: "desc" },
+  });
+  for (const appearance of appearances) {
+    const references = result.get(appearance.dealId) ?? [];
+    if (!references.some(r => r.edition === appearance.issue.edition)) references.push(appearance.issue);
+    result.set(appearance.dealId, references);
+  }
+  return result;
+}
+
+export async function getBriefingIssues() {
+  if (!(await briefingSchemaReady())) return [];
+  return prisma.briefingIssue.findMany({
+    select: { edition: true, archivePath: true },
+    orderBy: { edition: "desc" },
+  });
 }

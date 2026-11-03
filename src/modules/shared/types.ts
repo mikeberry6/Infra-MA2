@@ -8,7 +8,13 @@ export type { RecordStatus, UserRole } from "@/generated/prisma/client";
 // These mirror the TS-file interfaces so client components can switch from
 // importing static data to receiving props without changing their internal logic.
 
+export interface BriefingReference {
+  edition: string;
+  archivePath: string;
+}
+
 export interface DealView {
+  briefings?: BriefingReference[];
   id: string;
   legacyId: string;
   title: string;

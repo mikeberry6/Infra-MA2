@@ -253,3 +253,7 @@ A weekly issue is complete only when:
 5. automated and visual validation pass;
 6. when publication was requested, the exact intended files are merged to `main`; and
 7. when a live update was requested, the exact public URL serves the new issue.
+
+## Deal Database integration
+
+After final editorial approval, run `npm run briefings:inventory` and commit the structured archive manifest with the new issue. Generate a scoped `briefings:preview -- --edition YYYY-MM-DD` against the production database. Complete the per-card canonical match/create decisions and source/date verification before the protected data apply. Email publication does not itself authorize unresolved database additions. See `scripts/briefing-deals/README.md` for commands, review fields, production safeguards, cache invalidation and smoke checks.

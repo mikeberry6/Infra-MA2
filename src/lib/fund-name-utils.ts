@@ -11,6 +11,8 @@
 
 /** Maps a variant fund/buyer name to its canonical name for ranking dedup. */
 export const FUND_NAME_ALIASES: Record<string, string> = {
+  GSAM: "Goldman Sachs Asset Management",
+  CIP: "Copenhagen Infrastructure Partners",
   "CVC (CVC DIF)": "CVC DIF",
   "Infracapital (M&G)": "Infracapital",
   "GIP (BlackRock)": "GIP",
