@@ -43,7 +43,13 @@ async function main() {
       const proposal = buildProposal(issues, state.records, state.hash, { host: target.hostname, database: target.pathname.slice(1) });
       save(output, proposal);
       const report: ReviewReport = { target: proposal.target, snapshotHash: state.hash, databaseDealCount: state.records.length,
-        issues: issues.map(i => ({ edition: i.edition, cards: i.cards.length, previousCards: state.issues.find(p => p.edition === i.edition)?.deals.length ?? 0 })),
+        issues: issues.map(i => {
+          const previous = state.issues.find(p => p.edition === i.edition)?.deals ?? [];
+          return { edition: i.edition, cards: i.cards.length, previousCards: previous.length,
+            existingMemberships: previous.map(p => ({ cardKey: p.cardKey, canonicalId: state.records.find(d => d.id === p.dealId)?.legacyId ?? p.dealId, position: p.position })),
+            removedCardKeys: previous.filter(p => !i.cards.some(c => c.key === p.cardKey)).map(p => p.cardKey),
+          };
+        }),
         rows: issues.flatMap(i => i.cards.map(c => ({ edition: i.edition, ...c, candidates: candidateIds(c, state.records), candidateRecords: state.records.filter(d => candidateIds(c, state.records).includes(d.legacyId)),
           reviewNeeded: [!c.announcementDate && "Verify announcement date", !c.sourceUrl && "Recover source URL", "Confirm parties, classification and status", "Approve canonical match or complete CREATE data"].filter(Boolean) }))),
       };
