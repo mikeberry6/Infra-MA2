@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "PortCo format",
+    description:
+      "Editable North American infrastructure portfolio slides covering Vauban, InfraRed, and Ares, with corporate logos, investment dates, and fund labels.",
+    href: "/one-off-requests/portco-format.pptx",
+    format: "PowerPoint",
+    date: "Nov 2026",
+    download: true,
+  },
+  {
     title: "North American waste portfolio companies",
     description:
       "Infrastructure firms and their North American waste portfolio companies, with investment years and one-click Outlook copying.",
@@ -348,7 +357,7 @@ export default function OneOffRequestsPage() {
           },
           {
             label: "Latest",
-            value: "Oct 2026",
+            value: "Nov 2026",
             detail: "Most recent one-off",
             color: "#B4A87D",
           },
