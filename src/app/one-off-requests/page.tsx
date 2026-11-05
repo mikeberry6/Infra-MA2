@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Logo format",
+    description:
+      "Editable infrastructure logo landscape with sector and subsector groupings, deal counts, and acquirer labels.",
+    href: "/one-off-requests/logo format.pptx",
+    format: "PowerPoint",
+    date: "Nov 2026",
+    download: true,
+  },
+  {
     title: "PortCo format",
     description:
       "Editable North American infrastructure portfolio slides covering Vauban, InfraRed, and Ares, with corporate logos, investment dates, and fund labels.",
