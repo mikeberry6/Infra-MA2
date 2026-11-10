@@ -79,6 +79,7 @@ const BUYER_SHORT_NAMES: Record<string, string> = {
   "Schroders Greencoat": "Schroders Greencoat",
   "Standard Solar": "Standard Solar",
   "ADIA Infrastructure": "ADIA Infra",
+  "Norges Bank Investment Management": "NBIM",
   "Axium Infrastructure": "Axium Infra",
   "Technique Solaire": "Technique Solaire",
   "Northleaf Capital": "Northleaf",
