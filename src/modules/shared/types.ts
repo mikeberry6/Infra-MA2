@@ -13,7 +13,15 @@ export interface BriefingReference {
   archivePath: string;
 }
 
-export interface DealView {
+export interface DealParticipantView {
+  organizationId: string;
+  name: string;
+  role: string;
+  hasPublicProfile: boolean;
+}
+
+export interface DealListView {
+  participants?: DealParticipantView[];
   briefings?: BriefingReference[];
   legacyIdAliases?: string[];
   id: string;
@@ -27,20 +35,23 @@ export interface DealView {
   region: string;
   category: string[];
   date: string;
-  description: string;
-  targetDescription: string;
   sourceName: string;
   sourceUrl: string;
+  status: string;
+  country: string;
+}
+
+export interface DealView extends DealListView {
+  description: string;
+  targetDescription: string;
   enterpriseValue: string | null;
   equityValue: string | null;
   stake: string | null;
-  status: string;
   closingDate: string | null;
   financialAdvisorBuyer: string[] | null;
   financialAdvisorSeller: string[] | null;
   legalAdvisorBuyer: string[] | null;
   legalAdvisorSeller: string[] | null;
-  country: string;
   assetScale: string | null;
   valuationMultiple: string | null;
   fundVehicle: string | null;
@@ -51,12 +62,18 @@ export interface FundView {
   id: string;
   legacyId: string;
   managerName: string;
+  managerId?: string;
   fundName: string;
   ticker: string | null;
   investmentStrategy: string;
   sourceUrls: string[];
   size: string;
   sizeUsdMm: number | null;
+  sizeBasis?: string;
+  sizeAsOf?: string;
+  sizeSourceUrl?: string;
+  sizeNativeAmount?: string;
+  sizeNativeCurrency?: string;
   vintage: string;
   strategies: string[];
   structure: string;
@@ -73,6 +90,8 @@ export interface FundStrategyView {
 }
 
 export interface PortfolioCompanyView {
+  companyId?: string;
+  fundAttribution?: OwnerView["fundAttribution"];
   name: string;
   sector: string;
   subsector?: string;
@@ -85,6 +104,8 @@ export interface PortfolioCompanyView {
 }
 
 export interface OwnerView {
+  organizationId?: string;
+  fundLegacyId?: string;
   id?: string;
   firm: string;
   vehicle: string;
@@ -186,5 +207,5 @@ export interface NewsItemView {
 
 export interface NewsFeedView {
   items: NewsItemView[];
-  lastUpdated: string;
+  lastSuccessfulIngestAt: string | null;
 }

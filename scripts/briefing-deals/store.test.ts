@@ -32,7 +32,7 @@ beforeAll(async () => {
   // Exercise the additive migration against an existing schema without its new tables.
   await db.exec('DROP TABLE "BriefingDeal"; DROP TABLE "BriefingIssue";');
   await db.exec(`CREATE TABLE "_prisma_migrations" (id TEXT PRIMARY KEY, checksum TEXT NOT NULL, finished_at TIMESTAMPTZ, migration_name TEXT NOT NULL, started_at TIMESTAMPTZ, rolled_back_at TIMESTAMPTZ, applied_steps_count INTEGER);`);
-  server = new PGLiteSocketServer({ db, port: 0, host: "127.0.0.1" });
+  server = new PGLiteSocketServer({ db, port: 0, host: "127.0.0.1", maxConnections: 2 });
   await server.start();
   client = new PrismaClient({ adapter: new PrismaPg({ connectionString: `postgresql://postgres:postgres@${server.getServerConn()}/postgres`, max: 1 }) });
   const sql = readFileSync("prisma/migrations/20261103160000_briefing_deal_membership/migration.sql", "utf8");
@@ -72,12 +72,16 @@ describe("reviewed transactional import on isolated Postgres", () => {
   });
   it("rolls back creates when a later membership write fails", async () => {
     const input = await proposal("SYNTHETIC-3");
-    await db.exec(`CREATE FUNCTION reject_briefing_membership() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN RAISE EXCEPTION 'synthetic membership failure'; END $$; CREATE TRIGGER reject_briefing_membership BEFORE INSERT ON "BriefingDeal" FOR EACH ROW EXECUTE FUNCTION reject_briefing_membership();`);
-    await expect(applyProposal(client, input, digest(input))).rejects.toThrow();
+    await client.$executeRaw`CREATE FUNCTION reject_briefing_membership() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN RAISE EXCEPTION 'synthetic membership failure'; END $$`;
+    await client.$executeRaw`CREATE TRIGGER reject_briefing_membership BEFORE INSERT ON "BriefingDeal" FOR EACH ROW EXECUTE FUNCTION reject_briefing_membership()`;
+    try {
+      await expect(applyProposal(client, input, digest(input))).rejects.toThrow("synthetic membership failure");
+    } finally {
+      await client.$executeRaw`DROP TRIGGER reject_briefing_membership ON "BriefingDeal"`;
+    }
     expect(await client.deal.count()).toBe(1);
     expect(await client.briefingDeal.count()).toBe(1);
     expect(await client.auditEvent.count()).toBe(1);
-    await db.exec('DROP TRIGGER reject_briefing_membership ON "BriefingDeal";');
   });
   it("links a second issue appearance without overwriting richer deal data", async () => {
     const state = await snapshot(client);

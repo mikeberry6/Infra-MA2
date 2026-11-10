@@ -2,9 +2,11 @@ import { describe, it, expect } from "vitest";
 import { matchesSizeRange, groupFundsByManager, getFundStats } from "./fund-utils";
 
 describe("matchesSizeRange", () => {
-  it("returns true when size is null (unknown)", () => {
-    expect(matchesSizeRange(null, "< $500M")).toBe(true);
-    expect(matchesSizeRange(null, "$10B+")).toBe(true);
+  it("separates undisclosed sizes from USD size ranges", () => {
+    expect(matchesSizeRange(null, "< $500M")).toBe(false);
+    expect(matchesSizeRange(null, "$10B+")).toBe(false);
+    expect(matchesSizeRange(null, "Undisclosed size")).toBe(true);
+    expect(matchesSizeRange(null, "Undisclosed size", "100000000")).toBe(false);
   });
 
   it("classifies < $500M correctly", () => {
@@ -73,26 +75,15 @@ describe("groupFundsByManager", () => {
 
 describe("getFundStats", () => {
   it("returns zero stats for empty input", () => {
-    expect(getFundStats([])).toEqual({ managers: 0, funds: 0, totalAumBn: 0 });
+    expect(getFundStats([])).toEqual({ managers: 0, funds: 0, disclosedSize: 0 });
   });
 
-  it("counts unique managers and totals AUM in billions with one decimal", () => {
+  it("counts managers and reported sizes without adding unlike amounts", () => {
     const stats = getFundStats([
-      { managerName: "KKR", sizeUsdMm: 1500 }, // 1.5B
-      { managerName: "KKR", sizeUsdMm: 2500 }, // 2.5B
-      { managerName: "Blackstone", sizeUsdMm: 10000 }, // 10B
-    ]);
-    expect(stats.managers).toBe(2);
-    expect(stats.funds).toBe(3);
-    expect(stats.totalAumBn).toBe(14.0);
-  });
-
-  it("treats null sizes as zero in the AUM total", () => {
-    const stats = getFundStats([
+      { managerName: "KKR", sizeUsdMm: 1500 },
       { managerName: "KKR", sizeUsdMm: null },
-      { managerName: "KKR", sizeUsdMm: 1000 },
+      { managerName: "Blackstone", sizeUsdMm: null, sizeNativeAmount: "100000000" },
     ]);
-    expect(stats.totalAumBn).toBe(1.0);
-    expect(stats.funds).toBe(2);
+    expect(stats).toEqual({ managers: 2, funds: 3, disclosedSize: 2 });
   });
 });

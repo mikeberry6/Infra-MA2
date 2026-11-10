@@ -22,6 +22,24 @@ function notifyUrlFiltersChanged(query: string) {
   );
 }
 
+export function useUrlSearch() {
+  const [query, setQuery] = useState("");
+  useEffect(() => {
+    const sync = () => setQuery(window.location.search);
+    const syncFromEvent = (event: Event) => setQuery(
+      (event as CustomEvent<{ search?: string }>).detail?.search ?? window.location.search,
+    );
+    sync();
+    window.addEventListener("popstate", sync);
+    window.addEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    return () => {
+      window.removeEventListener("popstate", sync);
+      window.removeEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    };
+  }, []);
+  return query;
+}
+
 export function useUrlQueryParam(paramName: string): string | null {
   const [value, setValue] = useState<string | null>(null);
 

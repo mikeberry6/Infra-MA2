@@ -1,4 +1,5 @@
 import { PrismaClient } from "@/generated/prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaNeonHttp } from "@prisma/adapter-neon";
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | null };
@@ -10,7 +11,10 @@ function createPrismaClient(): PrismaClient | null {
     console.warn("DATABASE_URL not set — database queries will fail");
     return null;
   }
-  const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
+  const hostname = new URL(connectionString).hostname;
+  const adapter = ["127.0.0.1", "localhost", "[::1]"].includes(hostname)
+    ? new PrismaPg({ connectionString })
+    : new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
   return new PrismaClient({ adapter });
 }
 

@@ -20,12 +20,13 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useClearUrlFilters, useUrlFilterSet } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useUrlQueryParamsWriter, useUrlQueryState } from "@/hooks/useUrlFilterSet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { formatDate } from "@/lib/format";
 import { getNewsCategoryColor, NEWS_CATEGORIES } from "@/lib/news-utils";
@@ -43,13 +44,6 @@ const MENTION_COLORS: Record<NewsMentionType, string> = {
   "Investment Firm": "#7d6cf0",
   Fund: "#1d9d76",
   Deal: "#d98b1c",
-};
-
-type NewsCounts = {
-  total: number;
-  highConfidence: number;
-  needsReview: number;
-  linkedinLinks: number;
 };
 
 function categoryIcon(category: NewsCategory): LucideIcon {
@@ -83,8 +77,9 @@ function isHttpUrl(url: string): boolean {
 
 function daysAgo(days: number): number {
   const now = new Date();
-  now.setHours(0, 0, 0, 0);
-  return now.getTime() - days * 24 * 60 * 60 * 1000;
+  now.setUTCHours(0, 0, 0, 0);
+  now.setUTCDate(now.getUTCDate() - Math.max(0, days - 1));
+  return now.getTime();
 }
 
 function getEntityOptions(items: NewsItemView[]): string[] {
@@ -148,71 +143,53 @@ function getMentionColor(label: string, items: NewsItemView[]): string {
 }
 
 function topMentions(items: NewsItemView[], type: NewsMentionType, limit = 5) {
-  const counts = new Map<string, { count: number; href?: string }>();
+  const counts = new Map<string, { id: string; label: string; count: number; href?: string }>();
   for (const item of items) {
     for (const mention of item.mentions) {
       if (mention.type !== type) continue;
-      const current = counts.get(mention.label) ?? { count: 0, href: mention.href };
-      counts.set(mention.label, { count: current.count + 1, href: current.href || mention.href });
+      const current = counts.get(mention.id);
+      counts.set(mention.id, {
+        id: mention.id,
+        label: mention.label,
+        count: (current?.count ?? 0) + 1,
+        href: current?.href || mention.href,
+      });
     }
   }
-  return Array.from(counts.entries())
-    .map(([label, value]) => ({ label, ...value }))
+  return Array.from(counts.values())
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
     .slice(0, limit);
 }
 
-function IntelligenceHeader({
-  counts,
-  lastUpdated,
-}: {
-  counts: NewsCounts;
-  lastUpdated: string;
-}) {
-  const metrics = [
-    { label: "Review Items", value: counts.total, color: "#111114" },
-    { label: "High Confidence", value: counts.highConfidence, color: "#1d9d76" },
-    { label: "Needs Review", value: counts.needsReview, color: "#71717a" },
-    { label: "LinkedIn Links", value: counts.linkedinLinks, color: "#0a66c2" },
-  ];
+const ingestDateTime = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  hour: "numeric",
+  minute: "2-digit",
+  timeZone: "America/New_York",
+  timeZoneName: "short",
+});
+
+function IntelligenceHeader({ lastSuccessfulIngestAt }: { lastSuccessfulIngestAt: string | null }) {
+  const stale = lastSuccessfulIngestAt
+    && Date.now() - Date.parse(lastSuccessfulIngestAt) > 48 * 60 * 60 * 1000;
 
   return (
-    <section className="mb-5 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] shadow-[0_1px_2px_rgba(17,17,20,0.03)]">
-      <div className="h-[2px] bg-gradient-to-r from-[var(--accent)] via-[#3b6cf2] to-transparent" />
-      <div className="px-4 py-4 sm:px-5 sm:py-5">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <div className="mb-2 inline-flex items-center gap-2 type-label">
-              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-              Daily Monitoring Output
-            </div>
-            <h1 className="type-page-title">
-              Daily Intelligence Feed
-            </h1>
-            <p className="mt-1.5 type-meta">
-              Public news discovered from tracked PortCos, investment firms, fund managers, and funds. Review items here before promoting anything into the deal database.
-            </p>
-          </div>
-          <div className="type-micro">
-            Updated <span className="mono tabular-nums">{formatDate(lastUpdated)}</span>
-          </div>
-        </div>
-
-        <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
-          {metrics.map((metric) => (
-            <div key={metric.label} className="rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-2.5">
-              <div className="flex items-center gap-2">
-                <span aria-hidden className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: metric.color }} />
-                <span className="type-micro font-medium text-[var(--text-secondary)]">{metric.label}</span>
-              </div>
-              <div className="mt-1 mono type-page-title tabular-nums">
-                {metric.value.toLocaleString()}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <header className="mb-5 border-b border-[var(--border)] pb-4">
+      <p className="type-label mb-2">Infrastructure news</p>
+      <h1 className="type-page-title">Daily Intelligence Feed</h1>
+      <p className="mt-1.5 type-meta max-w-2xl">
+        Sourced news about infrastructure transactions, funds, sponsors, and PortCos.
+      </p>
+      <p className="mt-2 type-micro">
+        {lastSuccessfulIngestAt ? (
+          <>Last successful ingest <time dateTime={lastSuccessfulIngestAt} className="mono">{ingestDateTime.format(new Date(lastSuccessfulIngestAt))}</time>{stale ? " · Refresh delayed" : ""}</>
+        ) : "Ingest time unavailable"}
+        {" · "}
+        <Link href="/methodology#news" className="underline underline-offset-2">News methodology</Link>
+      </p>
+    </header>
   );
 }
 
@@ -223,10 +200,11 @@ function CategorySpotlight({
   items: NewsItemView[];
   onSelect: (item: NewsItemView) => void;
 }) {
-  const latestByCategory = NEWS_CATEGORIES.map((category) => ({
-    category,
-    item: items.find((item) => item.category === category),
-  }));
+  const latestByCategory = NEWS_CATEGORIES.flatMap((category) => {
+    const item = items.find((item) => item.category === category);
+    return item ? [{ category, item }] : [];
+  });
+  if (!latestByCategory.length) return null;
 
   return (
     <section className="mb-5">
@@ -240,18 +218,6 @@ function CategorySpotlight({
         {latestByCategory.map(({ category, item }) => {
           const Icon = categoryIcon(category);
           const color = getNewsCategoryColor(category);
-
-          if (!item) {
-            return (
-              <div key={category} className="surface min-h-[132px] px-4 py-3.5">
-                <div className="flex items-center gap-2">
-                  <Icon className="h-3.5 w-3.5" style={{ color }} />
-                  <span className="type-micro font-medium text-[var(--text-secondary)]">{categoryShortLabel(category)}</span>
-                </div>
-                <p className="mt-4 type-micro">No current signal in this category.</p>
-              </div>
-            );
-          }
 
           return (
             <button
@@ -321,56 +287,47 @@ function NewsFilterBar({
   onDateWindowChange: (value: (typeof DATE_WINDOWS)[number]["label"]) => void;
   onClearAll: () => void;
 }) {
+  const filters = [
+    { label: "Category", options: NEWS_CATEGORIES.filter((category) => category !== "Low Confidence / Needs Review"), selected: activeCategories, onToggle: onToggleCategory, getColor: getNewsCategoryColor },
+    { label: "Entity", options: entityOptions, selected: activeEntities, onToggle: onToggleEntity, getColor: (label: string) => getMentionColor(label, allItems) },
+    { label: "Source", options: sourceOptions, selected: activeSources, onToggle: onToggleSource, getColor: () => "#0a66c2" },
+    { label: "Confidence", options: ["High Confidence", "Medium Confidence"], selected: activeConfidence, onToggle: onToggleConfidence, getColor: confidenceColor },
+  ];
+  const activeCount = filters.reduce((count, filter) => count + filter.selected.size, 0);
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="sticky top-14 z-30 flex items-center gap-2 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
-        <div className="min-w-[210px] flex-1 sm:max-w-sm">
+      <div className="sticky top-14 z-30 flex flex-wrap items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 lg:max-w-sm">
           <TextInput
             leadingIcon={<Search />}
             value={search}
             onChange={(event) => onSearchChange(event.target.value)}
-            placeholder="Search news..."
+            placeholder="Search news"
             aria-label="Search news"
           />
         </div>
-        <MultiSelectDropdown
-          label="Category"
-          options={NEWS_CATEGORIES}
-          selected={activeCategories}
-          onToggle={onToggleCategory}
-          getColor={getNewsCategoryColor}
-        />
-        <MultiSelectDropdown
-          label="Entity"
-          options={entityOptions}
-          selected={activeEntities}
-          onToggle={onToggleEntity}
-          getColor={(label) => getMentionColor(label, allItems)}
-          align="right"
-        />
-        <MultiSelectDropdown
-          label="Source"
-          options={sourceOptions}
-          selected={activeSources}
-          onToggle={onToggleSource}
-          getColor={() => "#0a66c2"}
-          align="right"
-        />
-        <MultiSelectDropdown
-          label="Confidence"
-          options={["High Confidence", "Medium Confidence", "Needs Review"]}
-          selected={activeConfidence}
-          onToggle={onToggleConfidence}
-          getColor={confidenceColor}
-          align="right"
-        />
-        <div className="inline-flex shrink-0 items-center gap-0.5 rounded-md bg-[var(--bg-hover)] p-0.5">
+        <MobileFilterSheet activeCount={activeCount} onClearAll={onClearAll} desktopBreakpoint="lg">
+          <div className="space-y-2">
+            {filters.map((filter) => (
+              <div key={filter.label} className="flex items-center justify-between gap-3 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+                <span className="type-meta font-medium">{filter.label}</span>
+                <MultiSelectDropdown {...filter} align="right" />
+              </div>
+            ))}
+          </div>
+        </MobileFilterSheet>
+        <div className="hidden items-center gap-2 lg:flex">
+          {filters.map((filter) => <MultiSelectDropdown key={filter.label} {...filter} align="right" />)}
+        </div>
+        <div role="group" aria-label="Publication date" className="flex w-full shrink-0 items-center gap-0.5 rounded-md bg-[var(--bg-hover)] p-0.5 sm:w-auto">
           {DATE_WINDOWS.map((option) => (
             <button
               key={option.label}
               type="button"
               onClick={() => onDateWindowChange(option.label)}
-              className={`h-7 rounded px-2 type-micro font-medium transition-colors ${
+              aria-pressed={dateWindow === option.label}
+              className={`h-8 flex-1 rounded px-2 type-micro font-medium transition-colors ${
                 dateWindow === option.label
                   ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
                   : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -538,6 +495,7 @@ function NewsCard({
           {isHttpUrl(item.sourceUrl) && (
           <a
             href={item.sourceUrl}
+            data-research-event="source_click"
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-7 items-center gap-1.5 rounded-md px-2 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
@@ -556,10 +514,10 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
   const firms = topMentions(items, "Investment Firm");
   const portcos = topMentions(items, "PortCo");
   const funds = topMentions(items, "Fund");
-  const needsReviewCount = items.filter((item) => confidenceFilterLabel(item) === "Needs Review").length;
   const maxFirmCount = Math.max(...firms.map((firm) => firm.count), 1);
   const maxPortCoCount = Math.max(...portcos.map((company) => company.count), 1);
   const maxFundCount = Math.max(...funds.map((fund) => fund.count), 1);
+  if (!firms.length && !portcos.length && !funds.length) return null;
 
   return (
     <aside className="space-y-4 lg:sticky lg:top-28">
@@ -568,7 +526,7 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
         <div className="space-y-3">
           {firms.map((firm) => (
             <Link
-              key={firm.label}
+              key={firm.id}
               href={firm.href || "/funds"}
               className="block rounded-md px-2 py-1.5 type-meta transition-colors hover:bg-[var(--bg-hover)]"
             >
@@ -593,7 +551,7 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
         <div className="space-y-3">
           {portcos.map((company) => (
             <Link
-              key={company.label}
+              key={company.id}
               href={company.href || "/portfolio"}
               className="block rounded-md px-2 py-1.5 type-meta transition-colors hover:bg-[var(--bg-hover)]"
             >
@@ -618,7 +576,7 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
         <div className="space-y-3">
           {funds.map((fund) => (
             <Link
-              key={fund.label}
+              key={fund.id}
               href={fund.href || "/funds"}
               className="block rounded-md px-2 py-1.5 type-meta transition-colors hover:bg-[var(--bg-hover)]"
             >
@@ -638,18 +596,6 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
         </div>
       </div>
 
-      <div className="surface p-4">
-        <SectionLabel>Review Queue</SectionLabel>
-        <div className="rounded-md border border-[#71717a]/15 bg-[#71717a]/[0.04] px-3 py-3">
-          <div className="flex items-center justify-between">
-            <span className="type-meta">Needs review items</span>
-            <span className="mono type-page-title tabular-nums">{needsReviewCount}</span>
-          </div>
-          <p className="mt-1.5 type-micro">
-            Low-confidence scanner results stay here until an analyst promotes or dismisses them.
-          </p>
-        </div>
-      </div>
     </aside>
   );
 }
@@ -814,6 +760,7 @@ function NewsDrawer({
               {isHttpUrl(item.sourceUrl) && (
                 <a
                   href={item.sourceUrl}
+                  data-research-event="source_click"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[var(--border)] px-2.5 type-meta font-medium transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
@@ -831,21 +778,20 @@ function NewsDrawer({
 }
 
 export function NewsFeed({ feed }: { feed: NewsFeedView }) {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useUrlQueryState("q", "");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
   const [activeEntities, toggleEntity] = useUrlFilterSet("entity");
   const [activeSources, toggleSource] = useUrlFilterSet("source");
   const [activeConfidence, toggleConfidence] = useUrlFilterSet("confidence");
-  const [dateWindow, setDateWindow] = useState<(typeof DATE_WINDOWS)[number]["label"]>("Today");
+  const [rawDateWindow, setDateWindow] = useUrlQueryState("period", "7D");
+  const dateWindow = DATE_WINDOWS.find(({ label }) => label === rawDateWindow)?.label ?? "7D";
   const [selectedItem, setSelectedItem] = useState<NewsItemView | null>(null);
   const debouncedSearch = useDebounce(search, 250);
 
-  const clearUrlFilters = useClearUrlFilters(["category", "entity", "source", "confidence"]);
+  const writeQueryParams = useUrlQueryParamsWriter();
   const clearAll = useCallback(() => {
-    clearUrlFilters();
-    setSearch("");
-    setDateWindow("Today");
-  }, [clearUrlFilters]);
+    writeQueryParams({ category: null, entity: null, source: null, confidence: null, q: null, period: null });
+  }, [writeQueryParams]);
 
   const entityOptions = useMemo(() => getEntityOptions(feed.items), [feed.items]);
   const sourceOptions = useMemo(() => getSourceOptions(feed.items), [feed.items]);
@@ -886,24 +832,9 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
     }
   }, [filteredItems, selectedItem]);
 
-  const counts = useMemo(() => {
-    return {
-      total: filteredItems.length,
-      highConfidence: filteredItems.filter((item) => confidenceFilterLabel(item) === "High Confidence").length,
-      needsReview: filteredItems.filter((item) => confidenceFilterLabel(item) === "Needs Review").length,
-      linkedinLinks: filteredItems.reduce((total, item) => total + item.linkedinUrls.length, 0),
-    };
-  }, [filteredItems]);
-
-  const displayItems = useMemo(() => {
-    return filteredItems;
-  }, [filteredItems]);
-
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6">
-      <IntelligenceHeader counts={counts} lastUpdated={feed.lastUpdated} />
-
-      <CategorySpotlight items={filteredItems} onSelect={setSelectedItem} />
+      <IntelligenceHeader lastSuccessfulIngestAt={feed.lastSuccessfulIngestAt} />
 
       <NewsFilterBar
         search={search}
@@ -924,21 +855,23 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
         onClearAll={clearAll}
       />
 
+      <CategorySpotlight items={filteredItems} onSelect={setSelectedItem} />
+
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
         <div>
           <div className="mb-3 flex items-center justify-between gap-3">
             <span className="type-section-title text-[var(--text-tertiary)]">
               Signal Tape
             </span>
-            <span className="type-micro mono tabular-nums">
-              {displayItems.length.toLocaleString()} items
+            <span aria-live="polite" className="type-micro mono tabular-nums">
+              {filteredItems.length.toLocaleString()} {filteredItems.length === 1 ? "item" : "items"}
             </span>
           </div>
           <div className="space-y-3">
-          {displayItems.map((item) => (
+          {filteredItems.map((item) => (
             <NewsCard key={item.id} item={item} onSelect={setSelectedItem} />
           ))}
-          {displayItems.length === 0 && (
+          {filteredItems.length === 0 && (
             <div className="surface px-4 py-12 text-center">
               <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-tertiary)]">
                 <Search className="h-4 w-4" />
@@ -951,7 +884,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
           )}
           </div>
         </div>
-        <InsightRail items={filteredItems} />
+        {filteredItems.length > 0 && <InsightRail items={filteredItems} />}
       </div>
 
       {selectedItem && (

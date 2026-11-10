@@ -41,24 +41,23 @@ export function SimpleBarRow({
 }) {
   const barPct = maxCount > 0 ? (row.count / maxCount) * 100 : 0;
   return (
-    <div className="grid grid-cols-[minmax(0,9rem)_1fr_auto] items-center gap-3">
+    <li className="grid grid-cols-[minmax(0,9rem)_1fr_auto] items-center gap-3">
       <span className="type-row-title truncate">
         {row.name}
       </span>
-      <div className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
+      <div aria-hidden className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
         <div
           className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-500 ease-out"
           style={{
             width: `${Math.max(barPct, 5)}%`,
             backgroundColor: row.color,
           }}
-          aria-label={`${row.name}: ${row.count}`}
         />
       </div>
       <span className="type-micro mono text-[var(--text-secondary)] tabular-nums">
         {row.count}
       </span>
-    </div>
+    </li>
   );
 }
 
@@ -79,11 +78,11 @@ export function RankingColumn({
       <h3 className="type-section-title text-[var(--text-tertiary)] mb-3">
         {title}
       </h3>
-      <div className="space-y-2">
+      <ol className="space-y-2">
         {rows.map((row) => (
           <SimpleBarRow key={row.name} row={row} maxCount={maxCount} />
         ))}
-      </div>
+      </ol>
     </div>
   );
 }

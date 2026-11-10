@@ -12,10 +12,12 @@ import {
   fundAliases,
   managerAliases,
   matchNewsCandidates,
+  isInvestmentFirmCommentaryOnly,
   mergeNewsMentions,
   normalizeNewsText,
   type NewsMatchCandidate,
 } from "../src/lib/news-utils";
+import { completedNewsIngest, NEWS_INGEST_SUCCEEDED, NEWS_PIPELINE } from "../src/lib/news-pipeline";
 import { selectNewsScanEntities } from "../src/lib/news-scan-selection";
 import { shouldAcceptPublicNewsMatch } from "../src/lib/news-search-eligibility";
 import type { NewsConfidence, NewsMentionType, NewsMentionView } from "../src/modules/shared/types";
@@ -378,6 +380,19 @@ async function main() {
       ...persisted,
       mentions: summary.results.mentions,
     };
+    if (!options.dryRun && !options.reviewOnly && completedNewsIngest(summary)) {
+      await prisma.pipelineRun.create({
+        data: {
+          pipeline: NEWS_PIPELINE,
+          status: NEWS_INGEST_SUCCEEDED,
+          startedAt: new Date(summary.runAt),
+          endedAt: new Date(),
+          inserted: persisted.created,
+          updated: persisted.updated,
+          metadata: { shardIndex: options.shardIndex, shardCount: options.shardCount },
+        },
+      });
+    }
   } finally {
     await writeSummary(summary);
     await prisma.$disconnect();
@@ -881,23 +896,13 @@ function candidateFromNewsSearchArticle(
   const title = cleanText(article.title ?? "");
   if (!title || title.length < 8 || GENERIC_TITLE_RE.test(title)) return null;
   const searchSummary = cleanText(article.description ?? "");
-  if (!textMentionsEntity(`${title} ${searchSummary}`, entity)) return null;
+  const text = `${title}. ${searchSummary}`;
+  const mentions = matchNewsCandidates(text, candidates, 20);
+  const searchedEntity = entity.mentionCandidates[0];
+  if (!mentions.some((mention) => mention.id === searchedEntity.id && mention.type === searchedEntity.type)) return null;
 
   const publishedAt = parseNewsSearchDate(article.seendate ?? "");
   if (!publishedAt) return null;
-
-  const titleHasEntity = textMentionsEntity(title, entity);
-  const sourceMentions = entity.mentionCandidates.map((candidate) =>
-    mentionFromCandidate(
-      candidate,
-      titleHasEntity ? "High" : "Medium",
-      "Matched public-news search query",
-    ),
-  );
-  const text = `${title} ${entity.label} ${article.domain ?? ""}`;
-  const matchedMentions = matchNewsCandidates(text, candidates, 20);
-  const mentions = mergeNewsMentions(sourceMentions, matchedMentions);
-  if (mentions.length === 0) return null;
 
   const summary = [
     searchSummary || `Public news search result for ${entity.label}.`,
@@ -914,12 +919,15 @@ function candidateFromNewsSearchArticle(
     hasParsedDate: true,
   });
   const sourceOrigin = originOf(sourceUrl);
-  const officialSource = !!sourceOrigin && entity.urls.some((entry) => originOf(entry.url) === sourceOrigin);
+  const officialSource = !!sourceOrigin && entity.urls.some((entry) => (
+    entry.expandSite && originOf(entry.url) === sourceOrigin
+  ));
   const strongEventSignal = TRANSACTION_RE.test(`${title} ${searchSummary}`)
     || FUNDRAISING_RE.test(`${title} ${searchSummary}`)
     || RUMOR_RE.test(`${title} ${searchSummary}`);
   if (!shouldAcceptPublicNewsMatch({
     entityLabel: entity.label,
+    subjectTerms: searchedEntity.aliases.map(({ term }) => term),
     title,
     summary: searchSummary,
     confidence: classification.confidence,
@@ -941,13 +949,6 @@ function candidateFromNewsSearchArticle(
     confidence: classification.confidence,
     mentions,
   };
-}
-
-function textMentionsEntity(text: string, entity: TrackedEntity): boolean {
-  const normalizedText = ` ${normalizeNewsText(text)} `;
-  return entity.mentionCandidates.some((candidate) =>
-    candidate.aliases.some((alias) => normalizedText.includes(` ${alias.term} `)),
-  );
 }
 
 function parseNewsSearchDate(value: string): Date | null {
@@ -1171,10 +1172,16 @@ function extractCandidate(
     .slice(0, 80_000));
   const text = `${title} ${summary} ${bodyText.slice(0, 20_000)}`;
   const linkedinUrls = extractLinkedInUrls(html);
-  const matchedMentions = matchNewsCandidates(text, candidates, 20);
-  const sourceMentions = job.sourceEntities.flatMap((entity) =>
-    entity.mentionCandidates.map((candidate) => mentionFromCandidate(candidate, "High", "Scanned tracked entity source")),
-  );
+  const headlineText = `${title}. ${summary}`;
+  const matchedMentions = matchNewsCandidates(headlineText, candidates, 20);
+  const sourceMentions = job.sourceEntities.flatMap((entity) => {
+    // Linked third-party citations and inherited manager URLs do not establish a subject.
+    const officialSource = entity.urls.some((entry) => entry.expandSite && originOf(entry.url) === originOf(job.url));
+    if (!officialSource || entity.type === "FUND") return [];
+    return entity.mentionCandidates
+      .filter((candidate) => !isInvestmentFirmCommentaryOnly(headlineText, candidate.aliases))
+      .map((candidate) => mentionFromCandidate(candidate, "Medium", "Tracked entity's official site"));
+  });
   const mentions = mergeNewsMentions(sourceMentions, matchedMentions);
   if (mentions.length === 0) return null;
 
@@ -1182,7 +1189,7 @@ function extractCandidate(
   const classification = classifyCandidate({
     title,
     summary,
-    text,
+    text: headlineText,
     url: job.url,
     mentions,
     hasParsedDate: !!publishedAt,
@@ -1375,30 +1382,30 @@ async function persistCandidates(
       confidence: candidate.confidence,
     };
 
-    const newsItem = existingId
-      ? await prisma.newsItem.update({ where: { id: existingId }, data })
-      : await prisma.newsItem.create({
-        data: {
-          legacyId: legacyIdFor(candidate),
-          ...data,
-          status: options.reviewOnly ? "DRAFT" : "PUBLISHED",
-        },
-      });
+    const draft = options.reviewOnly || candidate.confidence === "LOW"
+      || candidate.category === "LOW_CONFIDENCE_NEEDS_REVIEW";
 
+    await prisma.$transaction(async (tx) => {
+      const newsItem = existingId
+        ? await tx.newsItem.update({ where: { id: existingId }, data })
+        : await tx.newsItem.create({
+          data: {
+            legacyId: legacyIdFor(candidate),
+            ...data,
+            status: draft ? "DRAFT" : "PUBLISHED",
+          },
+        });
+
+      await tx.newsMention.deleteMany({ where: { newsItemId: newsItem.id } });
+      const mentions = candidate.mentions
+        .map((mention) => mentionCreateInput(newsItem.id, mention, candidateByKey))
+        .filter((mention): mention is NonNullable<ReturnType<typeof mentionCreateInput>> => !!mention);
+      if (mentions.length > 0) {
+        await tx.newsMention.createMany({ data: mentions, skipDuplicates: true });
+      }
+    });
     if (existingId) updated++;
     else created++;
-
-    await prisma.newsMention.deleteMany({ where: { newsItemId: newsItem.id } });
-    const mentions = candidate.mentions
-      .map((mention) => mentionCreateInput(newsItem.id, mention, candidateByKey))
-      .filter((mention): mention is NonNullable<ReturnType<typeof mentionCreateInput>> => !!mention);
-
-    if (mentions.length > 0) {
-      await prisma.newsMention.createMany({
-        data: mentions,
-        skipDuplicates: true,
-      });
-    }
   }
 
   return {

@@ -7,8 +7,9 @@ import {
   DEAL_CATEGORY_DISPLAY,
   DEAL_STATUS_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { DealView, BriefingReference } from "@/modules/shared/types";
-import type { Deal as DbDeal, DealParticipant } from "@/generated/prisma/client";
+import type { DealListView, DealView, BriefingReference } from "@/modules/shared/types";
+import type { Prisma } from "@/generated/prisma/client";
+import { isPublicSponsor, SPONSOR_IDENTITY_SELECT } from "@/lib/sponsor-profile";
 
 function uniqueNames(names: string[]): string[] {
   const seen = new Set<string>();
@@ -20,64 +21,66 @@ function uniqueNames(names: string[]): string[] {
   });
 }
 
-// Map a DB deal + participants to the DealView that client components expect
-function toDealView(
-  deal: DbDeal & {
-    participants: (DealParticipant & { organization: { name: string } })[];
-    citations: { source: { label: string; url: string } }[];
-  },
-  briefings: BriefingReference[] = [],
-  legacyIdAliases: string[] = [],
-): DealView {
-  const buyers = uniqueNames(deal.participants
-    .filter((p) => p.role === "BUYER")
-    .map((p) => p.displayName || p.organization.name));
-  const sellers = uniqueNames(deal.participants
-    .filter((p) => p.role === "SELLER")
-    .map((p) => p.displayName || p.organization.name));
-  const faBuyer = uniqueNames(deal.participants
-    .filter((p) => p.role === "FINANCIAL_ADVISOR_BUYER")
-    .map((p) => p.organization.name));
-  const faSeller = uniqueNames(deal.participants
-    .filter((p) => p.role === "FINANCIAL_ADVISOR_SELLER")
-    .map((p) => p.organization.name));
-  const laBuyer = uniqueNames(deal.participants
-    .filter((p) => p.role === "LEGAL_ADVISOR_BUYER")
-    .map((p) => p.organization.name));
-  const laSeller = uniqueNames(deal.participants
-    .filter((p) => p.role === "LEGAL_ADVISOR_SELLER")
-    .map((p) => p.organization.name));
-
+function toDealListView(
+  deal: Prisma.DealGetPayload<{ select: typeof DEAL_LIST_SELECT }>,
+  briefings: BriefingReference[],
+  legacyIdAliases: string[],
+): DealListView {
+  const participants = deal.participants
+    .filter((participant) => participant.role === "BUYER" || participant.role === "SELLER")
+    .map(({ organization, displayName, role }) => ({
+      organizationId: organization.id,
+      name: displayName || organization.name,
+      role,
+      hasPublicProfile: isPublicSponsor(organization),
+    }));
+  const namesFor = (role: string) => uniqueNames(participants.filter((p) => p.role === role).map((p) => p.name));
   const firstCitation = deal.citations[0];
 
   return {
     briefings,
     legacyIdAliases,
+    participants,
     id: deal.legacyId,
     legacyId: deal.legacyId,
     title: deal.title,
     target: deal.target,
-    buyer: buyers.join(" / ") || "N/A",
-    seller: sellers.join(" / ") || "N/A",
+    buyer: namesFor("BUYER").join(" / ") || "N/A",
+    seller: namesFor("SELLER").join(" / ") || "N/A",
     sector: DEAL_SECTOR_DISPLAY[deal.sector],
     subsector: deal.subsector,
     region: DEAL_REGION_DISPLAY[deal.region],
     category: deal.categories.map((c) => DEAL_CATEGORY_DISPLAY[c]),
     date: deal.date.toISOString(),
-    description: deal.description,
-    targetDescription: deal.targetDescription,
     sourceName: firstCitation?.source.label || "",
     sourceUrl: firstCitation?.source.url || "",
+    status: DEAL_STATUS_DISPLAY[deal.dealStatus],
+    country: deal.country,
+  };
+}
+
+function toDealView(
+  deal: Prisma.DealGetPayload<{ include: typeof DEAL_INCLUDE }>,
+  briefings: BriefingReference[] = [],
+  legacyIdAliases: string[] = [],
+): DealView {
+  const advisorsFor = (role: string) => {
+    const names = uniqueNames(deal.participants.filter((p) => p.role === role).map((p) => p.organization.name));
+    return names.length > 0 ? names : null;
+  };
+
+  return {
+    ...toDealListView(deal, briefings, legacyIdAliases),
+    description: deal.description,
+    targetDescription: deal.targetDescription,
     enterpriseValue: deal.enterpriseValue,
     equityValue: deal.equityValue,
     stake: deal.stake,
-    status: DEAL_STATUS_DISPLAY[deal.dealStatus],
     closingDate: deal.closingDate?.toISOString() || null,
-    financialAdvisorBuyer: faBuyer.length > 0 ? faBuyer : null,
-    financialAdvisorSeller: faSeller.length > 0 ? faSeller : null,
-    legalAdvisorBuyer: laBuyer.length > 0 ? laBuyer : null,
-    legalAdvisorSeller: laSeller.length > 0 ? laSeller : null,
-    country: deal.country,
+    financialAdvisorBuyer: advisorsFor("FINANCIAL_ADVISOR_BUYER"),
+    financialAdvisorSeller: advisorsFor("FINANCIAL_ADVISOR_SELLER"),
+    legalAdvisorBuyer: advisorsFor("LEGAL_ADVISOR_BUYER"),
+    legalAdvisorSeller: advisorsFor("LEGAL_ADVISOR_SELLER"),
     assetScale: deal.assetScale,
     valuationMultiple: deal.valuationMultiple,
     fundVehicle: deal.fundVehicle,
@@ -87,13 +90,53 @@ function toDealView(
 
 const DEAL_INCLUDE = {
   participants: {
-    include: { organization: { select: { name: true } } },
+    include: { organization: { select: SPONSOR_IDENTITY_SELECT } },
   },
   citations: {
     include: { source: { select: { label: true, url: true } } },
     take: 1,
   },
 } as const;
+
+const DEAL_LIST_SELECT = {
+  id: true,
+  legacyId: true,
+  title: true,
+  target: true,
+  sector: true,
+  subsector: true,
+  region: true,
+  categories: true,
+  date: true,
+  dealStatus: true,
+  country: true,
+  citations: DEAL_INCLUDE.citations,
+  participants: {
+    where: { role: { in: ["BUYER", "SELLER"] } },
+    select: {
+      role: true,
+      displayName: true,
+      organization: { select: SPONSOR_IDENTITY_SELECT },
+    },
+  },
+} satisfies Prisma.DealSelect;
+
+export const getDealList = unstable_cache(
+  async (): Promise<DealListView[]> => {
+    const deals = await prisma.deal.findMany({
+      where: { status: "PUBLISHED" },
+      select: DEAL_LIST_SELECT,
+      orderBy: [{ date: "desc" }, { legacyId: "asc" }],
+    });
+    const [references, aliases] = await Promise.all([
+      getBriefingReferences(deals.map(({ id }) => id)),
+      getMergedDealAliases(),
+    ]);
+    return deals.map((deal) => toDealListView(deal, references.get(deal.id) ?? [], aliases.get(deal.legacyId) ?? []));
+  },
+  ["deals:list:v1"],
+  { tags: [CACHE_TAGS.deals, CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
+);
 
 async function getAllDealsRaw(): Promise<DealView[]> {
   const deals = await prisma.deal.findMany({
@@ -108,25 +151,31 @@ async function getAllDealsRaw(): Promise<DealView[]> {
 
 const getAllDealsCached = unstable_cache(
   getAllDealsRaw,
-  ["deals:all"],
-  { tags: [CACHE_TAGS.deals], revalidate: CACHE_REVALIDATE_SECONDS },
+  ["deals:all:participants-v2"],
+  { tags: [CACHE_TAGS.deals, CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
 export async function getAllDeals(): Promise<DealView[]> {
   return getAllDealsCached();
 }
 
-export async function getDealById(legacyId: string): Promise<DealView | null> {
+async function getDealByIdRaw(legacyId: string): Promise<DealView | null> {
   const aliases = await getMergedDealAliases();
   const canonicalId = [...aliases].find(([, ids]) => ids.includes(legacyId))?.[0] ?? legacyId;
   const deal = await prisma.deal.findUnique({
-    where: { legacyId: canonicalId },
+    where: { legacyId: canonicalId, status: "PUBLISHED" },
     include: DEAL_INCLUDE,
   });
   if (!deal) return null;
   const references = await getBriefingReferences([deal.id]);
   return toDealView(deal, references.get(deal.id) ?? [], aliases.get(deal.legacyId) ?? []);
 }
+
+export const getDealById = unstable_cache(
+  getDealByIdRaw,
+  ["deals:detail:v1"],
+  { tags: [CACHE_TAGS.deals, CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
+);
 
 export async function getWeeklyDeals(anchorDate: Date): Promise<DealView[]> {
   const weekAgo = new Date(anchorDate.getTime() - 7 * 24 * 60 * 60 * 1000);

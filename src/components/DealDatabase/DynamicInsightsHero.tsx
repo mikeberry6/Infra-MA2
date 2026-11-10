@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import type { DealView } from "@/modules/shared/types";
+import type { DealListView } from "@/modules/shared/types";
 import { getSectorColor, getRegionColor } from "@/lib/colors";
 import { NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
 import { normalizeFundName, splitEntities } from "@/lib/fund-name-utils";
@@ -32,7 +32,7 @@ interface FundRow {
   breakdown: { activity: string; count: number }[];
 }
 
-function deriveFundRanking(deals: DealView[]): FundRow[] {
+function deriveFundRanking(deals: DealListView[]): FundRow[] {
   const fundActivities: Record<string, Record<string, number>> = {};
 
   for (const d of deals) {
@@ -80,11 +80,11 @@ function deriveFundRanking(deals: DealView[]): FundRow[] {
 function FundStackedBar({ row, maxTotal }: { row: FundRow; maxTotal: number }) {
   const barPct = maxTotal > 0 ? (row.total / maxTotal) * 100 : 0;
   return (
-    <div className="grid grid-cols-[minmax(0,9rem)_1fr_auto] items-center gap-3">
+    <li className="grid grid-cols-[minmax(0,9rem)_1fr_auto] items-center gap-3">
       <span className="type-row-title truncate">
         {row.name}
       </span>
-      <div className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
+      <div aria-hidden className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
         <div
           className="absolute inset-y-0 left-0 flex rounded-full overflow-hidden transition-[width] duration-500 ease-out"
           style={{ width: `${Math.max(barPct, 3)}%` }}
@@ -99,7 +99,6 @@ function FundStackedBar({ row, maxTotal }: { row: FundRow; maxTotal: number }) {
                   width: `${segPct}%`,
                   backgroundColor: getActivityColor(seg.activity),
                 }}
-                aria-label={`${seg.activity}: ${seg.count}`}
               />
             );
           })}
@@ -108,7 +107,8 @@ function FundStackedBar({ row, maxTotal }: { row: FundRow; maxTotal: number }) {
       <span className="type-micro mono text-[var(--text-secondary)] tabular-nums">
         {row.total}
       </span>
-    </div>
+      <span className="sr-only">{row.breakdown.map(({ activity, count }) => `${activity}: ${count}`).join(", ")}</span>
+    </li>
   );
 }
 
@@ -132,7 +132,7 @@ function ActivityLegend({ activities }: { activities: string[] }) {
 export function DynamicInsightsHero({
   filteredDeals,
 }: {
-  filteredDeals: DealView[];
+  filteredDeals: DealListView[];
 }) {
   const fundRanking = useMemo(() => deriveFundRanking(filteredDeals), [filteredDeals]);
 
@@ -172,11 +172,11 @@ export function DynamicInsightsHero({
         <h3 className="type-section-title text-[var(--text-tertiary)] mb-3">
           Top fund activity
         </h3>
-        <div className="space-y-2">
+        <ol className="space-y-2">
           {fundRanking.map((row) => (
             <FundStackedBar key={row.name} row={row} maxTotal={fundMax} />
           ))}
-        </div>
+        </ol>
         <ActivityLegend activities={allActivities} />
       </div>
 

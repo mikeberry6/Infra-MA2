@@ -39,7 +39,9 @@ describe("nightly news pipeline workflow", () => {
     expect(scanner).toContain('reviewOnly: booleanOption("--review-only"');
     expect(scanner).toContain("selectNewsScanEntities(entities, options)");
     expect(scanner).toContain("const [crawl, search] = await Promise.all([");
-    expect(scanner).toContain('status: options.reviewOnly ? "DRAFT" : "PUBLISHED"');
+    expect(scanner).toContain('const draft = options.reviewOnly || candidate.confidence === "LOW"');
+    expect(scanner).toContain('status: draft ? "DRAFT" : "PUBLISHED"');
+    expect(scanner).toContain("!options.dryRun && !options.reviewOnly && completedNewsIngest(summary)");
     expect(scanner).not.toContain('status: "PUBLISHED" as const');
   });
 });

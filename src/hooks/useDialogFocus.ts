@@ -25,8 +25,13 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     const previousActive = document.activeElement instanceof HTMLElement
       ? document.activeElement
       : null;
-    const focusables = visibleFocusableElements(dialog);
-    (focusables[0] ?? dialog).focus();
+    const previousOverflow = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+
+    const initialFocus = dialog.querySelector<HTMLElement>("[data-dialog-initial-focus]")
+      ?? visibleFocusableElements(dialog)[0]
+      ?? dialog;
+    initialFocus.focus({ preventScroll: true });
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "Tab") return;
@@ -51,7 +56,8 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      previousActive?.focus();
+      document.documentElement.style.overflow = previousOverflow;
+      if (previousActive?.isConnected) previousActive.focus({ preventScroll: true });
     };
   }, [active, ref]);
 }

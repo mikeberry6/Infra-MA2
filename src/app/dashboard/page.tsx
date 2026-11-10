@@ -1,13 +1,11 @@
 export const dynamic = "force-dynamic";
 
-import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/public-metadata";
 import { DashboardPage } from "@/components/dashboard/DashboardPage";
 import { getDashboardView } from "@/modules/dashboard/queries";
 import { DataUnavailable } from "@/components/shared/DataUnavailable";
 
-export const metadata: Metadata = {
-  title: "Dashboard",
-};
+export const metadata = publicMetadata("/dashboard");
 
 export default async function DashboardRoute() {
   try {

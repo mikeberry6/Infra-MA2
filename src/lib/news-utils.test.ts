@@ -66,3 +66,32 @@ describe("news matching utilities", () => {
     expect(matches[1].confidence).toBe("Medium");
   });
 });
+
+describe("investment firm subject matching", () => {
+  const firms = ["Morgan Stanley", "Morgan Stanley Infrastructure", "Morgan Stanley Infrastructure Partners"]
+    .map((label, index): NewsMatchCandidate => ({
+      id: `firm-${index}`,
+      label,
+      type: "Investment Firm",
+      aliases: managerAliases(label),
+    }));
+
+  it("excludes a firm that is only providing ratings commentary", () => {
+    expect(matchNewsCandidates(
+      "Morgan Stanley downgrades flatexDEGIRO as customer growth slows, slashes target. Morgan Stanley downgraded flatexDEGIRO AG.",
+      firms,
+    )).toEqual([]);
+    expect(matchNewsCandidates("Morgan Stanley Infrastructure Partners downgraded an issuer.", firms)).toEqual([]);
+  });
+
+  it("attributes a longer exact organization name to the firm identified as investing", () => {
+    expect(matchNewsCandidates(
+      "Morgan Stanley Infrastructure Partners acquires a controlling stake in an operator.",
+      firms,
+    ).map(({ label }) => label)).toEqual(["Morgan Stanley Infrastructure Partners"]);
+    expect(matchNewsCandidates(
+      "Morgan Stanley agrees to acquire an infrastructure company.",
+      firms,
+    ).map(({ label }) => label)).toEqual(["Morgan Stanley"]);
+  });
+});

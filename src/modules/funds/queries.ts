@@ -11,27 +11,26 @@ import {
   COMPANY_REGION_DISPLAY,
 } from "@/modules/shared/enum-maps";
 import type { FundStrategyView, FundView, PortfolioCompanyView } from "@/modules/shared/types";
-import type { Fund as DbFund } from "@/generated/prisma/client";
+import type { Prisma } from "@/generated/prisma/client";
+import { isPublicSponsor, SPONSOR_IDENTITY_SELECT } from "@/lib/sponsor-profile";
 
-function toFundView(
-  fund: DbFund & {
-    manager: { name: string };
-    ownershipPeriods: {
-      isActive: boolean;
-      investmentYear: number | null;
-      exitYear: number | null;
-      company: {
-        name: string;
-        sector: string;
-        subsector: string;
-        region: string;
-        country: string;
-        description: string;
-      };
-    }[];
-  },
-): FundView {
-  const portfolioCompanies: PortfolioCompanyView[] = fund.ownershipPeriods.map((op) => ({
+const SIZE_BASIS_LABELS = {
+  TARGET: "Target",
+  AMOUNT_SOLD: "Amount sold",
+  FIRST_CLOSE: "First close",
+  FINAL_CLOSE: "Final close",
+  AUM: "Assets under management",
+  COMMITMENTS: "Commitments",
+} as const;
+
+type FundListRow = Prisma.FundGetPayload<{ select: typeof FUND_LIST_SELECT }>;
+type FundDetailRow = Prisma.FundGetPayload<{ include: typeof FUND_INCLUDE }>;
+
+function toFundView(fund: FundListRow | FundDetailRow): FundView {
+  const detail = "ownershipPeriods" in fund ? fund : null;
+  const portfolioCompanies: PortfolioCompanyView[] = (detail?.ownershipPeriods ?? []).map((op) => ({
+    companyId: op.company.id,
+    fundAttribution: op.fundAttribution,
     name: op.company.name,
     sector:
       COMPANY_SECTOR_DISPLAY[op.company.sector as keyof typeof COMPANY_SECTOR_DISPLAY] ||
@@ -51,12 +50,21 @@ function toFundView(
     id: fund.legacyId,
     legacyId: fund.legacyId,
     managerName: fund.manager.name,
+    managerId: isPublicSponsor(fund.manager) ? fund.manager.id : undefined,
     fundName: fund.fundName,
     ticker: fund.ticker,
-    investmentStrategy: fund.investmentStrategy,
-    sourceUrls: fund.sourceUrls,
+    investmentStrategy: detail?.investmentStrategy ?? "",
+    sourceUrls: detail?.sourceUrls ?? [],
     size: fund.size,
     sizeUsdMm: fund.sizeUsdMm,
+    sizeBasis: fund.sizeBasis ? SIZE_BASIS_LABELS[fund.sizeBasis] : undefined,
+    sizeAsOf: fund.sizeAsOf?.toISOString().slice(0, 10),
+    sizeNativeAmount: fund.sizeNativeAmount?.toString(),
+    sizeNativeCurrency: fund.sizeNativeCurrency ?? undefined,
+    sizeSourceUrl: detail?.evidence.find(({ supportedFields }) => supportedFields.some((field) =>
+      ["size", "sizeUsdMm", "sizeNativeAmount", "sizeBasis"].includes(field)
+    ))?.source.url
+      ?? detail?.primarySourceUrl ?? detail?.sourceUrls[0],
     vintage: fund.vintage,
     strategies: fund.strategies.map((s) => FUND_STRATEGY_DISPLAY[s]),
     structure: FUND_STRUCTURE_DISPLAY[fund.structure],
@@ -64,21 +72,28 @@ function toFundView(
     sectors: fund.sectors.map((s) => FUND_SECTOR_DISPLAY[s]),
     regions: fund.regions.map((r) => FUND_REGION_DISPLAY[r]),
     portfolioCompanies,
-    strategyUrl: fund.strategyUrl,
+    strategyUrl: detail?.strategyUrl ?? "",
   };
 }
 
 // Include both active and realized ownership periods. The drawer flags
 // realized investments visually so users see the full track record.
 const FUND_INCLUDE = {
-  manager: { select: { name: true } },
+  manager: { select: SPONSOR_IDENTITY_SELECT },
+  evidence: {
+    select: { source: { select: { url: true } }, supportedFields: true },
+    orderBy: { retrievedAt: "desc" },
+  },
   ownershipPeriods: {
+    where: { company: { status: "PUBLISHED" } },
     select: {
       isActive: true,
       investmentYear: true,
       exitYear: true,
+      fundAttribution: true,
       company: {
         select: {
+          id: true,
           name: true,
           sector: true,
           subsector: true,
@@ -91,6 +106,40 @@ const FUND_INCLUDE = {
   },
 } as const;
 
+const FUND_LIST_SELECT = {
+  legacyId: true,
+  fundName: true,
+  ticker: true,
+  manager: FUND_INCLUDE.manager,
+  size: true,
+  sizeUsdMm: true,
+  sizeBasis: true,
+  sizeAsOf: true,
+  sizeNativeAmount: true,
+  sizeNativeCurrency: true,
+  vintage: true,
+  strategies: true,
+  structure: true,
+  fundStatus: true,
+  sectors: true,
+  regions: true,
+} as const satisfies Prisma.FundSelect;
+
+async function getFundListRaw(): Promise<FundView[]> {
+  const funds = await prisma.fund.findMany({
+    where: { status: "PUBLISHED" },
+    select: FUND_LIST_SELECT,
+    orderBy: { fundName: "asc" },
+  });
+  return funds.map(toFundView);
+}
+
+export const getFundList = unstable_cache(
+  getFundListRaw,
+  ["funds:list:coverage-v1"],
+  { tags: [CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
 async function getAllFundsRaw(): Promise<FundView[]> {
   const funds = await prisma.fund.findMany({
     where: { status: "PUBLISHED" },
@@ -102,8 +151,8 @@ async function getAllFundsRaw(): Promise<FundView[]> {
 
 const getAllFundsCached = unstable_cache(
   getAllFundsRaw,
-  ["funds:all"],
-  { tags: [CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
+  ["funds:all:coverage-v2"],
+  { tags: [CACHE_TAGS.funds, CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
 export async function getAllFunds(): Promise<FundView[]> {
@@ -137,7 +186,7 @@ export async function getFundStrategyIndex(): Promise<FundStrategyView[]> {
 
 export async function getFundById(legacyId: string): Promise<FundView | null> {
   const fund = await prisma.fund.findUnique({
-    where: { legacyId },
+    where: { legacyId, status: "PUBLISHED" },
     include: FUND_INCLUDE,
   });
   return fund ? toFundView(fund) : null;

@@ -19,6 +19,7 @@ const expectedVersion = option("expected-version");
 const outputPath = option("output", "tmp/release-smoke.json");
 const skipHealth = process.argv.includes("--skip-health");
 const allowLegacyRoot = process.argv.includes("--allow-legacy-root");
+const researchRoadmap = process.argv.includes("--research-roadmap");
 const transport = option("transport", "fetch");
 if (!baseUrl) {
   console.error("--base-url is required.");
@@ -71,6 +72,7 @@ async function vercelCliRequest(url) {
       url: match[2],
       location,
       async json() { return JSON.parse(body); },
+      async text() { return body; },
     };
   } finally {
     await rm(requestDir, { recursive: true, force: true });
@@ -137,8 +139,38 @@ const rootPaths = [basePath];
 if (allowLegacyRoot) rootPaths.push(`${basePath}/tracker`);
 await statusCheck("canonical root", "/", 200, rootPaths);
 
-for (const route of ["/tracker", "/funds", "/portfolio", "/news", "/dashboard", "/search", "/earnings", "/login"]) {
-  await statusCheck(`public ${route}`, route, 200);
+const databaseRoutes = ["/tracker", "/funds", "/portfolio", "/news", "/dashboard"];
+for (const route of [...databaseRoutes, "/search", "/earnings", "/login"]) {
+  const expectedPaths = route === "/earnings" ? [`${basePath}/earnings`, `${basePath}/earnings/archive/q4-2025`] : undefined;
+  const response = await statusCheck(`public ${route}`, route, 200, expectedPaths);
+  if (databaseRoutes.includes(route) && checks.at(-1).passed) {
+    const html = await response.text();
+    checks.at(-1).passed = !/data-service-unavailable="true"|>Data unavailable<\/p>/i.test(html);
+  }
+}
+
+if (researchRoadmap) {
+  await statusCheck("research methodology", "/methodology", 200);
+  const briefing = await statusCheck("latest web briefing", "/weekly-briefing", 200);
+  const webHtml = await briefing.text();
+  const edition = webHtml.match(/data-briefing-edition="(\d{4}-\d{2}-\d{2})"/)?.[1];
+  const membership = webHtml.match(/data-briefing-deal-list="(verified|editorial-only)"/)?.[1];
+  const dealCta = `href="${basePath}/tracker?briefing=${edition}&amp;via=briefing"`;
+  checks.at(-1).passed &&= !!edition && (
+    (membership === "verified" && webHtml.includes(dealCta))
+    || (membership === "editorial-only" && !webHtml.includes(dealCta)
+      && webHtml.includes("Editorial edition"))
+  );
+
+  const emailPath = edition ? `${basePath}/email-format/${edition}.html` : "";
+  await statusCheck("latest email matches web briefing", "/email-format/latest", 200, [emailPath]);
+
+  if (edition && membership === "verified") {
+    const dealList = await statusCheck("verified briefing issue in Deal Tracker", `/tracker?briefing=${edition}`, 200, [`${basePath}/tracker`]);
+    const trackerHtml = await dealList.text();
+    checks.at(-1).passed &&= trackerHtml.includes(`<option value="${edition}"`)
+      && !/data-service-unavailable="true"|>Data unavailable<\/p>/i.test(trackerHtml);
+  }
 }
 
 await statusCheck("anonymous deal export denied", "/api/exports/deals", 403);
@@ -163,6 +195,7 @@ const report = {
   expectedVersion: expectedVersion?.slice(0, 12) ?? null,
   healthCheckSkipped: skipHealth,
   legacyRootAllowed: allowLegacyRoot,
+  researchRoadmapChecks: researchRoadmap,
   transport,
   passed: checks.every((check) => check.passed),
   health,

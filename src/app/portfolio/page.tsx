@@ -1,15 +1,13 @@
 export const revalidate = 300;
 
-import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/public-metadata";
 import { getAllCompanies } from "@/modules/companies/queries";
 import { getFundStrategyIndex } from "@/modules/funds/queries";
 import { getDatabaseCounts } from "@/modules/insights/queries";
 import { PortfolioDatabaseClient } from "@/components/PortfolioDatabaseClient";
 import { DataUnavailable } from "@/components/shared/DataUnavailable";
 
-export const metadata: Metadata = {
-  title: "PortCos",
-};
+export const metadata = publicMetadata("/portfolio");
 
 export default async function PortfolioPage() {
   try {

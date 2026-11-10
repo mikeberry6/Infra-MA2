@@ -1,6 +1,6 @@
 # News Scan Daily Automation
 
-This repo's News Feed scanner persists public-news records only to `NewsItem` and `NewsMention`.
+This repo's News Feed scanner stores articles and tracked entities in `NewsItem` and `NewsMention`. Completed live scans that meet the reliability gate write a `PipelineRun` receipt for the public freshness label, including successful scans that found zero new articles.
 
 ## GitHub Actions automation
 
@@ -15,7 +15,7 @@ The workflow:
 - fails visibly if neither crawl nor news search completes useful work;
 - rotates deterministically across three entity shards, covering the full published universe every three nights with a four-day lookback;
 - overlaps two public-news requests while preserving the same aggregate request pacing, so network latency does not consume the workflow budget;
-- rejects low-confidence public-search matches and ambiguous short-name collisions before any live write;
+- rejects low-confidence public-search matches, analyst-only commentary and ambiguous short-name collisions. Low-confidence crawl discoveries stay in draft.
 - fails visibly if the per-run target cap would omit any entity from the selected shard;
 - uploads `tmp/news-scan-summary.json` for 30 days, even after failure.
 
@@ -83,5 +83,5 @@ launchctl bootout "gui/$(id -u)" /Users/mikeberry6/Infra-MA2/docs/com.mikeberry6
 - Respect robots.txt.
 - If a provider or site fails, continue the scan and inspect `tmp/news-scan-summary.json`.
 - Do not create new deals from the scanner.
-- Treat `/news` as a review queue; imported items still need editorial review.
+- Use draft records for editorial review. The public feed shows published, relevant items and keeps rumors labeled.
 - The Next.js `/news` page may take up to 5 minutes to reflect new records if route caching is active.

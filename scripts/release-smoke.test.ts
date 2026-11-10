@@ -22,13 +22,13 @@ afterEach(async () => {
   await Promise.all(servers.splice(0).map((server) => new Promise<void>((resolve) => server.close(() => resolve()))));
 });
 
-async function runSmoke(baseUrl: string) {
+async function runSmoke(baseUrl: string, extraArgs: string[] = []) {
   const directory = await mkdtemp(path.join(tmpdir(), "release-smoke-test-"));
   const output = path.join(directory, "report.json");
   try {
     let exitCode = 0;
     try {
-      await execFile(process.execPath, ["scripts/release-smoke.mjs", `--base-url=${baseUrl}`, "--skip-health", `--output=${output}`]);
+      await execFile(process.execPath, ["scripts/release-smoke.mjs", `--base-url=${baseUrl}`, "--skip-health", `--output=${output}`, ...extraArgs]);
     } catch (error) {
       exitCode = (error as { code?: number }).code ?? 1;
     }
@@ -49,6 +49,32 @@ describe("release smoke", () => {
       response.end("ok");
     });
     const result = await runSmoke(app);
+    expect(result.exitCode).toBe(0);
+    expect(result.report.passed).toBe(true);
+  });
+
+  it("rejects a successful HTTP response that displays the data-unavailable fallback", async () => {
+    const app = await serve((request, response) => {
+      response.statusCode = request.url === "/Infra-MA2/api/exports/deals" ? 403 : 200;
+      response.end(request.url === "/Infra-MA2/portfolio" ? '<section data-service-unavailable="true"></section>' : "ok");
+    });
+    const result = await runSmoke(app);
+    expect(result.exitCode).toBe(1);
+    expect(result.report.checks.find(({ name }: { name: string }) => name === "public /portfolio").passed).toBe(false);
+  });
+
+  it("accepts an editorial-only latest issue when the email resolves to the same date", async () => {
+    const app = await serve((request, response) => {
+      if (request.url === "/Infra-MA2/email-format/latest") {
+        response.writeHead(307, { location: "/Infra-MA2/email-format/2026-11-07.html" }).end();
+        return;
+      }
+      response.statusCode = request.url === "/Infra-MA2/api/exports/deals" ? 403 : 200;
+      response.end(request.url === "/Infra-MA2/weekly-briefing"
+        ? '<nav data-briefing-edition="2026-11-07" data-briefing-deal-list="editorial-only">Editorial edition</nav>'
+        : "ok");
+    });
+    const result = await runSmoke(app, ["--research-roadmap"]);
     expect(result.exitCode).toBe(0);
     expect(result.report.passed).toBe(true);
   });
