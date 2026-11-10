@@ -18,7 +18,7 @@ import {
 import type { CompanyView, FundStrategyView, OwnerView, MilestoneView, SourceView } from "@/modules/shared/types";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
-import { SectionLabel } from "@/components/shared/SectionLabel";
+import { RecordTitleLink } from "@/components/shared/RecordTitleLink";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 
@@ -37,6 +37,8 @@ type DiligenceFact = {
 type SponsorFundRow = {
   key: string;
   sponsor: string;
+  organizationId?: string;
+  fundLegacyId?: string;
   fundName?: string | null;
   vehicle?: string | null;
   period?: string | null;
@@ -269,6 +271,8 @@ function buildSponsorFundRows(
     return {
       key: owner.id || `${owner.firm}-${owner.vehicle}-${owner.investmentYear}-${owner.exitYear}-${index}`,
       sponsor: owner.firm || "Unknown sponsor",
+      organizationId: owner.organizationId,
+      fundLegacyId: owner.fundLegacyId,
       fundName: owner.fundName || owner.attributedFundName || null,
       vehicle: owner.vehicle || null,
       period: period === "N/A" ? null : period,
@@ -616,7 +620,9 @@ function SponsorFundLine({ row }: { row: SponsorFundRow }) {
     >
       <div className="flex items-start justify-between gap-3">
         <div className="type-row-title font-semibold">
-          {row.sponsor}
+          {row.organizationId ? (
+            <RecordTitleLink href={`/sponsors/${encodeURIComponent(row.organizationId)}`} className="underline underline-offset-2">{row.sponsor}</RecordTitleLink>
+          ) : row.sponsor}
         </div>
         {row.period && (
           <span className="shrink-0 type-meta font-medium tabular-nums text-[var(--text-primary)] mono">
@@ -626,7 +632,9 @@ function SponsorFundLine({ row }: { row: SponsorFundRow }) {
       </div>
       {showFund && (
         <div className="mt-1 type-meta">
-          {row.fundName}
+          {row.fundLegacyId ? (
+            <RecordTitleLink href={`/funds/${encodeURIComponent(row.fundLegacyId)}`} className="underline underline-offset-2">{row.fundName}</RecordTitleLink>
+          ) : row.fundName}
         </div>
       )}
       {showVehicle && (
@@ -673,9 +681,7 @@ function DetailSection({
   return (
     <section className={`surface-elevated ${allowOverflow ? "overflow-visible" : "overflow-hidden"} ${className}`}>
       <div className="border-b border-[var(--border)] px-4 py-3.5">
-        <div className="type-section-title">
-          {title}
-        </div>
+        <h3 className="type-section-title">{title}</h3>
       </div>
       <div className="px-4 py-4">
         {children}
@@ -756,11 +762,17 @@ function OwnerLine({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <div className="type-row-title font-semibold">
-            {owner.firm || "Unknown owner"}
+            {owner.organizationId ? (
+              <RecordTitleLink href={`/sponsors/${encodeURIComponent(owner.organizationId)}`} className="underline underline-offset-2">
+                {owner.firm || "Unknown owner"}
+              </RecordTitleLink>
+            ) : owner.firm || "Unknown owner"}
           </div>
           {showFund && (
             <div className="mt-1 type-meta">
-              {displayedFundName}
+              {owner.fundLegacyId ? (
+                <RecordTitleLink href={`/funds/${encodeURIComponent(owner.fundLegacyId)}`} className="underline underline-offset-2">{displayedFundName}</RecordTitleLink>
+              ) : displayedFundName}
             </div>
           )}
           {showVehicle && (
@@ -819,6 +831,7 @@ function EvidenceGroups({ sources, compact = false }: { sources: SourceView[]; c
               <a
                 key={`${source.url}-${group.purpose}-${i}`}
                 href={source.url}
+                data-research-event="source_click"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex min-w-0 items-start gap-2 rounded-[6px] py-1.5 transition-colors hover:text-[var(--text-primary)]"
@@ -846,10 +859,14 @@ export function PortCoDrawer({
   company,
   funds,
   onClose,
+  detailState = "ready",
+  onRetry,
 }: {
   company: CompanyView;
   funds: FundStrategyView[];
   onClose: () => void;
+  detailState?: "loading" | "ready" | "error";
+  onRetry?: () => void;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);
   const [showFormerOwners, setShowFormerOwners] = useState(false);
@@ -907,7 +924,7 @@ export function PortCoDrawer({
   return (
     <>
       <div
-        className="fixed inset-0 z-50 bg-[var(--bg-overlay)] opacity-100 backdrop-blur-[2px]"
+        className="fixed inset-0 z-[60] bg-[var(--bg-overlay)] opacity-100 backdrop-blur-[2px]"
         onClick={onClose}
       />
       <div
@@ -916,7 +933,7 @@ export function PortCoDrawer({
         aria-modal="true"
         aria-labelledby="portco-drawer-title"
         tabIndex={-1}
-        className="fixed top-0 right-0 bottom-0 z-50 w-full translate-x-0 bg-[var(--bg-surface)] opacity-100 shadow-overlay overflow-y-auto sm:max-w-[760px] xl:max-w-[860px]"
+        className="fixed top-0 right-0 bottom-0 z-[60] w-full translate-x-0 bg-[var(--bg-surface)] opacity-100 shadow-overlay overflow-y-auto sm:max-w-[760px] xl:max-w-[860px]"
       >
         <header
           className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-6 py-6 backdrop-blur-md transition-shadow duration-150 sm:px-8 lg:px-10 ${
@@ -930,6 +947,7 @@ export function PortCoDrawer({
                 className="mb-5 h-[3px] w-14 rounded-full"
                 style={{ backgroundColor: sectorColor }}
               />
+              <p className="mb-2 type-label">Company scorecard</p>
               <div className="flex items-start gap-3">
                 <h2 id="portco-drawer-title" className="type-drawer-title">
                   {company.name}
@@ -940,9 +958,9 @@ export function PortCoDrawer({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 shrink-0 rounded-full p-1.5 text-[var(--text-tertiary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-                    title="PortCo website"
+                    aria-label={`${company.name} website`}
                   >
-                    <ExternalLink className="h-4 w-4" />
+                    <ExternalLink aria-hidden className="h-4 w-4" />
                   </a>
                 )}
               </div>
@@ -966,16 +984,37 @@ export function PortCoDrawer({
                   <span>{locationDisplay}</span>
                 </HeaderMetaItem>
               </div>
+              <RecordTitleLink href={`/portfolio/${encodeURIComponent(company.id)}`} className="mt-3 inline-block type-meta underline underline-offset-2">
+                Open full company profile
+              </RecordTitleLink>
             </div>
             <button
               onClick={onClose}
               aria-label="Close drawer"
-              className="shrink-0 rounded-full p-2 text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              data-dialog-initial-focus
+              className="inline-grid size-11 shrink-0 place-items-center rounded-md text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <X className="h-4 w-4" strokeWidth={1.75} />
             </button>
           </div>
         </header>
+
+        {detailState === "loading" && (
+          <p className="px-6 pt-4 type-meta sm:px-8 lg:px-10" role="status">Loading company history and sources…</p>
+        )}
+        {detailState === "error" && (
+          <div role="status" className="mx-6 mt-4 flex flex-wrap items-center justify-between gap-3 surface p-3 type-meta sm:mx-8 lg:mx-10">
+            Company history and sources are temporarily unavailable.
+            <button
+              type="button"
+              onClick={() => {
+                drawerRef.current?.querySelector<HTMLElement>("[data-dialog-initial-focus]")?.focus({ preventScroll: true });
+                onRetry?.();
+              }}
+              className="min-h-8 font-semibold underline underline-offset-2"
+            >Retry</button>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 gap-8 px-6 py-8 sm:grid-cols-[minmax(0,1fr)_240px] sm:px-8 lg:grid-cols-[minmax(0,1fr)_250px] lg:px-10 lg:py-10">
           <aside className="order-1 sm:order-2">
@@ -1007,6 +1046,7 @@ export function PortCoDrawer({
                       variant="ghost"
                       size="sm"
                       className="-ml-2"
+                      aria-expanded={showFormerOwners}
                       onClick={() => setShowFormerOwners(!showFormerOwners)}
                     >
                       {showFormerOwners ? "Hide prior owners" : `Show ${pluralize(formerOwners.length, "prior owner")}`}
@@ -1102,6 +1142,7 @@ export function PortCoDrawer({
                     variant="ghost"
                     size="sm"
                     className="mt-4 ml-5"
+                    aria-expanded={showAllMilestones}
                     onClick={() => setShowAllMilestones(!showAllMilestones)}
                   >
                     {showAllMilestones ? "Show less" : `Show all ${milestones.length} milestones`}
@@ -1112,7 +1153,7 @@ export function PortCoDrawer({
 
             {cSuiteManagement.length > 0 && (
               <section className="border-t border-[var(--border)] pt-7">
-                <SectionLabel>Key management</SectionLabel>
+                <h3 className="mb-3 type-section-title">Key management</h3>
                 <div className={`grid gap-x-5 gap-y-3 ${cSuiteManagement.length === 1 ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"}`}>
                   {cSuiteManagement.map((exec, i) => (
                     <div key={`${exec.name}-${i}`} className="border-b border-[var(--border)] pb-3">

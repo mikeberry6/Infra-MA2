@@ -6,6 +6,8 @@ This workflow imports curated published cards, never discovery candidates. Histo
 
 Run `npm run briefings:inventory` after finalizing an issue. Commit the resulting `audits/briefing-deals/archive.json` with the weekly HTML. Tests require it to match every published card, so later editorial changes require regeneration. New issue files should include `data-deal-id`, `data-announcement-date`, `data-region`, and `data-weekly-sector` / `data-weekly-count` attributes. Stable card IDs must survive reordering.
 
+The latest web briefing and email use this finalized inventory and verify its archive hashes. Editions managed by the separate chart approval workflow also require that workflow’s validated approval. A published editorial edition can be read before its database mapping is ready. Its tracker link appears after the published card keys, order, archive hash and deal publication states match the reviewed membership.
+
 ## Preview and individual review
 
 Use Node 24 and npm 11. Run `npm run briefings:preview -- --env PATH --output tmp/briefing-deals/review.json` against the intended database. `--edition YYYY-MM-DD` scopes the review to one issue. `--transport http` supports read-only Neon snapshots when direct Postgres is unavailable; apply always uses a transactional Postgres connection and checks the snapshot again.

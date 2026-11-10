@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Activity,
   AlertTriangle,
@@ -43,6 +44,16 @@ const CREDIT_CHART_IDS = ["ig_oas", "bbb_oas", "hy_oas"] as const;
 const VOL_CHART_IDS = ["vix", "move"] as const;
 const ENERGY_CHART_IDS = ["henry_hub", "wti", "brent"] as const;
 
+const scoreMetricIds = new Set<string>([
+  "us_treasury_10y", "tips_10y_real_yield", "ig_oas", "hy_oas", "vix", "move", "sp500", "deal_flow_30d",
+]);
+
+function hasUsableScore(view: DashboardView): boolean {
+  return view.scorecard.positiveContributors.length > 0
+    || view.scorecard.negativeContributors.length > 0
+    || view.allSeries.some((series) => scoreMetricIds.has(series.metric.id) && !series.unavailable && !series.stale);
+}
+
 export function DashboardPage({
   view,
   error,
@@ -57,6 +68,9 @@ export function DashboardPage({
   const policy = view.sections.find((section) => section.section === "policy-regulatory");
   const dealFriction = view.sections.find((section) => section.section === "deal-friction");
   const failedSources = view.sourceHealth.filter((source) => source.status === "FAILED");
+  const hasSignalData = view.sourceHealth.some((source) => (
+    source.status === "SUCCESS" && source.signalsFetched > 0
+  ));
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6 sm:py-8">
@@ -78,11 +92,11 @@ export function DashboardPage({
 
       {!view.hasDatabaseData && (
         <StateBanner tone="needs_review" title="Dashboard data pending">
-          No validated dashboard observations are available yet. Run the synchronization pipeline or review provider status below; production never substitutes sample values.
+          Validated observations are pending. See source health below for provider status.
         </StateBanner>
       )}
 
-      <section className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
+      <section aria-label="Conditions at a glance" className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
         <ScorecardPanel view={view} />
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {CORE_TILE_IDS.map((id) => {
@@ -93,7 +107,7 @@ export function DashboardPage({
       </section>
 
       {capital && (
-        <section className="mt-5">
+        <section id="capital-markets" className="mt-5 scroll-mt-20">
           <SectionHeading section={capital} />
           <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
             <ChartPanel title="Rates" series={pickSeries(allSeriesById, RATE_CHART_IDS)} />
@@ -112,14 +126,14 @@ export function DashboardPage({
       )}
 
       {macro && (
-        <section className="mt-5">
+        <section id="macro-backdrop" className="mt-5 scroll-mt-20">
           <SectionHeading section={macro} />
           <GroupedMetricTiles series={macro.series} />
         </section>
       )}
 
       {sector && (
-        <section className="mt-5">
+        <section id="sector-micro" className="mt-5 scroll-mt-20">
           <SectionHeading section={sector} />
           <div className="grid grid-cols-1 gap-3 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
             <ChartPanel title="Energy Prices" series={pickSeries(allSeriesById, ENERGY_CHART_IDS)} />
@@ -128,13 +142,14 @@ export function DashboardPage({
         </section>
       )}
 
-      <section className="mt-5 grid grid-cols-1 gap-3 xl:grid-cols-2">
+      <section id="market-signals" className="mt-5 grid scroll-mt-20 grid-cols-1 gap-3 xl:grid-cols-2">
         {policy && (
           <SignalsTable
             title={policy.title}
             summary={policy.summary}
             signals={policy.signals}
             series={policy.series}
+            hasSignalData={hasSignalData}
           />
         )}
         {dealFriction && (
@@ -143,13 +158,15 @@ export function DashboardPage({
             summary={dealFriction.summary}
             signals={dealFriction.signals}
             series={dealFriction.series}
+            hasSignalData={hasSignalData}
           />
         )}
       </section>
 
-      <section className="mt-5">
+      <details id="source-health" className="surface mt-5 scroll-mt-20">
+        <summary className="cursor-pointer px-4 py-3 type-row-title">Source health and run history</summary>
         <SourceHealthTable view={view} />
-      </section>
+      </details>
     </div>
   );
 }
@@ -163,15 +180,12 @@ function DashboardHeader({ view }: { view: DashboardView }) {
       return runs;
     }, new Map<string, DashboardView["sourceHealth"][number]>()),
   ).map(([, run]) => run);
-  const successfulRuns = latestBySource.filter((run) => run.status === "SUCCESS" || run.status === "PARTIAL");
-  const latestSuccessfulRun = successfulRuns
+  const successfulRuns = latestBySource.filter((run) => run.status === "SUCCESS");
+  const latestSuccessfulRun = view.sourceHealth.filter((run) => run.status === "SUCCESS")
     .map((run) => run.endedAt ?? run.startedAt)
     .sort()
     .at(-1);
-  const nextExpected = latestSuccessfulRun
-    ? new Date(new Date(latestSuccessfulRun).getTime() + 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
-    : "Pending";
-  const availableSeries = view.allSeries.filter((series) => !series.unavailable).length;
+  const freshSeries = view.allSeries.filter((series) => !series.unavailable && !series.stale).length;
 
   return (
     <section className="mb-5 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] shadow-[0_1px_2px_rgba(17,17,20,0.03)]">
@@ -187,27 +201,27 @@ function DashboardHeader({ view }: { view: DashboardView }) {
               M&A Conditions Dashboard
             </h1>
             <p className="mt-1.5 type-meta max-w-2xl">
-              Decision support for whether the infrastructure buyer universe is becoming more or less able to pay yesterday&apos;s infrastructure multiples.
+              Follow financing conditions and market signals that affect infrastructure acquisitions.
             </p>
+            <Link href="/methodology#dashboard" className="mt-2 inline-block type-meta underline underline-offset-2">
+              Score and source methodology
+            </Link>
           </div>
-          <div className="flex shrink-0 items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-2.5">
-            <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] mono text-lg font-semibold tabular-nums">
-              {view.scorecard.score}
-            </div>
-            <div>
-              <RiskBadge direction={tone}>{stance}</RiskBadge>
-              <div className="mt-1 type-micro">
-                Updated <span className="mono tabular-nums">{view.generatedAt.slice(0, 10)}</span>
+          {hasUsableScore(view) && (
+            <div className="flex w-fit shrink-0 items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-2.5">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] mono text-lg font-semibold tabular-nums">
+                {view.scorecard.score}
               </div>
+              <RiskBadge direction={tone}>{stance}</RiskBadge>
             </div>
-          </div>
+          )}
         </div>
         <dl className="mt-5 grid grid-cols-2 gap-2 lg:grid-cols-4" aria-label="Dashboard data operations summary">
           {[
-            { label: "Last successful run", value: latestSuccessfulRun?.slice(0, 10) ?? "Not recorded" },
-            { label: "Next expected", value: nextExpected },
-            { label: "Metric availability", value: `${availableSeries}/${view.allSeries.length}` },
-            { label: "Source coverage", value: `${successfulRuns.length}/${latestBySource.length || 0}` },
+            { label: "Latest successful source run", value: latestSuccessfulRun?.slice(0, 10) ?? "Unavailable" },
+            { label: "Refresh schedule", value: "Weekdays · 7:30 a.m. ET" },
+            { label: "Fresh metrics", value: `${freshSeries} of ${view.allSeries.length}` },
+            { label: "Latest source runs successful", value: `${successfulRuns.length} of ${latestBySource.length}` },
           ].map((metric) => (
             <div key={metric.label} className="rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-2.5">
               <dt className="type-micro font-medium text-[var(--text-secondary)]">{metric.label}</dt>
@@ -215,6 +229,13 @@ function DashboardHeader({ view }: { view: DashboardView }) {
             </div>
           ))}
         </dl>
+        <nav aria-label="Dashboard sections" className="mt-4 flex flex-wrap gap-x-4 gap-y-2 type-meta">
+          <a href="#capital-markets" className="underline underline-offset-2">Capital markets</a>
+          <a href="#macro-backdrop" className="underline underline-offset-2">Macro</a>
+          <a href="#sector-micro" className="underline underline-offset-2">Sectors</a>
+          <a href="#market-signals" className="underline underline-offset-2">Signals</a>
+          <a href="#source-health" className="underline underline-offset-2">Source health</a>
+        </nav>
       </div>
     </section>
   );
@@ -223,28 +244,32 @@ function DashboardHeader({ view }: { view: DashboardView }) {
 function ScorecardPanel({ view }: { view: DashboardView }) {
   const positives = view.scorecard.positiveContributors;
   const negatives = view.scorecard.negativeContributors;
+  const scoreAvailable = hasUsableScore(view);
 
   return (
     <article className="surface p-4">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <SectionLabel>M&A Risk-On / Risk-Off Scorecard</SectionLabel>
-          <p className="type-meta">
-            {view.scorecard.explanations[1]}
-          </p>
+          <SectionLabel>What moved the score</SectionLabel>
+          {!scoreAvailable && <p className="type-meta">The score is pending fresh observations.</p>}
+          {scoreAvailable && positives.length === 0 && negatives.length === 0 && (
+            <p className="type-meta">No available signal crossed its scoring threshold.</p>
+          )}
         </div>
         <Gauge className="h-4 w-4 text-[var(--text-tertiary)]" />
       </div>
-      <div className="mt-4 h-2 overflow-hidden rounded-full bg-[var(--bg-hover)]">
+      {scoreAvailable && <div aria-hidden className="mt-4 h-2 overflow-hidden rounded-full bg-[var(--bg-hover)]">
         <div
           className="h-full rounded-full bg-[var(--accent)]"
           style={{ width: `${view.scorecard.score}%` }}
         />
-      </div>
-      <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <ContributorList title="Positive Contributors" items={positives} empty="No positive factor cleared the threshold." />
-        <ContributorList title="Negative Contributors" items={negatives} empty="No negative factor cleared the threshold." />
-      </div>
+      </div>}
+      {scoreAvailable && (
+        <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <ContributorList title="Positive Contributors" items={positives} empty="No positive factor cleared the threshold." />
+          <ContributorList title="Negative Contributors" items={negatives} empty="No negative factor cleared the threshold." />
+        </div>
+      )}
       {view.scorecard.freshnessWarnings.length > 0 && (
         <div className="mt-3 rounded-md border border-[#d98b1c]/20 bg-[#d98b1c]/[0.06] px-3 py-2">
           <div className="flex items-center gap-2 type-micro font-medium text-[var(--text-secondary)]">
@@ -468,11 +493,13 @@ function SignalsTable({
   summary,
   signals,
   series,
+  hasSignalData,
 }: {
   title: string;
   summary: string;
   signals: DashboardSignal[];
   series: DashboardSeries[];
+  hasSignalData: boolean;
 }) {
   return (
     <article className="surface overflow-hidden">
@@ -492,7 +519,9 @@ function SignalsTable({
       </div>
       {signals.length === 0 ? (
         <div className="px-4 py-8">
-          <EmptyPanel text="No current signals. Source may be unavailable, unconfigured, or clean for the current window." />
+          <EmptyPanel text={hasSignalData
+            ? "No reviewed signals in this section for the current window."
+            : "No signal observations are available in the current source runs."} />
         </div>
       ) : (
         <div className="overflow-x-auto">
@@ -541,7 +570,7 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
     <article className="surface overflow-hidden">
       <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] px-4 py-3">
         <div>
-          <SectionLabel className="mb-1">Data Source Health / Last Updated</SectionLabel>
+          <SectionLabel className="mb-1">Provider runs</SectionLabel>
           <p className="type-micro">
             Official-source data may be delayed, cached, or unavailable. Metric labels link to their documented source; this dashboard is decision support, not a trading system.
           </p>

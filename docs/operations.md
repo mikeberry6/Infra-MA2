@@ -186,3 +186,9 @@ database and therefore still requires an explicitly selected database.
 - Prefer `npm run admin:create` for credential rotation. Direct SQL password
   changes do not advance Prisma's `updatedAt`; if emergency SQL is unavoidable,
   also rotate `NEXTAUTH_SECRET` and redeploy to revoke all sessions.
+
+## Research experience metrics
+
+Public research pages send first-party, allowlisted event counts and Core Web Vitals to `/api/research-metrics`. The collector emits structured `infrasight_research_metrics` records in application logs. Sum event counts by route and viewport group. Use the 75th percentile for LCP, INP, and CLS and separate mobile from desktop. The payload contains no search strings, record IDs, visitor IDs, or full URLs. The client honors Do Not Track and Global Privacy Control.
+
+Use `node scripts/release-smoke.mjs --research-roadmap` with the normal production URL and base-path options to validate the web briefing, latest email, and tracker link together. The flag is scoped to deployments that contain the new research pages.

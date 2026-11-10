@@ -1,10 +1,10 @@
 "use client";
 
 import { DealDatabase } from "@/components/DealDatabase";
-import type { DealView, DatabaseCounts } from "@/modules/shared/types";
+import type { DealListView, DatabaseCounts } from "@/modules/shared/types";
 
 interface DealDatabaseClientProps {
-  deals: DealView[];
+  deals: DealListView[];
   counts: DatabaseCounts;
   briefingIssues?: { edition: string; archivePath: string }[];
 }

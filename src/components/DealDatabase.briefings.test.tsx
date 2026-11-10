@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, cleanup, within } from "@testing-library/react";
 import { afterEach, beforeEach, it, expect, vi } from "vitest";
 import type { DatabaseCounts, DealView } from "@/modules/shared/types";
 const router = vi.hoisted(() => ({ push: vi.fn(), replace: vi.fn() }));
@@ -15,14 +15,17 @@ beforeEach(() => {
   window.history.replaceState(null, "", "/tracker");
   for (const method of [router.push, router.replace]) method.mockImplementation((href: string) => window.history.pushState(null, "", href));
 });
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+});
 it("filters tables, rankings and export links by issue and resets pagination", async () => {
   window.history.replaceState(null, "", "/tracker?page=3"); mount();
   fireEvent.change(screen.getByLabelText("Weekly briefing"), { target: { value: "2026-10-30" } });
   await waitFor(() => expect(screen.getByTestId("ranking-deals")).toHaveTextContent(/^one$/));
   expect(window.location.search).toContain("briefing=2026-10-30");
   expect(window.location.search).not.toContain("page=");
-  expect(screen.getByRole("link", { name: "Export" })).toHaveAttribute("href", "/api/exports/deals?briefing=2026-10-30");
+  expect(screen.getByRole("link", { name: "Export filtered results" })).toHaveAttribute("href", "/api/exports/deals?briefing=2026-10-30&scope=filtered");
   fireEvent.click(screen.getByRole("button", { name: "Clear filters" }));
   await waitFor(() => expect(screen.getByTestId("ranking-deals")).toHaveTextContent("one,two"));
 });
@@ -39,4 +42,24 @@ it("keeps an unknown edition scoped to an empty result", async () => {
   window.history.replaceState(null, "", "/tracker?briefing=2025-01-01"); mount();
   await waitFor(() => expect(screen.getByTestId("ranking-deals")).toBeEmptyDOMElement());
   expect(screen.getByRole("option", { name: "Unavailable issue: 2025-01-01" })).toBeInTheDocument();
+});
+
+it("loads deal details on demand and retries a failed drawer request", async () => {
+  const fetch = vi.fn()
+    .mockResolvedValueOnce({ ok: false })
+    .mockResolvedValueOnce({ ok: true, json: async () => ({ deal: base }) });
+  vi.stubGlobal("fetch", fetch);
+  mount();
+  expect(fetch).not.toHaveBeenCalled();
+  fireEvent.click(within(screen.getByRole("table")).getByRole("link", { name: "One" }));
+
+  const drawer = within(screen.getByRole("dialog"));
+  await expect(drawer.findByRole("alert")).resolves.toHaveTextContent("Deal details could not be loaded.");
+  expect(drawer.getByRole("link", { name: "Open full deal profile" })).toHaveAttribute("href", "/deals/one");
+  expect(drawer.getByRole("link", { name: "Source" })).toBeVisible();
+
+  fireEvent.click(drawer.getByRole("button", { name: "Try again" }));
+  await expect(drawer.findByText("Target", { exact: true })).resolves.toBeVisible();
+  expect(fetch).toHaveBeenCalledTimes(2);
+  expect(fetch).toHaveBeenLastCalledWith("/api/deals/one", { signal: expect.any(AbortSignal) });
 });

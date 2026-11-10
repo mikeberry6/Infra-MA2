@@ -7,6 +7,7 @@ import {
   COMPANY_STATUS_DISPLAY,
   MILESTONE_CATEGORY_DISPLAY,
 } from "@/modules/shared/enum-maps";
+import { isPublicSponsor, SPONSOR_IDENTITY_SELECT } from "@/lib/sponsor-profile";
 import { dedupeMilestoneViews } from "@/modules/companies/milestone-view";
 import type { CompanyView, MilestoneView, ExecutiveView, SourceView, OwnerView } from "@/modules/shared/types";
 
@@ -26,6 +27,9 @@ function toCompanyView(company: any): CompanyView {
       firm: p.fund?.manager?.name || p.organization?.name || "",
       vehicle: p.vehicleName || p.fund?.fundName || "",
       fundName: p.fund?.fundName || undefined,
+      organizationId: isPublicSponsor(p.fund?.manager ?? p.organization)
+        ? (p.fund?.manager ?? p.organization).id : undefined,
+      fundLegacyId: p.fund?.status === "PUBLISHED" ? p.fund.legacyId : undefined,
       investmentYear: p.investmentYear ?? undefined,
       exitYear: p.exitYear ?? undefined,
       isActive: !!p.isActive,
@@ -107,11 +111,13 @@ function toCompanyView(company: any): CompanyView {
 const COMPANY_INCLUDE = {
   ownershipPeriods: {
     include: {
-      organization: { select: { name: true } },
+      organization: { select: SPONSOR_IDENTITY_SELECT },
       fund: {
         select: {
           fundName: true,
-          manager: { select: { name: true } },
+          legacyId: true,
+          status: true,
+          manager: { select: SPONSOR_IDENTITY_SELECT },
         },
       },
     },
@@ -165,13 +171,13 @@ async function getAllCompaniesRaw(options: { detail?: boolean } = {}): Promise<C
 
 const getAllCompaniesListCached = unstable_cache(
   () => getAllCompaniesRaw({ detail: false }),
-  ["companies:all:list:fund-attribution-v2"],
+  ["companies:all:list:profile-links-v3"],
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
 const getAllCompaniesDetailCached = unstable_cache(
   () => getAllCompaniesRaw({ detail: true }),
-  ["companies:all:detail:fund-attribution-v2"],
+  ["companies:all:detail:profile-links-v3"],
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
@@ -203,7 +209,7 @@ async function getCompanyByFocusIdRaw(
 
 const getCompanyByFocusIdCached = unstable_cache(
   getCompanyByFocusIdRaw,
-  ["companies:by-focus:fund-attribution-v2"],
+  ["companies:by-focus:profile-links-v3"],
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllDeals } from "@/modules/deals/queries";
+import { dealScreenParams, filterDealScreen, sortDealScreen } from "@/lib/deal-screen";
 import { toCsv } from "@/lib/csv";
 import { canExportData } from "@/modules/auth/guards";
 import {
@@ -19,8 +20,11 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const wantsJson = searchParams.get("format") === "json";
 
-    const briefing = searchParams.get("briefing");
-    const deals = (await getAllDeals()).filter(deal => !briefing || deal.briefings?.some(issue => issue.edition === briefing));
+    const allDeals = await getAllDeals();
+    const screen = dealScreenParams(searchParams);
+    const deals = searchParams.get("scope") === "filtered"
+      ? sortDealScreen(filterDealScreen(allDeals, screen), screen.get("direction") === "asc" ? "asc" : "desc")
+      : filterDealScreen(allDeals, new URLSearchParams({ briefing: screen.get("briefing") ?? "" }));
     const rows = deals.map((deal) => ({
       legacyId: deal.legacyId,
       title: deal.title,

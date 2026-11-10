@@ -1,7 +1,10 @@
 // ─── Fund Utility Functions ─────────────────────────────────
 
-export function matchesSizeRange(sizeUsdMm: number | null, range: string): boolean {
-  if (sizeUsdMm === null) return true; // Unknown size always passes
+export const UNDISCLOSED_FUND_SIZE = "Undisclosed size";
+
+export function matchesSizeRange(sizeUsdMm: number | null, range: string, nativeAmount?: string): boolean {
+  if (range === UNDISCLOSED_FUND_SIZE) return sizeUsdMm === null && !nativeAmount;
+  if (sizeUsdMm === null) return false;
   switch (range) {
     case "< $500M": return sizeUsdMm < 500;
     case "$500M – $1B": return sizeUsdMm >= 500 && sizeUsdMm < 1000;
@@ -25,12 +28,14 @@ export function groupFundsByManager<T extends { managerName: string }>(fundList:
   return map;
 }
 
-export function getFundStats(fundList: { managerName: string; sizeUsdMm: number | null }[]) {
-  const managerSet = new Set(fundList.map((f) => f.managerName));
-  const totalAum = fundList.reduce((sum, f) => sum + (f.sizeUsdMm ?? 0), 0);
+export function getFundStats(fundList: {
+  managerName: string;
+  sizeUsdMm: number | null;
+  sizeNativeAmount?: string;
+}[]) {
   return {
-    managers: managerSet.size,
+    managers: new Set(fundList.map((fund) => fund.managerName)).size,
     funds: fundList.length,
-    totalAumBn: Math.round(totalAum / 100) / 10, // in billions, one decimal
+    disclosedSize: fundList.filter((fund) => fund.sizeUsdMm !== null || !!fund.sizeNativeAmount).length,
   };
 }

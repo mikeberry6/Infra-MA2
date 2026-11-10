@@ -1,138 +1,174 @@
 export const dynamic = "force-dynamic";
 
-import { searchAll, type SearchResult } from "@/modules/search/queries";
-import type { Metadata } from "next";
-import Link from "next/link";
 import { Search } from "lucide-react";
-import { TextInput } from "@/components/shared/TextInput";
+import { Button } from "@/components/shared/Button";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
+import { TextInput } from "@/components/shared/TextInput";
+import { withBasePath } from "@/lib/base-path";
+import { publicMetadata } from "@/lib/public-metadata";
+import {
+  parseSearchRequest,
+  searchAll,
+  SEARCH_MAX_QUERY_LENGTH,
+  SEARCH_PAGE_SIZE,
+  SEARCH_TYPES,
+  type SearchResult,
+  type SearchType,
+} from "@/modules/search/queries";
 
-export const metadata: Metadata = {
-  title: "Search",
+export const metadata = {
+  ...publicMetadata("/search"),
+  robots: { index: false, follow: true },
 };
 
 const TYPE_LABEL = { deal: "Deal", company: "PortCo", fund: "Fund" } as const;
-const TYPE_DOT_COLOR: Record<SearchResult["type"], string> = {
+const TYPE_LABEL_PLURAL = { deal: "Deals", company: "PortCos", fund: "Funds" } as const;
+const TYPE_DOT_COLOR: Record<SearchType, string> = {
   deal: "#3b82f6",
   company: "#10b981",
   fund: "#8b5cf6",
 };
+const TYPE_ROUTE = { deal: "/tracker", company: "/portfolio", fund: "/funds" } as const;
+const CONTROL_CLASS =
+  "inline-flex min-h-10 items-center gap-1.5 rounded-md border px-3 type-meta font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]";
 
-// Map a result to the database page that owns it. The database client reads
-// the `focus` query param on mount and opens the matching drawer.
-function resultHref(r: SearchResult): string {
-  const focusKey = r.legacyId ?? r.id;
-  switch (r.type) {
-    case "deal":
-      return `/tracker?focus=${encodeURIComponent(focusKey)}`;
-    case "company":
-      return `/portfolio?focus=${encodeURIComponent(focusKey)}`;
-    case "fund":
-      return `/funds?focus=${encodeURIComponent(focusKey)}`;
-  }
+function resultHref(result: SearchResult): string {
+  return withBasePath(`${TYPE_ROUTE[result.type]}?focus=${encodeURIComponent(result.id)}`);
+}
+
+function searchHref(query: string, type: SearchType | null, page = 1): string {
+  const params = new URLSearchParams({ q: query });
+  if (type) params.set("type", type);
+  if (page > 1) params.set("page", String(page));
+  return withBasePath(`/search?${params}`);
 }
 
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string | string[]; type?: string | string[]; page?: string | string[] }>;
 }) {
-  const { q } = await searchParams;
-  const query = q || "";
-  const results = query ? await searchAll(query) : [];
-  const dealCount = results.filter((result) => result.type === "deal").length;
-  const companyCount = results.filter((result) => result.type === "company").length;
-  const fundCount = results.filter((result) => result.type === "fund").length;
+  const request = parseSearchRequest(await searchParams);
+  const { query, type } = request;
+  const { results, counts, total, page, pageCount } = await searchAll(request);
+  const hasQuery = query.length >= 2;
+  const allCount = counts.deal + counts.company + counts.fund;
 
   return (
-    <div className="mx-auto max-w-[900px] px-4 sm:px-6 py-8 sm:py-10">
+    <div className="mx-auto max-w-[900px] px-4 py-8 sm:px-6 sm:py-10">
       <DatabaseIntelligenceHeader
         eyebrow="Cross-database search"
         title="Search InfraSight"
-        summary="Search across transactions, fund vehicles, and PortCos, then jump directly into the owning database record."
-        metrics={[
-          {
-            label: "Results",
-            value: query ? results.length.toLocaleString() : "Ready",
-            detail: query ? `for "${query}"` : "Enter a PortCo, fund, or buyer",
-            color: "var(--accent)",
-          },
-          {
-            label: "Deals",
-            value: dealCount.toLocaleString(),
-            detail: "Transaction records",
-            color: TYPE_DOT_COLOR.deal,
-          },
-          {
-            label: "PortCos",
-            value: companyCount.toLocaleString(),
-            detail: "Infrastructure PortCos",
-            color: TYPE_DOT_COLOR.company,
-          },
-          {
-            label: "Funds",
-            value: fundCount.toLocaleString(),
-            detail: "Fund vehicles",
-            color: TYPE_DOT_COLOR.fund,
-          },
-        ]}
+        summary="Find transactions, fund vehicles, and portfolio companies by name, alias, or sponsor."
+        metrics={[]}
       />
 
-      <form method="get" className="mb-6">
-        <TextInput
-          type="search"
-          name="q"
-          size="md"
-          defaultValue={query}
-          leadingIcon={<Search />}
-          placeholder="Search deals, PortCos, and funds..."
-          autoFocus
-        />
+      <form method="get" action={withBasePath("/search")} role="search" aria-label="Research databases" className="mb-5">
+        <label htmlFor="research-query" className="mb-1.5 block type-row-title">
+          Search deals, PortCos, and funds
+        </label>
+        <div className="flex items-end gap-2">
+          <TextInput
+            id="research-query"
+            type="search"
+            name="q"
+            size="md"
+            defaultValue={query}
+            leadingIcon={<Search />}
+            placeholder="Company, fund, manager, or buyer"
+            minLength={2}
+            maxLength={SEARCH_MAX_QUERY_LENGTH}
+            required
+          />
+          <Button type="submit" variant="primary" size="lg" className="shrink-0">
+            Search
+          </Button>
+        </div>
       </form>
 
-      {query && (
-        <p className="type-micro mb-3">
-          <span className="mono tabular-nums text-[var(--text-secondary)]">{results.length}</span> result{results.length !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
-        </p>
+      {hasQuery && (
+        <nav aria-label="Filter search by record type" className="mb-4 flex flex-wrap gap-2">
+          {([null, ...SEARCH_TYPES] as const).map((candidate) => {
+            const selected = type === candidate;
+            const label = candidate ? TYPE_LABEL_PLURAL[candidate] : "All";
+            const count = candidate ? counts[candidate] : allCount;
+            return (
+              <a
+                key={candidate ?? "all"}
+                href={searchHref(query, candidate)}
+                aria-current={selected ? "page" : undefined}
+                className={`${CONTROL_CLASS} ${selected
+                  ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--text-primary)]"
+                  : "border-[var(--border)] bg-[var(--bg-surface)] hover:bg-[var(--bg-hover)]"}`}
+              >
+                {label} <span className="mono tabular-nums">{count.toLocaleString()}</span>
+              </a>
+            );
+          })}
+        </nav>
       )}
 
-      <div className="space-y-2">
-        {results.map((result) => (
-          <Link
-            key={`${result.type}-${result.id}`}
-            href={resultHref(result)}
-            className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <span className="inline-flex items-center gap-1.5">
-                <span
-                  aria-hidden
-                  className="h-[5px] w-[5px] rounded-full"
-                  style={{ backgroundColor: TYPE_DOT_COLOR[result.type] }}
-                />
-                <span className="type-micro font-medium text-[var(--text-secondary)]">
-                  {TYPE_LABEL[result.type]}
-                </span>
-              </span>
-              {result.sector && (
-                <span className="type-micro">· {result.sector}</span>
-              )}
-              {result.region && (
-                <span className="type-micro">· {result.region}</span>
-              )}
-            </div>
-            <h3 className="type-row-title group-hover:text-[var(--accent)] transition-colors">
-              {result.title}
-            </h3>
-            <p className="type-meta mt-0.5">{result.subtitle}</p>
-          </Link>
-        ))}
-      </div>
+      {hasQuery && total > 0 && (
+        <>
+          <p className="mb-3 type-meta">
+            Showing {((page - 1) * SEARCH_PAGE_SIZE + 1).toLocaleString()}–{((page - 1) * SEARCH_PAGE_SIZE + results.length).toLocaleString()} of {total.toLocaleString()} result{total !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
+          </p>
 
-      {query && results.length === 0 && (
-        <div className="py-12 text-center type-meta text-[var(--text-tertiary)]">
-          No results matched your query.
+          <ul className="space-y-2" aria-label="Search results">
+            {results.map((result) => (
+              <li key={`${result.type}-${result.id}`}>
+                <a
+                  href={resultHref(result)}
+                  data-research-event="search_success"
+                  className="group block surface px-4 py-3 transition-colors hover:bg-[var(--bg-subtle)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
+                >
+                  <div className="mb-1 flex flex-wrap items-center gap-2 type-meta">
+                    <span className="inline-flex items-center gap-1.5 font-medium">
+                      <span aria-hidden className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: TYPE_DOT_COLOR[result.type] }} />
+                      {TYPE_LABEL[result.type]}
+                    </span>
+                    {result.sector && <span>· {result.sector}</span>}
+                    {result.region && <span>· {result.region}</span>}
+                  </div>
+                  <h2 className="type-row-title transition-colors group-hover:text-[var(--accent)]">{result.title}</h2>
+                  <p className="mt-0.5 type-meta">{result.subtitle}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {pageCount > 1 && (
+            <nav aria-label="Search results pagination" className="mt-5 flex flex-wrap items-center justify-between gap-3">
+              <span className="type-meta">Page {page.toLocaleString()} of {pageCount.toLocaleString()}</span>
+              <div className="flex gap-2">
+                {page > 1 && (
+                  <a className={`${CONTROL_CLASS} border-[var(--border)] bg-[var(--bg-surface)] hover:bg-[var(--bg-hover)]`} href={searchHref(query, type, page - 1)} rel="prev">
+                    Previous
+                  </a>
+                )}
+                {page < pageCount && (
+                  <a className={`${CONTROL_CLASS} border-[var(--border)] bg-[var(--bg-surface)] hover:bg-[var(--bg-hover)]`} href={searchHref(query, type, page + 1)} rel="next">
+                    Next
+                  </a>
+                )}
+              </div>
+            </nav>
+          )}
+        </>
+      )}
+
+      {hasQuery && total === 0 && (
+        <div className="surface px-4 py-10 text-center" data-research-empty={allCount === 0 ? "search" : undefined}>
+          <h2 className="type-row-title">No results for &ldquo;{query}&rdquo;</h2>
+          <p className="mt-1 type-meta">
+            {type && allCount > 0
+              ? "Choose All to include the other record types."
+              : "Try a shorter name, an alternate spelling, or the sponsor’s name."}
+          </p>
         </div>
+      )}
+      {!hasQuery && (
+        <p className="type-meta">{query ? "Enter at least two characters to search." : "Start with a company, buyer, or fund name."}</p>
       )}
     </div>
   );

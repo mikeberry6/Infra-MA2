@@ -15,6 +15,7 @@ interface DatabaseIntelligenceHeaderProps {
   summary: string;
   metrics: IntelligenceMetric[];
   actions?: ReactNode;
+  compact?: boolean;
 }
 
 export function DatabaseIntelligenceHeader({
@@ -23,12 +24,13 @@ export function DatabaseIntelligenceHeader({
   summary,
   metrics,
   actions,
+  compact = false,
 }: DatabaseIntelligenceHeaderProps) {
   return (
-    <section className="mb-5 border-b border-[var(--border)] pb-5">
-      <div className="mb-4 h-[2px] w-full max-w-[360px] bg-gradient-to-r from-[var(--accent)] via-[#3b6cf2] to-transparent" />
+    <section className={compact ? "mb-4" : "mb-5 border-b border-[var(--border)] pb-5"}>
+      <div aria-hidden className="mb-3 h-[2px] w-full max-w-[360px] bg-gradient-to-r from-[var(--accent)] via-[#3b6cf2] to-transparent" />
 
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0 max-w-3xl">
           <div className="mb-2 inline-flex items-center gap-2 type-label">
             <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
@@ -49,7 +51,19 @@ export function DatabaseIntelligenceHeader({
         )}
       </div>
 
-      {metrics.length > 0 && (
+      {compact && metrics.length > 0 && (
+        <dl className="mt-3 flex flex-wrap gap-x-5 gap-y-1" aria-label={`${title} summary metrics`}>
+          {metrics.map((metric) => (
+            <div key={metric.label} className="flex flex-wrap items-baseline gap-x-1.5 type-meta">
+              <dt>{metric.label}</dt>
+              <dd className="font-semibold tabular-nums text-[var(--text-primary)]">{metric.value}</dd>
+              {metric.detail && <dd className="type-micro">{metric.detail}</dd>}
+            </div>
+          ))}
+        </dl>
+      )}
+
+      {!compact && metrics.length > 0 && (
         <dl className="mt-5 grid grid-cols-2 gap-2 lg:grid-cols-4" aria-label={`${title} summary metrics`}>
           {metrics.map((metric) => (
             <div

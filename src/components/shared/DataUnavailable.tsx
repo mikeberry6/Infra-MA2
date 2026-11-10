@@ -13,6 +13,7 @@ export function DataUnavailable({
     <div className="mx-auto flex min-h-[calc(100vh-12rem)] max-w-[760px] items-center px-4 py-12 sm:px-6">
       <section
         role="alert"
+        data-service-unavailable="true"
         className="surface-elevated w-full px-5 py-6 sm:px-7 sm:py-8"
       >
         <div className="flex items-start gap-3">

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 
 export const dynamic = "force-dynamic";
+export const metadata = { robots: { index: false, follow: false } };
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {
   try {

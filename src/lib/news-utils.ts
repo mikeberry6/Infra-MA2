@@ -155,31 +155,74 @@ export function fundAliases(name: string): NewsAlias[] {
     : [];
 }
 
+const ANALYST_ATTRIBUTION_PREFIX = /(?:according to|analysts? (?:at|from)|research (?:from|by)|price target (?:from|by)) $/;
+const ANALYST_ATTRIBUTION_SUFFIX = /^ (?:(?:analyst|analysts|research team) (?:[a-z]+ ){0,3})?(?:downgrades?|downgraded|upgrades?|upgraded|initiates? coverage|initiated coverage|(?:reiterates?|reiterated) (?:its |the )?(?:buy|hold|sell|neutral|outperform|underperform)|rates? [a-z]+ (?:buy|hold|sell)|(?:lowers?|lowered|raises?|raised|cuts?|cut|slashes?|slashed) (?:its |the )?(?:stock |share )?price target)\b/;
+
+function newsTermOccurrences(text: string, term: string, subjectOnly: boolean): number[] {
+  const phrase = ` ${term} `;
+  const occurrences: number[] = [];
+  for (let start = text.indexOf(phrase); start >= 0; start = text.indexOf(phrase, start + 1)) {
+    if (subjectOnly && (
+      ANALYST_ATTRIBUTION_PREFIX.test(text.slice(Math.max(0, start - 35), start + 1))
+      || ANALYST_ATTRIBUTION_SUFFIX.test(text.slice(start + phrase.length - 1, start + phrase.length + 85))
+    )) continue;
+    occurrences.push(start + 1);
+  }
+  return occurrences;
+}
+
+export function isInvestmentFirmCommentaryOnly(text: string, aliases: readonly NewsAlias[]): boolean {
+  const normalized = ` ${normalizeNewsText(text)} `;
+  const matchedAliases = aliases
+    .filter(({ term }) => newsTermOccurrences(normalized, term, false).length > 0)
+    .sort((a, b) => b.term.length - a.term.length);
+  if (!matchedAliases.length) return false;
+  return !matchedAliases.some(({ term }) => (
+    !matchedAliases.some((other) => other.term !== term && ` ${other.term} `.includes(` ${term} `))
+    && newsTermOccurrences(normalized, term, true).length > 0
+  ));
+}
+
 export function matchNewsCandidates(
   text: string,
   candidates: NewsMatchCandidate[],
   limit = 12,
 ): NewsMentionView[] {
+  const normalized = ` ${normalizeNewsText(text)} `;
+  const evidence = candidates.flatMap((candidate) => candidate.aliases.flatMap((alias) => {
+    if (!isUsefulNewsTerm(alias.term)) return [];
+    const starts = newsTermOccurrences(normalized, alias.term, false);
+    if (!starts.length) return [];
+    const subjectStarts = candidate.type === "Investment Firm"
+      ? newsTermOccurrences(normalized, alias.term, true)
+      : starts;
+    return [{ candidate, alias, starts, subjectStarts }];
+  }));
   const matches = new Map<string, NewsMentionView>();
 
-  for (const candidate of candidates) {
-    for (const alias of candidate.aliases) {
-      if (!textContainsNewsTerm(text, alias.term)) continue;
-
-      const key = `${candidate.type}:${candidate.id}`;
-      const existing = matches.get(key);
-      if (!existing || confidenceRank(alias.confidence) > confidenceRank(existing.confidence)) {
-        matches.set(key, {
-          id: candidate.id,
-          label: candidate.label,
-          type: candidate.type,
-          href: candidate.href,
-          confidence: alias.confidence,
-          reason: alias.reason,
-        });
-      }
-      break;
-    }
+  for (const { candidate, alias, subjectStarts } of evidence) {
+    if (!subjectStarts.length) continue;
+    const key = `${candidate.type}:${candidate.id}`;
+    const existing = matches.get(key);
+    if (existing && confidenceRank(existing.confidence) >= confidenceRank(alias.confidence)) continue;
+    if (candidate.type === "Investment Firm" && !subjectStarts.some((start) => !evidence.some((other) => (
+      other.candidate.type === candidate.type
+      && other.candidate.id !== candidate.id
+      && (other.alias.term.length > alias.term.length
+        || (other.alias.term === alias.term && (alias.confidence !== "High" || other.alias.confidence === "High")))
+      && confidenceRank(other.alias.confidence) >= confidenceRank(alias.confidence)
+      && other.starts.some((otherStart) => (
+        otherStart <= start && otherStart + other.alias.term.length >= start + alias.term.length
+      ))
+    )))) continue;
+    matches.set(key, {
+      id: candidate.id,
+      label: candidate.label,
+      type: candidate.type,
+      href: candidate.href,
+      confidence: alias.confidence,
+      reason: alias.reason,
+    });
   }
 
   return Array.from(matches.values())
@@ -187,8 +230,7 @@ export function matchNewsCandidates(
       const typeOrder = typeRank(a.type) - typeRank(b.type);
       if (typeOrder !== 0) return typeOrder;
       const confidenceOrder = confidenceRank(b.confidence) - confidenceRank(a.confidence);
-      if (confidenceOrder !== 0) return confidenceOrder;
-      return a.label.localeCompare(b.label);
+      return confidenceOrder || a.label.localeCompare(b.label);
     })
     .slice(0, limit);
 }

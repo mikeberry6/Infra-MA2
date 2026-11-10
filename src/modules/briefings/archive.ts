@@ -7,6 +7,7 @@ const DEFAULT_ARCHIVE_DIR = path.join(process.cwd(), "public", "email-format");
 export interface WeeklyBriefingDocument {
   edition: string;
   bodyMarkup: string;
+  documentMarkup: string;
   headStyles: string;
   sourceHref: string;
 }
@@ -71,6 +72,7 @@ export async function loadWeeklyBriefingDocument({
 
   return {
     edition,
+    documentMarkup,
     headStyles: (documentMarkup.match(/<style\b[^>]*>[\s\S]*?<\/style>/gi) ?? []).join("\n"),
     bodyMarkup: rewriteBriefingArchiveLinks(
       extractBodyMarkup(documentMarkup),

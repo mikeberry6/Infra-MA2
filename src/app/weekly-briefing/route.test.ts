@@ -4,32 +4,20 @@ const archive = vi.hoisted(() => ({
   listWeeklyBriefingEditions: vi.fn(),
   loadWeeklyBriefingDocument: vi.fn(),
 }));
-const approvals = vi.hoisted(() => ({
-  readApprovedWeeklyBriefingIndex: vi.fn(),
-  resolveLatestApprovedWeeklyBriefingEdition: vi.fn(),
+const publication = vi.hoisted(() => ({
+  listPublishedBriefingEditions: vi.fn(),
+}));
+const membership = vi.hoisted(() => ({
+  hasVerifiedBriefingMembership: vi.fn(),
 }));
 
 vi.mock("@/modules/briefings/archive", () => archive);
-vi.mock("./approved-editions", () => approvals);
+vi.mock("@/modules/briefings/publication", () => publication);
+vi.mock("@/modules/briefings/membership", () => membership);
 
 import { GET } from "./route";
 
 const originalBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
-const legacyIndex = {
-  schemaVersion: 1,
-  entries: [
-    {
-      edition: "2026-07-31",
-      approval: {
-        kind: "LEGACY_BASELINE",
-        emailPath: "public/email-format/2026-07-31.html",
-        renderedEmailSha256: "a".repeat(64),
-        rationale: "Legacy baseline",
-      },
-    },
-  ],
-  indexSha256: "b".repeat(64),
-};
 
 describe("weekly briefing route", () => {
   beforeEach(() => {
@@ -41,10 +29,8 @@ describe("weekly briefing route", () => {
       "2026-07-31",
       "2026-07-24",
     ]);
-    approvals.readApprovedWeeklyBriefingIndex.mockResolvedValue(legacyIndex);
-    approvals.resolveLatestApprovedWeeklyBriefingEdition.mockReturnValue(
-      "2026-07-31",
-    );
+    publication.listPublishedBriefingEditions.mockResolvedValue(["2026-07-31", "2026-07-24"]);
+    membership.hasVerifiedBriefingMembership.mockResolvedValue(false);
   });
 
   afterAll(() => {
@@ -61,19 +47,18 @@ describe("weekly briefing route", () => {
     );
 
     expect(response.status).toBe(200);
-    expect(await response.text()).toContain(
-      "/Infra-MA2/email-format/2026-07-31.html",
-    );
-    expect(approvals.resolveLatestApprovedWeeklyBriefingEdition).toHaveBeenCalledWith({
-      index: legacyIndex,
-      archivedEditions: ["2026-08-07", "2026-07-31", "2026-07-24"],
-    });
+    const html = await response.text();
+    expect(html).toContain("/Infra-MA2/email-format/2026-07-31.html");
+    expect(html).toContain('<option value="2026-07-31" selected>');
+    expect(html).toContain('href="/Infra-MA2/weekly-briefing?edition=2026-07-24">Older edition');
+    expect(html).not.toContain('<option value="2026-08-07">');
+    expect(publication.listPublishedBriefingEditions).toHaveBeenCalledWith([
+      "2026-08-07", "2026-07-31", "2026-07-24",
+    ]);
   });
 
   it("advances when the approved index advances", async () => {
-    approvals.resolveLatestApprovedWeeklyBriefingEdition.mockReturnValue(
-      "2026-08-07",
-    );
+    publication.listPublishedBriefingEditions.mockResolvedValue(["2026-08-07", "2026-07-31"]);
 
     const response = await GET(
       new Request("https://example.com/Infra-MA2/weekly-briefing"),
@@ -97,13 +82,21 @@ describe("weekly briefing route", () => {
   });
 
   it("links to issue-filtered deals through the configured base path", async () => {
+    membership.hasVerifiedBriefingMembership.mockResolvedValue(true);
     const response = await GET(new Request("https://example.com/Infra-MA2/weekly-briefing?edition=2026-07-24"));
     const html = await response.text();
-    expect(html).toContain('href="/Infra-MA2/tracker?briefing=2026-07-24"');
+    expect(html).toContain('href="/Infra-MA2/tracker?briefing=2026-07-24&amp;via=briefing"');
     expect(html).toContain("View these deals");
     expect(html).toContain("srcdoc=");
     expect(html).toContain("Briefing content");
     expect(html).toContain('sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"');
+  });
+
+  it("labels the edition editorial-only without verified deal membership", async () => {
+    const response = await GET(new Request("https://example.com/Infra-MA2/weekly-briefing?edition=2026-07-24"));
+    const html = await response.text();
+    expect(html).toContain("Editorial edition · deal list unavailable");
+    expect(html).not.toContain("/tracker?briefing=");
   });
 
   it("returns 404 for an unknown edition", async () => {
@@ -117,7 +110,7 @@ describe("weekly briefing route", () => {
   });
 
   it("fails closed when the approval index cannot be validated", async () => {
-    approvals.readApprovedWeeklyBriefingIndex.mockRejectedValue(
+    publication.listPublishedBriefingEditions.mockRejectedValue(
       new Error("stale approval"),
     );
 

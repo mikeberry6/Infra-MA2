@@ -1,13 +1,11 @@
 export const revalidate = 300;
 
-import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/public-metadata";
 import { NewsFeed } from "@/components/NewsFeed";
 import { DataUnavailable } from "@/components/shared/DataUnavailable";
 import { getNewsFeed } from "@/modules/news/queries";
 
-export const metadata: Metadata = {
-  title: "Daily Intelligence Feed",
-};
+export const metadata = publicMetadata("/news");
 
 export default async function NewsPage() {
   try {

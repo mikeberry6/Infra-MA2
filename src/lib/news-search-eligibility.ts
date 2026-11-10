@@ -3,6 +3,7 @@ import { normalizeNewsText } from "@/lib/news-utils";
 export type PublicNewsEligibilityInput = {
   entityLabel: string;
   title: string;
+  subjectTerms?: readonly string[];
   summary: string;
   confidence: "HIGH" | "MEDIUM" | "LOW";
   category: string;
@@ -15,22 +16,15 @@ export function shouldAcceptPublicNewsMatch(input: PublicNewsEligibilityInput): 
     return false;
   }
 
-  const label = normalizeNewsText(input.entityLabel);
   const headline = ` ${normalizeNewsText(`${input.title} ${input.summary}`)} `;
-  if (!label || !headline.includes(` ${label} `)) {
-    return false;
-  }
+  const matchedTerms = [input.entityLabel, ...(input.subjectTerms ?? [])]
+    .map(normalizeNewsText)
+    .filter((term) => term && headline.includes(` ${term} `));
+  if (!matchedTerms.length) return false;
 
-  if (input.officialSource || input.strongEventSignal) {
-    return true;
-  }
-
-  const labelTokens = label.split(" ").filter(Boolean);
-  if (labelTokens.length > 1) {
-    return true;
-  }
-
-  return hasDistinctiveOneWordBranding(input.entityLabel);
+  return input.officialSource || input.strongEventSignal
+    || matchedTerms.some((term) => term.includes(" "))
+    || hasDistinctiveOneWordBranding(input.entityLabel);
 }
 
 function hasDistinctiveOneWordBranding(label: string): boolean {

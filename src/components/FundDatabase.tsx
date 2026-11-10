@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef, Fragment } from "react";
 import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "@/lib/constants";
 import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getPortCoSectorColor, getStructureColor } from "@/lib/colors";
-import { matchesSizeRange, groupFundsByManager, getFundStats } from "@/lib/fund-utils";
+import { matchesSizeRange, groupFundsByManager, getFundStats, UNDISCLOSED_FUND_SIZE } from "@/lib/fund-utils";
 import type { FundView, PortfolioCompanyView, DatabaseCounts } from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import {
@@ -31,6 +31,8 @@ import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/components/shared/DatabaseIntelligenceHeader";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
+import { RecordTitleLink } from "@/components/shared/RecordTitleLink";
+import { formatDate } from "@/lib/format";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
@@ -40,6 +42,7 @@ import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { withBasePath } from "@/lib/base-path";
 
 const FUND_PAGE_SIZE = 25;
+const FUND_SIZE_OPTIONS = [...FUND_SIZE_RANGES, UNDISCLOSED_FUND_SIZE];
 
 
 // Fund size values in seed data sometimes carry editorial brackets — "[TBD]"
@@ -51,15 +54,17 @@ function displaySize(size: string): string {
   return inner || "—";
 }
 
-function mostCommonLabel(items: string[]): { label: string; count: number } | null {
-  const counts = new Map<string, number>();
-  for (const item of items) {
-    if (!item) continue;
-    counts.set(item, (counts.get(item) ?? 0) + 1);
+function fundHref(fund: FundView) {
+  return `/funds?focus=${encodeURIComponent(fund.legacyId)}`;
+}
+
+function reportedFundSize(fund: FundView) {
+  const amount = Number(fund.sizeNativeAmount);
+  if (fund.sizeNativeCurrency && fund.sizeNativeAmount && Number.isFinite(amount)) {
+    return `${fund.sizeNativeCurrency} ${amount.toLocaleString("en-US", { maximumFractionDigits: 2 })}`;
   }
-  return Array.from(counts.entries())
-    .map(([label, count]) => ({ label, count }))
-    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
+  const size = displaySize(fund.size);
+  return /^(?:—|n\/a|tbd|undisclosed)$/i.test(size) ? "Undisclosed" : size;
 }
 
 // ─── Fund Filter Bar ────────────────────────────────────────
@@ -117,7 +122,7 @@ function FundFilterBar({
             </div>
             <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
               <span className="type-meta font-medium text-[var(--text-primary)]">Size</span>
-              <MultiSelectDropdown label="Size" options={FUND_SIZE_RANGES} selected={activeSizeRanges} onToggle={onToggleSizeRange} getColor={() => getSizeRangeColor()} align="right" />
+              <MultiSelectDropdown label="Size" options={FUND_SIZE_OPTIONS} selected={activeSizeRanges} onToggle={onToggleSizeRange} getColor={() => getSizeRangeColor()} align="right" />
             </div>
             <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
               <span className="type-meta font-medium text-[var(--text-primary)]">Sector</span>
@@ -144,7 +149,7 @@ function FundFilterBar({
           />
           <MultiSelectDropdown
             label="Size"
-            options={FUND_SIZE_RANGES}
+            options={FUND_SIZE_OPTIONS}
             selected={activeSizeRanges}
             onToggle={onToggleSizeRange}
             getColor={() => getSizeRangeColor()}
@@ -212,12 +217,8 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: FundView[] }) {
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">{stats.managers}</span> managers
         {" · "}
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">{stats.funds}</span> fund vehicles
-        {stats.totalAumBn > 0 && (
-          <>
-            {" · "}
-            <span className="mono text-[var(--text-primary)] font-medium tabular-nums">${stats.totalAumBn}B</span> total AUM
-          </>
-        )}
+        {" · "}
+        <span><span className="mono font-medium tabular-nums text-[var(--text-primary)]">{stats.disclosedSize}</span> with disclosed size</span>
       </p>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
         <RankingColumn title="Top strategies" rows={strategyRanking} />
@@ -238,36 +239,28 @@ function FundVehicleCard({
   onSelect: (fund: FundView) => void;
 }) {
   return (
-    <button
-      onClick={() => onSelect(fund)}
-      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-    >
-      <div className="flex items-start justify-between gap-3 mb-2">
-        <h4 className="type-row-title truncate">
-          {fund.fundName}
-        </h4>
-        <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] shrink-0 mt-0.5" />
-      </div>
-
-      <div className="flex flex-wrap items-center gap-3 mb-3">
-        {fund.strategies.map((s) => (
-          <Tag key={s} color={getStrategyColor(s)}>{s}</Tag>
+    <article className="surface p-3.5">
+      <h3 className="text-base font-semibold leading-snug">
+        <RecordTitleLink href={fundHref(fund)} onOpen={() => onSelect(fund)}>{fund.fundName}</RecordTitleLink>
+      </h3>
+      <p className="mt-1 type-meta">{fund.managerName}</p>
+      <div className="my-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+        {fund.strategies.map((strategy) => (
+          <Tag key={strategy} color={getStrategyColor(strategy)}>{strategy}</Tag>
         ))}
-        <span className="type-micro">·</span>
-        <span className="type-micro text-[var(--text-secondary)]">{fund.status}</span>
+        <Tag color={getStatusColor(fund.status)}>{fund.status}</Tag>
       </div>
-
-      <div className="grid grid-cols-2 gap-3">
+      <dl className="grid grid-cols-2 gap-3">
         <div>
-          <div className="type-label">Size</div>
-          <div className="type-meta text-[var(--text-primary)] font-medium mono tabular-nums truncate">{displaySize(fund.size)}</div>
+          <dt className="type-label">Size</dt>
+          <dd className="type-meta font-medium mono tabular-nums text-[var(--text-primary)]">{reportedFundSize(fund)}</dd>
         </div>
         <div>
-          <div className="type-label">Vintage</div>
-          <div className="type-meta text-[var(--text-primary)] mono tabular-nums">{fund.vintage}</div>
+          <dt className="type-label">Vintage</dt>
+          <dd className="type-meta mono tabular-nums">{fund.vintage}</dd>
         </div>
-      </div>
-    </button>
+      </dl>
+    </article>
   );
 }
 
@@ -314,22 +307,11 @@ function FundRow({
   isLast?: boolean;
 }) {
   return (
-    <tr
-      onClick={() => onSelect(fund)}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          onSelect(fund);
-        }
-      }}
-      role="button"
-      tabIndex={0}
-      className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0 focus:bg-[var(--bg-subtle)] focus:outline-none"
-    >
+    <tr className="border-b border-[var(--border)] bg-[var(--bg-surface)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus-within:bg-[var(--bg-subtle)]">
       <td className="px-3 py-2.5 align-top">
-        <span title={fund.fundName} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
+        <RecordTitleLink href={fundHref(fund)} onOpen={() => onSelect(fund)} className="block w-fit rounded-sm text-[14px] leading-snug">
           {fund.fundName}
-        </span>
+        </RecordTitleLink>
       </td>
       <td className="px-3 py-2.5 align-top">
         <div className="flex items-center gap-2 flex-wrap">
@@ -345,7 +327,7 @@ function FundRow({
         <span className="type-meta mono tabular-nums">{fund.vintage}</span>
       </td>
       <td className="px-3 py-2.5 align-top text-right">
-        <span className="type-meta">{fund.status}</span>
+        <Tag color={getStatusColor(fund.status)}>{fund.status}</Tag>
       </td>
     </tr>
   );
@@ -648,16 +630,44 @@ function AllFundsTable({
 
 // ─── Fund Detail Drawer ─────────────────────────────────────
 
+function HoldingsList({ companies }: { companies: PortfolioCompanyView[] }) {
+  const sorted = [...companies].sort((a, b) => Number(b.isActive) - Number(a.isActive) || a.name.localeCompare(b.name));
+  return (
+    <ul className="space-y-1.5">
+      {sorted.map((company) => (
+        <li key={company.companyId ?? company.name} className="surface flex flex-wrap items-start justify-between gap-2 px-3 py-2">
+          <div className="min-w-0">
+            {company.companyId ? (
+              <RecordTitleLink href={`/portfolio/${encodeURIComponent(company.companyId)}`} className="type-row-title underline underline-offset-2">
+                {company.name}
+              </RecordTitleLink>
+            ) : <span className="type-row-title font-semibold">{company.name}</span>}
+            <p className="mt-0.5 type-micro">
+              {[company.country, company.isActive ? "Active" : "Realized", company.fundAttribution === "INFERRED" ? "Inferred attribution" : null]
+                .filter(Boolean).join(" · ")}
+            </p>
+          </div>
+          <Tag color={getPortCoSectorColor(company.sector)}>{company.sector}</Tag>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function FundDrawer({
   fund,
   onClose,
   allFunds,
   onSelectFund,
+  detailState,
+  onRetry,
 }: {
   fund: FundView;
   onClose: () => void;
   allFunds: FundView[];
   onSelectFund: (fund: FundView) => void;
+  detailState: "loading" | "ready" | "error";
+  onRetry: () => void;
 }) {
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
@@ -675,52 +685,17 @@ function FundDrawer({
     (f) => f.managerName === fund.managerName && f.id !== fund.id
   );
 
-  // Aggregate all PortCos across the firm (all funds for this manager)
-  const firmFunds = [fund, ...siblingFunds];
-  const firmPortfolio = useMemo(() => {
-    const companiesByFund: { company: PortfolioCompanyView; fundName: string; strategies: string[] }[] = [];
-    for (const ff of firmFunds) {
-      for (const pc of ff.portfolioCompanies) {
-        companiesByFund.push({ company: pc, fundName: ff.fundName, strategies: ff.strategies });
-      }
-    }
-    // Group by sector → subsector
-    const bySector: Record<string, Record<string, { company: PortfolioCompanyView; fundName: string; strategies: string[] }[]>> = {};
-    for (const entry of companiesByFund) {
-      const sector = entry.company.sector;
-      const subsector = entry.company.subsector || "General";
-      if (!bySector[sector]) bySector[sector] = {};
-      if (!bySector[sector][subsector]) bySector[sector][subsector] = [];
-      bySector[sector][subsector].push(entry);
-    }
-    // Sort sectors by company count (desc), subsectors alphabetically. Within
-    // each subsector, active investments come first, then realized; secondary
-    // sort by name.
-    const sortedSectors = Object.entries(bySector)
-      .map(([sector, subsectors]) => ({
-        sector,
-        subsectors: Object.entries(subsectors)
-          .map(([sub, entries]) => ({
-            subsector: sub,
-            entries: entries.sort((a, b) => {
-              if (a.company.isActive !== b.company.isActive) return a.company.isActive ? -1 : 1;
-              return a.company.name.localeCompare(b.company.name);
-            }),
-          }))
-          .sort((a, b) => a.subsector.localeCompare(b.subsector)),
-        count: Object.values(subsectors).reduce((sum, arr) => sum + arr.length, 0),
-      }))
-      .sort((a, b) => b.count - a.count);
-    const activeCount = companiesByFund.filter((e) => e.company.isActive).length;
-    const realizedCount = companiesByFund.length - activeCount;
-    return { sectors: sortedSectors, total: companiesByFund.length, activeCount, realizedCount };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fund.id, siblingFunds.length]);
+  useEffect(() => {
+    const drawer = drawerRef.current;
+    if (!drawer) return;
+    drawer.scrollTop = 0;
+    drawer.querySelector<HTMLElement>("[data-dialog-initial-focus]")?.focus({ preventScroll: true });
+  }, [fund.id]);
 
   return (
     <>
       <div
-        className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
+        className="fixed inset-0 z-[60] bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
       <div
@@ -729,7 +704,7 @@ function FundDrawer({
         aria-modal="true"
         aria-labelledby="fund-drawer-title"
         tabIndex={-1}
-        className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl shadow-overlay bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right"
+        className="fixed top-0 right-0 bottom-0 z-[60] w-full sm:max-w-lg lg:max-w-xl xl:max-w-2xl shadow-overlay bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right"
       >
         {/* Left edge accent stripe */}
         <div
@@ -755,7 +730,11 @@ function FundDrawer({
                 Fund scorecard
               </div>
               <div className="flex items-center gap-2 mb-2 flex-wrap">
-                <span className="type-meta">{fund.managerName}</span>
+                {fund.managerId ? (
+                  <RecordTitleLink href={`/sponsors/${encodeURIComponent(fund.managerId)}`} className="type-meta underline underline-offset-2">
+                    {fund.managerName}
+                  </RecordTitleLink>
+                ) : <span className="type-meta">{fund.managerName}</span>}
                 {fund.ticker && (
                   <span className="type-label normal-case mono bg-[var(--bg-hover)] px-1.5 py-0.5 rounded">
                     {fund.ticker}
@@ -765,11 +744,15 @@ function FundDrawer({
               <h2 id="fund-drawer-title" className="type-drawer-title">
                 {fund.fundName}
               </h2>
+              <RecordTitleLink href={`/funds/${encodeURIComponent(fund.legacyId)}`} className="mt-2 inline-block type-meta underline underline-offset-2">
+                Open full fund profile
+              </RecordTitleLink>
             </div>
             <button
               onClick={onClose}
               aria-label="Close drawer"
-              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              data-dialog-initial-focus
+              className="inline-grid size-11 place-items-center rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <X className="h-4 w-4" strokeWidth={1.75} />
             </button>
@@ -780,9 +763,7 @@ function FundDrawer({
         <div className="px-6 lg:px-8 py-6 space-y-7">
           {/* Fund overview */}
           <section className="surface p-4">
-            <div className="type-section-title text-[var(--text-tertiary)] mb-3">
-              Fund overview
-            </div>
+            <h3 className="mb-3 type-section-title">Fund overview</h3>
             <div className="flex items-center gap-3 flex-wrap mb-4">
               {fund.strategies.map((s) => (
                 <Tag key={s} color={getStrategyColor(s)}>{s}</Tag>
@@ -794,8 +775,15 @@ function FundDrawer({
             </div>
             <dl className="grid grid-cols-2 gap-x-6 gap-y-2.5">
               <div>
-                <dt className="type-label">Fund size</dt>
-                <dd className="type-row-title mono tabular-nums mt-0.5">{displaySize(fund.size)}</dd>
+                <dt className="type-label">Reported size</dt>
+                <dd className="mt-0.5 type-row-title mono tabular-nums">{reportedFundSize(fund)}</dd>
+                {fund.sizeBasis && <dd className="mt-0.5 type-meta">{fund.sizeBasis}</dd>}
+                {fund.sizeAsOf && <dd className="mt-0.5 type-micro">As of {formatDate(fund.sizeAsOf)}</dd>}
+                {fund.sizeSourceUrl && (
+                  <dd className="mt-1">
+                    <a href={fund.sizeSourceUrl} target="_blank" rel="noopener noreferrer" data-research-event="source_click" className="type-micro underline underline-offset-2">Size source</a>
+                  </dd>
+                )}
               </div>
               <div>
                 <dt className="type-label">Vintage</dt>
@@ -804,12 +792,25 @@ function FundDrawer({
             </dl>
           </section>
 
+          {detailState === "loading" && <p className="type-meta" role="status">Loading fund strategy, evidence and holdings…</p>}
+          {detailState === "error" && (
+            <div role="status" className="surface flex flex-wrap items-center justify-between gap-3 p-3 type-meta">
+              Fund strategy, evidence and holdings are temporarily unavailable.
+              <button
+                type="button"
+                onClick={() => {
+                  drawerRef.current?.querySelector<HTMLElement>("[data-dialog-initial-focus]")?.focus({ preventScroll: true });
+                  onRetry();
+                }}
+                className="min-h-8 font-semibold underline underline-offset-2"
+              >Retry</button>
+            </div>
+          )}
+
           {/* Investment Strategy */}
           {fund.investmentStrategy && (
             <section className="border-t border-[var(--border)] pt-6">
-              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
-                Investment strategy
-              </div>
+              <h3 className="mb-3 type-section-title">Investment strategy</h3>
               <p className="type-meta">
                 {fund.investmentStrategy}
               </p>
@@ -819,9 +820,7 @@ function FundDrawer({
           {/* Target Sectors */}
           {fund.sectors.length > 0 && (
             <section className="border-t border-[var(--border)] pt-6">
-              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
-                Target sectors
-              </div>
+              <h3 className="mb-3 type-section-title">Target sectors</h3>
               <div className="flex flex-wrap gap-3">
                 {fund.sectors.map((sector) => (
                   <Tag key={sector} color={getFundSectorColor(sector)}>{sector}</Tag>
@@ -833,9 +832,7 @@ function FundDrawer({
           {/* Source URLs */}
           {fund.sourceUrls.length > 0 && (
             <section className="border-t border-[var(--border)] pt-6">
-              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
-                Sources
-              </div>
+              <h3 className="mb-3 type-section-title">Sources</h3>
               <div className="surface px-4 py-3">
                 <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                 {fund.sourceUrls.map((url, i) => {
@@ -845,6 +842,7 @@ function FundDrawer({
                     <a
                       key={i}
                       href={url}
+                      data-research-event="source_click"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
@@ -859,96 +857,36 @@ function FundDrawer({
             </section>
           )}
 
-          {/* PortCos */}
-          {firmPortfolio.total > 0 && (
-            <section className="border-t border-[var(--border)] pt-6">
-              <div className="flex items-center justify-between mb-4">
-                <span className="type-section-title text-[var(--text-tertiary)]">
-                  PortCos
-                </span>
-                <span className="type-micro">
-                  <span className="mono tabular-nums">{firmPortfolio.total}</span>
-                  {firmPortfolio.realizedCount > 0 && (
-                    <> · {firmPortfolio.activeCount} active · {firmPortfolio.realizedCount} realized</>
-                  )}
-                </span>
-              </div>
-              <div className="space-y-5">
-                {firmPortfolio.sectors.map(({ sector, subsectors, count }) => (
-                  <div key={sector}>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Tag color={getPortCoSectorColor(sector)}>{sector}</Tag>
-                      <span className="type-micro mono tabular-nums">{count}</span>
-                    </div>
-                    <div className="space-y-3 ml-1">
-                      {subsectors.map(({ subsector, entries }) => (
-                        <div key={subsector}>
-                          <div className="type-label mb-1.5">{subsector}</div>
-                          <div className="space-y-1.5">
-                            {entries.map(({ company, fundName, strategies }) => {
-                              const yearLabel = company.isActive
-                                ? company.investmentYear
-                                  ? `${company.investmentYear}–Present`
-                                  : null
-                                : company.investmentYear && company.exitYear
-                                  ? `${company.investmentYear}–${company.exitYear}`
-                                  : company.exitYear
-                                    ? `Exited ${company.exitYear}`
-                                    : null;
-                              return (
-                                <div
-                                  key={`${company.name}-${fundName}`}
-                                  className="surface px-3 py-2 flex items-start justify-between gap-3"
-                                  style={!company.isActive ? { opacity: 0.65 } : undefined}
-                                >
-                                  <div className="min-w-0">
-                                    <div className="type-row-title flex items-center gap-2 flex-wrap">
-                                      <span className="font-medium">{company.name}</span>
-                                      {!company.isActive && <Tag variant="solid">Realized</Tag>}
-                                    </div>
-                                    <div className="type-micro mt-0.5">
-                                      {company.country}
-                                      {yearLabel ? ` · ${yearLabel}` : ""}
-                                      {firmFunds.length > 1 ? ` · ${fundName}` : ""}
-                                    </div>
-                                  </div>
-                                  <div className="flex gap-3 shrink-0 flex-wrap justify-end">
-                                    {strategies.slice(0, 1).map((s) => (
-                                      <Tag key={s} color={getStrategyColor(s)}>{s}</Tag>
-                                    ))}
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
+          <section aria-labelledby="fund-holdings-title" className="space-y-3 border-t border-[var(--border)] pt-6">
+            <h3 id="fund-holdings-title" className="type-section-title">Vehicle holdings</h3>
+            {fund.portfolioCompanies.length > 0 ? (
+              <HoldingsList companies={fund.portfolioCompanies} />
+            ) : detailState === "ready" ? <p className="type-meta">No PortCos are attributed to this vehicle in the database.</p> : null}
+            {fund.managerId && (
+              <RecordTitleLink href={`/sponsors/${encodeURIComponent(fund.managerId)}`} className="inline-block type-meta underline underline-offset-2">
+                View the wider portfolio at {fund.managerName}
+              </RecordTitleLink>
+            )}
+          </section>
 
           {/* Sibling funds */}
           {siblingFunds.length > 0 && (
             <section className="border-t border-[var(--border)] pt-6">
-              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
-                Other {fund.managerName} vehicles
-              </div>
+              <h3 className="mb-3 type-section-title">Related vehicles at {fund.managerName}</h3>
               <div className="space-y-2">
                 {siblingFunds.map((sib) => (
-                  <button
+                  <RecordTitleLink
                     key={sib.id}
-                    onClick={() => onSelectFund(sib)}
+                    href={fundHref(sib)}
+                    onOpen={() => onSelectFund(sib)}
                     className="w-full text-left surface p-3 hover:bg-[var(--bg-subtle)] transition-colors flex items-center justify-between gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
                   >
                     <div className="min-w-0">
                       <div className="type-row-title truncate">{sib.fundName}</div>
                       <div className="type-micro mono tabular-nums">{displaySize(sib.size)}</div>
                     </div>
-                    <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] shrink-0 transition-colors" />
-                  </button>
+                    <ChevronRight aria-hidden className="h-4 w-4 shrink-0 text-[var(--text-secondary)]" />
+                  </RecordTitleLink>
                 ))}
               </div>
             </section>
@@ -970,6 +908,8 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
   const [activeSizeRanges, toggleSizeRange] = useUrlFilterSet("size");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [selectedFund, setSelectedFund] = useState<FundView | null>(null);
+  const [fundDetail, setFundDetail] = useState<{ id: string; attempt: number; fund?: FundView; failed?: boolean } | null>(null);
+  const [detailAttempt, setDetailAttempt] = useState(0);
   const fundView: "managers" | "all" = rawFundView === "all" ? "all" : "managers";
   const focusId = useUrlQueryParam("focus");
   const writeQueryParam = useUrlQueryWriter();
@@ -1009,7 +949,7 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
       if (activeStatuses.size > 0 && !activeStatuses.has(fund.status)) return false;
       if (activeSizeRanges.size > 0) {
         const matchesAny = Array.from(activeSizeRanges).some((range) =>
-          matchesSizeRange(fund.sizeUsdMm, range)
+          matchesSizeRange(fund.sizeUsdMm, range, fund.sizeNativeAmount)
         );
         if (!matchesAny) return false;
       }
@@ -1020,38 +960,12 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
 
   const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
     const stats = getFundStats(filteredFunds);
-    const topStrategy = mostCommonLabel(filteredFunds.flatMap((fund) => fund.strategies));
-    const topManager = mostCommonLabel(filteredFunds.map((fund) => fund.managerName));
-    const topSector = mostCommonLabel(filteredFunds.flatMap((fund) => fund.sectors));
-    const filterCount = activeStrategies.size + activeStatuses.size + activeSizeRanges.size + activeSectors.size + (debouncedFundSearch ? 1 : 0);
-
     return [
-      {
-        label: "Visible funds",
-        value: filteredFunds.length.toLocaleString(),
-        detail: filteredFunds.length === funds.length ? "Full fund universe" : `${filterCount} active filter${filterCount === 1 ? "" : "s"}`,
-        color: "var(--accent)",
-      },
-      {
-        label: "Managers",
-        value: stats.managers.toLocaleString(),
-        detail: `${stats.funds.toLocaleString()} vehicles shown`,
-        color: "#7d6cf0",
-      },
-      {
-        label: "Visible AUM",
-        value: `$${stats.totalAumBn.toLocaleString()}B`,
-        detail: "Reported size where available",
-        color: "#3b6cf2",
-      },
-      {
-        label: "Top strategy",
-        value: topStrategy?.label ?? "N/A",
-        detail: topManager ? `Leading manager: ${topManager.label}` : topSector ? `Top sector: ${topSector.label}` : "No strategy match",
-        color: topStrategy ? getStrategyColor(topStrategy.label) : "var(--text-tertiary)",
-      },
+      { label: "Matching vehicles", value: stats.funds.toLocaleString() },
+      { label: "Managers", value: stats.managers.toLocaleString() },
+      { label: "Size disclosed", value: `${stats.disclosedSize.toLocaleString()} of ${stats.funds.toLocaleString()}` },
     ];
-  }, [filteredFunds, funds, activeStrategies, activeStatuses, activeSizeRanges, activeSectors, debouncedFundSearch]);
+  }, [filteredFunds]);
 
   const groupedFunds = useMemo(() => groupFundsByManager(filteredFunds), [filteredFunds]);
   const sortedManagers = useMemo(
@@ -1059,12 +973,27 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
     [groupedFunds]
   );
 
-  // Close drawers if filtered out
+  const selectedFundId = selectedFund?.legacyId;
   useEffect(() => {
-    if (selectedFund && !filteredFunds.find((f) => f.id === selectedFund.id)) {
-      closeFund();
+    if (!selectedFundId) return;
+    const controller = new AbortController();
+
+    async function loadFund(id: string) {
+      try {
+        const response = await fetch(withBasePath(`/api/funds/${encodeURIComponent(id)}`), { signal: controller.signal });
+        if (!response.ok) throw new Error("Fund detail request failed");
+        const data: { fund?: FundView } = await response.json();
+        if (!data.fund || data.fund.legacyId !== id) throw new Error("Fund detail did not match");
+        if (!controller.signal.aborted) setFundDetail({ id, attempt: detailAttempt, fund: data.fund });
+      } catch {
+        if (!controller.signal.aborted) setFundDetail({ id, attempt: detailAttempt, failed: true });
+      }
     }
-  }, [closeFund, filteredFunds, selectedFund]);
+
+    void loadFund(selectedFundId);
+    return () => controller.abort();
+  }, [selectedFundId, detailAttempt]);
+  const currentDetail = fundDetail && fundDetail.id === selectedFundId && fundDetail.attempt === detailAttempt ? fundDetail : null;
 
   // URL state remains authoritative for direct links and Back/Forward.
   useEffect(() => {
@@ -1082,9 +1011,10 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
       <DatabaseIntelligenceHeader
         eyebrow="Fund intelligence"
         title="Infrastructure Fund Database"
-        summary="Fund vehicles, strategies, size ranges, manager platforms, and sector exposure across the global infrastructure market."
+        summary="Screen infrastructure fund vehicles by manager, strategy, size and sector."
         metrics={headerMetrics}
         actions={<DatabaseTiles counts={counts} />}
+        compact
       />
 
       <FundFilterBar
@@ -1101,24 +1031,21 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
         onClearAll={clearFundFilters}
       />
 
-      <MarketSnapshotSection>
-        <FundsInsightsHero filteredFunds={filteredFunds} />
-      </MarketSnapshotSection>
-
-      <div className="surface overflow-hidden">
-        <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
-          <div className="flex items-center gap-3">
-            <span className="type-micro">
+      <section aria-labelledby="fund-results-title" className="surface">
+        <h2 id="fund-results-title" className="sr-only">Fund results</h2>
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border)] px-3 py-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="type-meta" aria-live="polite">
               <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredFunds.length}</span>
               {" "}of{" "}
               <span className="mono text-[var(--text-secondary)] tabular-nums">{funds.length}</span> funds
             </span>
-            <div className="hidden sm:inline-flex items-center gap-1 p-0.5 rounded-md bg-[var(--bg-hover)]">
+            <div className="inline-flex items-center gap-1 rounded-md bg-[var(--bg-hover)] p-0.5">
               <button
                 type="button"
                 onClick={() => setRawFundView("managers")}
                 aria-pressed={fundView === "managers"}
-                className={`px-2.5 h-6 rounded type-micro font-medium transition-colors ${
+                className={`px-2.5 min-h-8 rounded type-micro font-medium transition-colors ${
                   fundView === "managers"
                     ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
                     : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -1130,7 +1057,7 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
                 type="button"
                 onClick={() => setRawFundView("all")}
                 aria-pressed={fundView === "all"}
-                className={`px-2.5 h-6 rounded type-micro font-medium transition-colors ${
+                className={`px-2.5 min-h-8 rounded type-micro font-medium transition-colors ${
                   fundView === "all"
                     ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
                     : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -1140,7 +1067,7 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
               </button>
             </div>
           </div>
-          <div className="hidden sm:flex items-center gap-1">
+          <div className="flex flex-wrap items-center gap-1">
             {canExport && (
               <a
                 href={withBasePath("/api/exports/funds")}
@@ -1166,16 +1093,22 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
         ) : (
           <AllFundsTable funds={filteredFunds} onSelectFund={openFund} />
         )}
-      </div>
+      </section>
+
+      <MarketSnapshotSection>
+        <FundsInsightsHero filteredFunds={filteredFunds} />
+      </MarketSnapshotSection>
 
       <CTABlock />
 
       {selectedFund && (
         <FundDrawer
-          fund={selectedFund}
+          fund={currentDetail?.fund ?? selectedFund}
           onClose={closeFund}
-          allFunds={filteredFunds}
+          allFunds={funds}
           onSelectFund={openFund}
+          detailState={currentDetail?.fund ? "ready" : currentDetail?.failed ? "error" : "loading"}
+          onRetry={() => setDetailAttempt((attempt) => attempt + 1)}
         />
       )}
     </div>

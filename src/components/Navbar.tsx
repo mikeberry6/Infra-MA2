@@ -1,24 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Search, User } from "lucide-react";
+import { ChevronDown, Menu, X, Search, User } from "lucide-react";
 import { TextInput } from "@/components/shared/TextInput";
 import { withBasePath } from "@/lib/base-path";
 
-const navLinks = [
-  {
-    href: "/tracker",
-    label: "Database",
-    matches: (p: string) =>
-      p === "/" || p.startsWith("/tracker") || p.startsWith("/funds") || p.startsWith("/portfolio"),
-  },
-  { href: "/dashboard", label: "Dashboard", matches: (p: string) => p.startsWith("/dashboard") },
-  { href: "/news", label: "News Feed", matches: (p: string) => p.startsWith("/news") },
-  { href: "/earnings", label: "Earnings", matches: (p: string) => p.startsWith("/earnings") },
-  { href: "/search", label: "Search", matches: (p: string) => p.startsWith("/search") },
+const databaseLinks = [
+  { href: "/tracker", label: "Deals" },
+  { href: "/funds", label: "Funds" },
+  { href: "/portfolio", label: "PortCos" },
 ];
+const monitorLinks = [
+  { href: "/dashboard", label: "Dashboard" },
+  { href: "/news", label: "News" },
+];
+const researchLinks = [
+  { href: "/weekly-briefing", label: "Weekly briefing" },
+  { href: "/email-format/latest", label: "Weekly email" },
+  { href: "/one-off-requests", label: "One-offs" },
+  { href: "/compare", label: "Compare deals" },
+  { href: "/earnings/archive/q4-2025", label: "Earnings archive" },
+  { href: "/methodology", label: "Methodology" },
+];
+
+function matchesPath(pathname: string, href: string) {
+  return (href === "/tracker" && (pathname === "/" || pathname.startsWith("/deals/"))) || pathname === href || pathname.startsWith(`${href}/`);
+}
 
 const signalCells = [
   "bg-[var(--accent)]",
@@ -53,117 +62,124 @@ function Wordmark({ className = "" }: { className?: string }) {
 export function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const mobileTrigger = useRef<HTMLButtonElement>(null);
+  const research = useRef<HTMLDetailsElement>(null);
+  const navLinkClass = "inline-flex min-h-9 items-center rounded-md px-2.5 type-meta font-medium transition-colors";
+
+  useEffect(() => {
+    function dismissResearch(event: PointerEvent) {
+      if (research.current?.open && event.target instanceof Node && !research.current.contains(event.target)) {
+        research.current.open = false;
+      }
+    }
+
+    document.addEventListener("pointerdown", dismissResearch);
+    return () => document.removeEventListener("pointerdown", dismissResearch);
+  }, []);
+
+  function navLink(link: (typeof databaseLinks)[number], mobile = false) {
+    const active = matchesPath(pathname, link.href);
+    return (
+      <Link
+        key={link.href}
+        href={link.href}
+        prefetch={false}
+        aria-current={active ? "page" : undefined}
+        onClick={() => {
+          if (mobile) setMenuOpen(false);
+          if (research.current) research.current.open = false;
+        }}
+        className={`${navLinkClass} ${mobile ? "w-full min-h-11" : ""} ${active
+          ? "bg-[var(--accent-soft)] text-[var(--accent-hover)]"
+          : "text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"}`}
+      >
+        {link.label}
+      </Link>
+    );
+  }
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 shadow-[0_1px_0_rgba(17,17,20,0.02)] backdrop-blur-md"
-      aria-label="Primary"
-    >
-      <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-between gap-6 px-4 sm:px-6">
-        {/* Wordmark */}
-        <Wordmark />
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 backdrop-blur-md" aria-label="Primary">
+      <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-between gap-3 px-4 sm:px-6">
+        <Wordmark className="shrink-0" />
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex flex-1 items-center justify-center">
-          <div className="inline-flex items-center gap-0.5 rounded-lg border border-[var(--border)] bg-[var(--bg-app)] p-0.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)]">
-            {navLinks.map((link) => {
-              const isActive = link.matches(pathname);
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`inline-flex h-8 items-center rounded-md border px-3 type-meta font-medium transition-colors ${
-                    isActive
-                      ? "border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.05)]"
-                      : "border-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)]"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+        <div className="hidden items-center gap-2 lg:flex">
+          <div role="group" aria-label="Databases" className="flex items-center gap-0.5 rounded-lg border border-[var(--border)] bg-[var(--bg-app)] p-0.5">
+            {databaseLinks.map((link) => navLink(link))}
+          </div>
+          <div className="flex items-center gap-0.5">
+            {monitorLinks.map((link) => navLink(link))}
+            <details
+              ref={research}
+              className="group relative"
+              onKeyDown={(event) => {
+                if (event.key === "Escape" && event.currentTarget.open) {
+                  event.currentTarget.open = false;
+                  event.currentTarget.querySelector("summary")?.focus();
+                }
+              }}
+            >
+              <summary className={`${navLinkClass} cursor-pointer list-none gap-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] [&::-webkit-details-marker]:hidden`}>
+                Research
+                <ChevronDown aria-hidden className="h-3.5 w-3.5 group-open:rotate-180" />
+              </summary>
+              <div className="surface-overlay absolute right-0 mt-1 min-w-44 rounded-lg p-1">
+                {researchLinks.map((link) => navLink(link, true))}
+              </div>
+            </details>
           </div>
         </div>
 
-        {/* Desktop right cluster */}
-        <div className="hidden md:flex items-center gap-2">
-          <form
-            method="get"
-            action={withBasePath("/search")}
-            className="w-[260px]"
-            role="search"
-          >
-            <TextInput
-              type="search"
-              name="q"
-              leadingIcon={<Search />}
-              placeholder="Search deals, funds, PortCos"
-              aria-label="Search"
-            />
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
+          <form method="get" action={withBasePath("/search")} className="w-44 xl:w-60" role="search">
+            <TextInput type="search" name="q" leadingIcon={<Search />} placeholder="Search InfraSight" aria-label="Search InfraSight" />
           </form>
-          <Link
-            href="/login"
-            aria-label="Account"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-transparent text-[var(--text-secondary)] transition-colors hover:border-[var(--border)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
-          >
-            <User className="h-4 w-4" />
+          <Link href="/login" aria-label="Account" className="inline-grid size-9 place-items-center rounded-md text-[var(--text-secondary)] hover:bg-[var(--bg-hover)]">
+            <User aria-hidden className="h-4 w-4" />
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          onClick={() => setMenuOpen((v) => !v)}
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-        </button>
+        <div className="flex items-center gap-1 lg:hidden">
+          <Link href="/search" onClick={() => setMenuOpen(false)} aria-label="Search InfraSight" className="inline-grid size-11 place-items-center rounded-md text-[var(--text-secondary)] hover:bg-[var(--bg-hover)]">
+            <Search aria-hidden className="h-4 w-4" />
+          </Link>
+          <button
+            ref={mobileTrigger}
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="inline-grid size-11 place-items-center rounded-md text-[var(--text-secondary)] hover:bg-[var(--bg-hover)]"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-primary-links"
+          >
+            {menuOpen ? <X aria-hidden className="h-4 w-4" /> : <Menu aria-hidden className="h-4 w-4" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile sheet */}
-      {menuOpen && (
-        <div className="md:hidden bg-[var(--bg-surface)] border-t border-[var(--border)] animate-fade-in">
-          <div className="px-4 py-4 space-y-1">
-            <form
-              method="get"
-              action={withBasePath("/search")}
-              role="search"
-              className="mb-3"
-              onSubmit={() => setMenuOpen(false)}
-            >
-              <TextInput
-                type="search"
-                name="q"
-                size="md"
-                leadingIcon={<Search />}
-                placeholder="Search..."
-                aria-label="Search"
-              />
-            </form>
-            {navLinks.map((link) => {
-              const isActive = link.matches(pathname);
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`block px-3 py-2.5 rounded-md type-row-title transition-colors ${
-                    isActive
-                      ? "bg-[var(--bg-hover)] text-[var(--text-primary)] shadow-[inset_2px_0_0_var(--accent)]"
-                      : "text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </div>
+      <div
+        id="mobile-primary-links"
+        hidden={!menuOpen}
+        className="max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-t border-[var(--border)] bg-[var(--bg-surface)] px-4 py-3 lg:hidden"
+        onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            setMenuOpen(false);
+            mobileTrigger.current?.focus();
+          }
+        }}
+      >
+        <div className="mb-2 flex flex-wrap items-center gap-1">
+          {databaseLinks.map((link) => (
+            <div key={link.href}>{navLink(link, true)}</div>
+          ))}
         </div>
-      )}
+        <div className="border-t border-[var(--border)] pt-2">
+          {monitorLinks.map((link) => navLink(link, true))}
+          <div className="mt-2 px-2.5 type-label">Research</div>
+          {researchLinks.map((link) => navLink(link, true))}
+          {navLink({ href: "/login", label: "Account" }, true)}
+        </div>
+      </div>
     </nav>
   );
 }

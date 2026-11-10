@@ -2,6 +2,13 @@ const path = require("path");
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/Infra-MA2";
 const isDevelopment = process.env.NODE_ENV !== "production";
+const briefingArchiveFiles = [
+  "./public/email-format/*.html",
+  "./public/email-format/approved-editions.json",
+  "./audits/briefing-deals/archive.json",
+  "./audits/weekly-briefing-activity/**/*",
+  "./audits/deal-portco-flowthrough-2026-05-05.md",
+];
 
 const contentSecurityPolicy = [
   "default-src 'self'",
@@ -74,11 +81,9 @@ const nextConfig = {
   // tree and warns when there are multiple lockfiles (e.g. in worktrees).
   outputFileTracingRoot: path.join(__dirname),
   outputFileTracingIncludes: {
-    "/weekly-briefing": [
-      "./public/email-format/*.html",
-      "./audits/weekly-briefing-activity/**/*",
-      "./audits/deal-portco-flowthrough-2026-05-05.md",
-    ],
+    "/weekly-briefing": briefingArchiveFiles,
+    "/email-format/latest": briefingArchiveFiles,
+    "/sitemap.xml": briefingArchiveFiles,
   },
   async headers() {
     return [
@@ -110,6 +115,13 @@ const nextConfig = {
         basePath: false,
       },
       { source: "/", destination: "/tracker", permanent: true },
+      { source: "/earnings", destination: "/earnings/archive/q4-2025", permanent: true },
+      ...["/robots.txt", "/sitemap.xml"].map((route) => ({
+        source: route,
+        destination: `${basePath}${route}`,
+        permanent: true,
+        basePath: false,
+      })),
     ];
   },
 };

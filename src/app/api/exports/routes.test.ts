@@ -190,3 +190,31 @@ it("exports only the selected briefing while preserving column contracts", async
   expect(body.data[0].legacyId).toBe(deal.legacyId);
   expect(body.data[0]).not.toHaveProperty("briefings");
 });
+
+it("exports the complete screened cohort in the selected sort order", async () => {
+  mocks.canExportData.mockResolvedValue(true);
+  mocks.getAllDeals.mockResolvedValue([
+    { ...deal, legacyId: "later", date: "2026-07-31T00:00:00.000Z" },
+    { ...deal, legacyId: "earlier", date: "2026-07-29T00:00:00.000Z" },
+    { ...deal, legacyId: "too-early", date: "2026-07-28T00:00:00.000Z" },
+    { ...deal, legacyId: "wrong-sector", sector: "Utilities" },
+    { ...deal, legacyId: "wrong-country", country: "Canada" },
+    { ...deal, legacyId: "wrong-role", buyer: "Acquirer LLC", seller: deal.buyer },
+  ]);
+  const params = new URLSearchParams({
+    scope: "filtered", format: "json", sector: "Digital", from: "2026-07-29", to: "2026-07-31",
+    country: "United States", sponsor: deal.buyer, role: "buyer", status: "Announced",
+    direction: "asc", page: "2", focus: "wrong-sector",
+  });
+  const response = await exportDeals(new Request(`https://example.test/api/exports/deals?${params}`) as never);
+  const body = await response.json();
+  expect(body.data.map(({ legacyId }: { legacyId: string }) => legacyId)).toEqual(["earlier", "later"]);
+});
+
+it("denies a filtered export before accessing the deal database", async () => {
+  mocks.canExportData.mockResolvedValue(false);
+  mocks.getAllDeals.mockClear();
+  const response = await exportDeals(new Request("https://example.test/api/exports/deals?scope=filtered") as never);
+  expect(response.status).toBe(403);
+  expect(mocks.getAllDeals).not.toHaveBeenCalled();
+});

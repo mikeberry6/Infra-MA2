@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
-import type { DealView, DatabaseCounts } from "@/modules/shared/types";
+import type { DealListView, DealView, DatabaseCounts } from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 
 // ─── Buyer display shortening ──────────────────────────────
@@ -130,18 +130,7 @@ function isInfraFund(raw: string): boolean {
   );
 }
 
-function mostCommonLabel(items: string[]): { label: string; count: number } | null {
-  const counts = new Map<string, number>();
-  for (const item of items) {
-    if (!item) continue;
-    counts.set(item, (counts.get(item) ?? 0) + 1);
-  }
-  return Array.from(counts.entries())
-    .map(([label, count]) => ({ label, count }))
-    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
-}
-
-function latestDealDateLabel(deals: DealView[]): string {
+function latestDealDateLabel(deals: DealListView[]): string {
   let latest = 0;
   for (const deal of deals) {
     const time = new Date(deal.date).getTime();
@@ -154,20 +143,18 @@ import {
   Search,
   ExternalLink,
   X,
-  ChevronRight,
   ArrowUpDown,
   Download,
-  Mail,
-  FileText,
-  Newspaper,
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
-import { useDebounce } from "@/hooks/useDebounce";
+import { DEAL_SCREEN_KEYS, dealScreenParams, filterDealScreen, sortDealScreen, type DealScreenKey } from "@/lib/deal-screen";
+import { DealSavedScreens, DealScreenControls, DEAL_FILTER_LABELS, SECONDARY_DEAL_KEYS } from "./DealDatabase/DealScreenControls";
 import {
   useUrlFilterSet,
   useUrlQueryParam,
   useUrlQueryParamsWriter,
   useUrlQueryState,
+  useUrlSearch,
   useUrlQueryWriter,
 } from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
@@ -176,6 +163,7 @@ import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/components/shared/DatabaseIntelligenceHeader";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
+import { RecordTitleLink } from "@/components/shared/RecordTitleLink";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
@@ -212,29 +200,6 @@ const REGIONS: string[] = [
 
 const DEAL_PAGE_SIZE = 25;
 
-export function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
-  const className = compact
-    ? "inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-    : "inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-secondary)] shadow-[0_1px_2px_rgba(17,17,20,0.04)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]";
-
-  return (
-    <div className="flex flex-wrap items-center justify-end gap-1">
-      <a href={withBasePath("/weekly-briefing")} className={className}>
-        <Newspaper className="h-3 w-3" />
-        <span className="truncate">Weekly briefing</span>
-      </a>
-      <a href={withBasePath("/email-format/latest")} className={className}>
-        <Mail className="h-3 w-3" />
-        <span className="truncate">Weekly email</span>
-      </a>
-      <a href={withBasePath("/one-off-requests")} className={className}>
-        <FileText className="h-3 w-3" />
-        <span className="truncate">One-offs</span>
-      </a>
-    </div>
-  );
-}
-
 // ─── Active Filters Chips ───────────────────────────────────
 function ActiveFiltersChips({
   activeSectors,
@@ -243,6 +208,7 @@ function ActiveFiltersChips({
   onClearSector,
   onClearRegion,
   onClearCategory,
+  secondaryGroups,
   onClearAll,
 }: {
   activeSectors: Set<string>;
@@ -251,6 +217,7 @@ function ActiveFiltersChips({
   onClearSector: (s: string) => void;
   onClearRegion: (r: string) => void;
   onClearCategory: (c: string) => void;
+  secondaryGroups: { keyPrefix: string; items: string[]; getColor: () => string; onRemove: () => void }[];
   onClearAll: () => void;
 }) {
   return (
@@ -259,6 +226,7 @@ function ActiveFiltersChips({
         { keyPrefix: "sector", items: activeSectors, getColor: getSectorColor, onRemove: onClearSector },
         { keyPrefix: "region", items: activeRegions, getColor: getRegionColor, onRemove: onClearRegion },
         { keyPrefix: "category", items: activeCategories, getColor: getCategoryColor, onRemove: onClearCategory },
+        ...secondaryGroups,
       ]}
       onClearAll={onClearAll}
     />
@@ -275,6 +243,10 @@ function FilterBar({
   onToggleRegion,
   activeCategories,
   onToggleCategory,
+  deals,
+  briefingIssues,
+  params,
+  onSecondaryChange,
   onClearAll,
 }: {
   search: string;
@@ -285,9 +257,22 @@ function FilterBar({
   onToggleRegion: (r: string) => void;
   activeCategories: Set<string>;
   onToggleCategory: (c: string) => void;
+  deals: DealListView[];
+  briefingIssues: { edition: string; archivePath: string }[];
+  params: URLSearchParams;
+  onSecondaryChange: (key: DealScreenKey, value: string) => void;
   onClearAll: () => void;
 }) {
-  const activeFilterCount = activeSectors.size + activeRegions.size + activeCategories.size;
+  const secondaryGroups = (["briefing", ...SECONDARY_DEAL_KEYS] as const).flatMap((key) => {
+    const value = params.get(key);
+    return value ? [{
+      keyPrefix: key,
+      items: [`${DEAL_FILTER_LABELS[key]}: ${value}`],
+      getColor: () => "#166447",
+      onRemove: () => onSecondaryChange(key, ""),
+    }] : [];
+  });
+  const activeFilterCount = activeSectors.size + activeRegions.size + activeCategories.size + secondaryGroups.length;
 
   return (
     <div className="mb-3 space-y-3">
@@ -340,6 +325,8 @@ function FilterBar({
               </div>
             ))}
           </div>
+          <DealScreenControls deals={deals} briefings={briefingIssues} params={params}
+            onChange={onSecondaryChange} includeBriefing />
         </MobileFilterSheet>
 
         <div className="hidden min-w-0 flex-1 items-center gap-2 md:flex">
@@ -369,7 +356,16 @@ function FilterBar({
         </div>
       </div>
 
+      <details className="hidden rounded-md px-2 type-meta md:block">
+        <summary className="w-fit cursor-pointer py-1 font-medium">More filters</summary>
+        <div className="mt-2 pb-2">
+          <DealScreenControls deals={deals} briefings={briefingIssues} params={params}
+            onChange={onSecondaryChange} />
+        </div>
+      </details>
+
       <ActiveFiltersChips
+        secondaryGroups={secondaryGroups}
         activeSectors={activeSectors}
         activeRegions={activeRegions}
         activeCategories={activeCategories}
@@ -387,47 +383,53 @@ function DealCard({
   deal,
   onSelect,
 }: {
-  deal: DealView;
-  onSelect: (deal: DealView) => void;
+  deal: DealListView;
+  onSelect: (deal: DealListView) => void;
 }) {
   return (
-    <button
-      onClick={() => onSelect(deal)}
-      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-    >
-      <div className="flex items-start justify-between gap-3 mb-2">
-        <div className="flex items-center gap-2 flex-wrap min-w-0">
-          <Tag color={getSectorColor(deal.sector)}>{deal.sector}</Tag>
-          {deal.category.slice(0, 1).map((cat) => (
-            <Tag key={cat} color={getCategoryColor(cat)}>{cat}</Tag>
-          ))}
-          {deal.category.length > 1 && (
-            <span className="type-micro">+{deal.category.length - 1}</span>
-          )}
-        </div>
-        <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] shrink-0 mt-0.5" />
-      </div>
-      <div className="mb-2">
-        <h3 className="type-row-title">
-          {deal.target}
+    <article className="surface p-3.5">
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="min-w-0 text-base font-semibold leading-snug">
+          <RecordTitleLink href={`/tracker?focus=${encodeURIComponent(deal.legacyId)}`} onOpen={() => onSelect(deal)}>
+            {deal.target}
+          </RecordTitleLink>
         </h3>
-        {deal.seller && deal.seller !== "N/A" && deal.seller !== "—" && (
-          <div className="type-micro mt-0.5 truncate">{deal.seller}</div>
-        )}
-      </div>
-      <div className="flex items-center justify-between gap-3">
-        <div className="min-w-0 flex-1">
-          <div className="type-label">Buyer</div>
-          <div className="type-meta font-medium truncate">{deal.buyer}</div>
-        </div>
         <span className="type-micro mono tabular-nums shrink-0">{formatDate(deal.date)}</span>
       </div>
-    </button>
+      <p className="mt-1 type-meta"><span className="font-medium">Buyer</span> {deal.buyer}</p>
+      {deal.seller && deal.seller !== "N/A" && deal.seller !== "—" && (
+        <p className="mt-0.5 type-meta"><span className="font-medium">Seller</span> {deal.seller}</p>
+      )}
+      <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <StatusBadge status={deal.status} />
+        <Tag color={getSectorColor(deal.sector)}>{deal.sector}</Tag>
+        {deal.category.map((category) => (
+          <Tag key={category} color={getCategoryColor(category)}>{category}</Tag>
+        ))}
+        {deal.sourceUrl && <DealSourceLink deal={deal} />}
+      </div>
+    </article>
+  );
+}
+
+function DealSourceLink({ deal }: { deal: DealListView }) {
+  return (
+    <a
+      href={deal.sourceUrl}
+      data-research-event="source_click"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex min-h-6 max-w-full items-center gap-1 rounded-sm type-micro underline decoration-[var(--border-strong)] underline-offset-2 hover:text-[var(--accent)]"
+      title={deal.sourceName || deal.sourceUrl}
+    >
+      <span className="truncate">{deal.sourceName || "Source"}</span>
+      <ExternalLink aria-hidden className="h-3 w-3 shrink-0" />
+    </a>
   );
 }
 
 // ─── Deal Table ─────────────────────────────────────────────
-const DEAL_TABLE_COL_WIDTHS = ["9%", "25%", "15%", "13%", "12%", "17%", "7%", "2%"] as const;
+const DEAL_TABLE_COL_WIDTHS = ["10%", "22%", "15%", "11%", "10%", "13%", "10%", "9%"] as const;
 
 function DealTableColGroup() {
   return (
@@ -443,20 +445,15 @@ function DealTable({
   filteredDeals,
   onSelectDeal,
 }: {
-  filteredDeals: DealView[];
-  onSelectDeal: (deal: DealView) => void;
+  filteredDeals: DealListView[];
+  onSelectDeal: (deal: DealListView) => void;
 }) {
   const [rawSortDir] = useUrlQueryState("direction", "desc");
   const [rawPage, setRawPage] = useUrlQueryState("page", "1");
   const writeQueryParams = useUrlQueryParamsWriter();
   const sortDir: "asc" | "desc" = rawSortDir === "asc" ? "asc" : "desc";
 
-  const sorted = useMemo(() => {
-    return [...filteredDeals].sort((a, b) => {
-      const mul = sortDir === "desc" ? -1 : 1;
-      return mul * (new Date(a.date).getTime() - new Date(b.date).getTime());
-    });
-  }, [filteredDeals, sortDir]);
+  const sorted = useMemo(() => sortDealScreen(filteredDeals, sortDir), [filteredDeals, sortDir]);
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / DEAL_PAGE_SIZE));
   const parsedPage = Number.parseInt(rawPage, 10);
@@ -483,7 +480,7 @@ function DealTable({
   return (
     <>
       {/* Mobile card list */}
-      <div className="lg:hidden space-y-2">
+      <div className="space-y-2 p-2 lg:hidden">
         {visibleDeals.map((deal) => (
           <DealCard key={deal.id} deal={deal} onSelect={onSelectDeal} />
         ))}
@@ -538,9 +535,11 @@ function DealTable({
                   Category
                 </th>
                 <th className="text-left px-3 py-2 type-table-header">
+                  Status
+                </th>
+                <th className="text-left px-3 py-2 type-table-header">
                   Source
                 </th>
-                <th className="px-2 py-2" aria-hidden />
               </tr>
             </thead>
             <tbody>
@@ -549,16 +548,7 @@ function DealTable({
                 return (
                   <tr
                     key={deal.id}
-                    onClick={() => onSelectDeal(deal)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        onSelectDeal(deal);
-                      }
-                    }}
-                    role="button"
-                    tabIndex={0}
-                    className="group cursor-pointer border-b border-[var(--border)] bg-[var(--bg-surface)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus:bg-[var(--bg-subtle)] focus:outline-none"
+                    className="border-b border-[var(--border)] bg-[var(--bg-surface)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus-within:bg-[var(--bg-subtle)]"
                   >
                     <td className="px-3 py-3 align-top">
                       <span className="mono type-meta tabular-nums text-[var(--text-secondary)]">
@@ -566,10 +556,14 @@ function DealTable({
                       </span>
                     </td>
                     <td className="px-3 py-3 align-top">
-                      <div className="flex min-w-0 flex-col gap-0.5">
-                        <span title={deal.target} className="block truncate type-row-title transition-colors group-hover:text-[var(--accent)]">
+                      <div className="flex min-h-[28px] min-w-0 flex-col gap-0.5">
+                        <RecordTitleLink
+                          href={`/tracker?focus=${encodeURIComponent(deal.legacyId)}`}
+                          onOpen={() => onSelectDeal(deal)}
+                          className="block w-fit rounded-sm text-[14px] leading-snug"
+                        >
                           {deal.target}
-                        </span>
+                        </RecordTitleLink>
                         {showSeller && (
                           <span title={deal.seller} className="block truncate type-micro">
                             {deal.seller}
@@ -602,24 +596,10 @@ function DealTable({
                       </div>
                     </td>
                     <td className="px-3 py-3 align-top">
-                      {deal.sourceUrl ? (
-                        <a
-                          href={deal.sourceUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="inline-flex max-w-full items-center gap-1 type-micro transition-colors hover:text-[var(--text-primary)]"
-                          title={deal.sourceName || deal.sourceUrl}
-                        >
-                          <span className="truncate">{deal.sourceName || "Source"}</span>
-                          <ExternalLink className="h-3 w-3 flex-shrink-0" />
-                        </a>
-                      ) : (
-                        <span className="type-micro">—</span>
-                      )}
+                      <StatusBadge status={deal.status} />
                     </td>
-                    <td className="px-2 py-3 align-middle text-right">
-                      <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--text-secondary)] transition-all inline-block" />
+                    <td className="px-3 py-3 align-top">
+                      {deal.sourceUrl ? <DealSourceLink deal={deal} /> : <span className="type-micro">—</span>}
                     </td>
                   </tr>
                 );
@@ -685,20 +665,63 @@ function AdvisorCard({
 }
 
 // ─── Side Drawer ────────────────────────────────────────────
+function DealParties({ deal, role }: { deal: DealListView; role: "BUYER" | "SELLER" }) {
+  const rawName = role === "BUYER" ? deal.buyer : deal.seller;
+  const participants = deal.participants?.filter((participant) => participant.role === role);
+  if (!participants?.length) return <span className="type-row-title">{rawName}</span>;
+
+  return (
+    <ul className="space-y-0.5">
+      {participants.map(({ organizationId, name, hasPublicProfile }) => (
+        <li key={organizationId} className="type-row-title">
+          {hasPublicProfile ? (
+            <RecordTitleLink href={`/sponsors/${encodeURIComponent(organizationId)}`} className="rounded-sm underline underline-offset-2">
+              {name}
+            </RecordTitleLink>
+          ) : name}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+type DealDetailState =
+  | { status: "loading" | "error" }
+  | { status: "ready"; deal: DealView };
+
 function DealDrawer({
-  deal,
+  summary,
   onClose,
 }: {
-  deal: DealView;
+  summary: DealListView;
   onClose: () => void;
 }) {
+  const [detailState, setDetailState] = useState<DealDetailState>({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
+  const detail = detailState.status === "ready" ? detailState.deal : null;
+  const deal = detail ?? summary;
   const hasAdvisors =
-    deal.financialAdvisorBuyer ||
-    deal.financialAdvisorSeller ||
-    deal.legalAdvisorBuyer ||
-    deal.legalAdvisorSeller;
+    detail?.financialAdvisorBuyer ||
+    detail?.financialAdvisorSeller ||
+    detail?.legalAdvisorBuyer ||
+    detail?.legalAdvisorSeller;
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch(withBasePath(`/api/deals/${encodeURIComponent(summary.legacyId)}`), { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Deal detail unavailable");
+        const { deal }: { deal: DealView } = await response.json();
+        if (!controller.signal.aborted) setDetailState({ status: "ready", deal });
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setDetailState({ status: "error" });
+      });
+    return () => controller.abort();
+  }, [summary.legacyId, attempt]);
 
   const drawerRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
   useDialogFocus(drawerRef);
 
@@ -715,17 +738,17 @@ function DealDrawer({
 
   // Build compact economics items
   const econItems: { label: string; value: string }[] = [];
-  if (deal.enterpriseValue) econItems.push({ label: "EV", value: deal.enterpriseValue });
-  if (deal.equityValue) econItems.push({ label: "Equity", value: deal.equityValue });
-  if (deal.stake) econItems.push({ label: "Stake", value: deal.stake });
-  if (deal.valuationMultiple) econItems.push({ label: "Multiple", value: deal.valuationMultiple });
+  if (detail?.enterpriseValue) econItems.push({ label: "EV", value: detail.enterpriseValue });
+  if (detail?.equityValue) econItems.push({ label: "Equity", value: detail.equityValue });
+  if (detail?.stake) econItems.push({ label: "Stake", value: detail.stake });
+  if (detail?.valuationMultiple) econItems.push({ label: "Multiple", value: detail.valuationMultiple });
   const accentColor = getCategoryColor(deal.category[0] ?? deal.sector);
 
   return (
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
+        className="fixed inset-0 z-[60] bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
 
@@ -736,7 +759,7 @@ function DealDrawer({
         aria-modal="true"
         aria-labelledby="deal-drawer-title"
         tabIndex={-1}
-        className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[var(--border)] surface-overlay rounded-none bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right"
+        className="fixed top-0 right-0 bottom-0 z-[60] w-full sm:max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[var(--border)] surface-overlay rounded-none bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right"
       >
         <div
           aria-hidden
@@ -770,11 +793,20 @@ function DealDrawer({
               <p className="mt-2 type-meta max-w-[58ch]">
                 {deal.title}
               </p>
+              <RecordTitleLink
+                href={`/deals/${encodeURIComponent(deal.legacyId)}`}
+                className="mt-2 inline-flex type-meta underline underline-offset-2"
+              >
+                Open full deal profile
+              </RecordTitleLink>
             </div>
             <button
+              type="button"
               onClick={onClose}
               aria-label="Close drawer"
-              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              data-dialog-initial-focus
+              ref={closeButtonRef}
+              className="inline-grid size-11 place-items-center rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <X className="h-4 w-4" strokeWidth={1.75} />
             </button>
@@ -797,13 +829,30 @@ function DealDrawer({
 
         {/* Content */}
         <div className="p-5 lg:p-7 space-y-6">
+          {detailState.status === "loading" && <p role="status" className="type-meta">Loading deal details…</p>}
+          {detailState.status === "error" && (
+            <div className="surface flex flex-wrap items-center gap-3 px-4 py-3">
+              <p role="alert" className="type-meta">Deal details could not be loaded.</p>
+              <button
+                type="button"
+                onClick={() => {
+                  closeButtonRef.current?.focus();
+                  setDetailState({ status: "loading" });
+                  setAttempt((value) => value + 1);
+                }}
+                className="min-h-8 type-meta underline underline-offset-2"
+              >
+                Try again
+              </button>
+            </div>
+          )}
           {/* Parties + economics */}
           <div className="surface p-4 space-y-3">
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <div className="type-label">Buyer</div>
                 <div className="flex items-center gap-2 mt-1 flex-wrap">
-                  <span className="type-row-title">{deal.buyer}</span>
+                  <DealParties deal={deal} role="BUYER" />
                   {isInfraFund(deal.buyer) && (
                     <Tag variant="solid">Infra fund</Tag>
                   )}
@@ -812,7 +861,7 @@ function DealDrawer({
               <div>
                 <div className="type-label">Seller</div>
                 <div className="flex items-center gap-2 mt-1 flex-wrap">
-                  <span className="type-row-title">{deal.seller}</span>
+                  <DealParties deal={deal} role="SELLER" />
                   {isInfraFund(deal.seller) && (
                     <Tag variant="solid">Infra fund</Tag>
                   )}
@@ -840,45 +889,45 @@ function DealDrawer({
                 <div className="type-label">Announced</div>
                 <div className="type-meta mono tabular-nums mt-0.5">{formatDate(deal.date)}</div>
               </div>
-              {deal.closingDate && (
+              {detail?.closingDate && (
                 <div>
                   <div className="type-label">Expected close</div>
-                  <div className="type-meta mono tabular-nums mt-0.5">{formatDate(deal.closingDate)}</div>
+                  <div className="type-meta mono tabular-nums mt-0.5">{formatDate(detail.closingDate)}</div>
                 </div>
               )}
-              {deal.assetScale && (
+              {detail?.assetScale && (
                 <div>
                   <div className="type-label">Scale</div>
-                  <div className="type-meta mt-0.5">{deal.assetScale}</div>
+                  <div className="type-meta mt-0.5">{detail.assetScale}</div>
                 </div>
               )}
-              {deal.fundVehicle && (
+              {detail?.fundVehicle && (
                 <div>
                   <div className="type-label">Fund</div>
-                  <div className="type-meta mt-0.5">{deal.fundVehicle}</div>
+                  <div className="type-meta mt-0.5">{detail.fundVehicle}</div>
                 </div>
               )}
             </div>
           </div>
 
           {/* Target overview */}
-          {deal.targetDescription && (
+          {detail?.targetDescription && (
             <div>
               <div className="type-section-title text-[var(--text-tertiary)] mb-2">Overview</div>
               <p className="type-meta">
-                {deal.targetDescription}
+                {detail.targetDescription}
               </p>
             </div>
           )}
 
           {/* Key Highlights */}
-          {deal.keyHighlights && deal.keyHighlights.length > 0 && (
+          {detail?.keyHighlights && detail.keyHighlights.length > 0 && (
             <div className="border-t border-[var(--border)] pt-6">
               <div className="type-section-title text-[var(--text-tertiary)] mb-3">
                 Key highlights
               </div>
               <ul className="space-y-2">
-                {deal.keyHighlights.map((highlight, i) => (
+                {detail.keyHighlights.map((highlight, i) => (
                   <li key={i} className="flex gap-3 type-meta">
                     <span aria-hidden className="mt-2 h-1 w-1 rounded-full bg-[var(--text-tertiary)] shrink-0" />
                     <span className="text-[var(--text-secondary)] leading-relaxed">{highlight}</span>
@@ -895,47 +944,42 @@ function DealDrawer({
                 Advisors
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {deal.financialAdvisorBuyer && (
-                  <AdvisorCard label="Financial advisor (buyer)" firms={deal.financialAdvisorBuyer} />
+                {detail?.financialAdvisorBuyer && (
+                  <AdvisorCard label="Financial advisor (buyer)" firms={detail.financialAdvisorBuyer} />
                 )}
-                {deal.financialAdvisorSeller && (
-                  <AdvisorCard label="Financial advisor (seller)" firms={deal.financialAdvisorSeller} />
+                {detail?.financialAdvisorSeller && (
+                  <AdvisorCard label="Financial advisor (seller)" firms={detail.financialAdvisorSeller} />
                 )}
-                {deal.legalAdvisorBuyer && (
-                  <AdvisorCard label="Legal counsel (buyer)" firms={deal.legalAdvisorBuyer} />
+                {detail?.legalAdvisorBuyer && (
+                  <AdvisorCard label="Legal counsel (buyer)" firms={detail.legalAdvisorBuyer} />
                 )}
-                {deal.legalAdvisorSeller && (
-                  <AdvisorCard label="Legal counsel (seller)" firms={deal.legalAdvisorSeller} />
+                {detail?.legalAdvisorSeller && (
+                  <AdvisorCard label="Legal counsel (seller)" firms={detail.legalAdvisorSeller} />
                 )}
               </div>
             </div>
-          )}
-
-          {/* Source link */}
-          {!!deal.briefings?.length && (
-            <section aria-label="Weekly briefings" className="space-y-2">
-              <h3 className="type-meta font-medium">Featured in weekly briefings</h3>
-              {deal.briefings.map(issue => <a key={issue.edition}
-                className="block type-meta underline"
-                href={withBasePath(`/weekly-briefing?edition=${issue.edition}`)}>{issue.edition}</a>)}
-            </section>
           )}
 
           {deal.sourceUrl && (
-            <div className="border-t border-[var(--border)] pt-6">
+            <section className="border-t border-[var(--border)] pt-6" aria-labelledby="deal-sources-title">
+              <h3 id="deal-sources-title" className="mb-2 type-section-title">Sources</h3>
               <div className="surface px-4 py-3">
-                <div className="type-label mb-1.5">Primary source</div>
-                <a
-                  href={deal.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex max-w-full items-center gap-1.5 type-meta font-medium hover:text-[var(--text-primary)] transition-colors group"
-                >
-                  <span className="truncate">{deal.sourceName || deal.sourceUrl}</span>
-                  <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
-                </a>
+                <div className="type-label">Primary source</div>
+                <DealSourceLink deal={deal} />
               </div>
-            </div>
+            </section>
+          )}
+
+          {!!deal.briefings?.length && (
+            <section aria-labelledby="deal-related-title" className="space-y-2 border-t border-[var(--border)] pt-6">
+              <h3 id="deal-related-title" className="type-section-title">Related research</h3>
+              {deal.briefings.map(issue => (
+                <RecordTitleLink key={issue.edition} className="block w-fit type-meta underline underline-offset-2"
+                  href={`/weekly-briefing?edition=${encodeURIComponent(issue.edition)}`}>
+                  Weekly briefing · {formatDate(issue.edition)}
+                </RecordTitleLink>
+              ))}
+            </section>
           )}
         </div>
       </div>
@@ -944,29 +988,42 @@ function DealDrawer({
 }
 
 // ─── Main Component ─────────────────────────────────────────
-export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: DealView[]; counts: DatabaseCounts; briefingIssues?: { edition: string; archivePath: string }[] }) {
+export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: DealListView[]; counts: DatabaseCounts; briefingIssues?: { edition: string; archivePath: string }[] }) {
   const [briefing, setBriefing] = useUrlQueryState("briefing", "", { resetPage: true });
   const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
-  const [selectedDeal, setSelectedDeal] = useState<DealView | null>(null);
+  const [selectedDeal, setSelectedDeal] = useState<DealListView | null>(null);
   const focusId = useUrlQueryParam("focus");
   const writeQueryParam = useUrlQueryWriter();
   const writeQueryParams = useUrlQueryParamsWriter();
   const canExport = useCanExport();
 
-  // Debounce search for performance
-  const debouncedSearch = useDebounce(search, 300);
+  const query = useUrlSearch();
+  const screen = useMemo(() => new URLSearchParams(query), [query]);
+  const download = dealScreenParams(screen);
+  download.set("scope", "filtered");
 
-  const clearAllFilters = useCallback(() => {
+  const setScreen = useCallback((params: URLSearchParams) => {
     writeQueryParams(
-      { q: null, sector: null, region: null, category: null, briefing: null },
+      { ...Object.fromEntries(DEAL_SCREEN_KEYS.map((key) => [key, params.get(key)])), sort: null },
       { history: "push", resetPage: true },
     );
   }, [writeQueryParams]);
 
-  const openDeal = useCallback((deal: DealView) => {
+  const clearAllFilters = useCallback(() => {
+    setScreen(new URLSearchParams(screen.get("direction") === "asc" ? { direction: "asc" } : {}));
+  }, [screen, setScreen]);
+
+  const setSecondaryFilter = useCallback((key: DealScreenKey, value: string) => {
+    writeQueryParams({ [key]: value || null }, {
+      history: key === "sponsor" ? "replace" : "push",
+      resetPage: true,
+    });
+  }, [writeQueryParams]);
+
+  const openDeal = useCallback((deal: DealListView) => {
     setSelectedDeal(deal);
     writeQueryParam("focus", deal.legacyId, "push");
   }, [writeQueryParam]);
@@ -976,78 +1033,15 @@ export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: De
     writeQueryParam("focus", null, "replace");
   }, [writeQueryParam]);
 
-  const filteredDeals = useMemo(() => {
-    return deals.filter((deal) => {
-      if (briefing && !deal.briefings?.some(issue => issue.edition === briefing)) return false;
-      if (debouncedSearch) {
-        const q = debouncedSearch.toLowerCase();
-        const match =
-          deal.title.toLowerCase().includes(q) ||
-          deal.target.toLowerCase().includes(q) ||
-          deal.buyer.toLowerCase().includes(q) ||
-          deal.seller.toLowerCase().includes(q) ||
-          deal.legacyId.toLowerCase().includes(q) ||
-          deal.category.some((c) => c.toLowerCase().includes(q)) ||
-          deal.subsector.toLowerCase().includes(q);
-        if (!match) return false;
-      }
+  const filteredDeals = useMemo(() => filterDealScreen(deals, screen), [deals, screen]);
 
-      if (activeSectors.size > 0 && !activeSectors.has(deal.sector)) {
-        return false;
-      }
-
-      if (activeRegions.size > 0 && !activeRegions.has(deal.region)) {
-        return false;
-      }
-
-      if (activeCategories.size > 0 && !deal.category.some((c) => activeCategories.has(c))) {
-        return false;
-      }
-
-      return true;
-    });
-  }, [deals, debouncedSearch, activeSectors, activeRegions, activeCategories, briefing]);
-
-  const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
-    const topSector = mostCommonLabel(filteredDeals.map((deal) => deal.sector));
-    const topRegion = mostCommonLabel(filteredDeals.map((deal) => deal.region));
-    const topCategory = mostCommonLabel(filteredDeals.flatMap((deal) => deal.category));
-    const filterCount = activeSectors.size + activeRegions.size + activeCategories.size + (debouncedSearch ? 1 : 0) + (briefing ? 1 : 0);
-
-    return [
-      {
-        label: "Visible deals",
-        value: filteredDeals.length.toLocaleString(),
-        detail: filteredDeals.length === deals.length ? "Full transaction tape" : `${filterCount} active filter${filterCount === 1 ? "" : "s"}`,
-        color: "var(--accent)",
-      },
-      {
-        label: "Latest disclosure",
-        value: latestDealDateLabel(filteredDeals.length > 0 ? filteredDeals : deals),
-        detail: "Most recent matching deal",
-        color: "#3b6cf2",
-      },
-      {
-        label: "Top sector",
-        value: topSector?.label ?? "N/A",
-        detail: topSector ? `${topSector.count.toLocaleString()} deals` : "No sector match",
-        color: topSector ? getSectorColor(topSector.label) : "var(--text-tertiary)",
-      },
-      {
-        label: "Top region",
-        value: topRegion?.label ?? "N/A",
-        detail: topCategory ? `Leading type: ${topCategory.label}` : "No category match",
-        color: topRegion ? getRegionColor(topRegion.label) : "var(--text-tertiary)",
-      },
-    ];
-  }, [filteredDeals, deals, activeSectors, activeRegions, activeCategories, debouncedSearch, briefing]);
-
-  // Close drawer if selected deal is filtered out
-  useEffect(() => {
-    if (selectedDeal && !filteredDeals.find((d) => d.id === selectedDeal.id)) {
-      closeDeal();
-    }
-  }, [closeDeal, filteredDeals, selectedDeal]);
+  const headerMetrics = useMemo<IntelligenceMetric[]>(() => [
+    { label: "Matching deals", value: filteredDeals.length.toLocaleString() },
+    {
+      label: "Latest matching disclosure",
+      value: filteredDeals.length > 0 ? latestDealDateLabel(filteredDeals) : "No matching disclosures",
+    },
+  ], [filteredDeals]);
 
   // URL state remains authoritative for direct links and Back/Forward.
   useEffect(() => {
@@ -1065,17 +1059,13 @@ export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: De
       <DatabaseIntelligenceHeader
         eyebrow="Transaction intelligence"
         title="Infrastructure Deal Tape"
-        summary="A curated transaction database for infrastructure M&A, platform formation, public-market activity, and fund-backed strategic moves."
+        summary="Screen infrastructure transactions by sector, geography, sponsor and deal type."
         metrics={headerMetrics}
-        actions={
-          <div className="flex flex-col items-start gap-2 sm:items-end">
-            <DatabaseTiles counts={counts} />
-            <EmailAccessLinks />
-          </div>
-        }
+        actions={<DatabaseTiles counts={counts} />}
+        compact
       />
 
-      <div className="mb-3 flex flex-wrap items-center gap-2">
+      <div className="mb-3 hidden flex-wrap items-center gap-2 md:flex">
         <label htmlFor="briefing-filter" className="type-meta font-medium">Weekly briefing</label>
         <select id="briefing-filter" value={briefing} onChange={e => setBriefing(e.target.value)}
           className="min-w-0 max-w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2 type-meta focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]">
@@ -1094,43 +1084,59 @@ export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: De
         onToggleRegion={toggleRegion}
         activeCategories={activeCategories}
         onToggleCategory={toggleCategory}
+        deals={deals}
+        briefingIssues={briefingIssues}
+        params={screen}
+        onSecondaryChange={setSecondaryFilter}
         onClearAll={clearAllFilters}
       />
+
+      <section className="surface" aria-labelledby="deal-results-title">
+        <h2 id="deal-results-title" className="sr-only">Deal results</h2>
+        <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
+          <span className="type-meta" aria-live="polite">
+            <span className="mono font-semibold text-[var(--text-primary)] tabular-nums">{filteredDeals.length}</span>
+            {" "}of{" "}
+            <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
+          </span>
+          <div className="flex flex-wrap items-center justify-end gap-1">
+            <DealSavedScreens params={screen} onLoad={setScreen} />
+            {canExport && filteredDeals.length > 0 && (
+              <a
+                href={withBasePath(`/api/exports/deals?${download.toString()}`)}
+                download
+                className="inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              >
+                <Download className="h-3 w-3" />
+                <span className="truncate">Export filtered results</span>
+              </a>
+            )}
+            <a href="#market-snapshot" className="inline-flex h-8 items-center rounded-md px-2 type-micro font-medium hover:bg-[var(--bg-hover)] hover:text-[var(--accent)]">
+              Market snapshot
+            </a>
+          </div>
+        </div>
+
+        {filteredDeals.length === 0 && (
+          <div className="px-3 py-2">
+            <button type="button" onClick={clearAllFilters} className="type-meta underline underline-offset-2">
+              Clear deal filters
+            </button>
+          </div>
+        )}
+        <DealTable filteredDeals={filteredDeals} onSelectDeal={openDeal} />
+      </section>
 
       <MarketSnapshotSection>
         <DynamicInsightsHero filteredDeals={filteredDeals} />
       </MarketSnapshotSection>
 
-      <div className="surface overflow-hidden">
-        <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
-          <span className="type-micro">
-            <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredDeals.length}</span>
-            {" "}of{" "}
-            <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
-          </span>
-          <div className="flex flex-wrap items-center justify-end gap-1">
-            {canExport && (
-              <a
-                href={withBasePath(`/api/exports/deals${briefing ? `?briefing=${encodeURIComponent(briefing)}` : ""}`)}
-                download
-                className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-              >
-                <Download className="h-3 w-3" />
-                <span className="truncate">Export</span>
-              </a>
-            )}
-            <EmailAccessLinks compact />
-          </div>
-        </div>
-
-        <DealTable filteredDeals={filteredDeals} onSelectDeal={openDeal} />
-      </div>
-
       <CTABlock />
 
       {selectedDeal && (
         <DealDrawer
-          deal={selectedDeal}
+          key={selectedDeal.legacyId}
+          summary={selectedDeal}
           onClose={closeDeal}
         />
       )}

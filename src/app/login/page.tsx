@@ -4,6 +4,7 @@ import { normalizeBasePathCallback } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Sign In",
+  robots: { index: false, follow: false },
 };
 
 export default async function LoginPage({

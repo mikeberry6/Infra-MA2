@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect, useCallback } from "react";
 import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
-import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
+import { getPortCoSectorColor, getPortCoStatusColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
 import { withBasePath } from "@/lib/base-path";
 import type { CompanyView, FundStrategyView, DatabaseCounts } from "@/modules/shared/types";
@@ -10,7 +10,6 @@ import {
   Search,
   Download,
   Mail,
-  ChevronRight,
   ArrowDown,
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
@@ -30,6 +29,7 @@ import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/components/shared/DatabaseIntelligenceHeader";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
+import { RecordTitleLink } from "@/components/shared/RecordTitleLink";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
@@ -39,15 +39,8 @@ import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 const INVESTMENT_YEAR_NA = "N/A";
 const PORTCO_PAGE_SIZE = 25;
 
-function mostCommonLabel(items: string[]): { label: string; count: number } | null {
-  const counts = new Map<string, number>();
-  for (const item of items) {
-    if (!item) continue;
-    counts.set(item, (counts.get(item) ?? 0) + 1);
-  }
-  return Array.from(counts.entries())
-    .map(([label, count]) => ({ label, count }))
-    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
+function companyHref(company: CompanyView) {
+  return `/portfolio?focus=${encodeURIComponent(company.id)}`;
 }
 
 // ─── Filter Bar ─────────────────────────────────────────────
@@ -93,7 +86,7 @@ function PortCoFilterBar({
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search PortCos..."
-            aria-label="Search PortCos"
+            aria-label="Search portfolio companies"
           />
         </div>
 
@@ -266,47 +259,23 @@ function PortCoCard({
 }) {
   const display = pickDisplayedFirm(company, activeFirms);
   return (
-    <button
-      onClick={() => onSelect(company)}
-      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-    >
-      <div className="flex items-start justify-between gap-3 mb-2">
-        <h4 className="type-row-title truncate">
-          {company.name}
-        </h4>
-        <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] shrink-0 mt-0.5" />
-      </div>
-      <div className="flex flex-wrap gap-2 mb-2.5">
+    <article className="surface p-3.5">
+      <h3 className="text-base font-semibold leading-snug">
+        <RecordTitleLink href={companyHref(company)} onOpen={() => onSelect(company)}>{company.name}</RecordTitleLink>
+      </h3>
+      <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 type-meta">
+        <span>{display.firm || "—"}</span>
+        {display.isCoOwner && <Tag variant="solid">Co-owner</Tag>}
+        {display.isCoOwner && <span className="type-micro">via {display.primaryFirm}</span>}
+        {company.investmentYear && <span className="mono tabular-nums">{company.investmentYear}</span>}
+      </p>
+      <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+        <Tag color={getPortCoStatusColor(company.status)}>{company.status}</Tag>
         <Tag color={getPortCoSectorColor(company.sector)}>{company.sector}</Tag>
-        {company.subsector && (
-          <span className="type-micro">{company.subsector}</span>
-        )}
+        {company.subsector && <span className="type-meta">{company.subsector}</span>}
+        <span className="type-meta">{company.countryTags.join(", ") || company.country}</span>
       </div>
-      <div className="grid grid-cols-2 gap-3">
-        <div>
-          <div className="type-label">Country</div>
-          <div className="type-meta mt-0.5 truncate">{company.countryTags.join(", ")}</div>
-        </div>
-        <div>
-          <div className="type-label">Firm</div>
-          <div className="flex items-center gap-1.5 min-w-0">
-            <span className="type-meta font-medium truncate">
-              {display.firm || "—"}
-            </span>
-            {display.isCoOwner && <Tag variant="solid">Co-owner</Tag>}
-          </div>
-          {display.isCoOwner ? (
-            <div className="type-micro italic truncate">
-              via {display.primaryFirm}
-            </div>
-          ) : (
-            <div className="type-micro italic truncate">
-              {company.investmentYear ?? INVESTMENT_YEAR_NA}
-            </div>
-          )}
-        </div>
-      </div>
-    </button>
+    </article>
   );
 }
 
@@ -414,30 +383,21 @@ function PortCoTable({
                 <th className="text-left px-3 py-2 type-table-header">
                   Country
                 </th>
-                <th className="w-6" aria-hidden />
+                <th className="text-left px-3 py-2 type-table-header">Status</th>
               </tr>
             </thead>
             <tbody>
-              {visibleCompanies.map((company, i) => {
+              {visibleCompanies.map((company) => {
                 const display = pickDisplayedFirm(company, activeFirms);
                 return (
                 <tr
-                  key={`${company.name}-${company.investmentFirm}-${i}`}
-                  onClick={() => onSelect(company)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      onSelect(company);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={0}
-                  className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group focus:bg-[var(--bg-subtle)] focus:outline-none"
+                  key={company.id}
+                  className="border-b border-[var(--border)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus-within:bg-[var(--bg-subtle)]"
                 >
-                  <td className="px-3 py-2.5 align-top max-w-[260px]">
-                    <span title={company.name} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
+                  <td className="max-w-[260px] whitespace-normal px-3 py-2.5 align-top">
+                    <RecordTitleLink href={companyHref(company)} onOpen={() => onSelect(company)} className="block w-fit rounded-sm text-[14px] leading-snug">
                       {company.name}
-                    </span>
+                    </RecordTitleLink>
                   </td>
                   <td className="px-3 py-2.5 align-top max-w-[200px]">
                     <div className="flex items-center gap-1.5 min-w-0">
@@ -451,7 +411,7 @@ function PortCoTable({
                         via {display.primaryFirm}
                       </span>
                     ) : (
-                      <span className="type-micro italic truncate block">
+                      <span className="type-micro mono tabular-nums truncate block">
                         {company.investmentYear ?? INVESTMENT_YEAR_NA}
                       </span>
                     )}
@@ -465,8 +425,8 @@ function PortCoTable({
                   <td className="px-3 py-2.5 align-top">
                     <span className="type-meta">{company.countryTags.join(", ")}</span>
                   </td>
-                  <td className="px-2 py-2.5 align-middle text-right">
-                    <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--text-secondary)] transition-all inline-block" />
+                  <td className="px-3 py-2.5 align-top">
+                    <Tag color={getPortCoStatusColor(company.status)}>{company.status}</Tag>
                   </td>
                 </tr>
                 );
@@ -507,7 +467,8 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   const [activeFirms, toggleFirm] = useUrlFilterSet("firm");
   const [activeInvestmentYears, toggleInvestmentYear] = useUrlFilterSet("year");
   const [selectedCompany, setSelectedCompany] = useState<CompanyView | null>(null);
-  const [selectedCompanyDetail, setSelectedCompanyDetail] = useState<CompanyView | null>(null);
+  const [companyDetail, setCompanyDetail] = useState<{ id: string; attempt: number; company?: CompanyView; failed?: boolean } | null>(null);
+  const [detailAttempt, setDetailAttempt] = useState(0);
   const focusId = useUrlQueryParam("focus");
   const writeQueryParam = useUrlQueryWriter();
   const writeQueryParams = useUrlQueryParamsWriter();
@@ -522,7 +483,6 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
   const closeCompany = useCallback(() => {
     setSelectedCompany(null);
-    setSelectedCompanyDetail(null);
     writeQueryParam("focus", null, "replace");
   }, [writeQueryParam]);
 
@@ -537,30 +497,27 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     if (!match) writeQueryParam("focus", null, "replace");
   }, [focusId, portcos, writeQueryParam]);
 
+  const selectedCompanyId = selectedCompany?.id;
   useEffect(() => {
-    if (!selectedCompany) {
-      setSelectedCompanyDetail(null);
-      return;
+    if (!selectedCompanyId) return;
+    const controller = new AbortController();
+
+    async function loadCompany(id: string) {
+      try {
+        const response = await fetch(withBasePath(`/api/portfolio/${encodeURIComponent(id)}`), { signal: controller.signal });
+        if (!response.ok) throw new Error("PortCo detail request failed");
+        const data: { company?: CompanyView } = await response.json();
+        if (!data.company || data.company.id !== id) throw new Error("PortCo detail did not match");
+        if (!controller.signal.aborted) setCompanyDetail({ id, attempt: detailAttempt, company: data.company });
+      } catch {
+        if (!controller.signal.aborted) setCompanyDetail({ id, attempt: detailAttempt, failed: true });
+      }
     }
 
-    let cancelled = false;
-    setSelectedCompanyDetail(null);
-
-    fetch(withBasePath(`/api/portfolio/${encodeURIComponent(selectedCompany.id)}`))
-      .then((response) => response.ok ? response.json() : null)
-      .then((data) => {
-        if (!cancelled && data?.company) {
-          setSelectedCompanyDetail(data.company);
-        }
-      })
-      .catch(() => {
-        if (!cancelled) setSelectedCompanyDetail(null);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [selectedCompany]);
+    void loadCompany(selectedCompanyId);
+    return () => controller.abort();
+  }, [selectedCompanyId, detailAttempt]);
+  const currentDetail = companyDetail && companyDetail.id === selectedCompanyId && companyDetail.attempt === detailAttempt ? companyDetail : null;
 
   const clearFilters = useCallback(() => {
     writeQueryParams(
@@ -626,48 +583,23 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   }, [closeCompany, filteredCompanies, selectedCompany]);
 
   const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
-    const sponsorCount = new Set(filteredCompanies.flatMap(getAllOwnerFirms)).size;
     const activeCount = filteredCompanies.filter((company) => company.status === "Active").length;
-    const topSector = mostCommonLabel(filteredCompanies.map((company) => company.sector));
-    const topCountry = mostCommonLabel(filteredCompanies.flatMap((company) => company.countryTags.length > 0 ? company.countryTags : [company.country]));
-    const filterCount = activeSectors.size + activeCountryTags.size + activeFirms.size + activeInvestmentYears.size + (debouncedSearch ? 1 : 0);
-
     return [
-      {
-        label: "Visible PortCos",
-        value: filteredCompanies.length.toLocaleString(),
-        detail: filteredCompanies.length === portcos.length ? "Full PortCo universe" : `${filterCount} active filter${filterCount === 1 ? "" : "s"}`,
-        color: "var(--accent)",
-      },
-      {
-        label: "Sponsors",
-        value: sponsorCount.toLocaleString(),
-        detail: "Current and co-owner firms",
-        color: "#7d6cf0",
-      },
-      {
-        label: "Active PortCos",
-        value: activeCount.toLocaleString(),
-        detail: `${(filteredCompanies.length - activeCount).toLocaleString()} realized PortCos`,
-        color: "#3b6cf2",
-      },
-      {
-        label: "Top sector",
-        value: topSector?.label ?? "N/A",
-        detail: topCountry ? `Leading country: ${topCountry.label}` : "No country match",
-        color: topSector ? getPortCoSectorColor(topSector.label) : "var(--text-tertiary)",
-      },
+      { label: "Matching PortCos", value: filteredCompanies.length.toLocaleString() },
+      { label: "Active", value: activeCount.toLocaleString() },
+      { label: "Realized", value: (filteredCompanies.length - activeCount).toLocaleString() },
     ];
-  }, [filteredCompanies, portcos, activeSectors, activeCountryTags, activeFirms, activeInvestmentYears, debouncedSearch]);
+  }, [filteredCompanies]);
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
       <DatabaseIntelligenceHeader
         eyebrow="PortCo intelligence"
-        title="Infrastructure PortCo Database"
-        summary="PortCos, projects, ownership periods, strategy exposure, and evidence trails across infrastructure fund holdings."
+        title="Infrastructure Portfolio Company Database"
+        summary="Screen infrastructure companies by sponsor, sector, geography and investment year."
         metrics={headerMetrics}
         actions={<DatabaseTiles counts={counts} />}
+        compact
       />
 
       <PortCoFilterBar
@@ -686,18 +618,15 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         onClearAll={clearFilters}
       />
 
-      <MarketSnapshotSection>
-        <PortCoInsightsHero companies={filteredCompanies} />
-      </MarketSnapshotSection>
-
-      <div className="surface overflow-hidden">
+      <section aria-labelledby="portco-results-title" className="surface">
+        <h2 id="portco-results-title" className="sr-only">PortCo results</h2>
         <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
-          <span className="type-micro">
+          <span className="type-meta" aria-live="polite">
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredCompanies.length}</span>
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{portcos.length}</span> PortCos
           </span>
-          <div className="hidden sm:flex items-center gap-1">
+          <div className="flex items-center gap-1">
             {canExport && (
               <a
                 href={withBasePath("/api/exports/portfolio")}
@@ -723,15 +652,21 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
           activeFirms={activeFirms}
           onSelect={openCompany}
         />
-      </div>
+      </section>
+
+      <MarketSnapshotSection>
+        <PortCoInsightsHero companies={filteredCompanies} />
+      </MarketSnapshotSection>
 
       <CTABlock />
 
       {selectedCompany && (
         <PortCoDrawer
-          company={selectedCompanyDetail ?? selectedCompany}
+          company={currentDetail?.company ?? selectedCompany}
           funds={funds}
           onClose={closeCompany}
+          detailState={currentDetail?.company ? "ready" : currentDetail?.failed ? "error" : "loading"}
+          onRetry={() => setDetailAttempt((attempt) => attempt + 1)}
         />
       )}
     </div>

@@ -41,8 +41,8 @@ export function DatabaseTiles({ counts }: DatabaseTilesProps) {
   const pathname = usePathname();
 
   return (
-    <div
-      role="tablist"
+    <nav
+      aria-label="Databases"
       className="inline-flex items-center gap-1 p-1 rounded-lg bg-[var(--bg-hover)]"
     >
       {tiles.map((tile) => {
@@ -50,10 +50,9 @@ export function DatabaseTiles({ counts }: DatabaseTilesProps) {
         return (
           <Link
             key={tile.key}
-            role="tab"
-            aria-selected={isActive}
+            aria-current={isActive ? "page" : undefined}
             href={tile.href}
-            className={`inline-flex items-center gap-2 h-7 px-3 rounded-md type-meta font-medium transition-colors ${
+            className={`inline-flex items-center gap-2 min-h-9 px-3 rounded-md type-meta font-medium transition-colors ${
               isActive
                 ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
                 : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -68,6 +67,6 @@ export function DatabaseTiles({ counts }: DatabaseTilesProps) {
           </Link>
         );
       })}
-    </div>
+    </nav>
   );
 }

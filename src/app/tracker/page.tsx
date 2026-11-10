@@ -1,19 +1,17 @@
 export const revalidate = 300;
 
-import type { Metadata } from "next";
-import { getAllDeals, getBriefingIssues } from "@/modules/deals/queries";
+import { publicMetadata } from "@/lib/public-metadata";
+import { getDealList, getBriefingIssues } from "@/modules/deals/queries";
 import { getDatabaseCounts } from "@/modules/insights/queries";
 import { DealDatabaseClient } from "@/components/DealDatabaseClient";
 import { DataUnavailable } from "@/components/shared/DataUnavailable";
 
-export const metadata: Metadata = {
-  title: "Deal Tracker",
-};
+export const metadata = publicMetadata("/tracker");
 
 export default async function TrackerPage() {
   try {
     const [deals, counts, briefingIssues] = await Promise.all([
-      getAllDeals(),
+      getDealList(),
       getDatabaseCounts(),
       getBriefingIssues(),
     ]);
