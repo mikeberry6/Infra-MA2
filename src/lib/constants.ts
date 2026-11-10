@@ -142,6 +142,14 @@ export const PORTCO_COUNTRY_TAGS: PortCoCountryTag[] = ["United States", "Canada
 // When adding a deal whose buyer is a corporate acquirer, undisclosed party,
 // or non-infra investor, add the exact name here.
 export const NON_INFRA_FUND_ENTITIES = new Set<string>([
+  // Non-fund parties in the November 7 briefing.
+  "1248 Holdings",
+  "Adani Infra (India) Limited",
+  "Avolon",
+  "DTE Energy",
+  "Ormat Nevada",
+  "Speedcast",
+  "The Andersons",
   // Corporate/operating counterparties in the approved 2026 weekly backfill.
   "Public Shareholders",
   "Orient Cement",
