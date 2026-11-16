@@ -11,8 +11,10 @@ for name in VERCEL_TOKEN VERCEL_PROJECT_ID VERCEL_ORG_ID GITHUB_REF_NAME GITHUB_
     exit 1
   fi
 done
-[[ "$NEWS_STAGING_URL" == "https://infra-ma-2-news-stage-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.vercel.app/Infra-MA2" &&
-  "$NEWS_STAGING_SCHEDULE_NAME" == "stage-news-digest-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" &&
+preview_run="${NEWS_STAGING_PREVIEW_RUN:-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT}"
+[[ "$preview_run" =~ ^[0-9]+-[0-9]+$ &&
+  "$NEWS_STAGING_URL" == "https://infra-ma-2-news-stage-$preview_run.vercel.app/Infra-MA2" &&
+  "$NEWS_STAGING_SCHEDULE_NAME" == "stage-news-digest-$preview_run" &&
   "$VERCEL_ORG_ID" =~ ^team_[A-Za-z0-9]+$ && "$VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]]
 node --experimental-strip-types scripts/assert-database-target.ts
 
@@ -21,12 +23,14 @@ stage_host="${NEWS_STAGING_URL#https://}"
 stage_host="${stage_host%%/*}"
 deployment="$(curl -fsS --max-time 30 -H "$auth_header" "https://api.vercel.com/v13/deployments/$stage_host?teamId=$VERCEL_ORG_ID")"
 jq -e --arg target "$NEWS_STAGING_DEPLOYMENT_ID" --arg project "$VERCEL_PROJECT_ID" --arg branch "$GITHUB_REF_NAME" \
-  '.id == $target and .projectId == $project and .target == null and .readyState == "READY" and .meta.githubCommitRef == $branch' <<< "$deployment" > /dev/null
+  --arg run "${preview_run%-*}" --arg dbbranch "$NEWS_STAGING_BRANCH_ID" \
+  '.id == $target and .projectId == $project and .target == null and .readyState == "READY" and .meta.githubCommitRef == $branch
+  and .meta.newsStagingRun == $run and .meta.newsStagingBranch == $dbbranch' <<< "$deployment" > /dev/null
 owner="$(jq -er '.creator.uid' <<< "$deployment")"
 [[ "$owner" =~ ^[A-Za-z0-9_-]+$ ]]
 encoded_branch="$(jq -nr --arg branch "$GITHUB_REF_NAME" '$branch | @uri')"
-branch_query="teamId=$VERCEL_ORG_ID&projectId=$VERCEL_PROJECT_ID&branch=$encoded_branch"
-schedule_query="$branch_query&user=$owner"
+project_query="teamId=$VERCEL_ORG_ID&projectId=$VERCEL_PROJECT_ID"
+branch_query="$project_query&branch=$encoded_branch"
 schedule_api="https://vercel-schedules.com/v1/schedules/$NEWS_STAGING_SCHEDULE_NAME"
 
 feed_url="$NEWS_STAGING_URL/news?period=All"
@@ -63,10 +67,17 @@ try {
 }
 JS
 
-if ! schedule_before="$(curl -fs --max-time 30 -H "$auth_header" "$schedule_api?$schedule_query")"; then
-  schedule_query="$branch_query"
-  schedule_before="$(curl -fsS --max-time 30 -H "$auth_header" "$schedule_api?$schedule_query")"
-fi
+schedule_before=""
+for schedule_query in "$branch_query&user=$owner" "$branch_query" "$project_query&user=$owner"; do
+  lookup="$(curl -sS --max-time 30 -H "$auth_header" -w $'\n%{http_code}' "$schedule_api?$schedule_query")"
+  if [[ "${lookup##*$'\n'}" == 200 ]]; then
+    schedule_before="${lookup%$'\n'*}"
+    break
+  fi
+  printf 'Staging schedule lookup returned HTTP %s.\n' "${lookup##*$'\n'}"
+  jq -c '{code: (.error.code // .code), message: (.error.message // .message)}' <<< "${lookup%$'\n'*}" || true
+done
+[[ -n "$schedule_before" ]] || exit 1
 schedule_id="$(jq -er --arg name "$NEWS_STAGING_SCHEDULE_NAME" --arg project "$VERCEL_PROJECT_ID" \
   'select(.name == $name and .projectId == $project and .source == "static" and .state == "inactive"
     and .expression.cron == "15 6 * * *" and .timezone == "America/New_York"
@@ -74,7 +85,7 @@ schedule_id="$(jq -er --arg name "$NEWS_STAGING_SCHEDULE_NAME" --arg project "$V
     and .target.requestMethod == "POST") | .scheduleId' <<< "$schedule_before")"
 [[ "$schedule_id" =~ ^sch_[A-Za-z0-9_-]+$ ]]
 export NEWS_STAGING_SCHEDULE_ID="$schedule_id"
-export NEWS_STAGING_DEPLOYMENT_NONCE="$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+export NEWS_STAGING_DEPLOYMENT_NONCE="$preview_run"
 
 invoke_at="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
 export NEWS_STAGING_DIGEST_INVOKE_AT="$invoke_at"
