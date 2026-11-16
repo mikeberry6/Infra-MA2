@@ -40,15 +40,20 @@ jobs:
             if (!response.ok) throw new Error(`Neon read ${path} returned HTTP ${response.status}`);
             return response.json();
           };
-          const { branches } = await read("/branches");
-          for (const branch of branches) {
-            const info = await read(`/branches/${branch.id}`);
-            const endpoints = (await read(`/branches/${branch.id}/endpoints`)).endpoints;
-            console.log(JSON.stringify({
-              id: branch.id, name: branch.name, primary: branch.primary ?? null, default: branch.default ?? null,
-              initSource: branch.init_source ?? null, hasAnnotation: Boolean(info.annotation),
-              annotationShape: Object.keys(info.annotation ?? {}),
-              endpointLabels: endpoints.map(({ host }) => labels.get(normalize(host)) ?? "other"),
-            }));
-          }
+          const info = await read("/branches/br-rough-term-amnv0r82");
+          const branch = info.branch;
+          const endpointData = await read(`/branches/${branch.id}/endpoints`);
+          const annotations = info.annotation?.value;
+          console.log(JSON.stringify({
+            id: branch.id, name: branch.name, primary: branch.primary ?? null, default: branch.default ?? null,
+            parentId: branch.parent_id ?? null, initSource: branch.init_source ?? null,
+            annotationValueType: typeof annotations,
+            annotationKeys: Object.keys(annotations ?? {}),
+            matchesPurpose: annotations?.stagingPurpose === "evidence-news",
+            matchesRun: annotations?.stagingRun === "43805918495",
+            matchesSchemaSource: annotations?.schemaSource === "br-autumn-feather-amwo1hya",
+            endpointLabels: endpointData.endpoints.map((endpoint) => ({
+              branchId: endpoint.branch_id, type: endpoint.type, hostLabel: labels.get(normalize(endpoint.host)) ?? "other",
+            })),
+          }));
           NODE
