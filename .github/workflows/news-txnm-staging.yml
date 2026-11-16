@@ -1,0 +1,133 @@
+name: Live TXNM staging verification
+
+on:
+  push:
+    branches: [codex/evidence-backed-news-staging]
+    paths:
+      - ".github/workflows/news-txnm-staging.yml"
+      - ".github/staging/**"
+      - "scripts/*news*staging*"
+      - "src/modules/news-evidence/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: news-evidence-txnm-staging
+  cancel-in-progress: false
+
+jobs:
+  pilot:
+    if: github.ref == 'refs/heads/codex/evidence-backed-news-staging'
+    runs-on: ubuntu-latest
+    environment: staging
+    timeout-minutes: 45
+    env:
+      NEWS_PIPELINE_TARGET: staging
+      NEWS_EVIDENCE_ENABLED: "true"
+      NEWS_DEAL_MUTATIONS_ENABLED: "false"
+      NEXT_TELEMETRY_DISABLED: "1"
+      NEWS_PROCESSING_VERSION: txnm-staging-live-1
+      NEWS_MODEL_TIMEOUT_MS: "100000"
+      NEWS_MODEL_MAX_ATTEMPTS: "2"
+      NEWS_TXNM_STAGING_ORIGIN: http://127.0.0.1:3100
+      NEXTAUTH_URL: http://127.0.0.1:3100/Infra-MA2/api/auth
+      BASELINE_SHA: a37f0f16d6a61fbe119aa2b822eaca603250bdab
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 3
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/audits/*
+            /audits/briefing-deals/archive.json
+            /audits/weekly-briefing-activity/
+            /audits/deal-portco-flowthrough-2026-05-05.md
+            !/outputs/
+            !/deliverables/
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Provision the isolated Neon staging database
+        env:
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+          NEON_PROJECT_ID: ${{ vars.NEON_PROJECT_ID }}
+          NEON_VALIDATION_PARENT_BRANCH: ${{ vars.NEON_VALIDATION_PARENT_BRANCH }}
+          PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+        run: node scripts/provision-news-staging.mjs
+      - name: Apply baseline and evidence migration to the fresh staging database
+        run: |
+          node --experimental-strip-types scripts/assert-database-target.ts
+          work="${RUNNER_TEMP}/infra-news-schema"
+          mkdir -p "$work"
+          if ! git cat-file -e "$BASELINE_SHA^{commit}"; then
+            git fetch --filter=blob:none --no-tags --depth=1 origin "$BASELINE_SHA"
+          fi
+          git show "$BASELINE_SHA:prisma/schema.prisma" > "$work/baseline.prisma"
+          npx prisma migrate diff --from-empty --to-schema "$work/baseline.prisma" --script > "$work/baseline.sql"
+          npx prisma db execute --file "$work/baseline.sql"
+          npx prisma db execute --file prisma/migrations/20261115220000_news_evidence/migration.sql
+          npx prisma migrate diff --from-schema prisma/schema.prisma --to-config-datasource --exit-code
+      - name: Seed isolated admin and stage the verified filing
+        run: |
+          admin_email="txnm-staging-${GITHUB_RUN_ID}@example.test"
+          admin_password="Txnm9!$(openssl rand -hex 20)"
+          auth_secret="$(openssl rand -hex 32)"
+          printf '::add-mask::%s\n' "$admin_password" "$auth_secret"
+          ADMIN_EMAIL="$admin_email" ADMIN_PASSWORD="$admin_password" npm run admin:create
+          printf 'NEWS_TXNM_STAGING_ADMIN_EMAIL=%s\nNEWS_TXNM_STAGING_ADMIN_PASSWORD=%s\nNEXTAUTH_SECRET=%s\n' \
+            "$admin_email" "$admin_password" "$auth_secret" >> "$GITHUB_ENV"
+          npx tsx scripts/check-news-txnm-staging.ts prepare
+      - name: Process the TXNM filing with live Luna and Sol
+        id: process
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/run-with-retry.mjs --attempts=2 --base-delay-ms=35000 -- npm run news:evidence -- process --limit=15
+      - name: Report sanitized processing receipts
+        if: ${{ !cancelled() && steps.process.outcome != 'skipped' }}
+        run: npx tsx scripts/check-news-txnm-staging.ts diagnose
+      - name: Verify live receipts and the evidence-backed draft
+        run: npx tsx scripts/check-news-txnm-staging.ts before
+      - name: Build the isolated staging application
+        run: npm run build
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify the feed before and after staging-only editorial approval
+        env:
+          NEWS_TXNM_STAGING_SMOKE: "true"
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3100 > "${RUNNER_TEMP}/news-stage-app.log" 2>&1 &
+          app_pid=$!
+          trap 'kill "$app_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 40); do
+            if curl --silent --fail --output /dev/null "$NEWS_TXNM_STAGING_ORIGIN/Infra-MA2/news?period=All"; then break; fi
+            if ! kill -0 "$app_pid" || [[ $attempt == 40 ]]; then
+              echo "::error::The isolated staging application did not start."
+              exit 1
+            fi
+            sleep 1
+          done
+          npx tsx scripts/verify-news-txnm-staging.ts
+          npx tsx scripts/check-news-txnm-staging.ts after
+      - name: Deploy a staging-only Vercel Preview
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: team_5n5cDMTg05n53JAZ7Wz5Z336
+          VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+          PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+        run: |
+          export NEWS_DIGEST_START_DATE="$(TZ=America/New_York date +%F)"
+          printf 'NEWS_DIGEST_START_DATE=%s\n' "$NEWS_DIGEST_START_DATE" >> "$GITHUB_ENV"
+          bash scripts/deploy-news-staging.sh
+      - name: Verify the hosted feed and activate the staging digest
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: team_5n5cDMTg05n53JAZ7Wz5Z336
+          VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+        run: bash scripts/enable-news-staging-digest.sh

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "schedules": {
+    "stage-news-digest": {
+      "schedule": "15 6 * * *",
+      "timezone": "America/New_York",
+      "path": "/Infra-MA2/api/internal/staging-news-digest",
+      "requestMethod": "POST"
+    }
+  }
+}
