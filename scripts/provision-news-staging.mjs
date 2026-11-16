@@ -147,14 +147,22 @@ async function main() {
   }
 
   const parameters = new URLSearchParams({
-    branch_id: verified.id, endpoint_id: endpoint.id, database_name: databaseName, role_name: roleName,
+    branch_id: verified.id, endpoint_id: endpoint.id, database_name: databaseName, role_name: roleName, pooled: "false",
   });
   const { uri } = await api(`/connection_uri?${parameters}`);
-  const target = new URL(uri);
-  if (target.protocol !== "postgresql:" || target.hostname !== endpoint.host ||
-      target.pathname !== `/${databaseName}` || target.username !== roleName || !target.password ||
-      /[\r\n]/.test(uri) || forbidden.has(endpointHost(target.hostname))) {
-    throw new Error("Neon did not return the expected staging database credentials.");
+  const target = typeof uri === "string" ? URL.parse(uri) : null;
+  const checks = {
+    validUrl: Boolean(target),
+    postgresProtocol: ["postgresql:", "postgres:"].includes(target?.protocol),
+    stagingEndpoint: Boolean(target && endpointHost(target.hostname) === endpointHost(endpoint.host)),
+    stagingDatabase: target?.pathname === `/${databaseName}`,
+    stagingRole: target?.username === roleName,
+    passwordPresent: Boolean(target?.password),
+    allowedHost: Boolean(target?.hostname && !forbidden.has(endpointHost(target.hostname))),
+    oneLine: typeof uri === "string" && !/[\r\n]/.test(uri),
+  };
+  if (!Object.values(checks).every(Boolean)) {
+    throw new Error(`Neon did not return the expected staging database credentials. ${JSON.stringify(checks)}`);
   }
 
   console.log(`::add-mask::${uri}`);

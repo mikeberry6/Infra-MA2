@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { requireAdminIdentity } from "@/modules/auth/guards";
+import { evidenceSchema } from "@/modules/news-evidence/contracts";
 import { newsEvidenceEnabled } from "@/modules/news-evidence/feature";
 import { dealLifecycleProposalSchema } from "@/modules/news-evidence/mutations";
 import { canPublishVersion, isApprovedEdgarUrl } from "@/modules/news-evidence/policy";
@@ -34,6 +35,7 @@ export default async function NewsReviewDetailPage({ params }: { params: Promise
   const { development, sourceVersion } = revision;
   const { document } = sourceVersion;
   const decision = object(revision.decisionDetails);
+  const qualificationEvidence = evidenceSchema.safeParse(decision.qualificationEvidence);
   const proposal = dealLifecycleProposalSchema.safeParse(revision.proposal);
   const currentApproval = development.approvedRevisionId === revision.id;
   const canApprove = revision.publicationEligibility === "READY_FOR_REVIEW"
@@ -66,6 +68,12 @@ export default async function NewsReviewDetailPage({ params }: { params: Promise
         </dl>
         {typeof decision.reason === "string" && <p className="type-meta text-[var(--text-secondary)]">{decision.reason}</p>}
         {typeof decision.qualificationReason === "string" && <p className="type-meta text-[var(--text-secondary)]">{decision.qualificationReason}</p>}
+        {qualificationEvidence.success && retainsEvidence(sourceVersion) && (
+          <blockquote className="border-l-2 border-[var(--border)] pl-3 type-meta text-[var(--text-secondary)]">
+            <p className="break-words">{qualificationEvidence.data.quote}</p>
+            <footer className="mt-1 type-micro">{document.sourceName} · Section {qualificationEvidence.data.section}</footer>
+          </blockquote>
+        )}
       </section>
 
       <section className="surface space-y-3 p-4" aria-labelledby="claim-heading">

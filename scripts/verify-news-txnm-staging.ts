@@ -79,21 +79,34 @@ async function main() {
     await signIn.click();
     await editor.waitForURL(draftUrl);
 
-    checkpoint = "verify the exact TXNM signing draft and its source evidence";
+    checkpoint = "verify the TXNM signing draft and review classification";
     const heading = editor.getByRole("heading", { level: 1 });
     await expect(heading).toHaveText(/\bTXNM\b/i);
     const title = await heading.innerText();
     const classification = editor.getByRole("region", { name: "Classification" });
     await expect(classification.getByText(/^draft$/i)).toBeVisible();
     await expect(classification.getByText(/^ready for review$/i)).toBeVisible();
-    await expect(classification.getByText(/^undisclosed$/i)).toBeVisible();
     await expect(editor.getByText(/^signing · revision \d+$/i)).toBeVisible();
 
+    checkpoint = "verify the fund is classified as undisclosed";
+    await expect(classification.getByText(/^undisclosed$/i)).toBeVisible();
+
+    checkpoint = "verify the EDGAR accession and the May 19 filing date";
     const evidence = editor.getByRole("region", { name: "Source evidence and extracted facts" });
     await expect(evidence.getByRole("link", { name: "Open filing" })).toHaveAttribute("href", filingUrl);
     await expect(evidence.locator("time")).toHaveText("2025-05-19");
+
+    checkpoint = "verify the May 18 signing date";
     await expect(evidence.locator("blockquote").filter({ hasText: signingDate }).first()).toBeVisible();
-    await expect(evidence.locator("blockquote").filter({ hasText: /Blackstone Infrastructure/i }).first()).toBeVisible();
+
+    checkpoint = "verify the cited Blackstone Infrastructure connection";
+    const matches = editor.getByRole("region", { name: "Entity matches" });
+    const supportingQuotes = classification.locator("blockquote")
+      .or(matches.locator("blockquote"))
+      .or(evidence.locator("blockquote"));
+    await expect(supportingQuotes.filter({ hasText: /Blackstone Infrastructure/i }).first()).toBeVisible();
+
+    checkpoint = "verify the cited $61.25 per share consideration";
     const consideration = evidence.getByRole("listitem").filter({ hasText: /per share consideration/i });
     await expect(consideration.locator("blockquote").filter({ hasText: perShareConsideration }).first()).toBeVisible();
 
