@@ -68,21 +68,26 @@ try {
 JS
 
 schedule_before=""
-for schedule_query in "$branch_query&user=$owner" "$branch_query" "$project_query&user=$owner"; do
-  lookup="$(curl -sS --max-time 30 -H "$auth_header" -w $'\n%{http_code}' "$schedule_api?$schedule_query")"
-  if [[ "${lookup##*$'\n'}" == 200 ]]; then
-    schedule_before="${lookup%$'\n'*}"
-    break
-  fi
-  printf 'Staging schedule lookup returned HTTP %s.\n' "${lookup##*$'\n'}"
-  jq -c '{code: (.error.code // .code), message: (.error.message // .message)}' <<< "${lookup%$'\n'*}" || true
+for attempt in 1 2 3 4 5; do
+  for schedule_query in "$branch_query&user=$owner" "$branch_query" "$project_query&user=$owner"; do
+    lookup="$(curl -sS --max-time 30 -H "$auth_header" -w $'\n%{http_code}' "$schedule_api?$schedule_query")"
+    if [[ "${lookup##*$'\n'}" == 200 ]]; then
+      schedule_before="${lookup%$'\n'*}"
+      break 2
+    fi
+    if [[ "$attempt" == 5 ]]; then
+      printf 'Staging schedule lookup returned HTTP %s.\n' "${lookup##*$'\n'}"
+      jq -c '{code: (.error.code // .code), message: (.error.message // .message)}' <<< "${lookup%$'\n'*}" || true
+    fi
+  done
+  [[ "$attempt" == 5 ]] || sleep 4
 done
 [[ -n "$schedule_before" ]] || exit 1
 schedule_id="$(jq -er --arg name "$NEWS_STAGING_SCHEDULE_NAME" --arg project "$VERCEL_PROJECT_ID" \
   'select(.name == $name and .projectId == $project and .source == "static" and .state == "inactive"
     and .expression.cron == "15 6 * * *" and .timezone == "America/New_York"
     and .target.type == "path" and .target.path == "/Infra-MA2/api/internal/staging-news-digest"
-    and .target.requestMethod == "POST") | .scheduleId' <<< "$schedule_before")"
+    and (.target.requestMethod // "POST") == "POST") | .scheduleId' <<< "$schedule_before")"
 [[ "$schedule_id" =~ ^sch_[A-Za-z0-9_-]+$ ]]
 export NEWS_STAGING_SCHEDULE_ID="$schedule_id"
 export NEWS_STAGING_DEPLOYMENT_NONCE="$preview_run"

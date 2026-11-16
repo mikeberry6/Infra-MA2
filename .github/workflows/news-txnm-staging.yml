@@ -43,7 +43,7 @@ jobs:
       NEWS_MODEL_TIMEOUT_MS: "100000"
       NEWS_MODEL_MAX_ATTEMPTS: "2"
       NEWS_TXNM_STAGING_ORIGIN: http://127.0.0.1:3100
-      NEWS_STAGING_PREVIEW_RUN: "43809630094-1"
+      NEWS_STAGING_REUSE_APPROVAL: "true"
       NEXTAUTH_URL: http://127.0.0.1:3100/Infra-MA2/api/auth
       BASELINE_SHA: a37f0f16d6a61fbe119aa2b822eaca603250bdab
     steps:
@@ -128,7 +128,7 @@ jobs:
           npx tsx scripts/check-news-txnm-staging.ts prepare
       - name: Process the TXNM filing with live Luna and Sol
         id: process
-        if: env.NEWS_STAGING_PREVIEW_RUN == ''
+        if: env.NEWS_STAGING_REUSE_APPROVAL != 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node scripts/run-with-retry.mjs --attempts=2 --base-delay-ms=35000 -- npm run news:evidence -- process --limit=15
@@ -138,13 +138,13 @@ jobs:
       - name: Verify live receipts and the evidence-backed draft
         run: npx tsx scripts/check-news-txnm-staging.ts before
       - name: Build the isolated staging application
-        if: env.NEWS_STAGING_PREVIEW_RUN == ''
+        if: env.NEWS_STAGING_REUSE_APPROVAL != 'true'
         run: npm run build
       - name: Install Chromium
-        if: env.NEWS_STAGING_PREVIEW_RUN == ''
+        if: env.NEWS_STAGING_REUSE_APPROVAL != 'true'
         run: npx playwright install --with-deps chromium
       - name: Verify the feed before and after staging-only editorial approval
-        if: env.NEWS_STAGING_PREVIEW_RUN == ''
+        if: env.NEWS_STAGING_REUSE_APPROVAL != 'true'
         env:
           NEWS_TXNM_STAGING_SMOKE: "true"
         run: |
@@ -161,8 +161,11 @@ jobs:
           done
           npx tsx scripts/verify-news-txnm-staging.ts
           npx tsx scripts/check-news-txnm-staging.ts after
+      - name: Verify the saved staging approval before deploying
+        if: steps.provision.outcome == 'success' && env.NEWS_STAGING_REUSE_APPROVAL == 'true'
+        run: npx tsx scripts/check-news-txnm-staging.ts after
       - name: Deploy a staging-only Vercel Preview
-        if: steps.provision.outcome == 'success' && env.NEWS_STAGING_PREVIEW_RUN == ''
+        if: steps.provision.outcome == 'success'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
@@ -173,14 +176,6 @@ jobs:
           export NEWS_DIGEST_START_DATE="$(TZ=America/New_York date +%F)"
           printf 'NEWS_DIGEST_START_DATE=%s\n' "$NEWS_DIGEST_START_DATE" >> "$GITHUB_ENV"
           bash scripts/deploy-news-staging.sh
-      - name: Resume from the verified staging Preview
-        if: steps.provision.outcome == 'success' && env.NEWS_STAGING_PREVIEW_RUN == '43809630094-1'
-        run: |
-          npx tsx scripts/check-news-txnm-staging.ts after
-          printf '%s\n' \
-            'NEWS_STAGING_URL=https://infra-ma-2-news-stage-43809630094-1.vercel.app/Infra-MA2' \
-            'NEWS_STAGING_DEPLOYMENT_ID=dpl_5APU3S5hkqLVCt4k9DentEUCp4eu' \
-            'NEWS_STAGING_SCHEDULE_NAME=stage-news-digest-43809630094-1' >> "$GITHUB_ENV"
       - name: Verify the hosted feed and activate the staging digest
         if: steps.provision.outcome == 'success'
         env:

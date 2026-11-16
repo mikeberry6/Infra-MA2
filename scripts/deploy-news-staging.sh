@@ -18,14 +18,17 @@ node --experimental-strip-types scripts/assert-database-target.ts
 
 base_path="/Infra-MA2"
 schedule_name="stage-news-digest-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
-config_file=".github/staging/vercel-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.json"
+config_file="vercel.json"
 
-if [[ -e .vercelignore || -e "$config_file" ]]; then
-  echo "::error::The staging upload files already exist."
+if [[ -e .vercelignore || ! -f "$config_file" ]]; then
+  echo "::error::The repository is not ready for the staging upload."
   exit 1
 fi
+original_config="$(mktemp "${RUNNER_TEMP:-/tmp}/news-vercel-config.XXXXXX")"
+cp "$config_file" "$original_config"
 cleanup_upload_files() {
-  node -e 'for (const file of process.argv.slice(1)) { try { require("node:fs").unlinkSync(file); } catch (error) { if (error.code !== "ENOENT") throw error; } }' .vercelignore "$config_file"
+  mv "$original_config" "$config_file"
+  rm -f .vercelignore
 }
 trap cleanup_upload_files EXIT
 cat > .vercelignore <<'IGNORE'
@@ -40,8 +43,8 @@ cat > .vercelignore <<'IGNORE'
 /playwright-report/
 /tmp/
 IGNORE
-jq --arg schedule "$schedule_name" '.schedules = {($schedule): .schedules["stage-news-digest"]}' \
-  .github/staging/vercel.json > "$config_file"
+jq --arg schedule "$schedule_name" --slurpfile staging .github/staging/vercel.json \
+  '.schedules = {($schedule): $staging[0].schedules["stage-news-digest"]}' "$original_config" > "$config_file"
 staging_alias="infra-ma-2-news-stage-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.vercel.app"
 production_host="${PRODUCTION_URL#https://}"
 production_host="${production_host%%/*}"
@@ -77,7 +80,7 @@ if [[ -n "${NEWS_DIGEST_START_DATE:-}" ]]; then
   [[ "$NEWS_DIGEST_START_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]
   deploy_env+=("NEWS_DIGEST_ENABLED=true" "NEWS_DIGEST_START_DATE=$NEWS_DIGEST_START_DATE" "CRON_SECRET=$cron_secret")
 else
-  jq 'del(.schedules)' .github/staging/vercel.json > "$config_file"
+  cp "$original_config" "$config_file"
 fi
 env_args=()
 for value in "${deploy_env[@]}"; do
@@ -85,7 +88,7 @@ for value in "${deploy_env[@]}"; do
 done
 
 deployment_output="$("${vercel[@]}" deploy --yes --environment preview --archive=tgz --project "$VERCEL_PROJECT_ID" \
-  --local-config "$config_file" "${auth_args[@]}" "${env_args[@]}" \
+  "${auth_args[@]}" "${env_args[@]}" \
   --meta "githubDeployment=1" --meta "githubCommitRef=$GITHUB_REF_NAME" --meta "githubCommitSha=$GITHUB_SHA" \
   --meta "newsStagingRun=$GITHUB_RUN_ID" --meta "newsStagingBranch=$NEWS_STAGING_BRANCH_ID")"
 url="$deployment_output"
