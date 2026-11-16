@@ -22,6 +22,18 @@ jobs:
     runs-on: ubuntu-latest
     environment: staging
     timeout-minutes: 45
+    services:
+      isolated-postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: news_evidence_staging
+          POSTGRES_USER: txnm_stage
+          POSTGRES_PASSWORD: runner-only-pilot
+        options: >-
+          --health-cmd "pg_isready -U txnm_stage -d news_evidence_staging"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+        ports:
+          - 5432/tcp
     env:
       NEWS_PIPELINE_TARGET: staging
       NEWS_EVIDENCE_ENABLED: "true"
@@ -53,12 +65,26 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Provision the isolated Neon staging database
+        id: provision
+        continue-on-error: true
         env:
           NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
           NEON_PROJECT_ID: ${{ vars.NEON_PROJECT_ID }}
           NEON_VALIDATION_PARENT_BRANCH: ${{ vars.NEON_VALIDATION_PARENT_BRANCH }}
           PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          PRODUCTION_MIGRATION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          DASHBOARD_MIGRATION_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+          MIGRATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
         run: node scripts/provision-news-staging.mjs
+      - name: Use runner-isolated staging for verification if the hosted target is unavailable
+        if: steps.provision.outcome == 'failure'
+        env:
+          STAGING_POSTGRES_PORT: ${{ job.services.isolated-postgres.ports[5432] }}
+          PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          PRODUCTION_MIGRATION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+        run: |
+          [[ "$STAGING_POSTGRES_PORT" =~ ^[0-9]+$ ]]
+          printf '%s\n'             "DATABASE_URL=postgresql://txnm_stage:runner-only-pilot@127.0.0.1:$STAGING_POSTGRES_PORT/news_evidence_staging"             "EXPECTED_DATABASE_HOST=127.0.0.1" "EXPECTED_DATABASE_NAME=news_evidence_staging"             "FORBIDDEN_DATABASE_HOST=$PRODUCTION_DATABASE_HOST"             "FORBIDDEN_DATABASE_HOST_2=$PRODUCTION_MIGRATION_DATABASE_HOST" >> "$GITHUB_ENV"
       - name: Apply baseline and evidence migration to the fresh staging database
         run: |
           node --experimental-strip-types scripts/assert-database-target.ts
@@ -114,6 +140,7 @@ jobs:
           npx tsx scripts/verify-news-txnm-staging.ts
           npx tsx scripts/check-news-txnm-staging.ts after
       - name: Deploy a staging-only Vercel Preview
+        if: steps.provision.outcome == 'success'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
@@ -125,9 +152,15 @@ jobs:
           printf 'NEWS_DIGEST_START_DATE=%s\n' "$NEWS_DIGEST_START_DATE" >> "$GITHUB_ENV"
           bash scripts/deploy-news-staging.sh
       - name: Verify the hosted feed and activate the staging digest
+        if: steps.provision.outcome == 'success'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
           VERCEL_ORG_ID: team_5n5cDMTg05n53JAZ7Wz5Z336
           VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
         run: bash scripts/enable-news-staging-digest.sh
+      - name: Report a hosted-target blocker after runner-isolated verification
+        if: steps.provision.outcome == 'failure'
+        run: |
+          echo "::error::The live filing and approval were verified on runner-isolated staging. Hosted staging is unavailable and the digest remains inactive."
+          exit 1

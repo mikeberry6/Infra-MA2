@@ -21,12 +21,12 @@ async function main() {
     throw new Error("Run this staging provisioner from a non-main staging workflow.");
   }
   const project = required("NEON_PROJECT_ID", /^[a-z0-9-]{1,60}$/);
-  const parentId = required("NEON_VALIDATION_PARENT_BRANCH", /^br-[a-z0-9-]+$/);
   const runId = required("GITHUB_RUN_ID", /^\d+$/);
   const envFile = required("GITHUB_ENV");
   const key = required("NEON_API_KEY");
   const productionHost = required("PRODUCTION_DATABASE_HOST", /^[a-z0-9.-]+$/i).toLowerCase();
-  const forbidden = new Set([endpointHost(productionHost)]);
+  const productionMigrationHost = process.env.PRODUCTION_MIGRATION_DATABASE_HOST?.trim();
+  const forbidden = new Set([productionHost, productionMigrationHost].filter(Boolean).map(endpointHost));
   const unpooled = endpointHost(productionHost);
   const pooled = unpooled.replace(".", "-pooler.");
   const alternativeHost = pooled === productionHost ? unpooled : pooled;
@@ -57,15 +57,48 @@ async function main() {
     }
   }
 
-  const [{ branch: parent }, { endpoints: parentEndpoints }] = await Promise.all([
-    api(`/branches/${parentId}`),
-    api(`/branches/${parentId}/endpoints`),
-  ]);
-  if (parent?.id !== parentId || parent.default !== false || parent.primary === true ||
-      /(^|[-_])prod(?:uction)?($|[-_])/i.test(parent.name) ||
-      parentEndpoints.some(({ host }) => forbidden.has(endpointHost(host)))) {
-    throw new Error("The configured Neon validation parent is not an eligible non-production branch.");
+  async function eligibleParent(branchId, automated) {
+    if (!/^br-[a-z0-9-]+$/.test(branchId ?? "")) return null;
+    const [{ branch }, { endpoints }] = await Promise.all([
+      api(`/branches/${branchId}`),
+      api(`/branches/${branchId}/endpoints`),
+    ]);
+    const productionName = automated ? /(^|[-_])prod(?:uction)?($|[-_])/i : /^(main|prod|production)$/i;
+    if (branch?.id !== branchId || branch.default !== false || branch.primary === true ||
+        productionName.test(branch.name) || endpoints.some(({ host }) => forbidden.has(endpointHost(host)))) {
+      return null;
+    }
+    return branch;
   }
+
+  const { endpoints: projectEndpoints } = await api("/endpoints");
+  const registeredHosts = [
+    process.env.DASHBOARD_MIGRATION_DATABASE_HOST,
+    process.env.MIGRATION_DATABASE_HOST,
+  ].map((host) => host?.trim()).filter(Boolean);
+  let parent;
+  for (const host of registeredHosts) {
+    const normalized = endpointHost(host);
+    if (forbidden.has(normalized)) continue;
+    const candidate = projectEndpoints.find((endpoint) => endpointHost(endpoint.host) === normalized);
+    if (!candidate) continue;
+    parent = await eligibleParent(candidate.branch_id, false);
+    if (parent) break;
+  }
+  if (!parent) {
+    const replies = await Promise.all(["validation", "staging"].map((term) => api(`/branches?search=${term}`)));
+    const candidates = new Map(replies.flatMap(({ branches }) => branches)
+      .filter(({ name: branchName }) => /(^|[-_])(validation|staging)($|[-_])/i.test(branchName)
+        && !branchName.startsWith("news-evidence-staging-"))
+      .map((branch) => [branch.id, branch]));
+    for (const { id } of candidates.values()) {
+      parent = await eligibleParent(id, true);
+      if (parent) break;
+    }
+  }
+  if (!parent) throw new Error("No registered or named non-production validation parent exists in this Neon project.");
+  const parentId = parent.id;
+  console.log(`Verified non-production Neon schema source ${parentId}.`);
 
   const { branches } = await api(`/branches?search=${name}`);
   let branch = branches.find((candidate) => candidate.name === name);
