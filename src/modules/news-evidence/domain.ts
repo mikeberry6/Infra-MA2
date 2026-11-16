@@ -42,8 +42,8 @@ const MONEY_CONTEXT = {
   EQUITY_VALUE: /\bequity (?:values?|valuation)\b|\bvalue of (?:the )?(?:outstanding )?equity\b/i,
   FINANCING_AMOUNT: /\bfinanc\w+\b|\bcredit (?:facility|line)\b|\bdebt\b|\bloan\b|\bprivate placement\b|\bequity issuance\b|\bbond\b/i,
   CAPITAL_COMMITMENT: /\bcommit\w+\b|\bpledge\w*\b/i,
-  STAKE_CONSIDERATION: /\bconsideration\b|\bpurchase price\b|\b(?:purchase|acquire|sell|sold|buy|bought)\w*\b.{1,45}\bfor\b/i,
-  PER_SHARE_CONSIDERATION: /\bper (?:common )?share\b|\b(?:each|every)\b.{0,42}\bshare\b/i,
+  STAKE_CONSIDERATION: /\bpurchase price\b.{0,95}\baggregate (?:amount|consideration)\b|\bconsideration\b|\bpurchase price\b|\b(?:purchase|acquire|sell|sold|buy|bought)\w*\b.{1,45}\bfor\b/i,
+  PER_SHARE_CONSIDERATION: /\bper (?:(?:common|ordinary|purchased|preferred|issued|outstanding|registered|voting|non-voting|class [a-z]) )*shares?\b|\b(?:each|every)\b.{0,42}\bshare\b/i,
 };
 
 const MAGNITUDE_POWERS = new Map([
@@ -158,13 +158,27 @@ const CURRENCY_MARKERS: Readonly<Record<string, RegExp>> = {
   CNY: /(?:\bCNY\b|\bRMB\b|\byuan\b)/i,
 };
 
-function basisDistance(quote: string, value: string, basis: RegExp): number {
+type QuoteSpan = { start: number; end: number };
+
+function spanDistance(a: QuoteSpan, b: QuoteSpan): number {
+  return Math.max(0, a.start - b.end, b.start - a.end);
+}
+
+function basisDistance(quote: string, value: string, basis: RegExp, quotedAmounts: readonly QuoteSpan[]): number {
   const start = quote.indexOf(value);
-  const end = start + value.length;
-  const matches = quote.matchAll(new RegExp(basis.source, "gi"));
+  const selected = { start, end: start + value.length };
   let distance = Infinity;
-  for (const match of matches) {
-    distance = Math.min(distance, Math.max(0, match.index - end, start - (match.index + match[0].length)));
+  for (const match of quote.matchAll(new RegExp(basis.source, "gi"))) {
+    const aggregate = basis === MONEY_CONTEXT.STAKE_CONSIDERATION
+      ? /\baggregate (?:amount|consideration)\b/i.exec(match[0]) : null;
+    const cue = { start: match.index + (aggregate?.index ?? 0), end: match.index + match[0].length };
+    const selectedDistance = spanDistance(selected, cue);
+    // A per-share label belongs with its own amount when the quote also gives
+    // aggregate consideration or another monetary figure.
+    if (basis === MONEY_CONTEXT.PER_SHARE_CONSIDERATION && quotedAmounts.some((amount) =>
+      spanDistance(amount, cue) < selectedDistance && (amount.end <= selected.start || amount.start >= selected.end),
+    )) continue;
+    distance = Math.min(distance, selectedDistance);
   }
   return distance;
 }
@@ -188,16 +202,19 @@ function validateClaimValue(claim: ExtractedClaim): void {
   }
 
   const numberText = quoteAmounts(value);
-  if (!numberText.length || !monetary.test(quote)) {
+  const quotedAmounts = Array.from(
+    quote.matchAll(/(?:[$€£¥]|\b[A-Z]{3}\s)\s*\d+(?:,\d{3})*(?:\.\d+)?(?:\s*(?:thousands?|millions?|billions?|trillions?|mm|mn|bn|tn|[kmb])\b)?/g),
+    ({ 0: text, index }) => ({ start: index, end: index + text.length }),
+  );
+  const distance = basisDistance(quote, value, monetary, quotedAmounts);
+  if (!numberText.length || !Number.isFinite(distance)) {
     throw new EvidenceValidationError("The source passage needs the monetary value and its basis.");
   }
-  const quotedAmounts = quote.match(/(?:[$€£¥]|\b[A-Z]{3}\s)\s*\d[\d,.]*/g) ?? [];
-  if (quotedAmounts.length > 1) {
-    const distance = basisDistance(quote, value, monetary);
+  if (quotedAmounts.length > 1 || kind === "STAKE_CONSIDERATION") {
     const competing = Object.entries(MONEY_CONTEXT).some(([otherKind, basis]) =>
       otherKind !== kind
         && !(kind === "PER_SHARE_CONSIDERATION" && otherKind === "STAKE_CONSIDERATION")
-        && basisDistance(quote, value, basis) < distance,
+        && basisDistance(quote, value, basis, quotedAmounts) < distance,
     );
     if (competing) {
       throw new EvidenceValidationError("Use the part of the source passage that pairs the amount with its basis.");

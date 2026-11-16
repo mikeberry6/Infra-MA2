@@ -39,7 +39,7 @@ jobs:
       NEWS_EVIDENCE_ENABLED: "true"
       NEWS_DEAL_MUTATIONS_ENABLED: "false"
       NEXT_TELEMETRY_DISABLED: "1"
-      NEWS_PROCESSING_VERSION: txnm-staging-live-1
+      NEWS_PROCESSING_VERSION: txnm-staging-live-2
       NEWS_MODEL_TIMEOUT_MS: "100000"
       NEWS_MODEL_MAX_ATTEMPTS: "2"
       NEWS_TXNM_STAGING_ORIGIN: http://127.0.0.1:3100
@@ -70,7 +70,7 @@ jobs:
         env:
           NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
           NEON_PROJECT_ID: ${{ vars.NEON_PROJECT_ID }}
-          NEON_VALIDATION_PARENT_BRANCH: ${{ vars.NEON_VALIDATION_PARENT_BRANCH }}
+          NEWS_STAGING_RESUME_RUN_ID: "43805918495"
           PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
           PRODUCTION_MIGRATION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
           DASHBOARD_MIGRATION_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
@@ -94,9 +94,26 @@ jobs:
             git fetch --filter=blob:none --no-tags --depth=1 origin "$BASELINE_SHA"
           fi
           git show "$BASELINE_SHA:prisma/schema.prisma" > "$work/baseline.prisma"
-          npx prisma migrate diff --from-empty --to-schema "$work/baseline.prisma" --script > "$work/baseline.sql"
-          npx prisma db execute --file "$work/baseline.sql"
-          npx prisma db execute --file prisma/migrations/20261115220000_news_evidence/migration.sql
+          schema_state="$(node --input-type=module <<'JS'
+          import pg from "pg";
+          const db = new pg.Client({connectionString: process.env.DATABASE_URL});
+          await db.connect();
+          try {
+            const { rows: [state] } = await db.query(`SELECT
+              to_regclass('public."NewsItem"') IS NOT NULL AS baseline,
+              to_regclass('public."NewsSourceVersion"') IS NOT NULL AS evidence`);
+            process.stdout.write(state.evidence ? "ready" : state.baseline ? "baseline" : "empty");
+          } finally { await db.end(); }
+          JS
+          )"
+          if [[ "$schema_state" == empty ]]; then
+            npx prisma migrate diff --from-empty --to-schema "$work/baseline.prisma" --script > "$work/baseline.sql"
+            npx prisma db execute --file "$work/baseline.sql"
+          fi
+          if [[ "$schema_state" != ready ]]; then
+            npx prisma migrate diff --from-schema "$work/baseline.prisma" --to-config-datasource --exit-code
+            npx prisma db execute --file prisma/migrations/20261115220000_news_evidence/migration.sql
+          fi
           npx prisma migrate diff --from-schema prisma/schema.prisma --to-config-datasource --exit-code
       - name: Seed isolated admin and stage the verified filing
         run: |

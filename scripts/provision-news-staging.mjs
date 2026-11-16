@@ -22,6 +22,9 @@ async function main() {
   }
   const project = required("NEON_PROJECT_ID", /^[a-z0-9-]{1,60}$/);
   const runId = required("GITHUB_RUN_ID", /^\d+$/);
+  const resumeRunId = process.env.NEWS_STAGING_RESUME_RUN_ID?.trim();
+  if (resumeRunId && !/^\d+$/.test(resumeRunId)) throw new Error("NEWS_STAGING_RESUME_RUN_ID is invalid.");
+  const stagingRunId = resumeRunId || runId;
   const envFile = required("GITHUB_ENV");
   const key = required("NEON_API_KEY");
   const productionHost = required("PRODUCTION_DATABASE_HOST", /^[a-z0-9.-]+$/i).toLowerCase();
@@ -30,7 +33,7 @@ async function main() {
   const unpooled = endpointHost(productionHost);
   const pooled = unpooled.replace(".", "-pooler.");
   const alternativeHost = pooled === productionHost ? unpooled : pooled;
-  const name = `news-evidence-staging-${runId}`;
+  const name = `news-evidence-staging-${stagingRunId}`;
 
   async function api(path, body) {
     const response = await fetch(`https://console.neon.tech/api/v2/projects/${project}${path}`, {
@@ -103,6 +106,7 @@ async function main() {
   const { branches } = await api(`/branches?search=${name}`);
   let branch = branches.find((candidate) => candidate.name === name);
   if (!branch) {
+    if (resumeRunId) throw new Error("The requested previous staging branch does not exist.");
     const created = await api("/branches", {
       endpoints: [{ type: "read_write" }],
       branch: { parent_id: parentId, name, init_source: "schema-only" },
@@ -115,8 +119,9 @@ async function main() {
   const branchPath = `/branches/${branch.id}`;
   const { branch: verified, annotation } = await api(branchPath);
   if (verified?.id !== branch.id || verified.name !== name || verified.default !== false || verified.primary === true ||
-      verified.id === parentId || verified.init_source !== "schema-only" ||
-      annotation?.value?.stagingRun !== runId || annotation.value.schemaSource !== parentId) {
+      verified.id === parentId || !["schema-only", "parent-schema"].includes(verified.init_source) ||
+      annotation?.value?.stagingPurpose !== "evidence-news" || annotation.value.stagingRun !== stagingRunId ||
+      annotation.value.schemaSource !== parentId) {
     throw new Error("The resulting Neon branch did not match the staging provisioner identity.");
   }
   const [{ endpoints }, { roles }, { databases }] = await Promise.all([

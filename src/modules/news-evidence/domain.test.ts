@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { z } from "zod";
+import txnmFiling from "../../../.github/staging/txnm-8k-20250519.json";
 import { extractionSchema, matchingSchema, screeningSchema, type ExtractedEntity, type StoryExtraction } from "./contracts";
 import { classifyStory, groundExtraction, validateScreening } from "./domain";
 import newsletterDeliveries from "./fixtures/newsletter-deliveries.json";
@@ -95,6 +96,48 @@ describe("evidence extraction contracts", () => {
       evidence: evidence(2, "The reported enterprise value was US$1.2 billion. A separate US$300 million credit facility will fund construction."),
     };
     expect(() => groundExtraction({ ...signing, claims: [...signing.claims, mixedEvidence] }, sections(), "version-1")).toThrow(/pairs the amount/);
+  });
+
+  it("grounds the TXNM merger and stock purchase amounts without interchanging their bases", () => {
+    const filingSections = txnmFiling.sections.map((text, index) => ({ index, text }));
+    const stockPurchase = evidence(19, "for a purchase price of $50.00 per Purchased Share (for an aggregate amount of $400 million).");
+    const treasuryTerms: StoryExtraction["claims"] = [
+      {
+        ...signing.claims[3], key: "merger-per-share", kind: "PER_SHARE_CONSIDERATION",
+        value: "$61.25", amount: "61.25", currency: null, attributedTo: "TXNM Energy",
+        evidence: evidence(3, "right to receive $61.25 in cash, without interest (the “Per Share Merger Consideration”)"),
+      },
+      {
+        ...signing.claims[3], key: "purchase-per-share", kind: "PER_SHARE_CONSIDERATION",
+        value: "$50.00", amount: "50", currency: null, attributedTo: "TXNM Energy", evidence: stockPurchase,
+      },
+      {
+        ...signing.claims[3], key: "stock-purchase", kind: "STAKE_CONSIDERATION",
+        value: "$400 million", amount: "400000000", currency: null, attributedTo: "TXNM Energy", evidence: stockPurchase,
+      },
+      {
+        ...signing.claims[3], key: "termination-fee", kind: "OTHER",
+        value: "a termination fee of $210 million", amount: null, currency: null, attributedTo: "TXNM Energy",
+        evidence: evidence(8, "TXNM will be required to pay Parent a termination fee of $210 million plus costs and expenses"),
+      },
+    ];
+    function ground(claims: StoryExtraction["claims"]) {
+      return groundExtraction({
+        ...signing, occurredOn: null, firstDisclosedOn: null, claims, entities: [],
+        qualification: { kind: "UNRESOLVED", reason: "Terms-only fixture.", evidence: null },
+      }, filingSections, "official-filing", { officialDisclosure: true });
+    }
+
+    expect(ground(treasuryTerms).claims.map(({ kind, amount }) => [kind, amount])).toEqual([
+      ["PER_SHARE_CONSIDERATION", "61.25"],
+      ["PER_SHARE_CONSIDERATION", "50"],
+      ["STAKE_CONSIDERATION", "400000000"],
+      ["OTHER", null],
+    ]);
+    expect(() => ground([{ ...treasuryTerms[2], kind: "PER_SHARE_CONSIDERATION" }])).toThrow(/monetary value and its basis/);
+    expect(() => ground([{ ...treasuryTerms[1], kind: "STAKE_CONSIDERATION" }])).toThrow(/pairs the amount/);
+    expect(() => ground([{ ...treasuryTerms[2], kind: "ENTERPRISE_VALUE" }])).toThrow(/monetary value and its basis/);
+    expect(() => ground([{ ...treasuryTerms[3], kind: "CAPITAL_COMMITMENT" }])).toThrow(/monetary value and its basis/);
   });
 
   it("rejects a source-incompatible date and a fund name inferred from the strategy", () => {

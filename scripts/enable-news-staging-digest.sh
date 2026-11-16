@@ -30,7 +30,7 @@ schedule_api="https://vercel-schedules.com/v1/schedules/$NEWS_STAGING_SCHEDULE_N
 
 feed_url="$NEWS_STAGING_URL/news?period=All"
 if ! feed="$(curl -fsS --max-time 30 "$feed_url")"; then
-  feed="$(npx --yes vercel@65.16.0 curl "$feed_url" --scope "$VERCEL_SCOPE" --token "$VERCEL_TOKEN" --fail)"
+  feed="$(npx --yes vercel@65.16.0 curl "$feed_url" --scope "$VERCEL_SCOPE" --token "$VERCEL_TOKEN" --yes -- --fail)"
 fi
 if [[ "$feed" != *000110842625000048* || "$feed" != *"TXNM Energy"* ]]; then
   echo "::error::The hosted staging news feed did not show the approved TXNM filing."

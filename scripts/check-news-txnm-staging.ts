@@ -85,16 +85,30 @@ async function main(db: PrismaClient) {
   const version = await db.newsSourceVersion.findFirstOrThrow({
     where: { contentHash: filingHash, document: { sourceKey: sourceName, externalKey } },
   });
+  const processingVersion = readProcessingSettings().version;
+  const workScope = { versionId: version.id, config: { path: ["version"], equals: processingVersion } };
   const attempts = await db.newsProcessingAttempt.findMany({
-    where: { work: { versionId: version.id } },
+    where: { work: workScope },
     select: { status: true, requestedModel: true, actualModel: true, providerRequestId: true,
-      usage: true, errorCode: true, errorMessage: true, work: { select: { stage: true, status: true } } },
+      usage: true, errorCode: true, errorMessage: true, work: { select: {
+        stage: true, status: true, story: { select: { startSection: true, endSection: true } },
+      } } },
   });
   const receipts = attempts.map(({ providerRequestId, work, ...attempt }) => ({
-    ...attempt, stage: work.stage, workStatus: work.status, requestIdRecorded: Boolean(providerRequestId),
+    ...attempt, stage: work.stage, workStatus: work.status, story: work.story, requestIdRecorded: Boolean(providerRequestId),
   }));
   console.log(JSON.stringify({ event: "txnm_staging_model_receipts", receipts }));
-  if (mode === "diagnose") return;
+  if (mode === "diagnose") {
+    const drafted = await db.newsRevision.findMany({
+      where: { sourceVersionId: version.id },
+      select: { status: true, publicationEligibility: true, firstDisclosedOn: true, occurredOn: true,
+        development: { select: { kind: true } }, claims: { select: { kind: true } } },
+    });
+    console.log(JSON.stringify({ event: "txnm_staging_draft_diagnostics", drafts: drafted.map((article) => ({
+      ...article, claims: article.claims.map(({ kind }) => kind),
+    })) }));
+    return;
+  }
 
   for (const [stage, model] of [["SCREEN", "gpt-6-luna"], ["EXTRACT", "gpt-6.1-sol"]]) {
     requireCheck(attempts.some((row) => row.work.stage === stage && row.work.status === "SUCCEEDED"
@@ -105,7 +119,8 @@ async function main(db: PrismaClient) {
   requireCheck(after.dealCount === 1 && after.legacyCount === 1 && after.mutations === 0
     && after.digest === process.env.NEWS_STAGING_RECORD_FINGERPRINT, "Existing staging records changed.");
   const signing = await db.newsRevision.findMany({
-    where: { sourceVersionId: version.id, development: { kind: "SIGNING" }, publicationEligibility: "READY_FOR_REVIEW" },
+    where: { sourceVersionId: version.id, work: workScope,
+      development: { kind: "SIGNING" }, publicationEligibility: "READY_FOR_REVIEW" },
     include: { development: true, claims: { include: { evidence: true } }, matches: true },
   });
   console.log(JSON.stringify({ event: "txnm_staging_candidates", candidates: signing.map((article) => ({
