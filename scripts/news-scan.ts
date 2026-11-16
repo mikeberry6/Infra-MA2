@@ -288,6 +288,9 @@ function createPrisma(): PrismaClient {
 
 async function main() {
   const options = parseArgs();
+  if (process.env.NEWS_EVIDENCE_ENABLED === "true" && !options.dryRun) {
+    throw new Error("Legacy news writes are disabled while evidence review is enabled. Use --dry-run for diagnostics.");
+  }
   const prisma = createPrisma();
   const summary: RunSummary = {
     runAt: new Date().toISOString(),

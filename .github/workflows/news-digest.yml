@@ -1,0 +1,40 @@
+name: Morning News Digest
+
+on:
+  schedule:
+    - cron: "15 6 * * *"
+      timezone: America/New_York
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: news-digest-staging
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    if: vars.NEWS_DIGEST_ENABLED == 'true'
+    environment: staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEWS_PIPELINE_TARGET: staging
+      NEWS_DIGEST_ENABLED: "true"
+      NEWS_DIGEST_START_DATE: ${{ vars.NEWS_DIGEST_START_DATE }}
+      DATABASE_URL: ${{ secrets.NEWS_STAGING_DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.NEWS_STAGING_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.NEWS_STAGING_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_DATABASE_HOST_UNPOOLED }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run news:digest

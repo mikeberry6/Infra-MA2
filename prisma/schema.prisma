@@ -52,6 +52,7 @@ model Organization {
   pendingOwnershipTransactions PendingOwnershipTransaction[] @relation("PendingOwnershipCounterparty")
   aliases                      Alias[]
   newsMentions                 NewsMention[]
+  evidenceNewsMatches NewsEntityMatch[]
 
   @@index([name])
 }
@@ -179,6 +180,7 @@ model Fund {
   newsMentions     NewsMention[]
   evidence         FundEvidence[]
   revisions        FundRevision[]
+  evidenceNewsMatches NewsEntityMatch[]
 
   @@index([managerId])
   @@index([fundName])
@@ -278,6 +280,7 @@ model Company {
   newsMentions                 NewsMention[]
   redirects                    CompanyRedirect[]
   revisions                    CompanyRevision[]
+  evidenceNewsMatches NewsEntityMatch[]
 
   @@unique([name, country])
   @@index([name])
@@ -465,6 +468,8 @@ model Deal {
   citations    Citation[]
   newsMentions NewsMention[]
   briefingAppearances BriefingDeal[]
+  evidenceNewsMatches NewsEntityMatch[]
+  evidenceNewsThread NewsTransactionThread?
 
   @@index([date])
   @@index([sector])
@@ -665,6 +670,7 @@ model NewsItem {
   updatedAt    DateTime       @updatedAt
 
   mentions NewsMention[]
+  evidenceDevelopment NewsDevelopment?
 
   @@index([publishedAt])
   @@index([category])
@@ -824,6 +830,8 @@ model User {
   auditEvents              AuditEvent[]
   importPreviews           ImportPreview[]
   reviewedDashboardSignals DashboardSignal[] @relation("DashboardSignalReviewer")
+  reviewedNewsRevisions NewsRevision[]
+
 }
 
 model PipelineRun {
@@ -902,6 +910,7 @@ model AuditEvent {
   createdAt  DateTime @default(now())
 
   importPreviews ImportPreview[]
+  newsDealMutation NewsDealMutation?
 
   @@index([actorId])
   @@index([entityType, entityId])
@@ -958,4 +967,271 @@ model BriefingDeal {
   @@id([issueEdition, cardKey])
   @@index([dealId])
   @@index([issueEdition, position])
+}
+
+// Evidence-backed news. Legacy news rows remain independent of editorial revisions.
+model NewsSourceDocument {
+  id           String   @id @default(cuid())
+  sourceKey    String
+  externalKey  String
+  canonicalUrl String
+  sourceName   String
+  createdAt    DateTime @default(now())
+
+  versions   NewsSourceVersion[]
+  deliveries NewsDelivery[]
+
+  @@unique([sourceKey, externalKey])
+  @@index([canonicalUrl])
+}
+
+model NewsSourceVersion {
+  id           String   @id @default(cuid())
+  documentId   String
+  contentHash  String
+  policyVersion String
+  publishedAt  DateTime
+  capturedAt   DateTime @default(now())
+  sections     Json
+  metadata     Json?
+  amendsVersionId String?
+  amendsVersion NewsSourceVersion? @relation("NewsSourceAmendment", fields: [amendsVersionId], references: [id])
+  amendments   NewsSourceVersion[] @relation("NewsSourceAmendment")
+  document     NewsSourceDocument @relation(fields: [documentId], references: [id])
+  stories      NewsStory[]
+  work         NewsWork[]
+  deliveries   NewsDelivery[]
+  revisions    NewsRevision[]
+  claimEvidence NewsClaimEvidence[]
+
+  @@unique([documentId, contentHash])
+  @@index([publishedAt])
+}
+
+model NewsDelivery {
+  id          String   @id @default(cuid())
+  sourceKey   String
+  deliveryKey String
+  documentId  String
+  versionId   String
+  receivedAt  DateTime @default(now())
+  document    NewsSourceDocument @relation(fields: [documentId], references: [id])
+  version     NewsSourceVersion @relation(fields: [versionId], references: [id])
+
+  @@unique([sourceKey, deliveryKey])
+  @@index([versionId])
+}
+
+model NewsStory {
+  id           String   @id @default(cuid())
+  versionId    String
+  ordinal      Int
+  screeningKey String
+  startSection Int
+  endSection   Int
+  headline     String?
+  screening    Json
+  createdAt    DateTime @default(now())
+  version      NewsSourceVersion @relation(fields: [versionId], references: [id])
+  work         NewsWork[]
+  revisions    NewsRevision[]
+
+  @@unique([versionId, screeningKey, ordinal])
+}
+
+model NewsWork {
+  id           String   @id @default(cuid())
+  key          String   @unique
+  versionId    String
+  storyId      String?
+  stage        String
+  status       String   @default("PENDING")
+  config       Json
+  notBefore    DateTime @default(now())
+  leaseToken   String?
+  leaseUntil   DateTime?
+  attemptCount Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  lastError    String?
+  finishedAt   DateTime?
+  result       Json?
+  version      NewsSourceVersion @relation(fields: [versionId], references: [id])
+  story        NewsStory? @relation(fields: [storyId], references: [id])
+  attempts     NewsProcessingAttempt[]
+  revision     NewsRevision?
+
+  @@index([status, notBefore])
+  @@index([status, leaseUntil])
+  @@index([versionId])
+}
+
+model NewsProcessingAttempt {
+  id                String @id @default(cuid())
+  workId            String
+  attempt           Int
+  startedAt         DateTime @default(now())
+  finishedAt        DateTime?
+  status            String
+  requestedModel    String?
+  actualModel       String?
+  providerRequestId String?
+  usage             Json?
+  errorCode         String?
+  errorMessage      String?
+  result            Json?
+  work              NewsWork @relation(fields: [workId], references: [id])
+
+  @@unique([workId, attempt])
+}
+
+model NewsTransactionThread {
+  id          String  @id @default(cuid())
+  identityKey String  @unique
+  dealId      String? @unique
+  label       String
+  createdAt   DateTime @default(now())
+  deal        Deal? @relation(fields: [dealId], references: [id], onDelete: SetNull)
+  developments NewsDevelopment[]
+}
+
+model NewsDevelopment {
+  id                String  @id @default(cuid())
+  threadId          String?
+  kind              String
+  identityKey       String? @unique
+  approvedRevisionId String? @unique
+  legacyNewsItemId   String? @unique
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  thread            NewsTransactionThread? @relation(fields: [threadId], references: [id])
+  approvedRevision  NewsRevision? @relation("ApprovedNewsRevision", fields: [approvedRevisionId], references: [id])
+  legacyNewsItem    NewsItem? @relation(fields: [legacyNewsItemId], references: [id], onDelete: SetNull)
+  revisions         NewsRevision[] @relation("NewsDevelopmentRevisions")
+
+  @@index([threadId, kind])
+}
+
+model NewsRevision {
+  id                    String @id @default(cuid())
+  developmentId         String
+  storyId               String?
+  workId                String? @unique
+  number                Int
+  status                String @default("DRAFT")
+  title                 String
+  summary               String
+  category              NewsCategory
+  confidence            NewsConfidence
+  isRumor               Boolean @default(false)
+  sourceVersionId       String
+  occurredOn            DateTime? @db.Date
+  firstDisclosedOn      DateTime? @db.Date
+  qualification         String
+  evidenceStatus        String
+  relevance             String
+  dealEligibility       String
+  publicationEligibility String
+  decisionDetails       Json?
+  proposal              Json?
+  correctsRevisionId    String?
+  materialChange        Boolean @default(true)
+  reviewedAt            DateTime?
+  reviewedById          String?
+  createdAt             DateTime @default(now())
+  development           NewsDevelopment @relation("NewsDevelopmentRevisions", fields: [developmentId], references: [id])
+  publicFor             NewsDevelopment? @relation("ApprovedNewsRevision")
+  sourceVersion         NewsSourceVersion @relation(fields: [sourceVersionId], references: [id])
+  story                 NewsStory? @relation(fields: [storyId], references: [id])
+  work                  NewsWork? @relation(fields: [workId], references: [id])
+  reviewedBy            User? @relation(fields: [reviewedById], references: [id], onDelete: SetNull)
+  correctsRevision      NewsRevision? @relation("NewsRevisionCorrection", fields: [correctsRevisionId], references: [id])
+  corrections           NewsRevision[] @relation("NewsRevisionCorrection")
+  claims                NewsClaim[]
+  matches               NewsEntityMatch[]
+  editionEntries        NewsDigestEntry[]
+  dealMutations         NewsDealMutation[]
+
+  @@unique([developmentId, number])
+  @@index([status, createdAt])
+  @@index([status, reviewedAt])
+  @@index([sourceVersionId])
+}
+
+model NewsClaim {
+  id           String @id @default(cuid())
+  revisionId   String
+  kind         String
+  value        Json
+  attribution  String
+  attributedTo String
+  revision     NewsRevision @relation(fields: [revisionId], references: [id])
+  evidence     NewsClaimEvidence[]
+
+  @@index([revisionId])
+}
+
+model NewsClaimEvidence {
+  id        String @id @default(cuid())
+  claimId   String
+  versionId String
+  section   Int
+  quote     String
+  claim     NewsClaim @relation(fields: [claimId], references: [id])
+  version   NewsSourceVersion @relation(fields: [versionId], references: [id])
+
+  @@index([claimId])
+  @@index([versionId])
+}
+
+model NewsEntityMatch {
+  id                String @id @default(cuid())
+  revisionId        String
+  mention           String
+  role              String
+  status            String
+  reason            String?
+  candidateSnapshot Json?
+  evidence          Json?
+  companyId         String?
+  organizationId    String?
+  fundId            String?
+  dealId            String?
+  revision          NewsRevision @relation(fields: [revisionId], references: [id])
+  company           Company? @relation(fields: [companyId], references: [id], onDelete: SetNull)
+  organization      Organization? @relation(fields: [organizationId], references: [id], onDelete: SetNull)
+  fund              Fund? @relation(fields: [fundId], references: [id], onDelete: SetNull)
+  deal              Deal? @relation(fields: [dealId], references: [id], onDelete: SetNull)
+
+  @@index([revisionId])
+}
+
+model NewsDealMutation {
+  id          String   @id
+  revisionId  String
+  dealId      String
+  auditEventId String @unique
+  appliedAt   DateTime @default(now())
+  revision    NewsRevision @relation(fields: [revisionId], references: [id])
+  auditEvent  AuditEvent @relation(fields: [auditEventId], references: [id])
+
+  @@index([dealId])
+}
+
+model NewsDigestEdition {
+  date    String   @id
+  cutoff  DateTime @unique
+  createdAt DateTime @default(now())
+  entries NewsDigestEntry[]
+}
+
+model NewsDigestEntry {
+  editionDate String
+  revisionId String @unique
+  materialRevisionId String @unique
+  position Int
+  edition NewsDigestEdition @relation(fields: [editionDate], references: [date])
+  revision NewsRevision @relation(fields: [revisionId], references: [id])
+
+  @@id([editionDate, position])
 }

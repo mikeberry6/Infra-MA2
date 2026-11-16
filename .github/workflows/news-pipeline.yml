@@ -42,9 +42,12 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           REQUESTED_MODE: ${{ inputs.mode }}
+          NEWS_EVIDENCE_ENABLED: ${{ vars.NEWS_EVIDENCE_ENABLED }}
         shell: bash
         run: |
-          if [ "$EVENT_NAME" = "schedule" ]; then
+          if [ "$EVENT_NAME" = "schedule" ] && [ "$NEWS_EVIDENCE_ENABLED" = "true" ]; then
+            mode=dry-run
+          elif [ "$EVENT_NAME" = "schedule" ]; then
             mode=live
           else
             mode="$REQUESTED_MODE"
@@ -57,6 +60,11 @@ jobs:
               exit 1
               ;;
           esac
+
+          if [ "$NEWS_EVIDENCE_ENABLED" = "true" ] && [ "$mode" != "dry-run" ]; then
+            echo "::error::Legacy news writes are disabled while evidence review is enabled."
+            exit 1
+          fi
 
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
 
@@ -80,6 +88,7 @@ jobs:
         id: scan
         env:
           MODE: ${{ steps.mode.outputs.mode }}
+          NEWS_EVIDENCE_ENABLED: ${{ vars.NEWS_EVIDENCE_ENABLED }}
         shell: bash
         run: |
           rm -f tmp/news-scan-summary.json

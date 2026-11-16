@@ -119,7 +119,9 @@
     "briefings:preview": "tsx scripts/briefing-deals/cli.ts preview",
     "briefings:apply": "tsx scripts/briefing-deals/cli.ts apply",
     "briefings:validate": "tsx scripts/briefing-deals/cli.ts validate",
-    "briefings:sources": "tsx scripts/briefing-deals/sources.ts"
+    "briefings:sources": "tsx scripts/briefing-deals/sources.ts",
+    "news:evidence": "tsx scripts/news-evidence.ts",
+    "news:digest": "tsx scripts/news-digest.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
@@ -131,6 +133,7 @@
     "lucide-react": "0.453.0",
     "next": "15.5.22",
     "next-auth": "4.24.15",
+    "parse5": "^8.0.1",
     "pg": "^8.20.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",

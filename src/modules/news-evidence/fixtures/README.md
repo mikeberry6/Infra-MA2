@@ -1,0 +1,7 @@
+# Evidence pipeline fixtures
+
+`newsletter-deliveries.json` contains synthetic editorial content and fictional entities. The second delivery repeats the first document byte for byte. The third corrects the purchase value under the same document key. Later issues cover an ambiguous company name, separate financing and commitment amounts, a regulatory approval and closing for the original transaction, a sign-and-close with no prior disclosure, and a long-gap recap. The final delivery can be used with an injected failing transport to verify failure and retry handling. The prompt-like footer must remain inert source data.
+
+In a matching test database, create two published companies named Meridian Grid in different countries. The newsletter omits distinguishing details, so the reference remains unresolved. Use the bounded fixture source policy for these deliveries.
+
+The official pilot uses the SEC-hosted [TXNM Energy Form 8-K](https://www.sec.gov/Archives/edgar/data/1108426/000110842625000048/pnm-20250519.htm). It distinguishes the May 18, 2025 signing from the May 19 disclosure and records per-share merger consideration. The separately identified [issuer exhibit](https://www.sec.gov/Archives/edgar/data/1108426/000110842625000048/a05192025txnmex991.htm) is a reference for enterprise value, the associated private placement, and advisers. Test extracts must be labeled fixture text when adapted.

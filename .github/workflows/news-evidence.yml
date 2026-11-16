@@ -1,0 +1,58 @@
+name: Staging Evidence News
+
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+    inputs:
+      accession:
+        description: Approved TXNM Energy 8-K accession, or blank to drain previously captured work
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: news-evidence-staging
+  cancel-in-progress: false
+
+jobs:
+  evidence-news:
+    name: Capture and process news for staging review
+    if: github.event_name == 'workflow_dispatch' || vars.NEWS_EVIDENCE_STAGING_ENABLED == 'true'
+    environment: staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NEWS_PIPELINE_TARGET: staging
+      DATABASE_URL: ${{ secrets.NEWS_STAGING_DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.NEWS_STAGING_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.NEWS_STAGING_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_DATABASE_HOST_UNPOOLED }}
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT || vars.SEC_USER_AGENT }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.1
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Install locked dependencies
+        id: install
+        run: npm ci
+      - name: Capture recently filed reports from the approved issuer
+        if: github.event_name == 'schedule'
+        run: npm run news:evidence -- capture-recent
+      - name: Capture approved filing
+        if: inputs.accession != ''
+        env:
+          FILING_ACCESSION: ${{ inputs.accession }}
+        run: npm run news:evidence -- capture-edgar --accession="$FILING_ACCESSION"
+      - name: Drain durable processing queue
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: node scripts/run-with-retry.mjs --attempts=3 --base-delay-ms=30000 -- npm run news:evidence -- process --limit=20

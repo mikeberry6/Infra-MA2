@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 
 import { getDatabaseCounts } from "@/modules/insights/queries";
 import { prisma } from "@/lib/prisma";
+import { newsEvidenceEnabled } from "@/modules/news-evidence/feature";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
@@ -15,12 +16,14 @@ export default async function AdminDashboard() {
   const pendingDashboardSignals = await prisma.dashboardSignal.count({
     where: { reviewStatus: "PENDING" },
   });
+  const pendingNews = newsEvidenceEnabled() ? await prisma.newsRevision.count({ where: { status: "DRAFT" } }) : null;
 
   const sections = [
     { href: "/admin/deals", label: "Deals", count: counts.deals, drafts: draftDeals },
     { href: "/admin/companies", label: "PortCos", count: counts.portfolio, drafts: draftCompanies },
     { href: "/admin/funds", label: "Funds", count: counts.funds, drafts: 0 },
     { href: "/admin/dashboard-signals", label: "Dashboard signals", count: pendingDashboardSignals, drafts: 0 },
+    ...(pendingNews === null ? [] : [{ href: "/admin/news-evidence", label: "News evidence review", count: pendingNews, drafts: 0 }]),
     { href: "/admin/sources", label: "Sources", count: 0, drafts: 0 },
     { href: "/admin/users", label: "Users", count: userCount, drafts: 0 },
   ];

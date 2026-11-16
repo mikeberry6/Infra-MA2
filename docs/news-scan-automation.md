@@ -2,9 +2,11 @@
 
 This repo's News Feed scanner stores articles and tracked entities in `NewsItem` and `NewsMention`. Completed live scans that meet the reliability gate write a `PipelineRun` receipt for the public freshness label, including successful scans that found zero new articles.
 
+When the evidence-backed review workflow is active, the nightly scanner generates a read-only discovery report. The existing public items stay visible, and approve/publish happens in the [evidence-backed news workflow](news-evidence-pipeline.md).
+
 ## GitHub Actions automation
 
-`.github/workflows/news-pipeline.yml` runs nightly at 02:30 UTC. Scheduled runs update the public news feed but never create deals. Manual dispatches default to a read-only dry run and also offer an explicit live choice. For ad hoc discovery that should remain unpublished, pass `--review-only`; new items are then stored as `DRAFT`, while rescans preserve the editorial status of existing items.
+`.github/workflows/news-pipeline.yml` runs nightly at 02:30 UTC. Before that cutover, scheduled runs update the public news feed. The scanner only writes news records. Manual dispatches default to a read-only dry run and also offer an explicit live choice. For ad hoc discovery that should remain unpublished, pass `--review-only`; new items are then stored as `DRAFT`, while rescans preserve the editorial status of existing items.
 
 The workflow:
 

@@ -44,4 +44,10 @@ describe("nightly news pipeline workflow", () => {
     expect(scanner).toContain("!options.dryRun && !options.reviewOnly && completedNewsIngest(summary)");
     expect(scanner).not.toContain('status: "PUBLISHED" as const');
   });
+
+  it("disables all legacy writes during the evidence review cutover", () => {
+    expect(workflow).toContain('[ "$EVENT_NAME" = "schedule" ] && [ "$NEWS_EVIDENCE_ENABLED" = "true" ]; then\n            mode=dry-run');
+    expect(workflow).toContain('[ "$NEWS_EVIDENCE_ENABLED" = "true" ] && [ "$mode" != "dry-run" ]');
+    expect(scanner).toContain('process.env.NEWS_EVIDENCE_ENABLED === "true" && !options.dryRun');
+  });
 });
