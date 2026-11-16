@@ -5,7 +5,7 @@ export const NEWS_PROCESSING_STAGES = ["SCREEN", "EXTRACT", "MATCH"] as const;
 export type ProcessingStage = (typeof NEWS_PROCESSING_STAGES)[number];
 
 // Increment the relevant version when an instruction or output contract changes.
-const PROMPT_VERSION = "2";
+const PROMPT_VERSION = "3";
 const SCHEMA_VERSION = "1";
 
 const modelSettingsSchema = z.strictObject({

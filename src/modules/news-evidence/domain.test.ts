@@ -140,10 +140,69 @@ describe("evidence extraction contracts", () => {
     expect(() => ground([{ ...treasuryTerms[3], kind: "CAPITAL_COMMITMENT" }])).toThrow(/monetary value and its basis/);
   });
 
-  it("rejects a source-incompatible date and a fund name inferred from the strategy", () => {
+  it("rejects a source-incompatible date and drops a fund name inferred from the strategy", () => {
     expect(() => groundExtraction({ ...signing, firstDisclosedOn: "2026-01-10" }, sections(), "version-1")).toThrow(/corresponding sourced claim/);
     const inventedFund = { key: "fund", kind: "FUND", label: "Northline Infrastructure", role: "FUND", evidence: disclosure } as const;
-    expect(() => groundExtraction({ ...signing, entities: [...signing.entities, inventedFund] }, sections(), "version-1")).toThrow(/undisclosed fund/);
+    const result = groundExtraction({ ...signing, entities: [...signing.entities, inventedFund] }, sections(), "version-1");
+    expect(result.extraction.fundDisclosure).toBe("UNDISCLOSED");
+    expect(result.extraction.entities).toEqual(signing.entities);
+  });
+
+  it("retains the TXNM affiliate and commitment evidence without asserting a named fund", () => {
+    const affiliate = evidence(2, "Parent and Merger Sub are affiliates of Blackstone Infrastructure Partners L.P. (“BIP”).");
+    const commitment = evidence(9, "BIP committed to provide Parent, at the consummation of the Merger, with an equity contribution in the amount set forth therein.");
+    const filingSections = txnmFiling.sections.map((text, index) => ({ index, text }));
+    const extraction: StoryExtraction = {
+      ...signing,
+      occurredOn: null,
+      firstDisclosedOn: null,
+      qualification: { kind: "DIRECT_EXPLICIT_STRATEGY", reason: "Infrastructure strategy affiliation.", evidence: affiliate },
+      fundDisclosure: "NAMED",
+      claims: [
+        { ...signing.claims[0], key: "affiliate", kind: "FUND_VEHICLE", value: "Blackstone Infrastructure Partners L.P.", evidence: affiliate },
+        { ...signing.claims[0], key: "commitment", kind: "FUND_VEHICLE", value: "BIP", evidence: commitment },
+      ],
+      entities: [
+        { key: "claimed-fund", kind: "FUND", label: "Blackstone Infrastructure Partners L.P.", role: "FUND", evidence: affiliate },
+        { key: "fund-abbreviation", kind: "FUND", label: "BIP", role: "INVESTOR", evidence: commitment },
+        { key: "parent", kind: "COMPANY", label: "Parent", role: "BUYER", evidence: affiliate },
+      ],
+    };
+
+    const result = groundExtraction(extraction, filingSections, "official-filing", { officialDisclosure: true });
+    expect(result.extraction.fundDisclosure).toBe("UNDISCLOSED");
+    expect(result.extraction.qualification.kind).toBe("DIRECT_EXPLICIT_STRATEGY");
+    expect(result.extraction.entities).toEqual([extraction.entities[2]]);
+    expect(result.claims).toMatchObject([
+      { kind: "ENTITY_ROLE", attribution: "DISCLOSED", evidence: { ...affiliate, sourceVersionId: "official-filing" } },
+      { kind: "ENTITY_ROLE", attribution: "DISCLOSED", evidence: { ...commitment, sourceVersionId: "official-filing" } },
+    ]);
+    expect(groundExtraction(result.extraction, filingSections, "official-filing", { officialDisclosure: true })).toEqual(result);
+  });
+
+  it("keeps an explicitly named investing fund, while an affiliate of a fund remains unresolved", () => {
+    const explicitlyNamed = ["Northline Infrastructure Fund III", "Northline Transmission Partners L.P."];
+    const goodQuotes = [
+      "Northline Infrastructure Fund III has agreed to acquire Cedar Intertie.",
+      "Northline Transmission Partners L.P., an infrastructure fund managed by Northline, acquired Cedar Intertie.",
+    ];
+    const affiliate = "Cedar Holdings L.P., an affiliate of the infrastructure fund, acquired Cedar Intertie.";
+    for (const [index, quote] of [...goodQuotes, affiliate].entries()) {
+      const label = explicitlyNamed[index] ?? "Cedar Holdings L.P.";
+      const extraction: StoryExtraction = {
+        ...signing, occurredOn: null, firstDisclosedOn: null, fundDisclosure: "NAMED",
+        qualification: { kind: "UNRESOLVED", reason: "Fund attribution fixture.", evidence: null },
+        claims: [
+          { ...signing.claims[0], kind: "FUND_VEHICLE", value: label, evidence: evidence(0, quote) },
+        ],
+        entities: [{ key: "fund", kind: "FUND", label, role: "BUYER", evidence: evidence(0, quote) }],
+      };
+      const result = groundExtraction(extraction, [{ index: 0, text: quote }], "test-version", { officialDisclosure: true });
+      const supported = index < goodQuotes.length;
+      expect(result.extraction.fundDisclosure).toBe(supported ? "NAMED" : "UNDISCLOSED");
+      expect(result.extraction.entities).toEqual(supported ? extraction.entities : []);
+      expect(result.claims[0].kind).toBe(supported ? "FUND_VEHICLE" : "ENTITY_ROLE");
+    }
   });
 
   it("keeps later closing, regulatory and correction developments from counting again", () => {

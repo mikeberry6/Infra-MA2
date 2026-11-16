@@ -123,20 +123,26 @@ async function main(db: PrismaClient) {
       development: { kind: "SIGNING" }, publicationEligibility: "READY_FOR_REVIEW" },
     include: { development: true, claims: { include: { evidence: true } }, matches: true },
   });
-  console.log(JSON.stringify({ event: "txnm_staging_candidates", candidates: signing.map((article) => ({
-    id: article.id, status: article.status, title: article.title, occurredOn: article.occurredOn,
-    firstDisclosedOn: article.firstDisclosedOn, claims: article.claims.map(({ kind, value }) => ({ kind, value })),
-  })) }));
-  requireCheck(signing.length === 1, "Expected exactly one supported TXNM signing revision.");
-  const [revision] = signing;
+  const mergerDrafts = signing.filter(({ claims }) => claims.some((claim) =>
+    claim.kind === "PER_SHARE_CONSIDERATION" && claim.attribution === "DISCLOSED"
+    && claim.evidence.some(({ quote }) => quote.includes("$61.25")),
+  ));
+  console.log(JSON.stringify({ event: "txnm_staging_candidates", signingCount: signing.length,
+    mergerCandidates: mergerDrafts.map((article) => ({
+      id: article.id, status: article.status, title: article.title, occurredOn: article.occurredOn,
+      firstDisclosedOn: article.firstDisclosedOn, claims: article.claims.map(({ kind, value }) => ({ kind, value })),
+    })),
+  }));
+  requireCheck(mergerDrafts.length === 1, "Expected exactly one supported TXNM merger signing revision with $61.25 per share.");
+  const [revision] = mergerDrafts;
+  const decision = revision.decisionDetails;
+  requireCheck(decision && typeof decision === "object" && !Array.isArray(decision)
+    && decision.fundDisclosure === "UNDISCLOSED", "The merger draft should leave the specific fund vehicle undisclosed.");
   requireCheck(/TXNM/i.test(`${revision.title} ${revision.summary}`) && /Blackstone/i.test(`${revision.title} ${revision.summary}`),
     "Expected TXNM and Blackstone in the supported staging copy.");
   requireCheck(revision.occurredOn?.toISOString().slice(0, 10) === "2025-05-18", "Expected the signing date to be May 18, 2025.");
   requireCheck(revision.firstDisclosedOn === null || revision.firstDisclosedOn.toISOString().slice(0, 10) === "2025-05-19",
     "The first-disclosure date conflicts with the approved filing.");
-  requireCheck(revision.claims.some((claim) => claim.kind === "PER_SHARE_CONSIDERATION"
-    && claim.attribution === "DISCLOSED" && claim.evidence.some(({ quote }) => quote.includes("$61.25"))),
-  "Expected $61.25 in sourced cash-per-share consideration.");
 
   if (mode === "before") {
     requireCheck(revision.status === "DRAFT" && revision.development.approvedRevisionId === null, "The test draft was already public.");

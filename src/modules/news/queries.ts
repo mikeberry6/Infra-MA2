@@ -83,7 +83,7 @@ async function getEvidenceNewsRows() {
       AND r.category <> 'LOW_CONFIDENCE_NEEDS_REVIEW'
     ORDER BY CASE
       WHEN r."correctsRevisionId" IS NOT NULL AND r."materialChange" THEN v."publishedAt"
-      ELSE coalesce(r."firstDisclosedOn", r."occurredOn", v."publishedAt")
+      ELSE coalesce(r."firstDisclosedOn", v."publishedAt")
     END DESC, d.id ASC
     LIMIT ${FEED_LIMIT * 2}
   `;
@@ -102,7 +102,6 @@ async function getEvidenceNewsRows() {
           confidence: true,
           isRumor: true,
           firstDisclosedOn: true,
-          occurredOn: true,
           reviewedAt: true,
           correctsRevisionId: true,
           materialChange: true,
@@ -163,8 +162,8 @@ function evidenceNewsItem(row: EvidenceRow): NewsItemView | null {
   const source = publicSourceMetadata(document.sourceKey, policyVersion, document);
   if (!source || !revision.claims.length || revision.claims.some(({ evidence }) =>
     !evidence.length || evidence.some(({ version }) => !canPublishVersion(version.document.sourceKey, version.policyVersion)))) return null;
-  const originalDate = revision.firstDisclosedOn ?? revision.occurredOn ?? publishedAt;
-  const date = (revision.correctsRevisionId && revision.materialChange ? publishedAt : originalDate) ?? revision.reviewedAt;
+  const originalDate = revision.firstDisclosedOn ?? publishedAt;
+  const date = revision.correctsRevisionId && revision.materialChange ? publishedAt : originalDate;
   return {
     id: row.legacyNewsItem?.legacyId ?? row.legacyNewsItem?.id ?? `evidence:${row.id}`,
     title: revision.title,

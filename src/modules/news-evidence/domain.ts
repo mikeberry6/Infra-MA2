@@ -228,6 +228,27 @@ function validateClaimValue(claim: ExtractedClaim): void {
   }
 }
 
+const FUND_DESCRIPTION = /^(?:an?|the|its) (?:(?:closed-end|open-end|evergreen|infrastructure|investment|private equity|private credit|energy transition|global|dedicated|listed) ){0,4}fund\b(?! (?:manager|advis(?:er|or)|services|administrator))/i;
+const FUND_ROLE_BEFORE = /\b(?:the (?:buyer|acquirer|investor|purchaser) (?:is|was)|(?:acquired|purchased|bought) by|(?:invest(?:ed|s)?|commit(?:ted|s))\b.{0,65}\b(?:by|from|to))\s*$/i;
+const FUND_ACTION = /\b(?:acquire[sd]?|purchase[sd]?|buy[s]?|bought|invest(?:s|ed|ing)?|commit(?:s|ted)? equity|provide[sd]? equity)\b/i;
+const FUND_ROLE_AFTER = new RegExp(`^\\s*,?\\s*(?:(?:has|had|will)\\s+)?(?:(?:agreed to|is set to|entered into an agreement to)\\s+)?${FUND_ACTION.source}`, "i");
+
+function supportsFundVehicle({ value, evidence: { quote } }: GroundedClaim): boolean {
+  const start = quote.indexOf(value);
+  const before = quote.slice(0, start);
+  const after = quote.slice(start + value.length);
+  const beforeLabel = /(?:\b(?:an?|the|its) (?:[\w-]+ ){0,4}fund(?: known as| named| called)?)[ ,:“"(]*$/i.test(before);
+  const afterDescription = /^\s*[,(:–—]\s*([^,);]{1,110})[,);]/.exec(after);
+  const afterLabel = afterDescription && FUND_DESCRIPTION.test(afterDescription[1]);
+  const vehicleNamed = /\bfund\b(?! (?:manager|advis(?:er|or)|services|administrator))/i.test(value) || beforeLabel || afterLabel;
+  if (!vehicleNamed) return false;
+
+  const afterName = afterLabel ? after.slice(afterDescription[0].length) : after;
+  return FUND_ROLE_BEFORE.test(before)
+    || FUND_ROLE_AFTER.test(afterName)
+    || (/\b(?:through|via|on behalf of)(?: its| the)?\s*$/i.test(before) && FUND_ACTION.test(quote));
+}
+
 export function groundExtraction(
   input: StoryExtraction,
   storySections: readonly SourceSection[],
@@ -251,13 +272,18 @@ export function groundExtraction(
     throw new EvidenceValidationError("Qualification evidence needs an infrastructure strategy, traditional asset, or ownership lineage.");
   }
 
+  const evidencedFunds = new Set<string>();
   const claims = extraction.claims.map((claim): GroundedClaim => {
     validateClaimValue(claim);
-    return {
+    const grounded = {
       ...claim,
-      attribution: options.officialDisclosure ? claim.attribution : "REPORTED",
+      attribution: options.officialDisclosure ? claim.attribution : "REPORTED" as const,
       evidence: groundEvidence(claim.evidence, storySections, sourceVersionId),
     };
+    if (grounded.kind !== "FUND_VEHICLE") return grounded;
+    if (!supportsFundVehicle(grounded)) return { ...grounded, kind: "ENTITY_ROLE" };
+    evidencedFunds.add(normalizeIdentityText(grounded.value));
+    return grounded;
   });
   for (const [kind, value] of [
     ["OCCURRENCE_DATE", extraction.occurredOn],
@@ -267,23 +293,23 @@ export function groundExtraction(
       throw new EvidenceValidationError("Each asserted event date needs a corresponding sourced claim.");
     }
   }
-  if (extraction.fundDisclosure === "NAMED" && !claims.some(({ kind }) => kind === "FUND_VEHICLE")) {
-    throw new EvidenceValidationError("An explicitly named fund needs a fund-vehicle claim.");
-  }
-
   for (const entity of extraction.entities) {
-    if (entity.kind === "FUND" && entity.role === "FUND" && extraction.fundDisclosure !== "NAMED") {
-      throw new EvidenceValidationError("An undisclosed fund cannot be selected or inferred.");
-    }
     groundEvidence(entity.evidence, storySections, sourceVersionId);
     if (!containsIdentity(entity.evidence.quote, entity.label)) {
       throw new EvidenceValidationError("A stated entity is absent from its source passage.");
     }
   }
 
+  const mentionsFund = extraction.fundDisclosure !== "NOT_APPLICABLE"
+    || extraction.claims.some(({ kind }) => kind === "FUND_VEHICLE")
+    || extraction.entities.some(({ kind }) => kind === "FUND");
   return {
     extraction: {
       ...extraction,
+      fundDisclosure: evidencedFunds.size ? "NAMED" : mentionsFund ? "UNDISCLOSED" : "NOT_APPLICABLE",
+      entities: extraction.entities.filter(({ kind, label }) =>
+        kind !== "FUND" || evidencedFunds.has(normalizeIdentityText(label)),
+      ),
       claims: claims.map(({ evidence: { section, quote }, ...claim }) => ({
         ...claim,
         evidence: { section, quote },

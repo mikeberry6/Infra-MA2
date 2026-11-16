@@ -125,6 +125,7 @@ async function main() {
     await expect(filingCards).toHaveCount(1);
     await expect(filingCards.getByRole("heading", { name: title, exact: true })).toBeVisible();
     await expect(filingCards.getByRole("link", { name: "Source", exact: true })).toHaveAttribute("href", filingUrl);
+    await expect(filingCards.getByText(/May 19, 2025|2025-05-19/).first()).toBeVisible();
 
     checkpoint = "check the protected staging digest archive";
     const response = await editor.goto(digestUrl);
