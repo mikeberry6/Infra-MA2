@@ -43,6 +43,21 @@ jobs:
           const info = await read("/branches/br-rough-term-amnv0r82");
           const branch = info.branch;
           const endpointData = await read(`/branches/${branch.id}/endpoints`);
+          const role = "news_evidence_staging";
+          const endpoint = endpointData.endpoints.find((item) => item.type === "read_write");
+          const params = new URLSearchParams({ branch_id: branch.id, endpoint_id: endpoint.id,
+            database_name: role, role_name: role, pooled: "false" });
+          const credentials = await read(`/connection_uri?${params}`);
+          const target = new URL(credentials.uri);
+          console.log(JSON.stringify({ uriCompatibility: {
+            protocol: target.protocol,
+            endpointMatch: target.hostname === endpoint.host,
+            normalizedEndpointMatch: normalize(target.hostname) === normalize(endpoint.host),
+            databaseMatch: target.pathname === `/${role}`,
+            usernameMatch: target.username === role,
+            hasPassword: Boolean(target.password),
+            placeholderPassword: /^\[|^\*+$/.test(target.password),
+          } }));
           const annotations = info.annotation?.value;
           console.log(JSON.stringify({
             id: branch.id, name: branch.name, primary: branch.primary ?? null, default: branch.default ?? null,
