@@ -144,18 +144,33 @@ async function main(db: PrismaClient) {
   requireCheck(revision.firstDisclosedOn === null || revision.firstDisclosedOn.toISOString().slice(0, 10) === "2025-05-19",
     "The first-disclosure date conflicts with the approved filing.");
 
-  if (mode === "before") {
-    requireCheck(revision.status === "DRAFT" && revision.development.approvedRevisionId === null, "The test draft was already public.");
-    stageVariable("NEWS_TXNM_STAGING_DRAFT_ID", revision.id);
-  } else if (mode === "after") {
+  const completed = revision.status === "APPROVED" && revision.development.approvedRevisionId === revision.id;
+  if (mode === "after" || (mode === "before" && completed)) {
     requireCheck(revision.status === "APPROVED" && revision.development.approvedRevisionId === revision.id,
       "The expected TXNM revision was not approved.");
-    const approved = await db.newsRevision.count({ where: { sourceVersionId: version.id, status: "APPROVED" } });
+    const [approved, reviews] = await Promise.all([
+      db.newsRevision.count({ where: { sourceVersionId: version.id, status: "APPROVED" } }),
+      db.auditEvent.count({ where: {
+        action: "NEWS_APPROVE", entityType: "NewsDevelopment", entityId: revision.developmentId,
+        actor: { email: { startsWith: "txnm-staging-", endsWith: "@example.test" }, role: "ADMIN" },
+        AND: [
+          { metadata: { path: ["reviewedDraftId"], equals: revision.id } },
+          { metadata: { path: ["revisionId"], equals: revision.id } },
+        ],
+      } }),
+    ]);
     requireCheck(approved === 1, "Unexpected extra staged approvals.");
+    requireCheck(reviews === 1, "The expected staged administrative review receipt could not be confirmed.");
+  } else if (mode === "before") {
+    requireCheck(revision.status === "DRAFT" && revision.development.approvedRevisionId === null, "Unexpected state for this test draft.");
   } else {
     throw new Error("Use prepare, before, diagnose, or after.");
   }
-  console.log(JSON.stringify({ event: `txnm_staging_${mode}`, revisionId: revision.id, title: revision.title, ...after }));
+  if (mode === "before") {
+    stageVariable("NEWS_TXNM_STAGING_DRAFT_ID", revision.id);
+    stageVariable("NEWS_TXNM_STAGING_EXPECT_APPROVED", String(completed));
+  }
+  console.log(JSON.stringify({ event: `txnm_staging_${mode}`, revisionId: revision.id, status: revision.status, title: revision.title, ...after }));
 }
 
 if (process.env.NEWS_PIPELINE_TARGET !== "staging" || process.env.VERCEL_ENV === "production") {

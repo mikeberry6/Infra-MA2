@@ -110,7 +110,7 @@ export function ReviewControls({ revisionId, approvedRevisionId, title, summary,
             </label>
           )}
           <label className="flex items-start gap-2 type-meta"><input type="checkbox" required checked={confirmedEvidence} onChange={(event) => setConfirmedEvidence(event.target.checked)} /> I verified the draft copy, evidence, and selected record links.</label>
-          <Button type="submit" variant="primary" disabled={pending !== null} loading={pending === "approve"}>Approve and publish</Button>
+          <Button type="submit" variant="primary" disabled={!confirmedEvidence || pending !== null} loading={pending === "approve"}>Approve and publish</Button>
         </form>
       ) : <p className="type-meta text-[var(--text-secondary)]">Publication is blocked by the source or evidence checks.</p>}
 

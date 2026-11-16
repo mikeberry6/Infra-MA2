@@ -86,7 +86,7 @@ done
 
 deployment_output="$("${vercel[@]}" deploy --yes --environment preview --archive=tgz --project "$VERCEL_PROJECT_ID" \
   --local-config "$config_file" "${auth_args[@]}" "${env_args[@]}" \
-  --meta "githubCommitRef=$GITHUB_REF_NAME" --meta "githubCommitSha=$GITHUB_SHA" \
+  --meta "githubDeployment=1" --meta "githubCommitRef=$GITHUB_REF_NAME" --meta "githubCommitSha=$GITHUB_SHA" \
   --meta "newsStagingRun=$GITHUB_RUN_ID" --meta "newsStagingBranch=$NEWS_STAGING_BRANCH_ID")"
 url="$deployment_output"
 if [[ "$deployment_output" == \{* ]]; then

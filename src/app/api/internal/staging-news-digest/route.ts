@@ -26,10 +26,12 @@ export async function POST(request: Request) {
 
   const scheduleId = request.headers.get("ce-vssscheduleid");
   const executionId = request.headers.get("ce-id");
+  const eventType = request.headers.get("ce-type");
   const deploymentId = process.env.VERCEL_DEPLOYMENT_ID ?? null;
   const deploymentNonce = process.env.NEWS_STAGING_DEPLOYMENT_NONCE ?? null;
   if (!scheduleId || !/^sch_[a-zA-Z0-9_-]{1,120}$/.test(scheduleId)
-    || !executionId || !/^schx_[a-zA-Z0-9_-]{1,120}$/.test(executionId) || (!deploymentId && !deploymentNonce)) {
+    || !executionId || !/^[a-zA-Z0-9_-]{1,128}$/.test(executionId)
+    || eventType !== "com.vercel.schedule.v1beta" || (!deploymentId && !deploymentNonce)) {
     return Response.json({ error: "Invalid schedule invocation" }, { status: 400, headers });
   }
 
