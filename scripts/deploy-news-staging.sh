@@ -84,7 +84,7 @@ for value in "${deploy_env[@]}"; do
   env_args+=(--env "$value" --build-env "$value")
 done
 
-deployment_output="$("${vercel[@]}" deploy --yes --target preview --archive=tgz --project "$VERCEL_PROJECT_ID" \
+deployment_output="$("${vercel[@]}" deploy --yes --environment preview --archive=tgz --project "$VERCEL_PROJECT_ID" \
   --local-config "$config_file" "${auth_args[@]}" "${env_args[@]}" \
   --meta "githubCommitRef=$GITHUB_REF_NAME" --meta "githubCommitSha=$GITHUB_SHA" \
   --meta "newsStagingRun=$GITHUB_RUN_ID" --meta "newsStagingBranch=$NEWS_STAGING_BRANCH_ID")"
