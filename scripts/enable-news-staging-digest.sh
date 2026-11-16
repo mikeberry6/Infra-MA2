@@ -5,7 +5,7 @@ if [[ "${NEWS_PIPELINE_TARGET:-}" != staging || "${GITHUB_REF_NAME:-}" == main ]
   echo "::error::The digest activation requires a non-main staging workflow."
   exit 1
 fi
-for name in VERCEL_TOKEN VERCEL_PROJECT_ID VERCEL_ORG_ID VERCEL_SCOPE GITHUB_REF_NAME GITHUB_RUN_ID GITHUB_RUN_ATTEMPT NEWS_STAGING_URL NEWS_STAGING_DEPLOYMENT_ID NEWS_STAGING_SCHEDULE_NAME NEWS_TXNM_STAGING_DRAFT_ID; do
+for name in VERCEL_TOKEN VERCEL_PROJECT_ID VERCEL_ORG_ID GITHUB_REF_NAME GITHUB_RUN_ID GITHUB_RUN_ATTEMPT NEWS_STAGING_URL NEWS_STAGING_DEPLOYMENT_ID NEWS_STAGING_SCHEDULE_NAME NEWS_TXNM_STAGING_DRAFT_ID; do
   if [[ -z "${!name:-}" ]]; then
     echo "::error::$name is required to verify the staging digest."
     exit 1
@@ -30,7 +30,7 @@ schedule_query="$branch_query&user=$owner"
 schedule_api="https://vercel-schedules.com/v1/schedules/$NEWS_STAGING_SCHEDULE_NAME"
 
 feed_url="$NEWS_STAGING_URL/news?period=All"
-if ! feed="$(curl -fsS --max-time 30 "$feed_url")"; then
+if ! feed="$(curl -fsS --max-time 30 "$feed_url")" || [[ "$feed" != *000110842625000048* ]]; then
   bypass="$(curl -fsS --max-time 30 -H "$auth_header" "https://api.vercel.com/v9/projects/$VERCEL_PROJECT_ID?teamId=$VERCEL_ORG_ID" |
     jq -er '(.protectionBypass // {}) | to_entries | map(select(.value.scope == "automation-bypass")) | .[0].key')" || {
     echo "::error::The staging feed is protected and the existing project has no available automation bypass."

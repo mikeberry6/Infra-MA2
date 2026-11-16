@@ -5,7 +5,7 @@ if [[ "${NEWS_PIPELINE_TARGET:-}" != staging || "${GITHUB_REF:-}" == refs/heads/
   echo "::error::Deploy the evidence pilot from a non-main staging workflow."
   exit 1
 fi
-for name in VERCEL_TOKEN VERCEL_PROJECT_ID VERCEL_ORG_ID VERCEL_SCOPE PRODUCTION_URL GITHUB_RUN_ID GITHUB_RUN_ATTEMPT GITHUB_REF_NAME GITHUB_SHA GITHUB_ENV NEWS_STAGING_BRANCH_ID; do
+for name in VERCEL_TOKEN VERCEL_PROJECT_ID VERCEL_ORG_ID PRODUCTION_URL GITHUB_RUN_ID GITHUB_RUN_ATTEMPT GITHUB_REF_NAME GITHUB_SHA GITHUB_ENV NEWS_STAGING_BRANCH_ID; do
   if [[ -z "${!name:-}" ]]; then
     echo "::error::$name is required for the staging Preview."
     exit 1
@@ -47,7 +47,7 @@ production_host="${PRODUCTION_URL#https://}"
 production_host="${production_host%%/*}"
 [[ "$production_host" =~ ^[A-Za-z0-9.-]+$ && "$staging_alias" != "$production_host" ]]
 vercel=(env -u OPENAI_API_KEY -u NEON_API_KEY -u VERCEL_TARGET npx --yes vercel@65.16.0)
-auth_args=(--scope "$VERCEL_SCOPE" --token "$VERCEL_TOKEN" --no-color)
+auth_args=(--token "$VERCEL_TOKEN" --no-color)
 deployment_api() {
   curl -fsS --max-time 30 -H "Authorization: Bearer $VERCEL_TOKEN" \
     "https://api.vercel.com/v13/deployments/$1?teamId=$VERCEL_ORG_ID"
@@ -110,7 +110,9 @@ if [[ "$alias_http_status" != 404 ]]; then
   echo "::error::The staging alias could not be confirmed unused."
   exit 1
 fi
-"${vercel[@]}" alias set "$url" "$staging_alias" "${auth_args[@]}"
+curl -fsS --max-time 30 -o /dev/null -X POST -H "Authorization: Bearer $VERCEL_TOKEN" -H 'Content-Type: application/json' \
+  --data "$(jq -nc --arg alias "$staging_alias" '{alias:$alias}')" \
+  "https://api.vercel.com/v2/deployments/$preview_id/aliases?teamId=$VERCEL_ORG_ID"
 preview_alias_id="$(deployment_api "$staging_alias" | jq -er '.id')"
 production_id_after="$(deployment_api "$production_host" | jq -er '.id')"
 [[ "$preview_alias_id" == "$preview_id" && "$production_id_after" == "$production_id_before" ]]
