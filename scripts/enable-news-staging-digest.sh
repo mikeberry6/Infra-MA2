@@ -25,12 +25,19 @@ jq -e --arg target "$NEWS_STAGING_DEPLOYMENT_ID" --arg project "$VERCEL_PROJECT_
 owner="$(jq -er '.creator.uid' <<< "$deployment")"
 [[ "$owner" =~ ^[A-Za-z0-9_-]+$ ]]
 encoded_branch="$(jq -nr --arg branch "$GITHUB_REF_NAME" '$branch | @uri')"
-schedule_query="teamId=$VERCEL_ORG_ID&projectId=$VERCEL_PROJECT_ID&branch=$encoded_branch&user=$owner"
+branch_query="teamId=$VERCEL_ORG_ID&projectId=$VERCEL_PROJECT_ID&branch=$encoded_branch"
+schedule_query="$branch_query&user=$owner"
 schedule_api="https://vercel-schedules.com/v1/schedules/$NEWS_STAGING_SCHEDULE_NAME"
 
 feed_url="$NEWS_STAGING_URL/news?period=All"
 if ! feed="$(curl -fsS --max-time 30 "$feed_url")"; then
-  feed="$(npx --yes vercel@65.16.0 curl "$feed_url" --scope "$VERCEL_SCOPE" --token "$VERCEL_TOKEN" --yes -- --fail)"
+  bypass="$(curl -fsS --max-time 30 -H "$auth_header" "https://api.vercel.com/v9/projects/$VERCEL_PROJECT_ID?teamId=$VERCEL_ORG_ID" |
+    jq -er '(.protectionBypass // {}) | to_entries | map(select(.value.scope == "automation-bypass")) | .[0].key')" || {
+    echo "::error::The staging feed is protected and the existing project has no available automation bypass."
+    exit 1
+  }
+  feed="$(curl -fsS --max-time 30 -H "x-vercel-protection-bypass: $bypass" "$feed_url")"
+  unset bypass
 fi
 if [[ "$feed" != *000110842625000048* || "$feed" != *"TXNM Energy"* ]]; then
   echo "::error::The hosted staging news feed did not show the approved TXNM filing."
@@ -56,7 +63,10 @@ try {
 }
 JS
 
-schedule_before="$(curl -fsS --max-time 30 -H "$auth_header" "$schedule_api?$schedule_query")"
+if ! schedule_before="$(curl -fs --max-time 30 -H "$auth_header" "$schedule_api?$schedule_query")"; then
+  schedule_query="$branch_query"
+  schedule_before="$(curl -fsS --max-time 30 -H "$auth_header" "$schedule_api?$schedule_query")"
+fi
 schedule_id="$(jq -er --arg name "$NEWS_STAGING_SCHEDULE_NAME" --arg project "$VERCEL_PROJECT_ID" \
   'select(.name == $name and .projectId == $project and .source == "static" and .state == "inactive"
     and .expression.cron == "15 6 * * *" and .timezone == "America/New_York"

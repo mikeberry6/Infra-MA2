@@ -149,7 +149,6 @@ async function main() {
       ]);
       console.log(JSON.stringify({ event: "txnm_staging_approval_response", status: approvalResponse.status() }));
       expect(approvalResponse.status()).toBe(200);
-      await approvalResponse.finished();
 
       checkpoint = "verify the staged approval was saved";
       const approved = classification.getByText(/^approved$/i);
