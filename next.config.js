@@ -104,7 +104,7 @@ const nextConfig = {
     return [
       { source: "/", destination: "/tracker", permanent: true },
       { source: "/Infra-MA2", destination: "/tracker", permanent: true },
-      { source: "/Infra-MA2/:path*", destination: "/:path*", permanent: true },
+      { source: "/Infra-MA2/:path+", destination: "/:path*", permanent: true },
     ];
   },
 };
