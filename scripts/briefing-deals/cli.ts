@@ -66,7 +66,7 @@ async function main() {
     if (proposal.target.host !== target.hostname || proposal.target.database !== target.pathname.slice(1)) throw new Error("Manifest is bound to a different database target");
     const actualIssues = loadIssues(process.cwd());
     for (const issue of proposal.issues) if (digest(actualIssues.find(i => i.edition === issue.edition)) !== digest(issue)) throw new Error(`Archive changed since review: ${issue.edition}`);
-    const revalidateUrl = "https://infra-ma-2.vercel.app/Infra-MA2/api/internal/fund-refresh/revalidate";
+    const revalidateUrl = "https://infra-ma-2.vercel.app/api/internal/fund-refresh/revalidate";
     const headers = { authorization: `Bearer ${process.env.FUND_REFRESH_REVALIDATE_TOKEN}` };
     if (production && !(await fetch(revalidateUrl, { headers })).ok) throw new Error("Cache revalidation preflight failed");
     const receipt = await applyProposal(client, proposal, expectedHash);

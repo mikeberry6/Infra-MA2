@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ChevronLeft, Download, FileText } from "lucide-react";
-import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Slide format",
@@ -117,16 +116,16 @@ export default function SlideFormatPage() {
   return (
     <main className="mx-auto max-w-[1040px] px-4 py-8 sm:px-6 sm:py-10">
       <a
-        href={withBasePath("/one-off-requests")}
+        href="/one-off-requests"
         className="mb-6 inline-flex items-center gap-1.5 type-meta text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
       >
         <ChevronLeft className="h-3.5 w-3.5" />
-        One-Off Requests
+        Custom requests
       </a>
 
       <header className="border-b border-[var(--border)] pb-7">
         <p className="type-micro font-medium uppercase tracking-[0.16em] text-[#442142]">
-          One-off presentation
+          Custom presentation
         </p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl">
           Slide format
@@ -139,7 +138,7 @@ export default function SlideFormatPage() {
       <section className="grid gap-5 border-b border-[var(--border)] py-7 lg:grid-cols-[minmax(0,1fr)_240px] lg:items-start">
         <div className="overflow-hidden border border-[var(--border)] bg-white shadow-sm">
           <Image
-            src={withBasePath("/one-off-requests/slide-format-preview.png")}
+            src="/one-off-requests/slide-format-preview.png"
             alt="Preview of the Rio Tinto slide format with initials-only text"
             width={1600}
             height={900}
@@ -156,7 +155,7 @@ export default function SlideFormatPage() {
             One editable 16:9 slide with the original layout, palette, shapes and text positions retained.
           </p>
           <a
-            href={withBasePath("/one-off-requests/slide-format.pptx")}
+            href="/one-off-requests/slide-format.pptx"
             download
             className="mt-4 inline-flex w-full items-center justify-center gap-2 bg-[#442142] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#562a54] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#442142]/30"
           >

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import Link from "next/link";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
@@ -172,7 +173,6 @@ import { PaginationControls } from "@/components/shared/PaginationControls";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { useCanExport } from "@/hooks/useCanExport";
-import { withBasePath } from "@/lib/base-path";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: string[] = [...DEAL_SECTORS];
@@ -709,7 +709,7 @@ function DealDrawer({
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch(withBasePath(`/api/deals/${encodeURIComponent(summary.legacyId)}`), { signal: controller.signal })
+    fetch(`/api/deals/${encodeURIComponent(summary.legacyId)}`, { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error("Deal detail unavailable");
         const { deal }: { deal: DealView } = await response.json();
@@ -1101,10 +1101,13 @@ export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: De
             <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
           </span>
           <div className="flex flex-wrap items-center justify-end gap-1">
+            <Link href="/compare" className="inline-flex h-8 items-center rounded-md px-2 type-micro font-medium hover:bg-[var(--bg-hover)] hover:text-[var(--accent)]">
+              Compare deals
+            </Link>
             <DealSavedScreens params={screen} onLoad={setScreen} />
             {canExport && filteredDeals.length > 0 && (
               <a
-                href={withBasePath(`/api/exports/deals?${download.toString()}`)}
+                href={`/api/exports/deals?${download.toString()}`}
                 download
                 className="inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >

@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const port = Number(process.env.E2E_PORT || 3100);
-const basePath = (process.env.E2E_BASE_PATH || "/Infra-MA2").replace(/\/$/, "");
+const basePath = (process.env.E2E_BASE_PATH || "").replace(/\/$/, "");
 const configuredUrl = process.env.PLAYWRIGHT_BASE_URL;
 const origin = configuredUrl ? new URL(configuredUrl).origin : `http://127.0.0.1:${port}`;
 

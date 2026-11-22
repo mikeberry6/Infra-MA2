@@ -8,13 +8,6 @@ function applyPrivilegedNoStore(response: NextResponse): NextResponse {
   return response;
 }
 
-function requestPathWithBasePath(request: NextRequest): string {
-  const basePath = request.nextUrl.basePath || "";
-  const path = `${request.nextUrl.pathname}${request.nextUrl.search}`;
-  if (!basePath || path === basePath || path.startsWith(`${basePath}/`)) return path;
-  return `${basePath}${path}`;
-}
-
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -56,7 +49,8 @@ export async function middleware(request: NextRequest) {
   if (pathname.startsWith("/admin") && role !== "ADMIN") {
     const loginUrl = request.nextUrl.clone();
     loginUrl.pathname = "/login";
-    loginUrl.searchParams.set("callbackUrl", requestPathWithBasePath(request));
+    loginUrl.search = "";
+    loginUrl.searchParams.set("callbackUrl", pathname + request.nextUrl.search);
     return applyPrivilegedNoStore(NextResponse.redirect(loginUrl));
   }
 
@@ -76,5 +70,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/admin/:path*", "/api/imports/:path*", "/api/exports/:path*"],
 };

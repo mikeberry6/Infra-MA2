@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ProfileLink, ProfileSource, RecordProfile } from "@/components/profiles/RecordProfile";
-import { withBasePath } from "@/lib/base-path";
 import { researchMetadata } from "@/lib/public-metadata";
 import { prisma } from "@/lib/prisma";
 import { getPublicCompanyProfile, getPublicDealProfile, getPublicFundProfile } from "@/modules/profiles/queries";
@@ -98,7 +97,7 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
           </Link>
         ))}
       </nav>
-      <form action={withBasePath("/compare")} method="get" className="grid gap-3 sm:grid-cols-3">
+      <form action="/compare" method="get" className="grid gap-3 sm:grid-cols-3">
         <input type="hidden" name="type" value={type} />
         {[0, 1, 2].map((index) => (
           <label key={index} className="min-w-0 space-y-1 type-meta">

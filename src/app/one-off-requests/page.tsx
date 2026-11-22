@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Download, ExternalLink, FileText } from "lucide-react";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
-import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
-  title: "One-Off Requests",
+  title: "Custom requests",
+  description: "Browse presentations, research briefs, and reference tables prepared for custom requests.",
 };
 
 const ONE_OFF_REQUESTS = [
@@ -349,8 +349,8 @@ export default function OneOffRequestsPage() {
     <div className="mx-auto max-w-[900px] px-4 sm:px-6 py-8 sm:py-10">
       <DatabaseIntelligenceHeader
         eyebrow="Reusable outputs"
-        title="One-Off Requests"
-        summary="A small library for standalone presentations, email builds, tables, and other ad hoc deliverables that sit outside the weekly briefing archive."
+        title="Custom requests"
+        summary="Presentations, research briefs, and reference tables prepared for custom requests."
         metrics={[
           {
             label: "Items",
@@ -367,7 +367,7 @@ export default function OneOffRequestsPage() {
           {
             label: "Latest",
             value: "Nov 2026",
-            detail: "Most recent one-off",
+            detail: "Most recent request",
             color: "#B4A87D",
           },
         ]}
@@ -377,7 +377,7 @@ export default function OneOffRequestsPage() {
         {ONE_OFF_REQUESTS.map((item) => (
           <a
             key={item.href}
-            href={withBasePath(item.href)}
+            href={item.href}
             download={item.download ? item.href.split("/").pop() : undefined}
             className="block surface px-4 py-3 transition-colors hover:bg-[var(--bg-subtle)] group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
           >

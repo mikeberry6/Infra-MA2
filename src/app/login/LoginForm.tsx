@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { SessionProvider, signIn } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { LogIn } from "lucide-react";
 import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
-import { withBasePath } from "@/lib/base-path";
 
 type LoginFormProps = {
   callbackUrl: string;
@@ -17,20 +16,6 @@ function navigateDocument(url: string) {
 }
 
 export function LoginForm({ callbackUrl, navigate = navigateDocument }: LoginFormProps) {
-  return (
-    <SessionProvider basePath={withBasePath("/api/auth")} refetchOnWindowFocus={false}>
-      <LoginFields callbackUrl={callbackUrl} navigate={navigate} />
-    </SessionProvider>
-  );
-}
-
-function LoginFields({
-  callbackUrl,
-  navigate,
-}: {
-  callbackUrl: string;
-  navigate: (url: string) => void;
-}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");

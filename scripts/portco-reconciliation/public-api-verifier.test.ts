@@ -150,7 +150,7 @@ describe("public PortCo detail API verifier", () => {
     const image = companyImageFixture();
     image.recordStatus = "ARCHIVED";
     const verify = createPublicDetailApiVerifier({
-      baseUrl: "https://example.com/Infra-MA2/",
+      baseUrl: "https://example.com/",
       attempts: 1,
       fetchImpl: async () => new Response(null, { status: 404 }),
     });
@@ -162,7 +162,7 @@ describe("public PortCo detail API verifier", () => {
     const image = companyImageFixture();
     image.recordStatus = "ARCHIVED";
     const verify = createPublicDetailApiVerifier({
-      baseUrl: "https://example.com/Infra-MA2/",
+      baseUrl: "https://example.com/",
       attempts: 1,
       fetchImpl: async () => new Response("{}", {
         status: 200,
@@ -196,12 +196,12 @@ describe("public PortCo detail API verifier", () => {
       return Response.json(payload);
     };
     await createPublicDetailApiVerifier({
-      baseUrl: "https://example.com/Infra-MA2/",
+      baseUrl: "https://example.com/",
       attempts: 1,
       fetchImpl,
     })("company_acme", image, []);
     await createPublicDetailApiVerifier({
-      baseUrl: "https://example.com/Infra-MA2/",
+      baseUrl: "https://example.com/",
       attempts: 1,
       fetchImpl,
       cacheVersion: "default",

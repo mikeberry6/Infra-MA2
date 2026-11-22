@@ -24,21 +24,10 @@ export function extractBodyMarkup(documentMarkup: string): string {
   return match[1].trim();
 }
 
-export function rewriteBriefingArchiveLinks(
-  bodyMarkup: string,
-  basePath = "",
-): string {
-  const prefix = basePath.replace(/\/$/, "");
+export function rewriteBriefingArchiveLinks(bodyMarkup: string): string {
   return bodyMarkup
-    .replace(
-      /href="(\d{4}-\d{2}-\d{2})\.html"/g,
-      (_match, edition: string) =>
-        `href="${prefix}/weekly-briefing?edition=${edition}"`,
-    )
-    .replace(
-      /src="assets\//g,
-      `src="${prefix}/email-format/assets/`,
-    );
+    .replace(/href="(\d{4}-\d{2}-\d{2})\.html"/g, 'href="/weekly-briefing?edition=$1"')
+    .replace(/src="assets\//g, 'src="/email-format/assets/');
 }
 
 export async function listWeeklyBriefingEditions(
@@ -53,11 +42,9 @@ export async function listWeeklyBriefingEditions(
 
 export async function loadWeeklyBriefingDocument({
   edition,
-  basePath = "",
   archiveDir = DEFAULT_ARCHIVE_DIR,
 }: {
   edition: string;
-  basePath?: string;
   archiveDir?: string;
 }): Promise<WeeklyBriefingDocument> {
   if (!isWeeklyBriefingEdition(edition)) {
@@ -68,16 +55,12 @@ export async function loadWeeklyBriefingDocument({
     path.join(archiveDir, `${edition}.html`),
     "utf8",
   );
-  const prefix = basePath.replace(/\/$/, "");
 
   return {
     edition,
     documentMarkup,
     headStyles: (documentMarkup.match(/<style\b[^>]*>[\s\S]*?<\/style>/gi) ?? []).join("\n"),
-    bodyMarkup: rewriteBriefingArchiveLinks(
-      extractBodyMarkup(documentMarkup),
-      prefix,
-    ),
-    sourceHref: `${prefix}/email-format/${edition}.html`,
+    bodyMarkup: rewriteBriefingArchiveLinks(extractBodyMarkup(documentMarkup)),
+    sourceHref: `/email-format/${edition}.html`,
   };
 }

@@ -25,13 +25,7 @@ export async function GET(request: Request) {
     return new Response("Weekly briefing not found", { status: 404 });
   }
 
-  const basePath = (process.env.NEXT_PUBLIC_BASE_PATH || "").replace(/\/$/, "");
-  const destination = new URL(
-    `${basePath}/email-format/${edition}.html`,
-    requestUrl,
-  );
-
-  const document = await loadWeeklyBriefingDocument({ edition, basePath });
+  const document = await loadWeeklyBriefingDocument({ edition });
   const escapeAttribute = (value: string) => value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   const bodyMarkup = document.bodyMarkup.replace(/<a\b([^>]*)>/gi, (_tag, attributes: string) => {
     const isArchiveLink = attributes.includes("/weekly-briefing?edition=");
@@ -43,7 +37,7 @@ export async function GET(request: Request) {
   // The sandbox forbids scripts in the immutable email content.
   const hasDealMembership = await hasVerifiedBriefingMembership(edition, document.documentMarkup);
   const dealLink = hasDealMembership
-    ? `<a href="${basePath}/tracker?briefing=${edition}&amp;via=briefing">View these deals</a>`
+    ? `<a href="/tracker?briefing=${edition}&amp;via=briefing">View these deals</a>`
     : "<span>Editorial edition · deal list unavailable</span>";
   const canonical = escapeAttribute(publicUrl(`/weekly-briefing?edition=${edition}`));
   const image = escapeAttribute(publicUrl("/social-preview"));
@@ -53,15 +47,15 @@ export async function GET(request: Request) {
   const previousEdition = selectedIndex >= 0 ? publishedEditions[selectedIndex + 1] : undefined;
   const nextEdition = selectedIndex > 0 ? publishedEditions[selectedIndex - 1] : undefined;
   const archiveNav = publishedEditions.length ? `
-      <form method="get" action="${basePath}/weekly-briefing">
+      <form method="get" action="/weekly-briefing">
         <label for="edition">Published editions</label>
         <select id="edition" name="edition">
           ${publishedEditions.map((date) => `<option value="${date}"${date === edition ? " selected" : ""}>${date}</option>`).join("")}
         </select>
         <button type="submit">Open edition</button>
       </form>
-      ${previousEdition ? `<a href="${basePath}/weekly-briefing?edition=${previousEdition}">Older edition</a>` : ""}
-      ${nextEdition ? `<a href="${basePath}/weekly-briefing?edition=${nextEdition}">Newer edition</a>` : ""}
+      ${previousEdition ? `<a href="/weekly-briefing?edition=${previousEdition}">Older edition</a>` : ""}
+      ${nextEdition ? `<a href="/weekly-briefing?edition=${nextEdition}">Newer edition</a>` : ""}
     ` : "";
 
   return new Response(`<!doctype html>
@@ -94,8 +88,9 @@ export async function GET(request: Request) {
     <nav aria-label="Briefing navigation" data-briefing-edition="${edition}" data-briefing-deal-list="${hasDealMembership ? "verified" : "editorial-only"}">
       <h1>Weekly briefing · ${edition}</h1>
       ${dealLink}
-      <a href="${destination.pathname}">Open email</a>
-      <a href="${basePath}/tracker">All deals</a>
+      ${edition !== publishedEditions[0] ? `<a href="${document.sourceHref}">Email for this edition</a>` : ""}
+      ${publishedEditions.length ? `<a href="/email-format/latest">${edition === publishedEditions[0] ? "View email version" : "Latest email version"}</a>` : ""}
+      <a href="/tracker">All deals</a>
       ${archiveNav}
     </nav>
     <main><iframe title="Weekly briefing ${edition}" srcdoc="${escapeAttribute(frameDocument)}" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"></iframe></main>

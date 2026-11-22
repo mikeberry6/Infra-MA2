@@ -27,22 +27,21 @@ describe("weekly briefing archive", () => {
     ).toThrow("unexpectedly contains a script");
   });
 
-  it("rewrites archive navigation and asset links through the app base path", () => {
+  it("rewrites archive navigation and asset links from the site root", () => {
     const markup =
       '<a href="2026-07-24.html">Prior</a><img src="assets/photo.png" />';
-    expect(rewriteBriefingArchiveLinks(markup, "/Infra-MA2")).toBe(
-      '<a href="/Infra-MA2/weekly-briefing?edition=2026-07-24">Prior</a><img src="/Infra-MA2/email-format/assets/photo.png" />',
+    expect(rewriteBriefingArchiveLinks(markup)).toBe(
+      '<a href="/weekly-briefing?edition=2026-07-24">Prior</a><img src="/email-format/assets/photo.png" />',
     );
   });
 
   it("loads the finalized July 25–31 artifact with only its chart block updated", async () => {
     const briefing = await loadWeeklyBriefingDocument({
       edition: "2026-07-31",
-      basePath: "/Infra-MA2",
     });
 
     expect(briefing.sourceHref).toBe(
-      "/Infra-MA2/email-format/2026-07-31.html",
+      "/email-format/2026-07-31.html",
     );
     expect(briefing.bodyMarkup.match(/data-scale-rank=/g)).toHaveLength(20);
     expect(briefing.bodyMarkup.match(/>Source<\/a>/g)).toHaveLength(20);
@@ -53,7 +52,7 @@ describe("weekly briefing archive", () => {
     );
     expect(briefing.bodyMarkup).toContain("U.S. deployment included");
     expect(briefing.bodyMarkup).toContain(
-      'href="/Infra-MA2/weekly-briefing?edition=2026-07-24"',
+      'href="/weekly-briefing?edition=2026-07-24"',
     );
   });
 

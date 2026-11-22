@@ -3,14 +3,13 @@
 import { useCallback, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { useReportWebVitals } from "next/web-vitals";
-import { withBasePath, withoutBasePath } from "@/lib/base-path";
 import {
   RESEARCH_EVENTS, RESEARCH_PAGES, RESEARCH_VITALS,
   type ResearchEvent, type ResearchPage, type ResearchVital,
 } from "@/lib/research-metrics";
 
 function getPage(path: string | null): ResearchPage | null {
-  const [section, id] = withoutBasePath(path ?? "").split("/").filter(Boolean);
+  const [section, id] = (path ?? "").split("/").filter(Boolean);
   if (id) {
     if (section === "deals") return "deal-profile";
     if (section === "funds") return "fund-profile";
@@ -49,7 +48,7 @@ export function ResearchMetrics() {
         viewport: window.matchMedia("(max-width: 767px)").matches ? "mobile" : "desktop",
         ...data,
       });
-      const endpoint = withBasePath("/api/research-metrics");
+      const endpoint = "/api/research-metrics";
       if (!navigator.sendBeacon?.(endpoint, new Blob([body], { type: "application/json" }))) {
         void fetch(endpoint, { method: "POST", body, keepalive: true, headers: { "Content-Type": "application/json" } }).catch(() => {});
       }

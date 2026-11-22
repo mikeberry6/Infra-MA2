@@ -69,7 +69,7 @@ describe("protected PortCo production apply workflow", () => {
       'if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]',
     );
     expect(workflow).toContain(
-      'expected_revalidate_url="${CANONICAL_PRODUCTION_URL}${PUBLIC_BASE_PATH}/api/internal/fund-refresh/revalidate"',
+      'expected_revalidate_url="${CANONICAL_PRODUCTION_URL}/api/internal/fund-refresh/revalidate"',
     );
     expect(workflow).toContain(
       'if [ "$REVALIDATE_URL" != "$expected_revalidate_url" ]',
@@ -165,7 +165,7 @@ describe("protected PortCo production apply workflow", () => {
     expect(workflow).toContain("--write-token=APPLY_APPROVED_PORTCO_CHANGE");
     expect(workflow).toContain('--receipt="$receipt"');
     expect(workflow).toContain(
-      '--public-base-url="${PRODUCTION_URL}${PUBLIC_BASE_PATH}/"',
+      '--public-base-url="${PRODUCTION_URL}/"',
     );
     expect(workflow).toContain("verify-production-receipt.ts");
     expect(workflow).toContain("FUND_REFRESH_REVALIDATE_URL");

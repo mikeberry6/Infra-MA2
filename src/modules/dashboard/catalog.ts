@@ -152,7 +152,7 @@ export const DASHBOARD_SOURCES = {
     name: "InfraSight Deal Database",
     kind: "manual",
     critical: true,
-    url: "/Infra-MA2/tracker",
+    url: "/tracker",
     cadence: "Daily",
     expectedLagHours: 24,
     owner: "Research",

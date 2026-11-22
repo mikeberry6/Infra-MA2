@@ -51,10 +51,28 @@ test("public pages have social metadata and the root crawler entry points resolv
   expect(xml).not.toContain(appPath("/admin"));
 });
 
-test("the original earnings URL permanently redirects to the dated archive", async ({ request }) => {
-  const response = await request.get(appPath("/earnings"), { maxRedirects: 0 });
-  expect(response.status()).toBe(308);
-  expect(response.headers().location).toBe(appPath("/earnings/archive/q4-2025"));
+test("legacy bookmarks redirect permanently and retain their query strings", async ({ request }) => {
+  for (const [source, destination] of [
+    ["/", "/tracker"],
+    ["/Infra-MA2", "/tracker"],
+    ["/Infra-MA2/tracker?q=solar", "/tracker?q=solar"],
+    ["/Infra-MA2/api/auth/session", "/api/auth/session"],
+  ]) {
+    const response = await request.get(source, { maxRedirects: 0 });
+    expect(response.status()).toBe(308);
+    expect(response.headers().location).toBe(destination);
+  }
+});
+
+test("the earnings entry points redirect temporarily to the same published quarter", async ({ request }) => {
+  const latest = await request.get(appPath("/earnings/latest"), { maxRedirects: 0 });
+  const original = await request.get(appPath("/earnings"), { maxRedirects: 0 });
+  const archive = latest.headers().location;
+  expect(latest.status()).toBe(307);
+  expect(original.status()).toBe(307);
+  expect(original.headers().location).toBe(archive);
+  expect(archive).toMatch(/^\/earnings\/archive\/q[1-4]-\d{4}$/);
+  expect((await request.get(archive)).status()).toBe(200);
 });
 
 test("restores a saved deal screen after a reload", async ({ page }) => {

@@ -14,7 +14,7 @@ function option(name, fallback) {
 }
 
 const baseUrl = option("base-url");
-const basePath = option("base-path", "/Infra-MA2").replace(/\/$/, "");
+let basePath = option("base-path", "").replace(/\/$/, "");
 const expectedVersion = option("expected-version");
 const outputPath = option("output", "tmp/release-smoke.json");
 const skipHealth = process.argv.includes("--skip-health");
@@ -114,6 +114,9 @@ function urlFor(route) {
 }
 
 function pathMatches(actualPath, expectedPath) {
+  if (expectedPath instanceof RegExp) {
+    return actualPath.startsWith(basePath) && expectedPath.test(actualPath.slice(basePath.length));
+  }
   return actualPath === expectedPath || (expectedPath !== "/" && actualPath === `${expectedPath}/`);
 }
 
@@ -135,14 +138,27 @@ async function statusCheck(name, route, expectedStatus, expectedPaths = [`${base
   return response;
 }
 
-const rootPaths = [basePath];
-if (allowLegacyRoot) rootPaths.push(`${basePath}/tracker`);
+// Rollback can target an immutable deployment that still uses the former prefix.
+const legacyPrefix = "/Infra-MA2";
+if (allowLegacyRoot && !basePath) {
+  const probe = await fetchWithRetry(new URL(`${legacyPrefix}/`, origin).href);
+  const final = new URL(probe.url);
+  if (probe.status === 200 && final.origin === origin
+    && [legacyPrefix, `${legacyPrefix}/`, `${legacyPrefix}/tracker`].includes(final.pathname)) {
+    basePath = legacyPrefix;
+  }
+}
+const legacyDeployment = allowLegacyRoot && basePath === legacyPrefix;
+const rootPaths = [`${basePath}/tracker`];
+if (legacyDeployment) rootPaths.push(basePath);
 await statusCheck("canonical root", "/", 200, rootPaths);
 
 const databaseRoutes = ["/tracker", "/funds", "/portfolio", "/news", "/dashboard"];
-for (const route of [...databaseRoutes, "/search", "/earnings", "/login"]) {
-  const expectedPaths = route === "/earnings" ? [`${basePath}/earnings`, `${basePath}/earnings/archive/q4-2025`] : undefined;
-  const response = await statusCheck(`public ${route}`, route, 200, expectedPaths);
+const earningsRoutes = legacyDeployment ? ["/earnings"] : ["/earnings", "/earnings/latest"];
+const archivePaths = [/^\/earnings\/archive\/q[1-4]-\d{4}\/?$/];
+if (legacyDeployment) archivePaths.push(`${basePath}/earnings`);
+for (const route of [...databaseRoutes, "/search", ...earningsRoutes, "/login"]) {
+  const response = await statusCheck(`public ${route}`, route, 200, earningsRoutes.includes(route) ? archivePaths : undefined);
   if (databaseRoutes.includes(route) && checks.at(-1).passed) {
     const html = await response.text();
     checks.at(-1).passed = !/data-service-unavailable="true"|>Data unavailable<\/p>/i.test(html);

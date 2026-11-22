@@ -215,7 +215,7 @@ Perform this section only when the user has authorized publication, commit/push,
 - Wait for the production Vercel deployment to complete.
 - Verify the exact public URL:
 
-  `https://infra-ma-2.vercel.app/Infra-MA2/email-format/YYYY-MM-DD.html`
+  `https://infra-ma-2.vercel.app/email-format/YYYY-MM-DD.html`
 
 - Do not assume a successful deployment updated that alias. Confirm the page contents at the exact URL. If it still points to an older production deployment, repoint `infra-ma-2.vercel.app` only when making the requested issue live is within the user's authorization, then verify again.
 

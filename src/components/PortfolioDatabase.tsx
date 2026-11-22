@@ -4,7 +4,6 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoStatusColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
-import { withBasePath } from "@/lib/base-path";
 import type { CompanyView, FundStrategyView, DatabaseCounts } from "@/modules/shared/types";
 import {
   Search,
@@ -504,7 +503,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
     async function loadCompany(id: string) {
       try {
-        const response = await fetch(withBasePath(`/api/portfolio/${encodeURIComponent(id)}`), { signal: controller.signal });
+        const response = await fetch(`/api/portfolio/${encodeURIComponent(id)}`, { signal: controller.signal });
         if (!response.ok) throw new Error("PortCo detail request failed");
         const data: { company?: CompanyView } = await response.json();
         if (!data.company || data.company.id !== id) throw new Error("PortCo detail did not match");
@@ -629,7 +628,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
           <div className="flex items-center gap-1">
             {canExport && (
               <a
-                href={withBasePath("/api/exports/portfolio")}
+                href="/api/exports/portfolio"
                 download
                 className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >

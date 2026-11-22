@@ -18,6 +18,18 @@ async function serve(handler: RequestListener) {
   return `http://127.0.0.1:${address.port}`;
 }
 
+function serveCurrentApp(handler: RequestListener) {
+  return serve((request, response) => {
+    if (request.url === "/") {
+      response.writeHead(308, { location: "/tracker" }).end();
+    } else if (request.url === "/earnings" || request.url === "/earnings/latest") {
+      response.writeHead(307, { location: "/earnings/archive/q2-2026" }).end();
+    } else {
+      handler(request, response);
+    }
+  });
+}
+
 afterEach(async () => {
   await Promise.all(servers.splice(0).map((server) => new Promise<void>((resolve) => server.close(() => resolve()))));
 });
@@ -39,13 +51,9 @@ async function runSmoke(baseUrl: string, extraArgs: string[] = []) {
 }
 
 describe("release smoke", () => {
-  it("accepts the current base-path root and exact application routes", async () => {
-    const app = await serve((request, response) => {
-      if (request.url === "/Infra-MA2/") {
-        response.writeHead(308, { location: "/Infra-MA2" }).end();
-        return;
-      }
-      response.statusCode = request.url === "/Infra-MA2/api/exports/deals" ? 403 : 200;
+  it("verifies the canonical tracker and resolves both earnings entry points", async () => {
+    const app = await serveCurrentApp((request, response) => {
+      response.statusCode = request.url === "/api/exports/deals" ? 403 : 200;
       response.end("ok");
     });
     const result = await runSmoke(app);
@@ -54,9 +62,9 @@ describe("release smoke", () => {
   });
 
   it("rejects a successful HTTP response that displays the data-unavailable fallback", async () => {
-    const app = await serve((request, response) => {
-      response.statusCode = request.url === "/Infra-MA2/api/exports/deals" ? 403 : 200;
-      response.end(request.url === "/Infra-MA2/portfolio" ? '<section data-service-unavailable="true"></section>' : "ok");
+    const app = await serveCurrentApp((request, response) => {
+      response.statusCode = request.url === "/api/exports/deals" ? 403 : 200;
+      response.end(request.url === "/portfolio" ? '<section data-service-unavailable="true"></section>' : "ok");
     });
     const result = await runSmoke(app);
     expect(result.exitCode).toBe(1);
@@ -64,19 +72,34 @@ describe("release smoke", () => {
   });
 
   it("accepts an editorial-only latest issue when the email resolves to the same date", async () => {
-    const app = await serve((request, response) => {
-      if (request.url === "/Infra-MA2/email-format/latest") {
-        response.writeHead(307, { location: "/Infra-MA2/email-format/2026-11-07.html" }).end();
+    const app = await serveCurrentApp((request, response) => {
+      if (request.url === "/email-format/latest") {
+        response.writeHead(307, { location: "/email-format/2026-11-07.html" }).end();
         return;
       }
-      response.statusCode = request.url === "/Infra-MA2/api/exports/deals" ? 403 : 200;
-      response.end(request.url === "/Infra-MA2/weekly-briefing"
+      response.statusCode = request.url === "/api/exports/deals" ? 403 : 200;
+      response.end(request.url === "/weekly-briefing"
         ? '<nav data-briefing-edition="2026-11-07" data-briefing-deal-list="editorial-only">Editorial edition</nav>'
         : "ok");
     });
     const result = await runSmoke(app, ["--research-roadmap"]);
     expect(result.exitCode).toBe(0);
     expect(result.report.passed).toBe(true);
+  });
+
+  it("still checks older rollback candidates when legacy roots are enabled", async () => {
+    const app = await serve((request, response) => {
+      if (request.url === "/Infra-MA2/") {
+        response.writeHead(308, { location: "/Infra-MA2/tracker" }).end();
+        return;
+      }
+      response.statusCode = !request.url?.startsWith("/Infra-MA2/") ? 404
+        : request.url === "/Infra-MA2/api/exports/deals" ? 403 : 200;
+      response.end("ok");
+    });
+    const result = await runSmoke(app, ["--allow-legacy-root"]);
+    expect(result.exitCode).toBe(0);
+    expect(result.report.basePath).toBe("/Infra-MA2");
   });
 
   it("rejects 200 responses reached through cross-origin login redirects", async () => {

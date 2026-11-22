@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { withBasePath } from "@/lib/base-path";
+import { earningsArchive } from "@/modules/earnings/archive";
 
 const SITE_ORIGIN = new URL(process.env.SITE_URL || "https://infra-ma-2.vercel.app").origin;
 
@@ -37,11 +37,11 @@ export const INDEXABLE_PUBLIC_PAGES = [
   "/dashboard",
   "/news",
   "/methodology",
-  "/earnings/archive/q4-2025",
+  ...earningsArchive.map(({ slug }) => `/earnings/archive/${slug}`),
 ] as const;
 
 export function publicUrl(path: string): string {
-  return new URL(withBasePath(path), SITE_ORIGIN).href;
+  return new URL(path, SITE_ORIGIN).href;
 }
 
 export function researchMetadata(

@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { Download, FileUp } from "lucide-react";
 import { useId, useRef, useState } from "react";
 import { Button } from "@/components/shared/Button";
-import { withBasePath } from "@/lib/base-path";
 import {
   buildImportReportCsv,
   parseImportPreview,
@@ -121,7 +120,7 @@ export default function ImportExportBar({
   const [commitResult, setCommitResult] = useState<CommitResult | null>(null);
   const labels = ENTITY_LABELS[entityType];
 
-  const endpoint = withBasePath(`/api/imports/${entityType}`);
+  const endpoint = `/api/imports/${entityType}`;
 
   async function previewFile(file: File) {
     setOperation("preview");
@@ -251,7 +250,7 @@ export default function ImportExportBar({
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-2">
         <a
-          href={withBasePath(`/api/exports/${entityType}`)}
+          href={`/api/exports/${entityType}`}
           download
           className="inline-flex h-8 items-center justify-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-strong)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
         >
@@ -315,9 +314,7 @@ export default function ImportExportBar({
               unchanged {commitResult.unchanged}, quarantined{" "}
               {commitResult.quarantined}.{" "}
               <Link
-                href={withBasePath(
-                  `/admin/audit/${encodeURIComponent(commitResult.auditEventId)}`,
-                )}
+                href={`/admin/audit/${encodeURIComponent(commitResult.auditEventId)}`}
                 className="font-semibold underline decoration-current underline-offset-2"
               >
                 View audit event

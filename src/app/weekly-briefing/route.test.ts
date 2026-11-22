@@ -1,4 +1,4 @@
-import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const archive = vi.hoisted(() => ({
   listWeeklyBriefingEditions: vi.fn(),
@@ -17,13 +17,14 @@ vi.mock("@/modules/briefings/membership", () => membership);
 
 import { GET } from "./route";
 
-const originalBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
-
 describe("weekly briefing route", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    archive.loadWeeklyBriefingDocument.mockResolvedValue({ bodyMarkup: "<p>Briefing content</p>", headStyles: "<style>p{color:purple}</style>" });
-    process.env.NEXT_PUBLIC_BASE_PATH = "/Infra-MA2";
+    archive.loadWeeklyBriefingDocument.mockImplementation(async ({ edition }) => ({
+      bodyMarkup: "<p>Briefing content</p>",
+      headStyles: "<style>p{color:purple}</style>",
+      sourceHref: `/email-format/${edition}.html`,
+    }));
     archive.listWeeklyBriefingEditions.mockResolvedValue([
       "2026-08-07",
       "2026-07-31",
@@ -33,24 +34,16 @@ describe("weekly briefing route", () => {
     membership.hasVerifiedBriefingMembership.mockResolvedValue(false);
   });
 
-  afterAll(() => {
-    if (originalBasePath === undefined) {
-      delete process.env.NEXT_PUBLIC_BASE_PATH;
-    } else {
-      process.env.NEXT_PUBLIC_BASE_PATH = originalBasePath;
-    }
-  });
-
   it("uses the latest approved edition without advancing to a newer HTML file", async () => {
     const response = await GET(
-      new Request("https://example.com/Infra-MA2/weekly-briefing"),
+      new Request("https://example.com/weekly-briefing"),
     );
 
     expect(response.status).toBe(200);
     const html = await response.text();
-    expect(html).toContain("/Infra-MA2/email-format/2026-07-31.html");
+    expect(html).toContain('href="/email-format/latest">View email version</a>');
     expect(html).toContain('<option value="2026-07-31" selected>');
-    expect(html).toContain('href="/Infra-MA2/weekly-briefing?edition=2026-07-24">Older edition');
+    expect(html).toContain('href="/weekly-briefing?edition=2026-07-24">Older edition');
     expect(html).not.toContain('<option value="2026-08-07">');
     expect(publication.listPublishedBriefingEditions).toHaveBeenCalledWith([
       "2026-08-07", "2026-07-31", "2026-07-24",
@@ -61,31 +54,31 @@ describe("weekly briefing route", () => {
     publication.listPublishedBriefingEditions.mockResolvedValue(["2026-08-07", "2026-07-31"]);
 
     const response = await GET(
-      new Request("https://example.com/Infra-MA2/weekly-briefing"),
+      new Request("https://example.com/weekly-briefing"),
     );
 
     expect(await response.text()).toContain(
-      "/Infra-MA2/email-format/2026-08-07.html",
+      'data-briefing-edition="2026-08-07"',
     );
   });
 
   it("frames an explicitly requested archive without modifying the email", async () => {
     const response = await GET(
       new Request(
-        "https://example.com/Infra-MA2/weekly-briefing?edition=2026-07-24",
+        "https://example.com/weekly-briefing?edition=2026-07-24",
       ),
     );
 
-    expect(await response.text()).toContain(
-      "/Infra-MA2/email-format/2026-07-24.html",
-    );
+    const html = await response.text();
+    expect(html).toContain('href="/email-format/2026-07-24.html">Email for this edition</a>');
+    expect(html).toContain('href="/email-format/latest">Latest email version</a>');
   });
 
-  it("links to issue-filtered deals through the configured base path", async () => {
+  it("links to issue-filtered deals at the site root", async () => {
     membership.hasVerifiedBriefingMembership.mockResolvedValue(true);
-    const response = await GET(new Request("https://example.com/Infra-MA2/weekly-briefing?edition=2026-07-24"));
+    const response = await GET(new Request("https://example.com/weekly-briefing?edition=2026-07-24"));
     const html = await response.text();
-    expect(html).toContain('href="/Infra-MA2/tracker?briefing=2026-07-24&amp;via=briefing"');
+    expect(html).toContain('href="/tracker?briefing=2026-07-24&amp;via=briefing"');
     expect(html).toContain("View these deals");
     expect(html).toContain("srcdoc=");
     expect(html).toContain("Briefing content");
@@ -93,7 +86,7 @@ describe("weekly briefing route", () => {
   });
 
   it("labels the edition editorial-only without verified deal membership", async () => {
-    const response = await GET(new Request("https://example.com/Infra-MA2/weekly-briefing?edition=2026-07-24"));
+    const response = await GET(new Request("https://example.com/weekly-briefing?edition=2026-07-24"));
     const html = await response.text();
     expect(html).toContain("Editorial edition · deal list unavailable");
     expect(html).not.toContain("/tracker?briefing=");
@@ -102,7 +95,7 @@ describe("weekly briefing route", () => {
   it("returns 404 for an unknown edition", async () => {
     const response = await GET(
       new Request(
-        "https://example.com/Infra-MA2/weekly-briefing?edition=2026-06-19",
+        "https://example.com/weekly-briefing?edition=2026-06-19",
       ),
     );
 
@@ -115,7 +108,7 @@ describe("weekly briefing route", () => {
     );
 
     const response = await GET(
-      new Request("https://example.com/Infra-MA2/weekly-briefing"),
+      new Request("https://example.com/weekly-briefing"),
     );
 
     expect(response.status).toBe(500);

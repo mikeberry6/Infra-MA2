@@ -40,7 +40,7 @@ const publishedRecords = unstable_cache(
       ...sponsors.map(({ id, updatedAt }) => ({ url: publicUrl(`/sponsors/${encodeURIComponent(id)}`), lastModified: updatedAt })),
     ];
   },
-  ["public-sitemap-records-v1"],
+  ["public-sitemap-records-v2"],
   { tags: [CACHE_TAGS.deals, CACHE_TAGS.companies, CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
