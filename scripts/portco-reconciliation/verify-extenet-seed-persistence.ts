@@ -54,7 +54,7 @@ async function main() {
   const retired = production.redirects.filter((redirect) => redirect.companyId === company.id).map((redirect) => redirect.retiredId);
   const results = [];
   for (const id of [company.id, ...retired]) {
-    const url = `https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/${encodeURIComponent(id)}`;
+    const url = `https://infra-ma-2.vercel.app/api/portfolio/${encodeURIComponent(id)}`;
     const response = await fetch(url, { cache: "no-store", headers: { "cache-control": "no-cache" }, signal: AbortSignal.timeout(20000) });
     const bytes = await response.text();
     if (response.status !== 200) throw new Error(`Public company API ${id}: HTTP ${response.status}`);

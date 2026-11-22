@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { withBasePath } from "@/lib/base-path";
 
 export function useCanExport(): boolean {
   const [canExport, setCanExport] = useState(false);
@@ -9,7 +8,7 @@ export function useCanExport(): boolean {
   useEffect(() => {
     let cancelled = false;
 
-    fetch(withBasePath("/api/export-permission"), { credentials: "same-origin" })
+    fetch("/api/export-permission", { credentials: "same-origin" })
       .then((response) => (response.ok ? response.json() : null))
       .then((data) => {
         if (!cancelled) setCanExport(data?.canExport === true);

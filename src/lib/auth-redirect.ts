@@ -1,34 +1,22 @@
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
-export function withBasePath(path: string): string {
-  if (!path.startsWith("/") || !BASE_PATH) return path;
-  if (path === BASE_PATH || path.startsWith(`${BASE_PATH}/`)) return path;
-  return `${BASE_PATH}${path}`;
-}
-
-export function withoutBasePath(path: string): string {
-  if (!BASE_PATH) return path;
-  if (path === BASE_PATH) return "/";
-  if (path.startsWith(`${BASE_PATH}/`)) return path.slice(BASE_PATH.length);
-  return path;
-}
-
-export function normalizeBasePathCallback(callbackUrl: string | undefined): string {
-  if (!callbackUrl) return withBasePath("/");
+export function normalizeLoginCallback(callbackUrl: string | undefined): string {
   if (
+    typeof callbackUrl !== "string" ||
     !callbackUrl.startsWith("/") ||
     callbackUrl.startsWith("//") ||
     callbackUrl.includes("\\") ||
     /[\u0000-\u001F\u007F]/.test(callbackUrl)
-  ) return withBasePath("/");
+  ) return "/";
 
   try {
     const origin = "https://infrasight.invalid";
     const parsed = new URL(callbackUrl, origin);
-    if (parsed.origin !== origin) return withBasePath("/");
-    return withBasePath(`${parsed.pathname}${parsed.search}${parsed.hash}`);
+    if (parsed.origin !== origin) return "/";
+    // Bookmarked sign-in links can carry a return path from the old deployment.
+    const pathname = parsed.pathname.replace(/^\/Infra-MA2(?:\/|$)/, "/");
+    if (pathname.startsWith("//")) return "/";
+    return `${pathname}${parsed.search}${parsed.hash}`;
   } catch {
-    return withBasePath("/");
+    return "/";
   }
 }
 
@@ -37,7 +25,7 @@ export function normalizeNextAuthRedirect(callbackUrl: string | undefined, baseU
   try {
     applicationUrl = new URL(baseUrl);
   } catch {
-    return normalizeBasePathCallback(undefined);
+    return "/";
   }
 
   let applicationPath = callbackUrl;
@@ -53,7 +41,7 @@ export function normalizeNextAuthRedirect(callbackUrl: string | undefined, baseU
   }
 
   return new URL(
-    normalizeBasePathCallback(applicationPath),
+    normalizeLoginCallback(applicationPath),
     applicationUrl.origin,
   ).toString();
 }

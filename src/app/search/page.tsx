@@ -4,7 +4,6 @@ import { Search } from "lucide-react";
 import { Button } from "@/components/shared/Button";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
 import { TextInput } from "@/components/shared/TextInput";
-import { withBasePath } from "@/lib/base-path";
 import { publicMetadata } from "@/lib/public-metadata";
 import {
   parseSearchRequest,
@@ -33,14 +32,14 @@ const CONTROL_CLASS =
   "inline-flex min-h-10 items-center gap-1.5 rounded-md border px-3 type-meta font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]";
 
 function resultHref(result: SearchResult): string {
-  return withBasePath(`${TYPE_ROUTE[result.type]}?focus=${encodeURIComponent(result.id)}`);
+  return `${TYPE_ROUTE[result.type]}?focus=${encodeURIComponent(result.id)}`;
 }
 
 function searchHref(query: string, type: SearchType | null, page = 1): string {
   const params = new URLSearchParams({ q: query });
   if (type) params.set("type", type);
   if (page > 1) params.set("page", String(page));
-  return withBasePath(`/search?${params}`);
+  return `/search?${params}`;
 }
 
 export default async function SearchPage({
@@ -63,7 +62,7 @@ export default async function SearchPage({
         metrics={[]}
       />
 
-      <form method="get" action={withBasePath("/search")} role="search" aria-label="Research databases" className="mb-5">
+      <form method="get" action="/search" role="search" aria-label="Research databases" className="mb-5">
         <label htmlFor="research-query" className="mb-1.5 block type-row-title">
           Search deals, PortCos, and funds
         </label>

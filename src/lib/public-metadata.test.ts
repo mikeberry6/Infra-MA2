@@ -7,10 +7,9 @@ afterEach(() => {
 
 it("uses the canonical production origin and deployment path consistently", async () => {
   vi.stubEnv("SITE_URL", "https://research.example");
-  vi.stubEnv("NEXT_PUBLIC_BASE_PATH", "/Infra-MA2");
   const { researchMetadata, publicMetadata } = await import("./public-metadata");
-  const url = "https://research.example/Infra-MA2/deals/example";
-  const image = "https://research.example/Infra-MA2/social-preview";
+  const url = "https://research.example/deals/example";
+  const image = "https://research.example/social-preview";
   expect(researchMetadata("/deals/example", "Example", "Example detail")).toMatchObject({
     alternates: { canonical: url },
     openGraph: { url, title: "Example", images: [{ url: image }] },

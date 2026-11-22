@@ -1,6 +1,5 @@
 import { notFound, permanentRedirect } from "next/navigation";
 import { ProfileFacts, ProfileLink, ProfileSection, ProfileSource, RecordProfile } from "@/components/profiles/RecordProfile";
-import { withBasePath } from "@/lib/base-path";
 import { researchMetadata } from "@/lib/public-metadata";
 import { getCompanyLinkedDeals, getPublicCompanyProfile } from "@/modules/profiles/queries";
 
@@ -17,7 +16,7 @@ export default async function CompanyProfile({ params }: Props) {
   const { id } = await params;
   const company = await getPublicCompanyProfile(id);
   if (!company) notFound();
-  if (id !== company.id) permanentRedirect(withBasePath(`/portfolio/${company.id}`));
+  if (id !== company.id) permanentRedirect(`/portfolio/${company.id}`);
   const deals = await getCompanyLinkedDeals(company.id);
   return (
     <RecordProfile title={company.name} label="Portfolio company profile" summary={company.description}

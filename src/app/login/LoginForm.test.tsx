@@ -1,42 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import type { ReactNode } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
-  authBasePath: vi.fn(),
   signIn: vi.fn(),
 }));
 
 vi.mock("next-auth/react", () => ({
-  SessionProvider: ({
-    basePath,
-    children,
-  }: {
-    basePath?: string;
-    children: ReactNode;
-  }) => {
-    mocks.authBasePath(basePath);
-    return children;
-  },
   signIn: mocks.signIn,
 }));
 
-describe("LoginForm NextAuth endpoint", () => {
+describe("LoginForm", () => {
   afterEach(() => {
-    vi.unstubAllEnvs();
-    vi.resetModules();
     vi.clearAllMocks();
-  });
-
-  it("uses the full application base-path endpoint", async () => {
-    vi.stubEnv("NEXT_PUBLIC_BASE_PATH", "/Infra-MA2");
-    vi.resetModules();
-    const { LoginForm } = await import("./LoginForm");
-
-    render(<LoginForm callbackUrl="/Infra-MA2/admin" />);
-    expect(screen.getByRole("button", { name: "Sign In" })).toBeVisible();
-    expect(mocks.authBasePath).toHaveBeenCalledWith("/Infra-MA2/api/auth");
   });
 
   it("navigates to the sanitized URL returned after sign-in", async () => {
@@ -45,11 +21,11 @@ describe("LoginForm NextAuth endpoint", () => {
       error: null,
       status: 200,
       ok: true,
-      url: "/Infra-MA2/admin?from=login",
+      url: "/admin?from=login",
     });
     const { LoginForm } = await import("./LoginForm");
 
-    render(<LoginForm callbackUrl="/Infra-MA2/admin" navigate={navigate} />);
+    render(<LoginForm callbackUrl="/admin" navigate={navigate} />);
     await userEvent.type(screen.getByRole("textbox", { name: "Email address" }), "admin@example.com");
     await userEvent.type(screen.getByLabelText("Password"), "strong-test-password");
     await userEvent.click(screen.getByRole("button", { name: "Sign In" }));
@@ -58,9 +34,9 @@ describe("LoginForm NextAuth endpoint", () => {
       email: "admin@example.com",
       password: "strong-test-password",
       redirect: false,
-      callbackUrl: "/Infra-MA2/admin",
+      callbackUrl: "/admin",
     });
-    expect(navigate).toHaveBeenCalledWith("/Infra-MA2/admin?from=login");
+    expect(navigate).toHaveBeenCalledWith("/admin?from=login");
   });
 
   it("recovers from a login network failure with the generic denial", async () => {
@@ -69,7 +45,7 @@ describe("LoginForm NextAuth endpoint", () => {
     );
     const { LoginForm } = await import("./LoginForm");
 
-    render(<LoginForm callbackUrl="/Infra-MA2/admin" />);
+    render(<LoginForm callbackUrl="/admin" />);
     await userEvent.type(
       screen.getByRole("textbox", { name: "Email address" }),
       "admin@example.com",

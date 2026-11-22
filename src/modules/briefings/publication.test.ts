@@ -1,7 +1,6 @@
 // @vitest-environment node
 import { describe, expect, it } from "vitest";
 import { GET as getLatestEmail } from "@/app/email-format/latest/route";
-import { NextRequest } from "next/server";
 import { listWeeklyBriefingEditions } from "./archive";
 import { getLatestPublishedBriefingEdition, listPublishedBriefingEditions } from "./publication";
 
@@ -11,11 +10,9 @@ describe("weekly briefing publication", () => {
     expect(await listPublishedBriefingEditions()).toContain("2026-11-07");
     expect(latest >= "2026-11-07").toBe(true);
 
-    const response = await getLatestEmail(new NextRequest("https://example.test/email-format/latest"));
+    const response = await getLatestEmail();
     expect(response.status).toBe(307);
-    expect(new URL(response.headers.get("location")!, "https://example.test").pathname).toMatch(
-      new RegExp(`/email-format/${latest}\\.html$`),
-    );
+    expect(response.headers.get("location")).toBe(`/email-format/${latest}.html`);
   });
 
   it("does not advance for an unlisted HTML edition", async () => {

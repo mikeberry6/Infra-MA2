@@ -1,6 +1,5 @@
 const path = require("path");
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/Infra-MA2";
 const isDevelopment = process.env.NODE_ENV !== "production";
 const briefingArchiveFiles = [
   "./public/email-format/*.html",
@@ -67,11 +66,6 @@ const ibIconLibraryDownloadHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath,
-  assetPrefix: `${basePath}/`,
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
-  },
   images: {
     unoptimized: true,
   },
@@ -108,20 +102,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: "/",
-        destination: `${basePath}/tracker`,
-        permanent: true,
-        basePath: false,
-      },
       { source: "/", destination: "/tracker", permanent: true },
-      { source: "/earnings", destination: "/earnings/archive/q4-2025", permanent: true },
-      ...["/robots.txt", "/sitemap.xml"].map((route) => ({
-        source: route,
-        destination: `${basePath}${route}`,
-        permanent: true,
-        basePath: false,
-      })),
+      { source: "/Infra-MA2", destination: "/tracker", permanent: true },
+      { source: "/Infra-MA2/:path*", destination: "/:path*", permanent: true },
     ];
   },
 };

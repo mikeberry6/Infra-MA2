@@ -140,7 +140,7 @@ async function main() {
   const apiChecks = [];
   const retiredIds = production.redirects.filter((redirect) => redirect.companyId === id).map((redirect) => redirect.retiredId);
   for (const focusId of [id, ...retiredIds]) {
-    const url = `https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/${encodeURIComponent(focusId)}`;
+    const url = `https://infra-ma-2.vercel.app/api/portfolio/${encodeURIComponent(focusId)}`;
     const response = await fetch(url, { cache: "no-store", headers: { "cache-control": "no-cache" }, signal: AbortSignal.timeout(20000) });
     const bytes = await response.text();
     if (response.status !== 200) throw new Error(`API ${focusId}: HTTP ${response.status}`);

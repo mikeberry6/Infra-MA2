@@ -1,7 +1,7 @@
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import { normalizeNextAuthRedirect } from "@/lib/base-path";
+import { normalizeNextAuthRedirect } from "@/lib/auth-redirect";
 import { prisma } from "@/lib/prisma";
 import { exceedsBcryptPasswordLimit } from "@/modules/auth/password-policy";
 import {

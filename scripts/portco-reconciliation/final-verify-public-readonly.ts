@@ -17,7 +17,7 @@ async function main(){
   while(cursor<jobs.length){const job=jobs[cursor++];const startedAt=new Date().toISOString();let result;
    for(let attempt=1;attempt<=2;attempt++)try{
     if(!job.c)throw Error('Redirect target absent');
-    const url='https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/'+encodeURIComponent(job.id);
+    const url='https://infra-ma-2.vercel.app/api/portfolio/'+encodeURIComponent(job.id);
     const response=await fetch(url,{headers:{accept:'application/json','cache-control':'no-cache'},cache:'no-store',signal:AbortSignal.timeout(20000)});
     const bytes=Buffer.from(await response.arrayBuffer());
     const base={id:job.id,canonicalCompanyId:job.c.id,name:job.c.name,url,httpStatus:response.status,bodySha256:createHash('sha256').update(bytes).digest('hex'),startedAt,checkedAt:new Date().toISOString(),attempt};
@@ -29,7 +29,7 @@ async function main(){
   }
  }));
  results.sort((a,b)=>a.id.localeCompare(b.id));
- const report={checkedAt:new Date().toISOString(),baseUrl:'https://infra-ma-2.vercel.app/Infra-MA2',productionSnapshotSha256:snapshot.stateSha256,cacheMode:'unversioned no-cache GET',qualification:'The v1 file tested the wrong root path without the configured /Infra-MA2 basePath. Its 404s (including apparent archived passes) are harness errors, not valid application verification. This v2 tests the actual canonical API.',counts:{requests:results.length,passed:results.filter(x=>x.status==='PASS').length,failed:results.filter(x=>x.status==='FAIL').length},results};
+ const report={checkedAt:new Date().toISOString(),baseUrl:'https://infra-ma-2.vercel.app',productionSnapshotSha256:snapshot.stateSha256,cacheMode:'unversioned no-cache GET',qualification:'The v1 file tested the wrong root path without the configured /Infra-MA2 basePath. Its 404s (including apparent archived passes) are harness errors, not valid application verification. This v2 tests the actual canonical API.',counts:{requests:results.length,passed:results.filter(x=>x.status==='PASS').length,failed:results.filter(x=>x.status==='FAIL').length},results};
  await fs.writeFile(out+'/public-api-verification-v2.json',JSON.stringify(report,null,2)+'\n',{flag:'wx'});
  console.log(JSON.stringify({counts:report.counts,failures:results.filter(x=>x.status==='FAIL').slice(0,5)},null,2));
 }

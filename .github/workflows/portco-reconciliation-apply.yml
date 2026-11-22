@@ -83,7 +83,6 @@ jobs:
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
-      PUBLIC_BASE_PATH: /Infra-MA2
       REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
       REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
 
@@ -212,7 +211,7 @@ jobs:
             echo "::error::PRODUCTION_URL does not match the canonical InfraSight production alias."
             missing=1
           fi
-          expected_revalidate_url="${CANONICAL_PRODUCTION_URL}${PUBLIC_BASE_PATH}/api/internal/fund-refresh/revalidate"
+          expected_revalidate_url="${CANONICAL_PRODUCTION_URL}/api/internal/fund-refresh/revalidate"
           if [ "$REVALIDATE_URL" != "$expected_revalidate_url" ]; then
             echo "::error::FUND_REFRESH_REVALIDATE_URL does not match the canonical production endpoint."
             missing=1
@@ -375,7 +374,7 @@ jobs:
             --apply \
             --write-token=APPLY_APPROVED_PORTCO_CHANGE \
             --receipt="$receipt" \
-            --public-base-url="${PRODUCTION_URL}${PUBLIC_BASE_PATH}/" \
+            --public-base-url="${PRODUCTION_URL}/" \
             2>&1 | tee tmp/portco-reconciliation/production/apply.log
 
       - name: Revalidate public PortCo caches after apply
@@ -405,7 +404,7 @@ jobs:
             --receipt=tmp/portco-reconciliation/production/apply-receipt.json \
             --proposal-sha256="$PROPOSAL_SHA256" \
             --approval-sha256="$APPROVAL_SHA256" \
-            --public-base-url="${PRODUCTION_URL}${PUBLIC_BASE_PATH}/" \
+            --public-base-url="${PRODUCTION_URL}/" \
             --output=tmp/portco-reconciliation/production/unversioned-public-api-verification.json
 
       - name: Verify receipt and canonical detail API after apply

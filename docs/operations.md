@@ -6,7 +6,13 @@ This repository is connected to:
 
 - GitHub: `mikeberry6/Infra-MA2`
 - Vercel project: `mberry/infra-ma-2`
-- Production URL: `https://infra-ma-2.vercel.app/Infra-MA2`
+- Production URL: `https://infra-ma-2.vercel.app`
+
+Set Vercel’s `NEXTAUTH_URL` to the production origin and remove any old
+`NEXT_PUBLIC_BASE_PATH` setting. If `NEXTAUTH_URL_INTERNAL` is configured,
+remove the former prefix from its internal auth endpoint too. `SITE_URL`
+takes the canonical origin for public metadata. The protected GitHub environments use
+`FUND_REFRESH_REVALIDATE_URL=https://infra-ma-2.vercel.app/api/internal/fund-refresh/revalidate`.
 
 The local workspace should be linked with:
 
@@ -57,8 +63,7 @@ authorizes the complete routine release sequence:
    ```bash
    node scripts/release-smoke.mjs \
      --base-url=https://infra-ma-2.vercel.app \
-     --skip-health \
-     --allow-legacy-root
+     --skip-health
    ```
 
    If a newer `main` deployment supersedes the requested SHA before the check
@@ -191,4 +196,4 @@ database and therefore still requires an explicitly selected database.
 
 Public research pages send first-party, allowlisted event counts and Core Web Vitals to `/api/research-metrics`. The collector emits structured `infrasight_research_metrics` records in application logs. Sum event counts by route and viewport group. Use the 75th percentile for LCP, INP, and CLS and separate mobile from desktop. The payload contains no search strings, record IDs, visitor IDs, or full URLs. The client honors Do Not Track and Global Privacy Control.
 
-Use `node scripts/release-smoke.mjs --research-roadmap` with the normal production URL and base-path options to validate the web briefing, latest email, and tracker link together. The flag is scoped to deployments that contain the new research pages.
+Use `node scripts/release-smoke.mjs --research-roadmap` with the production `--base-url` to validate the web briefing, latest email, and tracker link together. The flag is scoped to deployments that contain the new research pages.

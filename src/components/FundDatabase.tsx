@@ -39,7 +39,6 @@ import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
-import { withBasePath } from "@/lib/base-path";
 
 const FUND_PAGE_SIZE = 25;
 const FUND_SIZE_OPTIONS = [...FUND_SIZE_RANGES, UNDISCLOSED_FUND_SIZE];
@@ -980,7 +979,7 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
 
     async function loadFund(id: string) {
       try {
-        const response = await fetch(withBasePath(`/api/funds/${encodeURIComponent(id)}`), { signal: controller.signal });
+        const response = await fetch(`/api/funds/${encodeURIComponent(id)}`, { signal: controller.signal });
         if (!response.ok) throw new Error("Fund detail request failed");
         const data: { fund?: FundView } = await response.json();
         if (!data.fund || data.fund.legacyId !== id) throw new Error("Fund detail did not match");
@@ -1070,7 +1069,7 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
           <div className="flex flex-wrap items-center gap-1">
             {canExport && (
               <a
-                href={withBasePath("/api/exports/funds")}
+                href="/api/exports/funds"
                 download
                 className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >

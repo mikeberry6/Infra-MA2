@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { withBasePath } from "@/lib/base-path";
 import { publicUrl } from "@/lib/public-metadata";
 
 export default function robots(): MetadataRoute.Robots {
@@ -7,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: [withBasePath("/admin/"), withBasePath("/api/")],
+      disallow: ["/admin", "/api/"],
     },
     sitemap: publicUrl("/sitemap.xml"),
   };

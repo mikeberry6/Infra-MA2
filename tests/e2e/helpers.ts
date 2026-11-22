@@ -1,9 +1,9 @@
 import { expect, type Page } from "@playwright/test";
 
-const basePath = (process.env.E2E_BASE_PATH || "/Infra-MA2").replace(/\/$/, "");
+const basePath = (process.env.E2E_BASE_PATH || "").replace(/\/$/, "");
 
 export function appPath(route: string) {
-  return `${basePath}${route === "/" ? "" : route}`;
+  return `${basePath}${route}`;
 }
 
 export async function expectDatabasePage(page: Page, route: string, heading: string) {

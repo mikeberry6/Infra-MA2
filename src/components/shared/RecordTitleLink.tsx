@@ -1,7 +1,6 @@
 "use client";
 
 import type { MouseEvent, ReactNode } from "react";
-import { withBasePath } from "@/lib/base-path";
 
 export function RecordTitleLink({
   href,
@@ -23,7 +22,7 @@ export function RecordTitleLink({
 
   return (
     <a
-      href={withBasePath(href)}
+      href={href}
       onClick={handleClick}
       aria-haspopup={onOpen ? "dialog" : undefined}
       data-research-event={onOpen ? "record_open" : undefined}

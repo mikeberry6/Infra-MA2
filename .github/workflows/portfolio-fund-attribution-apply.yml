@@ -73,7 +73,6 @@ jobs:
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
-      PUBLIC_BASE_PATH: /Infra-MA2
       REVALIDATE_URL: ${{ secrets.FUND_REFRESH_REVALIDATE_URL }}
       REVALIDATE_TOKEN: ${{ secrets.FUND_REFRESH_REVALIDATE_TOKEN }}
 
@@ -147,7 +146,7 @@ jobs:
             if [ -z "${!name:-}" ]; then echo "::error::$name is required."; missing=1; fi
           done
           [ "$PRODUCTION_URL" = "$CANONICAL_PRODUCTION_URL" ] || { echo "::error::PRODUCTION_URL is not canonical."; missing=1; }
-          expected_revalidate_url="${CANONICAL_PRODUCTION_URL}${PUBLIC_BASE_PATH}/api/internal/fund-refresh/revalidate"
+          expected_revalidate_url="${CANONICAL_PRODUCTION_URL}/api/internal/fund-refresh/revalidate"
           [ "$REVALIDATE_URL" = "$expected_revalidate_url" ] || { echo "::error::REVALIDATE_URL is not canonical."; missing=1; }
           [[ "$REVALIDATE_TOKEN" =~ ^[A-Fa-f0-9]{64}$ ]] || { echo "::error::REVALIDATE_TOKEN must be 64 hexadecimal characters."; missing=1; }
           [[ "$EXPECTED_DATABASE_HOST" == *-pooler.* ]] || { echo "::error::Production attribution apply must use the pooler."; missing=1; }
@@ -283,9 +282,9 @@ jobs:
             --manifest-sha256="$MANIFEST_SHA256" \
             --approval-sha256="$APPROVAL_SHA256" \
             --receipt-sha256="$receipt_sha" \
-            --public-base-url="${PRODUCTION_URL}${PUBLIC_BASE_PATH}/" \
+            --public-base-url="${PRODUCTION_URL}/" \
             --output=tmp/portfolio-fund-attribution/production/release-verification.json
-          curl --fail-with-body --silent --show-error --max-time 30 "${PRODUCTION_URL}${PUBLIC_BASE_PATH}/portfolio" \
+          curl --fail-with-body --silent --show-error --max-time 30 "${PRODUCTION_URL}/portfolio" \
             > tmp/portfolio-fund-attribution/production/portfolio.html
 
       - name: Upload immutable attribution apply evidence
