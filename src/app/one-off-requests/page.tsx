@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Format",
+    description:
+      "Editable PowerPoint template with a six-column chart, a metrics table, and four sections for quarterly commentary.",
+    href: "/one-off-requests/format.pptx",
+    format: "PowerPoint",
+    date: "Nov 2026",
+    download: true,
+  },
+  {
     title: "Logo format",
     description:
       "Editable infrastructure logo landscape with sector and subsector groupings, deal counts, and acquirer labels.",
