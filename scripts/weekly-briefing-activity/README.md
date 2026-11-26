@@ -187,6 +187,12 @@ of all non-chart email content first, keeps total bar magnitude relative to the
 leading row, and uses Outlook-compatible nested presentation tables for the
 purple direct and gold portfolio segments.
 
+New weekly templates include `data-weekly-region-takeaway="true"` on the
+email body. For these editions the renderer writes a short comparison above
+the region bars from the same regional counts and manifest cutoff date. The
+attribute sits outside the replaced chart block so rendering is repeatable and
+historical approvals reproduce their original chart bytes.
+
 Rendering and route advancement are intentionally separate. This leaves room
 for the required Outlook desktop copy/paste and send-to-self check after the
 exact chart HTML is written but before the Weekly Briefing button advances.

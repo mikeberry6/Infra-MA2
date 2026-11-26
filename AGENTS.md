@@ -67,6 +67,7 @@
 - In each published weekly email, order current-week sector sections by that week's deal count in descending order, from most to least active.
 - If sector counts are tied, use this fixed tie-break order: Power & ET, Digital, Transportation, Utilities, Midstream, Social Infra.
 - Omit sectors with zero deals from final published briefings unless the user explicitly requests zero-deal sections.
+- Beneath the edition date, show the total followed by each active sector and its count in section order, e.g. `14 deals · Power & ET 5 · Digital 4 · Utilities 4 · Transportation 1`.
 - Preheader and previous-editions summaries should list active sectors in the same most-to-least activity order.
 - Within each active sector section/card, order deal cards from largest to smallest. Rank by disclosed economic size first (enterprise value, purchase price, committed equity, project financing, PPA/offtake notional, or fund interest size), then by physical asset scale if economics are undisclosed (MW/MWh, km, fleet, portfolio footprint), with undisclosed/no-quantum deals last. If metrics are not directly comparable, use the clearest scale indicator and make the rationale obvious in the overview paragraph.
 - When multiple current-week deals share a subsector or closely comparable subsector, rank those deals largest to smallest using public disclosure and editorial judgment. Prefer disclosed transaction value, committed equity, or asset/fund interest size; when those are unavailable, use disclosed operating/development scale, platform breadth, portfolio footprint, customer base, or other public evidence of transaction scale. Do not mechanically preserve source-discovery order.
@@ -82,6 +83,7 @@
 - If multiple infrastructure funds are direct sponsors, separate fund names with `/`.
 - Use canonical sponsor short names consistently across titles, metadata, themes, and body copy. Mirror the established `BUYER_SHORT_NAMES` form when a manager has one, retaining the distinctive core of the name; for Goldman Sachs Asset Management, always use **GSAM**.
 - Overview paragraphs should state what happened, who is buying/selling/investing, and why the asset or platform matters.
+- In each new overview, wrap exactly one decisive sourced fact in `<strong data-deal-fact>`. Include the unit, basis and qualifiers with any figure. Prefer transaction economics, then physical scale, then a concrete asset or transaction fact.
 - Prefer concrete facts when available: capacity, geography, market role, enterprise value, capital commitment, customer base, development status, or strategic rationale.
 - Keep language factual and restrained. Avoid generic hype or unsupported "strategic fit" phrasing.
 - Use consistent transaction labels such as Buyout, Minority Stake, Majority Stake, Joint Venture, Platform Launch, Bolt-On, PortCo Acquisition, PortCo Divestiture, Primary Capital Raise, Sale, and Co-Investment.
@@ -89,6 +91,7 @@
 ### YTD Bar Charts
 
 - The `Deal Count By Sector (YTD)` and `Deal Count By Region (YTD)` tables must both be ordered in descending count order, from most to least active.
+- Beneath the region chart heading and above its bars, add one sentence using the YTD cutoff, leading region, runner-up, both counts and their difference. State ties or single-region totals when applicable.
 - Recalculate bar widths after sorting: the leading row is `100%`; every other row is `round(count / leadingCount * 100)`.
 - Before publishing, verify that no lower-count row appears before a higher-count row. For example, if Social Infra has more YTD deals than Midstream, Social Infra must appear above Midstream.
 - Use simple email-compatible horizontal bars only; do not introduce complex SVG charts.

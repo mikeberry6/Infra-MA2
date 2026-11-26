@@ -36,8 +36,22 @@ describe.each(["2026-11-21", "2026-07-31", "2026-05-09"])("email layouts for %s"
       expect(Array.from(story.querySelectorAll("p")).map((p) => p.textContent).slice(0, 2)).toEqual([card.metadata, card.description]);
       expect(story.querySelector("a")?.getAttribute("href") ?? "").toBe(card.sourceUrl ? new URL(card.sourceUrl, origin).href : "");
     }
-    const emphasis = Array.from(root.querySelectorAll("strong")).map((el) => el.textContent);
+    const emphasis = Array.from(root.querySelectorAll("strong:not([data-deal-fact])")).map((el) => el.textContent);
     expect(emphasis).toEqual(issue.themes.flat().filter((r) => r.bold).map((r) => r.text));
+    for (const [index, story] of stories.entries()) {
+      const facts = story.querySelectorAll("p:nth-of-type(2) strong[data-deal-fact]");
+      expect(facts).toHaveLength(1);
+      expect(facts[0].textContent?.trim()).toBeTruthy();
+      expect(issue.cards[index].description).toContain(facts[0].textContent);
+    }
+    const sectorIndex = root.querySelector("[data-sector-index]")!;
+    expect(sectorIndex.previousElementSibling?.textContent).toContain("Weekly briefing");
+    const takeaway = root.querySelector("[data-region-takeaway]")!;
+    expect(takeaway.nextElementSibling?.getAttribute("data-activity-chart")).toBe("region");
+    if (date === "2026-11-21") {
+      expect(clean(sectorIndex.textContent)).toBe("14 deals · Power & ET 5 · Digital 4 · Utilities 4 · Transportation 1");
+      expect(takeaway.textContent).toBe("North America led Europe by two deals through November 20, 231 to 229.");
+    }
     for (const theme of issue.themes) expect(clean(root.textContent)).toContain(clean(theme.map((r) => r.text).join("")));
     for (const kind of ["sector", "region"] as const) {
       const rows = Array.from(root.querySelectorAll(`[data-activity-chart="${kind}"] [data-activity-row]`));
@@ -62,6 +76,18 @@ describe.each(["2026-11-21", "2026-07-31", "2026-05-09"])("email layouts for %s"
       if (href !== "#") expect(links).toContain(new URL(href, `${origin}/email-format/`).href);
     }
   });
+});
+
+it("keeps the editor’s chosen fact when importing a newly authored overview", () => {
+  const html = readFileSync("public/email-format/2026-11-21.html", "utf8");
+  const { document } = parseHTML(html);
+  const overview = document.querySelector('[data-deal-id="flatiron-energy-eqt"] a')!.closest("tr")!.previousElementSibling!;
+  const chosen = "6 GWh awarded long-term contracts";
+  overview.innerHTML = overview.innerHTML.replace(chosen, `<strong data-deal-fact>${chosen}</strong>`);
+  const issue = parseEditorialBriefing("2026-11-21", document.toString());
+  const result = parseHTML(renderGalleryEmail(issue, "executive", origin)).document;
+  const fact = result.querySelector('[data-deal-id="flatiron-energy-eqt"] strong');
+  expect(fact?.textContent).toBe(chosen);
 });
 
 it("renders the single-table July 17 footer only once", () => {

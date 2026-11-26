@@ -17,7 +17,11 @@ describe("editorial presentation matches each original dated email", () => {
 
     expect(title).toBe(document.querySelector("title")!.textContent!.trim());
     // The inventory pins the approved paragraphs, coverage dates, hash and editorial ordering.
-    expect({ ...identity, cards: cards.map((card) => ({ ...card, sourceUrl: sourceKey(card.sourceUrl) })) }).toEqual(published);
+    const inventoryCards = cards.map(({ authoredFact, ...card }) => {
+      if (authoredFact) expect(card.description).toContain(authoredFact);
+      return { ...card, sourceUrl: sourceKey(card.sourceUrl) };
+    });
+    expect({ ...identity, cards: inventoryCards }).toEqual(published);
     const publishedSources = Array.from(document.querySelectorAll("a"))
       .filter((link) => clean(link.textContent) === "Source")
       .map((link) => link.getAttribute("href"));

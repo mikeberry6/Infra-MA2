@@ -1,5 +1,8 @@
 import { parseHTML } from "linkedom";
+import { SECTOR_ACTIVITY_TIE_BREAK_ORDER } from "../../../scripts/weekly-briefing-activity/render-charts";
+import { selectDealEmphasis } from "./deal-emphasis";
 import type { EditorialBriefing, EditorialChartRow } from "./editorial";
+import { regionTakeaway } from "./region-takeaway";
 
 export type GalleryLayout = "executive" | "digest" | "research";
 type Card = EditorialBriefing["cards"][number];
@@ -52,6 +55,7 @@ interface EmailExtras {
   contacts: EmailLine[];
   editions: EmailLine[];
   legend: string[];
+  regionCutoff?: string;
 }
 
 const clean = (value: string | null) => (value ?? "").replace(/\s+/g, " ").trim();
@@ -79,19 +83,28 @@ export function readGalleryEmailExtras(html: string, origin: string): EmailExtra
     editions: links.filter((link) => /^(?:\.\/)?\d{4}-\d{2}-\d{2}\.html$/.test(link.getAttribute("href") ?? ""))
       .map((link) => ({ text: clean(link.textContent), href: absoluteUrl(link.getAttribute("href")!, emailBase) })),
     legend: textCells(markedLegend ?? inChartLegend).map((cell) => clean(cell.textContent)),
+    regionCutoff: document.querySelector('[data-activity-chart="region"]')?.getAttribute("data-activity-period")
+      ?.match(/\bthrough\s+(\d{4}-\d{2}-\d{2})\b/i)?.[1],
   };
 }
 
-function masthead(issue: EditorialBriefing, layout: GalleryLayout) {
+const sectorOrder = new Map<string, number>(SECTOR_ACTIVITY_TIE_BREAK_ORDER.map((label, index) => [label, index]));
+
+function masthead(issue: EditorialBriefing, layout: GalleryLayout, groups: Map<string, Card[]>) {
   const coverage = dateFormat.formatRange(dateOf(issue.coverageStart), dateOf(issue.coverageEnd));
   const count = `${issue.cards.length} ${issue.cards.length === 1 ? "deal" : "deals"}`;
+  const byActivity = [...groups].sort(([a, aCards], [b, bCards]) =>
+    bCards.length - aCards.length || (sectorOrder.get(a) ?? sectorOrder.size) - (sectorOrder.get(b) ?? sectorOrder.size));
+  const index = [count, ...byActivity.map(([name, cards]) => `${name} ${cards.length}`)]
+    .map(label => `<span style="white-space:nowrap;">${esc(label)}</span>`).join(" &middot; ");
   const dark = layout === "digest";
   const foreground = dark ? "#FFFFFF" : plum;
   const accent = dark ? "#E0CFAD" : grey;
   const brand = `<p style="margin:0;color:${foreground};font:700 14px/19px ${sans};letter-spacing:2px;">GUGGENHEIM</p>
     <p style="margin:3px 0 0;color:${accent};font:11px/16px ${sans};">Infrastructure Coverage &amp; Advisory</p>`;
   const title = heading(1, issue.title, `font-family:${dark ? sans : serif};font-size:${layout === "research" ? 35 : dark ? 29 : 27}px;line-height:1.12;font-weight:${dark ? 700 : 400};color:${foreground};`);
-  const info = `<p style="margin:9px 0 0;color:${accent};font:12px/18px ${sans};">Weekly briefing &nbsp;&middot;&nbsp; ${esc(coverage)} &nbsp;&middot;&nbsp; ${count}</p>`;
+  const info = `<p style="margin:9px 0 0;color:${accent};font:12px/18px ${sans};">Weekly briefing &nbsp;&middot;&nbsp; ${esc(coverage)}</p>
+    <p data-sector-index style="margin:3px 0 0;color:${foreground};font:12px/18px ${sans};">${index}</p>`;
   const mastStyle = dark ? `background-color:${plum};border-top:4px solid ${gold};` :
     layout === "research" ? `border-top:5px solid ${plum};border-bottom:1px solid ${plum};` : `border-top:3px solid ${gold};`;
   return row(brand + `<div style="padding-top:${dark ? 18 : 12}px;">${title}${info}</div>`,
@@ -117,9 +130,14 @@ function sectorSection(sector: string, cards: Card[], layout: GalleryLayout, ori
   const deals = cards.map((card, index) => {
     const prominent = layout === "executive" && index === 0;
     const cardTitle = heading(3, card.title, `font-family:${prominent ? serif : sans};font-size:${prominent ? 20 : 16}px;line-height:${prominent ? 25 : 21}px;color:${plum};font-weight:700;`);
+    const fact = selectDealEmphasis(card, card.authoredFact);
+    const start = card.description.indexOf(fact);
+    const overview = fact && start !== -1
+      ? esc(card.description.slice(0, start)) + `<strong data-deal-fact style="font-weight:700;">${esc(fact)}</strong>` + esc(card.description.slice(start + fact.length))
+      : esc(card.description);
     const body = `${cardTitle}
       <p style="margin:4px 0 0;font:12px/17px ${sans};color:${grey};">${esc(card.metadata)}</p>
-      <p style="margin:${digest ? 5 : 8}px 0 0;font:14px/21px ${sans};color:${ink};">${esc(card.description)}</p>`;
+      <p style="margin:${digest ? 5 : 8}px 0 0;font:14px/21px ${sans};color:${ink};">${overview}</p>`;
     const url = absoluteUrl(card.sourceUrl, origin);
     const source = url ? `<p style="margin:6px 0 0;font:12px/17px ${sans};">${anchor("Source", url, `Source for ${card.title}`)}</p>` : "";
     return row(body + source, `padding:${prominent ? "17px 16px 21px" : digest ? "10px 12px" : "13px 16px"};border-bottom:1px solid ${line};`,
@@ -164,7 +182,9 @@ function activityCharts(issue: EditorialBriefing, extras?: EmailExtras) {
     if (!rows.length) return "";
     const title = `Deal Count By ${kind === "sector" ? "Sector" : "Region"} (YTD)`;
     const maximum = Math.max(...rows.map((item) => item.total));
+    const caption = kind === "region" ? regionTakeaway(rows, extras?.regionCutoff ?? issue.coverageEnd) : "";
     return row(heading(2, title, `font:700 18px/24px ${sans};color:${plum};`) +
+      (caption ? `<p data-region-takeaway style="margin:6px 0 8px;font:14px/21px ${sans};color:${ink};">${esc(caption)}</p>` : "") +
       `<table cellspacing="0" cellpadding="0" border="0" width="100%" data-activity-chart="${kind}" aria-label="${title}" style="width:100%;${collapse}">${rows.map((item) => chartRow(item, maximum)).join("")}</table>`, "padding:22px 22px 0;");
   }).join("");
   const rows = [...issue.charts.sector, ...issue.charts.region];
@@ -198,6 +218,6 @@ export function renderGalleryEmail(issue: EditorialBriefing, layout: GalleryLayo
     else groups.set(sector, [card]);
   }
   const stories = Array.from(groups, ([sector, cards]) => sectorSection(sector, cards, layout, origin)).join("");
-  const content = masthead(issue, layout) + themes(issue, layout) + stories + activityCharts(issue, extras) + footer(issue, origin, extras);
+  const content = masthead(issue, layout, groups) + themes(issue, layout) + stories + activityCharts(issue, extras) + footer(issue, origin, extras);
   return `<table ${attrs} width="600" align="center" bgcolor="#FFFFFF" data-email-layout="${layout}" style="width:600px;max-width:100%;margin:0 auto;background-color:#FFFFFF;table-layout:fixed;overflow-wrap:break-word;${collapse}">${content}</table>`;
 }

@@ -1,4 +1,6 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
+import { regionTakeaway } from "../../src/modules/briefings/region-takeaway";
 import {
   ACTIVITY_BAR_BACKGROUND_COLOR,
   CHART_BLOCK_END_MARKER,
@@ -265,6 +267,25 @@ describe("weekly briefing stacked-chart rendering", () => {
         expectedNonChartSha256,
       }).html,
     ).toBe(rendered);
+  });
+
+  it("retains the masthead and authored fact when rendering the new template's regional comparison", () => {
+    const sourceHtml = readFileSync("public/email-format/template.html", "utf8")
+      .replace("{{TOTAL_DEAL_LABEL}} &middot; {{ACTIVE_SECTOR_COUNTS}}", "1 deal &middot; Digital 1")
+      .replace("{{QUALIFIED_DECISIVE_FACT}}</strong>", "up to US$800mm of committed equity</strong>");
+    const expectedNonChartSha256 = computeNonChartSha256(sourceHtml);
+    const charts = { ...chartInput, cutoffDate: "2026-11-20" };
+    const rendered = renderDeterministicActivityEmail({ sourceHtml, charts, expectedNonChartSha256 }).html;
+    const document = new DOMParser().parseFromString(rendered, "text/html");
+    expect(document.querySelector("[data-weekly-deal-index]")?.textContent).toBe("1 deal · Digital 1");
+    expect(document.querySelectorAll("[data-deal-id] strong")).toHaveLength(1);
+    expect(document.querySelector("[data-deal-id] strong[data-deal-fact]")?.textContent).toBe("up to US$800mm of committed equity");
+    const chart = document.querySelector<HTMLTableElement>('[data-activity-chart="region"]')!;
+    expect(chart.rows[1].querySelector("[data-region-takeaway]")?.textContent)
+      .toBe(regionTakeaway(charts.region.map((r) => ({ label: r.label, total: r.direct + r.portfolio })), charts.cutoffDate));
+    expect(chart.rows[2].getAttribute("data-activity-row")).toBe("North America");
+    expect(document.querySelectorAll("[data-region-takeaway]")).toHaveLength(1);
+    expect(renderDeterministicActivityEmail({ sourceHtml: rendered, charts, expectedNonChartSha256 }).html).toBe(rendered);
   });
 
   it("fails closed for stale non-chart content or unsafe markup", () => {

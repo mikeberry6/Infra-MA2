@@ -35,6 +35,15 @@ test("copies the selected layout with live source links and a readable plain-tex
   expect(copied.text).toContain(`Source (${url})`);
   expect(copied.text).toContain("Key themes");
   expect(copied.text).toContain("Deal Count By Sector (YTD)");
+  expect(copied.text).toContain("14 deals · Power & ET 5 · Digital 4 · Utilities 4 · Transportation 1");
+  expect(copied.text).toContain("North America led Europe by two deals through November 20, 231 to 229.");
+  const facts = await page.evaluate(html => {
+    const email = new DOMParser().parseFromString(html, "text/html");
+    return Array.from(email.querySelectorAll("[data-deal-id] strong"), element => element.textContent);
+  }, copied.html);
+  expect(facts).toHaveLength(14);
+  expect(facts).toContain("2 GWh under construction");
+  expect(facts).toContain("more than €300mm of total project investment");
   for (const body of [copied.html, copied.text]) {
     expect(body).not.toMatch(/Compare original|Copy for Outlook|Published original/);
   }
