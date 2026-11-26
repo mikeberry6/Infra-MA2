@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Email Design Gallery",
+    description:
+      "Compare three weekly briefing layouts, explore twelve annotated email designs, and copy a published edition into Outlook.",
+    href: "/one-off-requests/email-design-gallery",
+    format: "Outlook HTML",
+    date: "Nov 2026",
+  },
+  {
     title: "Format",
     description:
       "Editable PowerPoint template with a six-column chart, a metrics table, and four sections for quarterly commentary.",
