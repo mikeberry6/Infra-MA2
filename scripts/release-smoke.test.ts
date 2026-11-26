@@ -79,7 +79,7 @@ describe("release smoke", () => {
       }
       response.statusCode = request.url === "/api/exports/deals" ? 403 : 200;
       response.end(request.url === "/weekly-briefing"
-        ? '<nav data-briefing-edition="2026-11-07" data-briefing-deal-list="editorial-only">Editorial edition</nav>'
+        ? '<nav data-briefing-edition="2026-11-07" data-briefing-deal-list="editorial-only"><a href="/tracker">Browse all deals</a></nav>'
         : "ok");
     });
     const result = await runSmoke(app, ["--research-roadmap"]);

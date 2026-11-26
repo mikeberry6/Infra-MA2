@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 import { hasUsableSignedAuthSnapshot } from "@/modules/auth/session";
 
+const archivedBriefings = new Set(process.env.BRIEFING_ARCHIVE_EDITIONS?.split(","));
+
 function applyPrivilegedNoStore(response: NextResponse): NextResponse {
   response.headers.set("Cache-Control", "private, no-store");
   response.headers.set("Pragma", "no-cache");
@@ -10,6 +12,14 @@ function applyPrivilegedNoStore(response: NextResponse): NextResponse {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (pathname === "/weekly-briefing") {
+    const edition = request.nextUrl.searchParams.get("edition");
+    if (edition !== null && !archivedBriefings.has(edition)) {
+      return new NextResponse("Weekly briefing not found", { status: 404 });
+    }
+    return NextResponse.next();
+  }
 
   const isPrivileged =
     pathname.startsWith("/admin") ||
@@ -70,5 +80,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/imports/:path*", "/api/exports/:path*"],
+  matcher: ["/weekly-briefing", "/admin/:path*", "/api/imports/:path*", "/api/exports/:path*"],
 };

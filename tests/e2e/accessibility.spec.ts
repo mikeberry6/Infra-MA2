@@ -53,6 +53,29 @@ test("a keyboard-activated transaction source opens independently of the scoreca
   await popup.close();
 });
 
+test("the tracker keeps one visible database switcher on either side of the desktop breakpoint", async ({ page }) => {
+  await expectDatabasePage(page, "/tracker", "Infrastructure Deal Tape");
+  const header = page.locator("main header").filter({ has: page.getByRole("heading", { level: 1, name: "Infrastructure Deal Tape" }) });
+  const disclosureDate = header.locator("h1 + p time");
+  const mainSwitch = header.getByRole("navigation", { name: "Databases" });
+  const globalSwitch = page.getByRole("navigation", { name: "Primary" }).getByRole("group", { name: "Databases" });
+
+  for (const width of [390, 768, 1023, 1024]) {
+    await page.setViewportSize({ width, height: 844 });
+    if (width < 1024) {
+      await expect(mainSwitch).toBeVisible();
+      await expect(globalSwitch).toBeHidden();
+      await expect(mainSwitch.getByRole("link", { name: "Deals", exact: true })).toHaveAttribute("aria-current", "page");
+    } else {
+      await expect(globalSwitch).toBeVisible();
+      await expect(mainSwitch).toBeHidden();
+    }
+    await expect(disclosureDate).toBeVisible();
+    await expect(disclosureDate).toHaveAttribute("datetime", /^\d{4}-\d{2}-\d{2}$/);
+    await expect(page.getByRole("status", { name: "Deal count" })).toHaveText(/^[\d,]+ deals?$/);
+  }
+});
+
 test("mobile transaction cards appear before the collapsed market snapshot", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await expectDatabasePage(page, "/tracker", "Infrastructure Deal Tape");

@@ -114,7 +114,7 @@
     "weekly:activity:advance": "npx tsx scripts/weekly-briefing-activity/workflow-cli.ts advance",
     "weekly:activity:migrate-v2": "npx tsx scripts/weekly-briefing-activity/workflow-migrate-v2.ts",
     "typecheck:weekly-activity": "tsc -p scripts/weekly-briefing-activity/tsconfig.json",
-    "test:weekly-activity": "vitest run scripts/weekly-briefing-activity/*.test.ts src/app/weekly-briefing/*.test.ts",
+    "test:weekly-activity": "vitest run scripts/weekly-briefing-activity src/app/weekly-briefing src/modules/briefings",
     "briefings:inventory": "tsx scripts/briefing-deals/cli.ts inventory",
     "briefings:preview": "tsx scripts/briefing-deals/cli.ts preview",
     "briefings:apply": "tsx scripts/briefing-deals/cli.ts apply",

@@ -1,14 +1,10 @@
 import { prisma } from "@/lib/prisma";
-import { parseIssue } from "../../../scripts/briefing-deals/archive";
+import type { Issue } from "../../../scripts/briefing-deals/archive";
 
-export async function hasVerifiedBriefingMembership(
-  edition: string,
-  documentMarkup: string,
-): Promise<boolean> {
+export async function hasVerifiedBriefingMembership(archive: Issue): Promise<boolean> {
   try {
-    const archive = parseIssue(edition, documentMarkup);
     const issue = await prisma.briefingIssue.findUnique({
-      where: { edition },
+      where: { edition: archive.edition },
       select: {
         archivePath: true,
         contentHash: true,
