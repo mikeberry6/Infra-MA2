@@ -5,7 +5,7 @@ import Link from "next/link";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
-import type { DealListView, DealView, DatabaseCounts } from "@/modules/shared/types";
+import type { DealListView, DealView } from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 
 // ─── Buyer display shortening ──────────────────────────────
@@ -132,13 +132,13 @@ function isInfraFund(raw: string): boolean {
   );
 }
 
-function latestDealDateLabel(deals: DealListView[]): string {
-  let latest = 0;
+function latestDisclosureDate(deals: DealListView[]): Date | null {
+  let latest = -Infinity;
   for (const deal of deals) {
     const time = new Date(deal.date).getTime();
     if (Number.isFinite(time) && time > latest) latest = time;
   }
-  return latest > 0 ? formatDate(new Date(latest)) : "N/A";
+  return Number.isFinite(latest) ? new Date(latest) : null;
 }
 
 import {
@@ -162,7 +162,6 @@ import {
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
-import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/components/shared/DatabaseIntelligenceHeader";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { RecordTitleLink } from "@/components/shared/RecordTitleLink";
@@ -490,14 +489,6 @@ function DealTable({
             No deals match your current filters.
           </div>
         )}
-        <div className="px-1 pt-3 pb-1">
-          <span className="type-micro">
-            Showing{" "}
-            <span className="mono text-[var(--text-secondary)] tabular-nums">{visibleDeals.length}</span>{" "}
-            of{" "}
-            <span className="mono text-[var(--text-secondary)] tabular-nums">{sorted.length}</span> matching deals
-          </span>
-        </div>
       </div>
 
       {/* Desktop table */}
@@ -989,7 +980,7 @@ function DealDrawer({
 }
 
 // ─── Main Component ─────────────────────────────────────────
-export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: DealListView[]; counts: DatabaseCounts; briefingIssues?: { edition: string; archivePath: string }[] }) {
+export function DealDatabase({ deals, briefingIssues = [] }: { deals: DealListView[]; briefingIssues?: { edition: string; archivePath: string }[] }) {
   const [briefing, setBriefing] = useUrlQueryState("briefing", "", { resetPage: true });
   const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
@@ -1036,13 +1027,8 @@ export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: De
 
   const filteredDeals = useMemo(() => filterDealScreen(deals, screen), [deals, screen]);
 
-  const headerMetrics = useMemo<IntelligenceMetric[]>(() => [
-    { label: "Matching deals", value: filteredDeals.length.toLocaleString() },
-    {
-      label: "Latest matching disclosure",
-      value: filteredDeals.length > 0 ? latestDealDateLabel(filteredDeals) : "No matching disclosures",
-    },
-  ], [filteredDeals]);
+  const hasFilters = DEAL_SCREEN_KEYS.some((key) => key !== "direction" && screen.get(key)?.trim());
+  const latestDisclosure = useMemo(() => latestDisclosureDate(filteredDeals), [filteredDeals]);
 
   // URL state remains authoritative for direct links and Back/Forward.
   useEffect(() => {
@@ -1057,14 +1043,22 @@ export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: De
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
-      <DatabaseIntelligenceHeader
-        eyebrow="Transaction intelligence"
-        title="Infrastructure Deal Tape"
-        summary="Screen infrastructure transactions by sector, geography, sponsor and deal type."
-        metrics={headerMetrics}
-        actions={<DatabaseTiles counts={counts} />}
-        compact
-      />
+      <header className="mb-4">
+        <h1 className="type-page-title text-[28px] leading-tight tracking-tight sm:text-[32px]">
+          Infrastructure Deal Tape
+        </h1>
+        <p className="mt-1 type-meta">
+          {latestDisclosure ? (
+            <>
+              {hasFilters ? "Latest matching disclosure" : "Latest disclosure"}{" "}
+              <time dateTime={latestDisclosure.toISOString().slice(0, 10)} className="font-medium tabular-nums text-[var(--text-primary)]">
+                {formatDate(latestDisclosure)}
+              </time>
+            </>
+          ) : "No matching disclosures"}
+        </p>
+        <div className="mt-3 lg:hidden"><DatabaseTiles /></div>
+      </header>
 
       <div className="mb-3 hidden flex-wrap items-center gap-2 md:flex">
         <label htmlFor="briefing-filter" className="type-meta font-medium">Weekly briefing</label>
@@ -1095,10 +1089,12 @@ export function DealDatabase({ deals, counts, briefingIssues = [] }: { deals: De
       <section className="surface" aria-labelledby="deal-results-title">
         <h2 id="deal-results-title" className="sr-only">Deal results</h2>
         <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
-          <span className="type-meta" aria-live="polite">
-            <span className="mono font-semibold text-[var(--text-primary)] tabular-nums">{filteredDeals.length}</span>
-            {" "}of{" "}
-            <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
+          <span role="status" aria-label="Deal count" className="type-meta">
+            <span className="mono font-semibold text-[var(--text-primary)] tabular-nums">{filteredDeals.length.toLocaleString("en-US")}</span>
+            {hasFilters && (
+              <> of <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length.toLocaleString("en-US")}</span></>
+            )}
+            {deals.length === 1 ? " deal" : " deals"}
           </span>
           <div className="flex flex-wrap items-center justify-end gap-1">
             <Link href="/compare" className="inline-flex h-8 items-center rounded-md px-2 type-micro font-medium hover:bg-[var(--bg-hover)] hover:text-[var(--accent)]">

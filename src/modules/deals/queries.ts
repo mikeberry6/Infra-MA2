@@ -192,13 +192,13 @@ export async function getWeeklyDeals(anchorDate: Date): Promise<DealView[]> {
   return deals.map(deal => toDealView(deal, references.get(deal.id) ?? [], aliases.get(deal.legacyId) ?? []));
 }
 
-export async function getLatestDealDate(): Promise<Date> {
+export async function getLatestDealDate(): Promise<Date | null> {
   const deal = await prisma.deal.findFirst({
     where: { status: "PUBLISHED" },
     orderBy: { date: "desc" },
     select: { date: true },
   });
-  return deal?.date ?? new Date();
+  return deal?.date ?? null;
 }
 
 export async function getDealCount(): Promise<number> {

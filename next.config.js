@@ -1,4 +1,5 @@
 const path = require("path");
+const { readdirSync } = require("node:fs");
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 const briefingArchiveFiles = [
@@ -66,6 +67,13 @@ const ibIconLibraryDownloadHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    // The Edge runtime can validate dated bookmarks before the App Router streams.
+    BRIEFING_ARCHIVE_EDITIONS: readdirSync(path.join(__dirname, "public/email-format"))
+      .filter(file => /^\d{4}-\d{2}-\d{2}\.html$/.test(file))
+      .map(file => file.slice(0, 10))
+      .join(","),
+  },
   images: {
     unoptimized: true,
   },

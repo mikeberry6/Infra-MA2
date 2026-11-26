@@ -175,7 +175,7 @@ if (researchRoadmap) {
   checks.at(-1).passed &&= !!edition && (
     (membership === "verified" && webHtml.includes(dealCta))
     || (membership === "editorial-only" && !webHtml.includes(dealCta)
-      && webHtml.includes("Editorial edition"))
+      && webHtml.includes("Browse all deals"))
   );
 
   const emailPath = edition ? `${basePath}/email-format/${edition}.html` : "";

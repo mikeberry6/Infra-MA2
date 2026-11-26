@@ -33,7 +33,7 @@ export type Card = z.infer<typeof cardSchema>;
 const sectors = new Set(["Power & ET", "Digital", "Transportation", "Utilities", "Midstream", "Social Infra"]);
 const clean = (value: string | null | undefined) => (value ?? "").replace(/\s+/g, " ").trim();
 
-export function parseIssue(edition: string, html: string): Issue {
+export function parseIssueDocument(edition: string, html: string) {
   editionSchema.parse(edition);
   const { document } = parseHTML(html);
   const cards: Card[] = [];
@@ -70,8 +70,8 @@ export function parseIssue(edition: string, html: string): Issue {
     };
     cards.push(cardSchema.parse(card));
   }
-  const sourceLinks = Array.from(document.querySelectorAll("a")).filter(a => clean(a.textContent) === "Source").length;
-  if (!cards.length || cards.length !== sourceLinks) throw new Error(`${edition}: extracted ${cards.length} cards but found ${sourceLinks} Source links`);
+  const sourceLinks = Array.from(document.querySelectorAll("a")).filter(a => clean(a.textContent) === "Source");
+  if (!cards.length || cards.length !== sourceLinks.length) throw new Error(`${edition}: extracted ${cards.length} cards but found ${sourceLinks.length} Source links`);
   if (new Set(cards.map(c => c.key)).size !== cards.length) throw new Error(`${edition}: duplicate card identity requires explicit resolution`);
   for (const section of Array.from(document.querySelectorAll("[data-weekly-sector]"))) {
     const label = section.getAttribute("data-weekly-sector");
@@ -83,8 +83,13 @@ export function parseIssue(edition: string, html: string): Issue {
   const parsedEnd = range ? new Date(`${range[2] || range[1]} ${range[3]}, ${range[4]} 00:00:00 GMT`) : null;
   const end = parsedEnd && Number.isFinite(parsedEnd.getTime()) ? parsedEnd : new Date(`${edition}T00:00:00Z`);
   const start = new Date(end); start.setUTCDate(start.getUTCDate() - 6);
-  return issueSchema.parse({ edition, coverageStart: start.toISOString().slice(0,10), coverageEnd: end.toISOString().slice(0,10),
+  const issue = issueSchema.parse({ edition, coverageStart: start.toISOString().slice(0,10), coverageEnd: end.toISOString().slice(0,10),
     archivePath: `/email-format/${edition}.html`, contentHash: textHash(html), cards });
+  return { issue, document, sourceLinks };
+}
+
+export function parseIssue(edition: string, html: string): Issue {
+  return parseIssueDocument(edition, html).issue;
 }
 
 export function loadIssues(root: string, only?: string): Issue[] {

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 interface DatabaseTilesProps {
-  counts: {
+  counts?: {
     deals: number;
     funds: number;
     portfolio: number;
@@ -59,7 +59,7 @@ export function DatabaseTiles({ counts }: DatabaseTilesProps) {
             }`}
           >
             <span>{tile.label}</span>
-            {isActive && (
+            {isActive && counts && (
               <span className="type-label mono normal-case text-[var(--text-tertiary)] tabular-nums">
                 {counts[tile.key].toLocaleString()}
               </span>
