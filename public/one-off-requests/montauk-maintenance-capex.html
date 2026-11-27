@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Montauk Renewables’ maintenance capital spending, five years of guidance and implications for enterprise-value multiples.">
+  <title>Montauk Renewables | Maintenance capex</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #211e22;
+      --muted: #625f64;
+      --plum: #482242;
+      --rule: #dedbd8;
+      --pale: #f6f3f5;
+      --gold: #b5a16c;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 1rem; }
+    body { margin: 0; color: var(--ink); background: white; font: 16px/1.55 Arial, Helvetica, sans-serif; }
+    main { max-width: 920px; margin: 0 auto; padding: 0 34px 68px; }
+    .top { display: flex; justify-content: space-between; gap: 20px; margin: 0 0 34px; padding: 23px 0 17px; border-bottom: 1px solid var(--rule); font-size: 13px; }
+    .top a { color: var(--plum); text-decoration: none; font-weight: bold; }
+    time, .quiet { color: var(--muted); }
+    a { color: var(--plum); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, .scroll:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; }
+    .issuer { color: var(--plum); font-size: 12px; font-weight: bold; letter-spacing: .07em; text-transform: uppercase; }
+    h1, h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-weight: 500; line-height: 1.12; }
+    h1 { margin: 7px 0 15px; color: var(--plum); font-size: clamp(44px, 7.7vw, 72px); letter-spacing: -.045em; }
+    h2 { margin: 0 0 12px; font-size: clamp(28px, 4.4vw, 40px); letter-spacing: -.03em; }
+    h3 { margin: 20px 0 3px; font-size: 17px; line-height: 1.3; }
+    p { margin: 0 0 12px; }
+    .lead { max-width: 760px; font-size: clamp(18px, 2.3vw, 23px); line-height: 1.45; }
+    .sources-button { display: inline-block; padding: 10px 15px; margin: 8px 0 2px; background: var(--plum); border-radius: 3px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; }
+    .sources-button:hover { background: #613458; }
+    .jump { display: flex; flex-wrap: wrap; gap: 7px 19px; margin-top: 24px; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 13px; }
+    section { padding-top: 36px; }
+    section + section { margin-top: 10px; }
+    .scroll { max-width: 100%; overflow-x: auto; margin: 15px 0 12px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; line-height: 1.45; }
+    thead { color: var(--plum); background: var(--pale); }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    thead th { border-top: 2px solid var(--plum); font-size: 13px; }
+    tbody th { font-weight: 650; }
+    .amount { white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+    .quarterly { min-width: 650px; }
+    .quarterly thead th:nth-child(4) { width: 43%; }
+    .period, .source { white-space: nowrap; }
+    .quarterly .year-start > * { border-top: 2px solid var(--rule); }
+    .quarterly .latest { background: #faf8f0; }
+    .subtle { color: var(--muted); }
+    .footnote { color: var(--muted); font-size: 13px; }
+    .callout { margin: 16px 0; padding: 13px 18px; border-left: 3px solid var(--gold); background: #fbfaf6; }
+    .callout p:last-child { margin-bottom: 0; }
+    .compact { min-width: 465px; }
+    .components { min-width: 485px; }
+    .components tbody th { width: 24%; }
+    .components td { width: 38%; }
+    .refs { font-size: 13px; }
+    footer { margin-top: 30px; padding-top: 15px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+    @media (max-width: 560px) {
+      main { padding: 0 18px 36px; }
+      .top { margin-bottom: 23px; padding-top: 16px; }
+      .jump { gap: 7px 14px; }
+      th, td { padding: 8px 9px; }
+      section { padding-top: 26px; }
+    }
+    @media print {
+      @page { size: letter; margin: .6in; }
+      body { font-size: 10pt; }
+      main { padding: 0; max-width: none; }
+      .top, .jump, .sources-button { display: none; }
+      .issuer { padding-top: 3px; }
+      h1 { font-size: 33pt; }
+      h2 { font-size: 21pt; }
+      h3 { font-size: 11pt; }
+      .lead { font-size: 13pt; }
+      section { padding-top: 18px; }
+      h1, h2, h3, .footnote { break-after: avoid; }
+      .scroll { overflow: visible; }
+      table { min-width: 0 !important; font-size: 8.5pt; }
+      thead { display: table-header-group; }
+      thead th { font-size: 8.3pt; }
+      th, td { padding: 5px 7px; }
+      tr { break-inside: avoid; }
+      .callout { break-inside: avoid; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <nav class="top" aria-label="Research navigation"><a href="/one-off-requests">← Custom requests</a><time datetime="2026-11-27">November 27, 2026</time></nav>
+  <header>
+    <div class="issuer">Montauk Renewables, Inc. · Nasdaq MNTK</div>
+    <h1>Maintenance capex</h1>
+    <p class="lead">Montauk budgets <strong>$18–20mm</strong> for non-development capital spending in FY2026. The budget includes engine overhauls and work that can increase production. The filings give no quarterly total for the capital required to sustain existing operations.</p>
+    <a class="sources-button" href="/one-off-requests/montauk-maintenance-capex-sourcebook.pdf" download>Download the sourcebook (PDF · 64 MiB)</a>
+    <p class="footnote" style="margin-top: 7px">Includes 161 issuer documents, the original workbook, and notes with full-transcript links for 22 calls.</p>
+    <nav class="jump" aria-label="Report sections"><a href="#history">Quarterly disclosures</a><a href="#components">Budget components</a><a href="#management">Management commentary</a><a href="#valuation">Valuation</a></nav>
+  </header>
+  <section id="history" aria-labelledby="history-title">
+    <h2 id="history-title">Quarterly disclosures</h2>
+    <p>Each row shows the full-year budget Montauk gave with that quarter’s results. The fourth-quarter filing opens the following year’s budget. Repeated ranges refer to the same annual spending plan.</p>
+    <p id="history-key" class="footnote"><strong>ND</strong> means the reviewed quarter’s public materials give no separate dollar total for actual maintenance capex. Leave this input blank in a historical valuation.</p>
+    <div class="scroll" role="region" aria-label="Quarterly disclosure table" tabindex="0">
+      <table class="quarterly" aria-labelledby="history-title" aria-describedby="history-key">
+        <thead><tr><th scope="col">Reporting quarter</th><th scope="col" class="amount">Annual budget</th><th scope="col">Quarterly actual</th><th scope="col">What changed</th><th scope="col">Sources</th></tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="period">Q4 2021</th>
+            <td class="amount"><strong>$10–12mm</strong><br><span class="subtle">FY2022</span></td>
+            <td class="subtle">ND</td>
+            <td>Set the initial FY2022 budget for maintenance, wellfields, spares and facility improvements.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312522077310/d260478d10k.htm" aria-label="Q4 2021 filing">10-K</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-full-year-2021-results" aria-label="Q4 2021 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/8f0c32d9-2746-4fb1-b9bf-501ae6143c75" aria-label="Q4 2021 presentation">Slides</a> · <a href="https://www.roic.ai/quote/MNTK/transcripts/2021-year/4-quarter" aria-label="Q4 2021 call transcript">Call</a></td>
+          </tr>
+          <tr class="year-start">
+            <th scope="row" class="period">Q1 2022</th>
+            <td class="amount"><strong>$10–12mm</strong><br><span class="subtle">FY2022</span></td>
+            <td class="subtle">ND</td>
+            <td>Kept the initial range and identified facility and IT improvements.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312522145806/d352918d10q.htm" aria-label="Q1 2022 filing">10-Q</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-first-quarter-2022-results" aria-label="Q1 2022 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/c4050a15-1616-4a2d-97ed-29eabdc59d6a" aria-label="Q1 2022 presentation">Slides</a> · <a href="https://www.roic.ai/quote/MNTK/transcripts/2022-year/1-quarter" aria-label="Q1 2022 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q2 2022</th>
+            <td class="amount"><strong>$12–14mm</strong><br><span class="subtle">FY2022</span></td>
+            <td class="subtle">ND</td>
+            <td>Raised the range to include Raeger upgrades with an expected production benefit.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312522216242/d364891d10q.htm" aria-label="Q2 2022 filing">10-Q</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-second-quarter-2022-results" aria-label="Q2 2022 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/74927054-9556-450d-bb43-e2dd46c48985" aria-label="Q2 2022 presentation">Slides</a> · <a href="https://www.roic.ai/quote/MNTK/transcripts/2022-year/2-quarter" aria-label="Q2 2022 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q3 2022</th>
+            <td class="amount"><strong>$12–14mm</strong><br><span class="subtle">FY2022</span></td>
+            <td class="subtle">ND</td>
+            <td>Kept the revised FY2022 range.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312522281301/d404820d10q.htm" aria-label="Q3 2022 filing">10-Q</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-third-quarter-2022-results" aria-label="Q3 2022 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/b71b05e7-2a14-42bb-a60f-05e7348c6ca1" aria-label="Q3 2022 presentation">Slides</a> · <a href="https://www.roic.ai/quote/MNTK/transcripts/2022-year/3-quarter" aria-label="Q3 2022 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q4 2022</th>
+            <td class="amount"><strong>$15–18mm</strong><br><span class="subtle">FY2023</span></td>
+            <td class="subtle">ND</td>
+            <td>Set the first FY2023 range.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312523072678/d376707d10k.htm" aria-label="Q4 2022 filing">10-K</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-full-year-2022-results" aria-label="Q4 2022 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/5c881ec6-0623-424a-8b5e-bd58b9e8e0ee" aria-label="Q4 2022 presentation">Slides</a> · <a href="https://www.roic.ai/quote/MNTK/transcripts/2022-year/4-quarter" aria-label="Q4 2022 call transcript">Call</a></td>
+          </tr>
+          <tr class="year-start">
+            <th scope="row" class="period">Q1 2023</th>
+            <td class="amount"><strong>$15–19mm</strong><br><span class="subtle">FY2023</span></td>
+            <td class="subtle">ND</td>
+            <td>Raised the upper end to $19mm.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017023020619/mntk-20230331.htm" aria-label="Q1 2023 filing">10-Q</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-first-quarter-2023-results/" aria-label="Q1 2023 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/dc35aded-83ed-41e5-8c13-c4bd87e6b959" aria-label="Q1 2023 presentation">Slides</a> · <a href="https://www.alphaspread.com/security/nasdaq/mntk/earnings-calls/q1-2023" aria-label="Q1 2023 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q2 2023</th>
+            <td class="amount"><strong>$15–19mm</strong><br><span class="subtle">FY2023</span></td>
+            <td class="subtle">ND</td>
+            <td>Kept the FY2023 range.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017023040687/mntk-20230630.htm" aria-label="Q2 2023 filing">10-Q</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-second-quarter-2023-results/" aria-label="Q2 2023 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/6d7a0015-1a9e-4d4f-8e3a-d18e2fdba6d3" aria-label="Q2 2023 presentation">Slides</a> · <a href="https://www.alphaspread.com/security/nasdaq/mntk/earnings-calls/q2-2023" aria-label="Q2 2023 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q3 2023</th>
+            <td class="amount"><strong>$14–17mm</strong><br><span class="subtle">FY2023</span></td>
+            <td class="subtle">ND</td>
+            <td>Lowered both ends of the FY2023 range.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017023062166/mntk-20230930.htm" aria-label="Q3 2023 filing">10-Q</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-third-quarter-2023-results/" aria-label="Q3 2023 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/8ca6fd88-7b9a-4ea1-9e87-e64b8f43bdb5" aria-label="Q3 2023 presentation">Slides</a> · <a href="https://www.alphaspread.com/security/nasdaq/mntk/earnings-calls/q3-2023" aria-label="Q3 2023 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q4 2023</th>
+            <td class="amount"><strong>$14–17mm</strong><br><span class="subtle">FY2024</span></td>
+            <td class="subtle">ND</td>
+            <td>Set the FY2024 range. The CFO described it as annual maintenance capital on the earnings call.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017024031587/mntk-20231231.htm" aria-label="Q4 2023 filing">10-K</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-full-year-2023-results/" aria-label="Q4 2023 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/554c16f1-1aa8-4b47-a032-645b27732b6e" aria-label="Q4 2023 presentation">Slides</a> · <a href="https://www.roic.ai/quote/MNTK/transcripts/2023-year/4-quarter" aria-label="Q4 2023 call transcript">Call</a></td>
+          </tr>
+          <tr class="year-start">
+            <th scope="row" class="period">Q1 2024</th>
+            <td class="amount"><strong>$14–17mm</strong><br><span class="subtle">FY2024</span></td>
+            <td class="subtle">ND</td>
+            <td>Kept the initial FY2024 range.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017024057177/mntk-20240331.htm" aria-label="Q1 2024 filing">10-Q</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-first-quarter-2024-results/" aria-label="Q1 2024 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/31a98cae-fedd-4e55-bb68-8bcd94f23672" aria-label="Q1 2024 presentation">Slides</a> · <a href="https://www.alphaspread.com/security/nasdaq/mntk/earnings-calls/q1-2024" aria-label="Q1 2024 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q2 2024</th>
+            <td class="amount"><strong>$14–16mm</strong><br><span class="subtle">FY2024</span></td>
+            <td class="subtle">ND</td>
+            <td>Lowered the upper end to $16mm.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017024094128/mntk-20240630.htm" aria-label="Q2 2024 filing">10-Q</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-second-quarter-2024-results/" aria-label="Q2 2024 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/f17d4020-dc32-4a80-88d6-18907d056351" aria-label="Q2 2024 presentation">Slides</a> · <a href="https://www.alphaspread.com/security/nasdaq/mntk/earnings-calls/q2-2024" aria-label="Q2 2024 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q3 2024</th>
+            <td class="amount"><strong>$14–16mm</strong><br><span class="subtle">FY2024</span></td>
+            <td class="subtle">ND</td>
+            <td>Kept the revised FY2024 range.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017024125582/mntk-20240930.htm" aria-label="Q3 2024 filing">10-Q</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-third-quarter-2024-results/" aria-label="Q3 2024 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/006db250-8663-4a3b-89da-a54e49d638a9" aria-label="Q3 2024 presentation">Slides</a> · <a href="https://www.alphaspread.com/security/nasdaq/mntk/earnings-calls/q3-2024" aria-label="Q3 2024 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q4 2024</th>
+            <td class="amount"><strong>$14–17mm</strong><br><span class="subtle">FY2025</span></td>
+            <td class="subtle">ND</td>
+            <td>Issued FY2025 guidance. The annual accounts also identify maintenance charged to operating expense.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017025039495/mntk-20241231.htm" aria-label="Q4 2024 filing">10-K</a> · <a href="https://ir.montaukrenewables.com/news-releases/news-release-details/montauk-renewables-announces-full-year-2024-results/" aria-label="Q4 2024 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/8ca7211c-2ca6-4104-8687-e7f679768183" aria-label="Q4 2024 presentation">Slides</a> · <a href="https://www.roic.ai/quote/MNTK/transcripts/2024-year/4-quarter" aria-label="Q4 2024 call transcript">Call</a></td>
+          </tr>
+          <tr class="year-start">
+            <th scope="row" class="period">Q1 2025</th>
+            <td class="amount"><strong>$14–17mm</strong><br><span class="subtle">FY2025</span></td>
+            <td class="subtle">ND</td>
+            <td>Kept the range. Amounts cited for three projects together exceeded reported cash capex.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017025067125/mntk-20250331.htm" aria-label="Q1 2025 filing">10-Q</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017025067105/mntk-ex99_1.htm" aria-label="Q1 2025 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/1b823701-d326-4530-9049-d70efbca5945" aria-label="Q1 2025 presentation">Slides</a> · <a href="https://stockanalysis.com/stocks/mntk/transcripts/326893-q1-2025/" aria-label="Q1 2025 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q2 2025</th>
+            <td class="amount"><strong>$14–17mm</strong><br><span class="subtle">FY2025</span></td>
+            <td class="subtle">ND</td>
+            <td>Kept the FY2025 range.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017025104181/mntk-20250630.htm" aria-label="Q2 2025 filing">10-Q</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017025104161/mntk-ex99_1.htm" aria-label="Q2 2025 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/4477553f-db32-493e-844c-e98ccb3ba5af" aria-label="Q2 2025 presentation">Slides</a> · <a href="https://stockanalysis.com/stocks/mntk/transcripts/344834-q2-2025/" aria-label="Q2 2025 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q3 2025</th>
+            <td class="amount"><strong>$14–16mm</strong><br><span class="subtle">FY2025</span></td>
+            <td class="subtle">ND</td>
+            <td>Lowered the upper end to $16mm.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312525267126/mntk-20250930.htm" aria-label="Q3 2025 filing">10-Q</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312525267090/mntk-ex99_1.htm" aria-label="Q3 2025 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/5e690bd1-e4ba-4635-bacd-8fdd4a995866" aria-label="Q3 2025 presentation">Slides</a> · <a href="https://stockanalysis.com/stocks/mntk/transcripts/372042-q3-2025/" aria-label="Q3 2025 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q4 2025</th>
+            <td class="amount"><strong>$20–25mm</strong><br><span class="subtle">FY2026</span></td>
+            <td class="subtle">ND</td>
+            <td>Set the FY2026 range and included Bowerman engine lifecycle work continuing through 2027.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526102364/mntk-20251231.htm" aria-label="Q4 2025 filing">10-K</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526102342/mntk-ex99_1.htm" aria-label="Q4 2025 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/7aec3da4-d63d-48fb-8737-7dfbc8e92828" aria-label="Q4 2025 presentation">Slides</a> · <a href="https://stockanalysis.com/stocks/mntk/transcripts/412714-q4-2025/" aria-label="Q4 2025 call transcript">Call</a></td>
+          </tr>
+          <tr class="year-start">
+            <th scope="row" class="period">Q1 2026</th>
+            <td class="amount"><strong>$20–25mm</strong><br><span class="subtle">FY2026</span></td>
+            <td class="subtle">ND</td>
+            <td>Kept the FY2026 range. Incurred capex and cash paid for capex differ.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526209250/mntk-20260331.htm" aria-label="Q1 2026 filing">10-Q</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526209194/mntk-ex99_1.htm" aria-label="Q1 2026 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/c564fccd-8fad-4bae-ba0e-0fe0d23100b7" aria-label="Q1 2026 presentation">Slides</a> · <a href="https://stockanalysis.com/stocks/mntk/transcripts/596056-q1-2026/" aria-label="Q1 2026 call transcript">Call</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="period">Q2 2026</th>
+            <td class="amount"><strong>$20–25mm</strong><br><span class="subtle">FY2026</span></td>
+            <td class="subtle">ND</td>
+            <td>Kept the initial FY2026 range.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526335335/mntk-20260630.htm" aria-label="Q2 2026 filing">10-Q</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526335293/mntk-ex99_1.htm" aria-label="Q2 2026 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/6edeefee-0880-4867-956b-93655281fc1c" aria-label="Q2 2026 presentation">Slides</a> · <a href="https://stockanalysis.com/stocks/mntk/transcripts/662337-q2-2026/" aria-label="Q2 2026 call transcript">Call</a></td>
+          </tr>
+          <tr class="latest">
+            <th scope="row" class="period">Q3 2026</th>
+            <td class="amount"><strong>$18–20mm</strong><br><span class="subtle">FY2026</span></td>
+            <td class="subtle">ND</td>
+            <td>Lowered both ends. Separately planned reductions in discretionary maintenance begin mainly in 2027.</td>
+            <td class="refs"><a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526462160/mntk-20260930.htm" aria-label="Q3 2026 filing">10-Q</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526462117/mntk-ex99_1.htm" aria-label="Q3 2026 earnings release">Release</a><br><a href="https://ir.montaukrenewables.com/static-files/04ee4685-27b4-4d46-849c-5f076e432435" aria-label="Q3 2026 presentation">Slides</a> · <a href="https://stockanalysis.com/stocks/mntk/transcripts/726236-q3-2026/" aria-label="Q3 2026 call transcript">Call</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section id="components" aria-labelledby="components-title">
+    <h2 id="components-title">What the budget includes</h2>
+    <p>Montauk names five types of non-development capex and specifically includes lifecycle work on the Bowerman engines. It gives no dollar split by category. The right-hand column explains how to assess each item for valuation. <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526462160/mntk-20260930.htm">Q3 2026 Form 10-Q, Capital Expenditures</a></p>
+    <div class="scroll" role="region" aria-label="Capital spending components" tabindex="0">
+      <table class="components" aria-labelledby="components-title">
+        <thead><tr><th scope="col">Budget component</th><th scope="col">What the disclosure covers</th><th scope="col">Treatment in a maintenance estimate</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Preventative maintenance</th><td>Capitalized work to keep existing equipment in service.</td><td>Include capitalized replacement or refurbishment. Routine repairs charged to operations already reduce EBITDA.</td></tr>
+          <tr><th scope="row">Wellfield expansion</th><td>Projects that expand landfill gas collection.</td><td>Include the share needed to sustain base production. Identify incremental output separately.</td></tr>
+          <tr><th scope="row">Critical spares</th><td>Critical replacement parts for the facilities.</td><td>Include capitalized parts needed to sustain existing equipment. Verify the purpose of major purchases.</td></tr>
+          <tr><th scope="row">Facility improvements</th><td>Upgrades at existing sites, including the Raeger improvements.</td><td>Split the cost to maintain service from the cost to increase capacity or output.</td></tr>
+          <tr><th scope="row">IT improvements</th><td>Investment in information technology. The filing gives no project list.</td><td>Identify replacements that support existing operations and separate new functions or capacity.</td></tr>
+          <tr><th scope="row">Bowerman engine lifecycle work</th><td>Manufacturer-required work on existing generating engines through 2027.</td><td>Include capitalized overhauls. Use the overhaul schedule to estimate a representative annual cost.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote">Montauk’s separate FY2026 development budget of $65–75mm includes the new Bowerman renewable natural gas project. The engine lifecycle work concerns the existing generating equipment. <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526462160/mntk-20260930.htm">Q3 2026 Form 10-Q</a></p>
+  </section>
+  <section id="management" aria-labelledby="management-title">
+    <h2 id="management-title">What management has said</h2>
+    <h3>2022 · An upgrade could increase output</h3>
+    <p>Montauk raised its FY2022 budget from $10–12mm to $12–14mm. The revision included Raeger work needed for stricter gas tariff requirements. Management expected the upgrade to increase daily production by about 50%. The filing gives no allocation between compliance work and added capacity. <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312522216242/d364891d10q.htm">Q2 2022 Form 10-Q</a></p>
+    <h3>2024 · The CFO called the budget maintenance capital</h3>
+    <p>On the March 14 call, CFO Kevin Van Asdalan described the FY2024 range of $14–17mm as “annual maintenance capital.” He also identified $135–150mm for development. The 10-K calls the first range non-development capex and includes wellfield expansion. Both figures were forecasts. <a href="https://www.roic.ai/quote/MNTK/transcripts/2023-year/4-quarter">FY2023 call, closing Q&amp;A</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017024031587/mntk-20231231.htm">FY2023 Form 10-K</a></p>
+    <h3>2025 · Routine maintenance already reduces EBITDA</h3>
+    <p>The FY2024 operating expense table records $17.284mm of preventative maintenance and $8.641mm of wellfield operations and maintenance. Deducting these costs again would understate the denominator. On the Q3 2025 call, an analyst asked about maintenance capex. Management’s response concerned operating costs for wellfield and feedstock work that it could not capitalize. <a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017025039495/mntk-20241231.htm">FY2024 Form 10-K, segment expenses</a> · <a href="https://stockanalysis.com/stocks/mntk/transcripts/372042-q3-2025/">Q3 2025 call, Q&amp;A</a></p>
+    <h3>2026 · Overhauls and deferrals change the timing</h3>
+    <p>The CFO explained that Montauk capitalizes major Bowerman engine overhauls and expenses routine manufacturer-required maintenance. In November, Montauk also identified approximately $10–15mm of reductions to discretionary and uncommitted maintenance spending, mainly beginning in 2027. The amount is a prospective reduction across planned spending. Its timing and scope preclude deducting it from FY2026 guidance to estimate recurring maintenance. <a href="https://stockanalysis.com/stocks/mntk/transcripts/412714-q4-2025/">FY2025 call, Q&amp;A</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526462160/mntk-20260930.htm">Q3 2026 Form 10-Q</a></p>
+    <h3>How the lender defines maintenance</h3>
+    <p>The March 9, 2026 credit agreement defines maintenance as capital used to replace, repair or refurbish the borrower’s or its subsidiaries’ existing equipment and facilities. It separately defines expansion as capital for lender-approved work on existing equipment, collection or processing facilities expected to increase output. Both categories reduce the numerator of the fixed-charge coverage ratio. The public agreement supplies the definitions. The lender’s quarterly dollar inputs would supply the missing split. <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526102364/mntk-ex10_14.htm">2026 credit agreement, §1.1</a></p>
+  </section>
+  <section id="valuation" aria-labelledby="valuation-title">
+    <h2 id="valuation-title">Effect on the valuation denominator</h2>
+    <p>The proposed multiple is <strong>enterprise value ÷ (consolidated EBITDA less actual maintenance capex)</strong>. The last twelve months (LTM) to September 30, 2026 include Montauk’s renewable natural gas, renewable electricity and corporate activities.</p>
+    <div class="scroll" role="region" aria-label="LTM EBITDA reconciliation" tabindex="0">
+      <table class="compact" aria-label="EBITDA reconciliation in USD millions">
+        <thead><tr><th scope="col">USD mm</th><th scope="col" class="amount">FY2025</th><th scope="col" class="amount">Less 9M 2025</th><th scope="col" class="amount">Plus 9M 2026</th><th scope="col" class="amount">LTM Sep 2026</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Consolidated EBITDA</th><td class="amount">32.301</td><td class="amount">24.135</td><td class="amount">30.829</td><td class="amount"><strong>38.995</strong></td></tr>
+          <tr><th scope="row">Adjusted EBITDA</th><td class="amount">35.568</td><td class="amount">26.643</td><td class="amount">33.273</td><td class="amount"><strong>42.198</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote">EBITDA and adjusted EBITDA are company-reported non-GAAP measures. LTM values are calculated from Montauk’s reconciliations. <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526102364/mntk-20251231.htm">FY2025 Form 10-K</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526462160/mntk-20260930.htm">Q3 2026 Form 10-Q</a></p>
+    <h3>Sensitivity using the FY2026 budget</h3>
+    <p>The three cases apply annual forward guidance to historical EBITDA. Growth projects can raise the proxy above sustaining needs. A deferred overhaul can push one year’s spending below its long-term average.</p>
+    <div class="scroll" role="region" aria-label="Denominator sensitivity" tabindex="0">
+      <table class="compact" aria-label="Denominator sensitivity in USD millions">
+        <thead><tr><th scope="col">Assumed non-development capex</th><th scope="col" class="amount">EBITDA less proxy</th><th scope="col" class="amount">Adjusted EBITDA less proxy</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">$18mm</th><td class="amount">$20.995mm</td><td class="amount">$24.198mm</td></tr>
+          <tr><th scope="row">$19mm midpoint</th><td class="amount">$19.995mm</td><td class="amount">$23.198mm</td></tr>
+          <tr><th scope="row">$20mm</th><td class="amount">$18.995mm</td><td class="amount">$22.198mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>At September 30, 2026, Montauk had $155.000mm of debt principal and $12.449mm of cash excluding restricted cash. On that date the enterprise-value bridge starts with equity market value plus $142.551mm, before other applicable adjustments. Align the equity price, share count, debt and cash to the selected valuation date. <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526462160/mntk-20260930.htm">Q3 2026 Form 10-Q, Liquidity and Capital Resources</a></p>
+    <h3>Why total capex cannot supply the missing figure</h3>
+    <p>In Q1 2025, three project amounts summed to $13.328mm against $11.632mm of cash capex. Subtraction gives negative $1.696mm. In Q1 2026, capital incurred was $38.644mm and cash paid was $30.867mm. Montauk attributed the difference mainly to payment timing. A project-by-project reconciliation on a common accounting basis is necessary to isolate maintenance. <a href="https://www.sec.gov/Archives/edgar/data/1826600/000095017025067125/mntk-20250331.htm">Q1 2025 Form 10-Q</a> · <a href="https://www.sec.gov/Archives/edgar/data/1826600/000119312526209250/mntk-20260331.htm">Q1 2026 Form 10-Q</a></p>
+    <aside class="callout"><p><strong>What would complete the multiple?</strong> Request quarterly maintenance and expansion amounts from the lender schedules, a reconciliation to cash paid by business segment, and the timetable for major or deferred overhauls. With those inputs, sum four quarters of comparable maintenance cash spending and deduct it once from LTM EBITDA.</p></aside>
+  </section>
+  <footer>Figures are in U.S. dollars. Reporting periods run from Q4 2021 through Q3 2026. The source links in the quarterly table lead to Montauk’s filings, releases, presentations and published transcripts of management’s remarks.</footer>
+</main>
+</body>
+</html>

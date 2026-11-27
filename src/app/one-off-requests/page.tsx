@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Montauk Renewables maintenance capex",
+    description:
+      "Five years of quarterly disclosures, management’s explanation of sustaining and expansion spending, and the effect on EBITDA-based valuation. Includes the sourcebook.",
+    href: "/one-off-requests/montauk-maintenance-capex.html",
+    format: "Research brief + PDF",
+    date: "Nov 2026",
+  },
+  {
     title: "Email Design Gallery",
     description:
       "Compare three weekly briefing layouts, explore twelve annotated email designs, and copy a published edition into Outlook.",
