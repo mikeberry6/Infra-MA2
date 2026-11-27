@@ -14,6 +14,7 @@ export interface EditorialChartRow {
 }
 
 export interface EditorialBriefing extends Issue {
+  cards: (Issue["cards"][number] & { authoredFact?: string })[];
   title: string;
   themes: EditorialTextRun[][];
   charts: { sector: EditorialChartRow[]; region: EditorialChartRow[] };
@@ -84,13 +85,19 @@ function readChart(document: Document, kind: "sector" | "region"): EditorialChar
 }
 
 export function parseEditorialBriefing(edition: string, html: string): EditorialBriefing {
-  const { issue, document, sourceLinks } = parseIssueDocument(edition, html);
+  const { issue, document, sourceLinks, overviewCells } = parseIssueDocument(edition, html);
   // Card URLs are normalized for matching database records. Retain the published
   // destination for display, including its original query string and fragment.
-  const cards = issue.cards.map((card, index) => ({
-    ...card,
-    sourceUrl: card.sourceUrl ? sourceLinks[index].getAttribute("href") ?? "" : "",
-  }));
+  const cards = issue.cards.map((card, index) => {
+    const overview = overviewCells[index];
+    const emphasis = overview?.querySelector("[data-deal-fact]") ?? overview?.querySelector("strong, b");
+    const authoredFact = emphasis?.textContent?.replace(/\s+/g, " ").trim();
+    return {
+      ...card,
+      ...(authoredFact && { authoredFact }),
+      sourceUrl: card.sourceUrl ? sourceLinks[index].getAttribute("href") ?? "" : "",
+    };
+  });
   return {
     ...issue,
     title: document.title.trim(),

@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { regionTakeaway } from "../../src/modules/briefings/region-takeaway";
 import type { ActivityAuditManifest } from "./schema";
 
 export const DIRECT_ACTIVITY_COLOR = "#442142";
@@ -41,6 +42,7 @@ export interface ActivityChartBlockInput {
   sector: readonly ActivityChartRow[];
   region: readonly ActivityChartRow[];
   period?: string;
+  cutoffDate?: string;
 }
 
 export interface StackedBarWidths {
@@ -241,12 +243,14 @@ function renderActivityChart({
   title,
   rows,
   period,
+  takeaway,
   lastRowBottomPadding = 28,
 }: {
   kind: ActivityChartKind;
   title: string;
   rows: readonly ActivityChartRow[];
   period: string;
+  takeaway?: string;
   lastRowBottomPadding?: number;
 }): string {
   const sortedRows = validateRows(rows, kind);
@@ -301,8 +305,11 @@ function renderActivityChart({
     })
     .join("\n");
 
+  const takeawayRow = takeaway
+    ? `\n              <tr><td colspan="3" data-region-takeaway="true" style="padding: 8px 0 4px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #3F3F46;">${escapeHtml(takeaway)}</td></tr>`
+    : "";
   return `            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-activity-chart="${kind}" data-activity-period="${escapeHtml(period)}">
-              <tr><td colspan="3" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #442142; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; padding-bottom: 10px; border-bottom: 1px solid #E5E7EB;">${escapeHtml(title)}</td></tr>
+              <tr><td colspan="3" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #442142; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; padding-bottom: 10px; border-bottom: 1px solid #E5E7EB;">${escapeHtml(title)}</td></tr>${takeawayRow}
 ${rowMarkup}
             </table>`;
 }
@@ -315,10 +322,17 @@ function renderLegend(): string {
 
 export function renderActivityChartBlock(
   input: ActivityChartBlockInput,
+  includeRegionTakeaway = false,
 ): string {
   const period = input.period?.trim() || "2026-YTD";
   const sector = validateRows(input.sector, "sector");
   const region = validateRows(input.region, "region");
+  if (includeRegionTakeaway && !input.cutoffDate) {
+    throw new Error("The regional takeaway needs the YTD chart cutoff date");
+  }
+  const takeaway = includeRegionTakeaway && input.cutoffDate
+    ? regionTakeaway(region.map((row) => ({ label: row.label, total: row.direct + row.portfolio })), input.cutoffDate)
+    : undefined;
   const sumScope = (
     rows: readonly ActivityChartRow[],
     scope: "direct" | "portfolio",
@@ -349,6 +363,7 @@ ${renderActivityChart({
   title: "Deal Count By Region (YTD)",
   rows: region,
   period,
+  takeaway,
   lastRowBottomPadding: 10,
 })}
 ${renderLegend()}
@@ -487,9 +502,10 @@ export function renderDeterministicActivityEmail({
   charts,
   expectedNonChartSha256,
 }: DeterministicActivityEmailInput): ChartReplacementResult {
+  const includeRegionTakeaway = /<body\b[^>]*\sdata-weekly-region-takeaway\s*=\s*["']true["']/i.test(sourceHtml);
   return replaceDelimitedChartBlock({
     sourceHtml,
-    chartMarkup: renderActivityChartBlock(charts),
+    chartMarkup: renderActivityChartBlock(charts, includeRegionTakeaway),
     expectedNonChartSha256,
   });
 }
@@ -498,6 +514,7 @@ export function activityChartInputFromManifest(
   manifest: ManifestChartSource,
 ): ActivityChartBlockInput {
   return {
+    cutoffDate: manifest.cutoffDate,
     sector: manifest.totals.bySector
       .filter((row) => row.counts.total > 0)
       .map((row) => ({

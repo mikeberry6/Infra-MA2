@@ -83,6 +83,7 @@ const nextConfig = {
   // tree and warns when there are multiple lockfiles (e.g. in worktrees).
   outputFileTracingRoot: path.join(__dirname),
   outputFileTracingIncludes: {
+    "/one-off-requests/email-design-gallery": briefingArchiveFiles,
     "/weekly-briefing": briefingArchiveFiles,
     "/email-format/latest": briefingArchiveFiles,
     "/sitemap.xml": briefingArchiveFiles,

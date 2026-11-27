@@ -6,7 +6,9 @@
     2. Replace {{DEAL_SUMMARY}}, {{DATE_RANGE_SHORT}} in preheader
        - List active sectors by current-week deal count, most to least active
     3. Replace {{PREVIOUS_EDITIONS}} in HTML comment
-    4. Replace {{EDITION_DATE_RANGE}} in masthead
+    4. Replace {{EDITION_DATE_RANGE}} and the visible deal index beneath it.
+       Use the total deal count and each active sector/count in section order:
+       14 deals · Power & ET 5 · Digital 4 · Utilities 4 · Transportation 1
     5. Replace {{KEY_THEME_1}} and {{KEY_THEME_2}} with exactly two succinct paragraphs
        - Paragraph 1: lead with the week's largest-scale transactions, prioritizing disclosed value
        - Paragraph 2: when U.S. transactions are present, focus on U.S. deployment with named transactions
@@ -25,13 +27,19 @@
        - Use canonical sponsor short names consistently; mirror BUYER_SHORT_NAMES when mapped,
          retain the manager's distinctive core name, and use Goldman Sachs Asset Management = GSAM
        - Metadata: {Sponsor} ({transaction type}) · {subsector} · {region/country}
-       - Body: one concise factual paragraph, usually 1-2 sentences
+       - Body: one concise factual paragraph, usually 1-2 sentences. Author exactly one
+         <strong data-deal-fact> around the most useful sourced fact, including the unit,
+         economic basis and any qualifier (e.g. "up to US$800mm of committed equity").
+         When scale is undisclosed, emphasize a specific sourced fact about the asset or transaction.
        - Source: one link labeled "Source"
        - Include concrete facts when available: capacity, geography, market role, value, capital commitment, customers, development status, or strategic rationale
     8. Update YTD bar charts (sector + region counts and bar widths)
        - Sort both charts by count in descending order
        - Recalculate widths after sorting: top row = 100%; others = round(count / topCount * 100)
        - Verify no lower-count row appears before a higher-count row
+       - Below the region heading, replace {{REGION_TAKEAWAY}} with one sentence using the
+         chart cutoff, leading and runner-up totals, and the deal-count gap. Identify ties
+         or a single region accurately. The manifest workflow calculates this row automatically.
     9. Replace {{CURRENT_WEEK_PILL}} comment with active pill, add nav link for new week
    10. Use lowercase mm for millions and bn for billions throughout visible copy and human-readable
        data-scale-note annotations (for example, US$800mm, US$16bn, 1mm households, 3.5mm tonnes)
@@ -54,7 +62,7 @@
   </style>
   <![endif]-->
 </head>
-<body style="margin: 0; padding: 0; background-color: #FFFFFF; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+<body data-weekly-region-takeaway="true" style="margin: 0; padding: 0; background-color: #FFFFFF; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
 
   <!-- Preheader text (hidden) -->
   <div style="display: none; font-size: 0; line-height: 0; max-height: 0; overflow: hidden; mso-hide: all;">
@@ -110,7 +118,10 @@
                 </tr>
                 <!-- Edition -->
                 <tr>
-                  <td style="padding-top: 6px; padding-bottom: 18px; font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 400; color: #AAAAAA; letter-spacing: 1.5px; text-transform: uppercase;">Weekly Briefing <span style="color: #B4A87D;">&#8226;</span> {{EDITION_DATE_RANGE}}</td>
+                  <td style="padding-top: 6px; font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 400; color: #AAAAAA; letter-spacing: 1.5px; text-transform: uppercase;">Weekly Briefing <span style="color: #B4A87D;">&#8226;</span> {{EDITION_DATE_RANGE}}</td>
+                </tr>
+                <tr>
+                  <td data-weekly-deal-index="true" style="padding: 6px 0 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 17px; color: #52525B;">{{TOTAL_DEAL_LABEL}} &middot; {{ACTIVE_SECTOR_COUNTS}}</td>
                 </tr>
               </table>
 
@@ -156,161 +167,31 @@
 
 
 
-          <!-- ===== DIGITAL (0 Deals) ===== -->
+          <!-- Repeat the outer section for each active sector, then repeat the deal row for each card. -->
           <tr>
-            <td style="padding: 10px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden;">
+            <td style="padding: 24px 40px 0;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-weekly-sector="{{SECTOR}}" data-weekly-count="{{SECTOR_COUNT}}" style="border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden;">
                 <tr>
                   <td bgcolor="#F8F9FA" style="background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-left: 4px solid #442142;">
                       <tr>
-                        <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
-                          Digital
-                        </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
+                        <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">{{SECTOR}}</td>
+                        <td width="1%" align="right" style="padding: 10px 20px; white-space: nowrap; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #442142;">{{SECTOR_DEAL_LABEL}}</td>
                       </tr>
                     </table>
                   </td>
                 </tr>
-
+                <!-- Deal row. Include the source's qualifiers and units inside the emphasis. -->
                 <tr>
-                  <td bgcolor="#FDFCFB" style="padding: 20px 24px 24px 24px; background-color: #FDFCFB; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; font-style: italic;">
-                    No transactions reported this week
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ===== MIDSTREAM (0 Deals) ===== -->
-          <tr>
-            <td style="padding: 24px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden;">
-                <tr>
-                  <td bgcolor="#F8F9FA" style="background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-left: 4px solid #442142;">
-                      <tr>
-                        <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
-                          Midstream
-                        </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
-                      </tr>
+                  <td bgcolor="#FDFCFB" style="padding: 24px; background-color: #FDFCFB; border-bottom: 1px solid #E5E7EB;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"
+                      data-deal-id="{{DEAL_ID}}" data-announcement-date="{{ANNOUNCEMENT_DATE}}" data-activity-type="{{ACTIVITY_TYPE}}" data-region="{{REGION}}"
+                      data-scale-kind="{{SCALE_KIND}}" data-scale-value="{{SCALE_VALUE}}" data-scale-unit="{{SCALE_UNIT}}" data-scale-rank="{{SCALE_RANK}}" data-scale-note="{{SCALE_NOTE}}">
+                      <tr><td style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; line-height: 1.25;">{{TARGET}} | {{FUND_MANAGER}}</td></tr>
+                      <tr><td style="padding-top: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #52525B; line-height: 1.3;">{{SPONSOR}} ({{TRANSACTION_TYPE}}) &middot; {{SUBSECTOR}} &middot; {{GEOGRAPHY}}</td></tr>
+                      <tr><td style="padding-top: 16px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #3F3F46; line-height: 1.6;">{{OVERVIEW_BEFORE}}<strong data-deal-fact style="font-weight: 700;">{{QUALIFIED_DECISIVE_FACT}}</strong>{{OVERVIEW_AFTER}}</td></tr>
+                      <tr><td style="padding-top: 18px;"><a href="{{SOURCE_URL}}" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 600; color: #5B5563; text-decoration: underline;">Source</a></td></tr>
                     </table>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td bgcolor="#FDFCFB" style="padding: 20px 24px 24px 24px; background-color: #FDFCFB; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; font-style: italic;">
-                    No transactions reported this week
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ===== POWER & ENERGY TRANSITION (0 Deals) ===== -->
-          <tr>
-            <td style="padding: 24px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden;">
-                <tr>
-                  <td bgcolor="#F8F9FA" style="background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-left: 4px solid #442142;">
-                      <tr>
-                        <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
-                          Power &amp; ET
-                        </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td bgcolor="#FDFCFB" style="padding: 20px 24px 24px 24px; background-color: #FDFCFB; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; font-style: italic;">
-                    No transactions reported this week
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ===== SOCIAL INFRA (0 Deals) ===== -->
-          <tr>
-            <td style="padding: 24px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden;">
-                <tr>
-                  <td bgcolor="#F8F9FA" style="background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-left: 4px solid #442142;">
-                      <tr>
-                        <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
-                          Social Infra
-                        </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td bgcolor="#FDFCFB" style="padding: 20px 24px 24px 24px; background-color: #FDFCFB; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; font-style: italic;">
-                    No transactions reported this week
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ===== TRANSPORTATION (0 Deals) ===== -->
-          <tr>
-            <td style="padding: 24px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden;">
-                <tr>
-                  <td bgcolor="#F8F9FA" style="background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-left: 4px solid #442142;">
-                      <tr>
-                        <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
-                          Transportation
-                        </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td bgcolor="#FDFCFB" style="padding: 20px 24px 24px 24px; background-color: #FDFCFB; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; font-style: italic;">
-                    No transactions reported this week
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ===== UTILITIES (0 Deals) ===== -->
-          <tr>
-            <td style="padding: 24px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden;">
-                <tr>
-                  <td bgcolor="#F8F9FA" style="background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-left: 4px solid #442142;">
-                      <tr>
-                        <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
-                          Utilities
-                        </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td bgcolor="#FDFCFB" style="padding: 20px 24px 24px 24px; background-color: #FDFCFB; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; font-style: italic;">
-                    No transactions reported this week
                   </td>
                 </tr>
               </table>
@@ -323,6 +204,7 @@
           <!-- then increment counts for this week's deals. Recalculate bar     -->
           <!-- widths as percentages relative to the highest-count item (100%). -->
           <!-- ============================================ -->
+          <!-- YTD STATS -->
           <tr>
             <td style="padding: 40px 40px 30px 40px;">
 
@@ -449,6 +331,9 @@
                     Deal Count By Region (YTD)
                   </td>
                 </tr>
+                <tr>
+                  <td colspan="3" data-region-takeaway="true" style="padding: 8px 0 4px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #3F3F46;">{{REGION_TAKEAWAY}}</td>
+                </tr>
 
                 <!-- Europe: 68 -->
                 <tr>
@@ -542,6 +427,7 @@
             </td>
           </tr>
 
+          <!-- FOOTER -->
           <!-- ============================================ -->
           <!-- SECTION 5: FOOTER                            -->
           <!-- ============================================ -->

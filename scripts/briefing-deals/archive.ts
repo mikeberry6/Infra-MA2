@@ -37,6 +37,7 @@ export function parseIssueDocument(edition: string, html: string) {
   editionSchema.parse(edition);
   const { document } = parseHTML(html);
   const cards: Card[] = [];
+  const overviewCells: Element[] = [];
   let sector = "";
   // Walk the visible card title cells in document order, independently of style order.
   for (const td of Array.from(document.querySelectorAll("td"))) {
@@ -51,7 +52,8 @@ export function parseIssueDocument(edition: string, html: string) {
     const rows = Array.from(table.children).flatMap(child => child.tagName === "TBODY" ? Array.from(child.children) : [child]).filter(child => child.tagName === "TR");
     const index = rows.findIndex(row => row.contains(td));
     const metadata = clean(rows[index + 1]?.textContent);
-    const description = clean(rows[index + 2]?.textContent);
+    const overview = rows[index + 2];
+    const description = clean(overview?.textContent);
     const parts = metadata.split(/\s+·\s+/);
     const party = parts[0]?.match(/^(.*?)\s*\((.*)\)$/);
     const titleParts = value.split(/\s+\|\s+/);
@@ -69,6 +71,7 @@ export function parseIssueDocument(edition: string, html: string) {
       scaleNote: table.getAttribute("data-scale-note"),
     };
     cards.push(cardSchema.parse(card));
+    overviewCells.push(overview);
   }
   const sourceLinks = Array.from(document.querySelectorAll("a")).filter(a => clean(a.textContent) === "Source");
   if (!cards.length || cards.length !== sourceLinks.length) throw new Error(`${edition}: extracted ${cards.length} cards but found ${sourceLinks.length} Source links`);
@@ -85,7 +88,7 @@ export function parseIssueDocument(edition: string, html: string) {
   const start = new Date(end); start.setUTCDate(start.getUTCDate() - 6);
   const issue = issueSchema.parse({ edition, coverageStart: start.toISOString().slice(0,10), coverageEnd: end.toISOString().slice(0,10),
     archivePath: `/email-format/${edition}.html`, contentHash: textHash(html), cards });
-  return { issue, document, sourceLinks };
+  return { issue, document, sourceLinks, overviewCells };
 }
 
 export function parseIssue(edition: string, html: string): Issue {

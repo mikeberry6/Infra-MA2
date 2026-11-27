@@ -108,6 +108,8 @@ Order active sectors by current-week deal count, highest to lowest. Resolve ties
 
 Omit zero-deal sectors. The preheader and previous-editions summary must list sectors in the same order.
 
+Below the edition date, print one text line with the issue total followed by every active sector and its count in that same order. For example, `14 deals · Power & ET 5 · Digital 4 · Utilities 4 · Transportation 1`. Rebuild the line from the final ordered cards after any curation change.
+
 ### Deal order within a sector
 
 Rank deals from largest to smallest, including within closely comparable subsectors:
@@ -123,6 +125,7 @@ Store or maintain the validator's scale metadata on each deal card so the orderi
 - Title: `{Target / Asset} | {infrastructure fund or fund manager only}`.
 - Metadata: `{Sponsor} ({transaction type}) · {subsector} · {region/country}`.
 - Overview: one concise paragraph, normally one or two sentences, stating what happened, who transacted, the relevant value or scale, and why the asset/platform matters.
+- Within each new overview, wrap exactly one decisive, source-backed phrase in `<strong data-deal-fact>`. Prefer transaction economics, then physical scale, then a specific asset or transaction fact when no quantity is disclosed. Keep qualifiers, units and the basis of a number together, as in `up to US$800mm of committed equity` or `a 40% minority stake`. Preserve normal sentence spacing around the tag.
 - Source: one link labeled `Source`.
 - Do not put portfolio companies, sellers, developers, or operating partners after the title pipe.
 - Use restrained, factual language and consistent transaction labels.
@@ -175,6 +178,7 @@ The visible placeholder is a standing user-directed layout preference for future
 - Set the leading bar to `100%`.
 - Set every other width to `round(count / leadingCount × 100)`.
 - Confirm no lower-count row appears above a higher-count row.
+- Immediately below the region chart heading, write one sentence from the final YTD rows and their cutoff date. Name the leader and runner-up, both counts and the difference. Name joint leaders when totals tie and report the single region's count when only one is present. The activity manifest renderer fills this row for editions based on the current template.
 
 ## Validation gate
 
@@ -192,12 +196,13 @@ npm test -- scripts/validate-weekly-email.test.ts
 
 Before publication, also confirm:
 
-- [ ] card count, issue total, section totals, and `Source` count agree;
+- [ ] card count, masthead deal index, section totals, and `Source` count agree;
+- [ ] each overview emphasizes one complete, sourced fact, including every material qualifier;
 - [ ] every retained transaction passes infrastructure, timing, equity, and source gates;
 - [ ] rejected, removed, and false-positive names are absent;
 - [ ] sector sections and preheader summaries use the correct weekly order;
 - [ ] deals are ranked by economic or physical scale;
-- [ ] YTD rows are sorted and widths are recalculated;
+- [ ] YTD rows are sorted, widths are recalculated, and the regional takeaway agrees with the rankings, counts and cutoff;
 - [ ] theme copy follows the bolding and abbreviation rules;
 - [ ] sponsor names use the canonical concise forms;
 - [ ] all email tables and tags are balanced;
